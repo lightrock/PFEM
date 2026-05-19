@@ -62,6 +62,7 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_archive_chain_records.py
       - run: PYTHONPATH=src python tools/pfem_archive_chain_verification_receipts.py
       - run: PYTHONPATH=src python tools/pfem_archive_index_records.py
+      - run: PYTHONPATH=src python tools/pfem_archive_index_verification_receipts.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

@@ -762,5 +762,18 @@
     ],
     "summary": "Example archive index records was recorded.",
     "source_tool": "pfem_archive_index_records"
+  },
+  {
+    "audit_id": "audit-archive-index-verification-basic-001",
+    "event_kind": "archive_index_verification_recorded",
+    "created_time": "2026-01-01T00:01:01Z",
+    "actor_ref": "tools/pfem_archive_index_verification_receipts.py",
+    "subject_refs": [
+      "archive-index-verification-basic-restore-001",
+      "archive-index-basic-restore-001",
+      "archive-chain-verification-basic-restore-001"
+    ],
+    "summary": "Example archive index verification receipts was recorded.",
+    "source_tool": "pfem_archive_index_verification_receipts"
   }
 ]
