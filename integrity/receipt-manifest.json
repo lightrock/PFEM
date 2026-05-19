@@ -449,6 +449,12 @@
       "purpose": "retention lifecycle records"
     },
     {
+      "path": "retention/retention-lifecycle-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "8e9a38d856544f60d0e5df39aa79ade3f98dbfedaf19b91ea391a705c756f9ed",
+      "purpose": "retention lifecycle verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -529,7 +535,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "f3792608563eab5497627d73a46adf3dd9326715f0be65f57c5d45a3a1f2964d",
+      "digest": "09b546eeae1cba0f6245dc81f82813b6febfb3a21b07b9f18fb5428461dd039d",
       "purpose": "audit journal"
     },
     {

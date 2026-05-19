@@ -1019,5 +1019,18 @@
     ],
     "summary": "Example retention lifecycle records was recorded.",
     "source_tool": "pfem_retention_lifecycle_records"
+  },
+  {
+    "audit_id": "audit-retention-lifecycle-verification-basic-001",
+    "event_kind": "retention_lifecycle_verification_recorded",
+    "created_time": "2026-01-01T00:01:21Z",
+    "actor_ref": "tools/pfem_retention_lifecycle_verification_receipts.py",
+    "subject_refs": [
+      "retention-lifecycle-verification-basic-restore-001",
+      "retention-lifecycle-basic-restore-001",
+      "retention-chain-verification-basic-restore-001"
+    ],
+    "summary": "Example retention lifecycle verification receipts was recorded.",
+    "source_tool": "pfem_retention_lifecycle_verification_receipts"
   }
 ]
