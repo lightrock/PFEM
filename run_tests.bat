@@ -16,6 +16,11 @@ python tools\pfem_lineage.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM rollup validation...
+python tools\pfem_rollup.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM doctor...
 python tools\pfem_doctor.py
 if errorlevel 1 exit /b 1

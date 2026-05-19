@@ -1,0 +1,18 @@
+{
+  "rollup_id": "rollup-basic-001",
+  "producer_node_id": "field-radio-node-example",
+  "created_time": "2026-01-01T00:00:04Z",
+  "summary_kind": "example_status_summary",
+  "scope": "example rollup fixture",
+  "included_subject_refs": [
+    "manual-report-rollup"
+  ],
+  "source_lineage_refs": [
+    "package-rollup-001",
+    "alert-rollup-001",
+    "finding-rollup-001"
+  ],
+  "confidence_notes": "Example rollup only.",
+  "completeness_notes": "Not complete local truth.",
+  "sharing_scope": "example"
+}

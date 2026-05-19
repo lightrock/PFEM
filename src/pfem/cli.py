@@ -9,6 +9,7 @@ from pathlib import Path
 from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
+from pfem.rollup import format_rollup_report, validate_rollup_dir
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -44,6 +45,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Lifecycle fixture directory. Defaults to tests/fixtures/lifecycle/basic.",
     )
 
+    rollup = subparsers.add_parser("rollup", help="Validate PFEM rollup and federation records")
+    rollup.add_argument(
+        "path",
+        nargs="?",
+        default="tests/fixtures/rollup/basic",
+        help="Rollup fixture directory. Defaults to tests/fixtures/rollup/basic.",
+    )
+
     return parser
 
 
@@ -67,6 +76,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "lineage":
         report = validate_lifecycle_dir(Path(args.path))
         print(format_lineage_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "rollup":
+        report = validate_rollup_dir(Path(args.path))
+        print(format_rollup_report(report))
         return 0 if report.ok else 1
 
     parser.print_help()
