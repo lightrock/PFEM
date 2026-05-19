@@ -125,6 +125,12 @@
       "purpose": "snapshot verification receipts"
     },
     {
+      "path": "recovery/recovery-points.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1da28b1d0fbfe19bb619eb977614954bc967a7f887cdcf0eac29eb74e6fe63a1",
+      "purpose": "recovery points"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -205,7 +211,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "b0c25f2a4467f22246c7ff15eb3be0f5b5f5825916eded8ea68076f01d0607a5",
+      "digest": "ee4ae2b7efbad3c839777a5ae1f415054524650f98116a0830a1707c9088a9b6",
       "purpose": "audit journal"
     },
     {

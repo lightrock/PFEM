@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/recovery_point.schema.json",
+  "title": "PFEM Recovery Point",
+  "type": "object",
+  "required": [
+    "recovery_point_id",
+    "recovery_point_kind",
+    "created_time",
+    "node_id",
+    "state_checkpoint_id",
+    "snapshot_manifest_id",
+    "snapshot_verification_receipt_id",
+    "recovery_state",
+    "restore_scope",
+    "restorable_refs",
+    "basis_refs",
+    "promoted_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "recovery_point_id": {
+      "type": "string"
+    },
+    "recovery_point_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "state_checkpoint_id": {
+      "type": "string"
+    },
+    "snapshot_manifest_id": {
+      "type": "string"
+    },
+    "snapshot_verification_receipt_id": {
+      "type": "string"
+    },
+    "state_transition_id": {
+      "type": "string"
+    },
+    "recovery_state": {
+      "type": "string"
+    },
+    "restore_scope": {
+      "type": "string"
+    },
+    "restorable_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promoted_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -323,5 +323,18 @@
     ],
     "summary": "Example snapshot verification receipt was recorded for a snapshot manifest.",
     "source_tool": "pfem_snapshot_verification_receipts"
+  },
+  {
+    "audit_id": "audit-recovery-point-basic-001",
+    "event_kind": "recovery_point_recorded",
+    "created_time": "2026-01-01T00:00:27Z",
+    "actor_ref": "tools/pfem_recovery_points.py",
+    "subject_refs": [
+      "recovery-point-basic-state-001",
+      "snapshot-verification-basic-state-001",
+      "snapshot-manifest-basic-state-001"
+    ],
+    "summary": "Example recovery point was recorded from a verified snapshot.",
+    "source_tool": "pfem_recovery_points"
   }
 ]

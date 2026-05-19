@@ -86,6 +86,11 @@ python tools\pfem_snapshot_verification_receipts.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM recovery point validation...
+python tools\pfem_recovery_points.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

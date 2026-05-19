@@ -30,6 +30,7 @@ from pfem.playbook import format_playbook_report, validate_playbook_repository
 from pfem.policy import format_policy_report, validate_policy_repository
 from pfem.quality import format_quality_report, validate_quality_repository
 from pfem.reconciliation import format_reconciliation_report, validate_reconciliation_repository
+from pfem.recovery_point import format_recovery_point_report, validate_recovery_points
 from pfem.retention import format_retention_report, validate_retention_policy
 from pfem.review import format_review_report, validate_review_repository
 from pfem.rollup import format_rollup_report, validate_rollup_dir
@@ -65,6 +66,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("state-transitions", "Validate PFEM state transitions"),
         ("snapshot-manifests", "Validate PFEM snapshot manifests"),
         ("snapshot-verification-receipts", "Validate PFEM snapshot verification receipts"),
+        ("recovery-points", "Validate PFEM recovery points"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -129,6 +131,7 @@ def main(argv: list[str] | None = None) -> int:
         "state-transitions": (validate_state_transitions, format_state_transition_report),
         "snapshot-manifests": (validate_snapshot_manifests, format_snapshot_manifest_report),
         "snapshot-verification-receipts": (validate_snapshot_verification_receipts, format_snapshot_verification_receipt_report),
+        "recovery-points": (validate_recovery_points, format_recovery_point_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

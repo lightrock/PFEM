@@ -1,0 +1,26 @@
+[
+  {
+    "recovery_point_id": "recovery-point-basic-state-001",
+    "recovery_point_kind": "verified_snapshot_restore_candidate",
+    "created_time": "2026-01-01T00:00:27Z",
+    "node_id": "formal-rollup-node-example",
+    "state_checkpoint_id": "state-checkpoint-basic-after-apply-001",
+    "snapshot_manifest_id": "snapshot-manifest-basic-state-001",
+    "snapshot_verification_receipt_id": "snapshot-verification-basic-state-001",
+    "state_transition_id": "state-transition-basic-after-apply-001",
+    "recovery_state": "available",
+    "restore_scope": "local_repository_state",
+    "restorable_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "basis_refs": [
+      "snapshot-verification-basic-state-001",
+      "snapshot-manifest-basic-state-001",
+      "state-checkpoint-basic-after-apply-001",
+      "state-transition-basic-after-apply-001"
+    ],
+    "promoted_by_ref": "tools/pfem_recovery_points.py",
+    "summary": "Synthetic example recovery point promoting the verified basic snapshot as an available local restore candidate."
+  }
+]
