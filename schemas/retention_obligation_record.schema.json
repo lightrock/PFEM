@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_obligation_record.schema.json",
+  "title": "PFEM Retention Obligation Records",
+  "type": "object",
+  "required": [
+    "retention_obligation_record_id",
+    "obligation_kind",
+    "created_time",
+    "node_id",
+    "retention_policy_compliance_verification_receipt_id",
+    "retention_policy_ref",
+    "obligation_state",
+    "obligation_scope",
+    "obligated_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "obligation_ref_digest",
+    "recorded_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_obligation_record_id": {
+      "type": "string"
+    },
+    "obligation_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_policy_compliance_verification_receipt_id": {
+      "type": "string"
+    },
+    "retention_policy_ref": {
+      "type": "string"
+    },
+    "obligation_state": {
+      "type": "string"
+    },
+    "obligation_scope": {
+      "type": "string"
+    },
+    "obligated_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "obligation_ref_digest": {
+      "type": "string"
+    },
+    "recorded_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

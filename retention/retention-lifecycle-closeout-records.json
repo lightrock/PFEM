@@ -1,0 +1,37 @@
+[
+  {
+    "retention_lifecycle_closeout_record_id": "retention-lifecycle-closeout-basic-restore-001",
+    "closeout_kind": "retention_lifecycle_closeout",
+    "created_time": "2026-01-01T00:01:22Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_lifecycle_verification_receipt_id": "retention-lifecycle-verification-basic-restore-001",
+    "retention_lifecycle_record_id": "retention-lifecycle-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "retention_lifecycle_verified_and_closed",
+    "closed_refs": [
+      "retention-chain-basic-restore-001",
+      "retention-chain-verification-basic-restore-001",
+      "retention-action-closeout-basic-restore-001",
+      "retention-action-verification-basic-restore-001",
+      "retention-action-receipt-basic-restore-001",
+      "retention-decision-approval-basic-restore-001",
+      "retention-decision-basic-restore-001",
+      "retention-review-verification-basic-restore-001",
+      "retention-review-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-lifecycle-verification-basic-restore-001",
+      "retention-lifecycle-basic-restore-001",
+      "retention-chain-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_retention_lifecycle_closeout_records.py",
+    "summary": "Synthetic example retention lifecycle closeout record showing the retention lifecycle was closed after lifecycle verification passed."
+  }
+]

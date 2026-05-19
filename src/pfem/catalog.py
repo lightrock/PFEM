@@ -65,6 +65,16 @@ from pfem.retention_chain_record import load_retention_chain_records
 from pfem.retention_chain_verification_receipt import load_retention_chain_verification_receipts
 from pfem.retention_lifecycle_record import load_retention_lifecycle_records
 from pfem.retention_lifecycle_verification_receipt import load_retention_lifecycle_verification_receipts
+from pfem.retention_lifecycle_closeout_record import load_retention_lifecycle_closeout_records
+from pfem.retention_ledger_record import load_retention_ledger_records
+from pfem.retention_ledger_verification_receipt import load_retention_ledger_verification_receipts
+from pfem.retention_ledger_closeout_record import load_retention_ledger_closeout_records
+from pfem.retention_policy_compliance_record import load_retention_policy_compliance_records
+from pfem.retention_policy_compliance_verification_receipt import load_retention_policy_compliance_verification_receipts
+from pfem.retention_obligation_record import load_retention_obligation_records
+from pfem.retention_obligation_verification_receipt import load_retention_obligation_verification_receipts
+from pfem.retention_schedule_record import load_retention_schedule_records
+from pfem.retention_schedule_verification_receipt import load_retention_schedule_verification_receipts
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -506,6 +516,56 @@ def _retention_lifecycle_verification_receipt_rows(root: Path) -> list[dict[str,
     return [] if not p.exists() else [{"retention_lifecycle_verification_receipt_id": r["retention_lifecycle_verification_receipt_id"], "retention_lifecycle_record_id": r["retention_lifecycle_record_id"], "verification_state": r["verification_state"], "checked_lifecycle_refs": len(r["checked_lifecycle_refs"])} for r in load_retention_lifecycle_verification_receipts(p)]
 
 
+def _retention_lifecycle_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-lifecycle-closeout-records.json"
+    return [] if not p.exists() else [{"retention_lifecycle_closeout_record_id": r["retention_lifecycle_closeout_record_id"], "retention_lifecycle_verification_receipt_id": r["retention_lifecycle_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_lifecycle_closeout_records(p)]
+
+
+def _retention_ledger_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-ledger-records.json"
+    return [] if not p.exists() else [{"retention_ledger_record_id": r["retention_ledger_record_id"], "retention_lifecycle_closeout_record_id": r["retention_lifecycle_closeout_record_id"], "ledger_state": r["ledger_state"], "entry_refs": len(r["entry_refs"])} for r in load_retention_ledger_records(p)]
+
+
+def _retention_ledger_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-ledger-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_ledger_verification_receipt_id": r["retention_ledger_verification_receipt_id"], "retention_ledger_record_id": r["retention_ledger_record_id"], "verification_state": r["verification_state"], "checked_entry_refs": len(r["checked_entry_refs"])} for r in load_retention_ledger_verification_receipts(p)]
+
+
+def _retention_ledger_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-ledger-closeout-records.json"
+    return [] if not p.exists() else [{"retention_ledger_closeout_record_id": r["retention_ledger_closeout_record_id"], "retention_ledger_verification_receipt_id": r["retention_ledger_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_ledger_closeout_records(p)]
+
+
+def _retention_policy_compliance_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-policy-compliance-records.json"
+    return [] if not p.exists() else [{"retention_policy_compliance_record_id": r["retention_policy_compliance_record_id"], "retention_ledger_verification_receipt_id": r["retention_ledger_verification_receipt_id"], "compliance_state": r["compliance_state"], "compliance_scope": r["compliance_scope"]} for r in load_retention_policy_compliance_records(p)]
+
+
+def _retention_policy_compliance_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-policy-compliance-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_policy_compliance_verification_receipt_id": r["retention_policy_compliance_verification_receipt_id"], "retention_policy_compliance_record_id": r["retention_policy_compliance_record_id"], "verification_state": r["verification_state"], "checked_compliance_refs": len(r["checked_compliance_refs"])} for r in load_retention_policy_compliance_verification_receipts(p)]
+
+
+def _retention_obligation_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-obligation-records.json"
+    return [] if not p.exists() else [{"retention_obligation_record_id": r["retention_obligation_record_id"], "retention_policy_compliance_verification_receipt_id": r["retention_policy_compliance_verification_receipt_id"], "obligation_state": r["obligation_state"], "obligation_scope": r["obligation_scope"]} for r in load_retention_obligation_records(p)]
+
+
+def _retention_obligation_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-obligation-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_obligation_verification_receipt_id": r["retention_obligation_verification_receipt_id"], "retention_obligation_record_id": r["retention_obligation_record_id"], "verification_state": r["verification_state"], "checked_obligation_refs": len(r["checked_obligation_refs"])} for r in load_retention_obligation_verification_receipts(p)]
+
+
+def _retention_schedule_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-schedule-records.json"
+    return [] if not p.exists() else [{"retention_schedule_record_id": r["retention_schedule_record_id"], "retention_obligation_record_id": r["retention_obligation_record_id"], "schedule_state": r["schedule_state"], "scheduled_action": r["scheduled_action"]} for r in load_retention_schedule_records(p)]
+
+
+def _retention_schedule_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-schedule-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_schedule_verification_receipt_id": r["retention_schedule_verification_receipt_id"], "retention_schedule_record_id": r["retention_schedule_record_id"], "verification_state": r["verification_state"], "checked_schedule_refs": len(r["checked_schedule_refs"])} for r in load_retention_schedule_verification_receipts(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -652,6 +712,16 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_chain_verification_receipts": _retention_chain_verification_receipt_rows(root),
         "retention_lifecycle_records": _retention_lifecycle_record_rows(root),
         "retention_lifecycle_verification_receipts": _retention_lifecycle_verification_receipt_rows(root),
+        "retention_lifecycle_closeout_records": _retention_lifecycle_closeout_record_rows(root),
+        "retention_ledger_records": _retention_ledger_record_rows(root),
+        "retention_ledger_verification_receipts": _retention_ledger_verification_receipt_rows(root),
+        "retention_ledger_closeout_records": _retention_ledger_closeout_record_rows(root),
+        "retention_policy_compliance_records": _retention_policy_compliance_record_rows(root),
+        "retention_policy_compliance_verification_receipts": _retention_policy_compliance_verification_receipt_rows(root),
+        "retention_obligation_records": _retention_obligation_record_rows(root),
+        "retention_obligation_verification_receipts": _retention_obligation_verification_receipt_rows(root),
+        "retention_schedule_records": _retention_schedule_record_rows(root),
+        "retention_schedule_verification_receipts": _retention_schedule_verification_receipt_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -755,6 +825,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_chain_verification_receipts', 0)} retention chain verification receipts, "
         f"{counts.get('retention_lifecycle_records', 0)} retention lifecycle records, "
         f"{counts.get('retention_lifecycle_verification_receipts', 0)} retention lifecycle verification receipts, "
+        f"{counts.get('retention_lifecycle_closeout_records', 0)} retention lifecycle closeout records, "
+        f"{counts.get('retention_ledger_records', 0)} retention ledger records, "
+        f"{counts.get('retention_ledger_verification_receipts', 0)} retention ledger verification receipts, "
+        f"{counts.get('retention_ledger_closeout_records', 0)} retention ledger closeout records, "
+        f"{counts.get('retention_policy_compliance_records', 0)} retention policy compliance records, "
+        f"{counts.get('retention_policy_compliance_verification_receipts', 0)} retention policy compliance verification receipts, "
+        f"{counts.get('retention_obligation_records', 0)} retention obligation records, "
+        f"{counts.get('retention_obligation_verification_receipts', 0)} retention obligation verification receipts, "
+        f"{counts.get('retention_schedule_records', 0)} retention schedule records, "
+        f"{counts.get('retention_schedule_verification_receipts', 0)} retention schedule verification receipts, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -844,6 +924,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Retention Chain Verification Receipts", catalog["retention_chain_verification_receipts"], ["retention_chain_verification_receipt_id", "retention_chain_record_id", "verification_state", "checked_chain_refs"]))
     lines.extend(_format_table("Retention Lifecycle Records", catalog["retention_lifecycle_records"], ["retention_lifecycle_record_id", "retention_chain_record_id", "lifecycle_state", "lifecycle_refs"]))
     lines.extend(_format_table("Retention Lifecycle Verification Receipts", catalog["retention_lifecycle_verification_receipts"], ["retention_lifecycle_verification_receipt_id", "retention_lifecycle_record_id", "verification_state", "checked_lifecycle_refs"]))
+    lines.extend(_format_table("Retention Lifecycle Closeout Records", catalog["retention_lifecycle_closeout_records"], ["retention_lifecycle_closeout_record_id", "retention_lifecycle_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Ledger Records", catalog["retention_ledger_records"], ["retention_ledger_record_id", "retention_lifecycle_closeout_record_id", "ledger_state", "entry_refs"]))
+    lines.extend(_format_table("Retention Ledger Verification Receipts", catalog["retention_ledger_verification_receipts"], ["retention_ledger_verification_receipt_id", "retention_ledger_record_id", "verification_state", "checked_entry_refs"]))
+    lines.extend(_format_table("Retention Ledger Closeout Records", catalog["retention_ledger_closeout_records"], ["retention_ledger_closeout_record_id", "retention_ledger_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Policy Compliance Records", catalog["retention_policy_compliance_records"], ["retention_policy_compliance_record_id", "retention_ledger_verification_receipt_id", "compliance_state", "compliance_scope"]))
+    lines.extend(_format_table("Retention Policy Compliance Verification Receipts", catalog["retention_policy_compliance_verification_receipts"], ["retention_policy_compliance_verification_receipt_id", "retention_policy_compliance_record_id", "verification_state", "checked_compliance_refs"]))
+    lines.extend(_format_table("Retention Obligation Records", catalog["retention_obligation_records"], ["retention_obligation_record_id", "retention_policy_compliance_verification_receipt_id", "obligation_state", "obligation_scope"]))
+    lines.extend(_format_table("Retention Obligation Verification Receipts", catalog["retention_obligation_verification_receipts"], ["retention_obligation_verification_receipt_id", "retention_obligation_record_id", "verification_state", "checked_obligation_refs"]))
+    lines.extend(_format_table("Retention Schedule Records", catalog["retention_schedule_records"], ["retention_schedule_record_id", "retention_obligation_record_id", "schedule_state", "scheduled_action"]))
+    lines.extend(_format_table("Retention Schedule Verification Receipts", catalog["retention_schedule_verification_receipts"], ["retention_schedule_verification_receipt_id", "retention_schedule_record_id", "verification_state", "checked_schedule_refs"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_obligation_record_id": "retention-obligation-basic-restore-001",
+    "obligation_kind": "continue_preservation_obligation",
+    "created_time": "2026-01-01T00:01:28Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_policy_compliance_verification_receipt_id": "retention-policy-compliance-verification-basic-restore-001",
+    "retention_policy_ref": "retention/retention-policy.json",
+    "obligation_state": "active",
+    "obligation_scope": "verified_retention_ledger",
+    "obligated_refs": [
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention-policy-compliance-basic-restore-001",
+      "retention-ledger-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention-policy-compliance-basic-restore-001",
+      "retention-ledger-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-obligation-ref-list",
+    "obligation_ref_digest": "c1cfa07b90cf78909661572633b7d93796182172446cd74e674da27e588cfede",
+    "recorded_by_ref": "tools/pfem_retention_obligation_records.py",
+    "summary": "Synthetic example retention obligation record capturing the active obligation to continue preserving the verified retention ledger."
+  }
+]

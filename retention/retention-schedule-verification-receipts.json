@@ -1,0 +1,35 @@
+[
+  {
+    "retention_schedule_verification_receipt_id": "retention-schedule-verification-basic-restore-001",
+    "receipt_kind": "retention_schedule_verification",
+    "created_time": "2026-01-01T00:01:31Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_schedule_record_id": "retention-schedule-basic-restore-001",
+    "retention_obligation_verification_receipt_id": "retention-obligation-verification-basic-restore-001",
+    "verification_state": "passed",
+    "checked_schedule_refs": [
+      "retention-obligation-verification-basic-restore-001",
+      "retention-obligation-basic-restore-001",
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-schedule-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001",
+      "retention-obligation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-schedule-ref-list",
+    "expected_schedule_ref_digest": "5ce7acd5e60d0bd778f7fcce44ff829abe28c7cde44ac60cfb4cea83d44b96b1",
+    "actual_schedule_ref_digest": "5ce7acd5e60d0bd778f7fcce44ff829abe28c7cde44ac60cfb4cea83d44b96b1",
+    "verified_by_ref": "tools/pfem_retention_schedule_verification_receipts.py",
+    "summary": "Synthetic example retention schedule verification receipt showing the schedule refs and digest were checked."
+  }
+]

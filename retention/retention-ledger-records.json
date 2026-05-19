@@ -1,0 +1,34 @@
+[
+  {
+    "retention_ledger_record_id": "retention-ledger-basic-restore-001",
+    "ledger_kind": "closed_retention_lifecycle_ledger_entry",
+    "created_time": "2026-01-01T00:01:23Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_lifecycle_closeout_record_id": "retention-lifecycle-closeout-basic-restore-001",
+    "retention_lifecycle_verification_receipt_id": "retention-lifecycle-verification-basic-restore-001",
+    "ledger_state": "recorded",
+    "ledger_sequence": 1,
+    "entry_refs": [
+      "retention-lifecycle-closeout-basic-restore-001",
+      "retention-lifecycle-verification-basic-restore-001",
+      "retention-lifecycle-basic-restore-001",
+      "retention-chain-verification-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-lifecycle-closeout-basic-restore-001",
+      "retention-lifecycle-verification-basic-restore-001",
+      "retention-lifecycle-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-ledger-entry-ref-list",
+    "entry_ref_digest": "5c79059eb3bb54670433ee0acb2d6f7ce8180a5ff9de59225809066bdfcafea1",
+    "recorded_by_ref": "tools/pfem_retention_ledger_records.py",
+    "summary": "Synthetic example retention ledger record summarizing the closed retention lifecycle into a durable ledger entry."
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_ledger_verification_receipt.schema.json",
+  "title": "PFEM Retention Ledger Verification Receipts",
+  "type": "object",
+  "required": [
+    "retention_ledger_verification_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "retention_ledger_record_id",
+    "retention_lifecycle_closeout_record_id",
+    "verification_state",
+    "checked_entry_refs",
+    "checked_subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "expected_entry_ref_digest",
+    "actual_entry_ref_digest",
+    "verified_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_ledger_verification_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_ledger_record_id": {
+      "type": "string"
+    },
+    "retention_lifecycle_closeout_record_id": {
+      "type": "string"
+    },
+    "verification_state": {
+      "type": "string"
+    },
+    "checked_entry_refs": {
+      "type": "array"
+    },
+    "checked_subject_refs": {
+      "type": "array"
+    },
+    "missing_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "expected_entry_ref_digest": {
+      "type": "string"
+    },
+    "actual_entry_ref_digest": {
+      "type": "string"
+    },
+    "verified_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

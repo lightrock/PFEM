@@ -1032,5 +1032,132 @@
     ],
     "summary": "Example retention lifecycle verification receipts was recorded.",
     "source_tool": "pfem_retention_lifecycle_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-lifecycle-closeout-basic-001",
+    "event_kind": "retention_lifecycle_closeout_recorded",
+    "created_time": "2026-01-01T00:01:22Z",
+    "actor_ref": "tools/pfem_retention_lifecycle_closeout_records.py",
+    "subject_refs": [
+      "retention-lifecycle-closeout-basic-restore-001",
+      "retention-lifecycle-verification-basic-restore-001"
+    ],
+    "summary": "Example retention lifecycle closeout records was recorded.",
+    "source_tool": "pfem_retention_lifecycle_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-ledger-basic-001",
+    "event_kind": "retention_ledger_recorded",
+    "created_time": "2026-01-01T00:01:23Z",
+    "actor_ref": "tools/pfem_retention_ledger_records.py",
+    "subject_refs": [
+      "retention-ledger-basic-restore-001",
+      "retention-lifecycle-verification-basic-restore-001",
+      "retention-lifecycle-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention ledger records was recorded.",
+    "source_tool": "pfem_retention_ledger_records"
+  },
+  {
+    "audit_id": "audit-retention-ledger-verification-basic-001",
+    "event_kind": "retention_ledger_verification_recorded",
+    "created_time": "2026-01-01T00:01:24Z",
+    "actor_ref": "tools/pfem_retention_ledger_verification_receipts.py",
+    "subject_refs": [
+      "retention-ledger-verification-basic-restore-001",
+      "retention-lifecycle-closeout-basic-restore-001",
+      "retention-ledger-basic-restore-001"
+    ],
+    "summary": "Example retention ledger verification receipts was recorded.",
+    "source_tool": "pfem_retention_ledger_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-ledger-closeout-basic-001",
+    "event_kind": "retention_ledger_closeout_recorded",
+    "created_time": "2026-01-01T00:01:25Z",
+    "actor_ref": "tools/pfem_retention_ledger_closeout_records.py",
+    "subject_refs": [
+      "retention-ledger-closeout-basic-restore-001",
+      "retention-ledger-basic-restore-001",
+      "retention-ledger-verification-basic-restore-001"
+    ],
+    "summary": "Example retention ledger closeout records was recorded.",
+    "source_tool": "pfem_retention_ledger_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-policy-compliance-basic-001",
+    "event_kind": "retention_policy_compliance_recorded",
+    "created_time": "2026-01-01T00:01:26Z",
+    "actor_ref": "tools/pfem_retention_policy_compliance_records.py",
+    "subject_refs": [
+      "retention-policy-compliance-basic-restore-001",
+      "retention-ledger-verification-basic-restore-001"
+    ],
+    "summary": "Example retention policy compliance records was recorded.",
+    "source_tool": "pfem_retention_policy_compliance_records"
+  },
+  {
+    "audit_id": "audit-retention-policy-compliance-verification-basic-001",
+    "event_kind": "retention_policy_compliance_verification_recorded",
+    "created_time": "2026-01-01T00:01:27Z",
+    "actor_ref": "tools/pfem_retention_policy_compliance_verification_receipts.py",
+    "subject_refs": [
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention-ledger-verification-basic-restore-001",
+      "retention-policy-compliance-basic-restore-001"
+    ],
+    "summary": "Example retention policy compliance verification receipts was recorded.",
+    "source_tool": "pfem_retention_policy_compliance_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-obligation-basic-001",
+    "event_kind": "retention_obligation_recorded",
+    "created_time": "2026-01-01T00:01:28Z",
+    "actor_ref": "tools/pfem_retention_obligation_records.py",
+    "subject_refs": [
+      "retention-obligation-basic-restore-001",
+      "retention-policy-compliance-verification-basic-restore-001"
+    ],
+    "summary": "Example retention obligation records was recorded.",
+    "source_tool": "pfem_retention_obligation_records"
+  },
+  {
+    "audit_id": "audit-retention-obligation-verification-basic-001",
+    "event_kind": "retention_obligation_verification_recorded",
+    "created_time": "2026-01-01T00:01:29Z",
+    "actor_ref": "tools/pfem_retention_obligation_verification_receipts.py",
+    "subject_refs": [
+      "retention-obligation-verification-basic-restore-001",
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention-obligation-basic-restore-001"
+    ],
+    "summary": "Example retention obligation verification receipts was recorded.",
+    "source_tool": "pfem_retention_obligation_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-schedule-basic-001",
+    "event_kind": "retention_schedule_recorded",
+    "created_time": "2026-01-01T00:01:30Z",
+    "actor_ref": "tools/pfem_retention_schedule_records.py",
+    "subject_refs": [
+      "retention-schedule-basic-restore-001",
+      "retention-obligation-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001"
+    ],
+    "summary": "Example retention schedule records was recorded.",
+    "source_tool": "pfem_retention_schedule_records"
+  },
+  {
+    "audit_id": "audit-retention-schedule-verification-basic-001",
+    "event_kind": "retention_schedule_verification_recorded",
+    "created_time": "2026-01-01T00:01:31Z",
+    "actor_ref": "tools/pfem_retention_schedule_verification_receipts.py",
+    "subject_refs": [
+      "retention-schedule-verification-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001",
+      "retention-schedule-basic-restore-001"
+    ],
+    "summary": "Example retention schedule verification receipts was recorded.",
+    "source_tool": "pfem_retention_schedule_verification_receipts"
   }
 ]

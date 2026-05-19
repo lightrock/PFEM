@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_policy_compliance_record.schema.json",
+  "title": "PFEM Retention Policy Compliance Records",
+  "type": "object",
+  "required": [
+    "retention_policy_compliance_record_id",
+    "compliance_kind",
+    "created_time",
+    "node_id",
+    "retention_ledger_verification_receipt_id",
+    "retention_policy_ref",
+    "compliance_state",
+    "compliance_scope",
+    "checked_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "checked_ref_digest",
+    "checked_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_policy_compliance_record_id": {
+      "type": "string"
+    },
+    "compliance_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_ledger_verification_receipt_id": {
+      "type": "string"
+    },
+    "retention_policy_ref": {
+      "type": "string"
+    },
+    "compliance_state": {
+      "type": "string"
+    },
+    "compliance_scope": {
+      "type": "string"
+    },
+    "checked_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "checked_ref_digest": {
+      "type": "string"
+    },
+    "checked_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

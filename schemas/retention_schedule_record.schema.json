@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_schedule_record.schema.json",
+  "title": "PFEM Retention Schedule Records",
+  "type": "object",
+  "required": [
+    "retention_schedule_record_id",
+    "schedule_kind",
+    "created_time",
+    "node_id",
+    "retention_obligation_verification_receipt_id",
+    "retention_obligation_record_id",
+    "schedule_state",
+    "schedule_scope",
+    "scheduled_action",
+    "scheduled_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "schedule_ref_digest",
+    "scheduled_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_schedule_record_id": {
+      "type": "string"
+    },
+    "schedule_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_obligation_verification_receipt_id": {
+      "type": "string"
+    },
+    "retention_obligation_record_id": {
+      "type": "string"
+    },
+    "schedule_state": {
+      "type": "string"
+    },
+    "schedule_scope": {
+      "type": "string"
+    },
+    "scheduled_action": {
+      "type": "string"
+    },
+    "scheduled_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "schedule_ref_digest": {
+      "type": "string"
+    },
+    "scheduled_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

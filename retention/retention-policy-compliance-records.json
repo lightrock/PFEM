@@ -1,0 +1,32 @@
+[
+  {
+    "retention_policy_compliance_record_id": "retention-policy-compliance-basic-restore-001",
+    "compliance_kind": "retention_policy_compliance_check",
+    "created_time": "2026-01-01T00:01:26Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_ledger_verification_receipt_id": "retention-ledger-verification-basic-restore-001",
+    "retention_policy_ref": "retention/retention-policy.json",
+    "compliance_state": "compliant",
+    "compliance_scope": "verified_retention_ledger",
+    "checked_refs": [
+      "retention-ledger-verification-basic-restore-001",
+      "retention-ledger-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-ledger-verification-basic-restore-001",
+      "retention-ledger-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-policy-compliance-ref-list",
+    "checked_ref_digest": "08738d677388c925e33533560bf43d2f0874b492848edc01097edb374ef510d6",
+    "checked_by_ref": "tools/pfem_retention_policy_compliance_records.py",
+    "summary": "Synthetic example retention policy compliance record showing the verified retention ledger is compliant with the retention policy."
+  }
+]
