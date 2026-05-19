@@ -179,6 +179,12 @@
       "purpose": "custody records"
     },
     {
+      "path": "custody/custody-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "82eaf610e89defa407ec45e2272377642c62c1c63a15f3514c3ccc1480166bac",
+      "purpose": "custody verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -259,7 +265,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "7482ab77b3f617fcf38da8fdd24cd98f46116f7eb2b1755b374e742dd3ab3da6",
+      "digest": "db6b55f4457765034499c21c08a190ad1a9d63dec93a85a084db8728529b0833",
       "purpose": "audit journal"
     },
     {
