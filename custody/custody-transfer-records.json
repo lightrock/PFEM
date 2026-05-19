@@ -1,0 +1,34 @@
+[
+  {
+    "custody_transfer_record_id": "custody-transfer-basic-restore-001",
+    "transfer_kind": "custody_location_transfer",
+    "created_time": "2026-01-01T00:00:37Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_record_id": "custody-record-basic-restore-001",
+    "custody_verification_receipt_id": "custody-verification-basic-restore-001",
+    "disposition_receipt_id": "disposition-receipt-basic-restore-001",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "transfer_state": "completed",
+    "from_custodian_ref": "formal-rollup-node-example",
+    "to_custodian_ref": "formal-rollup-node-example",
+    "from_location_ref": "local-repository",
+    "to_location_ref": "local-repository",
+    "from_location_kind": "repository_path",
+    "to_location_kind": "repository_path",
+    "transferred_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "skipped_refs": [],
+    "failed_refs": [],
+    "basis_refs": [
+      "custody-verification-basic-restore-001",
+      "custody-record-basic-restore-001",
+      "disposition-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "transferred_by_ref": "tools/pfem_custody_transfer_records.py",
+    "summary": "Synthetic example custody transfer record showing custody remained with the local repository custodian after verification. This proves transfer structure even when source and destination are the same."
+  }
+]

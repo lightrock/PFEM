@@ -20,6 +20,7 @@ from pfem.disposition_record import format_disposition_record_report, validate_d
 from pfem.disposition_receipt import format_disposition_receipt_report, validate_disposition_receipts
 from pfem.custody_record import format_custody_record_report, validate_custody_records
 from pfem.custody_verification_receipt import format_custody_verification_receipt_report, validate_custody_verification_receipts
+from pfem.custody_transfer_record import format_custody_transfer_record_report, validate_custody_transfer_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -85,6 +86,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("disposition-receipts", "Validate PFEM disposition receipts"),
         ("custody-records", "Validate PFEM custody records"),
         ("custody-verification-receipts", "Validate PFEM custody verification receipts"),
+        ("custody-transfer-records", "Validate PFEM custody transfer records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -159,6 +161,7 @@ def main(argv: list[str] | None = None) -> int:
         "disposition-receipts": (validate_disposition_receipts, format_disposition_receipt_report),
         "custody-records": (validate_custody_records, format_custody_record_report),
         "custody-verification-receipts": (validate_custody_verification_receipts, format_custody_verification_receipt_report),
+        "custody-transfer-records": (validate_custody_transfer_records, format_custody_transfer_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

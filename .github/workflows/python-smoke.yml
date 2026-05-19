@@ -38,6 +38,7 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_disposition_receipts.py
       - run: PYTHONPATH=src python tools/pfem_custody_records.py
       - run: PYTHONPATH=src python tools/pfem_custody_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_custody_transfer_records.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py
