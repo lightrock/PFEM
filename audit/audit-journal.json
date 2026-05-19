@@ -232,5 +232,18 @@
     ],
     "summary": "Example import record was recorded after exchange acceptance.",
     "source_tool": "pfem_import_records"
+  },
+  {
+    "audit_id": "audit-merge-decision-basic-001",
+    "event_kind": "merge_decision_recorded",
+    "created_time": "2026-01-01T00:00:21Z",
+    "actor_ref": "tools/pfem_merge_decisions.py",
+    "subject_refs": [
+      "merge-decision-basic-import-001",
+      "import-record-basic-exchange-001",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "summary": "Example merge decision was recorded after import.",
+    "source_tool": "pfem_merge_decisions"
   }
 ]

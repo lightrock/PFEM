@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/merge_decision.schema.json",
+  "title": "PFEM Merge Decision",
+  "type": "object",
+  "required": [
+    "merge_decision_id",
+    "decision_kind",
+    "created_time",
+    "import_record_id",
+    "exchange_receipt_id",
+    "bundle_id",
+    "decision",
+    "reason_code",
+    "decided_by_ref",
+    "incoming_refs",
+    "basis_refs",
+    "summary"
+  ],
+  "properties": {
+    "merge_decision_id": {
+      "type": "string"
+    },
+    "decision_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "import_record_id": {
+      "type": "string"
+    },
+    "exchange_receipt_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "decided_by_ref": {
+      "type": "string"
+    },
+    "incoming_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "local_target_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resulting_import_state": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

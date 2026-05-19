@@ -89,6 +89,12 @@
       "purpose": "import records"
     },
     {
+      "path": "merge/merge-decisions.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "07f3e47e92038d8b21b653d17643a968a10f345ff4ff48b12f93d7c19d1087e3",
+      "purpose": "merge decisions"
+    },
+    {
       "path": "routing/routing-policy.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "3a373c1d1b2d13eb5e8940e1573829c65495b07b0dbe80b973ed31cd870d5f84",
@@ -163,7 +169,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "8331cdda776ef855449dd38e4ab4fdcfc0e23f06cc881817a00f48250a93d87c",
+      "digest": "87b7de23a1087a1185e797ddbf72c1f57b56326cc33a827f3fd04a04178ba4ff",
       "purpose": "audit journal"
     },
     {
