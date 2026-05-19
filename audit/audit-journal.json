@@ -1677,5 +1677,135 @@
     ],
     "summary": "Example retention terminal status records was recorded.",
     "source_tool": "pfem_retention_terminal_status_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-status-verification-basic-001",
+    "event_kind": "retention_terminal_status_verification_recorded",
+    "created_time": "2026-01-01T00:02:12Z",
+    "actor_ref": "tools/pfem_retention_terminal_status_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-status-verification-basic-restore-001",
+      "retention-terminal-status-basic-restore-001",
+      "retention-finalization-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal status verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_status_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-status-closeout-basic-001",
+    "event_kind": "retention_terminal_status_closeout_recorded",
+    "created_time": "2026-01-01T00:02:13Z",
+    "actor_ref": "tools/pfem_retention_terminal_status_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-status-closeout-basic-restore-001",
+      "retention-terminal-status-basic-restore-001",
+      "retention-terminal-status-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal status closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_status_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-certificate-basic-001",
+    "event_kind": "retention_certificate_recorded",
+    "created_time": "2026-01-01T00:02:14Z",
+    "actor_ref": "tools/pfem_retention_certificate_records.py",
+    "subject_refs": [
+      "retention-certificate-basic-restore-001",
+      "retention-terminal-status-verification-basic-restore-001",
+      "retention-terminal-status-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention certificate records was recorded.",
+    "source_tool": "pfem_retention_certificate_records"
+  },
+  {
+    "audit_id": "audit-retention-certificate-verification-basic-001",
+    "event_kind": "retention_certificate_verification_recorded",
+    "created_time": "2026-01-01T00:02:15Z",
+    "actor_ref": "tools/pfem_retention_certificate_verification_receipts.py",
+    "subject_refs": [
+      "retention-certificate-verification-basic-restore-001",
+      "retention-terminal-status-closeout-basic-restore-001",
+      "retention-certificate-basic-restore-001"
+    ],
+    "summary": "Example retention certificate verification receipts was recorded.",
+    "source_tool": "pfem_retention_certificate_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-certificate-closeout-basic-001",
+    "event_kind": "retention_certificate_closeout_recorded",
+    "created_time": "2026-01-01T00:02:16Z",
+    "actor_ref": "tools/pfem_retention_certificate_closeout_records.py",
+    "subject_refs": [
+      "retention-certificate-closeout-basic-restore-001",
+      "retention-certificate-basic-restore-001",
+      "retention-certificate-verification-basic-restore-001"
+    ],
+    "summary": "Example retention certificate closeout records was recorded.",
+    "source_tool": "pfem_retention_certificate_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-registry-basic-001",
+    "event_kind": "retention_registry_recorded",
+    "created_time": "2026-01-01T00:02:17Z",
+    "actor_ref": "tools/pfem_retention_registry_records.py",
+    "subject_refs": [
+      "retention-registry-basic-restore-001",
+      "retention-certificate-verification-basic-restore-001",
+      "retention-certificate-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention registry records was recorded.",
+    "source_tool": "pfem_retention_registry_records"
+  },
+  {
+    "audit_id": "audit-retention-registry-verification-basic-001",
+    "event_kind": "retention_registry_verification_recorded",
+    "created_time": "2026-01-01T00:02:18Z",
+    "actor_ref": "tools/pfem_retention_registry_verification_receipts.py",
+    "subject_refs": [
+      "retention-registry-verification-basic-restore-001",
+      "retention-certificate-closeout-basic-restore-001",
+      "retention-registry-basic-restore-001"
+    ],
+    "summary": "Example retention registry verification receipts was recorded.",
+    "source_tool": "pfem_retention_registry_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-registry-closeout-basic-001",
+    "event_kind": "retention_registry_closeout_recorded",
+    "created_time": "2026-01-01T00:02:19Z",
+    "actor_ref": "tools/pfem_retention_registry_closeout_records.py",
+    "subject_refs": [
+      "retention-registry-closeout-basic-restore-001",
+      "retention-registry-basic-restore-001",
+      "retention-registry-verification-basic-restore-001"
+    ],
+    "summary": "Example retention registry closeout records was recorded.",
+    "source_tool": "pfem_retention_registry_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-closure-basic-001",
+    "event_kind": "retention_closure_recorded",
+    "created_time": "2026-01-01T00:02:20Z",
+    "actor_ref": "tools/pfem_retention_closure_records.py",
+    "subject_refs": [
+      "retention-closure-basic-restore-001",
+      "retention-certificate-closeout-basic-restore-001",
+      "retention-registry-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention closure records was recorded.",
+    "source_tool": "pfem_retention_closure_records"
+  },
+  {
+    "audit_id": "audit-retention-closure-verification-basic-001",
+    "event_kind": "retention_closure_verification_recorded",
+    "created_time": "2026-01-01T00:02:21Z",
+    "actor_ref": "tools/pfem_retention_closure_verification_receipts.py",
+    "subject_refs": [
+      "retention-closure-verification-basic-restore-001",
+      "retention-registry-closeout-basic-restore-001",
+      "retention-closure-basic-restore-001"
+    ],
+    "summary": "Example retention closure verification receipts was recorded.",
+    "source_tool": "pfem_retention_closure_verification_receipts"
   }
 ]

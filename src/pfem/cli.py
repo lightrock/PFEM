@@ -115,6 +115,16 @@ from pfem.retention_finalization_record import format_retention_finalization_rec
 from pfem.retention_finalization_verification_receipt import format_retention_finalization_verification_receipt_report, validate_retention_finalization_verification_receipts
 from pfem.retention_finalization_closeout_record import format_retention_finalization_closeout_record_report, validate_retention_finalization_closeout_records
 from pfem.retention_terminal_status_record import format_retention_terminal_status_record_report, validate_retention_terminal_status_records
+from pfem.retention_terminal_status_verification_receipt import format_retention_terminal_status_verification_receipt_report, validate_retention_terminal_status_verification_receipts
+from pfem.retention_terminal_status_closeout_record import format_retention_terminal_status_closeout_record_report, validate_retention_terminal_status_closeout_records
+from pfem.retention_certificate_record import format_retention_certificate_record_report, validate_retention_certificate_records
+from pfem.retention_certificate_verification_receipt import format_retention_certificate_verification_receipt_report, validate_retention_certificate_verification_receipts
+from pfem.retention_certificate_closeout_record import format_retention_certificate_closeout_record_report, validate_retention_certificate_closeout_records
+from pfem.retention_registry_record import format_retention_registry_record_report, validate_retention_registry_records
+from pfem.retention_registry_verification_receipt import format_retention_registry_verification_receipt_report, validate_retention_registry_verification_receipts
+from pfem.retention_registry_closeout_record import format_retention_registry_closeout_record_report, validate_retention_registry_closeout_records
+from pfem.retention_closure_record import format_retention_closure_record_report, validate_retention_closure_records
+from pfem.retention_closure_verification_receipt import format_retention_closure_verification_receipt_report, validate_retention_closure_verification_receipts
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -275,6 +285,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-finalization-verification-receipts", "Validate PFEM retention finalization verification receipts"),
         ("retention-finalization-closeout-records", "Validate PFEM retention finalization closeout records"),
         ("retention-terminal-status-records", "Validate PFEM retention terminal status records"),
+        ("retention-terminal-status-verification-receipts", "Validate PFEM retention terminal status verification receipts"),
+        ("retention-terminal-status-closeout-records", "Validate PFEM retention terminal status closeout records"),
+        ("retention-certificate-records", "Validate PFEM retention certificate records"),
+        ("retention-certificate-verification-receipts", "Validate PFEM retention certificate verification receipts"),
+        ("retention-certificate-closeout-records", "Validate PFEM retention certificate closeout records"),
+        ("retention-registry-records", "Validate PFEM retention registry records"),
+        ("retention-registry-verification-receipts", "Validate PFEM retention registry verification receipts"),
+        ("retention-registry-closeout-records", "Validate PFEM retention registry closeout records"),
+        ("retention-closure-records", "Validate PFEM retention closure records"),
+        ("retention-closure-verification-receipts", "Validate PFEM retention closure verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -444,6 +464,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-finalization-verification-receipts": (validate_retention_finalization_verification_receipts, format_retention_finalization_verification_receipt_report),
         "retention-finalization-closeout-records": (validate_retention_finalization_closeout_records, format_retention_finalization_closeout_record_report),
         "retention-terminal-status-records": (validate_retention_terminal_status_records, format_retention_terminal_status_record_report),
+        "retention-terminal-status-verification-receipts": (validate_retention_terminal_status_verification_receipts, format_retention_terminal_status_verification_receipt_report),
+        "retention-terminal-status-closeout-records": (validate_retention_terminal_status_closeout_records, format_retention_terminal_status_closeout_record_report),
+        "retention-certificate-records": (validate_retention_certificate_records, format_retention_certificate_record_report),
+        "retention-certificate-verification-receipts": (validate_retention_certificate_verification_receipts, format_retention_certificate_verification_receipt_report),
+        "retention-certificate-closeout-records": (validate_retention_certificate_closeout_records, format_retention_certificate_closeout_record_report),
+        "retention-registry-records": (validate_retention_registry_records, format_retention_registry_record_report),
+        "retention-registry-verification-receipts": (validate_retention_registry_verification_receipts, format_retention_registry_verification_receipt_report),
+        "retention-registry-closeout-records": (validate_retention_registry_closeout_records, format_retention_registry_closeout_record_report),
+        "retention-closure-records": (validate_retention_closure_records, format_retention_closure_record_report),
+        "retention-closure-verification-receipts": (validate_retention_closure_verification_receipts, format_retention_closure_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

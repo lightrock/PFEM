@@ -611,6 +611,56 @@ python tools\pfem_retention_terminal_status_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention terminal status verification receipt validation...
+python tools\pfem_retention_terminal_status_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal status closeout record validation...
+python tools\pfem_retention_terminal_status_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention certificate record validation...
+python tools\pfem_retention_certificate_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention certificate verification receipt validation...
+python tools\pfem_retention_certificate_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention certificate closeout record validation...
+python tools\pfem_retention_certificate_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention registry record validation...
+python tools\pfem_retention_registry_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention registry verification receipt validation...
+python tools\pfem_retention_registry_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention registry closeout record validation...
+python tools\pfem_retention_registry_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention closure record validation...
+python tools\pfem_retention_closure_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention closure verification receipt validation...
+python tools\pfem_retention_closure_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

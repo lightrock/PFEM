@@ -1,0 +1,36 @@
+[
+  {
+    "retention_certificate_verification_receipt_id": "retention-certificate-verification-basic-restore-001",
+    "receipt_kind": "retention_certificate_verification",
+    "created_time": "2026-01-01T00:02:15Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_certificate_record_id": "retention-certificate-basic-restore-001",
+    "retention_terminal_status_closeout_record_id": "retention-terminal-status-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_certificate_refs": [
+      "retention-terminal-status-closeout-basic-restore-001",
+      "retention-terminal-status-verification-basic-restore-001",
+      "retention-terminal-status-basic-restore-001",
+      "retention-finalization-closeout-basic-restore-001",
+      "retention-package-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-certificate-basic-restore-001",
+      "retention-terminal-status-closeout-basic-restore-001",
+      "retention-terminal-status-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-certificate-ref-list",
+    "expected_certificate_ref_digest": "ca2db44da28ed3042d515736cedc0f0cdf04801781f5a2d5671b4360538a15e2",
+    "actual_certificate_ref_digest": "ca2db44da28ed3042d515736cedc0f0cdf04801781f5a2d5671b4360538a15e2",
+    "verified_by_ref": "tools/pfem_retention_certificate_verification_receipts.py",
+    "summary": "Synthetic example retention certificate verification receipt showing certificate refs and digest were checked."
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_registry_record.schema.json",
+  "title": "PFEM Retention Registry Records",
+  "type": "object",
+  "required": [
+    "retention_registry_record_id",
+    "registry_kind",
+    "created_time",
+    "node_id",
+    "retention_certificate_closeout_record_id",
+    "retention_certificate_verification_receipt_id",
+    "registry_state",
+    "registry_scope",
+    "registered_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "registry_ref_digest",
+    "registered_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_registry_record_id": {
+      "type": "string"
+    },
+    "registry_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_certificate_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_certificate_verification_receipt_id": {
+      "type": "string"
+    },
+    "registry_state": {
+      "type": "string"
+    },
+    "registry_scope": {
+      "type": "string"
+    },
+    "registered_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "registry_ref_digest": {
+      "type": "string"
+    },
+    "registered_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
