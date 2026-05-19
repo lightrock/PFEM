@@ -1,0 +1,34 @@
+[
+  {
+    "custody_ledger_record_id": "custody-ledger-basic-restore-001",
+    "ledger_kind": "closed_custody_chain_ledger_entry",
+    "created_time": "2026-01-01T00:00:42Z",
+    "node_id": "formal-rollup-node-example",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "custody_chain_verification_receipt_id": "custody-chain-verification-basic-restore-001",
+    "custody_chain_record_id": "custody-chain-basic-restore-001",
+    "custody_closeout_record_id": "custody-closeout-basic-restore-001",
+    "ledger_state": "recorded",
+    "ledger_sequence": 1,
+    "entry_refs": [
+      "custody-chain-verification-basic-restore-001",
+      "custody-chain-basic-restore-001",
+      "custody-closeout-basic-restore-001"
+    ],
+    "held_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "basis_refs": [
+      "custody-chain-verification-basic-restore-001",
+      "custody-chain-basic-restore-001",
+      "custody-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-entry-ref-list",
+    "entry_ref_digest": "4d8fb7f9c0b40ced85b75492bf9ef6edb9ad3775a5f9f6275115548e8a283847",
+    "recorded_by_ref": "tools/pfem_custody_ledger_records.py",
+    "summary": "Synthetic example custody ledger record summarizing a verified custody chain segment into a durable ledger entry."
+  }
+]

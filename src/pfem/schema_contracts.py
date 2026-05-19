@@ -48,6 +48,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "custody_closeout_record.schema.json": ["custody/custody-closeout-records.json"],
     "custody_chain_record.schema.json": ["custody/custody-chain-records.json"],
     "custody_chain_verification_receipt.schema.json": ["custody/custody-chain-verification-receipts.json"],
+    "custody_ledger_record.schema.json": ["custody/custody-ledger-records.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

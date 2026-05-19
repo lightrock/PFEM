@@ -518,5 +518,18 @@
     ],
     "summary": "Example custody chain verification receipt was recorded after custody chain record.",
     "source_tool": "pfem_custody_chain_verification_receipts"
+  },
+  {
+    "audit_id": "audit-custody-ledger-basic-001",
+    "event_kind": "custody_ledger_recorded",
+    "created_time": "2026-01-01T00:00:42Z",
+    "actor_ref": "tools/pfem_custody_ledger_records.py",
+    "subject_refs": [
+      "custody-ledger-basic-restore-001",
+      "restore-closeout-basic-state-001",
+      "custody-chain-verification-basic-restore-001"
+    ],
+    "summary": "Example custody ledger records was recorded.",
+    "source_tool": "pfem_custody_ledger_records"
   }
 ]
