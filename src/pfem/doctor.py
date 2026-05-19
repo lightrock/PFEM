@@ -19,6 +19,7 @@ from pfem.dispatch import validate_dispatch_policy
 from pfem.dispatch_decision import validate_dispatch_decisions
 from pfem.disposition_record import validate_disposition_records
 from pfem.disposition_receipt import validate_disposition_receipts
+from pfem.custody_record import validate_custody_records
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -76,6 +77,7 @@ EXPECTED_PATHS = [
     "docs/architecture/restore-closeout-records.md",
     "docs/architecture/disposition-records.md",
     "docs/architecture/disposition-receipts.md",
+    "docs/architecture/custody-records.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -101,6 +103,7 @@ EXPECTED_PATHS = [
     "contracts/restore-closeout-record-contract.md",
     "contracts/disposition-record-contract.md",
     "contracts/disposition-receipt-contract.md",
+    "contracts/custody-record-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -126,6 +129,7 @@ EXPECTED_PATHS = [
     "schemas/restore_closeout_record.schema.json",
     "schemas/disposition_record.schema.json",
     "schemas/disposition_receipt.schema.json",
+    "schemas/custody_record.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -144,6 +148,7 @@ EXPECTED_PATHS = [
     "recovery/README.md", "recovery/recovery-points.json",
     "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json", "restore/restore-receipts.json", "restore/restore-verification-receipts.json", "restore/restore-closeout-records.json",
     "disposition/README.md", "disposition/disposition-records.json", "disposition/disposition-receipts.json",
+    "custody/README.md", "custody/custody-records.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -153,7 +158,7 @@ EXPECTED_PATHS = [
     "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "imports", "conflicts", "merge", "apply", "state", "snapshots", "recovery", "restore", "disposition", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "imports", "conflicts", "merge", "apply", "state", "snapshots", "recovery", "restore", "disposition", "custody", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
 NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "transport", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
@@ -328,6 +333,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_restore_closeout_records(root).failures)
     report.failures.extend(validate_disposition_records(root).failures)
     report.failures.extend(validate_disposition_receipts(root).failures)
+    report.failures.extend(validate_custody_records(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

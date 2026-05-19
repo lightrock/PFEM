@@ -1,0 +1,29 @@
+[
+  {
+    "custody_record_id": "custody-record-basic-restore-001",
+    "custody_kind": "retained_artifact_custody",
+    "created_time": "2026-01-01T00:00:35Z",
+    "node_id": "formal-rollup-node-example",
+    "disposition_receipt_id": "disposition-receipt-basic-restore-001",
+    "disposition_record_id": "disposition-record-basic-restore-001",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "custody_state": "active",
+    "custodian_ref": "formal-rollup-node-example",
+    "custody_location_ref": "local-repository",
+    "custody_location_kind": "repository_path",
+    "custody_scope": "closed_workflow_artifacts",
+    "held_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "basis_refs": [
+      "disposition-receipt-basic-restore-001",
+      "disposition-record-basic-restore-001",
+      "restore-closeout-basic-state-001",
+      "retention/retention-policy.json"
+    ],
+    "recorded_by_ref": "tools/pfem_custody_records.py",
+    "summary": "Synthetic example custody record showing where the retained restore workflow artifacts are held after disposition actions completed."
+  }
+]

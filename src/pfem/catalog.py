@@ -18,6 +18,7 @@ from pfem.dispatch import load_dispatch_policy
 from pfem.dispatch_decision import load_dispatch_decisions
 from pfem.disposition_record import load_disposition_records
 from pfem.disposition_receipt import load_disposition_receipts
+from pfem.custody_record import load_custody_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -224,6 +225,11 @@ def _disposition_receipt_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"disposition_receipt_id": r.disposition_receipt_id, "disposition_record_id": r.disposition_record_id, "receipt_state": r.receipt_state, "executed_actions": len(r.executed_actions)} for r in load_disposition_receipts(p)]
 
 
+def _custody_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "custody" / "custody-records.json"
+    return [] if not p.exists() else [{"custody_record_id": r.custody_record_id, "disposition_receipt_id": r.disposition_receipt_id, "custody_state": r.custody_state, "custody_location_kind": r.custody_location_kind} for r in load_custody_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -323,6 +329,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "restore_closeout_records": _restore_closeout_record_rows(root),
         "disposition_records": _disposition_record_rows(root),
         "disposition_receipts": _disposition_receipt_rows(root),
+        "custody_records": _custody_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -379,6 +386,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('restore_closeout_records', 0)} restore closeout records, "
         f"{counts.get('disposition_records', 0)} disposition records, "
         f"{counts.get('disposition_receipts', 0)} disposition receipts, "
+        f"{counts.get('custody_records', 0)} custody records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -421,6 +429,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Restore Closeout Records", catalog["restore_closeout_records"], ["restore_closeout_record_id", "restore_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Disposition Records", catalog["disposition_records"], ["disposition_record_id", "source_closeout_ref", "disposition_state", "actions"]))
     lines.extend(_format_table("Disposition Receipts", catalog["disposition_receipts"], ["disposition_receipt_id", "disposition_record_id", "receipt_state", "executed_actions"]))
+    lines.extend(_format_table("Custody Records", catalog["custody_records"], ["custody_record_id", "disposition_receipt_id", "custody_state", "custody_location_kind"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

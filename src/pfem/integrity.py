@@ -42,6 +42,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("restore/restore-closeout-records.json", "restore closeout records"),
     ("disposition/disposition-records.json", "disposition records"),
     ("disposition/disposition-receipts.json", "disposition receipts"),
+    ("custody/custody-records.json", "custody records"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
