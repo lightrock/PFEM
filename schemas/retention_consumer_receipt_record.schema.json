@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_consumer_receipt_record.schema.json",
+  "title": "PFEM Retention Consumer Receipt Records",
+  "type": "object",
+  "required": [
+    "retention_consumer_receipt_record_id",
+    "consumer_receipt_kind",
+    "created_time",
+    "node_id",
+    "retention_retrieval_token_closeout_record_id",
+    "retention_retrieval_token_verification_receipt_id",
+    "consumer_receipt_state",
+    "consumer_receipt_scope",
+    "consumer_receipt_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "consumer_receipt_ref_digest",
+    "consumer_receipt_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_consumer_receipt_record_id": {
+      "type": "string"
+    },
+    "consumer_receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_retrieval_token_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_retrieval_token_verification_receipt_id": {
+      "type": "string"
+    },
+    "consumer_receipt_state": {
+      "type": "string"
+    },
+    "consumer_receipt_scope": {
+      "type": "string"
+    },
+    "consumer_receipt_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "consumer_receipt_ref_digest": {
+      "type": "string"
+    },
+    "consumer_receipt_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

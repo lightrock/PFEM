@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_access_grant_record.schema.json",
+  "title": "PFEM Retention Access Grant Records",
+  "type": "object",
+  "required": [
+    "retention_access_grant_record_id",
+    "access_grant_kind",
+    "created_time",
+    "node_id",
+    "retention_access_publication_closeout_record_id",
+    "retention_access_publication_verification_receipt_id",
+    "access_grant_state",
+    "access_grant_scope",
+    "access_grant_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "access_grant_ref_digest",
+    "access_grant_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_access_grant_record_id": {
+      "type": "string"
+    },
+    "access_grant_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_access_publication_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_access_publication_verification_receipt_id": {
+      "type": "string"
+    },
+    "access_grant_state": {
+      "type": "string"
+    },
+    "access_grant_scope": {
+      "type": "string"
+    },
+    "access_grant_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "access_grant_ref_digest": {
+      "type": "string"
+    },
+    "access_grant_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

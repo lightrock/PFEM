@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_retrieval_token_record.schema.json",
+  "title": "PFEM Retention Retrieval Token Records",
+  "type": "object",
+  "required": [
+    "retention_retrieval_token_record_id",
+    "retrieval_token_kind",
+    "created_time",
+    "node_id",
+    "retention_retrieval_endpoint_closeout_record_id",
+    "retention_retrieval_endpoint_verification_receipt_id",
+    "retrieval_token_state",
+    "retrieval_token_scope",
+    "retrieval_token_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "retrieval_token_ref_digest",
+    "retrieval_token_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_retrieval_token_record_id": {
+      "type": "string"
+    },
+    "retrieval_token_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_retrieval_endpoint_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_retrieval_endpoint_verification_receipt_id": {
+      "type": "string"
+    },
+    "retrieval_token_state": {
+      "type": "string"
+    },
+    "retrieval_token_scope": {
+      "type": "string"
+    },
+    "retrieval_token_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "retrieval_token_ref_digest": {
+      "type": "string"
+    },
+    "retrieval_token_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

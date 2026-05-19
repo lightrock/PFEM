@@ -1,0 +1,34 @@
+[
+  {
+    "retention_retrieval_endpoint_record_id": "retention-retrieval-endpoint-basic-restore-001",
+    "retrieval_endpoint_kind": "retention_retrieval_endpoint",
+    "created_time": "2026-01-01T00:03:23Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_retrieval_catalog_closeout_record_id": "retention-retrieval-catalog-closeout-basic-restore-001",
+    "retention_retrieval_catalog_verification_receipt_id": "retention-retrieval-catalog-verification-basic-restore-001",
+    "retrieval_endpoint_state": "available",
+    "retrieval_endpoint_scope": "closed_retention_retrieval_catalog",
+    "retrieval_endpoint_refs": [
+      "retention-retrieval-catalog-closeout-basic-restore-001",
+      "retention-retrieval-catalog-verification-basic-restore-001",
+      "retention-retrieval-catalog-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-retrieval-catalog-closeout-basic-restore-001",
+      "retention-retrieval-catalog-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-retrieval-endpoint-ref-list",
+    "retrieval_endpoint_ref_digest": "e77afc3116f85ab974a4802a4cae1a7b769c48ca010d748f1886adda05ddce0f",
+    "retrieval_endpoint_by_ref": "tools/pfem_retention_retrieval_endpoint_records.py",
+    "summary": "Synthetic example retention retrieval endpoint record built from the closed retention retrieval catalog path."
+  }
+]

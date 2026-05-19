@@ -1,0 +1,35 @@
+[
+  {
+    "retention_public_record_index_verification_receipt_id": "retention-public-record-index-verification-basic-restore-001",
+    "receipt_kind": "retention_public_record_index_verification",
+    "created_time": "2026-01-01T00:03:54Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_public_record_index_record_id": "retention-public-record-index-basic-restore-001",
+    "retention_release_closeout_summary_closeout_record_id": "retention-release-closeout-summary-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_public_record_index_refs": [
+      "retention-release-closeout-summary-closeout-basic-restore-001",
+      "retention-release-closeout-summary-verification-basic-restore-001",
+      "retention-release-closeout-summary-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-public-record-index-basic-restore-001",
+      "retention-release-closeout-summary-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-public-record-index-ref-list",
+    "expected_public_record_index_ref_digest": "e19c16d6c21953e6319f13daf49e4ad1584a76cdcd4c24552c5faa691964d77d",
+    "actual_public_record_index_ref_digest": "e19c16d6c21953e6319f13daf49e4ad1584a76cdcd4c24552c5faa691964d77d",
+    "verified_by_ref": "tools/pfem_retention_public_record_index_verification_receipts.py",
+    "summary": "Synthetic example retention public record index verification receipt showing refs and digest were checked."
+  }
+]

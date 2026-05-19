@@ -1,0 +1,34 @@
+[
+  {
+    "retention_distribution_receipt_record_id": "retention-distribution-receipt-basic-restore-001",
+    "distribution_receipt_kind": "retention_distribution_receipt",
+    "created_time": "2026-01-01T00:03:35Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_publication_rollup_closeout_record_id": "retention-publication-rollup-closeout-basic-restore-001",
+    "retention_publication_rollup_verification_receipt_id": "retention-publication-rollup-verification-basic-restore-001",
+    "distribution_receipt_state": "acknowledged",
+    "distribution_receipt_scope": "closed_retention_publication_rollup",
+    "distribution_receipt_refs": [
+      "retention-publication-rollup-closeout-basic-restore-001",
+      "retention-publication-rollup-verification-basic-restore-001",
+      "retention-publication-rollup-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-publication-rollup-closeout-basic-restore-001",
+      "retention-publication-rollup-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-distribution-receipt-ref-list",
+    "distribution_receipt_ref_digest": "c75c7c5d62df3ac7194a526bbcfc2ab194c3da9a1b283a3bf22671d6f6465043",
+    "distribution_receipt_by_ref": "tools/pfem_retention_distribution_receipt_records.py",
+    "summary": "Synthetic example retention distribution receipt record built from the closed retention publication rollup path."
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_publication_rollup_record_id": "retention-publication-rollup-basic-restore-001",
+    "publication_rollup_kind": "retention_publication_rollup",
+    "created_time": "2026-01-01T00:03:32Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_consumer_receipt_closeout_record_id": "retention-consumer-receipt-closeout-basic-restore-001",
+    "retention_consumer_receipt_verification_receipt_id": "retention-consumer-receipt-verification-basic-restore-001",
+    "publication_rollup_state": "summarized",
+    "publication_rollup_scope": "closed_retention_consumer_receipt",
+    "publication_rollup_refs": [
+      "retention-consumer-receipt-closeout-basic-restore-001",
+      "retention-consumer-receipt-verification-basic-restore-001",
+      "retention-consumer-receipt-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-consumer-receipt-closeout-basic-restore-001",
+      "retention-consumer-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-publication-rollup-ref-list",
+    "publication_rollup_ref_digest": "24bcec773262f4bc598149da0b49d1fdbe1134830109f65a21552b6848e9456e",
+    "publication_rollup_by_ref": "tools/pfem_retention_publication_rollup_records.py",
+    "summary": "Synthetic example retention publication rollup record built from the closed retention consumer receipt path."
+  }
+]

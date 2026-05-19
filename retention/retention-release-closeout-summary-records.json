@@ -1,0 +1,34 @@
+[
+  {
+    "retention_release_closeout_summary_record_id": "retention-release-closeout-summary-basic-restore-001",
+    "release_closeout_summary_kind": "retention_release_closeout_summary",
+    "created_time": "2026-01-01T00:03:50Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_retention_exposure_report_closeout_record_id": "retention-retention-exposure-report-closeout-basic-restore-001",
+    "retention_retention_exposure_report_verification_receipt_id": "retention-retention-exposure-report-verification-basic-restore-001",
+    "release_closeout_summary_state": "summarized",
+    "release_closeout_summary_scope": "closed_retention_retention_exposure_report",
+    "release_closeout_summary_refs": [
+      "retention-retention-exposure-report-closeout-basic-restore-001",
+      "retention-retention-exposure-report-verification-basic-restore-001",
+      "retention-retention-exposure-report-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-retention-exposure-report-closeout-basic-restore-001",
+      "retention-retention-exposure-report-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-closeout-summary-ref-list",
+    "release_closeout_summary_ref_digest": "cd64bad520b66a917873a642ba528130e0c550d925d6d205c216903fcaf2b507",
+    "release_closeout_summary_by_ref": "tools/pfem_retention_release_closeout_summary_records.py",
+    "summary": "Synthetic example retention release closeout summary record built from the closed retention retention exposure report path."
+  }
+]

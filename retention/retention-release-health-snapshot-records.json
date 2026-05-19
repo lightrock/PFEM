@@ -1,0 +1,34 @@
+[
+  {
+    "retention_release_health_snapshot_record_id": "retention-release-health-snapshot-basic-restore-001",
+    "release_health_snapshot_kind": "retention_release_health_snapshot",
+    "created_time": "2026-01-01T00:03:41Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_access_audit_snapshot_closeout_record_id": "retention-access-audit-snapshot-closeout-basic-restore-001",
+    "retention_access_audit_snapshot_verification_receipt_id": "retention-access-audit-snapshot-verification-basic-restore-001",
+    "release_health_snapshot_state": "recorded",
+    "release_health_snapshot_scope": "closed_retention_access_audit_snapshot",
+    "release_health_snapshot_refs": [
+      "retention-access-audit-snapshot-closeout-basic-restore-001",
+      "retention-access-audit-snapshot-verification-basic-restore-001",
+      "retention-access-audit-snapshot-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-access-audit-snapshot-closeout-basic-restore-001",
+      "retention-access-audit-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-health-snapshot-ref-list",
+    "release_health_snapshot_ref_digest": "acde87fc4e2fa6bbf8379801bcbf9678eb75abb388a364198d0f62f74c12b7bd",
+    "release_health_snapshot_by_ref": "tools/pfem_retention_release_health_snapshot_records.py",
+    "summary": "Synthetic example retention release health snapshot record built from the closed retention access audit snapshot path."
+  }
+]

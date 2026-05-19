@@ -1,0 +1,34 @@
+[
+  {
+    "retention_release_usage_summary_record_id": "retention-release-usage-summary-basic-restore-001",
+    "release_usage_summary_kind": "retention_release_usage_summary",
+    "created_time": "2026-01-01T00:03:44Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_health_snapshot_closeout_record_id": "retention-release-health-snapshot-closeout-basic-restore-001",
+    "retention_release_health_snapshot_verification_receipt_id": "retention-release-health-snapshot-verification-basic-restore-001",
+    "release_usage_summary_state": "summarized",
+    "release_usage_summary_scope": "closed_retention_release_health_snapshot",
+    "release_usage_summary_refs": [
+      "retention-release-health-snapshot-closeout-basic-restore-001",
+      "retention-release-health-snapshot-verification-basic-restore-001",
+      "retention-release-health-snapshot-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-release-health-snapshot-closeout-basic-restore-001",
+      "retention-release-health-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-usage-summary-ref-list",
+    "release_usage_summary_ref_digest": "f20b7f0a23e03d5b14f06918b2a46cbc16ea0e1ce5be6bce79f91b0cfdd36466",
+    "release_usage_summary_by_ref": "tools/pfem_retention_release_usage_summary_records.py",
+    "summary": "Synthetic example retention release usage summary record built from the closed retention release health snapshot path."
+  }
+]

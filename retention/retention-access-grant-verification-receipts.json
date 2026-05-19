@@ -1,0 +1,35 @@
+[
+  {
+    "retention_access_grant_verification_receipt_id": "retention-access-grant-verification-basic-restore-001",
+    "receipt_kind": "retention_access_grant_verification",
+    "created_time": "2026-01-01T00:03:15Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_access_grant_record_id": "retention-access-grant-basic-restore-001",
+    "retention_access_publication_closeout_record_id": "retention-access-publication-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_access_grant_refs": [
+      "retention-access-publication-closeout-basic-restore-001",
+      "retention-access-publication-verification-basic-restore-001",
+      "retention-access-publication-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-access-grant-basic-restore-001",
+      "retention-access-publication-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-access-grant-ref-list",
+    "expected_access_grant_ref_digest": "ac74bb1060ac0bcac45fd9d76201a58816ef1f7669644eb7024d9c5e934cc8ef",
+    "actual_access_grant_ref_digest": "ac74bb1060ac0bcac45fd9d76201a58816ef1f7669644eb7024d9c5e934cc8ef",
+    "verified_by_ref": "tools/pfem_retention_access_grant_verification_receipts.py",
+    "summary": "Synthetic example retention access grant verification receipt showing refs and digest were checked."
+  }
+]

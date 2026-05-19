@@ -1,0 +1,35 @@
+[
+  {
+    "retention_access_ledger_verification_receipt_id": "retention-access-ledger-verification-basic-restore-001",
+    "receipt_kind": "retention_access_ledger_verification",
+    "created_time": "2026-01-01T00:03:18Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_access_ledger_record_id": "retention-access-ledger-basic-restore-001",
+    "retention_access_grant_closeout_record_id": "retention-access-grant-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_access_ledger_refs": [
+      "retention-access-grant-closeout-basic-restore-001",
+      "retention-access-grant-verification-basic-restore-001",
+      "retention-access-grant-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-access-ledger-basic-restore-001",
+      "retention-access-grant-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-access-ledger-ref-list",
+    "expected_access_ledger_ref_digest": "7d1375b8b37ae65b6b44b4caecadc6e3657d22a46bf7a1c9ea4923d284d430d3",
+    "actual_access_ledger_ref_digest": "7d1375b8b37ae65b6b44b4caecadc6e3657d22a46bf7a1c9ea4923d284d430d3",
+    "verified_by_ref": "tools/pfem_retention_access_ledger_verification_receipts.py",
+    "summary": "Synthetic example retention access ledger verification receipt showing refs and digest were checked."
+  }
+]

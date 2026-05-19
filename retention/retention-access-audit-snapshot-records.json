@@ -1,0 +1,34 @@
+[
+  {
+    "retention_access_audit_snapshot_record_id": "retention-access-audit-snapshot-basic-restore-001",
+    "access_audit_snapshot_kind": "retention_access_audit_snapshot",
+    "created_time": "2026-01-01T00:03:38Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_distribution_receipt_closeout_record_id": "retention-distribution-receipt-closeout-basic-restore-001",
+    "retention_distribution_receipt_verification_receipt_id": "retention-distribution-receipt-verification-basic-restore-001",
+    "access_audit_snapshot_state": "recorded",
+    "access_audit_snapshot_scope": "closed_retention_distribution_receipt",
+    "access_audit_snapshot_refs": [
+      "retention-distribution-receipt-closeout-basic-restore-001",
+      "retention-distribution-receipt-verification-basic-restore-001",
+      "retention-distribution-receipt-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-distribution-receipt-closeout-basic-restore-001",
+      "retention-distribution-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-access-audit-snapshot-ref-list",
+    "access_audit_snapshot_ref_digest": "88520cbf389ea6707b669834a016afd01eed956a366585fdf8cc138cb729ab57",
+    "access_audit_snapshot_by_ref": "tools/pfem_retention_access_audit_snapshot_records.py",
+    "summary": "Synthetic example retention access audit snapshot record built from the closed retention distribution receipt path."
+  }
+]

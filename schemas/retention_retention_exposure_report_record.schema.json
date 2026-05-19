@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_retention_exposure_report_record.schema.json",
+  "title": "PFEM Retention Retention Exposure Report Records",
+  "type": "object",
+  "required": [
+    "retention_retention_exposure_report_record_id",
+    "retention_exposure_report_kind",
+    "created_time",
+    "node_id",
+    "retention_release_usage_summary_closeout_record_id",
+    "retention_release_usage_summary_verification_receipt_id",
+    "retention_exposure_report_state",
+    "retention_exposure_report_scope",
+    "retention_exposure_report_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "retention_exposure_report_ref_digest",
+    "retention_exposure_report_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_retention_exposure_report_record_id": {
+      "type": "string"
+    },
+    "retention_exposure_report_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_release_usage_summary_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_release_usage_summary_verification_receipt_id": {
+      "type": "string"
+    },
+    "retention_exposure_report_state": {
+      "type": "string"
+    },
+    "retention_exposure_report_scope": {
+      "type": "string"
+    },
+    "retention_exposure_report_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "retention_exposure_report_ref_digest": {
+      "type": "string"
+    },
+    "retention_exposure_report_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

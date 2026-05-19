@@ -1,0 +1,34 @@
+[
+  {
+    "retention_public_record_index_record_id": "retention-public-record-index-basic-restore-001",
+    "public_record_index_kind": "retention_public_record_index",
+    "created_time": "2026-01-01T00:03:53Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_closeout_summary_closeout_record_id": "retention-release-closeout-summary-closeout-basic-restore-001",
+    "retention_release_closeout_summary_verification_receipt_id": "retention-release-closeout-summary-verification-basic-restore-001",
+    "public_record_index_state": "indexed",
+    "public_record_index_scope": "closed_retention_release_closeout_summary",
+    "public_record_index_refs": [
+      "retention-release-closeout-summary-closeout-basic-restore-001",
+      "retention-release-closeout-summary-verification-basic-restore-001",
+      "retention-release-closeout-summary-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-release-closeout-summary-closeout-basic-restore-001",
+      "retention-release-closeout-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-public-record-index-ref-list",
+    "public_record_index_ref_digest": "e19c16d6c21953e6319f13daf49e4ad1584a76cdcd4c24552c5faa691964d77d",
+    "public_record_index_by_ref": "tools/pfem_retention_public_record_index_records.py",
+    "summary": "Synthetic example retention public record index record built from the closed retention release closeout summary path."
+  }
+]

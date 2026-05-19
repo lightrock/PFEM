@@ -175,6 +175,56 @@ from pfem.retention_distribution_manifest_record import load_retention_distribut
 from pfem.retention_distribution_manifest_verification_receipt import load_retention_distribution_manifest_verification_receipts
 from pfem.retention_distribution_manifest_closeout_record import load_retention_distribution_manifest_closeout_records
 from pfem.retention_access_publication_record import load_retention_access_publication_records
+from pfem.retention_access_publication_verification_receipt import load_retention_access_publication_verification_receipts
+from pfem.retention_access_publication_closeout_record import load_retention_access_publication_closeout_records
+from pfem.retention_access_grant_record import load_retention_access_grant_records
+from pfem.retention_access_grant_verification_receipt import load_retention_access_grant_verification_receipts
+from pfem.retention_access_grant_closeout_record import load_retention_access_grant_closeout_records
+from pfem.retention_access_ledger_record import load_retention_access_ledger_records
+from pfem.retention_access_ledger_verification_receipt import load_retention_access_ledger_verification_receipts
+from pfem.retention_access_ledger_closeout_record import load_retention_access_ledger_closeout_records
+from pfem.retention_retrieval_catalog_record import load_retention_retrieval_catalog_records
+from pfem.retention_retrieval_catalog_verification_receipt import load_retention_retrieval_catalog_verification_receipts
+from pfem.retention_retrieval_catalog_closeout_record import load_retention_retrieval_catalog_closeout_records
+from pfem.retention_retrieval_endpoint_record import load_retention_retrieval_endpoint_records
+from pfem.retention_retrieval_endpoint_verification_receipt import load_retention_retrieval_endpoint_verification_receipts
+from pfem.retention_retrieval_endpoint_closeout_record import load_retention_retrieval_endpoint_closeout_records
+from pfem.retention_retrieval_token_record import load_retention_retrieval_token_records
+from pfem.retention_retrieval_token_verification_receipt import load_retention_retrieval_token_verification_receipts
+from pfem.retention_retrieval_token_closeout_record import load_retention_retrieval_token_closeout_records
+from pfem.retention_consumer_receipt_record import load_retention_consumer_receipt_records
+from pfem.retention_consumer_receipt_verification_receipt import load_retention_consumer_receipt_verification_receipts
+from pfem.retention_consumer_receipt_closeout_record import load_retention_consumer_receipt_closeout_records
+from pfem.retention_publication_rollup_record import load_retention_publication_rollup_records
+from pfem.retention_publication_rollup_verification_receipt import load_retention_publication_rollup_verification_receipts
+from pfem.retention_publication_rollup_closeout_record import load_retention_publication_rollup_closeout_records
+from pfem.retention_distribution_receipt_record import load_retention_distribution_receipt_records
+from pfem.retention_distribution_receipt_verification_receipt import load_retention_distribution_receipt_verification_receipts
+from pfem.retention_distribution_receipt_closeout_record import load_retention_distribution_receipt_closeout_records
+from pfem.retention_access_audit_snapshot_record import load_retention_access_audit_snapshot_records
+from pfem.retention_access_audit_snapshot_verification_receipt import load_retention_access_audit_snapshot_verification_receipts
+from pfem.retention_access_audit_snapshot_closeout_record import load_retention_access_audit_snapshot_closeout_records
+from pfem.retention_release_health_snapshot_record import load_retention_release_health_snapshot_records
+from pfem.retention_release_health_snapshot_verification_receipt import load_retention_release_health_snapshot_verification_receipts
+from pfem.retention_release_health_snapshot_closeout_record import load_retention_release_health_snapshot_closeout_records
+from pfem.retention_release_usage_summary_record import load_retention_release_usage_summary_records
+from pfem.retention_release_usage_summary_verification_receipt import load_retention_release_usage_summary_verification_receipts
+from pfem.retention_release_usage_summary_closeout_record import load_retention_release_usage_summary_closeout_records
+from pfem.retention_retention_exposure_report_record import load_retention_retention_exposure_report_records
+from pfem.retention_retention_exposure_report_verification_receipt import load_retention_retention_exposure_report_verification_receipts
+from pfem.retention_retention_exposure_report_closeout_record import load_retention_retention_exposure_report_closeout_records
+from pfem.retention_release_closeout_summary_record import load_retention_release_closeout_summary_records
+from pfem.retention_release_closeout_summary_verification_receipt import load_retention_release_closeout_summary_verification_receipts
+from pfem.retention_release_closeout_summary_closeout_record import load_retention_release_closeout_summary_closeout_records
+from pfem.retention_public_record_index_record import load_retention_public_record_index_records
+from pfem.retention_public_record_index_verification_receipt import load_retention_public_record_index_verification_receipts
+from pfem.retention_public_record_index_closeout_record import load_retention_public_record_index_closeout_records
+from pfem.retention_final_release_bundle_record import load_retention_final_release_bundle_records
+from pfem.retention_final_release_bundle_verification_receipt import load_retention_final_release_bundle_verification_receipts
+from pfem.retention_final_release_bundle_closeout_record import load_retention_final_release_bundle_closeout_records
+from pfem.retention_terminal_access_notice_record import load_retention_terminal_access_notice_records
+from pfem.retention_terminal_access_notice_verification_receipt import load_retention_terminal_access_notice_verification_receipts
+from pfem.retention_terminal_access_notice_closeout_record import load_retention_terminal_access_notice_closeout_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -1166,6 +1216,256 @@ def _retention_access_publication_record_rows(root: Path) -> list[dict[str, Any]
     return [] if not p.exists() else [{"retention_access_publication_record_id": r["retention_access_publication_record_id"], "retention_distribution_manifest_closeout_record_id": r["retention_distribution_manifest_closeout_record_id"], "access_publication_state": r["access_publication_state"], "access_publication_scope": r["access_publication_scope"]} for r in load_retention_access_publication_records(p)]
 
 
+def _retention_access_publication_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-publication-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_access_publication_verification_receipt_id": r["retention_access_publication_verification_receipt_id"], "retention_access_publication_record_id": r["retention_access_publication_record_id"], "verification_state": r["verification_state"], "checked_access_publication_refs": len(r["checked_access_publication_refs"])} for r in load_retention_access_publication_verification_receipts(p)]
+
+
+def _retention_access_publication_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-publication-closeout-records.json"
+    return [] if not p.exists() else [{"retention_access_publication_closeout_record_id": r["retention_access_publication_closeout_record_id"], "retention_access_publication_verification_receipt_id": r["retention_access_publication_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_access_publication_closeout_records(p)]
+
+
+def _retention_access_grant_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-grant-records.json"
+    return [] if not p.exists() else [{"retention_access_grant_record_id": r["retention_access_grant_record_id"], "retention_access_publication_closeout_record_id": r["retention_access_publication_closeout_record_id"], "access_grant_state": r["access_grant_state"], "access_grant_scope": r["access_grant_scope"]} for r in load_retention_access_grant_records(p)]
+
+
+def _retention_access_grant_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-grant-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_access_grant_verification_receipt_id": r["retention_access_grant_verification_receipt_id"], "retention_access_grant_record_id": r["retention_access_grant_record_id"], "verification_state": r["verification_state"], "checked_access_grant_refs": len(r["checked_access_grant_refs"])} for r in load_retention_access_grant_verification_receipts(p)]
+
+
+def _retention_access_grant_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-grant-closeout-records.json"
+    return [] if not p.exists() else [{"retention_access_grant_closeout_record_id": r["retention_access_grant_closeout_record_id"], "retention_access_grant_verification_receipt_id": r["retention_access_grant_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_access_grant_closeout_records(p)]
+
+
+def _retention_access_ledger_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-ledger-records.json"
+    return [] if not p.exists() else [{"retention_access_ledger_record_id": r["retention_access_ledger_record_id"], "retention_access_grant_closeout_record_id": r["retention_access_grant_closeout_record_id"], "access_ledger_state": r["access_ledger_state"], "access_ledger_scope": r["access_ledger_scope"]} for r in load_retention_access_ledger_records(p)]
+
+
+def _retention_access_ledger_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-ledger-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_access_ledger_verification_receipt_id": r["retention_access_ledger_verification_receipt_id"], "retention_access_ledger_record_id": r["retention_access_ledger_record_id"], "verification_state": r["verification_state"], "checked_access_ledger_refs": len(r["checked_access_ledger_refs"])} for r in load_retention_access_ledger_verification_receipts(p)]
+
+
+def _retention_access_ledger_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-ledger-closeout-records.json"
+    return [] if not p.exists() else [{"retention_access_ledger_closeout_record_id": r["retention_access_ledger_closeout_record_id"], "retention_access_ledger_verification_receipt_id": r["retention_access_ledger_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_access_ledger_closeout_records(p)]
+
+
+def _retention_retrieval_catalog_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-catalog-records.json"
+    return [] if not p.exists() else [{"retention_retrieval_catalog_record_id": r["retention_retrieval_catalog_record_id"], "retention_access_ledger_closeout_record_id": r["retention_access_ledger_closeout_record_id"], "retrieval_catalog_state": r["retrieval_catalog_state"], "retrieval_catalog_scope": r["retrieval_catalog_scope"]} for r in load_retention_retrieval_catalog_records(p)]
+
+
+def _retention_retrieval_catalog_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-catalog-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_retrieval_catalog_verification_receipt_id": r["retention_retrieval_catalog_verification_receipt_id"], "retention_retrieval_catalog_record_id": r["retention_retrieval_catalog_record_id"], "verification_state": r["verification_state"], "checked_retrieval_catalog_refs": len(r["checked_retrieval_catalog_refs"])} for r in load_retention_retrieval_catalog_verification_receipts(p)]
+
+
+def _retention_retrieval_catalog_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-catalog-closeout-records.json"
+    return [] if not p.exists() else [{"retention_retrieval_catalog_closeout_record_id": r["retention_retrieval_catalog_closeout_record_id"], "retention_retrieval_catalog_verification_receipt_id": r["retention_retrieval_catalog_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_retrieval_catalog_closeout_records(p)]
+
+
+def _retention_retrieval_endpoint_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-endpoint-records.json"
+    return [] if not p.exists() else [{"retention_retrieval_endpoint_record_id": r["retention_retrieval_endpoint_record_id"], "retention_retrieval_catalog_closeout_record_id": r["retention_retrieval_catalog_closeout_record_id"], "retrieval_endpoint_state": r["retrieval_endpoint_state"], "retrieval_endpoint_scope": r["retrieval_endpoint_scope"]} for r in load_retention_retrieval_endpoint_records(p)]
+
+
+def _retention_retrieval_endpoint_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-endpoint-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_retrieval_endpoint_verification_receipt_id": r["retention_retrieval_endpoint_verification_receipt_id"], "retention_retrieval_endpoint_record_id": r["retention_retrieval_endpoint_record_id"], "verification_state": r["verification_state"], "checked_retrieval_endpoint_refs": len(r["checked_retrieval_endpoint_refs"])} for r in load_retention_retrieval_endpoint_verification_receipts(p)]
+
+
+def _retention_retrieval_endpoint_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-endpoint-closeout-records.json"
+    return [] if not p.exists() else [{"retention_retrieval_endpoint_closeout_record_id": r["retention_retrieval_endpoint_closeout_record_id"], "retention_retrieval_endpoint_verification_receipt_id": r["retention_retrieval_endpoint_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_retrieval_endpoint_closeout_records(p)]
+
+
+def _retention_retrieval_token_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-token-records.json"
+    return [] if not p.exists() else [{"retention_retrieval_token_record_id": r["retention_retrieval_token_record_id"], "retention_retrieval_endpoint_closeout_record_id": r["retention_retrieval_endpoint_closeout_record_id"], "retrieval_token_state": r["retrieval_token_state"], "retrieval_token_scope": r["retrieval_token_scope"]} for r in load_retention_retrieval_token_records(p)]
+
+
+def _retention_retrieval_token_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-token-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_retrieval_token_verification_receipt_id": r["retention_retrieval_token_verification_receipt_id"], "retention_retrieval_token_record_id": r["retention_retrieval_token_record_id"], "verification_state": r["verification_state"], "checked_retrieval_token_refs": len(r["checked_retrieval_token_refs"])} for r in load_retention_retrieval_token_verification_receipts(p)]
+
+
+def _retention_retrieval_token_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retrieval-token-closeout-records.json"
+    return [] if not p.exists() else [{"retention_retrieval_token_closeout_record_id": r["retention_retrieval_token_closeout_record_id"], "retention_retrieval_token_verification_receipt_id": r["retention_retrieval_token_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_retrieval_token_closeout_records(p)]
+
+
+def _retention_consumer_receipt_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-consumer-receipt-records.json"
+    return [] if not p.exists() else [{"retention_consumer_receipt_record_id": r["retention_consumer_receipt_record_id"], "retention_retrieval_token_closeout_record_id": r["retention_retrieval_token_closeout_record_id"], "consumer_receipt_state": r["consumer_receipt_state"], "consumer_receipt_scope": r["consumer_receipt_scope"]} for r in load_retention_consumer_receipt_records(p)]
+
+
+def _retention_consumer_receipt_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-consumer-receipt-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_consumer_receipt_verification_receipt_id": r["retention_consumer_receipt_verification_receipt_id"], "retention_consumer_receipt_record_id": r["retention_consumer_receipt_record_id"], "verification_state": r["verification_state"], "checked_consumer_receipt_refs": len(r["checked_consumer_receipt_refs"])} for r in load_retention_consumer_receipt_verification_receipts(p)]
+
+
+def _retention_consumer_receipt_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-consumer-receipt-closeout-records.json"
+    return [] if not p.exists() else [{"retention_consumer_receipt_closeout_record_id": r["retention_consumer_receipt_closeout_record_id"], "retention_consumer_receipt_verification_receipt_id": r["retention_consumer_receipt_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_consumer_receipt_closeout_records(p)]
+
+
+def _retention_publication_rollup_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-publication-rollup-records.json"
+    return [] if not p.exists() else [{"retention_publication_rollup_record_id": r["retention_publication_rollup_record_id"], "retention_consumer_receipt_closeout_record_id": r["retention_consumer_receipt_closeout_record_id"], "publication_rollup_state": r["publication_rollup_state"], "publication_rollup_scope": r["publication_rollup_scope"]} for r in load_retention_publication_rollup_records(p)]
+
+
+def _retention_publication_rollup_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-publication-rollup-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_publication_rollup_verification_receipt_id": r["retention_publication_rollup_verification_receipt_id"], "retention_publication_rollup_record_id": r["retention_publication_rollup_record_id"], "verification_state": r["verification_state"], "checked_publication_rollup_refs": len(r["checked_publication_rollup_refs"])} for r in load_retention_publication_rollup_verification_receipts(p)]
+
+
+def _retention_publication_rollup_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-publication-rollup-closeout-records.json"
+    return [] if not p.exists() else [{"retention_publication_rollup_closeout_record_id": r["retention_publication_rollup_closeout_record_id"], "retention_publication_rollup_verification_receipt_id": r["retention_publication_rollup_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_publication_rollup_closeout_records(p)]
+
+
+def _retention_distribution_receipt_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-distribution-receipt-records.json"
+    return [] if not p.exists() else [{"retention_distribution_receipt_record_id": r["retention_distribution_receipt_record_id"], "retention_publication_rollup_closeout_record_id": r["retention_publication_rollup_closeout_record_id"], "distribution_receipt_state": r["distribution_receipt_state"], "distribution_receipt_scope": r["distribution_receipt_scope"]} for r in load_retention_distribution_receipt_records(p)]
+
+
+def _retention_distribution_receipt_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-distribution-receipt-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_distribution_receipt_verification_receipt_id": r["retention_distribution_receipt_verification_receipt_id"], "retention_distribution_receipt_record_id": r["retention_distribution_receipt_record_id"], "verification_state": r["verification_state"], "checked_distribution_receipt_refs": len(r["checked_distribution_receipt_refs"])} for r in load_retention_distribution_receipt_verification_receipts(p)]
+
+
+def _retention_distribution_receipt_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-distribution-receipt-closeout-records.json"
+    return [] if not p.exists() else [{"retention_distribution_receipt_closeout_record_id": r["retention_distribution_receipt_closeout_record_id"], "retention_distribution_receipt_verification_receipt_id": r["retention_distribution_receipt_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_distribution_receipt_closeout_records(p)]
+
+
+def _retention_access_audit_snapshot_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-audit-snapshot-records.json"
+    return [] if not p.exists() else [{"retention_access_audit_snapshot_record_id": r["retention_access_audit_snapshot_record_id"], "retention_distribution_receipt_closeout_record_id": r["retention_distribution_receipt_closeout_record_id"], "access_audit_snapshot_state": r["access_audit_snapshot_state"], "access_audit_snapshot_scope": r["access_audit_snapshot_scope"]} for r in load_retention_access_audit_snapshot_records(p)]
+
+
+def _retention_access_audit_snapshot_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-audit-snapshot-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_access_audit_snapshot_verification_receipt_id": r["retention_access_audit_snapshot_verification_receipt_id"], "retention_access_audit_snapshot_record_id": r["retention_access_audit_snapshot_record_id"], "verification_state": r["verification_state"], "checked_access_audit_snapshot_refs": len(r["checked_access_audit_snapshot_refs"])} for r in load_retention_access_audit_snapshot_verification_receipts(p)]
+
+
+def _retention_access_audit_snapshot_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-access-audit-snapshot-closeout-records.json"
+    return [] if not p.exists() else [{"retention_access_audit_snapshot_closeout_record_id": r["retention_access_audit_snapshot_closeout_record_id"], "retention_access_audit_snapshot_verification_receipt_id": r["retention_access_audit_snapshot_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_access_audit_snapshot_closeout_records(p)]
+
+
+def _retention_release_health_snapshot_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-health-snapshot-records.json"
+    return [] if not p.exists() else [{"retention_release_health_snapshot_record_id": r["retention_release_health_snapshot_record_id"], "retention_access_audit_snapshot_closeout_record_id": r["retention_access_audit_snapshot_closeout_record_id"], "release_health_snapshot_state": r["release_health_snapshot_state"], "release_health_snapshot_scope": r["release_health_snapshot_scope"]} for r in load_retention_release_health_snapshot_records(p)]
+
+
+def _retention_release_health_snapshot_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-health-snapshot-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_release_health_snapshot_verification_receipt_id": r["retention_release_health_snapshot_verification_receipt_id"], "retention_release_health_snapshot_record_id": r["retention_release_health_snapshot_record_id"], "verification_state": r["verification_state"], "checked_release_health_snapshot_refs": len(r["checked_release_health_snapshot_refs"])} for r in load_retention_release_health_snapshot_verification_receipts(p)]
+
+
+def _retention_release_health_snapshot_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-health-snapshot-closeout-records.json"
+    return [] if not p.exists() else [{"retention_release_health_snapshot_closeout_record_id": r["retention_release_health_snapshot_closeout_record_id"], "retention_release_health_snapshot_verification_receipt_id": r["retention_release_health_snapshot_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_release_health_snapshot_closeout_records(p)]
+
+
+def _retention_release_usage_summary_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-usage-summary-records.json"
+    return [] if not p.exists() else [{"retention_release_usage_summary_record_id": r["retention_release_usage_summary_record_id"], "retention_release_health_snapshot_closeout_record_id": r["retention_release_health_snapshot_closeout_record_id"], "release_usage_summary_state": r["release_usage_summary_state"], "release_usage_summary_scope": r["release_usage_summary_scope"]} for r in load_retention_release_usage_summary_records(p)]
+
+
+def _retention_release_usage_summary_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-usage-summary-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_release_usage_summary_verification_receipt_id": r["retention_release_usage_summary_verification_receipt_id"], "retention_release_usage_summary_record_id": r["retention_release_usage_summary_record_id"], "verification_state": r["verification_state"], "checked_release_usage_summary_refs": len(r["checked_release_usage_summary_refs"])} for r in load_retention_release_usage_summary_verification_receipts(p)]
+
+
+def _retention_release_usage_summary_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-usage-summary-closeout-records.json"
+    return [] if not p.exists() else [{"retention_release_usage_summary_closeout_record_id": r["retention_release_usage_summary_closeout_record_id"], "retention_release_usage_summary_verification_receipt_id": r["retention_release_usage_summary_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_release_usage_summary_closeout_records(p)]
+
+
+def _retention_retention_exposure_report_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retention-exposure-report-records.json"
+    return [] if not p.exists() else [{"retention_retention_exposure_report_record_id": r["retention_retention_exposure_report_record_id"], "retention_release_usage_summary_closeout_record_id": r["retention_release_usage_summary_closeout_record_id"], "retention_exposure_report_state": r["retention_exposure_report_state"], "retention_exposure_report_scope": r["retention_exposure_report_scope"]} for r in load_retention_retention_exposure_report_records(p)]
+
+
+def _retention_retention_exposure_report_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retention-exposure-report-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_retention_exposure_report_verification_receipt_id": r["retention_retention_exposure_report_verification_receipt_id"], "retention_retention_exposure_report_record_id": r["retention_retention_exposure_report_record_id"], "verification_state": r["verification_state"], "checked_retention_exposure_report_refs": len(r["checked_retention_exposure_report_refs"])} for r in load_retention_retention_exposure_report_verification_receipts(p)]
+
+
+def _retention_retention_exposure_report_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-retention-exposure-report-closeout-records.json"
+    return [] if not p.exists() else [{"retention_retention_exposure_report_closeout_record_id": r["retention_retention_exposure_report_closeout_record_id"], "retention_retention_exposure_report_verification_receipt_id": r["retention_retention_exposure_report_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_retention_exposure_report_closeout_records(p)]
+
+
+def _retention_release_closeout_summary_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-closeout-summary-records.json"
+    return [] if not p.exists() else [{"retention_release_closeout_summary_record_id": r["retention_release_closeout_summary_record_id"], "retention_retention_exposure_report_closeout_record_id": r["retention_retention_exposure_report_closeout_record_id"], "release_closeout_summary_state": r["release_closeout_summary_state"], "release_closeout_summary_scope": r["release_closeout_summary_scope"]} for r in load_retention_release_closeout_summary_records(p)]
+
+
+def _retention_release_closeout_summary_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-closeout-summary-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_release_closeout_summary_verification_receipt_id": r["retention_release_closeout_summary_verification_receipt_id"], "retention_release_closeout_summary_record_id": r["retention_release_closeout_summary_record_id"], "verification_state": r["verification_state"], "checked_release_closeout_summary_refs": len(r["checked_release_closeout_summary_refs"])} for r in load_retention_release_closeout_summary_verification_receipts(p)]
+
+
+def _retention_release_closeout_summary_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-closeout-summary-closeout-records.json"
+    return [] if not p.exists() else [{"retention_release_closeout_summary_closeout_record_id": r["retention_release_closeout_summary_closeout_record_id"], "retention_release_closeout_summary_verification_receipt_id": r["retention_release_closeout_summary_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_release_closeout_summary_closeout_records(p)]
+
+
+def _retention_public_record_index_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-public-record-index-records.json"
+    return [] if not p.exists() else [{"retention_public_record_index_record_id": r["retention_public_record_index_record_id"], "retention_release_closeout_summary_closeout_record_id": r["retention_release_closeout_summary_closeout_record_id"], "public_record_index_state": r["public_record_index_state"], "public_record_index_scope": r["public_record_index_scope"]} for r in load_retention_public_record_index_records(p)]
+
+
+def _retention_public_record_index_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-public-record-index-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_public_record_index_verification_receipt_id": r["retention_public_record_index_verification_receipt_id"], "retention_public_record_index_record_id": r["retention_public_record_index_record_id"], "verification_state": r["verification_state"], "checked_public_record_index_refs": len(r["checked_public_record_index_refs"])} for r in load_retention_public_record_index_verification_receipts(p)]
+
+
+def _retention_public_record_index_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-public-record-index-closeout-records.json"
+    return [] if not p.exists() else [{"retention_public_record_index_closeout_record_id": r["retention_public_record_index_closeout_record_id"], "retention_public_record_index_verification_receipt_id": r["retention_public_record_index_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_public_record_index_closeout_records(p)]
+
+
+def _retention_final_release_bundle_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-final-release-bundle-records.json"
+    return [] if not p.exists() else [{"retention_final_release_bundle_record_id": r["retention_final_release_bundle_record_id"], "retention_public_record_index_closeout_record_id": r["retention_public_record_index_closeout_record_id"], "final_release_bundle_state": r["final_release_bundle_state"], "final_release_bundle_scope": r["final_release_bundle_scope"]} for r in load_retention_final_release_bundle_records(p)]
+
+
+def _retention_final_release_bundle_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-final-release-bundle-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_final_release_bundle_verification_receipt_id": r["retention_final_release_bundle_verification_receipt_id"], "retention_final_release_bundle_record_id": r["retention_final_release_bundle_record_id"], "verification_state": r["verification_state"], "checked_final_release_bundle_refs": len(r["checked_final_release_bundle_refs"])} for r in load_retention_final_release_bundle_verification_receipts(p)]
+
+
+def _retention_final_release_bundle_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-final-release-bundle-closeout-records.json"
+    return [] if not p.exists() else [{"retention_final_release_bundle_closeout_record_id": r["retention_final_release_bundle_closeout_record_id"], "retention_final_release_bundle_verification_receipt_id": r["retention_final_release_bundle_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_final_release_bundle_closeout_records(p)]
+
+
+def _retention_terminal_access_notice_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-access-notice-records.json"
+    return [] if not p.exists() else [{"retention_terminal_access_notice_record_id": r["retention_terminal_access_notice_record_id"], "retention_final_release_bundle_closeout_record_id": r["retention_final_release_bundle_closeout_record_id"], "terminal_access_notice_state": r["terminal_access_notice_state"], "terminal_access_notice_scope": r["terminal_access_notice_scope"]} for r in load_retention_terminal_access_notice_records(p)]
+
+
+def _retention_terminal_access_notice_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-access-notice-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_terminal_access_notice_verification_receipt_id": r["retention_terminal_access_notice_verification_receipt_id"], "retention_terminal_access_notice_record_id": r["retention_terminal_access_notice_record_id"], "verification_state": r["verification_state"], "checked_terminal_access_notice_refs": len(r["checked_terminal_access_notice_refs"])} for r in load_retention_terminal_access_notice_verification_receipts(p)]
+
+
+def _retention_terminal_access_notice_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-access-notice-closeout-records.json"
+    return [] if not p.exists() else [{"retention_terminal_access_notice_closeout_record_id": r["retention_terminal_access_notice_closeout_record_id"], "retention_terminal_access_notice_verification_receipt_id": r["retention_terminal_access_notice_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_terminal_access_notice_closeout_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -1422,6 +1722,56 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_distribution_manifest_verification_receipts": _retention_distribution_manifest_verification_receipt_rows(root),
         "retention_distribution_manifest_closeout_records": _retention_distribution_manifest_closeout_record_rows(root),
         "retention_access_publication_records": _retention_access_publication_record_rows(root),
+        "retention_access_publication_verification_receipts": _retention_access_publication_verification_receipt_rows(root),
+        "retention_access_publication_closeout_records": _retention_access_publication_closeout_record_rows(root),
+        "retention_access_grant_records": _retention_access_grant_record_rows(root),
+        "retention_access_grant_verification_receipts": _retention_access_grant_verification_receipt_rows(root),
+        "retention_access_grant_closeout_records": _retention_access_grant_closeout_record_rows(root),
+        "retention_access_ledger_records": _retention_access_ledger_record_rows(root),
+        "retention_access_ledger_verification_receipts": _retention_access_ledger_verification_receipt_rows(root),
+        "retention_access_ledger_closeout_records": _retention_access_ledger_closeout_record_rows(root),
+        "retention_retrieval_catalog_records": _retention_retrieval_catalog_record_rows(root),
+        "retention_retrieval_catalog_verification_receipts": _retention_retrieval_catalog_verification_receipt_rows(root),
+        "retention_retrieval_catalog_closeout_records": _retention_retrieval_catalog_closeout_record_rows(root),
+        "retention_retrieval_endpoint_records": _retention_retrieval_endpoint_record_rows(root),
+        "retention_retrieval_endpoint_verification_receipts": _retention_retrieval_endpoint_verification_receipt_rows(root),
+        "retention_retrieval_endpoint_closeout_records": _retention_retrieval_endpoint_closeout_record_rows(root),
+        "retention_retrieval_token_records": _retention_retrieval_token_record_rows(root),
+        "retention_retrieval_token_verification_receipts": _retention_retrieval_token_verification_receipt_rows(root),
+        "retention_retrieval_token_closeout_records": _retention_retrieval_token_closeout_record_rows(root),
+        "retention_consumer_receipt_records": _retention_consumer_receipt_record_rows(root),
+        "retention_consumer_receipt_verification_receipts": _retention_consumer_receipt_verification_receipt_rows(root),
+        "retention_consumer_receipt_closeout_records": _retention_consumer_receipt_closeout_record_rows(root),
+        "retention_publication_rollup_records": _retention_publication_rollup_record_rows(root),
+        "retention_publication_rollup_verification_receipts": _retention_publication_rollup_verification_receipt_rows(root),
+        "retention_publication_rollup_closeout_records": _retention_publication_rollup_closeout_record_rows(root),
+        "retention_distribution_receipt_records": _retention_distribution_receipt_record_rows(root),
+        "retention_distribution_receipt_verification_receipts": _retention_distribution_receipt_verification_receipt_rows(root),
+        "retention_distribution_receipt_closeout_records": _retention_distribution_receipt_closeout_record_rows(root),
+        "retention_access_audit_snapshot_records": _retention_access_audit_snapshot_record_rows(root),
+        "retention_access_audit_snapshot_verification_receipts": _retention_access_audit_snapshot_verification_receipt_rows(root),
+        "retention_access_audit_snapshot_closeout_records": _retention_access_audit_snapshot_closeout_record_rows(root),
+        "retention_release_health_snapshot_records": _retention_release_health_snapshot_record_rows(root),
+        "retention_release_health_snapshot_verification_receipts": _retention_release_health_snapshot_verification_receipt_rows(root),
+        "retention_release_health_snapshot_closeout_records": _retention_release_health_snapshot_closeout_record_rows(root),
+        "retention_release_usage_summary_records": _retention_release_usage_summary_record_rows(root),
+        "retention_release_usage_summary_verification_receipts": _retention_release_usage_summary_verification_receipt_rows(root),
+        "retention_release_usage_summary_closeout_records": _retention_release_usage_summary_closeout_record_rows(root),
+        "retention_retention_exposure_report_records": _retention_retention_exposure_report_record_rows(root),
+        "retention_retention_exposure_report_verification_receipts": _retention_retention_exposure_report_verification_receipt_rows(root),
+        "retention_retention_exposure_report_closeout_records": _retention_retention_exposure_report_closeout_record_rows(root),
+        "retention_release_closeout_summary_records": _retention_release_closeout_summary_record_rows(root),
+        "retention_release_closeout_summary_verification_receipts": _retention_release_closeout_summary_verification_receipt_rows(root),
+        "retention_release_closeout_summary_closeout_records": _retention_release_closeout_summary_closeout_record_rows(root),
+        "retention_public_record_index_records": _retention_public_record_index_record_rows(root),
+        "retention_public_record_index_verification_receipts": _retention_public_record_index_verification_receipt_rows(root),
+        "retention_public_record_index_closeout_records": _retention_public_record_index_closeout_record_rows(root),
+        "retention_final_release_bundle_records": _retention_final_release_bundle_record_rows(root),
+        "retention_final_release_bundle_verification_receipts": _retention_final_release_bundle_verification_receipt_rows(root),
+        "retention_final_release_bundle_closeout_records": _retention_final_release_bundle_closeout_record_rows(root),
+        "retention_terminal_access_notice_records": _retention_terminal_access_notice_record_rows(root),
+        "retention_terminal_access_notice_verification_receipts": _retention_terminal_access_notice_verification_receipt_rows(root),
+        "retention_terminal_access_notice_closeout_records": _retention_terminal_access_notice_closeout_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -1635,6 +1985,56 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_distribution_manifest_verification_receipts', 0)} retention distribution manifest verification receipts, "
         f"{counts.get('retention_distribution_manifest_closeout_records', 0)} retention distribution manifest closeout records, "
         f"{counts.get('retention_access_publication_records', 0)} retention access publication records, "
+        f"{counts.get('retention_access_publication_verification_receipts', 0)} retention access publication verification receipts, "
+        f"{counts.get('retention_access_publication_closeout_records', 0)} retention access publication closeout records, "
+        f"{counts.get('retention_access_grant_records', 0)} retention access grant records, "
+        f"{counts.get('retention_access_grant_verification_receipts', 0)} retention access grant verification receipts, "
+        f"{counts.get('retention_access_grant_closeout_records', 0)} retention access grant closeout records, "
+        f"{counts.get('retention_access_ledger_records', 0)} retention access ledger records, "
+        f"{counts.get('retention_access_ledger_verification_receipts', 0)} retention access ledger verification receipts, "
+        f"{counts.get('retention_access_ledger_closeout_records', 0)} retention access ledger closeout records, "
+        f"{counts.get('retention_retrieval_catalog_records', 0)} retention retrieval catalog records, "
+        f"{counts.get('retention_retrieval_catalog_verification_receipts', 0)} retention retrieval catalog verification receipts, "
+        f"{counts.get('retention_retrieval_catalog_closeout_records', 0)} retention retrieval catalog closeout records, "
+        f"{counts.get('retention_retrieval_endpoint_records', 0)} retention retrieval endpoint records, "
+        f"{counts.get('retention_retrieval_endpoint_verification_receipts', 0)} retention retrieval endpoint verification receipts, "
+        f"{counts.get('retention_retrieval_endpoint_closeout_records', 0)} retention retrieval endpoint closeout records, "
+        f"{counts.get('retention_retrieval_token_records', 0)} retention retrieval token records, "
+        f"{counts.get('retention_retrieval_token_verification_receipts', 0)} retention retrieval token verification receipts, "
+        f"{counts.get('retention_retrieval_token_closeout_records', 0)} retention retrieval token closeout records, "
+        f"{counts.get('retention_consumer_receipt_records', 0)} retention consumer receipt records, "
+        f"{counts.get('retention_consumer_receipt_verification_receipts', 0)} retention consumer receipt verification receipts, "
+        f"{counts.get('retention_consumer_receipt_closeout_records', 0)} retention consumer receipt closeout records, "
+        f"{counts.get('retention_publication_rollup_records', 0)} retention publication rollup records, "
+        f"{counts.get('retention_publication_rollup_verification_receipts', 0)} retention publication rollup verification receipts, "
+        f"{counts.get('retention_publication_rollup_closeout_records', 0)} retention publication rollup closeout records, "
+        f"{counts.get('retention_distribution_receipt_records', 0)} retention distribution receipt records, "
+        f"{counts.get('retention_distribution_receipt_verification_receipts', 0)} retention distribution receipt verification receipts, "
+        f"{counts.get('retention_distribution_receipt_closeout_records', 0)} retention distribution receipt closeout records, "
+        f"{counts.get('retention_access_audit_snapshot_records', 0)} retention access audit snapshot records, "
+        f"{counts.get('retention_access_audit_snapshot_verification_receipts', 0)} retention access audit snapshot verification receipts, "
+        f"{counts.get('retention_access_audit_snapshot_closeout_records', 0)} retention access audit snapshot closeout records, "
+        f"{counts.get('retention_release_health_snapshot_records', 0)} retention release health snapshot records, "
+        f"{counts.get('retention_release_health_snapshot_verification_receipts', 0)} retention release health snapshot verification receipts, "
+        f"{counts.get('retention_release_health_snapshot_closeout_records', 0)} retention release health snapshot closeout records, "
+        f"{counts.get('retention_release_usage_summary_records', 0)} retention release usage summary records, "
+        f"{counts.get('retention_release_usage_summary_verification_receipts', 0)} retention release usage summary verification receipts, "
+        f"{counts.get('retention_release_usage_summary_closeout_records', 0)} retention release usage summary closeout records, "
+        f"{counts.get('retention_retention_exposure_report_records', 0)} retention retention exposure report records, "
+        f"{counts.get('retention_retention_exposure_report_verification_receipts', 0)} retention retention exposure report verification receipts, "
+        f"{counts.get('retention_retention_exposure_report_closeout_records', 0)} retention retention exposure report closeout records, "
+        f"{counts.get('retention_release_closeout_summary_records', 0)} retention release closeout summary records, "
+        f"{counts.get('retention_release_closeout_summary_verification_receipts', 0)} retention release closeout summary verification receipts, "
+        f"{counts.get('retention_release_closeout_summary_closeout_records', 0)} retention release closeout summary closeout records, "
+        f"{counts.get('retention_public_record_index_records', 0)} retention public record index records, "
+        f"{counts.get('retention_public_record_index_verification_receipts', 0)} retention public record index verification receipts, "
+        f"{counts.get('retention_public_record_index_closeout_records', 0)} retention public record index closeout records, "
+        f"{counts.get('retention_final_release_bundle_records', 0)} retention final release bundle records, "
+        f"{counts.get('retention_final_release_bundle_verification_receipts', 0)} retention final release bundle verification receipts, "
+        f"{counts.get('retention_final_release_bundle_closeout_records', 0)} retention final release bundle closeout records, "
+        f"{counts.get('retention_terminal_access_notice_records', 0)} retention terminal access notice records, "
+        f"{counts.get('retention_terminal_access_notice_verification_receipts', 0)} retention terminal access notice verification receipts, "
+        f"{counts.get('retention_terminal_access_notice_closeout_records', 0)} retention terminal access notice closeout records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -1834,6 +2234,56 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Retention Distribution Manifest Verification Receipts", catalog["retention_distribution_manifest_verification_receipts"], ["retention_distribution_manifest_verification_receipt_id", "retention_distribution_manifest_record_id", "verification_state", "checked_distribution_manifest_refs"]))
     lines.extend(_format_table("Retention Distribution Manifest Closeout Records", catalog["retention_distribution_manifest_closeout_records"], ["retention_distribution_manifest_closeout_record_id", "retention_distribution_manifest_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Retention Access Publication Records", catalog["retention_access_publication_records"], ["retention_access_publication_record_id", "retention_distribution_manifest_closeout_record_id", "access_publication_state", "access_publication_scope"]))
+    lines.extend(_format_table("Retention Access Publication Verification Receipts", catalog["retention_access_publication_verification_receipts"], ["retention_access_publication_verification_receipt_id", "retention_access_publication_record_id", "verification_state", "checked_access_publication_refs"]))
+    lines.extend(_format_table("Retention Access Publication Closeout Records", catalog["retention_access_publication_closeout_records"], ["retention_access_publication_closeout_record_id", "retention_access_publication_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Access Grant Records", catalog["retention_access_grant_records"], ["retention_access_grant_record_id", "retention_access_publication_closeout_record_id", "access_grant_state", "access_grant_scope"]))
+    lines.extend(_format_table("Retention Access Grant Verification Receipts", catalog["retention_access_grant_verification_receipts"], ["retention_access_grant_verification_receipt_id", "retention_access_grant_record_id", "verification_state", "checked_access_grant_refs"]))
+    lines.extend(_format_table("Retention Access Grant Closeout Records", catalog["retention_access_grant_closeout_records"], ["retention_access_grant_closeout_record_id", "retention_access_grant_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Access Ledger Records", catalog["retention_access_ledger_records"], ["retention_access_ledger_record_id", "retention_access_grant_closeout_record_id", "access_ledger_state", "access_ledger_scope"]))
+    lines.extend(_format_table("Retention Access Ledger Verification Receipts", catalog["retention_access_ledger_verification_receipts"], ["retention_access_ledger_verification_receipt_id", "retention_access_ledger_record_id", "verification_state", "checked_access_ledger_refs"]))
+    lines.extend(_format_table("Retention Access Ledger Closeout Records", catalog["retention_access_ledger_closeout_records"], ["retention_access_ledger_closeout_record_id", "retention_access_ledger_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Retrieval Catalog Records", catalog["retention_retrieval_catalog_records"], ["retention_retrieval_catalog_record_id", "retention_access_ledger_closeout_record_id", "retrieval_catalog_state", "retrieval_catalog_scope"]))
+    lines.extend(_format_table("Retention Retrieval Catalog Verification Receipts", catalog["retention_retrieval_catalog_verification_receipts"], ["retention_retrieval_catalog_verification_receipt_id", "retention_retrieval_catalog_record_id", "verification_state", "checked_retrieval_catalog_refs"]))
+    lines.extend(_format_table("Retention Retrieval Catalog Closeout Records", catalog["retention_retrieval_catalog_closeout_records"], ["retention_retrieval_catalog_closeout_record_id", "retention_retrieval_catalog_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Retrieval Endpoint Records", catalog["retention_retrieval_endpoint_records"], ["retention_retrieval_endpoint_record_id", "retention_retrieval_catalog_closeout_record_id", "retrieval_endpoint_state", "retrieval_endpoint_scope"]))
+    lines.extend(_format_table("Retention Retrieval Endpoint Verification Receipts", catalog["retention_retrieval_endpoint_verification_receipts"], ["retention_retrieval_endpoint_verification_receipt_id", "retention_retrieval_endpoint_record_id", "verification_state", "checked_retrieval_endpoint_refs"]))
+    lines.extend(_format_table("Retention Retrieval Endpoint Closeout Records", catalog["retention_retrieval_endpoint_closeout_records"], ["retention_retrieval_endpoint_closeout_record_id", "retention_retrieval_endpoint_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Retrieval Token Records", catalog["retention_retrieval_token_records"], ["retention_retrieval_token_record_id", "retention_retrieval_endpoint_closeout_record_id", "retrieval_token_state", "retrieval_token_scope"]))
+    lines.extend(_format_table("Retention Retrieval Token Verification Receipts", catalog["retention_retrieval_token_verification_receipts"], ["retention_retrieval_token_verification_receipt_id", "retention_retrieval_token_record_id", "verification_state", "checked_retrieval_token_refs"]))
+    lines.extend(_format_table("Retention Retrieval Token Closeout Records", catalog["retention_retrieval_token_closeout_records"], ["retention_retrieval_token_closeout_record_id", "retention_retrieval_token_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Consumer Receipt Records", catalog["retention_consumer_receipt_records"], ["retention_consumer_receipt_record_id", "retention_retrieval_token_closeout_record_id", "consumer_receipt_state", "consumer_receipt_scope"]))
+    lines.extend(_format_table("Retention Consumer Receipt Verification Receipts", catalog["retention_consumer_receipt_verification_receipts"], ["retention_consumer_receipt_verification_receipt_id", "retention_consumer_receipt_record_id", "verification_state", "checked_consumer_receipt_refs"]))
+    lines.extend(_format_table("Retention Consumer Receipt Closeout Records", catalog["retention_consumer_receipt_closeout_records"], ["retention_consumer_receipt_closeout_record_id", "retention_consumer_receipt_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Publication Rollup Records", catalog["retention_publication_rollup_records"], ["retention_publication_rollup_record_id", "retention_consumer_receipt_closeout_record_id", "publication_rollup_state", "publication_rollup_scope"]))
+    lines.extend(_format_table("Retention Publication Rollup Verification Receipts", catalog["retention_publication_rollup_verification_receipts"], ["retention_publication_rollup_verification_receipt_id", "retention_publication_rollup_record_id", "verification_state", "checked_publication_rollup_refs"]))
+    lines.extend(_format_table("Retention Publication Rollup Closeout Records", catalog["retention_publication_rollup_closeout_records"], ["retention_publication_rollup_closeout_record_id", "retention_publication_rollup_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Distribution Receipt Records", catalog["retention_distribution_receipt_records"], ["retention_distribution_receipt_record_id", "retention_publication_rollup_closeout_record_id", "distribution_receipt_state", "distribution_receipt_scope"]))
+    lines.extend(_format_table("Retention Distribution Receipt Verification Receipts", catalog["retention_distribution_receipt_verification_receipts"], ["retention_distribution_receipt_verification_receipt_id", "retention_distribution_receipt_record_id", "verification_state", "checked_distribution_receipt_refs"]))
+    lines.extend(_format_table("Retention Distribution Receipt Closeout Records", catalog["retention_distribution_receipt_closeout_records"], ["retention_distribution_receipt_closeout_record_id", "retention_distribution_receipt_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Access Audit Snapshot Records", catalog["retention_access_audit_snapshot_records"], ["retention_access_audit_snapshot_record_id", "retention_distribution_receipt_closeout_record_id", "access_audit_snapshot_state", "access_audit_snapshot_scope"]))
+    lines.extend(_format_table("Retention Access Audit Snapshot Verification Receipts", catalog["retention_access_audit_snapshot_verification_receipts"], ["retention_access_audit_snapshot_verification_receipt_id", "retention_access_audit_snapshot_record_id", "verification_state", "checked_access_audit_snapshot_refs"]))
+    lines.extend(_format_table("Retention Access Audit Snapshot Closeout Records", catalog["retention_access_audit_snapshot_closeout_records"], ["retention_access_audit_snapshot_closeout_record_id", "retention_access_audit_snapshot_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Release Health Snapshot Records", catalog["retention_release_health_snapshot_records"], ["retention_release_health_snapshot_record_id", "retention_access_audit_snapshot_closeout_record_id", "release_health_snapshot_state", "release_health_snapshot_scope"]))
+    lines.extend(_format_table("Retention Release Health Snapshot Verification Receipts", catalog["retention_release_health_snapshot_verification_receipts"], ["retention_release_health_snapshot_verification_receipt_id", "retention_release_health_snapshot_record_id", "verification_state", "checked_release_health_snapshot_refs"]))
+    lines.extend(_format_table("Retention Release Health Snapshot Closeout Records", catalog["retention_release_health_snapshot_closeout_records"], ["retention_release_health_snapshot_closeout_record_id", "retention_release_health_snapshot_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Release Usage Summary Records", catalog["retention_release_usage_summary_records"], ["retention_release_usage_summary_record_id", "retention_release_health_snapshot_closeout_record_id", "release_usage_summary_state", "release_usage_summary_scope"]))
+    lines.extend(_format_table("Retention Release Usage Summary Verification Receipts", catalog["retention_release_usage_summary_verification_receipts"], ["retention_release_usage_summary_verification_receipt_id", "retention_release_usage_summary_record_id", "verification_state", "checked_release_usage_summary_refs"]))
+    lines.extend(_format_table("Retention Release Usage Summary Closeout Records", catalog["retention_release_usage_summary_closeout_records"], ["retention_release_usage_summary_closeout_record_id", "retention_release_usage_summary_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Retention Exposure Report Records", catalog["retention_retention_exposure_report_records"], ["retention_retention_exposure_report_record_id", "retention_release_usage_summary_closeout_record_id", "retention_exposure_report_state", "retention_exposure_report_scope"]))
+    lines.extend(_format_table("Retention Retention Exposure Report Verification Receipts", catalog["retention_retention_exposure_report_verification_receipts"], ["retention_retention_exposure_report_verification_receipt_id", "retention_retention_exposure_report_record_id", "verification_state", "checked_retention_exposure_report_refs"]))
+    lines.extend(_format_table("Retention Retention Exposure Report Closeout Records", catalog["retention_retention_exposure_report_closeout_records"], ["retention_retention_exposure_report_closeout_record_id", "retention_retention_exposure_report_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Release Closeout Summary Records", catalog["retention_release_closeout_summary_records"], ["retention_release_closeout_summary_record_id", "retention_retention_exposure_report_closeout_record_id", "release_closeout_summary_state", "release_closeout_summary_scope"]))
+    lines.extend(_format_table("Retention Release Closeout Summary Verification Receipts", catalog["retention_release_closeout_summary_verification_receipts"], ["retention_release_closeout_summary_verification_receipt_id", "retention_release_closeout_summary_record_id", "verification_state", "checked_release_closeout_summary_refs"]))
+    lines.extend(_format_table("Retention Release Closeout Summary Closeout Records", catalog["retention_release_closeout_summary_closeout_records"], ["retention_release_closeout_summary_closeout_record_id", "retention_release_closeout_summary_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Public Record Index Records", catalog["retention_public_record_index_records"], ["retention_public_record_index_record_id", "retention_release_closeout_summary_closeout_record_id", "public_record_index_state", "public_record_index_scope"]))
+    lines.extend(_format_table("Retention Public Record Index Verification Receipts", catalog["retention_public_record_index_verification_receipts"], ["retention_public_record_index_verification_receipt_id", "retention_public_record_index_record_id", "verification_state", "checked_public_record_index_refs"]))
+    lines.extend(_format_table("Retention Public Record Index Closeout Records", catalog["retention_public_record_index_closeout_records"], ["retention_public_record_index_closeout_record_id", "retention_public_record_index_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Final Release Bundle Records", catalog["retention_final_release_bundle_records"], ["retention_final_release_bundle_record_id", "retention_public_record_index_closeout_record_id", "final_release_bundle_state", "final_release_bundle_scope"]))
+    lines.extend(_format_table("Retention Final Release Bundle Verification Receipts", catalog["retention_final_release_bundle_verification_receipts"], ["retention_final_release_bundle_verification_receipt_id", "retention_final_release_bundle_record_id", "verification_state", "checked_final_release_bundle_refs"]))
+    lines.extend(_format_table("Retention Final Release Bundle Closeout Records", catalog["retention_final_release_bundle_closeout_records"], ["retention_final_release_bundle_closeout_record_id", "retention_final_release_bundle_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Terminal Access Notice Records", catalog["retention_terminal_access_notice_records"], ["retention_terminal_access_notice_record_id", "retention_final_release_bundle_closeout_record_id", "terminal_access_notice_state", "terminal_access_notice_scope"]))
+    lines.extend(_format_table("Retention Terminal Access Notice Verification Receipts", catalog["retention_terminal_access_notice_verification_receipts"], ["retention_terminal_access_notice_verification_receipt_id", "retention_terminal_access_notice_record_id", "verification_state", "checked_terminal_access_notice_refs"]))
+    lines.extend(_format_table("Retention Terminal Access Notice Closeout Records", catalog["retention_terminal_access_notice_closeout_records"], ["retention_terminal_access_notice_closeout_record_id", "retention_terminal_access_notice_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

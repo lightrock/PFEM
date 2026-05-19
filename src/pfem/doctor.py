@@ -176,6 +176,56 @@ from pfem.retention_distribution_manifest_record import validate_retention_distr
 from pfem.retention_distribution_manifest_verification_receipt import validate_retention_distribution_manifest_verification_receipts
 from pfem.retention_distribution_manifest_closeout_record import validate_retention_distribution_manifest_closeout_records
 from pfem.retention_access_publication_record import validate_retention_access_publication_records
+from pfem.retention_access_publication_verification_receipt import validate_retention_access_publication_verification_receipts
+from pfem.retention_access_publication_closeout_record import validate_retention_access_publication_closeout_records
+from pfem.retention_access_grant_record import validate_retention_access_grant_records
+from pfem.retention_access_grant_verification_receipt import validate_retention_access_grant_verification_receipts
+from pfem.retention_access_grant_closeout_record import validate_retention_access_grant_closeout_records
+from pfem.retention_access_ledger_record import validate_retention_access_ledger_records
+from pfem.retention_access_ledger_verification_receipt import validate_retention_access_ledger_verification_receipts
+from pfem.retention_access_ledger_closeout_record import validate_retention_access_ledger_closeout_records
+from pfem.retention_retrieval_catalog_record import validate_retention_retrieval_catalog_records
+from pfem.retention_retrieval_catalog_verification_receipt import validate_retention_retrieval_catalog_verification_receipts
+from pfem.retention_retrieval_catalog_closeout_record import validate_retention_retrieval_catalog_closeout_records
+from pfem.retention_retrieval_endpoint_record import validate_retention_retrieval_endpoint_records
+from pfem.retention_retrieval_endpoint_verification_receipt import validate_retention_retrieval_endpoint_verification_receipts
+from pfem.retention_retrieval_endpoint_closeout_record import validate_retention_retrieval_endpoint_closeout_records
+from pfem.retention_retrieval_token_record import validate_retention_retrieval_token_records
+from pfem.retention_retrieval_token_verification_receipt import validate_retention_retrieval_token_verification_receipts
+from pfem.retention_retrieval_token_closeout_record import validate_retention_retrieval_token_closeout_records
+from pfem.retention_consumer_receipt_record import validate_retention_consumer_receipt_records
+from pfem.retention_consumer_receipt_verification_receipt import validate_retention_consumer_receipt_verification_receipts
+from pfem.retention_consumer_receipt_closeout_record import validate_retention_consumer_receipt_closeout_records
+from pfem.retention_publication_rollup_record import validate_retention_publication_rollup_records
+from pfem.retention_publication_rollup_verification_receipt import validate_retention_publication_rollup_verification_receipts
+from pfem.retention_publication_rollup_closeout_record import validate_retention_publication_rollup_closeout_records
+from pfem.retention_distribution_receipt_record import validate_retention_distribution_receipt_records
+from pfem.retention_distribution_receipt_verification_receipt import validate_retention_distribution_receipt_verification_receipts
+from pfem.retention_distribution_receipt_closeout_record import validate_retention_distribution_receipt_closeout_records
+from pfem.retention_access_audit_snapshot_record import validate_retention_access_audit_snapshot_records
+from pfem.retention_access_audit_snapshot_verification_receipt import validate_retention_access_audit_snapshot_verification_receipts
+from pfem.retention_access_audit_snapshot_closeout_record import validate_retention_access_audit_snapshot_closeout_records
+from pfem.retention_release_health_snapshot_record import validate_retention_release_health_snapshot_records
+from pfem.retention_release_health_snapshot_verification_receipt import validate_retention_release_health_snapshot_verification_receipts
+from pfem.retention_release_health_snapshot_closeout_record import validate_retention_release_health_snapshot_closeout_records
+from pfem.retention_release_usage_summary_record import validate_retention_release_usage_summary_records
+from pfem.retention_release_usage_summary_verification_receipt import validate_retention_release_usage_summary_verification_receipts
+from pfem.retention_release_usage_summary_closeout_record import validate_retention_release_usage_summary_closeout_records
+from pfem.retention_retention_exposure_report_record import validate_retention_retention_exposure_report_records
+from pfem.retention_retention_exposure_report_verification_receipt import validate_retention_retention_exposure_report_verification_receipts
+from pfem.retention_retention_exposure_report_closeout_record import validate_retention_retention_exposure_report_closeout_records
+from pfem.retention_release_closeout_summary_record import validate_retention_release_closeout_summary_records
+from pfem.retention_release_closeout_summary_verification_receipt import validate_retention_release_closeout_summary_verification_receipts
+from pfem.retention_release_closeout_summary_closeout_record import validate_retention_release_closeout_summary_closeout_records
+from pfem.retention_public_record_index_record import validate_retention_public_record_index_records
+from pfem.retention_public_record_index_verification_receipt import validate_retention_public_record_index_verification_receipts
+from pfem.retention_public_record_index_closeout_record import validate_retention_public_record_index_closeout_records
+from pfem.retention_final_release_bundle_record import validate_retention_final_release_bundle_records
+from pfem.retention_final_release_bundle_verification_receipt import validate_retention_final_release_bundle_verification_receipts
+from pfem.retention_final_release_bundle_closeout_record import validate_retention_final_release_bundle_closeout_records
+from pfem.retention_terminal_access_notice_record import validate_retention_terminal_access_notice_records
+from pfem.retention_terminal_access_notice_verification_receipt import validate_retention_terminal_access_notice_verification_receipts
+from pfem.retention_terminal_access_notice_closeout_record import validate_retention_terminal_access_notice_closeout_records
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -390,6 +440,56 @@ EXPECTED_PATHS = [
     "docs/architecture/retention-distribution-manifest-verification-receipts.md",
     "docs/architecture/retention-distribution-manifest-closeout-records.md",
     "docs/architecture/retention-access-publication-records.md",
+    "docs/architecture/retention-access-publication-verification-receipts.md",
+    "docs/architecture/retention-access-publication-closeout-records.md",
+    "docs/architecture/retention-access-grant-records.md",
+    "docs/architecture/retention-access-grant-verification-receipts.md",
+    "docs/architecture/retention-access-grant-closeout-records.md",
+    "docs/architecture/retention-access-ledger-records.md",
+    "docs/architecture/retention-access-ledger-verification-receipts.md",
+    "docs/architecture/retention-access-ledger-closeout-records.md",
+    "docs/architecture/retention-retrieval-catalog-records.md",
+    "docs/architecture/retention-retrieval-catalog-verification-receipts.md",
+    "docs/architecture/retention-retrieval-catalog-closeout-records.md",
+    "docs/architecture/retention-retrieval-endpoint-records.md",
+    "docs/architecture/retention-retrieval-endpoint-verification-receipts.md",
+    "docs/architecture/retention-retrieval-endpoint-closeout-records.md",
+    "docs/architecture/retention-retrieval-token-records.md",
+    "docs/architecture/retention-retrieval-token-verification-receipts.md",
+    "docs/architecture/retention-retrieval-token-closeout-records.md",
+    "docs/architecture/retention-consumer-receipt-records.md",
+    "docs/architecture/retention-consumer-receipt-verification-receipts.md",
+    "docs/architecture/retention-consumer-receipt-closeout-records.md",
+    "docs/architecture/retention-publication-rollup-records.md",
+    "docs/architecture/retention-publication-rollup-verification-receipts.md",
+    "docs/architecture/retention-publication-rollup-closeout-records.md",
+    "docs/architecture/retention-distribution-receipt-records.md",
+    "docs/architecture/retention-distribution-receipt-verification-receipts.md",
+    "docs/architecture/retention-distribution-receipt-closeout-records.md",
+    "docs/architecture/retention-access-audit-snapshot-records.md",
+    "docs/architecture/retention-access-audit-snapshot-verification-receipts.md",
+    "docs/architecture/retention-access-audit-snapshot-closeout-records.md",
+    "docs/architecture/retention-release-health-snapshot-records.md",
+    "docs/architecture/retention-release-health-snapshot-verification-receipts.md",
+    "docs/architecture/retention-release-health-snapshot-closeout-records.md",
+    "docs/architecture/retention-release-usage-summary-records.md",
+    "docs/architecture/retention-release-usage-summary-verification-receipts.md",
+    "docs/architecture/retention-release-usage-summary-closeout-records.md",
+    "docs/architecture/retention-retention-exposure-report-records.md",
+    "docs/architecture/retention-retention-exposure-report-verification-receipts.md",
+    "docs/architecture/retention-retention-exposure-report-closeout-records.md",
+    "docs/architecture/retention-release-closeout-summary-records.md",
+    "docs/architecture/retention-release-closeout-summary-verification-receipts.md",
+    "docs/architecture/retention-release-closeout-summary-closeout-records.md",
+    "docs/architecture/retention-public-record-index-records.md",
+    "docs/architecture/retention-public-record-index-verification-receipts.md",
+    "docs/architecture/retention-public-record-index-closeout-records.md",
+    "docs/architecture/retention-final-release-bundle-records.md",
+    "docs/architecture/retention-final-release-bundle-verification-receipts.md",
+    "docs/architecture/retention-final-release-bundle-closeout-records.md",
+    "docs/architecture/retention-terminal-access-notice-records.md",
+    "docs/architecture/retention-terminal-access-notice-verification-receipts.md",
+    "docs/architecture/retention-terminal-access-notice-closeout-records.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -572,6 +672,56 @@ EXPECTED_PATHS = [
     "contracts/retention-distribution-manifest-verification-receipt-contract.md",
     "contracts/retention-distribution-manifest-closeout-record-contract.md",
     "contracts/retention-access-publication-record-contract.md",
+    "contracts/retention-access-publication-verification-receipt-contract.md",
+    "contracts/retention-access-publication-closeout-record-contract.md",
+    "contracts/retention-access-grant-record-contract.md",
+    "contracts/retention-access-grant-verification-receipt-contract.md",
+    "contracts/retention-access-grant-closeout-record-contract.md",
+    "contracts/retention-access-ledger-record-contract.md",
+    "contracts/retention-access-ledger-verification-receipt-contract.md",
+    "contracts/retention-access-ledger-closeout-record-contract.md",
+    "contracts/retention-retrieval-catalog-record-contract.md",
+    "contracts/retention-retrieval-catalog-verification-receipt-contract.md",
+    "contracts/retention-retrieval-catalog-closeout-record-contract.md",
+    "contracts/retention-retrieval-endpoint-record-contract.md",
+    "contracts/retention-retrieval-endpoint-verification-receipt-contract.md",
+    "contracts/retention-retrieval-endpoint-closeout-record-contract.md",
+    "contracts/retention-retrieval-token-record-contract.md",
+    "contracts/retention-retrieval-token-verification-receipt-contract.md",
+    "contracts/retention-retrieval-token-closeout-record-contract.md",
+    "contracts/retention-consumer-receipt-record-contract.md",
+    "contracts/retention-consumer-receipt-verification-receipt-contract.md",
+    "contracts/retention-consumer-receipt-closeout-record-contract.md",
+    "contracts/retention-publication-rollup-record-contract.md",
+    "contracts/retention-publication-rollup-verification-receipt-contract.md",
+    "contracts/retention-publication-rollup-closeout-record-contract.md",
+    "contracts/retention-distribution-receipt-record-contract.md",
+    "contracts/retention-distribution-receipt-verification-receipt-contract.md",
+    "contracts/retention-distribution-receipt-closeout-record-contract.md",
+    "contracts/retention-access-audit-snapshot-record-contract.md",
+    "contracts/retention-access-audit-snapshot-verification-receipt-contract.md",
+    "contracts/retention-access-audit-snapshot-closeout-record-contract.md",
+    "contracts/retention-release-health-snapshot-record-contract.md",
+    "contracts/retention-release-health-snapshot-verification-receipt-contract.md",
+    "contracts/retention-release-health-snapshot-closeout-record-contract.md",
+    "contracts/retention-release-usage-summary-record-contract.md",
+    "contracts/retention-release-usage-summary-verification-receipt-contract.md",
+    "contracts/retention-release-usage-summary-closeout-record-contract.md",
+    "contracts/retention-retention-exposure-report-record-contract.md",
+    "contracts/retention-retention-exposure-report-verification-receipt-contract.md",
+    "contracts/retention-retention-exposure-report-closeout-record-contract.md",
+    "contracts/retention-release-closeout-summary-record-contract.md",
+    "contracts/retention-release-closeout-summary-verification-receipt-contract.md",
+    "contracts/retention-release-closeout-summary-closeout-record-contract.md",
+    "contracts/retention-public-record-index-record-contract.md",
+    "contracts/retention-public-record-index-verification-receipt-contract.md",
+    "contracts/retention-public-record-index-closeout-record-contract.md",
+    "contracts/retention-final-release-bundle-record-contract.md",
+    "contracts/retention-final-release-bundle-verification-receipt-contract.md",
+    "contracts/retention-final-release-bundle-closeout-record-contract.md",
+    "contracts/retention-terminal-access-notice-record-contract.md",
+    "contracts/retention-terminal-access-notice-verification-receipt-contract.md",
+    "contracts/retention-terminal-access-notice-closeout-record-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -754,6 +904,56 @@ EXPECTED_PATHS = [
     "schemas/retention_distribution_manifest_verification_receipt.schema.json",
     "schemas/retention_distribution_manifest_closeout_record.schema.json",
     "schemas/retention_access_publication_record.schema.json",
+    "schemas/retention_access_publication_verification_receipt.schema.json",
+    "schemas/retention_access_publication_closeout_record.schema.json",
+    "schemas/retention_access_grant_record.schema.json",
+    "schemas/retention_access_grant_verification_receipt.schema.json",
+    "schemas/retention_access_grant_closeout_record.schema.json",
+    "schemas/retention_access_ledger_record.schema.json",
+    "schemas/retention_access_ledger_verification_receipt.schema.json",
+    "schemas/retention_access_ledger_closeout_record.schema.json",
+    "schemas/retention_retrieval_catalog_record.schema.json",
+    "schemas/retention_retrieval_catalog_verification_receipt.schema.json",
+    "schemas/retention_retrieval_catalog_closeout_record.schema.json",
+    "schemas/retention_retrieval_endpoint_record.schema.json",
+    "schemas/retention_retrieval_endpoint_verification_receipt.schema.json",
+    "schemas/retention_retrieval_endpoint_closeout_record.schema.json",
+    "schemas/retention_retrieval_token_record.schema.json",
+    "schemas/retention_retrieval_token_verification_receipt.schema.json",
+    "schemas/retention_retrieval_token_closeout_record.schema.json",
+    "schemas/retention_consumer_receipt_record.schema.json",
+    "schemas/retention_consumer_receipt_verification_receipt.schema.json",
+    "schemas/retention_consumer_receipt_closeout_record.schema.json",
+    "schemas/retention_publication_rollup_record.schema.json",
+    "schemas/retention_publication_rollup_verification_receipt.schema.json",
+    "schemas/retention_publication_rollup_closeout_record.schema.json",
+    "schemas/retention_distribution_receipt_record.schema.json",
+    "schemas/retention_distribution_receipt_verification_receipt.schema.json",
+    "schemas/retention_distribution_receipt_closeout_record.schema.json",
+    "schemas/retention_access_audit_snapshot_record.schema.json",
+    "schemas/retention_access_audit_snapshot_verification_receipt.schema.json",
+    "schemas/retention_access_audit_snapshot_closeout_record.schema.json",
+    "schemas/retention_release_health_snapshot_record.schema.json",
+    "schemas/retention_release_health_snapshot_verification_receipt.schema.json",
+    "schemas/retention_release_health_snapshot_closeout_record.schema.json",
+    "schemas/retention_release_usage_summary_record.schema.json",
+    "schemas/retention_release_usage_summary_verification_receipt.schema.json",
+    "schemas/retention_release_usage_summary_closeout_record.schema.json",
+    "schemas/retention_retention_exposure_report_record.schema.json",
+    "schemas/retention_retention_exposure_report_verification_receipt.schema.json",
+    "schemas/retention_retention_exposure_report_closeout_record.schema.json",
+    "schemas/retention_release_closeout_summary_record.schema.json",
+    "schemas/retention_release_closeout_summary_verification_receipt.schema.json",
+    "schemas/retention_release_closeout_summary_closeout_record.schema.json",
+    "schemas/retention_public_record_index_record.schema.json",
+    "schemas/retention_public_record_index_verification_receipt.schema.json",
+    "schemas/retention_public_record_index_closeout_record.schema.json",
+    "schemas/retention_final_release_bundle_record.schema.json",
+    "schemas/retention_final_release_bundle_verification_receipt.schema.json",
+    "schemas/retention_final_release_bundle_closeout_record.schema.json",
+    "schemas/retention_terminal_access_notice_record.schema.json",
+    "schemas/retention_terminal_access_notice_verification_receipt.schema.json",
+    "schemas/retention_terminal_access_notice_closeout_record.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -772,7 +972,7 @@ EXPECTED_PATHS = [
     "recovery/README.md", "recovery/recovery-points.json",
     "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json", "restore/restore-receipts.json", "restore/restore-verification-receipts.json", "restore/restore-closeout-records.json",
     "disposition/README.md", "disposition/disposition-records.json", "disposition/disposition-receipts.json",
-    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json", "custody/custody-release-approvals.json", "custody/custody-release-receipts.json", "custody/custody-release-verification-receipts.json", "custody/custody-release-closeout-records.json", "custody/custody-release-chain-records.json", "custody/custody-release-chain-verification-receipts.json", "custody/custody-lifecycle-records.json", "custody/custody-lifecycle-verification-receipts.json", "custody/custody-lifecycle-closeout-records.json", "archive/archive-manifest-records.json", "archive/archive-receipts.json", "archive/archive-verification-receipts.json", "archive/archive-closeout-records.json", "archive/archive-chain-records.json", "archive/archive-chain-verification-receipts.json", "archive/archive-index-records.json", "archive/archive-index-verification-receipts.json", "archive/archive-index-closeout-records.json", "archive/archive-lifecycle-records.json", "archive/archive-lifecycle-verification-receipts.json", "archive/archive-lifecycle-closeout-records.json", "preservation/preservation-records.json", "preservation/preservation-verification-receipts.json", "preservation/preservation-closeout-records.json", "preservation/preservation-chain-records.json", "preservation/preservation-chain-verification-receipts.json", "retention/retention-review-records.json", "retention/retention-review-verification-receipts.json", "retention/retention-decision-records.json", "retention/retention-decision-approvals.json", "retention/retention-action-receipts.json", "retention/retention-action-verification-receipts.json", "retention/retention-action-closeout-records.json", "retention/retention-chain-records.json", "retention/retention-chain-verification-receipts.json", "retention/retention-lifecycle-records.json", "retention/retention-lifecycle-verification-receipts.json", "retention/retention-lifecycle-closeout-records.json", "retention/retention-ledger-records.json", "retention/retention-ledger-verification-receipts.json", "retention/retention-ledger-closeout-records.json", "retention/retention-policy-compliance-records.json", "retention/retention-policy-compliance-verification-receipts.json", "retention/retention-obligation-records.json", "retention/retention-obligation-verification-receipts.json", "retention/retention-schedule-records.json", "retention/retention-schedule-verification-receipts.json", "retention/retention-schedule-closeout-records.json", "retention/retention-cycle-records.json", "retention/retention-cycle-verification-receipts.json", "retention/retention-cycle-closeout-records.json", "retention/retention-hold-records.json", "retention/retention-hold-verification-receipts.json", "retention/retention-hold-closeout-records.json", "retention/retention-status-snapshot-records.json", "retention/retention-status-snapshot-verification-receipts.json", "retention/retention-rollup-records.json", "retention/retention-rollup-verification-receipts.json", "retention/retention-rollup-closeout-records.json", "retention/retention-report-records.json", "retention/retention-report-verification-receipts.json", "retention/retention-report-closeout-records.json", "retention/retention-publication-records.json", "retention/retention-publication-verification-receipts.json", "retention/retention-publication-closeout-records.json", "retention/retention-dashboard-snapshot-records.json", "retention/retention-dashboard-snapshot-verification-receipts.json", "retention/retention-dashboard-snapshot-closeout-records.json", "retention/retention-summary-records.json", "retention/retention-summary-verification-receipts.json", "retention/retention-summary-closeout-records.json", "retention/retention-export-records.json", "retention/retention-export-verification-receipts.json", "retention/retention-export-closeout-records.json", "retention/retention-handoff-records.json", "retention/retention-handoff-verification-receipts.json", "retention/retention-handoff-closeout-records.json", "retention/retention-acceptance-records.json", "retention/retention-acceptance-verification-receipts.json", "retention/retention-acceptance-closeout-records.json", "retention/retention-package-records.json", "retention/retention-package-verification-receipts.json", "retention/retention-package-closeout-records.json", "retention/retention-finalization-records.json", "retention/retention-finalization-verification-receipts.json", "retention/retention-finalization-closeout-records.json", "retention/retention-terminal-status-records.json", "retention/retention-terminal-status-verification-receipts.json", "retention/retention-terminal-status-closeout-records.json", "retention/retention-certificate-records.json", "retention/retention-certificate-verification-receipts.json", "retention/retention-certificate-closeout-records.json", "retention/retention-registry-records.json", "retention/retention-registry-verification-receipts.json", "retention/retention-registry-closeout-records.json", "retention/retention-closure-records.json", "retention/retention-closure-verification-receipts.json", "retention/retention-closure-closeout-records.json", "retention/retention-completion-records.json", "retention/retention-completion-verification-receipts.json", "retention/retention-completion-closeout-records.json", "retention/retention-attestation-records.json", "retention/retention-attestation-verification-receipts.json", "retention/retention-attestation-closeout-records.json", "retention/retention-seal-records.json", "retention/retention-seal-verification-receipts.json", "retention/retention-seal-closeout-records.json", "retention/retention-notarization-records.json", "retention/retention-notarization-verification-receipts.json", "retention/retention-notarization-closeout-records.json", "retention/retention-archive-anchor-records.json", "retention/retention-archive-anchor-verification-receipts.json", "retention/retention-archive-anchor-closeout-records.json", "retention/retention-endcap-records.json", "retention/retention-endcap-verification-receipts.json", "retention/retention-endcap-closeout-records.json", "retention/retention-final-index-records.json", "retention/retention-final-index-verification-receipts.json", "retention/retention-final-index-closeout-records.json", "retention/retention-master-ledger-records.json", "retention/retention-master-ledger-verification-receipts.json", "retention/retention-master-ledger-closeout-records.json", "retention/retention-terminal-manifest-records.json", "retention/retention-terminal-manifest-verification-receipts.json", "retention/retention-terminal-manifest-closeout-records.json", "retention/retention-repository-release-records.json", "retention/retention-repository-release-verification-receipts.json", "retention/retention-repository-release-closeout-records.json", "retention/retention-deployment-release-records.json", "retention/retention-deployment-release-verification-receipts.json", "retention/retention-deployment-release-closeout-records.json", "retention/retention-availability-notice-records.json", "retention/retention-availability-notice-verification-receipts.json", "retention/retention-availability-notice-closeout-records.json", "retention/retention-release-acknowledgement-records.json", "retention/retention-release-acknowledgement-verification-receipts.json", "retention/retention-release-acknowledgement-closeout-records.json", "retention/retention-release-confirmation-records.json", "retention/retention-release-confirmation-verification-receipts.json", "retention/retention-release-confirmation-closeout-records.json", "retention/retention-distribution-package-records.json", "retention/retention-distribution-package-verification-receipts.json", "retention/retention-distribution-package-closeout-records.json", "retention/retention-distribution-manifest-records.json", "retention/retention-distribution-manifest-verification-receipts.json", "retention/retention-distribution-manifest-closeout-records.json", "retention/retention-access-publication-records.json",
+    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json", "custody/custody-release-approvals.json", "custody/custody-release-receipts.json", "custody/custody-release-verification-receipts.json", "custody/custody-release-closeout-records.json", "custody/custody-release-chain-records.json", "custody/custody-release-chain-verification-receipts.json", "custody/custody-lifecycle-records.json", "custody/custody-lifecycle-verification-receipts.json", "custody/custody-lifecycle-closeout-records.json", "archive/archive-manifest-records.json", "archive/archive-receipts.json", "archive/archive-verification-receipts.json", "archive/archive-closeout-records.json", "archive/archive-chain-records.json", "archive/archive-chain-verification-receipts.json", "archive/archive-index-records.json", "archive/archive-index-verification-receipts.json", "archive/archive-index-closeout-records.json", "archive/archive-lifecycle-records.json", "archive/archive-lifecycle-verification-receipts.json", "archive/archive-lifecycle-closeout-records.json", "preservation/preservation-records.json", "preservation/preservation-verification-receipts.json", "preservation/preservation-closeout-records.json", "preservation/preservation-chain-records.json", "preservation/preservation-chain-verification-receipts.json", "retention/retention-review-records.json", "retention/retention-review-verification-receipts.json", "retention/retention-decision-records.json", "retention/retention-decision-approvals.json", "retention/retention-action-receipts.json", "retention/retention-action-verification-receipts.json", "retention/retention-action-closeout-records.json", "retention/retention-chain-records.json", "retention/retention-chain-verification-receipts.json", "retention/retention-lifecycle-records.json", "retention/retention-lifecycle-verification-receipts.json", "retention/retention-lifecycle-closeout-records.json", "retention/retention-ledger-records.json", "retention/retention-ledger-verification-receipts.json", "retention/retention-ledger-closeout-records.json", "retention/retention-policy-compliance-records.json", "retention/retention-policy-compliance-verification-receipts.json", "retention/retention-obligation-records.json", "retention/retention-obligation-verification-receipts.json", "retention/retention-schedule-records.json", "retention/retention-schedule-verification-receipts.json", "retention/retention-schedule-closeout-records.json", "retention/retention-cycle-records.json", "retention/retention-cycle-verification-receipts.json", "retention/retention-cycle-closeout-records.json", "retention/retention-hold-records.json", "retention/retention-hold-verification-receipts.json", "retention/retention-hold-closeout-records.json", "retention/retention-status-snapshot-records.json", "retention/retention-status-snapshot-verification-receipts.json", "retention/retention-rollup-records.json", "retention/retention-rollup-verification-receipts.json", "retention/retention-rollup-closeout-records.json", "retention/retention-report-records.json", "retention/retention-report-verification-receipts.json", "retention/retention-report-closeout-records.json", "retention/retention-publication-records.json", "retention/retention-publication-verification-receipts.json", "retention/retention-publication-closeout-records.json", "retention/retention-dashboard-snapshot-records.json", "retention/retention-dashboard-snapshot-verification-receipts.json", "retention/retention-dashboard-snapshot-closeout-records.json", "retention/retention-summary-records.json", "retention/retention-summary-verification-receipts.json", "retention/retention-summary-closeout-records.json", "retention/retention-export-records.json", "retention/retention-export-verification-receipts.json", "retention/retention-export-closeout-records.json", "retention/retention-handoff-records.json", "retention/retention-handoff-verification-receipts.json", "retention/retention-handoff-closeout-records.json", "retention/retention-acceptance-records.json", "retention/retention-acceptance-verification-receipts.json", "retention/retention-acceptance-closeout-records.json", "retention/retention-package-records.json", "retention/retention-package-verification-receipts.json", "retention/retention-package-closeout-records.json", "retention/retention-finalization-records.json", "retention/retention-finalization-verification-receipts.json", "retention/retention-finalization-closeout-records.json", "retention/retention-terminal-status-records.json", "retention/retention-terminal-status-verification-receipts.json", "retention/retention-terminal-status-closeout-records.json", "retention/retention-certificate-records.json", "retention/retention-certificate-verification-receipts.json", "retention/retention-certificate-closeout-records.json", "retention/retention-registry-records.json", "retention/retention-registry-verification-receipts.json", "retention/retention-registry-closeout-records.json", "retention/retention-closure-records.json", "retention/retention-closure-verification-receipts.json", "retention/retention-closure-closeout-records.json", "retention/retention-completion-records.json", "retention/retention-completion-verification-receipts.json", "retention/retention-completion-closeout-records.json", "retention/retention-attestation-records.json", "retention/retention-attestation-verification-receipts.json", "retention/retention-attestation-closeout-records.json", "retention/retention-seal-records.json", "retention/retention-seal-verification-receipts.json", "retention/retention-seal-closeout-records.json", "retention/retention-notarization-records.json", "retention/retention-notarization-verification-receipts.json", "retention/retention-notarization-closeout-records.json", "retention/retention-archive-anchor-records.json", "retention/retention-archive-anchor-verification-receipts.json", "retention/retention-archive-anchor-closeout-records.json", "retention/retention-endcap-records.json", "retention/retention-endcap-verification-receipts.json", "retention/retention-endcap-closeout-records.json", "retention/retention-final-index-records.json", "retention/retention-final-index-verification-receipts.json", "retention/retention-final-index-closeout-records.json", "retention/retention-master-ledger-records.json", "retention/retention-master-ledger-verification-receipts.json", "retention/retention-master-ledger-closeout-records.json", "retention/retention-terminal-manifest-records.json", "retention/retention-terminal-manifest-verification-receipts.json", "retention/retention-terminal-manifest-closeout-records.json", "retention/retention-repository-release-records.json", "retention/retention-repository-release-verification-receipts.json", "retention/retention-repository-release-closeout-records.json", "retention/retention-deployment-release-records.json", "retention/retention-deployment-release-verification-receipts.json", "retention/retention-deployment-release-closeout-records.json", "retention/retention-availability-notice-records.json", "retention/retention-availability-notice-verification-receipts.json", "retention/retention-availability-notice-closeout-records.json", "retention/retention-release-acknowledgement-records.json", "retention/retention-release-acknowledgement-verification-receipts.json", "retention/retention-release-acknowledgement-closeout-records.json", "retention/retention-release-confirmation-records.json", "retention/retention-release-confirmation-verification-receipts.json", "retention/retention-release-confirmation-closeout-records.json", "retention/retention-distribution-package-records.json", "retention/retention-distribution-package-verification-receipts.json", "retention/retention-distribution-package-closeout-records.json", "retention/retention-distribution-manifest-records.json", "retention/retention-distribution-manifest-verification-receipts.json", "retention/retention-distribution-manifest-closeout-records.json", "retention/retention-access-publication-records.json", "retention/retention-access-publication-verification-receipts.json", "retention/retention-access-publication-closeout-records.json", "retention/retention-access-grant-records.json", "retention/retention-access-grant-verification-receipts.json", "retention/retention-access-grant-closeout-records.json", "retention/retention-access-ledger-records.json", "retention/retention-access-ledger-verification-receipts.json", "retention/retention-access-ledger-closeout-records.json", "retention/retention-retrieval-catalog-records.json", "retention/retention-retrieval-catalog-verification-receipts.json", "retention/retention-retrieval-catalog-closeout-records.json", "retention/retention-retrieval-endpoint-records.json", "retention/retention-retrieval-endpoint-verification-receipts.json", "retention/retention-retrieval-endpoint-closeout-records.json", "retention/retention-retrieval-token-records.json", "retention/retention-retrieval-token-verification-receipts.json", "retention/retention-retrieval-token-closeout-records.json", "retention/retention-consumer-receipt-records.json", "retention/retention-consumer-receipt-verification-receipts.json", "retention/retention-consumer-receipt-closeout-records.json", "retention/retention-publication-rollup-records.json", "retention/retention-publication-rollup-verification-receipts.json", "retention/retention-publication-rollup-closeout-records.json", "retention/retention-distribution-receipt-records.json", "retention/retention-distribution-receipt-verification-receipts.json", "retention/retention-distribution-receipt-closeout-records.json", "retention/retention-access-audit-snapshot-records.json", "retention/retention-access-audit-snapshot-verification-receipts.json", "retention/retention-access-audit-snapshot-closeout-records.json", "retention/retention-release-health-snapshot-records.json", "retention/retention-release-health-snapshot-verification-receipts.json", "retention/retention-release-health-snapshot-closeout-records.json", "retention/retention-release-usage-summary-records.json", "retention/retention-release-usage-summary-verification-receipts.json", "retention/retention-release-usage-summary-closeout-records.json", "retention/retention-retention-exposure-report-records.json", "retention/retention-retention-exposure-report-verification-receipts.json", "retention/retention-retention-exposure-report-closeout-records.json", "retention/retention-release-closeout-summary-records.json", "retention/retention-release-closeout-summary-verification-receipts.json", "retention/retention-release-closeout-summary-closeout-records.json", "retention/retention-public-record-index-records.json", "retention/retention-public-record-index-verification-receipts.json", "retention/retention-public-record-index-closeout-records.json", "retention/retention-final-release-bundle-records.json", "retention/retention-final-release-bundle-verification-receipts.json", "retention/retention-final-release-bundle-closeout-records.json", "retention/retention-terminal-access-notice-records.json", "retention/retention-terminal-access-notice-verification-receipts.json", "retention/retention-terminal-access-notice-closeout-records.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -1114,6 +1314,56 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_retention_distribution_manifest_verification_receipts(root).failures)
     report.failures.extend(validate_retention_distribution_manifest_closeout_records(root).failures)
     report.failures.extend(validate_retention_access_publication_records(root).failures)
+    report.failures.extend(validate_retention_access_publication_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_access_publication_closeout_records(root).failures)
+    report.failures.extend(validate_retention_access_grant_records(root).failures)
+    report.failures.extend(validate_retention_access_grant_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_access_grant_closeout_records(root).failures)
+    report.failures.extend(validate_retention_access_ledger_records(root).failures)
+    report.failures.extend(validate_retention_access_ledger_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_access_ledger_closeout_records(root).failures)
+    report.failures.extend(validate_retention_retrieval_catalog_records(root).failures)
+    report.failures.extend(validate_retention_retrieval_catalog_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_retrieval_catalog_closeout_records(root).failures)
+    report.failures.extend(validate_retention_retrieval_endpoint_records(root).failures)
+    report.failures.extend(validate_retention_retrieval_endpoint_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_retrieval_endpoint_closeout_records(root).failures)
+    report.failures.extend(validate_retention_retrieval_token_records(root).failures)
+    report.failures.extend(validate_retention_retrieval_token_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_retrieval_token_closeout_records(root).failures)
+    report.failures.extend(validate_retention_consumer_receipt_records(root).failures)
+    report.failures.extend(validate_retention_consumer_receipt_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_consumer_receipt_closeout_records(root).failures)
+    report.failures.extend(validate_retention_publication_rollup_records(root).failures)
+    report.failures.extend(validate_retention_publication_rollup_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_publication_rollup_closeout_records(root).failures)
+    report.failures.extend(validate_retention_distribution_receipt_records(root).failures)
+    report.failures.extend(validate_retention_distribution_receipt_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_distribution_receipt_closeout_records(root).failures)
+    report.failures.extend(validate_retention_access_audit_snapshot_records(root).failures)
+    report.failures.extend(validate_retention_access_audit_snapshot_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_access_audit_snapshot_closeout_records(root).failures)
+    report.failures.extend(validate_retention_release_health_snapshot_records(root).failures)
+    report.failures.extend(validate_retention_release_health_snapshot_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_release_health_snapshot_closeout_records(root).failures)
+    report.failures.extend(validate_retention_release_usage_summary_records(root).failures)
+    report.failures.extend(validate_retention_release_usage_summary_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_release_usage_summary_closeout_records(root).failures)
+    report.failures.extend(validate_retention_retention_exposure_report_records(root).failures)
+    report.failures.extend(validate_retention_retention_exposure_report_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_retention_exposure_report_closeout_records(root).failures)
+    report.failures.extend(validate_retention_release_closeout_summary_records(root).failures)
+    report.failures.extend(validate_retention_release_closeout_summary_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_release_closeout_summary_closeout_records(root).failures)
+    report.failures.extend(validate_retention_public_record_index_records(root).failures)
+    report.failures.extend(validate_retention_public_record_index_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_public_record_index_closeout_records(root).failures)
+    report.failures.extend(validate_retention_final_release_bundle_records(root).failures)
+    report.failures.extend(validate_retention_final_release_bundle_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_final_release_bundle_closeout_records(root).failures)
+    report.failures.extend(validate_retention_terminal_access_notice_records(root).failures)
+    report.failures.extend(validate_retention_terminal_access_notice_verification_receipts(root).failures)
+    report.failures.extend(validate_retention_terminal_access_notice_closeout_records(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

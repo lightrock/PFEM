@@ -1115,6 +1115,306 @@
       "purpose": "retention access publication records"
     },
     {
+      "path": "retention/retention-access-publication-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1d2cd5adcdeef76eabaac0d3a54cd01f9ecdaaaa80cc2b20fd4fc4e9f198ed98",
+      "purpose": "retention access publication verification receipts"
+    },
+    {
+      "path": "retention/retention-access-publication-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "46394dc2ab5cb70d638b4f936b4641eee937dba8683559a2fa47d316e8a2c6d1",
+      "purpose": "retention access publication closeout records"
+    },
+    {
+      "path": "retention/retention-access-grant-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "a6333924173e50d8c43d52e45ca9e116c0947050ab408e8730c2e7b3a59543a7",
+      "purpose": "retention access grant records"
+    },
+    {
+      "path": "retention/retention-access-grant-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "d902d1ec7ad42ebbbc50012d7564fda6c725a8ef65af738f3208244ca69da297",
+      "purpose": "retention access grant verification receipts"
+    },
+    {
+      "path": "retention/retention-access-grant-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "cfef7515e9e4aecef00beacbf0bdb42606c33bcc78e8eeeef23894a2fe9d0927",
+      "purpose": "retention access grant closeout records"
+    },
+    {
+      "path": "retention/retention-access-ledger-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "6daf010660eafb48c9f1251b84f2d4a5a432db1050ef0712f475cad7f3dbc9cb",
+      "purpose": "retention access ledger records"
+    },
+    {
+      "path": "retention/retention-access-ledger-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "de958c8ffbca212c73acea5555166fac2e51e5b896d9e122e8a5b27c0a26dd7e",
+      "purpose": "retention access ledger verification receipts"
+    },
+    {
+      "path": "retention/retention-access-ledger-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "2afa63f7cc557686d15243be4a510da0e9086ff0a7f9c8264cf171a6a9430503",
+      "purpose": "retention access ledger closeout records"
+    },
+    {
+      "path": "retention/retention-retrieval-catalog-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "3952af973171c777fe2a93d1256620e9de4dc9962eb817cf3a633ea8c166632b",
+      "purpose": "retention retrieval catalog records"
+    },
+    {
+      "path": "retention/retention-retrieval-catalog-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "2346a23beb253acb51e65142ca616d055beb37caedcc81766dd88f806ebbca8e",
+      "purpose": "retention retrieval catalog verification receipts"
+    },
+    {
+      "path": "retention/retention-retrieval-catalog-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "cb5148a38fdab465d323dc9aaa971811f64691c6103ab2cb47ee67ee467579fa",
+      "purpose": "retention retrieval catalog closeout records"
+    },
+    {
+      "path": "retention/retention-retrieval-endpoint-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "5aaa4c74d3d6872c247ab35dad5440cf2165f546490f15c879b66321d41ce203",
+      "purpose": "retention retrieval endpoint records"
+    },
+    {
+      "path": "retention/retention-retrieval-endpoint-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "91fce01fb0f0db6fa427ee97204086ae34147793eb0b3d077ba53e426b913f0e",
+      "purpose": "retention retrieval endpoint verification receipts"
+    },
+    {
+      "path": "retention/retention-retrieval-endpoint-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "837f22a5bf0b5ee2e5615396feebe0c6cc69447674101381e0746f22b745fd77",
+      "purpose": "retention retrieval endpoint closeout records"
+    },
+    {
+      "path": "retention/retention-retrieval-token-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "179efa5f91536e69593c73216feddbec1327dc76904407e6a6e1d70e13d54ae1",
+      "purpose": "retention retrieval token records"
+    },
+    {
+      "path": "retention/retention-retrieval-token-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "bf2f8a4dd4952433062a66994a52a640153131a0f083696ee66d6009077d75e5",
+      "purpose": "retention retrieval token verification receipts"
+    },
+    {
+      "path": "retention/retention-retrieval-token-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ddd0b04835094e906bf1a0f89679269b9a58024dea2a852012432bdea4b06209",
+      "purpose": "retention retrieval token closeout records"
+    },
+    {
+      "path": "retention/retention-consumer-receipt-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e00546c7b15a40acc972f14813eec0053635f60a2a0378d8c4c743a881176261",
+      "purpose": "retention consumer receipt records"
+    },
+    {
+      "path": "retention/retention-consumer-receipt-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9acfc5f108883d3e74812f7a4219aea8807fcedc6f2b34b356a4ebdd0c5ebe16",
+      "purpose": "retention consumer receipt verification receipts"
+    },
+    {
+      "path": "retention/retention-consumer-receipt-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "910bbf83a526b39ff446749ae69d3769d8dcbdbe129426f9f47d65052ca6f9da",
+      "purpose": "retention consumer receipt closeout records"
+    },
+    {
+      "path": "retention/retention-publication-rollup-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "7438c05a8da6af438ebade24ef748ff8ae408556e6c5026de52a2cf9011cd453",
+      "purpose": "retention publication rollup records"
+    },
+    {
+      "path": "retention/retention-publication-rollup-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "640738eb9cbc8e007efe8f922f72a6fc0a9c02224f7b228c64958f8d16648f75",
+      "purpose": "retention publication rollup verification receipts"
+    },
+    {
+      "path": "retention/retention-publication-rollup-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b7194145bb82696736c7382891f09a4bf99f23640689bda653cbae4907976ad8",
+      "purpose": "retention publication rollup closeout records"
+    },
+    {
+      "path": "retention/retention-distribution-receipt-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ec5e0b6958170dbedcfa925cfa841c84557d93dd8ab1f69bb08ebe337ebaef0c",
+      "purpose": "retention distribution receipt records"
+    },
+    {
+      "path": "retention/retention-distribution-receipt-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "3f1ae0096f85f2e5b3dd2bcbe9310fbebe3ef5def6d5eff9a29cf63a85fc8c22",
+      "purpose": "retention distribution receipt verification receipts"
+    },
+    {
+      "path": "retention/retention-distribution-receipt-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9a44777ccf9f27c3deaf2e816fcb8a1743e718c699363dcfd6818f18f964b6de",
+      "purpose": "retention distribution receipt closeout records"
+    },
+    {
+      "path": "retention/retention-access-audit-snapshot-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b22d2f5aae6e6502494eea42e0f3c0e190c4cabe9744c48f28ed3999c011b73b",
+      "purpose": "retention access audit snapshot records"
+    },
+    {
+      "path": "retention/retention-access-audit-snapshot-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "bb7375b6d9acdde7726a6420f27be27a4e0b335ba7a1bf75ec1d74f94c5b1c1a",
+      "purpose": "retention access audit snapshot verification receipts"
+    },
+    {
+      "path": "retention/retention-access-audit-snapshot-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1dfea1332cc5e14b158ea57bef180e823ec07eeb0951272e3144777981f42d02",
+      "purpose": "retention access audit snapshot closeout records"
+    },
+    {
+      "path": "retention/retention-release-health-snapshot-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "85c2a0d4f572561c0be97ebab84aa14e2d7fe0c1ddcaa8b68932a72d8ffb81f7",
+      "purpose": "retention release health snapshot records"
+    },
+    {
+      "path": "retention/retention-release-health-snapshot-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "a46832b2a03abc73ec21208a1657f3f7b71fca8d4c6183f2997bf1b32aeb1eb9",
+      "purpose": "retention release health snapshot verification receipts"
+    },
+    {
+      "path": "retention/retention-release-health-snapshot-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b81ef0c28e28660a73d5b34eef937dc3aa3e9b0cc6a725f9a63371e5fe4dfb96",
+      "purpose": "retention release health snapshot closeout records"
+    },
+    {
+      "path": "retention/retention-release-usage-summary-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "3a3e812e78946e8163221f481ad29f0ba7795ea9a6bfaacc60d024812bd3c413",
+      "purpose": "retention release usage summary records"
+    },
+    {
+      "path": "retention/retention-release-usage-summary-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "305152d13508a5cdf8709f21298d99b4ac95ea72557a02483dc555e11baf4b90",
+      "purpose": "retention release usage summary verification receipts"
+    },
+    {
+      "path": "retention/retention-release-usage-summary-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "5f00e9082aa90b60e6716c84afff7fe9203285dcb1a0a2515b913b006737be57",
+      "purpose": "retention release usage summary closeout records"
+    },
+    {
+      "path": "retention/retention-retention-exposure-report-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "6097b3ff8c8cef72bbb78371aabc3acfba9d360bce0a1210174a9832868f7906",
+      "purpose": "retention retention exposure report records"
+    },
+    {
+      "path": "retention/retention-retention-exposure-report-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "776e610f10f8a6a6a8156f4c2a0cff1633c70508e658385035d299749f7add79",
+      "purpose": "retention retention exposure report verification receipts"
+    },
+    {
+      "path": "retention/retention-retention-exposure-report-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "17b2f9a6f034861afbc3c3034744de0e0945efd64d6a66ed476914646f22bfd7",
+      "purpose": "retention retention exposure report closeout records"
+    },
+    {
+      "path": "retention/retention-release-closeout-summary-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b99d11177992e09204df5a49af630dd3982face2196109e5d386aa9ba49d68a1",
+      "purpose": "retention release closeout summary records"
+    },
+    {
+      "path": "retention/retention-release-closeout-summary-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b59d27131d951bfc6447b3d70d93960feb99d1f5046c4985c7295e11b15c2dd2",
+      "purpose": "retention release closeout summary verification receipts"
+    },
+    {
+      "path": "retention/retention-release-closeout-summary-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f9c99bb5de36179ac30f6957a4b2f64f6136e378abb6814d16576987784f2209",
+      "purpose": "retention release closeout summary closeout records"
+    },
+    {
+      "path": "retention/retention-public-record-index-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e115dfa203885f2bf26304761e537f267e78fbc4f378655194f1f6388bf9553f",
+      "purpose": "retention public record index records"
+    },
+    {
+      "path": "retention/retention-public-record-index-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "4ffdfab8a08bff12bedf04d756720dad7c2aa47071b930f46f6d3da12921dc07",
+      "purpose": "retention public record index verification receipts"
+    },
+    {
+      "path": "retention/retention-public-record-index-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "0a4367c2733e5a63b15ab62a1f3bdc9bd1df366ca0719d92b363efd1fc36dddb",
+      "purpose": "retention public record index closeout records"
+    },
+    {
+      "path": "retention/retention-final-release-bundle-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e1f5e8545655e923735476f854ab7d01b9c5e597bd02da9268c3998a40db65f6",
+      "purpose": "retention final release bundle records"
+    },
+    {
+      "path": "retention/retention-final-release-bundle-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "7db8969c4d919ca5e216bae06184f2e840b7b858c864035cf88c60e2ba14948d",
+      "purpose": "retention final release bundle verification receipts"
+    },
+    {
+      "path": "retention/retention-final-release-bundle-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ea6a09903ccefd507222e085900e9118871fa7c2a5c3445a80e8115437cca343",
+      "purpose": "retention final release bundle closeout records"
+    },
+    {
+      "path": "retention/retention-terminal-access-notice-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "5fa61d407216cc8b8994a5038aae7cb1df781036bce820f2fcb5772fac2c6abd",
+      "purpose": "retention terminal access notice records"
+    },
+    {
+      "path": "retention/retention-terminal-access-notice-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f03ea622a24b1e6d2ab45e64771d95013ed9044d97b8877c684846466a25788f",
+      "purpose": "retention terminal access notice verification receipts"
+    },
+    {
+      "path": "retention/retention-terminal-access-notice-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "fe46572c37e8ee7a8f5ae75820ceda545557358c284753de8e2cf933f9e5353f",
+      "purpose": "retention terminal access notice closeout records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -1195,7 +1495,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "c2cb49dc7d90a3096f49e3e4a0ec8487a0f9e3a16e6fa03043cc5ee23fbd6ac2",
+      "digest": "0060f28451c9142e3747607e333c38d63d183c23bbaf653035a50bdfb3f2169a",
       "purpose": "audit journal"
     },
     {

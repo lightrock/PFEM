@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_retrieval_catalog_record.schema.json",
+  "title": "PFEM Retention Retrieval Catalog Records",
+  "type": "object",
+  "required": [
+    "retention_retrieval_catalog_record_id",
+    "retrieval_catalog_kind",
+    "created_time",
+    "node_id",
+    "retention_access_ledger_closeout_record_id",
+    "retention_access_ledger_verification_receipt_id",
+    "retrieval_catalog_state",
+    "retrieval_catalog_scope",
+    "retrieval_catalog_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "retrieval_catalog_ref_digest",
+    "retrieval_catalog_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_retrieval_catalog_record_id": {
+      "type": "string"
+    },
+    "retrieval_catalog_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_access_ledger_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_access_ledger_verification_receipt_id": {
+      "type": "string"
+    },
+    "retrieval_catalog_state": {
+      "type": "string"
+    },
+    "retrieval_catalog_scope": {
+      "type": "string"
+    },
+    "retrieval_catalog_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "retrieval_catalog_ref_digest": {
+      "type": "string"
+    },
+    "retrieval_catalog_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

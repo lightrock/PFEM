@@ -1,0 +1,34 @@
+[
+  {
+    "retention_retrieval_catalog_record_id": "retention-retrieval-catalog-basic-restore-001",
+    "retrieval_catalog_kind": "retention_retrieval_catalog",
+    "created_time": "2026-01-01T00:03:20Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_access_ledger_closeout_record_id": "retention-access-ledger-closeout-basic-restore-001",
+    "retention_access_ledger_verification_receipt_id": "retention-access-ledger-verification-basic-restore-001",
+    "retrieval_catalog_state": "published",
+    "retrieval_catalog_scope": "closed_retention_access_ledger",
+    "retrieval_catalog_refs": [
+      "retention-access-ledger-closeout-basic-restore-001",
+      "retention-access-ledger-verification-basic-restore-001",
+      "retention-access-ledger-basic-restore-001",
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-access-ledger-closeout-basic-restore-001",
+      "retention-access-ledger-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-retrieval-catalog-ref-list",
+    "retrieval_catalog_ref_digest": "f7e41592b7270c35fff9c075aa440a4bdda15336d713f7e13088430fe39e38aa",
+    "retrieval_catalog_by_ref": "tools/pfem_retention_retrieval_catalog_records.py",
+    "summary": "Synthetic example retention retrieval catalog record built from the closed retention access ledger path."
+  }
+]
