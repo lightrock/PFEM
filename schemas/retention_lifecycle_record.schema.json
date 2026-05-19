@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_lifecycle_record.schema.json",
+  "title": "PFEM Retention Lifecycle Records",
+  "type": "object",
+  "required": [
+    "retention_lifecycle_record_id",
+    "lifecycle_kind",
+    "created_time",
+    "node_id",
+    "retention_chain_verification_receipt_id",
+    "retention_chain_record_id",
+    "lifecycle_state",
+    "final_outcome",
+    "lifecycle_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "lifecycle_ref_digest",
+    "summarized_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_lifecycle_record_id": {
+      "type": "string"
+    },
+    "lifecycle_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_chain_verification_receipt_id": {
+      "type": "string"
+    },
+    "retention_chain_record_id": {
+      "type": "string"
+    },
+    "lifecycle_state": {
+      "type": "string"
+    },
+    "final_outcome": {
+      "type": "string"
+    },
+    "lifecycle_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "lifecycle_ref_digest": {
+      "type": "string"
+    },
+    "summarized_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

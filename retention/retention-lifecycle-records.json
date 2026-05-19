@@ -1,0 +1,40 @@
+[
+  {
+    "retention_lifecycle_record_id": "retention-lifecycle-basic-restore-001",
+    "lifecycle_kind": "closed_retention_lifecycle_summary",
+    "created_time": "2026-01-01T00:01:20Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_chain_verification_receipt_id": "retention-chain-verification-basic-restore-001",
+    "retention_chain_record_id": "retention-chain-basic-restore-001",
+    "lifecycle_state": "closed",
+    "final_outcome": "continue_preservation_verified",
+    "lifecycle_refs": [
+      "retention-chain-basic-restore-001",
+      "retention-chain-verification-basic-restore-001",
+      "retention-action-closeout-basic-restore-001",
+      "retention-action-verification-basic-restore-001",
+      "retention-action-receipt-basic-restore-001",
+      "retention-decision-approval-basic-restore-001",
+      "retention-decision-basic-restore-001",
+      "retention-review-verification-basic-restore-001",
+      "retention-review-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-chain-verification-basic-restore-001",
+      "retention-chain-basic-restore-001",
+      "retention-action-closeout-basic-restore-001",
+      "retention-review-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-lifecycle-ref-list",
+    "lifecycle_ref_digest": "a87dd3bd712894e7d34ab9fea1b88eee18cee58a374ef8b1515ad031481c52cc",
+    "summarized_by_ref": "tools/pfem_retention_lifecycle_records.py",
+    "summary": "Synthetic example retention lifecycle record tying the verified retention chain into one closed retention lifecycle summary."
+  }
+]
