@@ -89,9 +89,15 @@
       "purpose": "import records"
     },
     {
+      "path": "conflicts/conflict-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "32fd698e02752573d321f36e8df3d5c85296ace2c87d25bf0a0557687634a55f",
+      "purpose": "conflict records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "07f3e47e92038d8b21b653d17643a968a10f345ff4ff48b12f93d7c19d1087e3",
+      "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
       "purpose": "merge decisions"
     },
     {
@@ -169,7 +175,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "87b7de23a1087a1185e797ddbf72c1f57b56326cc33a827f3fd04a04178ba4ff",
+      "digest": "7ff517992e6fa12d521d78ed4fb7473338925a493f577e667ecde8a41ad30ef9",
       "purpose": "audit journal"
     },
     {

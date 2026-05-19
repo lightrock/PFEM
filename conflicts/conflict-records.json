@@ -1,14 +1,11 @@
 [
   {
-    "merge_decision_id": "merge-decision-basic-import-001",
-    "decision_kind": "import_merge",
+    "conflict_record_id": "conflict-record-basic-import-001",
+    "conflict_kind": "no_conflict",
     "created_time": "2026-01-01T00:00:21Z",
     "import_record_id": "import-record-basic-exchange-001",
     "exchange_receipt_id": "exchange-receipt-basic-accept-001",
     "bundle_id": "bundle-basic-rollup-exchange-001",
-    "decision": "accept_incoming",
-    "reason_code": "no_local_conflict",
-    "decided_by_ref": "tools/pfem_merge_decisions.py",
     "incoming_refs": [
       "rollup-basic-001",
       "federation-basic-001"
@@ -18,12 +15,13 @@
       "federation-basic-001"
     ],
     "basis_refs": [
-      "conflict-record-basic-import-001",
       "import-record-basic-exchange-001",
       "exchange-receipt-basic-accept-001",
       "bundle-basic-rollup-exchange-001"
     ],
-    "resulting_import_state": "imported",
-    "summary": "Synthetic example merge decision accepting imported rollup and federation records because the conflict check found no local conflict."
+    "severity": "none",
+    "conflict_state": "none_detected",
+    "detected_by_ref": "tools/pfem_conflict_records.py",
+    "summary": "Synthetic example conflict check showing that no local conflict was detected for the imported rollup and federation records."
   }
 ]

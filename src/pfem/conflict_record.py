@@ -1,4 +1,4 @@
-"""PFEM merge decision validation."""
+"""PFEM conflict record validation."""
 
 from __future__ import annotations
 
@@ -13,54 +13,55 @@ from pfem.import_record import collect_import_record_ids
 
 JsonObject = dict[str, Any]
 
-KNOWN_DECISION_KINDS = {
-    "import_merge",
-    "conflict_resolution",
-    "operator_override",
+KNOWN_CONFLICT_KINDS = {
+    "no_conflict",
+    "version_collision",
+    "duplicate_record",
+    "stale_incoming",
+    "policy_conflict",
+    "identity_conflict",
+    "schema_conflict",
 }
 
-KNOWN_DECISIONS = {
-    "accept_incoming",
-    "keep_local",
-    "supersede_local",
-    "create_new_version",
-    "defer_for_review",
-    "reject_incoming",
-    "no_op",
+KNOWN_SEVERITIES = {
+    "none",
+    "low",
+    "medium",
+    "high",
+    "critical",
 }
 
-KNOWN_IMPORT_STATES = {
-    "staged",
-    "imported",
-    "skipped",
-    "failed",
+KNOWN_CONFLICT_STATES = {
+    "none_detected",
+    "observed",
+    "under_review",
+    "resolved",
+    "waived",
     "superseded",
-    "rejected",
 }
 
 
 @dataclass(frozen=True)
-class MergeDecision:
-    merge_decision_id: str
-    decision_kind: str
+class ConflictRecord:
+    conflict_record_id: str
+    conflict_kind: str
     created_time: str
     import_record_id: str
     exchange_receipt_id: str
     bundle_id: str
-    decision: str
-    reason_code: str
-    decided_by_ref: str
     incoming_refs: list[str]
     local_target_refs: list[str]
     basis_refs: list[str]
-    resulting_import_state: str | None
+    severity: str
+    conflict_state: str
+    detected_by_ref: str
     summary: str
 
 
 @dataclass(frozen=True)
-class MergeDecisionReport:
+class ConflictRecordReport:
     source: str
-    checked_decisions: int = 0
+    checked_records: int = 0
     failures: list[str] = field(default_factory=list)
 
     @property
@@ -88,36 +89,35 @@ def _load_records(path: Path) -> list[JsonObject]:
     raise ValueError(f"expected JSON object or array in {path}")
 
 
-def load_merge_decisions(path: str | Path) -> list[MergeDecision]:
+def load_conflict_records(path: str | Path) -> list[ConflictRecord]:
     return [
-        MergeDecision(
-            merge_decision_id=str(record.get("merge_decision_id", "")),
-            decision_kind=str(record.get("decision_kind", "")),
+        ConflictRecord(
+            conflict_record_id=str(record.get("conflict_record_id", "")),
+            conflict_kind=str(record.get("conflict_kind", "")),
             created_time=str(record.get("created_time", "")),
             import_record_id=str(record.get("import_record_id", "")),
             exchange_receipt_id=str(record.get("exchange_receipt_id", "")),
             bundle_id=str(record.get("bundle_id", "")),
-            decision=str(record.get("decision", "")),
-            reason_code=str(record.get("reason_code", "")),
-            decided_by_ref=str(record.get("decided_by_ref", "")),
             incoming_refs=_as_list(record.get("incoming_refs", [])),
             local_target_refs=_as_list(record.get("local_target_refs", [])),
             basis_refs=_as_list(record.get("basis_refs", [])),
-            resulting_import_state=str(record["resulting_import_state"]) if "resulting_import_state" in record else None,
+            severity=str(record.get("severity", "")),
+            conflict_state=str(record.get("conflict_state", "")),
+            detected_by_ref=str(record.get("detected_by_ref", "")),
             summary=str(record.get("summary", "")),
         )
         for record in _load_records(Path(path))
     ]
 
 
-def collect_merge_decision_ids(root: str | Path) -> set[str]:
-    decisions_path = Path(root) / "merge" / "merge-decisions.json"
-    if not decisions_path.exists():
+def collect_conflict_record_ids(root: str | Path) -> set[str]:
+    records_path = Path(root) / "conflicts" / "conflict-records.json"
+    if not records_path.exists():
         return set()
     return {
-        decision.merge_decision_id
-        for decision in load_merge_decisions(decisions_path)
-        if decision.merge_decision_id
+        record.conflict_record_id
+        for record in load_conflict_records(records_path)
+        if record.conflict_record_id
     }
 
 
@@ -196,9 +196,10 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     folders = [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "dispatch", "routing", "delivery", "outbox",
-        "inbox", "intake", "imports", "conflicts", "merge", "transport", "topology", "review",
-        "audit", "exchange", "reconciliation", "quality", "action", "playbooks",
-        "integrity", "schemas", "contracts", "docs", "bundles", "tests",
+        "inbox", "intake", "imports", "conflicts", "merge", "transport",
+        "topology", "review", "audit", "exchange", "reconciliation", "quality",
+        "action", "playbooks", "integrity", "schemas", "contracts", "docs",
+        "bundles", "tests",
     ]
     paths: set[str] = set()
     for folder in folders:
@@ -215,20 +216,17 @@ def _known_ref(ref: str, known_ids: set[str], known_paths: set[str]) -> bool:
     return ref in known_ids or ref.replace("\\", "/") in known_paths
 
 
-def validate_merge_decisions(root: str | Path) -> MergeDecisionReport:
+def validate_conflict_records(root: str | Path) -> ConflictRecordReport:
     root_path = Path(root)
-    decisions_path = root_path / "merge" / "merge-decisions.json"
+    records_path = root_path / "conflicts" / "conflict-records.json"
     failures: list[str] = []
 
-    if not decisions_path.exists():
-        return MergeDecisionReport(
-            source=str(decisions_path),
-            failures=["missing merge decisions: merge/merge-decisions.json"],
-        )
+    if not records_path.exists():
+        return ConflictRecordReport(source=str(records_path), failures=["missing conflict records: conflicts/conflict-records.json"])
 
-    decisions = load_merge_decisions(decisions_path)
-    if not decisions:
-        failures.append("merge decisions file has no decisions")
+    records = load_conflict_records(records_path)
+    if not records:
+        failures.append("conflict records file has no records")
 
     import_record_ids = collect_import_record_ids(root_path)
     exchange_receipt_ids = _collect_exchange_receipt_ids(root_path)
@@ -237,63 +235,61 @@ def validate_merge_decisions(root: str | Path) -> MergeDecisionReport:
     known_paths = _collect_known_artifact_paths(root_path)
     seen_ids: set[str] = set()
 
-    for decision in decisions:
-        if not decision.merge_decision_id:
-            failures.append("merge decision missing merge_decision_id")
+    for record in records:
+        if not record.conflict_record_id:
+            failures.append("conflict record missing conflict_record_id")
             continue
-        if decision.merge_decision_id in seen_ids:
-            failures.append(f"duplicate merge_decision_id {decision.merge_decision_id!r}")
-        seen_ids.add(decision.merge_decision_id)
+        if record.conflict_record_id in seen_ids:
+            failures.append(f"duplicate conflict_record_id {record.conflict_record_id!r}")
+        seen_ids.add(record.conflict_record_id)
 
-        if decision.decision_kind not in KNOWN_DECISION_KINDS:
-            failures.append(f"merge decision {decision.merge_decision_id!r} uses unknown decision_kind {decision.decision_kind!r}")
-        if not decision.created_time:
-            failures.append(f"merge decision {decision.merge_decision_id!r} missing created_time")
-        if import_record_ids and decision.import_record_id not in import_record_ids:
-            failures.append(f"merge decision {decision.merge_decision_id!r} references unknown import_record_id {decision.import_record_id!r}")
-        if exchange_receipt_ids and decision.exchange_receipt_id not in exchange_receipt_ids:
-            failures.append(f"merge decision {decision.merge_decision_id!r} references unknown exchange_receipt_id {decision.exchange_receipt_id!r}")
-        if bundle_ids and decision.bundle_id not in bundle_ids:
-            failures.append(f"merge decision {decision.merge_decision_id!r} references unknown bundle_id {decision.bundle_id!r}")
-        if decision.decision not in KNOWN_DECISIONS:
-            failures.append(f"merge decision {decision.merge_decision_id!r} uses unknown decision {decision.decision!r}")
-        if not decision.reason_code:
-            failures.append(f"merge decision {decision.merge_decision_id!r} missing reason_code")
-        if not decision.decided_by_ref:
-            failures.append(f"merge decision {decision.merge_decision_id!r} missing decided_by_ref")
+        if record.conflict_kind not in KNOWN_CONFLICT_KINDS:
+            failures.append(f"conflict record {record.conflict_record_id!r} uses unknown conflict_kind {record.conflict_kind!r}")
+        if not record.created_time:
+            failures.append(f"conflict record {record.conflict_record_id!r} missing created_time")
+        if import_record_ids and record.import_record_id not in import_record_ids:
+            failures.append(f"conflict record {record.conflict_record_id!r} references unknown import_record_id {record.import_record_id!r}")
+        if exchange_receipt_ids and record.exchange_receipt_id not in exchange_receipt_ids:
+            failures.append(f"conflict record {record.conflict_record_id!r} references unknown exchange_receipt_id {record.exchange_receipt_id!r}")
+        if bundle_ids and record.bundle_id not in bundle_ids:
+            failures.append(f"conflict record {record.conflict_record_id!r} references unknown bundle_id {record.bundle_id!r}")
 
-        if not decision.incoming_refs:
-            failures.append(f"merge decision {decision.merge_decision_id!r} has no incoming_refs")
-        for ref in decision.incoming_refs:
+        if not record.incoming_refs:
+            failures.append(f"conflict record {record.conflict_record_id!r} has no incoming_refs")
+        for ref in record.incoming_refs:
             if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"merge decision {decision.merge_decision_id!r} references unknown incoming_ref {ref!r}")
+                failures.append(f"conflict record {record.conflict_record_id!r} references unknown incoming_ref {ref!r}")
 
-        for ref in decision.local_target_refs:
+        for ref in record.local_target_refs:
             if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"merge decision {decision.merge_decision_id!r} references unknown local_target_ref {ref!r}")
+                failures.append(f"conflict record {record.conflict_record_id!r} references unknown local_target_ref {ref!r}")
 
-        if not decision.basis_refs:
-            failures.append(f"merge decision {decision.merge_decision_id!r} has no basis_refs")
-        for ref in decision.basis_refs:
+        if not record.basis_refs:
+            failures.append(f"conflict record {record.conflict_record_id!r} has no basis_refs")
+        for ref in record.basis_refs:
             if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"merge decision {decision.merge_decision_id!r} references unknown basis_ref {ref!r}")
+                failures.append(f"conflict record {record.conflict_record_id!r} references unknown basis_ref {ref!r}")
 
-        if decision.resulting_import_state and decision.resulting_import_state not in KNOWN_IMPORT_STATES:
-            failures.append(f"merge decision {decision.merge_decision_id!r} has unknown resulting_import_state {decision.resulting_import_state!r}")
-        if not decision.summary:
-            failures.append(f"merge decision {decision.merge_decision_id!r} missing summary")
+        if record.severity not in KNOWN_SEVERITIES:
+            failures.append(f"conflict record {record.conflict_record_id!r} uses unknown severity {record.severity!r}")
+        if record.conflict_state not in KNOWN_CONFLICT_STATES:
+            failures.append(f"conflict record {record.conflict_record_id!r} uses unknown conflict_state {record.conflict_state!r}")
+        if record.conflict_kind == "no_conflict" and record.conflict_state != "none_detected":
+            failures.append(f"conflict record {record.conflict_record_id!r} no_conflict should use conflict_state 'none_detected'")
+        if record.conflict_state == "none_detected" and record.severity != "none":
+            failures.append(f"conflict record {record.conflict_record_id!r} none_detected should use severity 'none'")
+        if not record.detected_by_ref:
+            failures.append(f"conflict record {record.conflict_record_id!r} missing detected_by_ref")
+        if not record.summary:
+            failures.append(f"conflict record {record.conflict_record_id!r} missing summary")
 
-    return MergeDecisionReport(
-        source=str(decisions_path),
-        checked_decisions=len(decisions),
-        failures=failures,
-    )
+    return ConflictRecordReport(source=str(records_path), checked_records=len(records), failures=failures)
 
 
-def format_merge_decision_report(report: MergeDecisionReport) -> str:
+def format_conflict_record_report(report: ConflictRecordReport) -> str:
     lines: list[str] = []
-    lines.append(f"PFEM merge decision source: {report.source}")
-    lines.append(f"Merge decisions checked: {report.checked_decisions}")
+    lines.append(f"PFEM conflict record source: {report.source}")
+    lines.append(f"Conflict records checked: {report.checked_records}")
 
     if report.failures:
         lines.append("")
@@ -301,9 +297,9 @@ def format_merge_decision_report(report: MergeDecisionReport) -> str:
         for failure in report.failures:
             lines.append(f"  - {failure}")
         lines.append("")
-        lines.append("PFEM merge decision validation failed.")
+        lines.append("PFEM conflict record validation failed.")
     else:
         lines.append("")
-        lines.append("PFEM merge decision validation passed.")
+        lines.append("PFEM conflict record validation passed.")
 
     return "\n".join(lines)

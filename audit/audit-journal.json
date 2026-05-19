@@ -245,5 +245,18 @@
     ],
     "summary": "Example merge decision was recorded after import.",
     "source_tool": "pfem_merge_decisions"
+  },
+  {
+    "audit_id": "audit-conflict-record-basic-001",
+    "event_kind": "conflict_recorded",
+    "created_time": "2026-01-01T00:00:21Z",
+    "actor_ref": "tools/pfem_conflict_records.py",
+    "subject_refs": [
+      "conflict-record-basic-import-001",
+      "import-record-basic-exchange-001",
+      "merge-decision-basic-import-001"
+    ],
+    "summary": "Example conflict check record was recorded before merge decision.",
+    "source_tool": "pfem_conflict_records"
   }
 ]

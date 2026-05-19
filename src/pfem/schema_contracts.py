@@ -27,6 +27,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "inbox_item.schema.json": ["inbox/inbox-items.json"],
     "intake_decision.schema.json": ["intake/intake-decisions.json"],
     "import_record.schema.json": ["imports/import-records.json"],
+    "conflict_record.schema.json": ["conflicts/conflict-records.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

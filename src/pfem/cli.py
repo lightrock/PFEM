@@ -8,6 +8,7 @@ from pathlib import Path
 
 from pfem.action import format_action_report, validate_action_repository
 from pfem.audit import format_audit_report, validate_audit_repository
+from pfem.conflict_record import format_conflict_record_report, validate_conflict_records
 from pfem.bundle import format_bundle_report, validate_bundle_repository
 from pfem.catalog import build_catalog, format_catalog
 from pfem.delivery import format_delivery_report, validate_delivery_channel_registry
@@ -54,6 +55,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("inbox", "Validate PFEM inbox items"),
         ("intake-decisions", "Validate PFEM intake decisions"),
         ("import-records", "Validate PFEM import records"),
+        ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
         ("delivery", "Validate PFEM delivery channel registry"),
@@ -112,6 +114,7 @@ def main(argv: list[str] | None = None) -> int:
         "inbox": (validate_inbox_items, format_inbox_report),
         "intake-decisions": (validate_intake_decisions, format_intake_decision_report),
         "import-records": (validate_import_records, format_import_record_report),
+        "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),
         "delivery": (validate_delivery_channel_registry, format_delivery_report),

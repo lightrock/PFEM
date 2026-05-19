@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/conflict_record.schema.json",
+  "title": "PFEM Conflict Record",
+  "type": "object",
+  "required": [
+    "conflict_record_id",
+    "conflict_kind",
+    "created_time",
+    "import_record_id",
+    "exchange_receipt_id",
+    "bundle_id",
+    "incoming_refs",
+    "basis_refs",
+    "severity",
+    "conflict_state",
+    "detected_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "conflict_record_id": {
+      "type": "string"
+    },
+    "conflict_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "import_record_id": {
+      "type": "string"
+    },
+    "exchange_receipt_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "incoming_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "local_target_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "type": "string"
+    },
+    "conflict_state": {
+      "type": "string"
+    },
+    "detected_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
