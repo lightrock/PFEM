@@ -1,0 +1,210 @@
+"""PFEM integrity receipt helpers."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+
+DEFAULT_RECEIPT_PATH = Path("integrity") / "receipt-manifest.json"
+DEFAULT_ALGORITHM = "sha256-canonical-json"
+
+
+DEFAULT_RECEIPT_TARGETS = [
+    ("adapters/adapter-registry.json", "adapter registry"),
+    ("profiles/profile-registry.json", "profile registry"),
+    ("nodes/node-registry.json", "node registry"),
+    ("sources/source-registry.json", "source registry"),
+    ("examples/example-registry.json", "example registry"),
+    ("policy/sharing-policy.json", "sharing policy"),
+    ("topology/federation-topology.json", "federation topology"),
+    ("review/review-records.json", "review records"),
+    ("tests/fixtures/lifecycle/basic/raw_evidence.json", "basic lifecycle raw evidence"),
+    ("tests/fixtures/lifecycle/basic/normalized_observation.json", "basic lifecycle normalized observation"),
+    ("tests/fixtures/lifecycle/basic/finding.json", "basic lifecycle finding"),
+    ("tests/fixtures/lifecycle/basic/alert.json", "basic lifecycle alert"),
+    ("tests/fixtures/lifecycle/basic/evidence_package.json", "basic lifecycle evidence package"),
+    ("tests/fixtures/rollup/basic/lifecycle/raw_evidence.json", "basic rollup raw evidence"),
+    ("tests/fixtures/rollup/basic/lifecycle/normalized_observation.json", "basic rollup normalized observation"),
+    ("tests/fixtures/rollup/basic/lifecycle/finding.json", "basic rollup finding"),
+    ("tests/fixtures/rollup/basic/lifecycle/alert.json", "basic rollup alert"),
+    ("tests/fixtures/rollup/basic/lifecycle/evidence_package.json", "basic rollup evidence package"),
+    ("tests/fixtures/rollup/basic/rollup_summary.json", "basic rollup summary"),
+    ("tests/fixtures/rollup/basic/federation_message.json", "basic federation message"),
+]
+
+
+@dataclass(frozen=True)
+class IntegrityReceipt:
+    path: str
+    digest_algorithm: str
+    digest: str
+    purpose: str
+
+
+@dataclass(frozen=True)
+class IntegrityManifest:
+    receipt_set_id: str
+    version: str
+    algorithm: str
+    receipts: list[IntegrityReceipt]
+    generated_by: str | None = None
+
+
+@dataclass(frozen=True)
+class IntegrityReport:
+    source: str
+    checked_receipts: int = 0
+    failures: list[str] = field(default_factory=list)
+
+    @property
+    def ok(self) -> bool:
+        return not self.failures
+
+
+def canonical_json_bytes(path: Path) -> bytes:
+    value: Any = json.loads(path.read_text(encoding="utf-8"))
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+
+
+def compute_digest(path: str | Path, algorithm: str = DEFAULT_ALGORITHM) -> str:
+    file_path = Path(path)
+
+    if algorithm == "sha256-canonical-json":
+        payload = canonical_json_bytes(file_path)
+    elif algorithm == "sha256-bytes":
+        payload = file_path.read_bytes()
+    else:
+        raise ValueError(f"unsupported digest algorithm: {algorithm}")
+
+    return hashlib.sha256(payload).hexdigest()
+
+
+def load_integrity_manifest(path: str | Path) -> IntegrityManifest:
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    receipts = [
+        IntegrityReceipt(
+            path=str(item.get("path", "")),
+            digest_algorithm=str(item.get("digest_algorithm", raw.get("algorithm", DEFAULT_ALGORITHM))),
+            digest=str(item.get("digest", "")),
+            purpose=str(item.get("purpose", "")),
+        )
+        for item in raw.get("receipts", [])
+    ]
+    return IntegrityManifest(
+        receipt_set_id=str(raw.get("receipt_set_id", "")),
+        version=str(raw.get("version", "")),
+        algorithm=str(raw.get("algorithm", DEFAULT_ALGORITHM)),
+        generated_by=str(raw["generated_by"]) if "generated_by" in raw else None,
+        receipts=receipts,
+    )
+
+
+def build_integrity_manifest(root: str | Path) -> dict[str, Any]:
+    root_path = Path(root)
+    receipts: list[dict[str, str]] = []
+
+    for rel_path, purpose in DEFAULT_RECEIPT_TARGETS:
+        target = root_path / rel_path
+        if not target.exists():
+            continue
+        receipts.append(
+            {
+                "path": rel_path,
+                "digest_algorithm": DEFAULT_ALGORITHM,
+                "digest": compute_digest(target, DEFAULT_ALGORITHM),
+                "purpose": purpose,
+            }
+        )
+
+    return {
+        "receipt_set_id": "pfem-integrity-receipts",
+        "version": "0.1",
+        "generated_by": "tools/pfem_integrity_update.py",
+        "algorithm": DEFAULT_ALGORITHM,
+        "receipts": receipts,
+    }
+
+
+def write_integrity_manifest(root: str | Path, manifest_path: str | Path = DEFAULT_RECEIPT_PATH) -> Path:
+    root_path = Path(root)
+    target = root_path / manifest_path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    value = build_integrity_manifest(root_path)
+    target.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    return target
+
+
+def validate_integrity_manifest(root: str | Path, manifest_path: str | Path = DEFAULT_RECEIPT_PATH) -> IntegrityReport:
+    root_path = Path(root)
+    source_path = root_path / manifest_path
+    failures: list[str] = []
+
+    if not source_path.exists():
+        return IntegrityReport(
+            source=str(source_path),
+            failures=[f"missing integrity manifest: {manifest_path}"],
+        )
+
+    manifest = load_integrity_manifest(source_path)
+    if not manifest.receipt_set_id:
+        failures.append("integrity manifest missing receipt_set_id")
+    if not manifest.version:
+        failures.append("integrity manifest missing version")
+    if not manifest.algorithm:
+        failures.append("integrity manifest missing algorithm")
+    if not manifest.receipts:
+        failures.append("integrity manifest has no receipts")
+
+    seen_paths: set[str] = set()
+    for receipt in manifest.receipts:
+        if not receipt.path:
+            failures.append("integrity receipt missing path")
+            continue
+        if receipt.path in seen_paths:
+            failures.append(f"duplicate integrity receipt path: {receipt.path}")
+        seen_paths.add(receipt.path)
+
+        target = root_path / receipt.path
+        if not target.exists():
+            failures.append(f"integrity receipt target missing: {receipt.path}")
+            continue
+
+        if not receipt.digest:
+            failures.append(f"integrity receipt missing digest: {receipt.path}")
+            continue
+
+        actual = compute_digest(target, receipt.digest_algorithm)
+        if actual != receipt.digest:
+            failures.append(
+                f"integrity digest mismatch for {receipt.path}: "
+                f"expected={receipt.digest} actual={actual}"
+            )
+
+    return IntegrityReport(
+        source=str(source_path),
+        checked_receipts=len(manifest.receipts),
+        failures=failures,
+    )
+
+
+def format_integrity_report(report: IntegrityReport) -> str:
+    lines: list[str] = []
+    lines.append(f"PFEM integrity source: {report.source}")
+    lines.append(f"Receipts checked: {report.checked_receipts}")
+
+    if report.failures:
+        lines.append("")
+        lines.append("Failures:")
+        for failure in report.failures:
+            lines.append(f"  - {failure}")
+        lines.append("")
+        lines.append("PFEM integrity validation failed.")
+    else:
+        lines.append("")
+        lines.append("PFEM integrity validation passed.")
+
+    return "\n".join(lines)

@@ -46,6 +46,11 @@ python tools\pfem_rollup.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM integrity validation...
+python tools\pfem_integrity.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM doctor...
 python tools\pfem_doctor.py
 if errorlevel 1 exit /b 1

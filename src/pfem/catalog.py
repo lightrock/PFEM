@@ -9,6 +9,7 @@ from pfem.adapter_runtime import load_adapter_registry
 from pfem.capability_runtime import load_capability_manifest
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
+from pfem.integrity import load_integrity_manifest
 from pfem.node_runtime import load_node_registry
 from pfem.policy import load_sharing_policy
 from pfem.profile_runtime import load_profile_registry
@@ -41,9 +42,7 @@ def _node_rows(root: Path) -> list[dict[str, Any]]:
 
 def _source_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "sources" / "source-registry.json"
-    if not p.exists():
-        return []
-    return [{"source_id": e.source_id, "source_kind": e.source_kind, "adapter_id": e.adapter_id, "node_id": e.node_id, "status": e.status} for e in load_source_registry(p).sources]
+    return [] if not p.exists() else [{"source_id": e.source_id, "source_kind": e.source_kind, "adapter_id": e.adapter_id, "node_id": e.node_id, "status": e.status} for e in load_source_registry(p).sources]
 
 
 def _example_rows(root: Path) -> list[dict[str, Any]]:
@@ -53,9 +52,15 @@ def _example_rows(root: Path) -> list[dict[str, Any]]:
 
 def _review_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "review" / "review-records.json"
+    return [] if not p.exists() else [{"review_id": r.review_id, "review_gate": r.review_gate, "decision": r.decision, "sharing_scope": r.sharing_scope or ""} for r in load_review_records(p)]
+
+
+def _integrity_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "integrity" / "receipt-manifest.json"
     if not p.exists():
         return []
-    return [{"review_id": r.review_id, "review_gate": r.review_gate, "decision": r.decision, "sharing_scope": r.sharing_scope or ""} for r in load_review_records(p)]
+    manifest = load_integrity_manifest(p)
+    return [{"path": r.path, "digest_algorithm": r.digest_algorithm, "purpose": r.purpose} for r in manifest.receipts]
 
 
 def _policy_rows(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -77,6 +82,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     sources = _source_rows(root)
     examples = _example_rows(root)
     reviews = _review_rows(root)
+    integrity_receipts = _integrity_rows(root)
     sharing_scopes, review_gates = _policy_rows(root)
 
     return {
@@ -89,6 +95,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "sources": len(sources),
             "examples": len(examples),
             "reviews": len(reviews),
+            "integrity_receipts": len(integrity_receipts),
             "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
         },
@@ -99,6 +106,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "sources": sources,
         "examples": examples,
         "reviews": reviews,
+        "integrity_receipts": integrity_receipts,
         "sharing_scopes": sharing_scopes,
         "review_gates": review_gates,
     }
@@ -129,6 +137,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['sources']} sources, "
         f"{counts['examples']} examples, "
         f"{counts['reviews']} reviews, "
+        f"{counts['integrity_receipts']} integrity receipts, "
         f"{counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
     ]
@@ -139,6 +148,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Sources", catalog["sources"], ["source_id", "source_kind", "adapter_id", "node_id", "status"]))
     lines.extend(_format_table("Examples", catalog["examples"], ["example_id", "profile_id", "runnable", "status", "path"]))
     lines.extend(_format_table("Reviews", catalog["reviews"], ["review_id", "review_gate", "decision", "sharing_scope"]))
+    lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))
     lines.extend(_format_table("Sharing Scopes", catalog["sharing_scopes"], ["scope_id", "display_name", "path"]))
     lines.extend(_format_table("Review Gates", catalog["review_gates"], ["gate_id", "display_name", "path"]))
     return "\n".join(lines)

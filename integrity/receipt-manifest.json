@@ -1,0 +1,128 @@
+{
+  "receipt_set_id": "pfem-integrity-receipts",
+  "version": "0.1",
+  "generated_by": "tools/pfem_integrity_update.py",
+  "algorithm": "sha256-canonical-json",
+  "receipts": [
+    {
+      "path": "adapters/adapter-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "7fef82dab2f04cdc2c0e9abfb1ecc3ea166d9cea87465b077ab24b18ebba21c3",
+      "purpose": "adapter registry"
+    },
+    {
+      "path": "profiles/profile-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ae0f4705a30517a04a30f49a0f1041b01b6db7265875cfd75dda957becb7311f",
+      "purpose": "profile registry"
+    },
+    {
+      "path": "nodes/node-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "19e6ec80529f1df6378d4cc039bcd50b37f23768f6f81858b91f4bcefd252e98",
+      "purpose": "node registry"
+    },
+    {
+      "path": "sources/source-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "aaab7e3aecd6a912c4e2ea6312c189152be42dfb27220d7b1273773a1d58b5c8",
+      "purpose": "source registry"
+    },
+    {
+      "path": "examples/example-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f60ea0a4a48fce1a90f8f86734427c480137c8a51cb8df79575e4e887b3a5eaf",
+      "purpose": "example registry"
+    },
+    {
+      "path": "policy/sharing-policy.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f64899a70520b3465332ddc75f9ac35103f74b8b56ce4b7dae427b170a8b49dd",
+      "purpose": "sharing policy"
+    },
+    {
+      "path": "topology/federation-topology.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f8dd3b954cfba4b36710e87ad37f2c34df9a7683055ef06154ff622feb35beff",
+      "purpose": "federation topology"
+    },
+    {
+      "path": "review/review-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1321b00e9bf3f50c5109da3a71f120462ea80e95fedcd4f9b005319ee4023d89",
+      "purpose": "review records"
+    },
+    {
+      "path": "tests/fixtures/lifecycle/basic/raw_evidence.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e96d37056fe1df557266411e9ecf53e938eda0ea325b4c8c2639e980c1af3eb5",
+      "purpose": "basic lifecycle raw evidence"
+    },
+    {
+      "path": "tests/fixtures/lifecycle/basic/normalized_observation.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "0b06a5546dada567873bfc51c23561911f59183bf38f4c445daa217c61777c37",
+      "purpose": "basic lifecycle normalized observation"
+    },
+    {
+      "path": "tests/fixtures/lifecycle/basic/finding.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "cab7b2d0933fb3eeead6cbee5e06a5ef44a18e3a4defb9f8877098abb5a9bb07",
+      "purpose": "basic lifecycle finding"
+    },
+    {
+      "path": "tests/fixtures/lifecycle/basic/alert.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "0f1517633b1f7ed3088d33611504ec1a64e1ef83d4352f7709e06c86bc41e45b",
+      "purpose": "basic lifecycle alert"
+    },
+    {
+      "path": "tests/fixtures/lifecycle/basic/evidence_package.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "5f437e5d5dfd3c97cfb74905957e6e581ed3989c379245a7bc11e25390cfc150",
+      "purpose": "basic lifecycle evidence package"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/lifecycle/raw_evidence.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "85746c86fc56e2541ce351584db861f77de82e537de0d556c8a11b3c0a4254f7",
+      "purpose": "basic rollup raw evidence"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/lifecycle/normalized_observation.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1b375d902134396f4eaee1f3f6d15b8486ba4fc49ba1d8b75d3ffad85c19a880",
+      "purpose": "basic rollup normalized observation"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/lifecycle/finding.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9a68476b8f8492cfa7a4bf89747d782ab30e871a189ef26e93d18fa885c19cdb",
+      "purpose": "basic rollup finding"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/lifecycle/alert.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "38bff756100f33ce1ec81bfd2bddbfa0a54615a0517c60c595b0e5daf316ddc2",
+      "purpose": "basic rollup alert"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/lifecycle/evidence_package.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "86ab394cf92939e0e77f3909de304d2daed696e88d14e24aac1f690911a9681d",
+      "purpose": "basic rollup evidence package"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/rollup_summary.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c54b412c9f1bedffb374eec6059bfa889bf3d897a3a401b7b8211b296ff84372",
+      "purpose": "basic rollup summary"
+    },
+    {
+      "path": "tests/fixtures/rollup/basic/federation_message.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "7e73c119354c1b754f46b563f456fc9f31f64b1504f615631e2a22fe21413575",
+      "purpose": "basic federation message"
+    }
+  ]
+}

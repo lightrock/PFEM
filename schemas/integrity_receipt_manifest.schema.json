@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/integrity_receipt_manifest.schema.json",
+  "title": "PFEM Integrity Receipt Manifest",
+  "type": "object",
+  "required": [
+    "receipt_set_id",
+    "version",
+    "algorithm",
+    "receipts"
+  ],
+  "properties": {
+    "receipt_set_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "algorithm": {
+      "type": "string"
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "digest_algorithm",
+          "digest",
+          "purpose"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "digest_algorithm": {
+            "type": "string"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

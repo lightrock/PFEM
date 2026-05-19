@@ -8,6 +8,11 @@ from pathlib import Path
 
 from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
+from pfem.integrity import (
+    format_integrity_report,
+    validate_integrity_manifest,
+    write_integrity_manifest,
+)
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.policy import format_policy_report, validate_policy_repository
 from pfem.review import format_review_report, validate_review_repository
@@ -48,6 +53,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     sources = subparsers.add_parser("sources", help="Validate PFEM source provenance")
     sources.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+
+    integrity = subparsers.add_parser("integrity", help="Validate PFEM integrity receipts")
+    integrity.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+
+    integrity_update = subparsers.add_parser("integrity-update", help="Update PFEM integrity receipts")
+    integrity_update.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     return parser
 
@@ -103,6 +114,16 @@ def main(argv: list[str] | None = None) -> int:
         report = validate_source_provenance_repository(Path(args.path))
         print(format_source_provenance_report(report))
         return 0 if report.ok else 1
+
+    if args.command == "integrity":
+        report = validate_integrity_manifest(Path(args.path))
+        print(format_integrity_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "integrity-update":
+        path = write_integrity_manifest(Path(args.path))
+        print(f"Updated PFEM integrity receipts: {path}")
+        return 0
 
     parser.print_help()
     return 2
