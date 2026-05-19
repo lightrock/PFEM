@@ -26,6 +26,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "outbox_item.schema.json": ["outbox/outbox-items.json"],
     "inbox_item.schema.json": ["inbox/inbox-items.json"],
     "intake_decision.schema.json": ["intake/intake-decisions.json"],
+    "import_record.schema.json": ["imports/import-records.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],
     "transport_adapter_registry.schema.json": ["transport/transport-adapter-registry.json"],

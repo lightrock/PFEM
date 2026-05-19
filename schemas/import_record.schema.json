@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/import_record.schema.json",
+  "title": "PFEM Import Record",
+  "type": "object",
+  "required": [
+    "import_record_id",
+    "import_kind",
+    "created_time",
+    "exchange_receipt_id",
+    "bundle_id",
+    "source_node_id",
+    "destination_node_id",
+    "subject_refs",
+    "artifact_refs",
+    "basis_refs",
+    "import_state",
+    "imported_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "import_record_id": {
+      "type": "string"
+    },
+    "import_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "exchange_receipt_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "inbox_item_id": {
+      "type": "string"
+    },
+    "intake_decision_id": {
+      "type": "string"
+    },
+    "source_node_id": {
+      "type": "string"
+    },
+    "destination_node_id": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_or_updated_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "import_state": {
+      "type": "string"
+    },
+    "imported_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

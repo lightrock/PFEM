@@ -27,6 +27,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("outbox/outbox-items.json", "outbox items"),
     ("inbox/inbox-items.json", "inbox items"),
     ("intake/intake-decisions.json", "intake decisions"),
+    ("imports/import-records.json", "import records"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
     ("delivery/delivery-jobs.json", "delivery jobs"),
