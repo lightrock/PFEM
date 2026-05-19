@@ -123,13 +123,25 @@
     "source_tool": "pfem_transport"
   },
   {
+    "audit_id": "audit-dispatch-basic-001",
+    "event_kind": "dispatch_policy_registered",
+    "created_time": "2026-01-01T00:00:15Z",
+    "actor_ref": "tools/pfem_dispatch.py",
+    "subject_refs": [
+      "dispatch/dispatch-policy.json",
+      "dispatch-manual-export-routine-bundle"
+    ],
+    "summary": "Example dispatch policy was recorded.",
+    "source_tool": "pfem_dispatch"
+  },
+  {
     "audit_id": "audit-delivery-job-basic-001",
     "event_kind": "delivery_job_recorded",
     "created_time": "2026-01-01T00:00:15Z",
     "actor_ref": "tools/pfem_delivery_jobs.py",
     "subject_refs": [
       "delivery-job-basic-manual-export-001",
-      "bundle-basic-rollup-exchange-001"
+      "dispatch-manual-export-routine-bundle"
     ],
     "summary": "Example delivery job was recorded.",
     "source_tool": "pfem_delivery_jobs"

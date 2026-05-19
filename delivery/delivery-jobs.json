@@ -4,6 +4,7 @@
     "job_kind": "bundle_delivery",
     "created_time": "2026-01-01T00:00:15Z",
     "requested_by_ref": "action-basic-rollup-monitor-001",
+    "dispatch_rule_id": "dispatch-manual-export-routine-bundle",
     "route_id": "route-exchange-bundles-to-formal-rollup",
     "delivery_channel_id": "manual-export",
     "transport_adapter_id": "transport-manual-export",
@@ -13,6 +14,7 @@
       "bundle-basic-rollup-exchange-001"
     ],
     "basis_refs": [
+      "dispatch-manual-export-routine-bundle",
       "route-exchange-bundles-to-formal-rollup",
       "manual-export",
       "transport-manual-export",

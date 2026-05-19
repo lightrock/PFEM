@@ -53,6 +53,12 @@
       "purpose": "retention policy"
     },
     {
+      "path": "dispatch/dispatch-policy.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f499866fd85802170ada8d8446f6b7ea6a0ec76e2eb07e899fb54558d773abd5",
+      "purpose": "dispatch policy"
+    },
+    {
       "path": "routing/routing-policy.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "3a373c1d1b2d13eb5e8940e1573829c65495b07b0dbe80b973ed31cd870d5f84",
@@ -67,7 +73,7 @@
     {
       "path": "delivery/delivery-jobs.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "a6ebda5b250789a4beb61f82f330423dad648bd0e36c452adcc99ffaf23b9554",
+      "digest": "392b6a5771ea4e77f4d0cbe6cdc5ede1d747a7bcefbf9b0d6740ce0035ee1d15",
       "purpose": "delivery jobs"
     },
     {
@@ -127,7 +133,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "1833163fc8a7d9b22ecbae805e2daf52486ef7abbf3ef91421a74cb1fbc7e015",
+      "digest": "b14a83155d4acc6094c90e76a6f3abb7f9f07be62e023d026e40bcf44b8e4e64",
       "purpose": "audit journal"
     },
     {

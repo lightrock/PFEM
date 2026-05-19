@@ -1,0 +1,37 @@
+{
+  "policy_id": "pfem-dispatch-policy",
+  "version": "0.1",
+  "rules": [
+    {
+      "dispatch_rule_id": "dispatch-manual-export-routine-bundle",
+      "enabled": true,
+      "job_kinds": [
+        "bundle_delivery"
+      ],
+      "eligible_job_states": [
+        "queued",
+        "ready",
+        "in_progress",
+        "completed"
+      ],
+      "priorities": [
+        "routine"
+      ],
+      "route_ids": [
+        "route-exchange-bundles-to-formal-rollup"
+      ],
+      "delivery_channel_ids": [
+        "manual-export"
+      ],
+      "transport_adapter_ids": [
+        "transport-manual-export"
+      ],
+      "requires_review_before_dispatch": false,
+      "max_attempts": 1,
+      "retry_delay_seconds": 0,
+      "on_success_job_state": "completed",
+      "on_failure_job_state": "failed",
+      "summary": "Allow routine example bundle delivery through the manual export transport path."
+    }
+  ]
+}

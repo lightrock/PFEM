@@ -31,6 +31,9 @@
     "requested_by_ref": {
       "type": "string"
     },
+    "dispatch_rule_id": {
+      "type": "string"
+    },
     "route_id": {
       "type": "string"
     },

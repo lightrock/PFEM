@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/dispatch_policy.schema.json",
+  "title": "PFEM Dispatch Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "rules"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dispatch_rule_id",
+          "enabled",
+          "job_kinds",
+          "eligible_job_states",
+          "priorities",
+          "max_attempts",
+          "retry_delay_seconds",
+          "summary"
+        ],
+        "properties": {
+          "dispatch_rule_id": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "job_kinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "eligible_job_states": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priorities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "route_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delivery_channel_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "transport_adapter_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requires_review_before_dispatch": {
+            "type": "boolean"
+          },
+          "max_attempts": {
+            "type": "integer"
+          },
+          "retry_delay_seconds": {
+            "type": "integer"
+          },
+          "on_success_job_state": {
+            "type": "string"
+          },
+          "on_failure_job_state": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

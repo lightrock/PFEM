@@ -12,6 +12,7 @@ from pfem.bundle import format_bundle_report, validate_bundle_repository
 from pfem.catalog import build_catalog, format_catalog
 from pfem.delivery import format_delivery_report, validate_delivery_channel_registry
 from pfem.delivery_job import format_delivery_job_report, validate_delivery_jobs
+from pfem.dispatch import format_dispatch_report, validate_dispatch_policy
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -41,6 +42,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("catalog", "Print PFEM catalog from disk"),
         ("actions", "Validate PFEM action records"),
         ("playbooks", "Validate PFEM playbooks"),
+        ("dispatch", "Validate PFEM dispatch policy"),
         ("routing", "Validate PFEM routing policy"),
         ("delivery", "Validate PFEM delivery channel registry"),
         ("delivery-jobs", "Validate PFEM delivery jobs"),
@@ -92,6 +94,7 @@ def main(argv: list[str] | None = None) -> int:
     command_map = {
         "actions": (validate_action_repository, format_action_report),
         "playbooks": (validate_playbook_repository, format_playbook_report),
+        "dispatch": (validate_dispatch_policy, format_dispatch_report),
         "routing": (validate_routing_policy, format_routing_report),
         "delivery": (validate_delivery_channel_registry, format_delivery_report),
         "delivery-jobs": (validate_delivery_jobs, format_delivery_job_report),

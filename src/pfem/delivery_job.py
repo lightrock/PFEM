@@ -9,6 +9,7 @@ from typing import Any
 
 from pfem.action import load_action_policy
 from pfem.delivery import collect_delivery_channel_ids
+from pfem.dispatch import collect_dispatch_rule_ids
 from pfem.node_runtime import collect_node_ids
 from pfem.routing import load_routing_policy
 from pfem.transport import collect_transport_adapter_ids
@@ -42,6 +43,7 @@ class DeliveryJob:
     job_kind: str
     created_time: str
     requested_by_ref: str | None
+    dispatch_rule_id: str | None
     route_id: str
     delivery_channel_id: str
     transport_adapter_id: str
@@ -93,6 +95,7 @@ def load_delivery_jobs(path: str | Path) -> list[DeliveryJob]:
             job_kind=str(record.get("job_kind", "")),
             created_time=str(record.get("created_time", "")),
             requested_by_ref=str(record["requested_by_ref"]) if "requested_by_ref" in record else None,
+            dispatch_rule_id=str(record["dispatch_rule_id"]) if "dispatch_rule_id" in record else None,
             route_id=str(record.get("route_id", "")),
             delivery_channel_id=str(record.get("delivery_channel_id", "")),
             transport_adapter_id=str(record.get("transport_adapter_id", "")),
@@ -160,6 +163,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
                     ids.add(str(record[key]))
 
     for path, array_key, id_key in [
+        (root / "dispatch" / "dispatch-policy.json", "rules", "dispatch_rule_id"),
         (root / "routing" / "routing-policy.json", "routes", "route_id"),
         (root / "delivery" / "delivery-channel-registry.json", "channels", "channel_id"),
         (root / "transport" / "transport-adapter-registry.json", "adapters", "transport_adapter_id"),
@@ -178,7 +182,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
 def _collect_known_artifact_paths(root: Path) -> set[str]:
     folders = [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
-        "handling", "retention", "routing", "delivery", "transport", "topology",
+        "handling", "retention", "dispatch", "routing", "delivery", "transport", "topology",
         "review", "audit", "exchange", "reconciliation", "quality", "action",
         "playbooks", "integrity", "schemas", "contracts", "docs", "bundles",
         "tests",
@@ -213,6 +217,7 @@ def validate_delivery_jobs(root: str | Path) -> DeliveryJobReport:
     if not jobs:
         failures.append("delivery jobs file has no jobs")
 
+    dispatch_rule_ids = collect_dispatch_rule_ids(root_path)
     route_ids = _collect_route_ids(root_path)
     delivery_channel_ids = collect_delivery_channel_ids(root_path)
     transport_adapter_ids = collect_transport_adapter_ids(root_path)
@@ -236,6 +241,8 @@ def validate_delivery_jobs(root: str | Path) -> DeliveryJobReport:
             failures.append(f"delivery job {job.delivery_job_id!r} missing created_time")
         if job.requested_by_ref and not _known_ref(job.requested_by_ref, known_ids, known_paths):
             failures.append(f"delivery job {job.delivery_job_id!r} references unknown requested_by_ref {job.requested_by_ref!r}")
+        if job.dispatch_rule_id and dispatch_rule_ids and job.dispatch_rule_id not in dispatch_rule_ids:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown dispatch_rule_id {job.dispatch_rule_id!r}")
         if route_ids and job.route_id not in route_ids:
             failures.append(f"delivery job {job.delivery_job_id!r} references unknown route_id {job.route_id!r}")
         if delivery_channel_ids and job.delivery_channel_id not in delivery_channel_ids:
@@ -266,11 +273,7 @@ def validate_delivery_jobs(root: str | Path) -> DeliveryJobReport:
         if not job.summary:
             failures.append(f"delivery job {job.delivery_job_id!r} missing summary")
 
-    return DeliveryJobReport(
-        source=str(jobs_path),
-        checked_jobs=len(jobs),
-        failures=failures,
-    )
+    return DeliveryJobReport(source=str(jobs_path), checked_jobs=len(jobs), failures=failures)
 
 
 def format_delivery_job_report(report: DeliveryJobReport) -> str:
