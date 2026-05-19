@@ -622,5 +622,18 @@
     ],
     "summary": "Example custody release chain records was recorded.",
     "source_tool": "pfem_custody_release_chain_records"
+  },
+  {
+    "audit_id": "audit-custody-release-chain-verification-basic-001",
+    "event_kind": "custody_release_chain_verification_recorded",
+    "created_time": "2026-01-01T00:00:50Z",
+    "actor_ref": "tools/pfem_custody_release_chain_verification_receipts.py",
+    "subject_refs": [
+      "custody-release-chain-verification-basic-restore-001",
+      "custody-release-chain-basic-restore-001",
+      "custody-release-closeout-basic-restore-001"
+    ],
+    "summary": "Example custody release chain verification receipts was recorded.",
+    "source_tool": "pfem_custody_release_chain_verification_receipts"
   }
 ]

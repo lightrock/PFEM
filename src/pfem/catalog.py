@@ -33,6 +33,7 @@ from pfem.custody_release_receipt import load_custody_release_receipts
 from pfem.custody_release_verification_receipt import load_custody_release_verification_receipts
 from pfem.custody_release_closeout_record import load_custody_release_closeout_records
 from pfem.custody_release_chain_record import load_custody_release_chain_records
+from pfem.custody_release_chain_verification_receipt import load_custody_release_chain_verification_receipts
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -314,6 +315,11 @@ def _custody_release_chain_record_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"custody_release_chain_record_id": r["custody_release_chain_record_id"], "terminal_ref": r["terminal_ref"], "chain_state": r["chain_state"], "chain_refs": len(r["chain_refs"])} for r in load_custody_release_chain_records(p)]
 
 
+def _custody_release_chain_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "custody/custody-release-chain-verification-receipts.json"
+    return [] if not p.exists() else [{"custody_release_chain_verification_receipt_id": r["custody_release_chain_verification_receipt_id"], "custody_release_chain_record_id": r["custody_release_chain_record_id"], "verification_state": r["verification_state"], "checked_chain_refs": len(r["checked_chain_refs"])} for r in load_custody_release_chain_verification_receipts(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -428,6 +434,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "custody_release_verification_receipts": _custody_release_verification_receipt_rows(root),
         "custody_release_closeout_records": _custody_release_closeout_record_rows(root),
         "custody_release_chain_records": _custody_release_chain_record_rows(root),
+        "custody_release_chain_verification_receipts": _custody_release_chain_verification_receipt_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -499,6 +506,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('custody_release_verification_receipts', 0)} custody release verification receipts, "
         f"{counts.get('custody_release_closeout_records', 0)} custody release closeout records, "
         f"{counts.get('custody_release_chain_records', 0)} custody release chain records, "
+        f"{counts.get('custody_release_chain_verification_receipts', 0)} custody release chain verification receipts, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -556,6 +564,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Custody Release Verification Receipts", catalog["custody_release_verification_receipts"], ["custody_release_verification_receipt_id", "custody_release_receipt_id", "verification_state", "checked_released_refs"]))
     lines.extend(_format_table("Custody Release Closeout Records", catalog["custody_release_closeout_records"], ["custody_release_closeout_record_id", "custody_release_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Custody Release Chain Records", catalog["custody_release_chain_records"], ["custody_release_chain_record_id", "terminal_ref", "chain_state", "chain_refs"]))
+    lines.extend(_format_table("Custody Release Chain Verification Receipts", catalog["custody_release_chain_verification_receipts"], ["custody_release_chain_verification_receipt_id", "custody_release_chain_record_id", "verification_state", "checked_chain_refs"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
