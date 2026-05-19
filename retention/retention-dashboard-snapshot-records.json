@@ -1,0 +1,36 @@
+[
+  {
+    "retention_dashboard_snapshot_record_id": "retention-dashboard-snapshot-basic-restore-001",
+    "snapshot_kind": "retention_dashboard_snapshot",
+    "created_time": "2026-01-01T00:01:50Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_publication_closeout_record_id": "retention-publication-closeout-basic-restore-001",
+    "retention_status_snapshot_verification_receipt_id": "retention-status-snapshot-verification-basic-restore-001",
+    "snapshot_state": "current",
+    "dashboard_status": "continue_preservation_published",
+    "snapshot_refs": [
+      "retention-publication-closeout-basic-restore-001",
+      "retention-publication-verification-basic-restore-001",
+      "retention-publication-basic-restore-001",
+      "retention-report-closeout-basic-restore-001",
+      "retention-status-snapshot-verification-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-publication-closeout-basic-restore-001",
+      "retention-publication-verification-basic-restore-001",
+      "retention-report-closeout-basic-restore-001",
+      "retention-status-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-dashboard-ref-list",
+    "snapshot_ref_digest": "07323b0ef1fcd7373d9ffbaa12e862d5690ba15c379ca8e17f1b5ee3ab21e4bf",
+    "recorded_by_ref": "tools/pfem_retention_dashboard_snapshot_records.py",
+    "summary": "Synthetic example retention dashboard snapshot showing published retention status for operator/dashboard use."
+  }
+]

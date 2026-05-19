@@ -461,6 +461,56 @@ python tools\pfem_retention_rollup_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention rollup verification receipt validation...
+python tools\pfem_retention_rollup_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention rollup closeout record validation...
+python tools\pfem_retention_rollup_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention report record validation...
+python tools\pfem_retention_report_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention report verification receipt validation...
+python tools\pfem_retention_report_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention report closeout record validation...
+python tools\pfem_retention_report_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication record validation...
+python tools\pfem_retention_publication_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication verification receipt validation...
+python tools\pfem_retention_publication_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication closeout record validation...
+python tools\pfem_retention_publication_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention dashboard snapshot record validation...
+python tools\pfem_retention_dashboard_snapshot_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention dashboard snapshot verification receipt validation...
+python tools\pfem_retention_dashboard_snapshot_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

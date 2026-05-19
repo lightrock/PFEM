@@ -1,0 +1,34 @@
+[
+  {
+    "retention_publication_record_id": "retention-publication-basic-restore-001",
+    "publication_kind": "retention_report_publication",
+    "created_time": "2026-01-01T00:01:47Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_report_closeout_record_id": "retention-report-closeout-basic-restore-001",
+    "retention_report_verification_receipt_id": "retention-report-verification-basic-restore-001",
+    "publication_state": "published",
+    "publication_scope": "verified_retention_report",
+    "published_refs": [
+      "retention-report-closeout-basic-restore-001",
+      "retention-report-verification-basic-restore-001",
+      "retention-report-basic-restore-001",
+      "retention-rollup-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-report-closeout-basic-restore-001",
+      "retention-report-verification-basic-restore-001",
+      "retention-report-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-publication-ref-list",
+    "published_ref_digest": "171726b9b0294726f8cd6c7a0719061e8bf21faa6fea16d3a5021161f0888c28",
+    "published_by_ref": "tools/pfem_retention_publication_records.py",
+    "summary": "Synthetic example retention publication record publishing the verified retention report."
+  }
+]
