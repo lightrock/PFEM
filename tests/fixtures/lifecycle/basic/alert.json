@@ -1,0 +1,9 @@
+{
+  "alert_id": "alert-basic-001",
+  "alert_kind": "example_review_alert",
+  "finding_id": "finding-basic-001",
+  "created_time": "2026-01-01T00:00:02Z",
+  "status": "new",
+  "severity": "info",
+  "policy_basis": "example fixture"
+}

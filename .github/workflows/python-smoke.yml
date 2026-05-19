@@ -13,6 +13,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: PYTHONPATH=src python tools/pfem_catalog.py
+      - run: PYTHONPATH=src python tools/pfem_lineage.py
       - run: PYTHONPATH=src python tools/pfem_doctor.py
       - run: PYTHONPATH=src python tools/pfem_smoke.py
       - run: PYTHONPATH=src python -m unittest discover -s tests/unit -p "test_*.py"

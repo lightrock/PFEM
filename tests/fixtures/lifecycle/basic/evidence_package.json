@@ -1,0 +1,12 @@
+{
+  "package_id": "package-basic-001",
+  "created_time": "2026-01-01T00:00:03Z",
+  "included_refs": [
+    "evidence-basic-001",
+    "observation-basic-001",
+    "finding-basic-001",
+    "alert-basic-001"
+  ],
+  "scope": "example lifecycle fixture",
+  "summary": "Example evidence package showing valid lineage."
+}

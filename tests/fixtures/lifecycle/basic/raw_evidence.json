@@ -1,0 +1,13 @@
+{
+  "evidence_id": "evidence-basic-001",
+  "evidence_kind": "manual_observer_report",
+  "source_id": "manual-entry",
+  "received_time": "2026-01-01T00:00:00Z",
+  "observed_time": "2026-01-01T00:00:00Z",
+  "payload": {
+    "description": "Example lifecycle evidence."
+  },
+  "provenance": {
+    "adapter_id": "manual-observer-report"
+  }
+}

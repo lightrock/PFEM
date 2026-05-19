@@ -1,0 +1,13 @@
+{
+  "finding_id": "finding-basic-001",
+  "finding_kind": "example_review_finding",
+  "created_time": "2026-01-01T00:00:01Z",
+  "source_observation_ids": [
+    "observation-basic-001"
+  ],
+  "subject_refs": [
+    "manual-report-basic"
+  ],
+  "reasoning_ref": "tests/fixtures/lifecycle/basic",
+  "confidence": 0.7
+}
