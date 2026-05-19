@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/capability_manifest.schema.json",
+  "title": "PFEM Capability Manifest",
+  "type": "object",
+  "required": [
+    "capability_id",
+    "display_name",
+    "capability_kind"
+  ],
+  "properties": {
+    "capability_id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "capability_kind": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "produces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

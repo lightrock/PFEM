@@ -1,0 +1,13 @@
+{
+  "observation_id": "obs-example-001",
+  "observation_kind": "template_observation",
+  "source_evidence_ids": [
+    "evidence-example-001"
+  ],
+  "observed_time": "2026-01-01T00:00:00Z",
+  "normalized_fields": {
+    "source_summary": "example raw input"
+  },
+  "confidence": 0.0,
+  "uncertainty_notes": "Example only."
+}

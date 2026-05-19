@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/federation_message.schema.json",
+  "title": "PFEM Federation Message",
+  "type": "object",
+  "required": [
+    "message_id",
+    "message_kind",
+    "sender_node_id",
+    "created_time"
+  ],
+  "properties": {
+    "message_id": {
+      "type": "string"
+    },
+    "message_kind": {
+      "type": "string"
+    },
+    "sender_node_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "payload_summary": {
+      "type": "string"
+    },
+    "lineage_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sharing_scope": {
+      "type": "string"
+    },
+    "attribution": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/dashboard_action.schema.json",
+  "title": "PFEM Dashboard Action",
+  "type": "object",
+  "required": [
+    "action_id",
+    "action_kind",
+    "created_time",
+    "status"
+  ],
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "action_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prompt": {
+      "type": "string"
+    },
+    "lineage_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

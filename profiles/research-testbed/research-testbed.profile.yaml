@@ -1,0 +1,16 @@
+profile_id: research-testbed-node
+profile_kind: testbed
+enabled_capabilities:
+  - replay
+  - simulation
+  - metric-collection
+  - scenario-export
+  - multi-profile-test
+disabled_capabilities: []
+default_adapters:
+  - replay-log
+  - synthetic-input
+dashboard_mode: research
+review_gates:
+  - review-before-publishing-results
+offline_behavior: deterministic-replay

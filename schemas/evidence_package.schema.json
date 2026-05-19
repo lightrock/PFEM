@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/evidence_package.schema.json",
+  "title": "PFEM Evidence Package",
+  "type": "object",
+  "required": [
+    "package_id",
+    "created_time",
+    "included_refs"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "included_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "lineage_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

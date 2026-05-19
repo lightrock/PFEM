@@ -1,0 +1,14 @@
+profile_id: community-mesh-node
+profile_kind: mesh
+enabled_capabilities:
+  - peer-federation
+  - local-dashboard
+  - replay-import
+  - summary-output
+disabled_capabilities: []
+default_adapters:
+  - file-import
+dashboard_mode: mesh
+review_gates:
+  - review-before-rollup
+offline_behavior: opportunistic-sync

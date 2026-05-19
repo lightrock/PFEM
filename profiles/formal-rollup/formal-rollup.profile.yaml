@@ -1,0 +1,15 @@
+profile_id: formal-authority-rollup-node
+profile_kind: rollup
+enabled_capabilities:
+  - federation-input
+  - rollup-summary-production
+  - dashboard-view
+  - cross-node-review
+disabled_capabilities:
+  - local-sensor-control
+default_adapters:
+  - federation-link
+dashboard_mode: rollup
+review_gates:
+  - review-before-redistribution
+offline_behavior: hold-last-known-summary

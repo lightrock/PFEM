@@ -1,0 +1,13 @@
+{
+  "evidence_id": "evidence-example-001",
+  "evidence_kind": "manual-example",
+  "source_id": "source-example-001",
+  "received_time": "2026-01-01T00:00:00Z",
+  "observed_time": "2026-01-01T00:00:00Z",
+  "payload": {
+    "note": "example fixture"
+  },
+  "provenance": {
+    "created_by": "fixture"
+  }
+}

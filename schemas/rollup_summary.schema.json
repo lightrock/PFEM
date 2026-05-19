@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/rollup_summary.schema.json",
+  "title": "PFEM Rollup Summary",
+  "type": "object",
+  "required": [
+    "rollup_id",
+    "producer_node_id",
+    "created_time",
+    "summary_kind"
+  ],
+  "properties": {
+    "rollup_id": {
+      "type": "string"
+    },
+    "producer_node_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "summary_kind": {
+      "type": "string"
+    },
+    "included_subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_lineage_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence_notes": {
+      "type": "string"
+    },
+    "completeness_notes": {
+      "type": "string"
+    },
+    "sharing_scope": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

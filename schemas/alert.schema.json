@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/alert.schema.json",
+  "title": "PFEM Alert",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "alert_kind",
+    "finding_id",
+    "created_time",
+    "status"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string"
+    },
+    "alert_kind": {
+      "type": "string"
+    },
+    "finding_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "policy_basis": {
+      "type": "string"
+    },
+    "recommended_review_path": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

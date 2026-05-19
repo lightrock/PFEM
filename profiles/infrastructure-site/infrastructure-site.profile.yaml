@@ -1,0 +1,16 @@
+profile_id: infrastructure-site-node
+profile_kind: site
+enabled_capabilities:
+  - source-input
+  - normalized-observation-handling
+  - local-memory
+  - evidence-package-production
+  - local-dashboard
+  - federation-output
+disabled_capabilities: []
+default_adapters:
+  - configured-by-site
+dashboard_mode: site
+review_gates:
+  - review-before-external-share
+offline_behavior: local-first

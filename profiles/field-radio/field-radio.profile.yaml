@@ -1,0 +1,15 @@
+profile_id: field-radio-node
+profile_kind: field
+enabled_capabilities:
+  - manual-report-intake
+  - local-dashboard
+  - offline-operation
+  - federation-output
+disabled_capabilities:
+  - local-sensor-control
+default_adapters:
+  - manual-observer-report
+dashboard_mode: field
+review_gates:
+  - review-before-external-share
+offline_behavior: store-and-forward

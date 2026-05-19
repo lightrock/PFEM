@@ -1,0 +1,16 @@
+profile_id: civil-dashboard-node
+profile_kind: dashboard
+enabled_capabilities:
+  - federation-input
+  - dashboard-view
+  - action-recommendations
+  - request-more-information
+disabled_capabilities:
+  - local-sensor-control
+  - source-input
+default_adapters:
+  - federation-link
+dashboard_mode: civil
+review_gates:
+  - review-before-public-summary
+offline_behavior: read-cached-state

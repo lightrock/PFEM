@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/finding.schema.json",
+  "title": "PFEM Finding",
+  "type": "object",
+  "required": [
+    "finding_id",
+    "finding_kind",
+    "created_time",
+    "source_observation_ids"
+  ],
+  "properties": {
+    "finding_id": {
+      "type": "string"
+    },
+    "finding_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_observation_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reasoning_ref": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "uncertainty_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

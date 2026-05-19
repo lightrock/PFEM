@@ -1,0 +1,12 @@
+{
+  "observation_id": "obs-example-001",
+  "observation_kind": "manual-example-observation",
+  "source_evidence_ids": [
+    "evidence-example-001"
+  ],
+  "observed_time": "2026-01-01T00:00:00Z",
+  "normalized_fields": {
+    "note": "example fixture"
+  },
+  "confidence": 1.0
+}
