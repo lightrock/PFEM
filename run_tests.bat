@@ -21,6 +21,11 @@ python tools\pfem_topology.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM handling validation...
+python tools\pfem_handling.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM review validation...
 python tools\pfem_review.py
 if errorlevel 1 exit /b 1

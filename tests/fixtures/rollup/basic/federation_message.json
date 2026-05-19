@@ -16,6 +16,8 @@
     "alert-rollup-001"
   ],
   "sharing_scope": "example",
+  "handling_label": "summary-shareable",
+  "redaction_state": "redacted-summary",
   "attribution": {
     "producer_node_id": "field-radio-node-example"
   }

@@ -41,6 +41,12 @@
       "purpose": "sharing policy"
     },
     {
+      "path": "handling/handling-policy.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ac41922a6ea925689332ead18f25d834703505d5153f5086929219c527722cf8",
+      "purpose": "handling policy"
+    },
+    {
       "path": "topology/federation-topology.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "f8dd3b954cfba4b36710e87ad37f2c34df9a7683055ef06154ff622feb35beff",
@@ -121,13 +127,13 @@
     {
       "path": "tests/fixtures/rollup/basic/rollup_summary.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "c54b412c9f1bedffb374eec6059bfa889bf3d897a3a401b7b8211b296ff84372",
+      "digest": "605f19bf2aa9b2f6e4d1ba6a74bbdff0cf1d8df370692ad16e268ca7c18d7d81",
       "purpose": "basic rollup summary"
     },
     {
       "path": "tests/fixtures/rollup/basic/federation_message.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "7e73c119354c1b754f46b563f456fc9f31f64b1504f615631e2a22fe21413575",
+      "digest": "96c18162932ac7650aa26f5b38f2d3432ba0359c88b1e3fe6ffd7de0ee783b9b",
       "purpose": "basic federation message"
     }
   ]

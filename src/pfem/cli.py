@@ -9,6 +9,7 @@ from pathlib import Path
 from pfem.audit import format_audit_report, validate_audit_repository
 from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
+from pfem.handling import format_handling_report, validate_handling_policy
 from pfem.integrity import format_integrity_report, validate_integrity_manifest, write_integrity_manifest
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.policy import format_policy_report, validate_policy_repository
@@ -32,6 +33,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     audit = subparsers.add_parser("audit", help="Validate PFEM audit journal")
     audit.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+
+    handling = subparsers.add_parser("handling", help="Validate PFEM handling/redaction policy")
+    handling.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     lineage = subparsers.add_parser("lineage", help="Validate PFEM lifecycle lineage records")
     lineage.add_argument("path", nargs="?", default="tests/fixtures/lifecycle/basic")
@@ -83,6 +87,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "audit":
         report = validate_audit_repository(Path(args.path))
         print(format_audit_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "handling":
+        report = validate_handling_policy(Path(args.path))
+        print(format_handling_report(report))
         return 0 if report.ok else 1
 
     if args.command == "lineage":

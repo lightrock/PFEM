@@ -10,7 +10,9 @@
     "recipient_node_ids",
     "created_time",
     "lineage_refs",
-    "sharing_scope"
+    "sharing_scope",
+    "handling_label",
+    "redaction_state"
   ],
   "properties": {
     "message_id": {
@@ -47,6 +49,12 @@
       }
     },
     "sharing_scope": {
+      "type": "string"
+    },
+    "handling_label": {
+      "type": "string"
+    },
+    "redaction_state": {
       "type": "string"
     },
     "attribution": {

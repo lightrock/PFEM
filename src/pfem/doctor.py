@@ -10,6 +10,7 @@ from pfem.adapter_runtime import load_adapter_manifest, validate_adapter_registr
 from pfem.audit import validate_audit_repository
 from pfem.capability_runtime import load_capability_manifest
 from pfem.example_runtime import validate_example_registry
+from pfem.handling import validate_handling_policy
 from pfem.integrity import validate_integrity_manifest
 from pfem.node_runtime import validate_node_registry
 from pfem.policy import validate_policy_repository
@@ -29,6 +30,7 @@ EXPECTED_PATHS = [
     "docs/architecture/node-identity.md", "docs/architecture/federation-topology.md",
     "docs/architecture/source-provenance.md", "docs/architecture/review-decisions.md",
     "docs/architecture/integrity-receipts.md", "docs/architecture/audit-journal.md",
+    "docs/architecture/handling-redaction.md",
     "ai/architecture-rules.md", "ai/adapter-rules.md", "ai/evidence-rules.md",
     "ai/node-profile-rules.md", "ai/review-checklist.md",
     "contracts/adapter-contract.md", "contracts/evidence-contract.md",
@@ -36,13 +38,13 @@ EXPECTED_PATHS = [
     "contracts/federation-contract.md", "contracts/node-identity-contract.md",
     "contracts/federation-topology-contract.md", "contracts/source-provenance-contract.md",
     "contracts/review-contract.md", "contracts/integrity-receipt-contract.md",
-    "contracts/audit-journal-contract.md",
+    "contracts/audit-journal-contract.md", "contracts/handling-redaction-contract.md",
     "schemas/adapter_manifest.schema.json", "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json", "schemas/node_manifest.schema.json",
     "schemas/node_registry.schema.json", "schemas/node_profile.schema.json",
     "schemas/profile_registry.schema.json", "schemas/source_registry.schema.json",
     "schemas/review_record.schema.json", "schemas/integrity_receipt_manifest.schema.json",
-    "schemas/audit_event.schema.json",
+    "schemas/audit_event.schema.json", "schemas/handling_policy.schema.json",
     "schemas/raw_evidence.schema.json", "schemas/normalized_observation.schema.json",
     "schemas/finding.schema.json", "schemas/alert.schema.json",
     "schemas/evidence_package.schema.json", "schemas/rollup_summary.schema.json",
@@ -53,14 +55,15 @@ EXPECTED_PATHS = [
     "sources/README.md", "sources/source-registry.json",
     "review/README.md", "review/review-records.json",
     "audit/README.md", "audit/audit-journal.json",
+    "handling/README.md", "handling/handling-policy.json",
     "integrity/README.md", "integrity/receipt-manifest.json",
     "topology/README.md", "topology/federation-topology.json",
     "examples/README.md", "examples/example-registry.json",
     "policy/README.md", "policy/sharing-policy.json", "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "integrity", "topology", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "handling", "integrity", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "handling", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -213,6 +216,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_source_provenance_repository(root).failures)
     report.failures.extend(validate_example_registry(root))
     report.failures.extend(validate_policy_repository(root).failures)
+    report.failures.extend(validate_handling_policy(root).failures)
     report.failures.extend(validate_review_repository(root).failures)
     report.failures.extend(validate_audit_repository(root).failures)
     report.failures.extend(validate_schema_contracts(root).failures)

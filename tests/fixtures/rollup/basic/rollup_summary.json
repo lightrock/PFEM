@@ -14,5 +14,7 @@
   ],
   "confidence_notes": "Example rollup only.",
   "completeness_notes": "Not complete local truth.",
-  "sharing_scope": "example"
+  "sharing_scope": "example",
+  "handling_label": "summary-shareable",
+  "redaction_state": "redacted-summary"
 }

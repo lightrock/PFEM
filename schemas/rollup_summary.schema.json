@@ -9,7 +9,9 @@
     "created_time",
     "summary_kind",
     "source_lineage_refs",
-    "sharing_scope"
+    "sharing_scope",
+    "handling_label",
+    "redaction_state"
   ],
   "properties": {
     "rollup_id": {
@@ -46,6 +48,12 @@
       "type": "string"
     },
     "sharing_scope": {
+      "type": "string"
+    },
+    "handling_label": {
+      "type": "string"
+    },
+    "redaction_state": {
       "type": "string"
     }
   },

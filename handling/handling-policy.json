@@ -1,0 +1,63 @@
+{
+  "policy_id": "pfem-handling-policy",
+  "version": "0.1",
+  "handling_labels": [
+    {
+      "label_id": "local-raw",
+      "display_name": "Local Raw",
+      "description": "Raw or source-near material intended to remain local.",
+      "allowed_sharing_scopes": [
+        "local"
+      ],
+      "requires_redaction_before_share": true,
+      "allowed_redaction_states": [
+        "not-shared"
+      ]
+    },
+    {
+      "label_id": "summary-shareable",
+      "display_name": "Summary Shareable",
+      "description": "A minimized summary intended for controlled sharing.",
+      "allowed_sharing_scopes": [
+        "example",
+        "peer",
+        "rollup"
+      ],
+      "requires_redaction_before_share": true,
+      "allowed_redaction_states": [
+        "redacted-summary",
+        "minimized",
+        "deidentified"
+      ]
+    },
+    {
+      "label_id": "public-summary",
+      "display_name": "Public Summary",
+      "description": "A public-facing summary after review and minimization.",
+      "allowed_sharing_scopes": [
+        "public-summary"
+      ],
+      "requires_redaction_before_share": true,
+      "allowed_redaction_states": [
+        "redacted-summary",
+        "minimized",
+        "deidentified"
+      ]
+    },
+    {
+      "label_id": "research-example",
+      "display_name": "Research Example",
+      "description": "Synthetic, fixture, or testbed content used for examples and measurement.",
+      "allowed_sharing_scopes": [
+        "example",
+        "research"
+      ],
+      "requires_redaction_before_share": false,
+      "allowed_redaction_states": [
+        "not-required",
+        "synthetic",
+        "redacted-summary"
+      ]
+    }
+  ]
+}
