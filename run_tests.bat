@@ -71,6 +71,11 @@ python tools\pfem_state_checkpoints.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM state transition validation...
+python tools\pfem_state_transitions.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

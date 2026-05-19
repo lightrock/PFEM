@@ -107,6 +107,12 @@
       "purpose": "state checkpoints"
     },
     {
+      "path": "state/state-transitions.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "069428c7e9cfa85e8094c053291a71d8656f6badd79065fea869a7e96a7d8734",
+      "purpose": "state transitions"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -187,7 +193,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "2e5586a4b06addca07efdccd936f148b77acfc951e059fa62e59ca084f741587",
+      "digest": "fb55b436e35f7734959679a419bf7afdb9476c53bd264f2a47f5070775a08592",
       "purpose": "audit journal"
     },
     {

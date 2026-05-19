@@ -284,5 +284,18 @@
     ],
     "summary": "Example state checkpoint was recorded after apply receipt.",
     "source_tool": "pfem_state_checkpoints"
+  },
+  {
+    "audit_id": "audit-state-transition-basic-001",
+    "event_kind": "state_transition_recorded",
+    "created_time": "2026-01-01T00:00:24Z",
+    "actor_ref": "tools/pfem_state_transitions.py",
+    "subject_refs": [
+      "state-transition-basic-after-apply-001",
+      "state-checkpoint-basic-after-apply-001",
+      "apply-receipt-basic-merge-001"
+    ],
+    "summary": "Example state transition was recorded from apply receipt to state checkpoint.",
+    "source_tool": "pfem_state_transitions"
   }
 ]

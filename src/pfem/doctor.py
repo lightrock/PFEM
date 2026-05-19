@@ -38,6 +38,7 @@ from pfem.routing import validate_routing_policy
 from pfem.schema_contracts import validate_schema_contracts
 from pfem.source_runtime import validate_source_provenance_repository
 from pfem.state_checkpoint import validate_state_checkpoints
+from pfem.state_transition import validate_state_transitions
 from pfem.topology import validate_topology_repository
 from pfem.transport import validate_transport_adapter_registry
 from pfem.transport_receipt import validate_transport_receipts
@@ -54,6 +55,7 @@ EXPECTED_PATHS = [
     "docs/architecture/conflict-records.md",
     "docs/architecture/apply-receipts.md",
     "docs/architecture/state-checkpoints.md",
+    "docs/architecture/state-transitions.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -68,6 +70,7 @@ EXPECTED_PATHS = [
     "contracts/conflict-record-contract.md",
     "contracts/apply-receipt-contract.md",
     "contracts/state-checkpoint-contract.md",
+    "contracts/state-transition-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -82,6 +85,7 @@ EXPECTED_PATHS = [
     "schemas/conflict_record.schema.json",
     "schemas/apply_receipt.schema.json",
     "schemas/state_checkpoint.schema.json",
+    "schemas/state_transition.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -95,7 +99,7 @@ EXPECTED_PATHS = [
     "imports/README.md", "imports/import-records.json",
     "conflicts/README.md", "conflicts/conflict-records.json",
     "apply/README.md", "apply/apply-receipts.json",
-    "state/README.md", "state/state-checkpoints.json",
+    "state/README.md", "state/state-checkpoints.json", "state/state-transitions.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -269,6 +273,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_conflict_records(root).failures)
     report.failures.extend(validate_apply_receipts(root).failures)
     report.failures.extend(validate_state_checkpoints(root).failures)
+    report.failures.extend(validate_state_transitions(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

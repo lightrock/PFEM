@@ -1,0 +1,32 @@
+[
+  {
+    "state_transition_id": "state-transition-basic-after-apply-001",
+    "transition_kind": "apply_to_checkpoint",
+    "created_time": "2026-01-01T00:00:24Z",
+    "node_id": "formal-rollup-node-example",
+    "from_state_checkpoint_id": null,
+    "to_state_checkpoint_id": "state-checkpoint-basic-after-apply-001",
+    "apply_receipt_ids": [
+      "apply-receipt-basic-merge-001"
+    ],
+    "merge_decision_ids": [
+      "merge-decision-basic-import-001"
+    ],
+    "import_record_ids": [
+      "import-record-basic-exchange-001"
+    ],
+    "transition_state": "completed",
+    "changed_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "basis_refs": [
+      "apply-receipt-basic-merge-001",
+      "state-checkpoint-basic-after-apply-001",
+      "merge-decision-basic-import-001",
+      "import-record-basic-exchange-001"
+    ],
+    "transitioned_by_ref": "tools/pfem_state_transitions.py",
+    "summary": "Synthetic example state transition showing that the basic apply receipt produced the current local state checkpoint."
+  }
+]

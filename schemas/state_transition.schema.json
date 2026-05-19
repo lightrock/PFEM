@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/state_transition.schema.json",
+  "title": "PFEM State Transition",
+  "type": "object",
+  "required": [
+    "state_transition_id",
+    "transition_kind",
+    "created_time",
+    "node_id",
+    "to_state_checkpoint_id",
+    "apply_receipt_ids",
+    "transition_state",
+    "changed_refs",
+    "basis_refs",
+    "transitioned_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "state_transition_id": {
+      "type": "string"
+    },
+    "transition_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "from_state_checkpoint_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "to_state_checkpoint_id": {
+      "type": "string"
+    },
+    "apply_receipt_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "merge_decision_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "import_record_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transition_state": {
+      "type": "string"
+    },
+    "changed_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transitioned_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

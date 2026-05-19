@@ -20,7 +20,7 @@ KNOWN_EVENT_KINDS = {
     "routing_policy_registered", "delivery_channel_registered",
     "transport_adapter_registered", "dispatch_policy_registered",
     "dispatch_decision_recorded", "outbox_item_staged", "inbox_item_received",
-    "intake_decision_recorded", "import_recorded", "conflict_recorded", "merge_decision_recorded", "apply_receipt_recorded", "state_checkpoint_recorded",
+    "intake_decision_recorded", "import_recorded", "conflict_recorded", "merge_decision_recorded", "apply_receipt_recorded", "state_checkpoint_recorded", "state_transition_recorded",
     "delivery_job_recorded", "transport_receipt_recorded",
 }
 
@@ -109,6 +109,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("merge/merge-decisions.json", "merge_decision_id"),
         ("apply/apply-receipts.json", "apply_receipt_id"),
         ("state/state-checkpoints.json", "state_checkpoint_id"),
+        ("state/state-transitions.json", "state_transition_id"),
         ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()

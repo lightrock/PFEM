@@ -25,6 +25,7 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_conflict_records.py
       - run: PYTHONPATH=src python tools/pfem_apply_receipts.py
       - run: PYTHONPATH=src python tools/pfem_state_checkpoints.py
+      - run: PYTHONPATH=src python tools/pfem_state_transitions.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

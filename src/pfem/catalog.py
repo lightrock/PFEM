@@ -37,6 +37,7 @@ from pfem.review import load_review_records
 from pfem.routing import load_routing_policy
 from pfem.source_runtime import load_source_registry
 from pfem.state_checkpoint import load_state_checkpoints
+from pfem.state_transition import load_state_transitions
 from pfem.transport import load_transport_adapter_registry
 from pfem.transport_receipt import load_transport_receipts
 
@@ -158,6 +159,11 @@ def _state_checkpoint_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"state_checkpoint_id": c.state_checkpoint_id, "node_id": c.node_id, "checkpoint_state": c.checkpoint_state, "included_refs": len(c.included_refs)} for c in load_state_checkpoints(p)]
 
 
+def _state_transition_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "state" / "state-transitions.json"
+    return [] if not p.exists() else [{"state_transition_id": t.state_transition_id, "to_state_checkpoint_id": t.to_state_checkpoint_id, "transition_state": t.transition_state, "changed_refs": len(t.changed_refs)} for t in load_state_transitions(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -246,6 +252,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "conflict_records": _conflict_record_rows(root),
         "apply_receipts": _apply_receipt_rows(root),
         "state_checkpoints": _state_checkpoint_rows(root),
+        "state_transitions": _state_transition_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -291,6 +298,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('conflict_records', 0)} conflict records, "
         f"{counts.get('apply_receipts', 0)} apply receipts, "
         f"{counts.get('state_checkpoints', 0)} state checkpoints, "
+        f"{counts.get('state_transitions', 0)} state transitions, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -322,6 +330,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Conflict Records", catalog["conflict_records"], ["conflict_record_id", "import_record_id", "conflict_state", "severity"]))
     lines.extend(_format_table("Apply Receipts", catalog["apply_receipts"], ["apply_receipt_id", "merge_decision_id", "apply_state", "receipt_kind"]))
     lines.extend(_format_table("State Checkpoints", catalog["state_checkpoints"], ["state_checkpoint_id", "node_id", "checkpoint_state", "included_refs"]))
+    lines.extend(_format_table("State Transitions", catalog["state_transitions"], ["state_transition_id", "to_state_checkpoint_id", "transition_state", "changed_refs"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
