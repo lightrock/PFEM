@@ -1,0 +1,34 @@
+[
+  {
+    "retention_availability_notice_record_id": "retention-availability-notice-basic-restore-001",
+    "availability_notice_kind": "retention_availability_notice",
+    "created_time": "2026-01-01T00:02:56Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_deployment_release_closeout_record_id": "retention-deployment-release-closeout-basic-restore-001",
+    "retention_deployment_release_verification_receipt_id": "retention-deployment-release-verification-basic-restore-001",
+    "availability_notice_state": "available",
+    "availability_notice_scope": "closed_retention_deployment_release",
+    "availability_notice_refs": [
+      "retention-deployment-release-closeout-basic-restore-001",
+      "retention-deployment-release-verification-basic-restore-001",
+      "retention-deployment-release-basic-restore-001",
+      "retention-repository-release-closeout-basic-restore-001",
+      "retention-terminal-manifest-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-deployment-release-closeout-basic-restore-001",
+      "retention-deployment-release-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-availability-notice-ref-list",
+    "availability_notice_ref_digest": "d184cb4cfaac0064139aa50ec3a207e9c473eae13e59181f8e48d7a7ac0874ce",
+    "availability_notice_by_ref": "tools/pfem_retention_availability_notice_records.py",
+    "summary": "Synthetic example retention availability notice record built from the closed retention deployment release path."
+  }
+]

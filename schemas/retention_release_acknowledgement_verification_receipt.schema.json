@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_release_acknowledgement_verification_receipt.schema.json",
+  "title": "PFEM Retention Release Acknowledgement Verification Receipts",
+  "type": "object",
+  "required": [
+    "retention_release_acknowledgement_verification_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "retention_release_acknowledgement_record_id",
+    "retention_availability_notice_closeout_record_id",
+    "verification_state",
+    "checked_release_acknowledgement_refs",
+    "checked_subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "expected_release_acknowledgement_ref_digest",
+    "actual_release_acknowledgement_ref_digest",
+    "verified_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_release_acknowledgement_verification_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_release_acknowledgement_record_id": {
+      "type": "string"
+    },
+    "retention_availability_notice_closeout_record_id": {
+      "type": "string"
+    },
+    "verification_state": {
+      "type": "string"
+    },
+    "checked_release_acknowledgement_refs": {
+      "type": "array"
+    },
+    "checked_subject_refs": {
+      "type": "array"
+    },
+    "missing_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "expected_release_acknowledgement_ref_digest": {
+      "type": "string"
+    },
+    "actual_release_acknowledgement_ref_digest": {
+      "type": "string"
+    },
+    "verified_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

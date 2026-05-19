@@ -173,6 +173,16 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_retention_terminal_manifest_closeout_records.py
       - run: PYTHONPATH=src python tools/pfem_retention_repository_release_records.py
       - run: PYTHONPATH=src python tools/pfem_retention_repository_release_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_repository_release_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_deployment_release_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_deployment_release_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_deployment_release_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_availability_notice_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_availability_notice_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_availability_notice_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_release_acknowledgement_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_release_acknowledgement_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_release_acknowledgement_closeout_records.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

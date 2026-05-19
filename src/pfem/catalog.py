@@ -155,6 +155,16 @@ from pfem.retention_terminal_manifest_verification_receipt import load_retention
 from pfem.retention_terminal_manifest_closeout_record import load_retention_terminal_manifest_closeout_records
 from pfem.retention_repository_release_record import load_retention_repository_release_records
 from pfem.retention_repository_release_verification_receipt import load_retention_repository_release_verification_receipts
+from pfem.retention_repository_release_closeout_record import load_retention_repository_release_closeout_records
+from pfem.retention_deployment_release_record import load_retention_deployment_release_records
+from pfem.retention_deployment_release_verification_receipt import load_retention_deployment_release_verification_receipts
+from pfem.retention_deployment_release_closeout_record import load_retention_deployment_release_closeout_records
+from pfem.retention_availability_notice_record import load_retention_availability_notice_records
+from pfem.retention_availability_notice_verification_receipt import load_retention_availability_notice_verification_receipts
+from pfem.retention_availability_notice_closeout_record import load_retention_availability_notice_closeout_records
+from pfem.retention_release_acknowledgement_record import load_retention_release_acknowledgement_records
+from pfem.retention_release_acknowledgement_verification_receipt import load_retention_release_acknowledgement_verification_receipts
+from pfem.retention_release_acknowledgement_closeout_record import load_retention_release_acknowledgement_closeout_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -1046,6 +1056,56 @@ def _retention_repository_release_verification_receipt_rows(root: Path) -> list[
     return [] if not p.exists() else [{"retention_repository_release_verification_receipt_id": r["retention_repository_release_verification_receipt_id"], "retention_repository_release_record_id": r["retention_repository_release_record_id"], "verification_state": r["verification_state"], "checked_repository_release_refs": len(r["checked_repository_release_refs"])} for r in load_retention_repository_release_verification_receipts(p)]
 
 
+def _retention_repository_release_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-repository-release-closeout-records.json"
+    return [] if not p.exists() else [{"retention_repository_release_closeout_record_id": r["retention_repository_release_closeout_record_id"], "retention_repository_release_verification_receipt_id": r["retention_repository_release_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_repository_release_closeout_records(p)]
+
+
+def _retention_deployment_release_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-deployment-release-records.json"
+    return [] if not p.exists() else [{"retention_deployment_release_record_id": r["retention_deployment_release_record_id"], "retention_repository_release_closeout_record_id": r["retention_repository_release_closeout_record_id"], "deployment_release_state": r["deployment_release_state"], "deployment_release_scope": r["deployment_release_scope"]} for r in load_retention_deployment_release_records(p)]
+
+
+def _retention_deployment_release_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-deployment-release-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_deployment_release_verification_receipt_id": r["retention_deployment_release_verification_receipt_id"], "retention_deployment_release_record_id": r["retention_deployment_release_record_id"], "verification_state": r["verification_state"], "checked_deployment_release_refs": len(r["checked_deployment_release_refs"])} for r in load_retention_deployment_release_verification_receipts(p)]
+
+
+def _retention_deployment_release_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-deployment-release-closeout-records.json"
+    return [] if not p.exists() else [{"retention_deployment_release_closeout_record_id": r["retention_deployment_release_closeout_record_id"], "retention_deployment_release_verification_receipt_id": r["retention_deployment_release_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_deployment_release_closeout_records(p)]
+
+
+def _retention_availability_notice_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-availability-notice-records.json"
+    return [] if not p.exists() else [{"retention_availability_notice_record_id": r["retention_availability_notice_record_id"], "retention_deployment_release_closeout_record_id": r["retention_deployment_release_closeout_record_id"], "availability_notice_state": r["availability_notice_state"], "availability_notice_scope": r["availability_notice_scope"]} for r in load_retention_availability_notice_records(p)]
+
+
+def _retention_availability_notice_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-availability-notice-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_availability_notice_verification_receipt_id": r["retention_availability_notice_verification_receipt_id"], "retention_availability_notice_record_id": r["retention_availability_notice_record_id"], "verification_state": r["verification_state"], "checked_availability_notice_refs": len(r["checked_availability_notice_refs"])} for r in load_retention_availability_notice_verification_receipts(p)]
+
+
+def _retention_availability_notice_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-availability-notice-closeout-records.json"
+    return [] if not p.exists() else [{"retention_availability_notice_closeout_record_id": r["retention_availability_notice_closeout_record_id"], "retention_availability_notice_verification_receipt_id": r["retention_availability_notice_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_availability_notice_closeout_records(p)]
+
+
+def _retention_release_acknowledgement_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-acknowledgement-records.json"
+    return [] if not p.exists() else [{"retention_release_acknowledgement_record_id": r["retention_release_acknowledgement_record_id"], "retention_availability_notice_closeout_record_id": r["retention_availability_notice_closeout_record_id"], "release_acknowledgement_state": r["release_acknowledgement_state"], "release_acknowledgement_scope": r["release_acknowledgement_scope"]} for r in load_retention_release_acknowledgement_records(p)]
+
+
+def _retention_release_acknowledgement_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-acknowledgement-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_release_acknowledgement_verification_receipt_id": r["retention_release_acknowledgement_verification_receipt_id"], "retention_release_acknowledgement_record_id": r["retention_release_acknowledgement_record_id"], "verification_state": r["verification_state"], "checked_release_acknowledgement_refs": len(r["checked_release_acknowledgement_refs"])} for r in load_retention_release_acknowledgement_verification_receipts(p)]
+
+
+def _retention_release_acknowledgement_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-release-acknowledgement-closeout-records.json"
+    return [] if not p.exists() else [{"retention_release_acknowledgement_closeout_record_id": r["retention_release_acknowledgement_closeout_record_id"], "retention_release_acknowledgement_verification_receipt_id": r["retention_release_acknowledgement_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_release_acknowledgement_closeout_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -1282,6 +1342,16 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_terminal_manifest_closeout_records": _retention_terminal_manifest_closeout_record_rows(root),
         "retention_repository_release_records": _retention_repository_release_record_rows(root),
         "retention_repository_release_verification_receipts": _retention_repository_release_verification_receipt_rows(root),
+        "retention_repository_release_closeout_records": _retention_repository_release_closeout_record_rows(root),
+        "retention_deployment_release_records": _retention_deployment_release_record_rows(root),
+        "retention_deployment_release_verification_receipts": _retention_deployment_release_verification_receipt_rows(root),
+        "retention_deployment_release_closeout_records": _retention_deployment_release_closeout_record_rows(root),
+        "retention_availability_notice_records": _retention_availability_notice_record_rows(root),
+        "retention_availability_notice_verification_receipts": _retention_availability_notice_verification_receipt_rows(root),
+        "retention_availability_notice_closeout_records": _retention_availability_notice_closeout_record_rows(root),
+        "retention_release_acknowledgement_records": _retention_release_acknowledgement_record_rows(root),
+        "retention_release_acknowledgement_verification_receipts": _retention_release_acknowledgement_verification_receipt_rows(root),
+        "retention_release_acknowledgement_closeout_records": _retention_release_acknowledgement_closeout_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -1475,6 +1545,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_terminal_manifest_closeout_records', 0)} retention terminal manifest closeout records, "
         f"{counts.get('retention_repository_release_records', 0)} retention repository release records, "
         f"{counts.get('retention_repository_release_verification_receipts', 0)} retention repository release verification receipts, "
+        f"{counts.get('retention_repository_release_closeout_records', 0)} retention repository release closeout records, "
+        f"{counts.get('retention_deployment_release_records', 0)} retention deployment release records, "
+        f"{counts.get('retention_deployment_release_verification_receipts', 0)} retention deployment release verification receipts, "
+        f"{counts.get('retention_deployment_release_closeout_records', 0)} retention deployment release closeout records, "
+        f"{counts.get('retention_availability_notice_records', 0)} retention availability notice records, "
+        f"{counts.get('retention_availability_notice_verification_receipts', 0)} retention availability notice verification receipts, "
+        f"{counts.get('retention_availability_notice_closeout_records', 0)} retention availability notice closeout records, "
+        f"{counts.get('retention_release_acknowledgement_records', 0)} retention release acknowledgement records, "
+        f"{counts.get('retention_release_acknowledgement_verification_receipts', 0)} retention release acknowledgement verification receipts, "
+        f"{counts.get('retention_release_acknowledgement_closeout_records', 0)} retention release acknowledgement closeout records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -1654,6 +1734,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Retention Terminal Manifest Closeout Records", catalog["retention_terminal_manifest_closeout_records"], ["retention_terminal_manifest_closeout_record_id", "retention_terminal_manifest_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Retention Repository Release Records", catalog["retention_repository_release_records"], ["retention_repository_release_record_id", "retention_terminal_manifest_closeout_record_id", "repository_release_state", "repository_release_scope"]))
     lines.extend(_format_table("Retention Repository Release Verification Receipts", catalog["retention_repository_release_verification_receipts"], ["retention_repository_release_verification_receipt_id", "retention_repository_release_record_id", "verification_state", "checked_repository_release_refs"]))
+    lines.extend(_format_table("Retention Repository Release Closeout Records", catalog["retention_repository_release_closeout_records"], ["retention_repository_release_closeout_record_id", "retention_repository_release_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Deployment Release Records", catalog["retention_deployment_release_records"], ["retention_deployment_release_record_id", "retention_repository_release_closeout_record_id", "deployment_release_state", "deployment_release_scope"]))
+    lines.extend(_format_table("Retention Deployment Release Verification Receipts", catalog["retention_deployment_release_verification_receipts"], ["retention_deployment_release_verification_receipt_id", "retention_deployment_release_record_id", "verification_state", "checked_deployment_release_refs"]))
+    lines.extend(_format_table("Retention Deployment Release Closeout Records", catalog["retention_deployment_release_closeout_records"], ["retention_deployment_release_closeout_record_id", "retention_deployment_release_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Availability Notice Records", catalog["retention_availability_notice_records"], ["retention_availability_notice_record_id", "retention_deployment_release_closeout_record_id", "availability_notice_state", "availability_notice_scope"]))
+    lines.extend(_format_table("Retention Availability Notice Verification Receipts", catalog["retention_availability_notice_verification_receipts"], ["retention_availability_notice_verification_receipt_id", "retention_availability_notice_record_id", "verification_state", "checked_availability_notice_refs"]))
+    lines.extend(_format_table("Retention Availability Notice Closeout Records", catalog["retention_availability_notice_closeout_records"], ["retention_availability_notice_closeout_record_id", "retention_availability_notice_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Release Acknowledgement Records", catalog["retention_release_acknowledgement_records"], ["retention_release_acknowledgement_record_id", "retention_availability_notice_closeout_record_id", "release_acknowledgement_state", "release_acknowledgement_scope"]))
+    lines.extend(_format_table("Retention Release Acknowledgement Verification Receipts", catalog["retention_release_acknowledgement_verification_receipts"], ["retention_release_acknowledgement_verification_receipt_id", "retention_release_acknowledgement_record_id", "verification_state", "checked_release_acknowledgement_refs"]))
+    lines.extend(_format_table("Retention Release Acknowledgement Closeout Records", catalog["retention_release_acknowledgement_closeout_records"], ["retention_release_acknowledgement_closeout_record_id", "retention_release_acknowledgement_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

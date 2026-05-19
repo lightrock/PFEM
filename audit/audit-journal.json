@@ -2197,5 +2197,134 @@
     ],
     "summary": "Example retention repository release verification receipts was recorded.",
     "source_tool": "pfem_retention_repository_release_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-repository-release-closeout-basic-001",
+    "event_kind": "retention_repository_release_closeout_recorded",
+    "created_time": "2026-01-01T00:02:52Z",
+    "actor_ref": "tools/pfem_retention_repository_release_closeout_records.py",
+    "subject_refs": [
+      "retention-repository-release-closeout-basic-restore-001",
+      "retention-repository-release-basic-restore-001",
+      "retention-repository-release-verification-basic-restore-001"
+    ],
+    "summary": "Example retention repository release closeout records was recorded.",
+    "source_tool": "pfem_retention_repository_release_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-deployment-release-basic-001",
+    "event_kind": "retention_deployment_release_recorded",
+    "created_time": "2026-01-01T00:02:53Z",
+    "actor_ref": "tools/pfem_retention_deployment_release_records.py",
+    "subject_refs": [
+      "retention-deployment-release-basic-restore-001",
+      "retention-repository-release-verification-basic-restore-001",
+      "retention-repository-release-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention deployment release records was recorded.",
+    "source_tool": "pfem_retention_deployment_release_records"
+  },
+  {
+    "audit_id": "audit-retention-deployment-release-verification-basic-001",
+    "event_kind": "retention_deployment_release_verification_recorded",
+    "created_time": "2026-01-01T00:02:54Z",
+    "actor_ref": "tools/pfem_retention_deployment_release_verification_receipts.py",
+    "subject_refs": [
+      "retention-deployment-release-verification-basic-restore-001",
+      "retention-repository-release-closeout-basic-restore-001",
+      "retention-deployment-release-basic-restore-001"
+    ],
+    "summary": "Example retention deployment release verification receipts was recorded.",
+    "source_tool": "pfem_retention_deployment_release_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-deployment-release-closeout-basic-001",
+    "event_kind": "retention_deployment_release_closeout_recorded",
+    "created_time": "2026-01-01T00:02:55Z",
+    "actor_ref": "tools/pfem_retention_deployment_release_closeout_records.py",
+    "subject_refs": [
+      "retention-deployment-release-closeout-basic-restore-001",
+      "retention-deployment-release-basic-restore-001",
+      "retention-deployment-release-verification-basic-restore-001"
+    ],
+    "summary": "Example retention deployment release closeout records was recorded.",
+    "source_tool": "pfem_retention_deployment_release_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-availability-notice-basic-001",
+    "event_kind": "retention_availability_notice_recorded",
+    "created_time": "2026-01-01T00:02:56Z",
+    "actor_ref": "tools/pfem_retention_availability_notice_records.py",
+    "subject_refs": [
+      "retention-availability-notice-basic-restore-001",
+      "retention-deployment-release-verification-basic-restore-001",
+      "retention-deployment-release-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention availability notice records was recorded.",
+    "source_tool": "pfem_retention_availability_notice_records"
+  },
+  {
+    "audit_id": "audit-retention-availability-notice-verification-basic-001",
+    "event_kind": "retention_availability_notice_verification_recorded",
+    "created_time": "2026-01-01T00:02:57Z",
+    "actor_ref": "tools/pfem_retention_availability_notice_verification_receipts.py",
+    "subject_refs": [
+      "retention-availability-notice-verification-basic-restore-001",
+      "retention-deployment-release-closeout-basic-restore-001",
+      "retention-availability-notice-basic-restore-001"
+    ],
+    "summary": "Example retention availability notice verification receipts was recorded.",
+    "source_tool": "pfem_retention_availability_notice_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-availability-notice-closeout-basic-001",
+    "event_kind": "retention_availability_notice_closeout_recorded",
+    "created_time": "2026-01-01T00:02:58Z",
+    "actor_ref": "tools/pfem_retention_availability_notice_closeout_records.py",
+    "subject_refs": [
+      "retention-availability-notice-closeout-basic-restore-001",
+      "retention-availability-notice-basic-restore-001",
+      "retention-availability-notice-verification-basic-restore-001"
+    ],
+    "summary": "Example retention availability notice closeout records was recorded.",
+    "source_tool": "pfem_retention_availability_notice_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-release-acknowledgement-basic-001",
+    "event_kind": "retention_release_acknowledgement_recorded",
+    "created_time": "2026-01-01T00:02:59Z",
+    "actor_ref": "tools/pfem_retention_release_acknowledgement_records.py",
+    "subject_refs": [
+      "retention-release-acknowledgement-basic-restore-001",
+      "retention-availability-notice-verification-basic-restore-001",
+      "retention-availability-notice-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention release acknowledgement records was recorded.",
+    "source_tool": "pfem_retention_release_acknowledgement_records"
+  },
+  {
+    "audit_id": "audit-retention-release-acknowledgement-verification-basic-001",
+    "event_kind": "retention_release_acknowledgement_verification_recorded",
+    "created_time": "2026-01-01T00:03:00Z",
+    "actor_ref": "tools/pfem_retention_release_acknowledgement_verification_receipts.py",
+    "subject_refs": [
+      "retention-release-acknowledgement-verification-basic-restore-001",
+      "retention-availability-notice-closeout-basic-restore-001",
+      "retention-release-acknowledgement-basic-restore-001"
+    ],
+    "summary": "Example retention release acknowledgement verification receipts was recorded.",
+    "source_tool": "pfem_retention_release_acknowledgement_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-release-acknowledgement-closeout-basic-001",
+    "event_kind": "retention_release_acknowledgement_closeout_recorded",
+    "created_time": "2026-01-01T00:03:01Z",
+    "actor_ref": "tools/pfem_retention_release_acknowledgement_closeout_records.py",
+    "subject_refs": [
+      "retention-release-acknowledgement-closeout-basic-restore-001",
+      "retention-release-acknowledgement-basic-restore-001"
+    ],
+    "summary": "Example retention release acknowledgement closeout records was recorded.",
+    "source_tool": "pfem_retention_release_acknowledgement_closeout_records"
   }
 ]

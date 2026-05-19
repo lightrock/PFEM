@@ -1,0 +1,35 @@
+[
+  {
+    "retention_release_acknowledgement_verification_receipt_id": "retention-release-acknowledgement-verification-basic-restore-001",
+    "receipt_kind": "retention_release_acknowledgement_verification",
+    "created_time": "2026-01-01T00:03:00Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_acknowledgement_record_id": "retention-release-acknowledgement-basic-restore-001",
+    "retention_availability_notice_closeout_record_id": "retention-availability-notice-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_release_acknowledgement_refs": [
+      "retention-availability-notice-closeout-basic-restore-001",
+      "retention-availability-notice-verification-basic-restore-001",
+      "retention-availability-notice-basic-restore-001",
+      "retention-deployment-release-closeout-basic-restore-001",
+      "retention-repository-release-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-release-acknowledgement-basic-restore-001",
+      "retention-availability-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-acknowledgement-ref-list",
+    "expected_release_acknowledgement_ref_digest": "0247b11baf6b25563826c11479ad84cdb61438a6f45a11b1f2d17fe432229bfc",
+    "actual_release_acknowledgement_ref_digest": "0247b11baf6b25563826c11479ad84cdb61438a6f45a11b1f2d17fe432229bfc",
+    "verified_by_ref": "tools/pfem_retention_release_acknowledgement_verification_receipts.py",
+    "summary": "Synthetic example retention release acknowledgement verification receipt showing refs and digest were checked."
+  }
+]

@@ -811,6 +811,56 @@ python tools\pfem_retention_repository_release_verification_receipts.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention repository release closeout record validation...
+python tools\pfem_retention_repository_release_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention deployment release record validation...
+python tools\pfem_retention_deployment_release_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention deployment release verification receipt validation...
+python tools\pfem_retention_deployment_release_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention deployment release closeout record validation...
+python tools\pfem_retention_deployment_release_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention availability notice record validation...
+python tools\pfem_retention_availability_notice_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention availability notice verification receipt validation...
+python tools\pfem_retention_availability_notice_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention availability notice closeout record validation...
+python tools\pfem_retention_availability_notice_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention release acknowledgement record validation...
+python tools\pfem_retention_release_acknowledgement_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention release acknowledgement verification receipt validation...
+python tools\pfem_retention_release_acknowledgement_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention release acknowledgement closeout record validation...
+python tools\pfem_retention_release_acknowledgement_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

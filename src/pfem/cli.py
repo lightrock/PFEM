@@ -155,6 +155,16 @@ from pfem.retention_terminal_manifest_verification_receipt import format_retenti
 from pfem.retention_terminal_manifest_closeout_record import format_retention_terminal_manifest_closeout_record_report, validate_retention_terminal_manifest_closeout_records
 from pfem.retention_repository_release_record import format_retention_repository_release_record_report, validate_retention_repository_release_records
 from pfem.retention_repository_release_verification_receipt import format_retention_repository_release_verification_receipt_report, validate_retention_repository_release_verification_receipts
+from pfem.retention_repository_release_closeout_record import format_retention_repository_release_closeout_record_report, validate_retention_repository_release_closeout_records
+from pfem.retention_deployment_release_record import format_retention_deployment_release_record_report, validate_retention_deployment_release_records
+from pfem.retention_deployment_release_verification_receipt import format_retention_deployment_release_verification_receipt_report, validate_retention_deployment_release_verification_receipts
+from pfem.retention_deployment_release_closeout_record import format_retention_deployment_release_closeout_record_report, validate_retention_deployment_release_closeout_records
+from pfem.retention_availability_notice_record import format_retention_availability_notice_record_report, validate_retention_availability_notice_records
+from pfem.retention_availability_notice_verification_receipt import format_retention_availability_notice_verification_receipt_report, validate_retention_availability_notice_verification_receipts
+from pfem.retention_availability_notice_closeout_record import format_retention_availability_notice_closeout_record_report, validate_retention_availability_notice_closeout_records
+from pfem.retention_release_acknowledgement_record import format_retention_release_acknowledgement_record_report, validate_retention_release_acknowledgement_records
+from pfem.retention_release_acknowledgement_verification_receipt import format_retention_release_acknowledgement_verification_receipt_report, validate_retention_release_acknowledgement_verification_receipts
+from pfem.retention_release_acknowledgement_closeout_record import format_retention_release_acknowledgement_closeout_record_report, validate_retention_release_acknowledgement_closeout_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -355,6 +365,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-terminal-manifest-closeout-records", "Validate PFEM retention terminal manifest closeout records"),
         ("retention-repository-release-records", "Validate PFEM retention repository release records"),
         ("retention-repository-release-verification-receipts", "Validate PFEM retention repository release verification receipts"),
+        ("retention-repository-release-closeout-records", "Validate PFEM retention repository release closeout records"),
+        ("retention-deployment-release-records", "Validate PFEM retention deployment release records"),
+        ("retention-deployment-release-verification-receipts", "Validate PFEM retention deployment release verification receipts"),
+        ("retention-deployment-release-closeout-records", "Validate PFEM retention deployment release closeout records"),
+        ("retention-availability-notice-records", "Validate PFEM retention availability notice records"),
+        ("retention-availability-notice-verification-receipts", "Validate PFEM retention availability notice verification receipts"),
+        ("retention-availability-notice-closeout-records", "Validate PFEM retention availability notice closeout records"),
+        ("retention-release-acknowledgement-records", "Validate PFEM retention release acknowledgement records"),
+        ("retention-release-acknowledgement-verification-receipts", "Validate PFEM retention release acknowledgement verification receipts"),
+        ("retention-release-acknowledgement-closeout-records", "Validate PFEM retention release acknowledgement closeout records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -564,6 +584,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-terminal-manifest-closeout-records": (validate_retention_terminal_manifest_closeout_records, format_retention_terminal_manifest_closeout_record_report),
         "retention-repository-release-records": (validate_retention_repository_release_records, format_retention_repository_release_record_report),
         "retention-repository-release-verification-receipts": (validate_retention_repository_release_verification_receipts, format_retention_repository_release_verification_receipt_report),
+        "retention-repository-release-closeout-records": (validate_retention_repository_release_closeout_records, format_retention_repository_release_closeout_record_report),
+        "retention-deployment-release-records": (validate_retention_deployment_release_records, format_retention_deployment_release_record_report),
+        "retention-deployment-release-verification-receipts": (validate_retention_deployment_release_verification_receipts, format_retention_deployment_release_verification_receipt_report),
+        "retention-deployment-release-closeout-records": (validate_retention_deployment_release_closeout_records, format_retention_deployment_release_closeout_record_report),
+        "retention-availability-notice-records": (validate_retention_availability_notice_records, format_retention_availability_notice_record_report),
+        "retention-availability-notice-verification-receipts": (validate_retention_availability_notice_verification_receipts, format_retention_availability_notice_verification_receipt_report),
+        "retention-availability-notice-closeout-records": (validate_retention_availability_notice_closeout_records, format_retention_availability_notice_closeout_record_report),
+        "retention-release-acknowledgement-records": (validate_retention_release_acknowledgement_records, format_retention_release_acknowledgement_record_report),
+        "retention-release-acknowledgement-verification-receipts": (validate_retention_release_acknowledgement_verification_receipts, format_retention_release_acknowledgement_verification_receipt_report),
+        "retention-release-acknowledgement-closeout-records": (validate_retention_release_acknowledgement_closeout_records, format_retention_release_acknowledgement_closeout_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

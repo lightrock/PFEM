@@ -1,0 +1,32 @@
+[
+  {
+    "retention_release_acknowledgement_closeout_record_id": "retention-release-acknowledgement-closeout-basic-restore-001",
+    "closeout_kind": "retention_release_acknowledgement_closeout",
+    "created_time": "2026-01-01T00:03:01Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_acknowledgement_verification_receipt_id": "retention-release-acknowledgement-verification-basic-restore-001",
+    "retention_release_acknowledgement_record_id": "retention-release-acknowledgement-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "retention_release_acknowledgement_verified_and_closed",
+    "closed_refs": [
+      "retention-availability-notice-closeout-basic-restore-001",
+      "retention-availability-notice-verification-basic-restore-001",
+      "retention-availability-notice-basic-restore-001",
+      "retention-deployment-release-closeout-basic-restore-001",
+      "retention-repository-release-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-release-acknowledgement-verification-basic-restore-001",
+      "retention-release-acknowledgement-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_retention_release_acknowledgement_closeout_records.py",
+    "summary": "Synthetic example retention release acknowledgement closeout record showing workflow was closed after verification."
+  }
+]
