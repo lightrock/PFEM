@@ -74,6 +74,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("archive/archive-lifecycle-verification-receipts.json", "archive lifecycle verification receipts"),
     ("archive/archive-lifecycle-closeout-records.json", "archive lifecycle closeout records"),
     ("preservation/preservation-records.json", "preservation records"),
+    ("preservation/preservation-verification-receipts.json", "preservation verification receipts"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),

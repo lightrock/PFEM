@@ -51,6 +51,7 @@ from pfem.archive_lifecycle_record import validate_archive_lifecycle_records
 from pfem.archive_lifecycle_verification_receipt import validate_archive_lifecycle_verification_receipts
 from pfem.archive_lifecycle_closeout_record import validate_archive_lifecycle_closeout_records
 from pfem.preservation_record import validate_preservation_records
+from pfem.preservation_verification_receipt import validate_preservation_verification_receipts
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -140,6 +141,7 @@ EXPECTED_PATHS = [
     "docs/architecture/archive-lifecycle-verification-receipts.md",
     "docs/architecture/archive-lifecycle-closeout-records.md",
     "docs/architecture/preservation-records.md",
+    "docs/architecture/preservation-verification-receipts.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -197,6 +199,7 @@ EXPECTED_PATHS = [
     "contracts/archive-lifecycle-verification-receipt-contract.md",
     "contracts/archive-lifecycle-closeout-record-contract.md",
     "contracts/preservation-record-contract.md",
+    "contracts/preservation-verification-receipt-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -254,6 +257,7 @@ EXPECTED_PATHS = [
     "schemas/archive_lifecycle_verification_receipt.schema.json",
     "schemas/archive_lifecycle_closeout_record.schema.json",
     "schemas/preservation_record.schema.json",
+    "schemas/preservation_verification_receipt.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -272,7 +276,7 @@ EXPECTED_PATHS = [
     "recovery/README.md", "recovery/recovery-points.json",
     "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json", "restore/restore-receipts.json", "restore/restore-verification-receipts.json", "restore/restore-closeout-records.json",
     "disposition/README.md", "disposition/disposition-records.json", "disposition/disposition-receipts.json",
-    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json", "custody/custody-release-approvals.json", "custody/custody-release-receipts.json", "custody/custody-release-verification-receipts.json", "custody/custody-release-closeout-records.json", "custody/custody-release-chain-records.json", "custody/custody-release-chain-verification-receipts.json", "custody/custody-lifecycle-records.json", "custody/custody-lifecycle-verification-receipts.json", "custody/custody-lifecycle-closeout-records.json", "archive/archive-manifest-records.json", "archive/archive-receipts.json", "archive/archive-verification-receipts.json", "archive/archive-closeout-records.json", "archive/archive-chain-records.json", "archive/archive-chain-verification-receipts.json", "archive/archive-index-records.json", "archive/archive-index-verification-receipts.json", "archive/archive-index-closeout-records.json", "archive/archive-lifecycle-records.json", "archive/archive-lifecycle-verification-receipts.json", "archive/archive-lifecycle-closeout-records.json", "preservation/preservation-records.json",
+    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json", "custody/custody-release-approvals.json", "custody/custody-release-receipts.json", "custody/custody-release-verification-receipts.json", "custody/custody-release-closeout-records.json", "custody/custody-release-chain-records.json", "custody/custody-release-chain-verification-receipts.json", "custody/custody-lifecycle-records.json", "custody/custody-lifecycle-verification-receipts.json", "custody/custody-lifecycle-closeout-records.json", "archive/archive-manifest-records.json", "archive/archive-receipts.json", "archive/archive-verification-receipts.json", "archive/archive-closeout-records.json", "archive/archive-chain-records.json", "archive/archive-chain-verification-receipts.json", "archive/archive-index-records.json", "archive/archive-index-verification-receipts.json", "archive/archive-index-closeout-records.json", "archive/archive-lifecycle-records.json", "archive/archive-lifecycle-verification-receipts.json", "archive/archive-lifecycle-closeout-records.json", "preservation/preservation-records.json", "preservation/preservation-verification-receipts.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -489,6 +493,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_archive_lifecycle_verification_receipts(root).failures)
     report.failures.extend(validate_archive_lifecycle_closeout_records(root).failures)
     report.failures.extend(validate_preservation_records(root).failures)
+    report.failures.extend(validate_preservation_verification_receipts(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

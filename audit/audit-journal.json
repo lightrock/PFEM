@@ -837,5 +837,18 @@
     ],
     "summary": "Example preservation records was recorded.",
     "source_tool": "pfem_preservation_records"
+  },
+  {
+    "audit_id": "audit-preservation-verification-basic-001",
+    "event_kind": "preservation_verification_recorded",
+    "created_time": "2026-01-01T00:01:07Z",
+    "actor_ref": "tools/pfem_preservation_verification_receipts.py",
+    "subject_refs": [
+      "preservation-verification-basic-restore-001",
+      "preservation-basic-restore-001",
+      "archive-lifecycle-closeout-basic-restore-001"
+    ],
+    "summary": "Example preservation verification receipts was recorded.",
+    "source_tool": "pfem_preservation_verification_receipts"
   }
 ]

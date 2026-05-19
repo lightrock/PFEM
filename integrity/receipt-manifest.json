@@ -365,6 +365,12 @@
       "purpose": "preservation records"
     },
     {
+      "path": "preservation/preservation-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "196213dd666e207269ddf55151cf9523d8804a4270b9363d336d0cc8bf8de9ca",
+      "purpose": "preservation verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -445,7 +451,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "33e85ea75b744201e887511df3392cb6f8faf9028fb37689ed9743c9ee772ef3",
+      "digest": "19ac1de88fdbde1b60355614884e7ec6c316c35c480ce8db162a50603536c72d",
       "purpose": "audit journal"
     },
     {

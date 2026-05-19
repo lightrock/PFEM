@@ -50,6 +50,7 @@ from pfem.archive_lifecycle_record import format_archive_lifecycle_record_report
 from pfem.archive_lifecycle_verification_receipt import format_archive_lifecycle_verification_receipt_report, validate_archive_lifecycle_verification_receipts
 from pfem.archive_lifecycle_closeout_record import format_archive_lifecycle_closeout_record_report, validate_archive_lifecycle_closeout_records
 from pfem.preservation_record import format_preservation_record_report, validate_preservation_records
+from pfem.preservation_verification_receipt import format_preservation_verification_receipt_report, validate_preservation_verification_receipts
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -145,6 +146,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("archive-lifecycle-verification-receipts", "Validate PFEM archive lifecycle verification receipts"),
         ("archive-lifecycle-closeout-records", "Validate PFEM archive lifecycle closeout records"),
         ("preservation-records", "Validate PFEM preservation records"),
+        ("preservation-verification-receipts", "Validate PFEM preservation verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -249,6 +251,7 @@ def main(argv: list[str] | None = None) -> int:
         "archive-lifecycle-verification-receipts": (validate_archive_lifecycle_verification_receipts, format_archive_lifecycle_verification_receipt_report),
         "archive-lifecycle-closeout-records": (validate_archive_lifecycle_closeout_records, format_archive_lifecycle_closeout_record_report),
         "preservation-records": (validate_preservation_records, format_preservation_record_report),
+        "preservation-verification-receipts": (validate_preservation_verification_receipts, format_preservation_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),
