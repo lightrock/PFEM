@@ -167,6 +167,12 @@
       "purpose": "disposition records"
     },
     {
+      "path": "disposition/disposition-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "303c3d86dd761b6aae26ac7734a66af9e695747bd6980a192f9a0ac15b8b76b9",
+      "purpose": "disposition receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -247,7 +253,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "dc3b66695fc0aaf5c44eb3b5e792fe1d634ec7fc3d9cb44868672e289dff3612",
+      "digest": "e233674d9a94206706bcea55367c309a79c9ed056681c8d841504078baaa481e",
       "purpose": "audit journal"
     },
     {

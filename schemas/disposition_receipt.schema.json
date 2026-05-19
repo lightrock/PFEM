@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/disposition_receipt.schema.json",
+  "title": "PFEM Disposition Receipt",
+  "type": "object",
+  "required": [
+    "disposition_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "disposition_record_id",
+    "source_workflow_kind",
+    "source_closeout_ref",
+    "receipt_state",
+    "executed_actions",
+    "basis_refs",
+    "executed_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "disposition_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "disposition_record_id": {
+      "type": "string"
+    },
+    "source_workflow_kind": {
+      "type": "string"
+    },
+    "source_closeout_ref": {
+      "type": "string"
+    },
+    "receipt_state": {
+      "type": "string"
+    },
+    "executed_actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "completed_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skipped_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failed_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "executed_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

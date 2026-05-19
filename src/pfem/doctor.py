@@ -18,6 +18,7 @@ from pfem.delivery_job import validate_delivery_jobs
 from pfem.dispatch import validate_dispatch_policy
 from pfem.dispatch_decision import validate_dispatch_decisions
 from pfem.disposition_record import validate_disposition_records
+from pfem.disposition_receipt import validate_disposition_receipts
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -74,6 +75,7 @@ EXPECTED_PATHS = [
     "docs/architecture/restore-verification-receipts.md",
     "docs/architecture/restore-closeout-records.md",
     "docs/architecture/disposition-records.md",
+    "docs/architecture/disposition-receipts.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -98,6 +100,7 @@ EXPECTED_PATHS = [
     "contracts/restore-verification-receipt-contract.md",
     "contracts/restore-closeout-record-contract.md",
     "contracts/disposition-record-contract.md",
+    "contracts/disposition-receipt-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -122,6 +125,7 @@ EXPECTED_PATHS = [
     "schemas/restore_verification_receipt.schema.json",
     "schemas/restore_closeout_record.schema.json",
     "schemas/disposition_record.schema.json",
+    "schemas/disposition_receipt.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -139,7 +143,7 @@ EXPECTED_PATHS = [
     "snapshots/README.md", "snapshots/snapshot-manifests.json", "snapshots/snapshot-verification-receipts.json",
     "recovery/README.md", "recovery/recovery-points.json",
     "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json", "restore/restore-receipts.json", "restore/restore-verification-receipts.json", "restore/restore-closeout-records.json",
-    "disposition/README.md", "disposition/disposition-records.json",
+    "disposition/README.md", "disposition/disposition-records.json", "disposition/disposition-receipts.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -323,6 +327,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_restore_verification_receipts(root).failures)
     report.failures.extend(validate_restore_closeout_records(root).failures)
     report.failures.extend(validate_disposition_records(root).failures)
+    report.failures.extend(validate_disposition_receipts(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

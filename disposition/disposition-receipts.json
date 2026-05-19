@@ -1,0 +1,40 @@
+[
+  {
+    "disposition_receipt_id": "disposition-receipt-basic-restore-001",
+    "receipt_kind": "disposition_action_receipt",
+    "created_time": "2026-01-01T00:00:34Z",
+    "node_id": "formal-rollup-node-example",
+    "disposition_record_id": "disposition-record-basic-restore-001",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "receipt_state": "completed",
+    "executed_actions": [
+      {
+        "action": "retain",
+        "target_ref": "restore-closeout-basic-state-001",
+        "result": "completed",
+        "reason": "final workflow closeout record retained"
+      },
+      {
+        "action": "retain",
+        "target_ref": "restore-verification-basic-state-001",
+        "result": "completed",
+        "reason": "post-restore verification evidence retained"
+      }
+    ],
+    "completed_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "skipped_refs": [],
+    "failed_refs": [],
+    "basis_refs": [
+      "disposition-record-basic-restore-001",
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001",
+      "retention/retention-policy.json"
+    ],
+    "executed_by_ref": "tools/pfem_disposition_receipts.py",
+    "summary": "Synthetic example disposition receipt showing the closed restore workflow artifacts were retained according to the disposition record."
+  }
+]

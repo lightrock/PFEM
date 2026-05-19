@@ -414,5 +414,18 @@
     ],
     "summary": "Example disposition record was recorded after restore closeout.",
     "source_tool": "pfem_disposition_records"
+  },
+  {
+    "audit_id": "audit-disposition-receipt-basic-001",
+    "event_kind": "disposition_receipt_recorded",
+    "created_time": "2026-01-01T00:00:34Z",
+    "actor_ref": "tools/pfem_disposition_receipts.py",
+    "subject_refs": [
+      "disposition-receipt-basic-restore-001",
+      "disposition-record-basic-restore-001",
+      "restore-closeout-basic-state-001"
+    ],
+    "summary": "Example disposition receipt was recorded after disposition actions executed.",
+    "source_tool": "pfem_disposition_receipts"
   }
 ]
