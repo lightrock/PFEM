@@ -17,6 +17,7 @@ from pfem.integrity import load_integrity_manifest
 from pfem.node_runtime import load_node_registry
 from pfem.policy import load_sharing_policy
 from pfem.profile_runtime import load_profile_registry
+from pfem.reconciliation import load_reconciliation_records
 from pfem.retention import load_retention_policy
 from pfem.review import load_review_records
 from pfem.source_runtime import load_source_registry
@@ -83,6 +84,21 @@ def _exchange_rows(root: Path) -> list[dict[str, Any]]:
     return [{"exchange_receipt_id": r.exchange_receipt_id, "receipt_kind": r.receipt_kind, "bundle_id": r.bundle_id, "decision": r.decision} for r in load_exchange_receipts(p)]
 
 
+def _reconciliation_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "reconciliation" / "reconciliation-records.json"
+    if not p.exists():
+        return []
+    return [
+        {
+            "reconciliation_id": r.reconciliation_id,
+            "reconciliation_kind": r.reconciliation_kind,
+            "decision": r.decision,
+            "result_state": r.result_state,
+        }
+        for r in load_reconciliation_records(p)
+    ]
+
+
 def _handling_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "handling" / "handling-policy.json"
     if not p.exists():
@@ -129,6 +145,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     audit_events = _audit_rows(root)
     bundles = _bundle_rows(root)
     exchange_receipts = _exchange_rows(root)
+    reconciliation_records = _reconciliation_rows(root)
     handling_labels = _handling_rows(root)
     retention_classes = _retention_rows(root)
     integrity_receipts = _integrity_rows(root)
@@ -141,6 +158,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "nodes": len(nodes), "sources": len(sources), "examples": len(examples),
             "reviews": len(reviews), "audit_events": len(audit_events), "bundles": len(bundles),
             "exchange_receipts": len(exchange_receipts),
+            "reconciliation_records": len(reconciliation_records),
             "handling_labels": len(handling_labels), "retention_classes": len(retention_classes),
             "integrity_receipts": len(integrity_receipts), "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
@@ -148,6 +166,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "capabilities": capabilities, "adapters": adapters, "profiles": profiles, "nodes": nodes,
         "sources": sources, "examples": examples, "reviews": reviews, "audit_events": audit_events,
         "bundles": bundles, "exchange_receipts": exchange_receipts,
+        "reconciliation_records": reconciliation_records,
         "handling_labels": handling_labels, "retention_classes": retention_classes,
         "integrity_receipts": integrity_receipts, "sharing_scopes": sharing_scopes, "review_gates": review_gates,
     }
@@ -175,6 +194,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['profiles']} profiles, {counts['nodes']} nodes, {counts['sources']} sources, "
         f"{counts['examples']} examples, {counts['reviews']} reviews, {counts['audit_events']} audit events, "
         f"{counts['bundles']} bundles, {counts['exchange_receipts']} exchange receipts, "
+        f"{counts['reconciliation_records']} reconciliation records, "
         f"{counts['handling_labels']} handling labels, {counts['retention_classes']} retention classes, "
         f"{counts['integrity_receipts']} integrity receipts, {counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
@@ -189,6 +209,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Audit Events", catalog["audit_events"], ["audit_id", "event_kind", "actor_ref"]))
     lines.extend(_format_table("Bundles", catalog["bundles"], ["bundle_id", "bundle_kind", "sharing_scope", "path"]))
     lines.extend(_format_table("Exchange Receipts", catalog["exchange_receipts"], ["exchange_receipt_id", "receipt_kind", "bundle_id", "decision"]))
+    lines.extend(_format_table("Reconciliation Records", catalog["reconciliation_records"], ["reconciliation_id", "reconciliation_kind", "decision", "result_state"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
     lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))

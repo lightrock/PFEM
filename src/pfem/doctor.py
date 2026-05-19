@@ -17,6 +17,7 @@ from pfem.integrity import validate_integrity_manifest
 from pfem.node_runtime import validate_node_registry
 from pfem.policy import validate_policy_repository
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
+from pfem.reconciliation import validate_reconciliation_repository
 from pfem.retention import validate_retention_policy
 from pfem.review import validate_review_repository
 from pfem.schema_contracts import validate_schema_contracts
@@ -35,6 +36,7 @@ EXPECTED_PATHS = [
     "docs/architecture/integrity-receipts.md", "docs/architecture/audit-journal.md",
     "docs/architecture/handling-redaction.md", "docs/architecture/retention-disposition.md",
     "docs/architecture/exchange-bundles.md", "docs/architecture/exchange-receipts.md",
+    "docs/architecture/reconciliation-records.md",
     "ai/architecture-rules.md", "ai/adapter-rules.md", "ai/evidence-rules.md",
     "ai/node-profile-rules.md", "ai/review-checklist.md",
     "contracts/adapter-contract.md", "contracts/evidence-contract.md",
@@ -44,7 +46,7 @@ EXPECTED_PATHS = [
     "contracts/review-contract.md", "contracts/integrity-receipt-contract.md",
     "contracts/audit-journal-contract.md", "contracts/handling-redaction-contract.md",
     "contracts/retention-disposition-contract.md", "contracts/exchange-bundle-contract.md",
-    "contracts/exchange-receipt-contract.md",
+    "contracts/exchange-receipt-contract.md", "contracts/reconciliation-contract.md",
     "schemas/adapter_manifest.schema.json", "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json", "schemas/node_manifest.schema.json",
     "schemas/node_registry.schema.json", "schemas/node_profile.schema.json",
@@ -52,7 +54,7 @@ EXPECTED_PATHS = [
     "schemas/review_record.schema.json", "schemas/integrity_receipt_manifest.schema.json",
     "schemas/audit_event.schema.json", "schemas/handling_policy.schema.json",
     "schemas/retention_policy.schema.json", "schemas/exchange_bundle.schema.json",
-    "schemas/exchange_receipt.schema.json",
+    "schemas/exchange_receipt.schema.json", "schemas/reconciliation_record.schema.json",
     "schemas/raw_evidence.schema.json", "schemas/normalized_observation.schema.json",
     "schemas/finding.schema.json", "schemas/alert.schema.json",
     "schemas/evidence_package.schema.json", "schemas/rollup_summary.schema.json",
@@ -64,6 +66,7 @@ EXPECTED_PATHS = [
     "review/README.md", "review/review-records.json",
     "audit/README.md", "audit/audit-journal.json",
     "exchange/README.md", "exchange/exchange-receipts.json",
+    "reconciliation/README.md", "reconciliation/reconciliation-records.json",
     "handling/README.md", "handling/handling-policy.json",
     "retention/README.md", "retention/retention-policy.json",
     "bundles/README.md", "bundles/examples/basic-rollup-exchange.bundle.json",
@@ -73,8 +76,8 @@ EXPECTED_PATHS = [
     "policy/README.md", "policy/sharing-policy.json", "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -233,6 +236,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_audit_repository(root).failures)
     report.failures.extend(validate_bundle_repository(root).failures)
     report.failures.extend(validate_exchange_repository(root).failures)
+    report.failures.extend(validate_reconciliation_repository(root).failures)
     report.failures.extend(validate_schema_contracts(root).failures)
     report.failures.extend(validate_topology_repository(root).failures)
     report.failures.extend(validate_integrity_manifest(root).failures)

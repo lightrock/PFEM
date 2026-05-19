@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/reconciliation_record.schema.json",
+  "title": "PFEM Reconciliation Record",
+  "type": "object",
+  "required": [
+    "reconciliation_id",
+    "reconciliation_kind",
+    "created_time",
+    "created_by_ref",
+    "subject_refs",
+    "basis_refs",
+    "decision",
+    "result_state",
+    "summary"
+  ],
+  "properties": {
+    "reconciliation_id": {
+      "type": "string"
+    },
+    "reconciliation_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "created_by_ref": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "type": "string"
+    },
+    "result_state": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
