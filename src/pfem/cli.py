@@ -62,6 +62,7 @@ from pfem.retention_action_receipt import format_retention_action_receipt_report
 from pfem.retention_action_verification_receipt import format_retention_action_verification_receipt_report, validate_retention_action_verification_receipts
 from pfem.retention_action_closeout_record import format_retention_action_closeout_record_report, validate_retention_action_closeout_records
 from pfem.retention_chain_record import format_retention_chain_record_report, validate_retention_chain_records
+from pfem.retention_chain_verification_receipt import format_retention_chain_verification_receipt_report, validate_retention_chain_verification_receipts
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -169,6 +170,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-action-verification-receipts", "Validate PFEM retention action verification receipts"),
         ("retention-action-closeout-records", "Validate PFEM retention action closeout records"),
         ("retention-chain-records", "Validate PFEM retention chain records"),
+        ("retention-chain-verification-receipts", "Validate PFEM retention chain verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -285,6 +287,7 @@ def main(argv: list[str] | None = None) -> int:
         "retention-action-verification-receipts": (validate_retention_action_verification_receipts, format_retention_action_verification_receipt_report),
         "retention-action-closeout-records": (validate_retention_action_closeout_records, format_retention_action_closeout_record_report),
         "retention-chain-records": (validate_retention_chain_records, format_retention_chain_record_report),
+        "retention-chain-verification-receipts": (validate_retention_chain_verification_receipts, format_retention_chain_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

@@ -86,6 +86,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("retention/retention-action-verification-receipts.json", "retention action verification receipts"),
     ("retention/retention-action-closeout-records.json", "retention action closeout records"),
     ("retention/retention-chain-records.json", "retention chain records"),
+    ("retention/retention-chain-verification-receipts.json", "retention chain verification receipts"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
