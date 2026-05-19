@@ -21,6 +21,12 @@
       "status": "shape-example"
     },
     {
+      "node_id": "research-testbed-node-example",
+      "path": "nodes/examples/research-testbed-node-example.node.yaml",
+      "profile_id": "research-testbed-node",
+      "status": "shape-example"
+    },
+    {
       "node_id": "formal-rollup-node-example",
       "path": "nodes/examples/formal-rollup-node-example.node.yaml",
       "profile_id": "formal-authority-rollup-node",

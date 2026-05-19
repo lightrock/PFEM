@@ -1,0 +1,9 @@
+node_id: research-testbed-node-example
+display_name: Research Testbed Node Example
+profile_id: research-testbed-node
+node_kind: example
+status: active-example
+default_sharing_scope: example
+configured_adapters:
+  - replay-log
+  - synthetic-input

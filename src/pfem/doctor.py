@@ -13,67 +13,43 @@ from pfem.node_runtime import validate_node_registry
 from pfem.policy import validate_policy_repository
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
 from pfem.schema_contracts import validate_schema_contracts
+from pfem.source_runtime import validate_source_provenance_repository
 from pfem.topology import validate_topology_repository
 
 
 EXPECTED_PATHS = [
-    "README.md",
-    "AGENTS.md",
-    "docs/AI_START_HERE.md",
-    "docs/architecture/neutral-language.md",
-    "docs/architecture/architecture-stack.md",
-    "docs/architecture/capability-model.md",
-    "docs/architecture/evidence-lifecycle.md",
-    "docs/architecture/examples.md",
-    "docs/architecture/example-registry.md",
-    "docs/architecture/sharing-policy.md",
-    "docs/architecture/record-schemas.md",
-    "docs/architecture/node-identity.md",
-    "docs/architecture/federation-topology.md",
-    "ai/architecture-rules.md",
-    "ai/adapter-rules.md",
-    "ai/evidence-rules.md",
-    "ai/node-profile-rules.md",
-    "ai/review-checklist.md",
-    "contracts/adapter-contract.md",
-    "contracts/evidence-contract.md",
-    "contracts/node-profile-contract.md",
-    "contracts/lifecycle-contract.md",
-    "contracts/federation-contract.md",
-    "contracts/node-identity-contract.md",
-    "contracts/federation-topology-contract.md",
-    "schemas/adapter_manifest.schema.json",
-    "schemas/adapter_registry.schema.json",
-    "schemas/example_registry.schema.json",
-    "schemas/node_manifest.schema.json",
-    "schemas/node_registry.schema.json",
-    "schemas/node_profile.schema.json",
-    "schemas/profile_registry.schema.json",
-    "schemas/raw_evidence.schema.json",
-    "schemas/normalized_observation.schema.json",
-    "schemas/finding.schema.json",
-    "schemas/alert.schema.json",
-    "schemas/evidence_package.schema.json",
-    "schemas/rollup_summary.schema.json",
-    "schemas/federation_message.schema.json",
-    "schemas/federation_topology.schema.json",
+    "README.md", "AGENTS.md", "docs/AI_START_HERE.md",
+    "docs/architecture/neutral-language.md", "docs/architecture/architecture-stack.md",
+    "docs/architecture/capability-model.md", "docs/architecture/evidence-lifecycle.md",
+    "docs/architecture/examples.md", "docs/architecture/example-registry.md",
+    "docs/architecture/sharing-policy.md", "docs/architecture/record-schemas.md",
+    "docs/architecture/node-identity.md", "docs/architecture/federation-topology.md",
+    "docs/architecture/source-provenance.md",
+    "ai/architecture-rules.md", "ai/adapter-rules.md", "ai/evidence-rules.md",
+    "ai/node-profile-rules.md", "ai/review-checklist.md",
+    "contracts/adapter-contract.md", "contracts/evidence-contract.md",
+    "contracts/node-profile-contract.md", "contracts/lifecycle-contract.md",
+    "contracts/federation-contract.md", "contracts/node-identity-contract.md",
+    "contracts/federation-topology-contract.md", "contracts/source-provenance-contract.md",
+    "schemas/adapter_manifest.schema.json", "schemas/adapter_registry.schema.json",
+    "schemas/example_registry.schema.json", "schemas/node_manifest.schema.json",
+    "schemas/node_registry.schema.json", "schemas/node_profile.schema.json",
+    "schemas/profile_registry.schema.json", "schemas/source_registry.schema.json",
+    "schemas/raw_evidence.schema.json", "schemas/normalized_observation.schema.json",
+    "schemas/finding.schema.json", "schemas/alert.schema.json",
+    "schemas/evidence_package.schema.json", "schemas/rollup_summary.schema.json",
+    "schemas/federation_message.schema.json", "schemas/federation_topology.schema.json",
     "schemas/sharing_policy.schema.json",
-    "capabilities/README.md",
-    "adapters/adapter-registry.json",
-    "profiles/profile-registry.json",
-    "nodes/README.md",
-    "nodes/node-registry.json",
-    "topology/README.md",
-    "topology/federation-topology.json",
-    "examples/README.md",
-    "examples/example-registry.json",
-    "policy/README.md",
-    "policy/sharing-policy.json",
-    "src/pfem/__init__.py",
+    "capabilities/README.md", "adapters/adapter-registry.json",
+    "profiles/profile-registry.json", "nodes/README.md", "nodes/node-registry.json",
+    "sources/README.md", "sources/source-registry.json",
+    "topology/README.md", "topology/federation-topology.json",
+    "examples/README.md", "examples/example-registry.json",
+    "policy/README.md", "policy/sharing-policy.json", "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "topology", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -223,6 +199,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_adapter_registry(root))
     report.failures.extend(validate_profile_registry(root))
     report.failures.extend(validate_node_registry(root))
+    report.failures.extend(validate_source_provenance_repository(root).failures)
     report.failures.extend(validate_example_registry(root))
     report.failures.extend(validate_policy_repository(root).failures)
     report.failures.extend(validate_schema_contracts(root).failures)

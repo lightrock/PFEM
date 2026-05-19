@@ -1,0 +1,30 @@
+{
+  "registry_id": "pfem-source-registry",
+  "version": "0.1",
+  "sources": [
+    {
+      "source_id": "manual-entry",
+      "display_name": "Manual Entry",
+      "source_kind": "human-report",
+      "adapter_id": "manual-observer-report",
+      "node_id": "field-radio-node-example",
+      "status": "active-example"
+    },
+    {
+      "source_id": "replay-log-example",
+      "display_name": "Replay Log Example",
+      "source_kind": "replay",
+      "adapter_id": "template",
+      "node_id": "research-testbed-node-example",
+      "status": "shape-example"
+    },
+    {
+      "source_id": "configured-site-source-example",
+      "display_name": "Configured Site Source Example",
+      "source_kind": "configured-site-source",
+      "adapter_id": "template",
+      "node_id": "infrastructure-site-node-example",
+      "status": "shape-example"
+    }
+  ]
+}
