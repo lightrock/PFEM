@@ -239,6 +239,12 @@
       "purpose": "custody release approvals"
     },
     {
+      "path": "custody/custody-release-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e4fa933e5284f3e871b398f49f30301a582d7c4e0418d9e0f7529026a9cdc17f",
+      "purpose": "custody release receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -319,7 +325,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "4bc880f703f97c76cde107ddbf4a8fbe3e24d7c6ba4648e2ec7b67fed2cba016",
+      "digest": "828decd28c10e67f1dc11f163189310f530a79f6920f03659dee9a21481974a7",
       "purpose": "audit journal"
     },
     {

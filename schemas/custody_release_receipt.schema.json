@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/custody_release_receipt.schema.json",
+  "title": "PFEM Custody Release Receipts",
+  "type": "object",
+  "required": [
+    "custody_release_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "custody_release_approval_id",
+    "custody_release_request_id",
+    "release_state",
+    "release_scope",
+    "released_refs",
+    "basis_refs",
+    "released_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "custody_release_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "custody_release_approval_id": {
+      "type": "string"
+    },
+    "custody_release_request_id": {
+      "type": "string"
+    },
+    "release_state": {
+      "type": "string"
+    },
+    "release_scope": {
+      "type": "string"
+    },
+    "released_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "released_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "skipped_refs": {
+      "type": "array"
+    },
+    "failed_refs": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
