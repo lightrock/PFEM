@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/adapter_manifest.schema.json",
+  "title": "PFEM Adapter Manifest",
+  "type": "object",
+  "required": ["adapter_id", "display_name", "adapter_kind", "capabilities", "outputs"],
+  "properties": {
+    "adapter_id": { "type": "string" },
+    "display_name": { "type": "string" },
+    "adapter_kind": { "type": "string" },
+    "source_class": { "type": "string" },
+    "transport": { "type": "string" },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
