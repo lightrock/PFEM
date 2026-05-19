@@ -1,0 +1,31 @@
+[
+  {
+    "custody_ledger_verification_receipt_id": "custody-ledger-verification-basic-restore-001",
+    "receipt_kind": "custody_ledger_entry_verification",
+    "created_time": "2026-01-01T00:00:43Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_ledger_record_id": "custody-ledger-basic-restore-001",
+    "custody_chain_verification_receipt_id": "custody-chain-verification-basic-restore-001",
+    "verification_state": "passed",
+    "checked_entry_refs": [
+      "custody-chain-verification-basic-restore-001",
+      "custody-chain-basic-restore-001",
+      "custody-closeout-basic-restore-001"
+    ],
+    "checked_held_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "custody-ledger-basic-restore-001",
+      "custody-chain-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-entry-ref-list",
+    "expected_entry_ref_digest": "4d8fb7f9c0b40ced85b75492bf9ef6edb9ad3775a5f9f6275115548e8a283847",
+    "actual_entry_ref_digest": "4d8fb7f9c0b40ced85b75492bf9ef6edb9ad3775a5f9f6275115548e8a283847",
+    "verified_by_ref": "tools/pfem_custody_ledger_verification_receipts.py",
+    "summary": "Synthetic example custody ledger verification receipt showing the ledger entry refs and digest were checked."
+  }
+]

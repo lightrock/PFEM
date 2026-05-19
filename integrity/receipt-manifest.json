@@ -221,6 +221,12 @@
       "purpose": "custody ledger records"
     },
     {
+      "path": "custody/custody-ledger-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "3351ff3893fb91a83add514e0fe8920f54a8782b8549ab24fa5e3f1dd149a5da",
+      "purpose": "custody ledger verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -301,7 +307,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "b68624b459a12de58ce28812b3363c06a295658f4353a9cb5a8ee2ba7def6991",
+      "digest": "8727e047817275f09d3c37d0371e48d8e21490200dfde78146021fba4533620f",
       "purpose": "audit journal"
     },
     {
