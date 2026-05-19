@@ -1,0 +1,26 @@
+[
+  {
+    "preservation_closeout_record_id": "preservation-closeout-basic-restore-001",
+    "closeout_kind": "preservation_cycle_closeout",
+    "created_time": "2026-01-01T00:01:08Z",
+    "node_id": "formal-rollup-node-example",
+    "preservation_verification_receipt_id": "preservation-verification-basic-restore-001",
+    "preservation_record_id": "preservation-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "preservation_verified",
+    "closed_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "preservation-verification-basic-restore-001",
+      "preservation-basic-restore-001",
+      "archive-lifecycle-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_preservation_closeout_records.py",
+    "summary": "Synthetic example preservation closeout record showing a preservation verification cycle was closed."
+  }
+]
