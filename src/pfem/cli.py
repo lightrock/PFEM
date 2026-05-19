@@ -105,6 +105,16 @@ from pfem.retention_export_closeout_record import format_retention_export_closeo
 from pfem.retention_handoff_record import format_retention_handoff_record_report, validate_retention_handoff_records
 from pfem.retention_handoff_verification_receipt import format_retention_handoff_verification_receipt_report, validate_retention_handoff_verification_receipts
 from pfem.retention_handoff_closeout_record import format_retention_handoff_closeout_record_report, validate_retention_handoff_closeout_records
+from pfem.retention_acceptance_record import format_retention_acceptance_record_report, validate_retention_acceptance_records
+from pfem.retention_acceptance_verification_receipt import format_retention_acceptance_verification_receipt_report, validate_retention_acceptance_verification_receipts
+from pfem.retention_acceptance_closeout_record import format_retention_acceptance_closeout_record_report, validate_retention_acceptance_closeout_records
+from pfem.retention_package_record import format_retention_package_record_report, validate_retention_package_records
+from pfem.retention_package_verification_receipt import format_retention_package_verification_receipt_report, validate_retention_package_verification_receipts
+from pfem.retention_package_closeout_record import format_retention_package_closeout_record_report, validate_retention_package_closeout_records
+from pfem.retention_finalization_record import format_retention_finalization_record_report, validate_retention_finalization_records
+from pfem.retention_finalization_verification_receipt import format_retention_finalization_verification_receipt_report, validate_retention_finalization_verification_receipts
+from pfem.retention_finalization_closeout_record import format_retention_finalization_closeout_record_report, validate_retention_finalization_closeout_records
+from pfem.retention_terminal_status_record import format_retention_terminal_status_record_report, validate_retention_terminal_status_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -255,6 +265,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-handoff-records", "Validate PFEM retention handoff records"),
         ("retention-handoff-verification-receipts", "Validate PFEM retention handoff verification receipts"),
         ("retention-handoff-closeout-records", "Validate PFEM retention handoff closeout records"),
+        ("retention-acceptance-records", "Validate PFEM retention acceptance records"),
+        ("retention-acceptance-verification-receipts", "Validate PFEM retention acceptance verification receipts"),
+        ("retention-acceptance-closeout-records", "Validate PFEM retention acceptance closeout records"),
+        ("retention-package-records", "Validate PFEM retention package records"),
+        ("retention-package-verification-receipts", "Validate PFEM retention package verification receipts"),
+        ("retention-package-closeout-records", "Validate PFEM retention package closeout records"),
+        ("retention-finalization-records", "Validate PFEM retention finalization records"),
+        ("retention-finalization-verification-receipts", "Validate PFEM retention finalization verification receipts"),
+        ("retention-finalization-closeout-records", "Validate PFEM retention finalization closeout records"),
+        ("retention-terminal-status-records", "Validate PFEM retention terminal status records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -414,6 +434,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-handoff-records": (validate_retention_handoff_records, format_retention_handoff_record_report),
         "retention-handoff-verification-receipts": (validate_retention_handoff_verification_receipts, format_retention_handoff_verification_receipt_report),
         "retention-handoff-closeout-records": (validate_retention_handoff_closeout_records, format_retention_handoff_closeout_record_report),
+        "retention-acceptance-records": (validate_retention_acceptance_records, format_retention_acceptance_record_report),
+        "retention-acceptance-verification-receipts": (validate_retention_acceptance_verification_receipts, format_retention_acceptance_verification_receipt_report),
+        "retention-acceptance-closeout-records": (validate_retention_acceptance_closeout_records, format_retention_acceptance_closeout_record_report),
+        "retention-package-records": (validate_retention_package_records, format_retention_package_record_report),
+        "retention-package-verification-receipts": (validate_retention_package_verification_receipts, format_retention_package_verification_receipt_report),
+        "retention-package-closeout-records": (validate_retention_package_closeout_records, format_retention_package_closeout_record_report),
+        "retention-finalization-records": (validate_retention_finalization_records, format_retention_finalization_record_report),
+        "retention-finalization-verification-receipts": (validate_retention_finalization_verification_receipts, format_retention_finalization_verification_receipt_report),
+        "retention-finalization-closeout-records": (validate_retention_finalization_closeout_records, format_retention_finalization_closeout_record_report),
+        "retention-terminal-status-records": (validate_retention_terminal_status_records, format_retention_terminal_status_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_acceptance_record.schema.json",
+  "title": "PFEM Retention Acceptance Records",
+  "type": "object",
+  "required": [
+    "retention_acceptance_record_id",
+    "acceptance_kind",
+    "created_time",
+    "node_id",
+    "retention_handoff_closeout_record_id",
+    "retention_handoff_verification_receipt_id",
+    "acceptance_state",
+    "acceptance_scope",
+    "accepted_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "accepted_ref_digest",
+    "accepted_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_acceptance_record_id": {
+      "type": "string"
+    },
+    "acceptance_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_handoff_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_handoff_verification_receipt_id": {
+      "type": "string"
+    },
+    "acceptance_state": {
+      "type": "string"
+    },
+    "acceptance_scope": {
+      "type": "string"
+    },
+    "accepted_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "accepted_ref_digest": {
+      "type": "string"
+    },
+    "accepted_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

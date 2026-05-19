@@ -1,0 +1,35 @@
+[
+  {
+    "retention_finalization_record_id": "retention-finalization-basic-restore-001",
+    "finalization_kind": "retention_package_finalization",
+    "created_time": "2026-01-01T00:02:08Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_package_closeout_record_id": "retention-package-closeout-basic-restore-001",
+    "retention_package_verification_receipt_id": "retention-package-verification-basic-restore-001",
+    "finalization_state": "finalized",
+    "finalization_scope": "closed_retention_package",
+    "finalized_refs": [
+      "retention-package-closeout-basic-restore-001",
+      "retention-package-verification-basic-restore-001",
+      "retention-package-basic-restore-001",
+      "retention-acceptance-closeout-basic-restore-001",
+      "retention-handoff-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-package-closeout-basic-restore-001",
+      "retention-package-verification-basic-restore-001",
+      "retention-acceptance-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-finalization-ref-list",
+    "finalization_ref_digest": "dea02fae91348fbff07a5595517bdc1c7b403c1f31414f30aebc4e3a7f3e1c56",
+    "finalized_by_ref": "tools/pfem_retention_finalization_records.py",
+    "summary": "Synthetic example retention finalization record finalizing the verified retention package."
+  }
+]

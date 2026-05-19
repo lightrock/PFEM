@@ -1,0 +1,35 @@
+[
+  {
+    "retention_package_record_id": "retention-package-basic-restore-001",
+    "package_kind": "retention_acceptance_package",
+    "created_time": "2026-01-01T00:02:05Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_acceptance_closeout_record_id": "retention-acceptance-closeout-basic-restore-001",
+    "retention_acceptance_verification_receipt_id": "retention-acceptance-verification-basic-restore-001",
+    "package_state": "packaged",
+    "package_scope": "closed_retention_acceptance",
+    "package_refs": [
+      "retention-acceptance-closeout-basic-restore-001",
+      "retention-acceptance-verification-basic-restore-001",
+      "retention-acceptance-basic-restore-001",
+      "retention-handoff-closeout-basic-restore-001",
+      "retention-export-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-acceptance-closeout-basic-restore-001",
+      "retention-acceptance-verification-basic-restore-001",
+      "retention-handoff-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-package-ref-list",
+    "package_ref_digest": "8951c8ad8b7d0d22b2462aac83a970f59f3c464201c34c4b0c70d5bf9463aca3",
+    "packaged_by_ref": "tools/pfem_retention_package_records.py",
+    "summary": "Synthetic example retention package record packaging the accepted retention handoff for finalization."
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "retention_package_verification_receipt_id": "retention-package-verification-basic-restore-001",
+    "receipt_kind": "retention_package_verification",
+    "created_time": "2026-01-01T00:02:06Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_package_record_id": "retention-package-basic-restore-001",
+    "retention_acceptance_closeout_record_id": "retention-acceptance-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_package_refs": [
+      "retention-acceptance-closeout-basic-restore-001",
+      "retention-acceptance-verification-basic-restore-001",
+      "retention-acceptance-basic-restore-001",
+      "retention-handoff-closeout-basic-restore-001",
+      "retention-export-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-package-basic-restore-001",
+      "retention-acceptance-closeout-basic-restore-001",
+      "retention-acceptance-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-package-ref-list",
+    "expected_package_ref_digest": "8951c8ad8b7d0d22b2462aac83a970f59f3c464201c34c4b0c70d5bf9463aca3",
+    "actual_package_ref_digest": "8951c8ad8b7d0d22b2462aac83a970f59f3c464201c34c4b0c70d5bf9463aca3",
+    "verified_by_ref": "tools/pfem_retention_package_verification_receipts.py",
+    "summary": "Synthetic example retention package verification receipt showing package refs and digest were checked."
+  }
+]

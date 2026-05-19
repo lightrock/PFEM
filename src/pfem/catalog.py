@@ -105,6 +105,16 @@ from pfem.retention_export_closeout_record import load_retention_export_closeout
 from pfem.retention_handoff_record import load_retention_handoff_records
 from pfem.retention_handoff_verification_receipt import load_retention_handoff_verification_receipts
 from pfem.retention_handoff_closeout_record import load_retention_handoff_closeout_records
+from pfem.retention_acceptance_record import load_retention_acceptance_records
+from pfem.retention_acceptance_verification_receipt import load_retention_acceptance_verification_receipts
+from pfem.retention_acceptance_closeout_record import load_retention_acceptance_closeout_records
+from pfem.retention_package_record import load_retention_package_records
+from pfem.retention_package_verification_receipt import load_retention_package_verification_receipts
+from pfem.retention_package_closeout_record import load_retention_package_closeout_records
+from pfem.retention_finalization_record import load_retention_finalization_records
+from pfem.retention_finalization_verification_receipt import load_retention_finalization_verification_receipts
+from pfem.retention_finalization_closeout_record import load_retention_finalization_closeout_records
+from pfem.retention_terminal_status_record import load_retention_terminal_status_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -746,6 +756,56 @@ def _retention_handoff_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"retention_handoff_closeout_record_id": r["retention_handoff_closeout_record_id"], "retention_handoff_verification_receipt_id": r["retention_handoff_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_handoff_closeout_records(p)]
 
 
+def _retention_acceptance_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-acceptance-records.json"
+    return [] if not p.exists() else [{"retention_acceptance_record_id": r["retention_acceptance_record_id"], "retention_handoff_closeout_record_id": r["retention_handoff_closeout_record_id"], "acceptance_state": r["acceptance_state"], "acceptance_scope": r["acceptance_scope"]} for r in load_retention_acceptance_records(p)]
+
+
+def _retention_acceptance_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-acceptance-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_acceptance_verification_receipt_id": r["retention_acceptance_verification_receipt_id"], "retention_acceptance_record_id": r["retention_acceptance_record_id"], "verification_state": r["verification_state"], "checked_acceptance_refs": len(r["checked_acceptance_refs"])} for r in load_retention_acceptance_verification_receipts(p)]
+
+
+def _retention_acceptance_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-acceptance-closeout-records.json"
+    return [] if not p.exists() else [{"retention_acceptance_closeout_record_id": r["retention_acceptance_closeout_record_id"], "retention_acceptance_verification_receipt_id": r["retention_acceptance_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_acceptance_closeout_records(p)]
+
+
+def _retention_package_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-package-records.json"
+    return [] if not p.exists() else [{"retention_package_record_id": r["retention_package_record_id"], "retention_acceptance_closeout_record_id": r["retention_acceptance_closeout_record_id"], "package_state": r["package_state"], "package_scope": r["package_scope"]} for r in load_retention_package_records(p)]
+
+
+def _retention_package_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-package-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_package_verification_receipt_id": r["retention_package_verification_receipt_id"], "retention_package_record_id": r["retention_package_record_id"], "verification_state": r["verification_state"], "checked_package_refs": len(r["checked_package_refs"])} for r in load_retention_package_verification_receipts(p)]
+
+
+def _retention_package_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-package-closeout-records.json"
+    return [] if not p.exists() else [{"retention_package_closeout_record_id": r["retention_package_closeout_record_id"], "retention_package_verification_receipt_id": r["retention_package_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_package_closeout_records(p)]
+
+
+def _retention_finalization_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-finalization-records.json"
+    return [] if not p.exists() else [{"retention_finalization_record_id": r["retention_finalization_record_id"], "retention_package_closeout_record_id": r["retention_package_closeout_record_id"], "finalization_state": r["finalization_state"], "finalization_scope": r["finalization_scope"]} for r in load_retention_finalization_records(p)]
+
+
+def _retention_finalization_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-finalization-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_finalization_verification_receipt_id": r["retention_finalization_verification_receipt_id"], "retention_finalization_record_id": r["retention_finalization_record_id"], "verification_state": r["verification_state"], "checked_finalization_refs": len(r["checked_finalization_refs"])} for r in load_retention_finalization_verification_receipts(p)]
+
+
+def _retention_finalization_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-finalization-closeout-records.json"
+    return [] if not p.exists() else [{"retention_finalization_closeout_record_id": r["retention_finalization_closeout_record_id"], "retention_finalization_verification_receipt_id": r["retention_finalization_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_finalization_closeout_records(p)]
+
+
+def _retention_terminal_status_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-status-records.json"
+    return [] if not p.exists() else [{"retention_terminal_status_record_id": r["retention_terminal_status_record_id"], "retention_finalization_closeout_record_id": r["retention_finalization_closeout_record_id"], "terminal_state": r["terminal_state"], "retention_status": r["retention_status"]} for r in load_retention_terminal_status_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -932,6 +992,16 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_handoff_records": _retention_handoff_record_rows(root),
         "retention_handoff_verification_receipts": _retention_handoff_verification_receipt_rows(root),
         "retention_handoff_closeout_records": _retention_handoff_closeout_record_rows(root),
+        "retention_acceptance_records": _retention_acceptance_record_rows(root),
+        "retention_acceptance_verification_receipts": _retention_acceptance_verification_receipt_rows(root),
+        "retention_acceptance_closeout_records": _retention_acceptance_closeout_record_rows(root),
+        "retention_package_records": _retention_package_record_rows(root),
+        "retention_package_verification_receipts": _retention_package_verification_receipt_rows(root),
+        "retention_package_closeout_records": _retention_package_closeout_record_rows(root),
+        "retention_finalization_records": _retention_finalization_record_rows(root),
+        "retention_finalization_verification_receipts": _retention_finalization_verification_receipt_rows(root),
+        "retention_finalization_closeout_records": _retention_finalization_closeout_record_rows(root),
+        "retention_terminal_status_records": _retention_terminal_status_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -1075,6 +1145,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_handoff_records', 0)} retention handoff records, "
         f"{counts.get('retention_handoff_verification_receipts', 0)} retention handoff verification receipts, "
         f"{counts.get('retention_handoff_closeout_records', 0)} retention handoff closeout records, "
+        f"{counts.get('retention_acceptance_records', 0)} retention acceptance records, "
+        f"{counts.get('retention_acceptance_verification_receipts', 0)} retention acceptance verification receipts, "
+        f"{counts.get('retention_acceptance_closeout_records', 0)} retention acceptance closeout records, "
+        f"{counts.get('retention_package_records', 0)} retention package records, "
+        f"{counts.get('retention_package_verification_receipts', 0)} retention package verification receipts, "
+        f"{counts.get('retention_package_closeout_records', 0)} retention package closeout records, "
+        f"{counts.get('retention_finalization_records', 0)} retention finalization records, "
+        f"{counts.get('retention_finalization_verification_receipts', 0)} retention finalization verification receipts, "
+        f"{counts.get('retention_finalization_closeout_records', 0)} retention finalization closeout records, "
+        f"{counts.get('retention_terminal_status_records', 0)} retention terminal status records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -1204,6 +1284,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Retention Handoff Records", catalog["retention_handoff_records"], ["retention_handoff_record_id", "retention_export_closeout_record_id", "handoff_state", "handoff_scope"]))
     lines.extend(_format_table("Retention Handoff Verification Receipts", catalog["retention_handoff_verification_receipts"], ["retention_handoff_verification_receipt_id", "retention_handoff_record_id", "verification_state", "checked_handoff_refs"]))
     lines.extend(_format_table("Retention Handoff Closeout Records", catalog["retention_handoff_closeout_records"], ["retention_handoff_closeout_record_id", "retention_handoff_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Acceptance Records", catalog["retention_acceptance_records"], ["retention_acceptance_record_id", "retention_handoff_closeout_record_id", "acceptance_state", "acceptance_scope"]))
+    lines.extend(_format_table("Retention Acceptance Verification Receipts", catalog["retention_acceptance_verification_receipts"], ["retention_acceptance_verification_receipt_id", "retention_acceptance_record_id", "verification_state", "checked_acceptance_refs"]))
+    lines.extend(_format_table("Retention Acceptance Closeout Records", catalog["retention_acceptance_closeout_records"], ["retention_acceptance_closeout_record_id", "retention_acceptance_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Package Records", catalog["retention_package_records"], ["retention_package_record_id", "retention_acceptance_closeout_record_id", "package_state", "package_scope"]))
+    lines.extend(_format_table("Retention Package Verification Receipts", catalog["retention_package_verification_receipts"], ["retention_package_verification_receipt_id", "retention_package_record_id", "verification_state", "checked_package_refs"]))
+    lines.extend(_format_table("Retention Package Closeout Records", catalog["retention_package_closeout_records"], ["retention_package_closeout_record_id", "retention_package_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Finalization Records", catalog["retention_finalization_records"], ["retention_finalization_record_id", "retention_package_closeout_record_id", "finalization_state", "finalization_scope"]))
+    lines.extend(_format_table("Retention Finalization Verification Receipts", catalog["retention_finalization_verification_receipts"], ["retention_finalization_verification_receipt_id", "retention_finalization_record_id", "verification_state", "checked_finalization_refs"]))
+    lines.extend(_format_table("Retention Finalization Closeout Records", catalog["retention_finalization_closeout_records"], ["retention_finalization_closeout_record_id", "retention_finalization_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Terminal Status Records", catalog["retention_terminal_status_records"], ["retention_terminal_status_record_id", "retention_finalization_closeout_record_id", "terminal_state", "retention_status"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
