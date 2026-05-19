@@ -1,0 +1,31 @@
+[
+  {
+    "retention_action_closeout_record_id": "retention-action-closeout-basic-restore-001",
+    "closeout_kind": "retention_action_closeout",
+    "created_time": "2026-01-01T00:01:17Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_action_verification_receipt_id": "retention-action-verification-basic-restore-001",
+    "retention_action_receipt_id": "retention-action-receipt-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "retention_action_verified_and_closed",
+    "closed_refs": [
+      "retention-decision-approval-basic-restore-001",
+      "retention-decision-basic-restore-001",
+      "preservation-chain-verification-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-action-verification-basic-restore-001",
+      "retention-action-receipt-basic-restore-001",
+      "retention-decision-approval-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_retention_action_closeout_records.py",
+    "summary": "Synthetic example retention action closeout record showing the retention action workflow was closed after action verification passed."
+  }
+]
