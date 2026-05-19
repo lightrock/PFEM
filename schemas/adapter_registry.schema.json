@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/adapter_registry.schema.json",
+  "title": "PFEM Adapter Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "version",
+    "adapters"
+  ],
+  "properties": {
+    "registry_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "adapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "adapter_id",
+          "path",
+          "adapter_kind",
+          "status"
+        ],
+        "properties": {
+          "adapter_id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "adapter_kind": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,8 +1,8 @@
 """PFEM repository doctor.
 
 The doctor is a dependency-free sanity check for a PFEM checkout. It checks
-architecture anchors, JSON syntax, adapter manifests, capability manifests,
-node profiles, and public neutral-language guardrails.
+architecture anchors, JSON syntax, adapter manifests, adapter registry,
+capability manifests, node profiles, and public neutral-language guardrails.
 """
 
 from __future__ import annotations
@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 import json
 from pathlib import Path
 
-from pfem.adapter_runtime import load_adapter_manifest
+from pfem.adapter_runtime import load_adapter_manifest, validate_adapter_registry
 from pfem.capability_runtime import load_capability_manifest
 from pfem.profile_runtime import load_node_profile
 
@@ -33,10 +33,12 @@ EXPECTED_PATHS = [
     "contracts/evidence-contract.md",
     "contracts/node-profile-contract.md",
     "schemas/adapter_manifest.schema.json",
+    "schemas/adapter_registry.schema.json",
     "schemas/node_profile.schema.json",
     "schemas/raw_evidence.schema.json",
     "schemas/normalized_observation.schema.json",
     "capabilities/README.md",
+    "adapters/adapter-registry.json",
     "src/pfem/__init__.py",
 ]
 
@@ -158,6 +160,10 @@ def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
             report.failures.append(f"adapter manifest missing display_name: {path.relative_to(root)}")
 
 
+def check_adapter_registry(root: Path, report: DoctorReport) -> None:
+    report.failures.extend(validate_adapter_registry(root))
+
+
 def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
     capabilities_dir = root / "capabilities"
     capability_ids: set[str] = set()
@@ -234,6 +240,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     check_expected_paths(root, report)
     check_json_syntax(root, report)
     check_adapter_manifests(root, report)
+    check_adapter_registry(root, report)
     capability_ids = collect_capability_ids(root, report)
     check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)

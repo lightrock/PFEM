@@ -1,0 +1,18 @@
+{
+  "registry_id": "pfem-adapter-registry",
+  "version": "0.1",
+  "adapters": [
+    {
+      "adapter_id": "template",
+      "path": "adapters/vendors/template/adapter.yaml",
+      "adapter_kind": "vendor-template",
+      "status": "template"
+    },
+    {
+      "adapter_id": "manual-observer-report",
+      "path": "adapters/community/manual-observer-report/adapter.yaml",
+      "adapter_kind": "community",
+      "status": "active-example"
+    }
+  ]
+}
