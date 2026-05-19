@@ -48,5 +48,18 @@
     ],
     "summary": "Example reconciliation record was recorded.",
     "source_tool": "pfem_reconciliation"
+  },
+  {
+    "audit_id": "audit-quality-basic-001",
+    "event_kind": "quality_assessment_recorded",
+    "created_time": "2026-01-01T00:00:10Z",
+    "actor_ref": "tools/pfem_quality.py",
+    "subject_refs": [
+      "quality-basic-rollup-001",
+      "rollup-basic-001",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "summary": "Example quality assessment was recorded.",
+    "source_tool": "pfem_quality"
   }
 ]

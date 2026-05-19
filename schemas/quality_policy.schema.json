@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/quality_policy.schema.json",
+  "title": "PFEM Quality Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "confidence_levels",
+    "quality_flags"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "confidence_levels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "confidence_level",
+          "display_name",
+          "rank",
+          "description"
+        ],
+        "properties": {
+          "confidence_level": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "flag_id",
+          "display_name",
+          "description"
+        ],
+        "properties": {
+          "flag_id": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

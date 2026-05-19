@@ -24,6 +24,8 @@ SCHEMA_TO_FIXTURE_FILES = {
     "exchange_bundle.schema.json": ["bundles/**/*.bundle.json"],
     "exchange_receipt.schema.json": ["exchange/exchange-receipts.json"],
     "reconciliation_record.schema.json": ["reconciliation/reconciliation-records.json"],
+    "quality_policy.schema.json": ["quality/quality-policy.json"],
+    "quality_assessment.schema.json": ["quality/quality-assessments.json"],
 }
 
 

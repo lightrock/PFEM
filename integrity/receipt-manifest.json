@@ -53,6 +53,18 @@
       "purpose": "retention policy"
     },
     {
+      "path": "quality/quality-policy.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "cde88f5fcd90f572f2ab41b3479d43e6219d57b5625aeab9eb2bb99ca49a5b09",
+      "purpose": "quality policy"
+    },
+    {
+      "path": "quality/quality-assessments.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ab4b81fb2fd16df38146d220bcc88165c62616c6214ce1454f61b0585f395075",
+      "purpose": "quality assessments"
+    },
+    {
       "path": "topology/federation-topology.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "f8dd3b954cfba4b36710e87ad37f2c34df9a7683055ef06154ff622feb35beff",
@@ -67,7 +79,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "9d4a14399372c05c39d35b00cfc646c342781aeab54d5fcc968fb35b19e49476",
+      "digest": "83e04026b8028626303e9d6f48ad34a50fef58de3c2944640b889f963d1a7ee7",
       "purpose": "audit journal"
     },
     {

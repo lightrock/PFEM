@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/quality_assessment.schema.json",
+  "title": "PFEM Quality Assessment",
+  "type": "object",
+  "required": [
+    "quality_assessment_id",
+    "created_time",
+    "assessor_ref",
+    "subject_refs",
+    "basis_refs",
+    "confidence_level",
+    "quality_flags",
+    "uncertainty_summary",
+    "recommended_use"
+  ],
+  "properties": {
+    "quality_assessment_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "assessor_ref": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence_level": {
+      "type": "string"
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty_summary": {
+      "type": "string"
+    },
+    "recommended_use": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

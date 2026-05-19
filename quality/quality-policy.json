@@ -1,0 +1,72 @@
+{
+  "policy_id": "pfem-quality-policy",
+  "version": "0.1",
+  "confidence_levels": [
+    {
+      "confidence_level": "unknown",
+      "display_name": "Unknown",
+      "rank": 0,
+      "description": "No useful confidence estimate is available."
+    },
+    {
+      "confidence_level": "low",
+      "display_name": "Low",
+      "rank": 1,
+      "description": "Useful but weak, incomplete, stale, conflicting, or unverified."
+    },
+    {
+      "confidence_level": "medium",
+      "display_name": "Medium",
+      "rank": 2,
+      "description": "Reasonable operational confidence with known limits."
+    },
+    {
+      "confidence_level": "high",
+      "display_name": "High",
+      "rank": 3,
+      "description": "Strong confidence based on corroboration, direct source quality, or review."
+    }
+  ],
+  "quality_flags": [
+    {
+      "flag_id": "synthetic-example",
+      "display_name": "Synthetic Example",
+      "description": "Fixture or example content, not real-world evidence."
+    },
+    {
+      "flag_id": "single-source",
+      "display_name": "Single Source",
+      "description": "Based on one source stream or one reporting path."
+    },
+    {
+      "flag_id": "human-reported",
+      "display_name": "Human Reported",
+      "description": "Includes human observation or manual report."
+    },
+    {
+      "flag_id": "machine-derived",
+      "display_name": "Machine Derived",
+      "description": "Produced by a device, adapter, model, or automated process."
+    },
+    {
+      "flag_id": "corroborated",
+      "display_name": "Corroborated",
+      "description": "Supported by multiple independent records or sources."
+    },
+    {
+      "flag_id": "conflicting",
+      "display_name": "Conflicting",
+      "description": "Known conflict exists with another record."
+    },
+    {
+      "flag_id": "stale",
+      "display_name": "Stale",
+      "description": "Potentially old enough to require caution."
+    },
+    {
+      "flag_id": "reviewed",
+      "display_name": "Reviewed",
+      "description": "Reviewed under a PFEM review gate or equivalent review record."
+    }
+  ]
+}

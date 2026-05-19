@@ -31,6 +31,11 @@ python tools\pfem_retention.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM quality validation...
+python tools\pfem_quality.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM review validation...
 python tools\pfem_review.py
 if errorlevel 1 exit /b 1
