@@ -205,5 +205,19 @@
     ],
     "summary": "Example intake decision was recorded.",
     "source_tool": "pfem_intake_decisions"
+  },
+  {
+    "audit_id": "audit-exchange-accept-basic-001",
+    "event_kind": "exchange_bundle_accepted",
+    "created_time": "2026-01-01T00:00:19Z",
+    "actor_ref": "tools/pfem_exchange.py",
+    "subject_refs": [
+      "exchange-receipt-basic-accept-001",
+      "inbox-item-basic-manual-export-001",
+      "intake-decision-basic-manual-export-001",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "summary": "Example inbound exchange receipt was linked to inbox staging and intake decision.",
+    "source_tool": "pfem_exchange"
   }
 ]

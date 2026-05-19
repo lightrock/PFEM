@@ -81,7 +81,7 @@ def _bundle_rows(root: Path) -> list[dict[str, Any]]:
 
 def _exchange_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "exchange" / "exchange-receipts.json"
-    return [] if not p.exists() else [{"exchange_receipt_id": r.exchange_receipt_id, "receipt_kind": r.receipt_kind, "bundle_id": r.bundle_id, "decision": r.decision} for r in load_exchange_receipts(p)]
+    return [] if not p.exists() else [{"exchange_receipt_id": r.exchange_receipt_id, "receipt_kind": r.receipt_kind, "bundle_id": r.bundle_id, "decision": r.decision, "intake_decision_id": r.intake_decision_id or ""} for r in load_exchange_receipts(p)]
 
 
 def _reconciliation_rows(root: Path) -> list[dict[str, Any]]:
@@ -267,7 +267,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Reviews", catalog["reviews"], ["review_id", "review_gate", "decision", "sharing_scope"]))
     lines.extend(_format_table("Audit Events", catalog["audit_events"], ["audit_id", "event_kind", "actor_ref"]))
     lines.extend(_format_table("Bundles", catalog["bundles"], ["bundle_id", "bundle_kind", "sharing_scope", "path"]))
-    lines.extend(_format_table("Exchange Receipts", catalog["exchange_receipts"], ["exchange_receipt_id", "receipt_kind", "bundle_id", "decision"]))
+    lines.extend(_format_table("Exchange Receipts", catalog["exchange_receipts"], ["exchange_receipt_id", "receipt_kind", "bundle_id", "decision", "intake_decision_id"]))
     lines.extend(_format_table("Reconciliation Records", catalog["reconciliation_records"], ["reconciliation_id", "reconciliation_kind", "decision", "result_state"]))
     lines.extend(_format_table("Quality Levels", catalog["quality_levels"], ["confidence_level", "rank", "display_name"]))
     lines.extend(_format_table("Quality Assessments", catalog["quality_assessments"], ["quality_assessment_id", "confidence_level", "flags"]))

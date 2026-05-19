@@ -12,6 +12,7 @@
     "to_node_id",
     "decision",
     "subject_refs",
+    "artifact_refs",
     "summary"
   ],
   "properties": {
@@ -33,6 +34,18 @@
     "to_node_id": {
       "type": "string"
     },
+    "transport_receipt_id": {
+      "type": "string"
+    },
+    "outbox_item_id": {
+      "type": "string"
+    },
+    "inbox_item_id": {
+      "type": "string"
+    },
+    "intake_decision_id": {
+      "type": "string"
+    },
     "decision": {
       "type": "string"
     },
@@ -43,6 +56,12 @@
       }
     },
     "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
       "type": "array",
       "items": {
         "type": "string"

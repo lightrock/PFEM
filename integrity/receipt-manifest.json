@@ -157,13 +157,13 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "de4d0c910c07fa98b496dac72e06b16921a29087940f5755d2d0c9a5f5b39b3f",
+      "digest": "cf614f23a48d4715752511b6cea1c546c4316d2f75097c8792480c00ce1f0aff",
       "purpose": "audit journal"
     },
     {
       "path": "exchange/exchange-receipts.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "b987ce8f9be9aa2f00e860d107967fda5309a20116acf55cd33f618cc16840fd",
+      "digest": "bba9dee528fcc64b6c55b5b9dc58ee4dc5f6367074704a7cc2db73fe441cc408",
       "purpose": "exchange receipts"
     },
     {
