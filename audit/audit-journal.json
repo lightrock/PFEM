@@ -557,5 +557,18 @@
     ],
     "summary": "Example custody release requests was recorded.",
     "source_tool": "pfem_custody_release_requests"
+  },
+  {
+    "audit_id": "audit-custody-release-approval-basic-001",
+    "event_kind": "custody_release_approval_recorded",
+    "created_time": "2026-01-01T00:00:45Z",
+    "actor_ref": "tools/pfem_custody_release_approvals.py",
+    "subject_refs": [
+      "custody-release-approval-basic-restore-001",
+      "custody-release-request-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "summary": "Example custody release approvals was recorded.",
+    "source_tool": "pfem_custody_release_approvals"
   }
 ]

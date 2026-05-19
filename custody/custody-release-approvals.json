@@ -1,0 +1,26 @@
+[
+  {
+    "custody_release_approval_id": "custody-release-approval-basic-restore-001",
+    "approval_kind": "custody_release_approval",
+    "created_time": "2026-01-01T00:00:45Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_release_request_id": "custody-release-request-basic-restore-001",
+    "custody_ledger_verification_receipt_id": "custody-ledger-verification-basic-restore-001",
+    "approval_state": "approved",
+    "approved_release_scope": "closed_custody_chain_artifacts",
+    "approved_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "constraints": [
+      "release retains ledger/audit evidence"
+    ],
+    "basis_refs": [
+      "custody-release-request-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "approved_by_ref": "tools/pfem_custody_release_approvals.py",
+    "summary": "Synthetic example custody release approval authorizing release of closed custody-chain artifacts while retaining ledger/audit evidence."
+  }
+]
