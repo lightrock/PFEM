@@ -1,0 +1,27 @@
+{
+  "registry_id": "pfem-example-registry",
+  "version": "0.1",
+  "examples": [
+    {
+      "example_id": "field-radio-node-manual-report",
+      "path": "examples/field-radio-node/example.json",
+      "profile_id": "field-radio-node",
+      "runnable": true,
+      "status": "active-example"
+    },
+    {
+      "example_id": "civil-dashboard-node-shape",
+      "path": "examples/civil-dashboard-node/example.json",
+      "profile_id": "civil-dashboard-node",
+      "runnable": false,
+      "status": "shape-example"
+    },
+    {
+      "example_id": "infrastructure-site-node-shape",
+      "path": "examples/infrastructure-site-node/example.json",
+      "profile_id": "infrastructure-site-node",
+      "runnable": false,
+      "status": "shape-example"
+    }
+  ]
+}

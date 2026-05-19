@@ -2,6 +2,12 @@
 
 Examples are tiny runnable PFEM design-pattern instances.
 
+Known examples are indexed in:
+
+```text
+examples/example-registry.json
+```
+
 Start with:
 
 ```bat

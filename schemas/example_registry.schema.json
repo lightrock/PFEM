@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/example_registry.schema.json",
+  "title": "PFEM Example Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "version",
+    "examples"
+  ],
+  "properties": {
+    "registry_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "example_id",
+          "path",
+          "profile_id",
+          "runnable",
+          "status"
+        ],
+        "properties": {
+          "example_id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "profile_id": {
+            "type": "string"
+          },
+          "runnable": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

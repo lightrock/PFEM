@@ -2,8 +2,8 @@
 
 The doctor is a dependency-free sanity check for a PFEM checkout. It checks
 architecture anchors, JSON syntax, adapter manifests, adapter registry,
-capability manifests, node profiles, profile registry, and public
-neutral-language guardrails.
+capability manifests, node profiles, profile registry, example registry, and
+public neutral-language guardrails.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from pathlib import Path
 
 from pfem.adapter_runtime import load_adapter_manifest, validate_adapter_registry
 from pfem.capability_runtime import load_capability_manifest
+from pfem.example_runtime import validate_example_registry
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
 
 
@@ -26,6 +27,7 @@ EXPECTED_PATHS = [
     "docs/architecture/capability-model.md",
     "docs/architecture/evidence-lifecycle.md",
     "docs/architecture/examples.md",
+    "docs/architecture/example-registry.md",
     "ai/architecture-rules.md",
     "ai/adapter-rules.md",
     "ai/evidence-rules.md",
@@ -36,6 +38,7 @@ EXPECTED_PATHS = [
     "contracts/node-profile-contract.md",
     "schemas/adapter_manifest.schema.json",
     "schemas/adapter_registry.schema.json",
+    "schemas/example_registry.schema.json",
     "schemas/node_profile.schema.json",
     "schemas/profile_registry.schema.json",
     "schemas/raw_evidence.schema.json",
@@ -44,6 +47,7 @@ EXPECTED_PATHS = [
     "adapters/adapter-registry.json",
     "profiles/profile-registry.json",
     "examples/README.md",
+    "examples/example-registry.json",
     "src/pfem/__init__.py",
 ]
 
@@ -168,6 +172,10 @@ def check_profile_registry(root: Path, report: DoctorReport) -> None:
     report.failures.extend(validate_profile_registry(root))
 
 
+def check_example_registry(root: Path, report: DoctorReport) -> None:
+    report.failures.extend(validate_example_registry(root))
+
+
 def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
     capabilities_dir = root / "capabilities"
     capability_ids: set[str] = set()
@@ -236,6 +244,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     check_adapter_manifests(root, report)
     check_adapter_registry(root, report)
     check_profile_registry(root, report)
+    check_example_registry(root, report)
     capability_ids = collect_capability_ids(root, report)
     check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)
