@@ -1,0 +1,198 @@
+{
+  "registry_id": "pfem-transport-adapter-registry",
+  "version": "0.1",
+  "adapters": [
+    {
+      "transport_adapter_id": "transport-manual-export",
+      "transport_kind": "manual_export",
+      "status": "available",
+      "delivery_channel_ids": [
+        "manual-export"
+      ],
+      "implementation_ref": "manual/operator-export-import",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "action",
+        "bundle",
+        "summary",
+        "review",
+        "exchange"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Manual human-reviewed export/import transport hook."
+    },
+    {
+      "transport_adapter_id": "transport-file-drop",
+      "transport_kind": "file_drop",
+      "status": "planned",
+      "delivery_channel_ids": [
+        "file-drop"
+      ],
+      "implementation_ref": "planned/file-drop-adapter",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "bundle",
+        "summary",
+        "exchange"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned filesystem/shared-folder transport hook."
+    },
+    {
+      "transport_adapter_id": "transport-local-api",
+      "transport_kind": "api",
+      "status": "planned",
+      "delivery_channel_ids": [
+        "local-api"
+      ],
+      "implementation_ref": "planned/local-api-adapter",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "action",
+        "bundle",
+        "summary",
+        "review",
+        "exchange"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned local/network API transport hook."
+    },
+    {
+      "transport_adapter_id": "transport-mqtt-bridge",
+      "transport_kind": "mqtt",
+      "status": "planned",
+      "delivery_channel_ids": [
+        "mqtt-bridge"
+      ],
+      "implementation_ref": "planned/mqtt-bridge-adapter",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "summary",
+        "exchange"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned MQTT bridge transport hook."
+    },
+    {
+      "transport_adapter_id": "transport-email-handoff",
+      "transport_kind": "email",
+      "status": "planned",
+      "delivery_channel_ids": [
+        "email-handoff"
+      ],
+      "implementation_ref": "planned/email-handoff-adapter",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "bundle",
+        "summary",
+        "review",
+        "exchange"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned email handoff transport hook."
+    },
+    {
+      "transport_adapter_id": "transport-mesh-message",
+      "transport_kind": "mesh_message",
+      "status": "planned",
+      "delivery_channel_ids": [
+        "mesh-message"
+      ],
+      "implementation_ref": "planned/mesh-message-adapter",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "summary",
+        "exchange"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned ad hoc mesh message transport hook."
+    },
+    {
+      "transport_adapter_id": "transport-dashboard-sync",
+      "transport_kind": "dashboard_sync",
+      "status": "planned",
+      "delivery_channel_ids": [
+        "dashboard-sync"
+      ],
+      "implementation_ref": "planned/dashboard-sync-adapter",
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "supported_route_kinds": [
+        "action",
+        "summary",
+        "review"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned dashboard synchronization transport hook."
+    }
+  ]
+}

@@ -65,6 +65,12 @@
       "purpose": "delivery channel registry"
     },
     {
+      "path": "transport/transport-adapter-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c2bd355a139e2f1fbcc07b8f7da30b5f59b4675c03d3e58c19c9ef7badadeb0c",
+      "purpose": "transport adapter registry"
+    },
+    {
       "path": "quality/quality-policy.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "cde88f5fcd90f572f2ab41b3479d43e6219d57b5625aeab9eb2bb99ca49a5b09",
@@ -109,7 +115,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "dbe37a430644ba4975378089e196b04d1747be0bcbd474c73941908e7a6a29af",
+      "digest": "866d3e5bfc5196d69666d2a42abc0981ab80154bb6c8dfef0b830aab50c25057",
       "purpose": "audit journal"
     },
     {

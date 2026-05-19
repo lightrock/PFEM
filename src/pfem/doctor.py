@@ -28,40 +28,25 @@ from pfem.routing import validate_routing_policy
 from pfem.schema_contracts import validate_schema_contracts
 from pfem.source_runtime import validate_source_provenance_repository
 from pfem.topology import validate_topology_repository
+from pfem.transport import validate_transport_adapter_registry
 
 
 EXPECTED_PATHS = [
     "README.md", "AGENTS.md", "docs/AI_START_HERE.md",
-    "docs/architecture/neutral-language.md", "docs/architecture/architecture-stack.md",
-    "docs/architecture/capability-model.md", "docs/architecture/evidence-lifecycle.md",
-    "docs/architecture/examples.md", "docs/architecture/example-registry.md",
-    "docs/architecture/sharing-policy.md", "docs/architecture/record-schemas.md",
-    "docs/architecture/node-identity.md", "docs/architecture/federation-topology.md",
-    "docs/architecture/source-provenance.md", "docs/architecture/review-decisions.md",
-    "docs/architecture/integrity-receipts.md", "docs/architecture/audit-journal.md",
-    "docs/architecture/handling-redaction.md", "docs/architecture/retention-disposition.md",
-    "docs/architecture/exchange-bundles.md", "docs/architecture/exchange-receipts.md",
-    "docs/architecture/reconciliation-records.md", "docs/architecture/confidence-quality.md",
-    "docs/architecture/action-records.md", "docs/architecture/playbooks.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
-    "contracts/adapter-contract.md", "contracts/evidence-contract.md",
-    "contracts/node-profile-contract.md", "contracts/lifecycle-contract.md",
-    "contracts/federation-contract.md", "contracts/node-identity-contract.md",
-    "contracts/federation-topology-contract.md", "contracts/source-provenance-contract.md",
-    "contracts/review-contract.md", "contracts/integrity-receipt-contract.md",
-    "contracts/audit-journal-contract.md", "contracts/handling-redaction-contract.md",
-    "contracts/retention-disposition-contract.md", "contracts/exchange-bundle-contract.md",
-    "contracts/exchange-receipt-contract.md", "contracts/reconciliation-contract.md",
-    "contracts/confidence-quality-contract.md", "contracts/action-contract.md",
-    "contracts/playbook-contract.md", "contracts/routing-contract.md",
-    "contracts/delivery-channel-contract.md",
-    "schemas/delivery_channel_registry.schema.json", "schemas/routing_policy.schema.json",
+    "docs/architecture/transport-adapters.md",
+    "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
+    "contracts/transport-adapter-contract.md",
+    "schemas/delivery_channel_registry.schema.json",
+    "schemas/transport_adapter_registry.schema.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
-    "routing/README.md", "routing/routing-policy.json", "src/pfem/__init__.py",
+    "transport/README.md", "transport/transport-adapter-registry.json",
+    "routing/README.md", "routing/routing-policy.json",
+    "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "routing", "delivery", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "routing", "delivery", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "routing", "delivery", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "routing", "delivery", "transport", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -217,6 +202,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_handling_policy(root).failures)
     report.failures.extend(validate_retention_policy(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)
+    report.failures.extend(validate_transport_adapter_registry(root).failures)
     report.failures.extend(validate_routing_policy(root).failures)
     report.failures.extend(validate_quality_repository(root).failures)
     report.failures.extend(validate_action_repository(root).failures)

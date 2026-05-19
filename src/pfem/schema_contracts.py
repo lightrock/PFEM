@@ -22,6 +22,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "handling_policy.schema.json": ["handling/handling-policy.json"],
     "retention_policy.schema.json": ["retention/retention-policy.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
+    "transport_adapter_registry.schema.json": ["transport/transport-adapter-registry.json"],
     "routing_policy.schema.json": ["routing/routing-policy.json"],
     "exchange_bundle.schema.json": ["bundles/**/*.bundle.json"],
     "exchange_receipt.schema.json": ["exchange/exchange-receipts.json"],
@@ -82,9 +83,7 @@ def validate_records_against_schema(schema_path: Path, record_paths: list[Path],
             record_label = f"{record_path.relative_to(root)}[{index}]"
             for field in required:
                 if field not in record or record[field] in (None, "", []):
-                    failures.append(
-                        f"{record_label} missing required field {field!r} from {schema_path.name}"
-                    )
+                    failures.append(f"{record_label} missing required field {field!r} from {schema_path.name}")
 
     return checked, failures
 
@@ -108,11 +107,7 @@ def validate_schema_contracts(root: str | Path) -> SchemaContractReport:
         checked_records += checked
         failures.extend(schema_failures)
 
-    return SchemaContractReport(
-        root=root_path,
-        checked_records=checked_records,
-        failures=failures,
-    )
+    return SchemaContractReport(root=root_path, checked_records=checked_records, failures=failures)
 
 
 def format_schema_contract_report(report: SchemaContractReport) -> str:

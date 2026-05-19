@@ -26,6 +26,11 @@ python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM transport validation...
+python tools\pfem_transport.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM routing validation...
 python tools\pfem_routing.py
 if errorlevel 1 exit /b 1

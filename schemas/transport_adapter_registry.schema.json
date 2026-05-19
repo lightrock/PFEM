@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/transport_adapter_registry.schema.json",
+  "title": "PFEM Transport Adapter Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "version",
+    "adapters"
+  ],
+  "properties": {
+    "registry_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "adapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "transport_adapter_id",
+          "transport_kind",
+          "status",
+          "delivery_channel_ids",
+          "implementation_ref",
+          "supported_route_kinds",
+          "summary"
+        ],
+        "properties": {
+          "transport_adapter_id": {
+            "type": "string"
+          },
+          "transport_kind": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "delivery_channel_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "implementation_ref": {
+            "type": "string"
+          },
+          "source_node_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "destination_node_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "supported_route_kinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_sharing_scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_handling_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -18,6 +18,7 @@ KNOWN_EVENT_KINDS = {
     "exchange_bundle_rejected", "reconciliation_recorded",
     "quality_assessment_recorded", "action_recorded", "playbook_registered",
     "routing_policy_registered", "delivery_channel_registered",
+    "transport_adapter_registered",
 }
 
 
@@ -79,16 +80,6 @@ def load_audit_events(path: str | Path) -> list[AuditEvent]:
     ]
 
 
-def _add_ids_from_json_array(path: Path, key: str, ids: set[str]) -> None:
-    if not path.exists():
-        return
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    records = raw if isinstance(raw, list) else [raw]
-    for record in records:
-        if isinstance(record, dict) and record.get(key):
-            ids.add(str(record[key]))
-
-
 def _collect_known_record_ids(root: Path) -> set[str]:
     patterns = [
         ("tests/fixtures/**/raw_evidence.json", "evidence_id"),
@@ -130,6 +121,14 @@ def _collect_known_record_ids(root: Path) -> set[str]:
                 if isinstance(channel, dict) and channel.get("channel_id"):
                     ids.add(str(channel["channel_id"]))
 
+    transport_path = root / "transport" / "transport-adapter-registry.json"
+    if transport_path.exists():
+        raw = json.loads(transport_path.read_text(encoding="utf-8"))
+        if isinstance(raw, dict):
+            for adapter in raw.get("adapters", []):
+                if isinstance(adapter, dict) and adapter.get("transport_adapter_id"):
+                    ids.add(str(adapter["transport_adapter_id"]))
+
     return ids
 
 
@@ -137,9 +136,9 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     paths: set[str] = set()
     for folder in [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
-        "handling", "retention", "routing", "delivery", "topology", "review",
-        "audit", "exchange", "reconciliation", "quality", "action", "playbooks",
-        "integrity", "schemas", "contracts", "docs", "bundles",
+        "handling", "retention", "routing", "delivery", "transport", "topology",
+        "review", "audit", "exchange", "reconciliation", "quality", "action",
+        "playbooks", "integrity", "schemas", "contracts", "docs", "bundles",
     ]:
         base = root / folder
         if not base.exists():
@@ -156,10 +155,7 @@ def validate_audit_repository(root: str | Path) -> AuditReport:
     failures: list[str] = []
 
     if not audit_path.exists():
-        return AuditReport(
-            source=str(audit_path),
-            failures=["missing audit journal: audit/audit-journal.json"],
-        )
+        return AuditReport(source=str(audit_path), failures=["missing audit journal: audit/audit-journal.json"])
 
     events = load_audit_events(audit_path)
     known_record_ids = _collect_known_record_ids(root_path)
@@ -190,11 +186,7 @@ def validate_audit_repository(root: str | Path) -> AuditReport:
                 continue
             failures.append(f"audit event {event.audit_id!r} references unknown subject_ref {ref!r}")
 
-    return AuditReport(
-        source=str(audit_path),
-        checked_events=len(events),
-        failures=failures,
-    )
+    return AuditReport(source=str(audit_path), checked_events=len(events), failures=failures)
 
 
 def format_audit_report(report: AuditReport) -> str:

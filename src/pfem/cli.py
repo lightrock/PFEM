@@ -27,6 +27,7 @@ from pfem.routing import format_routing_report, validate_routing_policy
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
 from pfem.source_runtime.registry import format_source_provenance_report, validate_source_provenance_repository
 from pfem.topology import format_topology_report, validate_topology_repository
+from pfem.transport import format_transport_report, validate_transport_adapter_registry
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -40,6 +41,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("playbooks", "Validate PFEM playbooks"),
         ("routing", "Validate PFEM routing policy"),
         ("delivery", "Validate PFEM delivery channel registry"),
+        ("transport", "Validate PFEM transport adapter registry"),
         ("audit", "Validate PFEM audit journal"),
         ("bundles", "Validate PFEM exchange bundles"),
         ("exchange", "Validate PFEM exchange receipts"),
@@ -80,10 +82,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "catalog":
         catalog = build_catalog(Path(args.path))
-        if args.json:
-            print(json.dumps(catalog, indent=2))
-        else:
-            print(format_catalog(catalog))
+        print(json.dumps(catalog, indent=2) if args.json else format_catalog(catalog))
         return 0
 
     command_map = {
@@ -91,6 +90,7 @@ def main(argv: list[str] | None = None) -> int:
         "playbooks": (validate_playbook_repository, format_playbook_report),
         "routing": (validate_routing_policy, format_routing_report),
         "delivery": (validate_delivery_channel_registry, format_delivery_report),
+        "transport": (validate_transport_adapter_registry, format_transport_report),
         "audit": (validate_audit_repository, format_audit_report),
         "bundles": (validate_bundle_repository, format_bundle_report),
         "exchange": (validate_exchange_repository, format_exchange_report),

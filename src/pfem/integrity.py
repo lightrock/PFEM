@@ -24,6 +24,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("retention/retention-policy.json", "retention policy"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
+    ("transport/transport-adapter-registry.json", "transport adapter registry"),
     ("quality/quality-policy.json", "quality policy"),
     ("quality/quality-assessments.json", "quality assessments"),
     ("action/action-policy.json", "action policy"),
@@ -157,10 +158,7 @@ def validate_integrity_manifest(root: str | Path, manifest_path: str | Path = DE
     failures: list[str] = []
 
     if not source_path.exists():
-        return IntegrityReport(
-            source=str(source_path),
-            failures=[f"missing integrity manifest: {manifest_path}"],
-        )
+        return IntegrityReport(source=str(source_path), failures=[f"missing integrity manifest: {manifest_path}"])
 
     manifest = load_integrity_manifest(source_path)
     if not manifest.receipt_set_id:
@@ -192,16 +190,9 @@ def validate_integrity_manifest(root: str | Path, manifest_path: str | Path = DE
 
         actual = compute_digest(target, receipt.digest_algorithm)
         if actual != receipt.digest:
-            failures.append(
-                f"integrity digest mismatch for {receipt.path}: "
-                f"expected={receipt.digest} actual={actual}"
-            )
+            failures.append(f"integrity digest mismatch for {receipt.path}: expected={receipt.digest} actual={actual}")
 
-    return IntegrityReport(
-        source=str(source_path),
-        checked_receipts=len(manifest.receipts),
-        failures=failures,
-    )
+    return IntegrityReport(source=str(source_path), checked_receipts=len(manifest.receipts), failures=failures)
 
 
 def format_integrity_report(report: IntegrityReport) -> str:

@@ -26,6 +26,7 @@ from pfem.retention import load_retention_policy
 from pfem.review import load_review_records
 from pfem.routing import load_routing_policy
 from pfem.source_runtime import load_source_registry
+from pfem.transport import load_transport_adapter_registry
 
 
 def _capability_rows(root: Path) -> list[dict[str, Any]]:
@@ -115,6 +116,11 @@ def _delivery_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"channel_id": c.channel_id, "channel_kind": c.channel_kind, "status": c.status, "route_kinds": ",".join(c.supports_route_kinds)} for c in load_delivery_channel_registry(p).channels]
 
 
+def _transport_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "transport" / "transport-adapter-registry.json"
+    return [] if not p.exists() else [{"transport_adapter_id": t.transport_adapter_id, "transport_kind": t.transport_kind, "status": t.status, "channels": ",".join(t.delivery_channel_ids)} for t in load_transport_adapter_registry(p).adapters]
+
+
 def _handling_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "handling" / "handling-policy.json"
     return [] if not p.exists() else [{"label_id": label.label_id, "allowed_sharing_scopes": ",".join(label.allowed_sharing_scopes), "requires_redaction": label.requires_redaction_before_share} for label in load_handling_policy(p).handling_labels]
@@ -162,6 +168,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "playbooks": _playbook_rows(root),
         "routes": _routing_rows(root),
         "delivery_channels": _delivery_rows(root),
+        "transport_adapters": _transport_rows(root),
         "handling_labels": _handling_rows(root),
         "retention_classes": _retention_rows(root),
         "integrity_receipts": _integrity_rows(root),
@@ -193,7 +200,8 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('capabilities', 0)} capabilities, {counts.get('adapters', 0)} adapters, "
         f"{counts.get('profiles', 0)} profiles, {counts.get('nodes', 0)} nodes, "
         f"{counts.get('sources', 0)} sources, {counts.get('routes', 0)} routes, "
-        f"{counts.get('delivery_channels', 0)} delivery channels",
+        f"{counts.get('delivery_channels', 0)} delivery channels, "
+        f"{counts.get('transport_adapters', 0)} transport adapters",
     ]
     lines.extend(_format_table("Capabilities", catalog["capabilities"], ["capability_id", "capability_kind", "path"]))
     lines.extend(_format_table("Adapters", catalog["adapters"], ["adapter_id", "adapter_kind", "status", "path"]))
@@ -213,6 +221,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Playbooks", catalog["playbooks"], ["playbook_id", "playbook_kind", "status", "steps"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
     lines.extend(_format_table("Delivery Channels", catalog["delivery_channels"], ["channel_id", "channel_kind", "status", "route_kinds"]))
+    lines.extend(_format_table("Transport Adapters", catalog["transport_adapters"], ["transport_adapter_id", "transport_kind", "status", "channels"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
     lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))
