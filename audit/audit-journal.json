@@ -375,5 +375,18 @@
     ],
     "summary": "Example restore receipt was recorded after restore execution.",
     "source_tool": "pfem_restore_receipts"
+  },
+  {
+    "audit_id": "audit-restore-verification-basic-001",
+    "event_kind": "restore_verification_recorded",
+    "created_time": "2026-01-01T00:00:31Z",
+    "actor_ref": "tools/pfem_restore_verification_receipts.py",
+    "subject_refs": [
+      "restore-verification-basic-state-001",
+      "restore-receipt-basic-state-001",
+      "restore-approval-basic-state-001"
+    ],
+    "summary": "Example restore verification receipt was recorded after restore execution.",
+    "source_tool": "pfem_restore_verification_receipts"
   }
 ]

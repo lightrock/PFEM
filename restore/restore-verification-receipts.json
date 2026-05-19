@@ -1,0 +1,31 @@
+[
+  {
+    "restore_verification_receipt_id": "restore-verification-basic-state-001",
+    "receipt_kind": "post_restore_state_verification",
+    "created_time": "2026-01-01T00:00:31Z",
+    "node_id": "formal-rollup-node-example",
+    "restore_receipt_id": "restore-receipt-basic-state-001",
+    "restore_approval_id": "restore-approval-basic-state-001",
+    "restore_plan_id": "restore-plan-basic-state-001",
+    "recovery_point_id": "recovery-point-basic-state-001",
+    "state_checkpoint_id": "state-checkpoint-basic-after-apply-001",
+    "snapshot_manifest_id": "snapshot-manifest-basic-state-001",
+    "verification_state": "passed",
+    "checked_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "basis_refs": [
+      "restore-receipt-basic-state-001",
+      "restore-approval-basic-state-001",
+      "restore-plan-basic-state-001",
+      "recovery-point-basic-state-001",
+      "snapshot-manifest-basic-state-001"
+    ],
+    "digest_algorithm": "sha256-sorted-ref-list",
+    "expected_restored_ref_digest": "c902e70123a542598838ebe4720bf72ee14d55e47660859c6dcdd2cbfe9b0763",
+    "actual_restored_ref_digest": "c902e70123a542598838ebe4720bf72ee14d55e47660859c6dcdd2cbfe9b0763",
+    "verified_by_ref": "tools/pfem_restore_verification_receipts.py",
+    "summary": "Synthetic example post-restore verification receipt showing the restored refs were checked after restore execution."
+  }
+]
