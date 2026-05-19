@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/manual_observer_report.schema.json",
+  "title": "PFEM Manual Observer Report",
+  "type": "object",
+  "required": [
+    "report_id",
+    "reported_time",
+    "observer_label",
+    "description"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "reported_time": {
+      "type": "string"
+    },
+    "observer_label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "location_text": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "source_channel": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

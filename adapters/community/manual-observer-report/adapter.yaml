@@ -1,0 +1,11 @@
+adapter_id: manual-observer-report
+display_name: Manual Observer Report
+adapter_kind: community
+source_class: human-report
+transport: manual-entry
+capabilities:
+  - manual-report-intake
+  - manual-observer-report
+outputs:
+  - raw_evidence
+  - normalized_observation

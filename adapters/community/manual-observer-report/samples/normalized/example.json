@@ -1,0 +1,19 @@
+{
+  "observation_id": "obs-manual-report-example-001",
+  "observation_kind": "manual_observer_report",
+  "source_evidence_ids": [
+    "manual-report-example-001"
+  ],
+  "observed_time": "2026-01-01T00:00:00Z",
+  "normalized_fields": {
+    "description": "Observed unusual activity near the north access road.",
+    "observer_label": "field-observer-example",
+    "location_text": "north access road",
+    "source_channel": "manual-entry",
+    "attachments": [],
+    "latitude": 29.7604,
+    "longitude": -95.3698
+  },
+  "confidence": 0.5,
+  "uncertainty_notes": "Location is approximate."
+}
