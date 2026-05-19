@@ -583,5 +583,18 @@
     ],
     "summary": "Example custody release receipts was recorded.",
     "source_tool": "pfem_custody_release_receipts"
+  },
+  {
+    "audit_id": "audit-custody-release-verification-basic-001",
+    "event_kind": "custody_release_verification_recorded",
+    "created_time": "2026-01-01T00:00:47Z",
+    "actor_ref": "tools/pfem_custody_release_verification_receipts.py",
+    "subject_refs": [
+      "custody-release-verification-basic-restore-001",
+      "custody-release-receipt-basic-restore-001",
+      "custody-release-approval-basic-restore-001"
+    ],
+    "summary": "Example custody release verification receipts was recorded.",
+    "source_tool": "pfem_custody_release_verification_receipts"
   }
 ]
