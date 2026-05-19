@@ -18,6 +18,7 @@ from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
 from pfem.inbox import format_inbox_report, validate_inbox_items
+from pfem.intake_decision import format_intake_decision_report, validate_intake_decisions
 from pfem.integrity import format_integrity_report, validate_integrity_manifest, write_integrity_manifest
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.outbox import format_outbox_report, validate_outbox_items
@@ -49,6 +50,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("dispatch-decisions", "Validate PFEM dispatch decisions"),
         ("outbox", "Validate PFEM outbox items"),
         ("inbox", "Validate PFEM inbox items"),
+        ("intake-decisions", "Validate PFEM intake decisions"),
         ("routing", "Validate PFEM routing policy"),
         ("delivery", "Validate PFEM delivery channel registry"),
         ("delivery-jobs", "Validate PFEM delivery jobs"),
@@ -104,6 +106,7 @@ def main(argv: list[str] | None = None) -> int:
         "dispatch-decisions": (validate_dispatch_decisions, format_dispatch_decision_report),
         "outbox": (validate_outbox_items, format_outbox_report),
         "inbox": (validate_inbox_items, format_inbox_report),
+        "intake-decisions": (validate_intake_decisions, format_intake_decision_report),
         "routing": (validate_routing_policy, format_routing_report),
         "delivery": (validate_delivery_channel_registry, format_delivery_report),
         "delivery-jobs": (validate_delivery_jobs, format_delivery_job_report),

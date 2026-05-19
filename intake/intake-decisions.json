@@ -1,0 +1,18 @@
+[
+  {
+    "intake_decision_id": "intake-decision-basic-manual-export-001",
+    "decision_kind": "exchange_intake",
+    "created_time": "2026-01-01T00:00:18Z",
+    "inbox_item_id": "inbox-item-basic-manual-export-001",
+    "decision": "allowed_for_exchange",
+    "reason_code": "ready_for_exchange",
+    "decided_by_ref": "tools/pfem_intake_decisions.py",
+    "basis_refs": [
+      "inbox-item-basic-manual-export-001",
+      "transport-receipt-basic-manual-export-001",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "resulting_inbox_state": "accepted_for_exchange",
+    "summary": "Synthetic example intake decision allowing the received exchange bundle into exchange-layer processing."
+  }
+]

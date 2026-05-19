@@ -20,6 +20,7 @@ KNOWN_EVENT_KINDS = {
     "routing_policy_registered", "delivery_channel_registered",
     "transport_adapter_registered", "dispatch_policy_registered",
     "dispatch_decision_recorded", "outbox_item_staged", "inbox_item_received",
+    "intake_decision_recorded",
     "delivery_job_recorded", "transport_receipt_recorded",
 }
 
@@ -102,6 +103,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("dispatch/dispatch-decisions.json", "dispatch_decision_id"),
         ("outbox/outbox-items.json", "outbox_item_id"),
         ("inbox/inbox-items.json", "inbox_item_id"),
+        ("intake/intake-decisions.json", "intake_decision_id"),
         ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()
@@ -133,7 +135,7 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     for folder in [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "dispatch", "routing", "delivery", "outbox",
-        "inbox", "transport", "topology", "review", "audit", "exchange",
+        "inbox", "intake", "transport", "topology", "review", "audit", "exchange",
         "reconciliation", "quality", "action", "playbooks", "integrity",
         "schemas", "contracts", "docs", "bundles",
     ]:

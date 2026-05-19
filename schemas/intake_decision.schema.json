@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/intake_decision.schema.json",
+  "title": "PFEM Intake Decision",
+  "type": "object",
+  "required": [
+    "intake_decision_id",
+    "decision_kind",
+    "created_time",
+    "inbox_item_id",
+    "decision",
+    "reason_code",
+    "decided_by_ref",
+    "basis_refs",
+    "summary"
+  ],
+  "properties": {
+    "intake_decision_id": {
+      "type": "string"
+    },
+    "decision_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "inbox_item_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "decided_by_ref": {
+      "type": "string"
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resulting_inbox_state": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

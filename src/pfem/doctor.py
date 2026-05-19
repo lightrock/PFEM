@@ -19,6 +19,7 @@ from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
 from pfem.inbox import validate_inbox_items
+from pfem.intake_decision import validate_intake_decisions
 from pfem.integrity import validate_integrity_manifest
 from pfem.node_runtime import validate_node_registry
 from pfem.outbox import validate_outbox_items
@@ -43,6 +44,7 @@ EXPECTED_PATHS = [
     "docs/architecture/dispatch-decisions.md",
     "docs/architecture/outbox-items.md",
     "docs/architecture/inbox-items.md",
+    "docs/architecture/intake-decisions.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
     "docs/architecture/delivery-jobs.md",
     "docs/architecture/transport-adapters.md", "docs/architecture/transport-receipts.md",
@@ -50,6 +52,7 @@ EXPECTED_PATHS = [
     "contracts/dispatch-decision-contract.md",
     "contracts/outbox-item-contract.md",
     "contracts/inbox-item-contract.md",
+    "contracts/intake-decision-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
     "contracts/delivery-job-contract.md",
     "contracts/transport-adapter-contract.md", "contracts/transport-receipt-contract.md",
@@ -57,6 +60,7 @@ EXPECTED_PATHS = [
     "schemas/dispatch_decision.schema.json",
     "schemas/outbox_item.schema.json",
     "schemas/inbox_item.schema.json",
+    "schemas/intake_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
     "schemas/transport_adapter_registry.schema.json",
@@ -65,6 +69,7 @@ EXPECTED_PATHS = [
     "dispatch/dispatch-decisions.json",
     "outbox/README.md", "outbox/outbox-items.json",
     "inbox/README.md", "inbox/inbox-items.json",
+    "intake/README.md", "intake/intake-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
     "transport/README.md", "transport/transport-adapter-registry.json",
@@ -73,7 +78,7 @@ EXPECTED_PATHS = [
     "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
 NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "transport", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
@@ -233,6 +238,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_dispatch_decisions(root).failures)
     report.failures.extend(validate_outbox_items(root).failures)
     report.failures.extend(validate_inbox_items(root).failures)
+    report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)
     report.failures.extend(validate_delivery_jobs(root).failures)
     report.failures.extend(validate_transport_adapter_registry(root).failures)
