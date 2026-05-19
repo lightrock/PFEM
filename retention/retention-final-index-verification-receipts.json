@@ -1,0 +1,35 @@
+[
+  {
+    "retention_final_index_verification_receipt_id": "retention-final-index-verification-basic-restore-001",
+    "receipt_kind": "retention_final_index_verification",
+    "created_time": "2026-01-01T00:02:42Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_final_index_record_id": "retention-final-index-basic-restore-001",
+    "retention_endcap_closeout_record_id": "retention-endcap-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_final_index_refs": [
+      "retention-endcap-closeout-basic-restore-001",
+      "retention-endcap-verification-basic-restore-001",
+      "retention-endcap-basic-restore-001",
+      "retention-archive-anchor-closeout-basic-restore-001",
+      "retention-notarization-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-final-index-basic-restore-001",
+      "retention-endcap-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-final-index-ref-list",
+    "expected_final_index_ref_digest": "26e0062e4ddb708d6b88f9ce1d0c5f7c875a5cb4b048fa2677161c58dd6db5b6",
+    "actual_final_index_ref_digest": "26e0062e4ddb708d6b88f9ce1d0c5f7c875a5cb4b048fa2677161c58dd6db5b6",
+    "verified_by_ref": "tools/pfem_retention_final_index_verification_receipts.py",
+    "summary": "Synthetic example retention final index verification receipt showing refs and digest were checked."
+  }
+]

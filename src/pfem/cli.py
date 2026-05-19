@@ -145,6 +145,16 @@ from pfem.retention_endcap_record import format_retention_endcap_record_report, 
 from pfem.retention_endcap_verification_receipt import format_retention_endcap_verification_receipt_report, validate_retention_endcap_verification_receipts
 from pfem.retention_endcap_closeout_record import format_retention_endcap_closeout_record_report, validate_retention_endcap_closeout_records
 from pfem.retention_final_index_record import format_retention_final_index_record_report, validate_retention_final_index_records
+from pfem.retention_final_index_verification_receipt import format_retention_final_index_verification_receipt_report, validate_retention_final_index_verification_receipts
+from pfem.retention_final_index_closeout_record import format_retention_final_index_closeout_record_report, validate_retention_final_index_closeout_records
+from pfem.retention_master_ledger_record import format_retention_master_ledger_record_report, validate_retention_master_ledger_records
+from pfem.retention_master_ledger_verification_receipt import format_retention_master_ledger_verification_receipt_report, validate_retention_master_ledger_verification_receipts
+from pfem.retention_master_ledger_closeout_record import format_retention_master_ledger_closeout_record_report, validate_retention_master_ledger_closeout_records
+from pfem.retention_terminal_manifest_record import format_retention_terminal_manifest_record_report, validate_retention_terminal_manifest_records
+from pfem.retention_terminal_manifest_verification_receipt import format_retention_terminal_manifest_verification_receipt_report, validate_retention_terminal_manifest_verification_receipts
+from pfem.retention_terminal_manifest_closeout_record import format_retention_terminal_manifest_closeout_record_report, validate_retention_terminal_manifest_closeout_records
+from pfem.retention_repository_release_record import format_retention_repository_release_record_report, validate_retention_repository_release_records
+from pfem.retention_repository_release_verification_receipt import format_retention_repository_release_verification_receipt_report, validate_retention_repository_release_verification_receipts
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -335,6 +345,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-endcap-verification-receipts", "Validate PFEM retention endcap verification receipts"),
         ("retention-endcap-closeout-records", "Validate PFEM retention endcap closeout records"),
         ("retention-final-index-records", "Validate PFEM retention final index records"),
+        ("retention-final-index-verification-receipts", "Validate PFEM retention final index verification receipts"),
+        ("retention-final-index-closeout-records", "Validate PFEM retention final index closeout records"),
+        ("retention-master-ledger-records", "Validate PFEM retention master ledger records"),
+        ("retention-master-ledger-verification-receipts", "Validate PFEM retention master ledger verification receipts"),
+        ("retention-master-ledger-closeout-records", "Validate PFEM retention master ledger closeout records"),
+        ("retention-terminal-manifest-records", "Validate PFEM retention terminal manifest records"),
+        ("retention-terminal-manifest-verification-receipts", "Validate PFEM retention terminal manifest verification receipts"),
+        ("retention-terminal-manifest-closeout-records", "Validate PFEM retention terminal manifest closeout records"),
+        ("retention-repository-release-records", "Validate PFEM retention repository release records"),
+        ("retention-repository-release-verification-receipts", "Validate PFEM retention repository release verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -534,6 +554,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-endcap-verification-receipts": (validate_retention_endcap_verification_receipts, format_retention_endcap_verification_receipt_report),
         "retention-endcap-closeout-records": (validate_retention_endcap_closeout_records, format_retention_endcap_closeout_record_report),
         "retention-final-index-records": (validate_retention_final_index_records, format_retention_final_index_record_report),
+        "retention-final-index-verification-receipts": (validate_retention_final_index_verification_receipts, format_retention_final_index_verification_receipt_report),
+        "retention-final-index-closeout-records": (validate_retention_final_index_closeout_records, format_retention_final_index_closeout_record_report),
+        "retention-master-ledger-records": (validate_retention_master_ledger_records, format_retention_master_ledger_record_report),
+        "retention-master-ledger-verification-receipts": (validate_retention_master_ledger_verification_receipts, format_retention_master_ledger_verification_receipt_report),
+        "retention-master-ledger-closeout-records": (validate_retention_master_ledger_closeout_records, format_retention_master_ledger_closeout_record_report),
+        "retention-terminal-manifest-records": (validate_retention_terminal_manifest_records, format_retention_terminal_manifest_record_report),
+        "retention-terminal-manifest-verification-receipts": (validate_retention_terminal_manifest_verification_receipts, format_retention_terminal_manifest_verification_receipt_report),
+        "retention-terminal-manifest-closeout-records": (validate_retention_terminal_manifest_closeout_records, format_retention_terminal_manifest_closeout_record_report),
+        "retention-repository-release-records": (validate_retention_repository_release_records, format_retention_repository_release_record_report),
+        "retention-repository-release-verification-receipts": (validate_retention_repository_release_verification_receipts, format_retention_repository_release_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

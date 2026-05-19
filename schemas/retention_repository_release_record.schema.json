@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_repository_release_record.schema.json",
+  "title": "PFEM Retention Repository Release Records",
+  "type": "object",
+  "required": [
+    "retention_repository_release_record_id",
+    "repository_release_kind",
+    "created_time",
+    "node_id",
+    "retention_terminal_manifest_closeout_record_id",
+    "retention_terminal_manifest_verification_receipt_id",
+    "repository_release_state",
+    "repository_release_scope",
+    "repository_release_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "repository_release_ref_digest",
+    "repository_release_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_repository_release_record_id": {
+      "type": "string"
+    },
+    "repository_release_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_terminal_manifest_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_terminal_manifest_verification_receipt_id": {
+      "type": "string"
+    },
+    "repository_release_state": {
+      "type": "string"
+    },
+    "repository_release_scope": {
+      "type": "string"
+    },
+    "repository_release_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "repository_release_ref_digest": {
+      "type": "string"
+    },
+    "repository_release_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_manifest_record_id": "retention-terminal-manifest-basic-restore-001",
+    "terminal_manifest_kind": "retention_terminal_manifest",
+    "created_time": "2026-01-01T00:02:47Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_master_ledger_closeout_record_id": "retention-master-ledger-closeout-basic-restore-001",
+    "retention_master_ledger_verification_receipt_id": "retention-master-ledger-verification-basic-restore-001",
+    "terminal_manifest_state": "published",
+    "terminal_manifest_scope": "closed_retention_master_ledger",
+    "terminal_manifest_refs": [
+      "retention-master-ledger-closeout-basic-restore-001",
+      "retention-master-ledger-verification-basic-restore-001",
+      "retention-master-ledger-basic-restore-001",
+      "retention-final-index-closeout-basic-restore-001",
+      "retention-endcap-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-master-ledger-closeout-basic-restore-001",
+      "retention-master-ledger-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-manifest-ref-list",
+    "terminal_manifest_ref_digest": "3e30d581abbb593122148aa29a4e00dfc917d962cfab1caa2e8d7f54d24cbb21",
+    "terminal_manifest_by_ref": "tools/pfem_retention_terminal_manifest_records.py",
+    "summary": "Synthetic example retention terminal manifest record built from the closed retention master ledger path."
+  }
+]

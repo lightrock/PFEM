@@ -145,6 +145,16 @@ from pfem.retention_endcap_record import load_retention_endcap_records
 from pfem.retention_endcap_verification_receipt import load_retention_endcap_verification_receipts
 from pfem.retention_endcap_closeout_record import load_retention_endcap_closeout_records
 from pfem.retention_final_index_record import load_retention_final_index_records
+from pfem.retention_final_index_verification_receipt import load_retention_final_index_verification_receipts
+from pfem.retention_final_index_closeout_record import load_retention_final_index_closeout_records
+from pfem.retention_master_ledger_record import load_retention_master_ledger_records
+from pfem.retention_master_ledger_verification_receipt import load_retention_master_ledger_verification_receipts
+from pfem.retention_master_ledger_closeout_record import load_retention_master_ledger_closeout_records
+from pfem.retention_terminal_manifest_record import load_retention_terminal_manifest_records
+from pfem.retention_terminal_manifest_verification_receipt import load_retention_terminal_manifest_verification_receipts
+from pfem.retention_terminal_manifest_closeout_record import load_retention_terminal_manifest_closeout_records
+from pfem.retention_repository_release_record import load_retention_repository_release_records
+from pfem.retention_repository_release_verification_receipt import load_retention_repository_release_verification_receipts
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -986,6 +996,56 @@ def _retention_final_index_record_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"retention_final_index_record_id": r["retention_final_index_record_id"], "retention_endcap_closeout_record_id": r["retention_endcap_closeout_record_id"], "final_index_state": r["final_index_state"], "final_index_scope": r["final_index_scope"]} for r in load_retention_final_index_records(p)]
 
 
+def _retention_final_index_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-final-index-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_final_index_verification_receipt_id": r["retention_final_index_verification_receipt_id"], "retention_final_index_record_id": r["retention_final_index_record_id"], "verification_state": r["verification_state"], "checked_final_index_refs": len(r["checked_final_index_refs"])} for r in load_retention_final_index_verification_receipts(p)]
+
+
+def _retention_final_index_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-final-index-closeout-records.json"
+    return [] if not p.exists() else [{"retention_final_index_closeout_record_id": r["retention_final_index_closeout_record_id"], "retention_final_index_verification_receipt_id": r["retention_final_index_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_final_index_closeout_records(p)]
+
+
+def _retention_master_ledger_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-master-ledger-records.json"
+    return [] if not p.exists() else [{"retention_master_ledger_record_id": r["retention_master_ledger_record_id"], "retention_final_index_closeout_record_id": r["retention_final_index_closeout_record_id"], "master_ledger_state": r["master_ledger_state"], "master_ledger_scope": r["master_ledger_scope"]} for r in load_retention_master_ledger_records(p)]
+
+
+def _retention_master_ledger_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-master-ledger-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_master_ledger_verification_receipt_id": r["retention_master_ledger_verification_receipt_id"], "retention_master_ledger_record_id": r["retention_master_ledger_record_id"], "verification_state": r["verification_state"], "checked_master_ledger_refs": len(r["checked_master_ledger_refs"])} for r in load_retention_master_ledger_verification_receipts(p)]
+
+
+def _retention_master_ledger_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-master-ledger-closeout-records.json"
+    return [] if not p.exists() else [{"retention_master_ledger_closeout_record_id": r["retention_master_ledger_closeout_record_id"], "retention_master_ledger_verification_receipt_id": r["retention_master_ledger_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_master_ledger_closeout_records(p)]
+
+
+def _retention_terminal_manifest_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-manifest-records.json"
+    return [] if not p.exists() else [{"retention_terminal_manifest_record_id": r["retention_terminal_manifest_record_id"], "retention_master_ledger_closeout_record_id": r["retention_master_ledger_closeout_record_id"], "terminal_manifest_state": r["terminal_manifest_state"], "terminal_manifest_scope": r["terminal_manifest_scope"]} for r in load_retention_terminal_manifest_records(p)]
+
+
+def _retention_terminal_manifest_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-manifest-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_terminal_manifest_verification_receipt_id": r["retention_terminal_manifest_verification_receipt_id"], "retention_terminal_manifest_record_id": r["retention_terminal_manifest_record_id"], "verification_state": r["verification_state"], "checked_terminal_manifest_refs": len(r["checked_terminal_manifest_refs"])} for r in load_retention_terminal_manifest_verification_receipts(p)]
+
+
+def _retention_terminal_manifest_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-terminal-manifest-closeout-records.json"
+    return [] if not p.exists() else [{"retention_terminal_manifest_closeout_record_id": r["retention_terminal_manifest_closeout_record_id"], "retention_terminal_manifest_verification_receipt_id": r["retention_terminal_manifest_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_terminal_manifest_closeout_records(p)]
+
+
+def _retention_repository_release_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-repository-release-records.json"
+    return [] if not p.exists() else [{"retention_repository_release_record_id": r["retention_repository_release_record_id"], "retention_terminal_manifest_closeout_record_id": r["retention_terminal_manifest_closeout_record_id"], "repository_release_state": r["repository_release_state"], "repository_release_scope": r["repository_release_scope"]} for r in load_retention_repository_release_records(p)]
+
+
+def _retention_repository_release_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-repository-release-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_repository_release_verification_receipt_id": r["retention_repository_release_verification_receipt_id"], "retention_repository_release_record_id": r["retention_repository_release_record_id"], "verification_state": r["verification_state"], "checked_repository_release_refs": len(r["checked_repository_release_refs"])} for r in load_retention_repository_release_verification_receipts(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -1212,6 +1272,16 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_endcap_verification_receipts": _retention_endcap_verification_receipt_rows(root),
         "retention_endcap_closeout_records": _retention_endcap_closeout_record_rows(root),
         "retention_final_index_records": _retention_final_index_record_rows(root),
+        "retention_final_index_verification_receipts": _retention_final_index_verification_receipt_rows(root),
+        "retention_final_index_closeout_records": _retention_final_index_closeout_record_rows(root),
+        "retention_master_ledger_records": _retention_master_ledger_record_rows(root),
+        "retention_master_ledger_verification_receipts": _retention_master_ledger_verification_receipt_rows(root),
+        "retention_master_ledger_closeout_records": _retention_master_ledger_closeout_record_rows(root),
+        "retention_terminal_manifest_records": _retention_terminal_manifest_record_rows(root),
+        "retention_terminal_manifest_verification_receipts": _retention_terminal_manifest_verification_receipt_rows(root),
+        "retention_terminal_manifest_closeout_records": _retention_terminal_manifest_closeout_record_rows(root),
+        "retention_repository_release_records": _retention_repository_release_record_rows(root),
+        "retention_repository_release_verification_receipts": _retention_repository_release_verification_receipt_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -1395,6 +1465,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_endcap_verification_receipts', 0)} retention endcap verification receipts, "
         f"{counts.get('retention_endcap_closeout_records', 0)} retention endcap closeout records, "
         f"{counts.get('retention_final_index_records', 0)} retention final index records, "
+        f"{counts.get('retention_final_index_verification_receipts', 0)} retention final index verification receipts, "
+        f"{counts.get('retention_final_index_closeout_records', 0)} retention final index closeout records, "
+        f"{counts.get('retention_master_ledger_records', 0)} retention master ledger records, "
+        f"{counts.get('retention_master_ledger_verification_receipts', 0)} retention master ledger verification receipts, "
+        f"{counts.get('retention_master_ledger_closeout_records', 0)} retention master ledger closeout records, "
+        f"{counts.get('retention_terminal_manifest_records', 0)} retention terminal manifest records, "
+        f"{counts.get('retention_terminal_manifest_verification_receipts', 0)} retention terminal manifest verification receipts, "
+        f"{counts.get('retention_terminal_manifest_closeout_records', 0)} retention terminal manifest closeout records, "
+        f"{counts.get('retention_repository_release_records', 0)} retention repository release records, "
+        f"{counts.get('retention_repository_release_verification_receipts', 0)} retention repository release verification receipts, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -1564,6 +1644,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Retention Endcap Verification Receipts", catalog["retention_endcap_verification_receipts"], ["retention_endcap_verification_receipt_id", "retention_endcap_record_id", "verification_state", "checked_endcap_refs"]))
     lines.extend(_format_table("Retention Endcap Closeout Records", catalog["retention_endcap_closeout_records"], ["retention_endcap_closeout_record_id", "retention_endcap_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Retention Final Index Records", catalog["retention_final_index_records"], ["retention_final_index_record_id", "retention_endcap_closeout_record_id", "final_index_state", "final_index_scope"]))
+    lines.extend(_format_table("Retention Final Index Verification Receipts", catalog["retention_final_index_verification_receipts"], ["retention_final_index_verification_receipt_id", "retention_final_index_record_id", "verification_state", "checked_final_index_refs"]))
+    lines.extend(_format_table("Retention Final Index Closeout Records", catalog["retention_final_index_closeout_records"], ["retention_final_index_closeout_record_id", "retention_final_index_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Master Ledger Records", catalog["retention_master_ledger_records"], ["retention_master_ledger_record_id", "retention_final_index_closeout_record_id", "master_ledger_state", "master_ledger_scope"]))
+    lines.extend(_format_table("Retention Master Ledger Verification Receipts", catalog["retention_master_ledger_verification_receipts"], ["retention_master_ledger_verification_receipt_id", "retention_master_ledger_record_id", "verification_state", "checked_master_ledger_refs"]))
+    lines.extend(_format_table("Retention Master Ledger Closeout Records", catalog["retention_master_ledger_closeout_records"], ["retention_master_ledger_closeout_record_id", "retention_master_ledger_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Terminal Manifest Records", catalog["retention_terminal_manifest_records"], ["retention_terminal_manifest_record_id", "retention_master_ledger_closeout_record_id", "terminal_manifest_state", "terminal_manifest_scope"]))
+    lines.extend(_format_table("Retention Terminal Manifest Verification Receipts", catalog["retention_terminal_manifest_verification_receipts"], ["retention_terminal_manifest_verification_receipt_id", "retention_terminal_manifest_record_id", "verification_state", "checked_terminal_manifest_refs"]))
+    lines.extend(_format_table("Retention Terminal Manifest Closeout Records", catalog["retention_terminal_manifest_closeout_records"], ["retention_terminal_manifest_closeout_record_id", "retention_terminal_manifest_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Repository Release Records", catalog["retention_repository_release_records"], ["retention_repository_release_record_id", "retention_terminal_manifest_closeout_record_id", "repository_release_state", "repository_release_scope"]))
+    lines.extend(_format_table("Retention Repository Release Verification Receipts", catalog["retention_repository_release_verification_receipts"], ["retention_repository_release_verification_receipt_id", "retention_repository_release_record_id", "verification_state", "checked_repository_release_refs"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

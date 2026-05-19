@@ -1,0 +1,35 @@
+[
+  {
+    "retention_repository_release_verification_receipt_id": "retention-repository-release-verification-basic-restore-001",
+    "receipt_kind": "retention_repository_release_verification",
+    "created_time": "2026-01-01T00:02:51Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_repository_release_record_id": "retention-repository-release-basic-restore-001",
+    "retention_terminal_manifest_closeout_record_id": "retention-terminal-manifest-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_repository_release_refs": [
+      "retention-terminal-manifest-closeout-basic-restore-001",
+      "retention-terminal-manifest-verification-basic-restore-001",
+      "retention-terminal-manifest-basic-restore-001",
+      "retention-master-ledger-closeout-basic-restore-001",
+      "retention-final-index-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-repository-release-basic-restore-001",
+      "retention-terminal-manifest-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-repository-release-ref-list",
+    "expected_repository_release_ref_digest": "e730dfd10c340efd6cf0a432e4d9d8e7e5138b52a5d4c83489e4fac05f7c1345",
+    "actual_repository_release_ref_digest": "e730dfd10c340efd6cf0a432e4d9d8e7e5138b52a5d4c83489e4fac05f7c1345",
+    "verified_by_ref": "tools/pfem_retention_repository_release_verification_receipts.py",
+    "summary": "Synthetic example retention repository release verification receipt showing refs and digest were checked."
+  }
+]

@@ -761,6 +761,56 @@ python tools\pfem_retention_final_index_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention final index verification receipt validation...
+python tools\pfem_retention_final_index_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention final index closeout record validation...
+python tools\pfem_retention_final_index_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention master ledger record validation...
+python tools\pfem_retention_master_ledger_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention master ledger verification receipt validation...
+python tools\pfem_retention_master_ledger_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention master ledger closeout record validation...
+python tools\pfem_retention_master_ledger_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal manifest record validation...
+python tools\pfem_retention_terminal_manifest_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal manifest verification receipt validation...
+python tools\pfem_retention_terminal_manifest_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal manifest closeout record validation...
+python tools\pfem_retention_terminal_manifest_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention repository release record validation...
+python tools\pfem_retention_repository_release_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention repository release verification receipt validation...
+python tools\pfem_retention_repository_release_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1
