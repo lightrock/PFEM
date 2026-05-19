@@ -77,6 +77,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "preservation_closeout_record.schema.json": ["preservation/preservation-closeout-records.json"],
     "preservation_chain_record.schema.json": ["preservation/preservation-chain-records.json"],
     "preservation_chain_verification_receipt.schema.json": ["preservation/preservation-chain-verification-receipts.json"],
+    "retention_review_record.schema.json": ["retention/retention-review-records.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

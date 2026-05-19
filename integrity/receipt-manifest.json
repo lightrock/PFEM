@@ -389,6 +389,12 @@
       "purpose": "preservation chain verification receipts"
     },
     {
+      "path": "retention/retention-review-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "713111148d62c2f45a7131ccfefe44a18e328c84168b95b97c917af2617b2807",
+      "purpose": "retention review records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -469,7 +475,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "72ad413d3b06a99ea3a2edc859f5ba0966a6ee2fe3a88fc8ec9f8190e3e48325",
+      "digest": "338cce9328842bb3498d70e688325691cb7c75a59eb80199fc1b13a9a5879e9c",
       "purpose": "audit journal"
     },
     {

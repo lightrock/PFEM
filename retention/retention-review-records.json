@@ -1,0 +1,33 @@
+[
+  {
+    "retention_review_record_id": "retention-review-basic-restore-001",
+    "review_kind": "preserved_archive_retention_review",
+    "created_time": "2026-01-01T00:01:11Z",
+    "node_id": "formal-rollup-node-example",
+    "preservation_chain_verification_receipt_id": "preservation-chain-verification-basic-restore-001",
+    "retention_policy_ref": "retention/retention-policy.json",
+    "review_state": "completed",
+    "recommendation": "continue_preservation",
+    "reviewed_refs": [
+      "preservation-chain-verification-basic-restore-001",
+      "preservation-chain-basic-restore-001",
+      "preservation-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "preservation-chain-verification-basic-restore-001",
+      "preservation-chain-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-reviewed-ref-list",
+    "reviewed_ref_digest": "5e0677989a8b0249903d8f6ab604a7dc44ec3a73b42e77992823cf68d3492014",
+    "reviewed_by_ref": "tools/pfem_retention_review_records.py",
+    "summary": "Synthetic example retention review record recommending continued preservation for the verified preservation chain."
+  }
+]

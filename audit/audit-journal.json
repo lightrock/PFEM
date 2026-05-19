@@ -889,5 +889,18 @@
     ],
     "summary": "Example preservation chain verification receipts was recorded.",
     "source_tool": "pfem_preservation_chain_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-review-basic-001",
+    "event_kind": "retention_review_recorded",
+    "created_time": "2026-01-01T00:01:11Z",
+    "actor_ref": "tools/pfem_retention_review_records.py",
+    "subject_refs": [
+      "retention-review-basic-restore-001",
+      "preservation-chain-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "summary": "Example retention review records was recorded.",
+    "source_tool": "pfem_retention_review_records"
   }
 ]
