@@ -1,47 +1,48 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://pfem.local/schemas/routing_policy.schema.json",
-  "title": "PFEM Routing Policy",
+  "$id": "https://pfem.local/schemas/delivery_channel_registry.schema.json",
+  "title": "PFEM Delivery Channel Registry",
   "type": "object",
   "required": [
-    "policy_id",
+    "registry_id",
     "version",
-    "routes"
+    "channels"
   ],
   "properties": {
-    "policy_id": {
+    "registry_id": {
       "type": "string"
     },
     "version": {
       "type": "string"
     },
-    "routes": {
+    "channels": {
       "type": "array",
       "items": {
         "type": "object",
         "required": [
-          "route_id",
-          "route_kind",
-          "enabled",
+          "channel_id",
+          "channel_kind",
+          "status",
+          "supports_route_kinds",
           "summary"
         ],
         "properties": {
-          "route_id": {
+          "channel_id": {
             "type": "string"
           },
-          "route_kind": {
+          "channel_kind": {
             "type": "string"
           },
-          "enabled": {
-            "type": "boolean"
+          "status": {
+            "type": "string"
           },
-          "source_node_ids": {
+          "supports_route_kinds": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "source_profile_ids": {
+          "source_node_ids": {
             "type": "array",
             "items": {
               "type": "string"
@@ -53,43 +54,13 @@
               "type": "string"
             }
           },
-          "destination_profile_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "applies_to_action_kinds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "applies_to_bundle_kinds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "applies_to_priorities": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "applies_to_sharing_scopes": {
+          "allowed_sharing_scopes": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
           "allowed_handling_labels": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "allowed_delivery_channel_ids": {
             "type": "array",
             "items": {
               "type": "string"

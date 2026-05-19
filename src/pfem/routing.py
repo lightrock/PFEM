@@ -9,6 +9,7 @@ from typing import Any
 
 from pfem.action import load_action_policy
 from pfem.bundle import load_exchange_bundle
+from pfem.delivery import collect_delivery_channel_ids
 from pfem.handling import load_handling_policy
 from pfem.node_runtime import collect_node_ids
 from pfem.policy import load_sharing_policy, known_scope_ids
@@ -17,13 +18,7 @@ from pfem.profile_runtime import load_profile_registry
 
 JsonObject = dict[str, Any]
 
-KNOWN_ROUTE_KINDS = {
-    "action",
-    "bundle",
-    "summary",
-    "review",
-    "exchange",
-}
+KNOWN_ROUTE_KINDS = {"action", "bundle", "summary", "review", "exchange"}
 
 
 @dataclass(frozen=True)
@@ -40,6 +35,7 @@ class Route:
     applies_to_priorities: list[str]
     applies_to_sharing_scopes: list[str]
     allowed_handling_labels: list[str]
+    allowed_delivery_channel_ids: list[str]
     summary: str
 
 
@@ -67,20 +63,6 @@ def _as_list(value: object) -> list[str]:
     return []
 
 
-def _load_records(path: Path) -> list[JsonObject]:
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    if isinstance(raw, dict):
-        return [raw]
-    if isinstance(raw, list):
-        records: list[JsonObject] = []
-        for item in raw:
-            if not isinstance(item, dict):
-                raise ValueError(f"expected JSON object records in {path}")
-            records.append(item)
-        return records
-    raise ValueError(f"expected JSON object or array in {path}")
-
-
 def load_routing_policy(path: str | Path) -> RoutingPolicy:
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     routes: list[Route] = []
@@ -101,6 +83,7 @@ def load_routing_policy(path: str | Path) -> RoutingPolicy:
                 applies_to_priorities=_as_list(item.get("applies_to_priorities", [])),
                 applies_to_sharing_scopes=_as_list(item.get("applies_to_sharing_scopes", [])),
                 allowed_handling_labels=_as_list(item.get("allowed_handling_labels", [])),
+                allowed_delivery_channel_ids=_as_list(item.get("allowed_delivery_channel_ids", [])),
                 summary=str(item.get("summary", "")),
             )
         )
@@ -189,6 +172,7 @@ def validate_routing_policy(root: str | Path) -> RoutingReport:
     sharing_scopes = _collect_sharing_scopes(root_path)
     handling_labels = _collect_handling_labels(root_path)
     bundle_kinds = _collect_bundle_kinds(root_path)
+    delivery_channel_ids = collect_delivery_channel_ids(root_path)
 
     seen_route_ids: set[str] = set()
 
@@ -241,6 +225,10 @@ def validate_routing_policy(root: str | Path) -> RoutingReport:
         for bundle_kind in route.applies_to_bundle_kinds:
             if bundle_kinds and bundle_kind not in bundle_kinds:
                 failures.append(f"route {route.route_id!r} references unknown bundle_kind {bundle_kind!r}")
+
+        for channel_id in route.allowed_delivery_channel_ids:
+            if delivery_channel_ids and channel_id not in delivery_channel_ids:
+                failures.append(f"route {route.route_id!r} references unknown delivery channel {channel_id!r}")
 
     return RoutingReport(
         source=str(policy_path),

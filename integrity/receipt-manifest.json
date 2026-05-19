@@ -55,8 +55,14 @@
     {
       "path": "routing/routing-policy.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "47ae42b6e36eafa2a0b9f1a4ac47ab1713643f28a12fe01704fa0658b62c4d8e",
+      "digest": "3a373c1d1b2d13eb5e8940e1573829c65495b07b0dbe80b973ed31cd870d5f84",
       "purpose": "routing policy"
+    },
+    {
+      "path": "delivery/delivery-channel-registry.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "17ff365a7ab2f4eccc25fa88cf121feb0827ab96bfccc73ab64522868890d084",
+      "purpose": "delivery channel registry"
     },
     {
       "path": "quality/quality-policy.json",
@@ -103,7 +109,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "cb5f619e30037a9fbdc63829d1864682c51fd212c37915e4e1f9e5328ea4fbb1",
+      "digest": "dbe37a430644ba4975378089e196b04d1747be0bcbd474c73941908e7a6a29af",
       "purpose": "audit journal"
     },
     {

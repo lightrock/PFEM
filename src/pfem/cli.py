@@ -10,6 +10,7 @@ from pfem.action import format_action_report, validate_action_repository
 from pfem.audit import format_audit_report, validate_audit_repository
 from pfem.bundle import format_bundle_report, validate_bundle_repository
 from pfem.catalog import build_catalog, format_catalog
+from pfem.delivery import format_delivery_report, validate_delivery_channel_registry
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -38,6 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("actions", "Validate PFEM action records"),
         ("playbooks", "Validate PFEM playbooks"),
         ("routing", "Validate PFEM routing policy"),
+        ("delivery", "Validate PFEM delivery channel registry"),
         ("audit", "Validate PFEM audit journal"),
         ("bundles", "Validate PFEM exchange bundles"),
         ("exchange", "Validate PFEM exchange receipts"),
@@ -84,54 +86,29 @@ def main(argv: list[str] | None = None) -> int:
             print(format_catalog(catalog))
         return 0
 
-    if args.command == "actions":
-        report = validate_action_repository(Path(args.path))
-        print(format_action_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "playbooks":
-        report = validate_playbook_repository(Path(args.path))
-        print(format_playbook_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "routing":
-        report = validate_routing_policy(Path(args.path))
-        print(format_routing_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "audit":
-        report = validate_audit_repository(Path(args.path))
-        print(format_audit_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "bundles":
-        report = validate_bundle_repository(Path(args.path))
-        print(format_bundle_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "exchange":
-        report = validate_exchange_repository(Path(args.path))
-        print(format_exchange_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "reconciliation":
-        report = validate_reconciliation_repository(Path(args.path))
-        print(format_reconciliation_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "quality":
-        report = validate_quality_repository(Path(args.path))
-        print(format_quality_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "handling":
-        report = validate_handling_policy(Path(args.path))
-        print(format_handling_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "retention":
-        report = validate_retention_policy(Path(args.path))
-        print(format_retention_report(report))
+    command_map = {
+        "actions": (validate_action_repository, format_action_report),
+        "playbooks": (validate_playbook_repository, format_playbook_report),
+        "routing": (validate_routing_policy, format_routing_report),
+        "delivery": (validate_delivery_channel_registry, format_delivery_report),
+        "audit": (validate_audit_repository, format_audit_report),
+        "bundles": (validate_bundle_repository, format_bundle_report),
+        "exchange": (validate_exchange_repository, format_exchange_report),
+        "reconciliation": (validate_reconciliation_repository, format_reconciliation_report),
+        "quality": (validate_quality_repository, format_quality_report),
+        "handling": (validate_handling_policy, format_handling_report),
+        "retention": (validate_retention_policy, format_retention_report),
+        "policy": (validate_policy_repository, format_policy_report),
+        "review": (validate_review_repository, format_review_report),
+        "schema-contracts": (validate_schema_contracts, format_schema_contract_report),
+        "topology": (validate_topology_repository, format_topology_report),
+        "sources": (validate_source_provenance_repository, format_source_provenance_report),
+        "integrity": (validate_integrity_manifest, format_integrity_report),
+    }
+    if args.command in command_map:
+        validator, formatter = command_map[args.command]
+        report = validator(Path(args.path))
+        print(formatter(report))
         return 0 if report.ok else 1
 
     if args.command == "lineage":
@@ -142,36 +119,6 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "rollup":
         report = validate_rollup_dir(Path(args.path))
         print(format_rollup_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "policy":
-        report = validate_policy_repository(Path(args.path))
-        print(format_policy_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "review":
-        report = validate_review_repository(Path(args.path))
-        print(format_review_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "schema-contracts":
-        report = validate_schema_contracts(Path(args.path))
-        print(format_schema_contract_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "topology":
-        report = validate_topology_repository(Path(args.path))
-        print(format_topology_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "sources":
-        report = validate_source_provenance_repository(Path(args.path))
-        print(format_source_provenance_report(report))
-        return 0 if report.ok else 1
-
-    if args.command == "integrity":
-        report = validate_integrity_manifest(Path(args.path))
-        print(format_integrity_report(report))
         return 0 if report.ok else 1
 
     if args.command == "integrity-update":

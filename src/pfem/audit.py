@@ -11,22 +11,13 @@ from typing import Any
 JsonObject = dict[str, Any]
 
 KNOWN_EVENT_KINDS = {
-    "review_approved",
-    "review_rejected",
-    "integrity_receipts_generated",
-    "policy_changed",
-    "topology_changed",
-    "federation_message_prepared",
-    "evidence_package_assembled",
-    "exchange_bundle_exported",
-    "exchange_bundle_received",
-    "exchange_bundle_accepted",
-    "exchange_bundle_rejected",
-    "reconciliation_recorded",
-    "quality_assessment_recorded",
-    "action_recorded",
-    "playbook_registered",
-    "routing_policy_registered",
+    "review_approved", "review_rejected", "integrity_receipts_generated",
+    "policy_changed", "topology_changed", "federation_message_prepared",
+    "evidence_package_assembled", "exchange_bundle_exported",
+    "exchange_bundle_received", "exchange_bundle_accepted",
+    "exchange_bundle_rejected", "reconciliation_recorded",
+    "quality_assessment_recorded", "action_recorded", "playbook_registered",
+    "routing_policy_registered", "delivery_channel_registered",
 }
 
 
@@ -88,6 +79,16 @@ def load_audit_events(path: str | Path) -> list[AuditEvent]:
     ]
 
 
+def _add_ids_from_json_array(path: Path, key: str, ids: set[str]) -> None:
+    if not path.exists():
+        return
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    records = raw if isinstance(raw, list) else [raw]
+    for record in records:
+        if isinstance(record, dict) and record.get(key):
+            ids.add(str(record[key]))
+
+
 def _collect_known_record_ids(root: Path) -> set[str]:
     patterns = [
         ("tests/fixtures/**/raw_evidence.json", "evidence_id"),
@@ -121,6 +122,14 @@ def _collect_known_record_ids(root: Path) -> set[str]:
                 if isinstance(route, dict) and route.get("route_id"):
                     ids.add(str(route["route_id"]))
 
+    delivery_path = root / "delivery" / "delivery-channel-registry.json"
+    if delivery_path.exists():
+        raw = json.loads(delivery_path.read_text(encoding="utf-8"))
+        if isinstance(raw, dict):
+            for channel in raw.get("channels", []):
+                if isinstance(channel, dict) and channel.get("channel_id"):
+                    ids.add(str(channel["channel_id"]))
+
     return ids
 
 
@@ -128,9 +137,9 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     paths: set[str] = set()
     for folder in [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
-        "handling", "retention", "routing", "topology", "review", "audit", "exchange",
-        "reconciliation", "quality", "action", "playbooks", "integrity",
-        "schemas", "contracts", "docs", "bundles",
+        "handling", "retention", "routing", "delivery", "topology", "review",
+        "audit", "exchange", "reconciliation", "quality", "action", "playbooks",
+        "integrity", "schemas", "contracts", "docs", "bundles",
     ]:
         base = root / folder
         if not base.exists():

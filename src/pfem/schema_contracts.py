@@ -21,6 +21,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "audit_event.schema.json": ["audit/audit-journal.json"],
     "handling_policy.schema.json": ["handling/handling-policy.json"],
     "retention_policy.schema.json": ["retention/retention-policy.json"],
+    "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "routing_policy.schema.json": ["routing/routing-policy.json"],
     "exchange_bundle.schema.json": ["bundles/**/*.bundle.json"],
     "exchange_receipt.schema.json": ["exchange/exchange-receipts.json"],

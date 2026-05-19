@@ -10,6 +10,7 @@ from pfem.adapter_runtime import load_adapter_registry
 from pfem.audit import load_audit_events
 from pfem.bundle import load_exchange_bundle
 from pfem.capability_runtime import load_capability_manifest
+from pfem.delivery import load_delivery_channel_registry
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -28,11 +29,7 @@ from pfem.source_runtime import load_source_registry
 
 
 def _capability_rows(root: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    for path in sorted((root / "capabilities").rglob("*.capability.yaml")) if (root / "capabilities").exists() else []:
-        manifest = load_capability_manifest(path)
-        rows.append({"capability_id": manifest.capability_id, "capability_kind": manifest.capability_kind, "path": str(path.relative_to(root))})
-    return rows
+    return [{"capability_id": m.capability_id, "capability_kind": m.capability_kind, "path": str(p.relative_to(root))} for p in sorted((root / "capabilities").rglob("*.capability.yaml")) for m in [load_capability_manifest(p)]] if (root / "capabilities").exists() else []
 
 
 def _adapter_rows(root: Path) -> list[dict[str, Any]]:
@@ -71,58 +68,37 @@ def _audit_rows(root: Path) -> list[dict[str, Any]]:
 
 
 def _bundle_rows(root: Path) -> list[dict[str, Any]]:
-    rows: list[dict[str, Any]] = []
-    bundles_dir = root / "bundles"
-    if not bundles_dir.exists():
-        return rows
-    for path in sorted(bundles_dir.glob("**/*.bundle.json")):
-        bundle = load_exchange_bundle(path)
-        rows.append({"bundle_id": bundle.bundle_id, "bundle_kind": bundle.bundle_kind, "sharing_scope": bundle.sharing_scope, "path": str(path.relative_to(root))})
-    return rows
+    return [{"bundle_id": b.bundle_id, "bundle_kind": b.bundle_kind, "sharing_scope": b.sharing_scope, "path": str(p.relative_to(root))} for p in sorted((root / "bundles").glob("**/*.bundle.json")) for b in [load_exchange_bundle(p)]] if (root / "bundles").exists() else []
 
 
 def _exchange_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "exchange" / "exchange-receipts.json"
-    if not p.exists():
-        return []
-    return [{"exchange_receipt_id": r.exchange_receipt_id, "receipt_kind": r.receipt_kind, "bundle_id": r.bundle_id, "decision": r.decision} for r in load_exchange_receipts(p)]
+    return [] if not p.exists() else [{"exchange_receipt_id": r.exchange_receipt_id, "receipt_kind": r.receipt_kind, "bundle_id": r.bundle_id, "decision": r.decision} for r in load_exchange_receipts(p)]
 
 
 def _reconciliation_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "reconciliation" / "reconciliation-records.json"
-    if not p.exists():
-        return []
-    return [{"reconciliation_id": r.reconciliation_id, "reconciliation_kind": r.reconciliation_kind, "decision": r.decision, "result_state": r.result_state} for r in load_reconciliation_records(p)]
+    return [] if not p.exists() else [{"reconciliation_id": r.reconciliation_id, "reconciliation_kind": r.reconciliation_kind, "decision": r.decision, "result_state": r.result_state} for r in load_reconciliation_records(p)]
 
 
 def _quality_assessment_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "quality" / "quality-assessments.json"
-    if not p.exists():
-        return []
-    return [{"quality_assessment_id": q.quality_assessment_id, "confidence_level": q.confidence_level, "flags": ",".join(q.quality_flags)} for q in load_quality_assessments(p)]
+    return [] if not p.exists() else [{"quality_assessment_id": q.quality_assessment_id, "confidence_level": q.confidence_level, "flags": ",".join(q.quality_flags)} for q in load_quality_assessments(p)]
 
 
 def _quality_policy_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "quality" / "quality-policy.json"
-    if not p.exists():
-        return []
-    policy = load_quality_policy(p)
-    return [{"confidence_level": level.confidence_level, "rank": level.rank, "display_name": level.display_name} for level in policy.confidence_levels]
+    return [] if not p.exists() else [{"confidence_level": level.confidence_level, "rank": level.rank, "display_name": level.display_name} for level in load_quality_policy(p).confidence_levels]
 
 
 def _action_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "action" / "action-records.json"
-    if not p.exists():
-        return []
-    return [{"action_id": a.action_id, "action_kind": a.action_kind, "priority": a.priority, "action_state": a.action_state} for a in load_action_records(p)]
+    return [] if not p.exists() else [{"action_id": a.action_id, "action_kind": a.action_kind, "priority": a.priority, "action_state": a.action_state} for a in load_action_records(p)]
 
 
 def _action_policy_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "action" / "action-policy.json"
-    if not p.exists():
-        return []
-    policy = load_action_policy(p)
-    return [{"action_kind": kind.action_kind, "display_name": kind.display_name} for kind in policy.action_kinds]
+    return [] if not p.exists() else [{"action_kind": kind.action_kind, "display_name": kind.display_name} for kind in load_action_policy(p).action_kinds]
 
 
 def _playbook_rows(root: Path) -> list[dict[str, Any]]:
@@ -131,34 +107,27 @@ def _playbook_rows(root: Path) -> list[dict[str, Any]]:
 
 def _routing_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "routing" / "routing-policy.json"
-    if not p.exists():
-        return []
-    policy = load_routing_policy(p)
-    return [{"route_id": route.route_id, "route_kind": route.route_kind, "enabled": route.enabled, "destinations": len(route.destination_node_ids) + len(route.destination_profile_ids)} for route in policy.routes]
+    return [] if not p.exists() else [{"route_id": route.route_id, "route_kind": route.route_kind, "enabled": route.enabled, "channels": len(route.allowed_delivery_channel_ids)} for route in load_routing_policy(p).routes]
+
+
+def _delivery_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "delivery" / "delivery-channel-registry.json"
+    return [] if not p.exists() else [{"channel_id": c.channel_id, "channel_kind": c.channel_kind, "status": c.status, "route_kinds": ",".join(c.supports_route_kinds)} for c in load_delivery_channel_registry(p).channels]
 
 
 def _handling_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "handling" / "handling-policy.json"
-    if not p.exists():
-        return []
-    policy = load_handling_policy(p)
-    return [{"label_id": label.label_id, "allowed_sharing_scopes": ",".join(label.allowed_sharing_scopes), "requires_redaction": label.requires_redaction_before_share} for label in policy.handling_labels]
+    return [] if not p.exists() else [{"label_id": label.label_id, "allowed_sharing_scopes": ",".join(label.allowed_sharing_scopes), "requires_redaction": label.requires_redaction_before_share} for label in load_handling_policy(p).handling_labels]
 
 
 def _retention_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "retention" / "retention-policy.json"
-    if not p.exists():
-        return []
-    policy = load_retention_policy(p)
-    return [{"retention_class": item.retention_class, "default_duration": item.default_duration, "allowed_states": ",".join(item.allowed_disposition_states)} for item in policy.retention_classes]
+    return [] if not p.exists() else [{"retention_class": item.retention_class, "default_duration": item.default_duration, "allowed_states": ",".join(item.allowed_disposition_states)} for item in load_retention_policy(p).retention_classes]
 
 
 def _integrity_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "integrity" / "receipt-manifest.json"
-    if not p.exists():
-        return []
-    manifest = load_integrity_manifest(p)
-    return [{"path": r.path, "digest_algorithm": r.digest_algorithm, "purpose": r.purpose} for r in manifest.receipts]
+    return [] if not p.exists() else [{"path": r.path, "digest_algorithm": r.digest_algorithm, "purpose": r.purpose} for r in load_integrity_manifest(p).receipts]
 
 
 def _policy_rows(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -166,58 +135,41 @@ def _policy_rows(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]
     if not p.exists():
         return [], []
     policy = load_sharing_policy(p)
-    scopes = [{"scope_id": s.scope_id, "display_name": s.display_name, "path": str(p.relative_to(root))} for s in policy.sharing_scopes]
-    gates = [{"gate_id": g.gate_id, "display_name": g.display_name, "path": str(p.relative_to(root))} for g in policy.review_gates]
-    return scopes, gates
+    return ([{"scope_id": s.scope_id, "display_name": s.display_name, "path": str(p.relative_to(root))} for s in policy.sharing_scopes],
+            [{"gate_id": g.gate_id, "display_name": g.display_name, "path": str(p.relative_to(root))} for g in policy.review_gates])
 
 
 def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     root = find_repo_root(start)
-    capabilities = _capability_rows(root)
-    adapters = _adapter_rows(root)
-    profiles = _profile_rows(root)
-    nodes = _node_rows(root)
-    sources = _source_rows(root)
-    examples = _example_rows(root)
-    reviews = _review_rows(root)
-    audit_events = _audit_rows(root)
-    bundles = _bundle_rows(root)
-    exchange_receipts = _exchange_rows(root)
-    reconciliation_records = _reconciliation_rows(root)
-    quality_levels = _quality_policy_rows(root)
-    quality_assessments = _quality_assessment_rows(root)
-    action_kinds = _action_policy_rows(root)
-    action_records = _action_rows(root)
-    playbooks = _playbook_rows(root)
-    routes = _routing_rows(root)
-    handling_labels = _handling_rows(root)
-    retention_classes = _retention_rows(root)
-    integrity_receipts = _integrity_rows(root)
     sharing_scopes, review_gates = _policy_rows(root)
-
-    return {
+    catalog = {
         "root": str(root),
-        "counts": {
-            "capabilities": len(capabilities), "adapters": len(adapters), "profiles": len(profiles),
-            "nodes": len(nodes), "sources": len(sources), "examples": len(examples),
-            "reviews": len(reviews), "audit_events": len(audit_events), "bundles": len(bundles),
-            "exchange_receipts": len(exchange_receipts), "reconciliation_records": len(reconciliation_records),
-            "quality_levels": len(quality_levels), "quality_assessments": len(quality_assessments),
-            "action_kinds": len(action_kinds), "action_records": len(action_records),
-            "playbooks": len(playbooks), "routes": len(routes),
-            "handling_labels": len(handling_labels), "retention_classes": len(retention_classes),
-            "integrity_receipts": len(integrity_receipts), "sharing_scopes": len(sharing_scopes),
-            "review_gates": len(review_gates),
-        },
-        "capabilities": capabilities, "adapters": adapters, "profiles": profiles, "nodes": nodes,
-        "sources": sources, "examples": examples, "reviews": reviews, "audit_events": audit_events,
-        "bundles": bundles, "exchange_receipts": exchange_receipts,
-        "reconciliation_records": reconciliation_records, "quality_levels": quality_levels,
-        "quality_assessments": quality_assessments, "action_kinds": action_kinds,
-        "action_records": action_records, "playbooks": playbooks, "routes": routes,
-        "handling_labels": handling_labels, "retention_classes": retention_classes,
-        "integrity_receipts": integrity_receipts, "sharing_scopes": sharing_scopes, "review_gates": review_gates,
+        "capabilities": _capability_rows(root),
+        "adapters": _adapter_rows(root),
+        "profiles": _profile_rows(root),
+        "nodes": _node_rows(root),
+        "sources": _source_rows(root),
+        "examples": _example_rows(root),
+        "reviews": _review_rows(root),
+        "audit_events": _audit_rows(root),
+        "bundles": _bundle_rows(root),
+        "exchange_receipts": _exchange_rows(root),
+        "reconciliation_records": _reconciliation_rows(root),
+        "quality_levels": _quality_policy_rows(root),
+        "quality_assessments": _quality_assessment_rows(root),
+        "action_kinds": _action_policy_rows(root),
+        "action_records": _action_rows(root),
+        "playbooks": _playbook_rows(root),
+        "routes": _routing_rows(root),
+        "delivery_channels": _delivery_rows(root),
+        "handling_labels": _handling_rows(root),
+        "retention_classes": _retention_rows(root),
+        "integrity_receipts": _integrity_rows(root),
+        "sharing_scopes": sharing_scopes,
+        "review_gates": review_gates,
     }
+    catalog["counts"] = {key: len(value) for key, value in catalog.items() if isinstance(value, list)}
+    return catalog
 
 
 def _format_table(title: str, rows: list[dict[str, Any]], columns: list[str]) -> list[str]:
@@ -238,17 +190,10 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines = [
         f"PFEM catalog root: {catalog['root']}",
         "Counts: "
-        f"{counts['capabilities']} capabilities, {counts['adapters']} adapters, "
-        f"{counts['profiles']} profiles, {counts['nodes']} nodes, {counts['sources']} sources, "
-        f"{counts['examples']} examples, {counts['reviews']} reviews, {counts['audit_events']} audit events, "
-        f"{counts['bundles']} bundles, {counts['exchange_receipts']} exchange receipts, "
-        f"{counts['reconciliation_records']} reconciliation records, "
-        f"{counts['quality_levels']} quality levels, {counts['quality_assessments']} quality assessments, "
-        f"{counts['action_kinds']} action kinds, {counts['action_records']} action records, "
-        f"{counts['playbooks']} playbooks, {counts['routes']} routes, "
-        f"{counts['handling_labels']} handling labels, {counts['retention_classes']} retention classes, "
-        f"{counts['integrity_receipts']} integrity receipts, {counts['sharing_scopes']} sharing scopes, "
-        f"{counts['review_gates']} review gates",
+        f"{counts.get('capabilities', 0)} capabilities, {counts.get('adapters', 0)} adapters, "
+        f"{counts.get('profiles', 0)} profiles, {counts.get('nodes', 0)} nodes, "
+        f"{counts.get('sources', 0)} sources, {counts.get('routes', 0)} routes, "
+        f"{counts.get('delivery_channels', 0)} delivery channels",
     ]
     lines.extend(_format_table("Capabilities", catalog["capabilities"], ["capability_id", "capability_kind", "path"]))
     lines.extend(_format_table("Adapters", catalog["adapters"], ["adapter_id", "adapter_kind", "status", "path"]))
@@ -266,7 +211,8 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Action Kinds", catalog["action_kinds"], ["action_kind", "display_name"]))
     lines.extend(_format_table("Action Records", catalog["action_records"], ["action_id", "action_kind", "priority", "action_state"]))
     lines.extend(_format_table("Playbooks", catalog["playbooks"], ["playbook_id", "playbook_kind", "status", "steps"]))
-    lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "destinations"]))
+    lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
+    lines.extend(_format_table("Delivery Channels", catalog["delivery_channels"], ["channel_id", "channel_kind", "status", "route_kinds"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
     lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))

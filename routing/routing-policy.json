@@ -27,6 +27,11 @@
       "allowed_handling_labels": [
         "summary-shareable"
       ],
+      "allowed_delivery_channel_ids": [
+        "manual-export",
+        "local-api",
+        "dashboard-sync"
+      ],
       "summary": "Route routine monitoring actions from the example field node to the example formal rollup node."
     },
     {
@@ -48,6 +53,12 @@
       ],
       "allowed_handling_labels": [
         "summary-shareable"
+      ],
+      "allowed_delivery_channel_ids": [
+        "manual-export",
+        "file-drop",
+        "local-api",
+        "email-handoff"
       ],
       "summary": "Route example federation exchange bundles toward the formal rollup node."
     }

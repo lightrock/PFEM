@@ -1,0 +1,170 @@
+{
+  "registry_id": "pfem-delivery-channel-registry",
+  "version": "0.1",
+  "channels": [
+    {
+      "channel_id": "manual-export",
+      "channel_kind": "manual_export",
+      "status": "available",
+      "supports_route_kinds": [
+        "action",
+        "bundle",
+        "summary",
+        "review",
+        "exchange"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Human-reviewed export/import channel for example PFEM handoffs."
+    },
+    {
+      "channel_id": "file-drop",
+      "channel_kind": "file_drop",
+      "status": "planned",
+      "supports_route_kinds": [
+        "bundle",
+        "summary",
+        "exchange"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned filesystem or shared-folder style delivery channel."
+    },
+    {
+      "channel_id": "local-api",
+      "channel_kind": "api",
+      "status": "planned",
+      "supports_route_kinds": [
+        "action",
+        "bundle",
+        "summary",
+        "review",
+        "exchange"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned local or network API delivery channel."
+    },
+    {
+      "channel_id": "mqtt-bridge",
+      "channel_kind": "mqtt",
+      "status": "planned",
+      "supports_route_kinds": [
+        "summary",
+        "exchange"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned brokered publish/subscribe channel for status-style delivery."
+    },
+    {
+      "channel_id": "email-handoff",
+      "channel_kind": "email",
+      "status": "planned",
+      "supports_route_kinds": [
+        "bundle",
+        "summary",
+        "review",
+        "exchange"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned human-readable email handoff channel."
+    },
+    {
+      "channel_id": "mesh-message",
+      "channel_kind": "mesh_message",
+      "status": "planned",
+      "supports_route_kinds": [
+        "summary",
+        "exchange"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned ad hoc mesh-style message delivery channel."
+    },
+    {
+      "channel_id": "dashboard-sync",
+      "channel_kind": "dashboard_sync",
+      "status": "planned",
+      "supports_route_kinds": [
+        "action",
+        "summary",
+        "review"
+      ],
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Planned dashboard-to-dashboard synchronization channel."
+    }
+  ]
+}
