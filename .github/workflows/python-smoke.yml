@@ -59,6 +59,7 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_archive_receipts.py
       - run: PYTHONPATH=src python tools/pfem_archive_verification_receipts.py
       - run: PYTHONPATH=src python tools/pfem_archive_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_archive_chain_records.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

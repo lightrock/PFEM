@@ -723,5 +723,18 @@
     ],
     "summary": "Example archive closeout records was recorded.",
     "source_tool": "pfem_archive_closeout_records"
+  },
+  {
+    "audit_id": "audit-archive-chain-basic-001",
+    "event_kind": "archive_chain_recorded",
+    "created_time": "2026-01-01T00:00:58Z",
+    "actor_ref": "tools/pfem_archive_chain_records.py",
+    "subject_refs": [
+      "archive-chain-basic-restore-001",
+      "archive-manifest-basic-restore-001",
+      "archive-closeout-basic-restore-001"
+    ],
+    "summary": "Example archive chain records was recorded.",
+    "source_tool": "pfem_archive_chain_records"
   }
 ]
