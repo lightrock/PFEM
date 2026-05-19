@@ -41,6 +41,7 @@ from pfem.custody_lifecycle_closeout_record import validate_custody_lifecycle_cl
 from pfem.archive_manifest_record import validate_archive_manifest_records
 from pfem.archive_receipt import validate_archive_receipts
 from pfem.archive_verification_receipt import validate_archive_verification_receipts
+from pfem.archive_closeout_record import validate_archive_closeout_records
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -120,6 +121,7 @@ EXPECTED_PATHS = [
     "docs/architecture/archive-manifest-records.md",
     "docs/architecture/archive-receipts.md",
     "docs/architecture/archive-verification-receipts.md",
+    "docs/architecture/archive-closeout-records.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -167,6 +169,7 @@ EXPECTED_PATHS = [
     "contracts/archive-manifest-record-contract.md",
     "contracts/archive-receipt-contract.md",
     "contracts/archive-verification-receipt-contract.md",
+    "contracts/archive-closeout-record-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -214,6 +217,7 @@ EXPECTED_PATHS = [
     "schemas/archive_manifest_record.schema.json",
     "schemas/archive_receipt.schema.json",
     "schemas/archive_verification_receipt.schema.json",
+    "schemas/archive_closeout_record.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -232,7 +236,7 @@ EXPECTED_PATHS = [
     "recovery/README.md", "recovery/recovery-points.json",
     "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json", "restore/restore-receipts.json", "restore/restore-verification-receipts.json", "restore/restore-closeout-records.json",
     "disposition/README.md", "disposition/disposition-records.json", "disposition/disposition-receipts.json",
-    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json", "custody/custody-release-approvals.json", "custody/custody-release-receipts.json", "custody/custody-release-verification-receipts.json", "custody/custody-release-closeout-records.json", "custody/custody-release-chain-records.json", "custody/custody-release-chain-verification-receipts.json", "custody/custody-lifecycle-records.json", "custody/custody-lifecycle-verification-receipts.json", "custody/custody-lifecycle-closeout-records.json", "archive/archive-manifest-records.json", "archive/archive-receipts.json", "archive/archive-verification-receipts.json",
+    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json", "custody/custody-release-approvals.json", "custody/custody-release-receipts.json", "custody/custody-release-verification-receipts.json", "custody/custody-release-closeout-records.json", "custody/custody-release-chain-records.json", "custody/custody-release-chain-verification-receipts.json", "custody/custody-lifecycle-records.json", "custody/custody-lifecycle-verification-receipts.json", "custody/custody-lifecycle-closeout-records.json", "archive/archive-manifest-records.json", "archive/archive-receipts.json", "archive/archive-verification-receipts.json", "archive/archive-closeout-records.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -439,6 +443,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_archive_manifest_records(root).failures)
     report.failures.extend(validate_archive_receipts(root).failures)
     report.failures.extend(validate_archive_verification_receipts(root).failures)
+    report.failures.extend(validate_archive_closeout_records(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

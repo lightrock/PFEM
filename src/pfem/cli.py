@@ -40,6 +40,7 @@ from pfem.custody_lifecycle_closeout_record import format_custody_lifecycle_clos
 from pfem.archive_manifest_record import format_archive_manifest_record_report, validate_archive_manifest_records
 from pfem.archive_receipt import format_archive_receipt_report, validate_archive_receipts
 from pfem.archive_verification_receipt import format_archive_verification_receipt_report, validate_archive_verification_receipts
+from pfem.archive_closeout_record import format_archive_closeout_record_report, validate_archive_closeout_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -125,6 +126,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("archive-manifest-records", "Validate PFEM archive manifest records"),
         ("archive-receipts", "Validate PFEM archive receipts"),
         ("archive-verification-receipts", "Validate PFEM archive verification receipts"),
+        ("archive-closeout-records", "Validate PFEM archive closeout records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -219,6 +221,7 @@ def main(argv: list[str] | None = None) -> int:
         "archive-manifest-records": (validate_archive_manifest_records, format_archive_manifest_record_report),
         "archive-receipts": (validate_archive_receipts, format_archive_receipt_report),
         "archive-verification-receipts": (validate_archive_verification_receipts, format_archive_verification_receipt_report),
+        "archive-closeout-records": (validate_archive_closeout_records, format_archive_closeout_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

@@ -40,6 +40,7 @@ from pfem.custody_lifecycle_closeout_record import load_custody_lifecycle_closeo
 from pfem.archive_manifest_record import load_archive_manifest_records
 from pfem.archive_receipt import load_archive_receipts
 from pfem.archive_verification_receipt import load_archive_verification_receipts
+from pfem.archive_closeout_record import load_archive_closeout_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -356,6 +357,11 @@ def _archive_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"archive_verification_receipt_id": r["archive_verification_receipt_id"], "archive_receipt_id": r["archive_receipt_id"], "verification_state": r["verification_state"], "checked_archived_refs": len(r["checked_archived_refs"])} for r in load_archive_verification_receipts(p)]
 
 
+def _archive_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "archive/archive-closeout-records.json"
+    return [] if not p.exists() else [{"archive_closeout_record_id": r["archive_closeout_record_id"], "archive_verification_receipt_id": r["archive_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_archive_closeout_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -477,6 +483,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "archive_manifest_records": _archive_manifest_record_rows(root),
         "archive_receipts": _archive_receipt_rows(root),
         "archive_verification_receipts": _archive_verification_receipt_rows(root),
+        "archive_closeout_records": _archive_closeout_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -555,6 +562,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('archive_manifest_records', 0)} archive manifest records, "
         f"{counts.get('archive_receipts', 0)} archive receipts, "
         f"{counts.get('archive_verification_receipts', 0)} archive verification receipts, "
+        f"{counts.get('archive_closeout_records', 0)} archive closeout records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -619,6 +627,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Archive Manifest Records", catalog["archive_manifest_records"], ["archive_manifest_record_id", "custody_lifecycle_closeout_record_id", "manifest_state", "manifested_refs"]))
     lines.extend(_format_table("Archive Receipts", catalog["archive_receipts"], ["archive_receipt_id", "archive_manifest_record_id", "archive_state", "archived_refs"]))
     lines.extend(_format_table("Archive Verification Receipts", catalog["archive_verification_receipts"], ["archive_verification_receipt_id", "archive_receipt_id", "verification_state", "checked_archived_refs"]))
+    lines.extend(_format_table("Archive Closeout Records", catalog["archive_closeout_records"], ["archive_closeout_record_id", "archive_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

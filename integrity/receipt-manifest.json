@@ -305,6 +305,12 @@
       "purpose": "archive verification receipts"
     },
     {
+      "path": "archive/archive-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "8c671b4831ec3950904ae1e15ae12c69860ea9a727b9347b2084c762d5a7819a",
+      "purpose": "archive closeout records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -385,7 +391,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "6fd12d4e6cb56513176874d065dcf001b85365b14073fdc85fe8d1e8dd05c21c",
+      "digest": "dac26c0c3493adb9457f08b1ebf6228f3d2883cefec39f8bb97b4a01ee1b6269",
       "purpose": "audit journal"
     },
     {

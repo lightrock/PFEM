@@ -63,6 +63,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "archive_manifest_record.schema.json": ["archive/archive-manifest-records.json"],
     "archive_receipt.schema.json": ["archive/archive-receipts.json"],
     "archive_verification_receipt.schema.json": ["archive/archive-verification-receipts.json"],
+    "archive_closeout_record.schema.json": ["archive/archive-closeout-records.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

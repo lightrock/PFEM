@@ -1,0 +1,27 @@
+[
+  {
+    "archive_closeout_record_id": "archive-closeout-basic-restore-001",
+    "closeout_kind": "archive_workflow_closeout",
+    "created_time": "2026-01-01T00:00:57Z",
+    "node_id": "formal-rollup-node-example",
+    "archive_verification_receipt_id": "archive-verification-basic-restore-001",
+    "archive_receipt_id": "archive-receipt-basic-restore-001",
+    "archive_manifest_record_id": "archive-manifest-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "archive_verified_and_closed",
+    "closed_refs": [
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "basis_refs": [
+      "archive-verification-basic-restore-001",
+      "archive-receipt-basic-restore-001",
+      "archive-manifest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_archive_closeout_records.py",
+    "summary": "Synthetic example archive closeout record showing the archive workflow was closed after archive verification passed."
+  }
+]

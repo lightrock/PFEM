@@ -710,5 +710,18 @@
     ],
     "summary": "Example archive verification receipts was recorded.",
     "source_tool": "pfem_archive_verification_receipts"
+  },
+  {
+    "audit_id": "audit-archive-closeout-basic-001",
+    "event_kind": "archive_closeout_recorded",
+    "created_time": "2026-01-01T00:00:57Z",
+    "actor_ref": "tools/pfem_archive_closeout_records.py",
+    "subject_refs": [
+      "archive-closeout-basic-restore-001",
+      "archive-verification-basic-restore-001",
+      "archive-receipt-basic-restore-001"
+    ],
+    "summary": "Example archive closeout records was recorded.",
+    "source_tool": "pfem_archive_closeout_records"
   }
 ]

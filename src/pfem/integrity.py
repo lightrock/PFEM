@@ -64,6 +64,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("archive/archive-manifest-records.json", "archive manifest records"),
     ("archive/archive-receipts.json", "archive receipts"),
     ("archive/archive-verification-receipts.json", "archive verification receipts"),
+    ("archive/archive-closeout-records.json", "archive closeout records"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
