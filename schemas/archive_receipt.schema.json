@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/archive_receipt.schema.json",
+  "title": "PFEM Archive Receipts",
+  "type": "object",
+  "required": [
+    "archive_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "archive_manifest_record_id",
+    "archive_state",
+    "archive_location_ref",
+    "archived_refs",
+    "basis_refs",
+    "archived_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "archive_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "archive_manifest_record_id": {
+      "type": "string"
+    },
+    "archive_state": {
+      "type": "string"
+    },
+    "archive_location_ref": {
+      "type": "string"
+    },
+    "archived_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "archived_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "skipped_refs": {
+      "type": "array"
+    },
+    "failed_refs": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

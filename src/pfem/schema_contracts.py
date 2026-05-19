@@ -61,6 +61,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "custody_lifecycle_verification_receipt.schema.json": ["custody/custody-lifecycle-verification-receipts.json"],
     "custody_lifecycle_closeout_record.schema.json": ["custody/custody-lifecycle-closeout-records.json"],
     "archive_manifest_record.schema.json": ["archive/archive-manifest-records.json"],
+    "archive_receipt.schema.json": ["archive/archive-receipts.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

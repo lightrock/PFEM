@@ -1,0 +1,26 @@
+[
+  {
+    "archive_receipt_id": "archive-receipt-basic-restore-001",
+    "receipt_kind": "archive_execution_receipt",
+    "created_time": "2026-01-01T00:00:55Z",
+    "node_id": "formal-rollup-node-example",
+    "archive_manifest_record_id": "archive-manifest-basic-restore-001",
+    "archive_state": "completed",
+    "archive_location_ref": "local-repository",
+    "archived_refs": [
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "skipped_refs": [],
+    "failed_refs": [],
+    "basis_refs": [
+      "archive-manifest-basic-restore-001",
+      "custody-lifecycle-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "archived_by_ref": "tools/pfem_archive_receipts.py",
+    "summary": "Synthetic example archive receipt showing the archive manifest refs were archived."
+  }
+]
