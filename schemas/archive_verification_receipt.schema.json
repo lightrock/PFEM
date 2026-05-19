@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/archive_verification_receipt.schema.json",
+  "title": "PFEM Archive Verification Receipts",
+  "type": "object",
+  "required": [
+    "archive_verification_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "archive_receipt_id",
+    "archive_manifest_record_id",
+    "verification_state",
+    "verified_archive_location_ref",
+    "checked_archived_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "expected_archived_ref_digest",
+    "actual_archived_ref_digest",
+    "verified_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "archive_verification_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "archive_receipt_id": {
+      "type": "string"
+    },
+    "archive_manifest_record_id": {
+      "type": "string"
+    },
+    "verification_state": {
+      "type": "string"
+    },
+    "verified_archive_location_ref": {
+      "type": "string"
+    },
+    "checked_archived_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "expected_archived_ref_digest": {
+      "type": "string"
+    },
+    "actual_archived_ref_digest": {
+      "type": "string"
+    },
+    "verified_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "missing_refs": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "archive_verification_receipt_id": "archive-verification-basic-restore-001",
+    "receipt_kind": "archive_location_verification",
+    "created_time": "2026-01-01T00:00:56Z",
+    "node_id": "formal-rollup-node-example",
+    "archive_receipt_id": "archive-receipt-basic-restore-001",
+    "archive_manifest_record_id": "archive-manifest-basic-restore-001",
+    "verification_state": "passed",
+    "verified_archive_location_ref": "local-repository",
+    "checked_archived_refs": [
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "archive-receipt-basic-restore-001",
+      "archive-manifest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-archived-ref-list",
+    "expected_archived_ref_digest": "549a4d190651c22f0e64c62e84393862f166b9da5bcb00fa90a97c9e20b7692a",
+    "actual_archived_ref_digest": "549a4d190651c22f0e64c62e84393862f166b9da5bcb00fa90a97c9e20b7692a",
+    "verified_by_ref": "tools/pfem_archive_verification_receipts.py",
+    "summary": "Synthetic example archive verification receipt showing archived refs and archive location were checked."
+  }
+]
