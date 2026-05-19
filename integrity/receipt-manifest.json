@@ -347,6 +347,12 @@
       "purpose": "archive lifecycle records"
     },
     {
+      "path": "archive/archive-lifecycle-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "8f7d0ec6be4d36e7130387f1b57cb9fa5c9846382ea1a47e536067d01364092e",
+      "purpose": "archive lifecycle verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -427,7 +433,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "7ad163f68469f0a1b1d804b140eb59be62bc6d78832ebc9081998aae2911ca08",
+      "digest": "b95082cd7ac7330f43eb43410c8296cab06671c794685f8a488cfad1f7528e4a",
       "purpose": "audit journal"
     },
     {
