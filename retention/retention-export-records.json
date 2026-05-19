@@ -1,0 +1,35 @@
+[
+  {
+    "retention_export_record_id": "retention-export-basic-restore-001",
+    "export_kind": "retention_summary_export",
+    "created_time": "2026-01-01T00:01:56Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_summary_closeout_record_id": "retention-summary-closeout-basic-restore-001",
+    "retention_summary_verification_receipt_id": "retention-summary-verification-basic-restore-001",
+    "export_state": "exported",
+    "export_scope": "closed_retention_summary",
+    "exported_refs": [
+      "retention-summary-closeout-basic-restore-001",
+      "retention-summary-verification-basic-restore-001",
+      "retention-summary-basic-restore-001",
+      "retention-dashboard-snapshot-closeout-basic-restore-001",
+      "retention-report-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-summary-closeout-basic-restore-001",
+      "retention-summary-verification-basic-restore-001",
+      "retention-summary-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-export-ref-list",
+    "export_ref_digest": "b885d4dccc2332cc8d40c8e1bc1d1bd6ceffd4fa37672129250b860135ec9f87",
+    "exported_by_ref": "tools/pfem_retention_export_records.py",
+    "summary": "Synthetic example retention export record exporting the closed retention summary for handoff or external use."
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_export_record.schema.json",
+  "title": "PFEM Retention Export Records",
+  "type": "object",
+  "required": [
+    "retention_export_record_id",
+    "export_kind",
+    "created_time",
+    "node_id",
+    "retention_summary_closeout_record_id",
+    "retention_summary_verification_receipt_id",
+    "export_state",
+    "export_scope",
+    "exported_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "export_ref_digest",
+    "exported_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_export_record_id": {
+      "type": "string"
+    },
+    "export_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_summary_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_summary_verification_receipt_id": {
+      "type": "string"
+    },
+    "export_state": {
+      "type": "string"
+    },
+    "export_scope": {
+      "type": "string"
+    },
+    "exported_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "export_ref_digest": {
+      "type": "string"
+    },
+    "exported_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

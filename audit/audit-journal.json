@@ -1417,5 +1417,135 @@
     ],
     "summary": "Example retention dashboard snapshot verification receipts was recorded.",
     "source_tool": "pfem_retention_dashboard_snapshot_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-dashboard-snapshot-closeout-basic-001",
+    "event_kind": "retention_dashboard_snapshot_closeout_recorded",
+    "created_time": "2026-01-01T00:01:52Z",
+    "actor_ref": "tools/pfem_retention_dashboard_snapshot_closeout_records.py",
+    "subject_refs": [
+      "retention-dashboard-snapshot-closeout-basic-restore-001",
+      "retention-dashboard-snapshot-verification-basic-restore-001",
+      "retention-dashboard-snapshot-basic-restore-001"
+    ],
+    "summary": "Example retention dashboard snapshot closeout records was recorded.",
+    "source_tool": "pfem_retention_dashboard_snapshot_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-summary-basic-001",
+    "event_kind": "retention_summary_recorded",
+    "created_time": "2026-01-01T00:01:53Z",
+    "actor_ref": "tools/pfem_retention_summary_records.py",
+    "subject_refs": [
+      "retention-summary-basic-restore-001",
+      "retention-dashboard-snapshot-verification-basic-restore-001",
+      "retention-dashboard-snapshot-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention summary records was recorded.",
+    "source_tool": "pfem_retention_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-summary-verification-basic-001",
+    "event_kind": "retention_summary_verification_recorded",
+    "created_time": "2026-01-01T00:01:54Z",
+    "actor_ref": "tools/pfem_retention_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-summary-verification-basic-restore-001",
+      "retention-dashboard-snapshot-closeout-basic-restore-001",
+      "retention-summary-basic-restore-001"
+    ],
+    "summary": "Example retention summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-summary-closeout-basic-001",
+    "event_kind": "retention_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:01:55Z",
+    "actor_ref": "tools/pfem_retention_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-summary-closeout-basic-restore-001",
+      "retention-summary-basic-restore-001",
+      "retention-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention summary closeout records was recorded.",
+    "source_tool": "pfem_retention_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-export-basic-001",
+    "event_kind": "retention_export_recorded",
+    "created_time": "2026-01-01T00:01:56Z",
+    "actor_ref": "tools/pfem_retention_export_records.py",
+    "subject_refs": [
+      "retention-export-basic-restore-001",
+      "retention-summary-verification-basic-restore-001",
+      "retention-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention export records was recorded.",
+    "source_tool": "pfem_retention_export_records"
+  },
+  {
+    "audit_id": "audit-retention-export-verification-basic-001",
+    "event_kind": "retention_export_verification_recorded",
+    "created_time": "2026-01-01T00:01:57Z",
+    "actor_ref": "tools/pfem_retention_export_verification_receipts.py",
+    "subject_refs": [
+      "retention-export-verification-basic-restore-001",
+      "retention-summary-closeout-basic-restore-001",
+      "retention-export-basic-restore-001"
+    ],
+    "summary": "Example retention export verification receipts was recorded.",
+    "source_tool": "pfem_retention_export_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-export-closeout-basic-001",
+    "event_kind": "retention_export_closeout_recorded",
+    "created_time": "2026-01-01T00:01:58Z",
+    "actor_ref": "tools/pfem_retention_export_closeout_records.py",
+    "subject_refs": [
+      "retention-export-closeout-basic-restore-001",
+      "retention-export-basic-restore-001",
+      "retention-export-verification-basic-restore-001"
+    ],
+    "summary": "Example retention export closeout records was recorded.",
+    "source_tool": "pfem_retention_export_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-handoff-basic-001",
+    "event_kind": "retention_handoff_recorded",
+    "created_time": "2026-01-01T00:01:59Z",
+    "actor_ref": "tools/pfem_retention_handoff_records.py",
+    "subject_refs": [
+      "retention-handoff-basic-restore-001",
+      "retention-export-verification-basic-restore-001",
+      "retention-export-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention handoff records was recorded.",
+    "source_tool": "pfem_retention_handoff_records"
+  },
+  {
+    "audit_id": "audit-retention-handoff-verification-basic-001",
+    "event_kind": "retention_handoff_verification_recorded",
+    "created_time": "2026-01-01T00:02:00Z",
+    "actor_ref": "tools/pfem_retention_handoff_verification_receipts.py",
+    "subject_refs": [
+      "retention-handoff-verification-basic-restore-001",
+      "retention-export-closeout-basic-restore-001",
+      "retention-handoff-basic-restore-001"
+    ],
+    "summary": "Example retention handoff verification receipts was recorded.",
+    "source_tool": "pfem_retention_handoff_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-handoff-closeout-basic-001",
+    "event_kind": "retention_handoff_closeout_recorded",
+    "created_time": "2026-01-01T00:02:01Z",
+    "actor_ref": "tools/pfem_retention_handoff_closeout_records.py",
+    "subject_refs": [
+      "retention-handoff-closeout-basic-restore-001",
+      "retention-handoff-basic-restore-001",
+      "retention-handoff-verification-basic-restore-001"
+    ],
+    "summary": "Example retention handoff closeout records was recorded.",
+    "source_tool": "pfem_retention_handoff_closeout_records"
   }
 ]

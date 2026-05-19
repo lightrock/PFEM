@@ -1,0 +1,36 @@
+[
+  {
+    "retention_handoff_verification_receipt_id": "retention-handoff-verification-basic-restore-001",
+    "receipt_kind": "retention_handoff_verification",
+    "created_time": "2026-01-01T00:02:00Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_handoff_record_id": "retention-handoff-basic-restore-001",
+    "retention_export_closeout_record_id": "retention-export-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_handoff_refs": [
+      "retention-export-closeout-basic-restore-001",
+      "retention-export-verification-basic-restore-001",
+      "retention-export-basic-restore-001",
+      "retention-summary-closeout-basic-restore-001",
+      "retention-publication-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-handoff-basic-restore-001",
+      "retention-export-closeout-basic-restore-001",
+      "retention-export-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-handoff-ref-list",
+    "expected_handoff_ref_digest": "bfc16111d60ea9c58c86071536218adec1bfa9c658943a9f2e09a70465c5df60",
+    "actual_handoff_ref_digest": "bfc16111d60ea9c58c86071536218adec1bfa9c658943a9f2e09a70465c5df60",
+    "verified_by_ref": "tools/pfem_retention_handoff_verification_receipts.py",
+    "summary": "Synthetic example retention handoff verification receipt showing handoff refs and digest were checked."
+  }
+]

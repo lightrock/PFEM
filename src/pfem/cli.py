@@ -95,6 +95,16 @@ from pfem.retention_publication_verification_receipt import format_retention_pub
 from pfem.retention_publication_closeout_record import format_retention_publication_closeout_record_report, validate_retention_publication_closeout_records
 from pfem.retention_dashboard_snapshot_record import format_retention_dashboard_snapshot_record_report, validate_retention_dashboard_snapshot_records
 from pfem.retention_dashboard_snapshot_verification_receipt import format_retention_dashboard_snapshot_verification_receipt_report, validate_retention_dashboard_snapshot_verification_receipts
+from pfem.retention_dashboard_snapshot_closeout_record import format_retention_dashboard_snapshot_closeout_record_report, validate_retention_dashboard_snapshot_closeout_records
+from pfem.retention_summary_record import format_retention_summary_record_report, validate_retention_summary_records
+from pfem.retention_summary_verification_receipt import format_retention_summary_verification_receipt_report, validate_retention_summary_verification_receipts
+from pfem.retention_summary_closeout_record import format_retention_summary_closeout_record_report, validate_retention_summary_closeout_records
+from pfem.retention_export_record import format_retention_export_record_report, validate_retention_export_records
+from pfem.retention_export_verification_receipt import format_retention_export_verification_receipt_report, validate_retention_export_verification_receipts
+from pfem.retention_export_closeout_record import format_retention_export_closeout_record_report, validate_retention_export_closeout_records
+from pfem.retention_handoff_record import format_retention_handoff_record_report, validate_retention_handoff_records
+from pfem.retention_handoff_verification_receipt import format_retention_handoff_verification_receipt_report, validate_retention_handoff_verification_receipts
+from pfem.retention_handoff_closeout_record import format_retention_handoff_closeout_record_report, validate_retention_handoff_closeout_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -235,6 +245,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-publication-closeout-records", "Validate PFEM retention publication closeout records"),
         ("retention-dashboard-snapshot-records", "Validate PFEM retention dashboard snapshot records"),
         ("retention-dashboard-snapshot-verification-receipts", "Validate PFEM retention dashboard snapshot verification receipts"),
+        ("retention-dashboard-snapshot-closeout-records", "Validate PFEM retention dashboard snapshot closeout records"),
+        ("retention-summary-records", "Validate PFEM retention summary records"),
+        ("retention-summary-verification-receipts", "Validate PFEM retention summary verification receipts"),
+        ("retention-summary-closeout-records", "Validate PFEM retention summary closeout records"),
+        ("retention-export-records", "Validate PFEM retention export records"),
+        ("retention-export-verification-receipts", "Validate PFEM retention export verification receipts"),
+        ("retention-export-closeout-records", "Validate PFEM retention export closeout records"),
+        ("retention-handoff-records", "Validate PFEM retention handoff records"),
+        ("retention-handoff-verification-receipts", "Validate PFEM retention handoff verification receipts"),
+        ("retention-handoff-closeout-records", "Validate PFEM retention handoff closeout records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -384,6 +404,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-publication-closeout-records": (validate_retention_publication_closeout_records, format_retention_publication_closeout_record_report),
         "retention-dashboard-snapshot-records": (validate_retention_dashboard_snapshot_records, format_retention_dashboard_snapshot_record_report),
         "retention-dashboard-snapshot-verification-receipts": (validate_retention_dashboard_snapshot_verification_receipts, format_retention_dashboard_snapshot_verification_receipt_report),
+        "retention-dashboard-snapshot-closeout-records": (validate_retention_dashboard_snapshot_closeout_records, format_retention_dashboard_snapshot_closeout_record_report),
+        "retention-summary-records": (validate_retention_summary_records, format_retention_summary_record_report),
+        "retention-summary-verification-receipts": (validate_retention_summary_verification_receipts, format_retention_summary_verification_receipt_report),
+        "retention-summary-closeout-records": (validate_retention_summary_closeout_records, format_retention_summary_closeout_record_report),
+        "retention-export-records": (validate_retention_export_records, format_retention_export_record_report),
+        "retention-export-verification-receipts": (validate_retention_export_verification_receipts, format_retention_export_verification_receipt_report),
+        "retention-export-closeout-records": (validate_retention_export_closeout_records, format_retention_export_closeout_record_report),
+        "retention-handoff-records": (validate_retention_handoff_records, format_retention_handoff_record_report),
+        "retention-handoff-verification-receipts": (validate_retention_handoff_verification_receipts, format_retention_handoff_verification_receipt_report),
+        "retention-handoff-closeout-records": (validate_retention_handoff_closeout_records, format_retention_handoff_closeout_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

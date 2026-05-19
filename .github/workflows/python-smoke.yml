@@ -113,6 +113,16 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_retention_publication_closeout_records.py
       - run: PYTHONPATH=src python tools/pfem_retention_dashboard_snapshot_records.py
       - run: PYTHONPATH=src python tools/pfem_retention_dashboard_snapshot_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_dashboard_snapshot_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_summary_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_summary_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_summary_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_export_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_export_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_export_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_handoff_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_handoff_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_handoff_closeout_records.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

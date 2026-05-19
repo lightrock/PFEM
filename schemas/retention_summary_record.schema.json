@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_summary_record.schema.json",
+  "title": "PFEM Retention Summary Records",
+  "type": "object",
+  "required": [
+    "retention_summary_record_id",
+    "summary_kind",
+    "created_time",
+    "node_id",
+    "retention_dashboard_snapshot_closeout_record_id",
+    "retention_dashboard_snapshot_verification_receipt_id",
+    "summary_state",
+    "summary_scope",
+    "summary_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "summary_ref_digest",
+    "summarized_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_summary_record_id": {
+      "type": "string"
+    },
+    "summary_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_dashboard_snapshot_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_dashboard_snapshot_verification_receipt_id": {
+      "type": "string"
+    },
+    "summary_state": {
+      "type": "string"
+    },
+    "summary_scope": {
+      "type": "string"
+    },
+    "summary_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "summary_ref_digest": {
+      "type": "string"
+    },
+    "summarized_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

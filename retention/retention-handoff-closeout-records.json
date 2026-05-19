@@ -1,0 +1,33 @@
+[
+  {
+    "retention_handoff_closeout_record_id": "retention-handoff-closeout-basic-restore-001",
+    "closeout_kind": "retention_handoff_closeout",
+    "created_time": "2026-01-01T00:02:01Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_handoff_verification_receipt_id": "retention-handoff-verification-basic-restore-001",
+    "retention_handoff_record_id": "retention-handoff-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "retention_handoff_verified_and_closed",
+    "closed_refs": [
+      "retention-export-closeout-basic-restore-001",
+      "retention-export-verification-basic-restore-001",
+      "retention-export-basic-restore-001",
+      "retention-summary-closeout-basic-restore-001",
+      "retention-publication-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-handoff-verification-basic-restore-001",
+      "retention-handoff-basic-restore-001",
+      "retention-export-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_retention_handoff_closeout_records.py",
+    "summary": "Synthetic example retention handoff closeout record showing the handoff workflow was closed after verification."
+  }
+]

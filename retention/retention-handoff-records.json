@@ -1,0 +1,35 @@
+[
+  {
+    "retention_handoff_record_id": "retention-handoff-basic-restore-001",
+    "handoff_kind": "retention_export_handoff",
+    "created_time": "2026-01-01T00:01:59Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_export_closeout_record_id": "retention-export-closeout-basic-restore-001",
+    "retention_export_verification_receipt_id": "retention-export-verification-basic-restore-001",
+    "handoff_state": "handed_off",
+    "handoff_scope": "closed_retention_export",
+    "handoff_refs": [
+      "retention-export-closeout-basic-restore-001",
+      "retention-export-verification-basic-restore-001",
+      "retention-export-basic-restore-001",
+      "retention-summary-closeout-basic-restore-001",
+      "retention-publication-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-export-closeout-basic-restore-001",
+      "retention-export-verification-basic-restore-001",
+      "retention-summary-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-handoff-ref-list",
+    "handoff_ref_digest": "bfc16111d60ea9c58c86071536218adec1bfa9c658943a9f2e09a70465c5df60",
+    "handed_off_by_ref": "tools/pfem_retention_handoff_records.py",
+    "summary": "Synthetic example retention handoff record handing off the verified export to the next PFEM consumer."
+  }
+]
