@@ -16,6 +16,7 @@ from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
 from pfem.integrity import validate_integrity_manifest
 from pfem.node_runtime import validate_node_registry
+from pfem.playbook import validate_playbook_repository
 from pfem.policy import validate_policy_repository
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
 from pfem.quality import validate_quality_repository
@@ -39,7 +40,7 @@ EXPECTED_PATHS = [
     "docs/architecture/handling-redaction.md", "docs/architecture/retention-disposition.md",
     "docs/architecture/exchange-bundles.md", "docs/architecture/exchange-receipts.md",
     "docs/architecture/reconciliation-records.md", "docs/architecture/confidence-quality.md",
-    "docs/architecture/action-records.md",
+    "docs/architecture/action-records.md", "docs/architecture/playbooks.md",
     "ai/architecture-rules.md", "ai/adapter-rules.md", "ai/evidence-rules.md",
     "ai/node-profile-rules.md", "ai/review-checklist.md",
     "contracts/adapter-contract.md", "contracts/evidence-contract.md",
@@ -51,6 +52,7 @@ EXPECTED_PATHS = [
     "contracts/retention-disposition-contract.md", "contracts/exchange-bundle-contract.md",
     "contracts/exchange-receipt-contract.md", "contracts/reconciliation-contract.md",
     "contracts/confidence-quality-contract.md", "contracts/action-contract.md",
+    "contracts/playbook-contract.md",
     "schemas/adapter_manifest.schema.json", "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json", "schemas/node_manifest.schema.json",
     "schemas/node_registry.schema.json", "schemas/node_profile.schema.json",
@@ -61,6 +63,7 @@ EXPECTED_PATHS = [
     "schemas/exchange_receipt.schema.json", "schemas/reconciliation_record.schema.json",
     "schemas/quality_policy.schema.json", "schemas/quality_assessment.schema.json",
     "schemas/action_policy.schema.json", "schemas/action_record.schema.json",
+    "schemas/playbook.schema.json",
     "schemas/raw_evidence.schema.json", "schemas/normalized_observation.schema.json",
     "schemas/finding.schema.json", "schemas/alert.schema.json",
     "schemas/evidence_package.schema.json", "schemas/rollup_summary.schema.json",
@@ -75,6 +78,7 @@ EXPECTED_PATHS = [
     "reconciliation/README.md", "reconciliation/reconciliation-records.json",
     "quality/README.md", "quality/quality-policy.json", "quality/quality-assessments.json",
     "action/README.md", "action/action-policy.json", "action/action-records.json",
+    "playbooks/README.md", "playbooks/examples/monitor-accepted-rollup.playbook.json",
     "handling/README.md", "handling/handling-policy.json",
     "retention/README.md", "retention/retention-policy.json",
     "bundles/README.md", "bundles/examples/basic-rollup-exchange.bundle.json",
@@ -84,8 +88,8 @@ EXPECTED_PATHS = [
     "policy/README.md", "policy/sharing-policy.json", "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -242,6 +246,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_retention_policy(root).failures)
     report.failures.extend(validate_quality_repository(root).failures)
     report.failures.extend(validate_action_repository(root).failures)
+    report.failures.extend(validate_playbook_repository(root).failures)
     report.failures.extend(validate_review_repository(root).failures)
     report.failures.extend(validate_audit_repository(root).failures)
     report.failures.extend(validate_bundle_repository(root).failures)

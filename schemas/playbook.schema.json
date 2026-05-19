@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/playbook.schema.json",
+  "title": "PFEM Playbook",
+  "type": "object",
+  "required": [
+    "playbook_id",
+    "playbook_kind",
+    "version",
+    "status",
+    "owner_ref",
+    "applies_to_action_kinds",
+    "required_inputs",
+    "summary",
+    "steps"
+  ],
+  "properties": {
+    "playbook_id": {
+      "type": "string"
+    },
+    "playbook_kind": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "owner_ref": {
+      "type": "string"
+    },
+    "applies_to_action_kinds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "step_id",
+          "title",
+          "instruction",
+          "expected_output"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "instruction": {
+            "type": "string"
+          },
+          "expected_output": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

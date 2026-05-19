@@ -25,6 +25,7 @@ KNOWN_EVENT_KINDS = {
     "reconciliation_recorded",
     "quality_assessment_recorded",
     "action_recorded",
+    "playbook_registered",
 }
 
 
@@ -102,6 +103,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("reconciliation/reconciliation-records.json", "reconciliation_id"),
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
+        ("playbooks/**/*.playbook.json", "playbook_id"),
     ]
     ids: set[str] = set()
     for pattern, key in patterns:
@@ -117,7 +119,8 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     for folder in [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "topology", "review", "audit", "exchange",
-        "reconciliation", "quality", "action", "integrity", "schemas", "contracts", "docs", "bundles",
+        "reconciliation", "quality", "action", "playbooks", "integrity",
+        "schemas", "contracts", "docs", "bundles",
     ]:
         base = root / folder
         if not base.exists():

@@ -40,6 +40,12 @@
         "type": "string"
       }
     },
+    "playbook_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "priority": {
       "type": "string"
     },

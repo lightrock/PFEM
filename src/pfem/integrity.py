@@ -26,6 +26,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("quality/quality-assessments.json", "quality assessments"),
     ("action/action-policy.json", "action policy"),
     ("action/action-records.json", "action records"),
+    ("playbooks/examples/monitor-accepted-rollup.playbook.json", "accepted rollup monitoring playbook"),
     ("topology/federation-topology.json", "federation topology"),
     ("review/review-records.json", "review records"),
     ("audit/audit-journal.json", "audit journal"),

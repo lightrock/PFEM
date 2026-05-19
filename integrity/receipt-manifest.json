@@ -73,8 +73,14 @@
     {
       "path": "action/action-records.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "3947c9fde8c87bb1a630bb0d5324175f018ada8f44a674f1235a243926b83788",
+      "digest": "b59955b96d33a35cf09dc2eb45379826c4b0094bc53cc5271b436e47b69c79b5",
       "purpose": "action records"
+    },
+    {
+      "path": "playbooks/examples/monitor-accepted-rollup.playbook.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "40f9bbec8967845157099bd4f2fc95fd41da0c485d24deea901eb71c76eaca8b",
+      "purpose": "accepted rollup monitoring playbook"
     },
     {
       "path": "topology/federation-topology.json",
@@ -91,7 +97,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "9de3a3e35f1d44cec0710c6471e5d582c6da4e8f7d403ec2b84c70cee3a764e8",
+      "digest": "44ce344c62f2e079137802e61facf0d775d5c70386390c8b07af8e9c30bf6f21",
       "purpose": "audit journal"
     },
     {

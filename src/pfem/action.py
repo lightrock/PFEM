@@ -44,6 +44,7 @@ class ActionRecord:
     owner_ref: str
     subject_refs: list[str]
     basis_refs: list[str]
+    playbook_refs: list[str]
     priority: str
     action_state: str
     summary: str
@@ -120,6 +121,7 @@ def load_action_records(path: str | Path) -> list[ActionRecord]:
             owner_ref=str(record.get("owner_ref", "")),
             subject_refs=_as_list(record.get("subject_refs", [])),
             basis_refs=_as_list(record.get("basis_refs", [])),
+            playbook_refs=_as_list(record.get("playbook_refs", [])),
             priority=str(record.get("priority", "")),
             action_state=str(record.get("action_state", "")),
             summary=str(record.get("summary", "")),
@@ -146,6 +148,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("reconciliation/reconciliation-records.json", "reconciliation_id"),
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
+        ("playbooks/**/*.playbook.json", "playbook_id"),
     ]
     ids: set[str] = set()
     for pattern, key in patterns:
@@ -160,7 +163,7 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     folders = [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "topology", "review", "audit", "exchange",
-        "reconciliation", "quality", "action", "integrity", "schemas",
+        "reconciliation", "quality", "action", "playbooks", "integrity", "schemas",
         "contracts", "docs", "tests", "bundles",
     ]
     paths: set[str] = set()
@@ -261,6 +264,10 @@ def validate_action_repository(root: str | Path) -> ActionReport:
         for ref in record.basis_refs:
             if not _known_ref(ref, known_ids, known_paths):
                 failures.append(f"action {record.action_id!r} references unknown basis_ref {ref!r}")
+
+        for ref in record.playbook_refs:
+            if not _known_ref(ref, known_ids, known_paths):
+                failures.append(f"action {record.action_id!r} references unknown playbook_ref {ref!r}")
 
         for ref in record.completion_refs:
             if not _known_ref(ref, known_ids, known_paths):

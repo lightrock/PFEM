@@ -15,6 +15,7 @@ from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
 from pfem.integrity import format_integrity_report, validate_integrity_manifest, write_integrity_manifest
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
+from pfem.playbook import format_playbook_report, validate_playbook_repository
 from pfem.policy import format_policy_report, validate_policy_repository
 from pfem.quality import format_quality_report, validate_quality_repository
 from pfem.reconciliation import format_reconciliation_report, validate_reconciliation_repository
@@ -34,6 +35,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("doctor", "Run PFEM repository sanity checks"),
         ("catalog", "Print PFEM catalog from disk"),
         ("actions", "Validate PFEM action records"),
+        ("playbooks", "Validate PFEM playbooks"),
         ("audit", "Validate PFEM audit journal"),
         ("bundles", "Validate PFEM exchange bundles"),
         ("exchange", "Validate PFEM exchange receipts"),
@@ -83,6 +85,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "actions":
         report = validate_action_repository(Path(args.path))
         print(format_action_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "playbooks":
+        report = validate_playbook_repository(Path(args.path))
+        print(format_playbook_report(report))
         return 0 if report.ok else 1
 
     if args.command == "audit":

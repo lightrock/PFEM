@@ -1,0 +1,49 @@
+{
+  "playbook_id": "playbook-monitor-accepted-rollup",
+  "playbook_kind": "monitoring",
+  "version": "0.1",
+  "status": "draft",
+  "owner_ref": "formal-rollup-node-example",
+  "applies_to_action_kinds": [
+    "monitor"
+  ],
+  "required_inputs": [
+    "quality_assessment",
+    "reconciliation_record",
+    "exchange_receipt",
+    "bundle"
+  ],
+  "summary": "Monitor an accepted rollup exchange without escalating it.",
+  "steps": [
+    {
+      "step_id": "check-quality",
+      "title": "Check quality assessment",
+      "instruction": "Read the quality assessment and confirm the confidence level, flags, uncertainty summary, and recommended use.",
+      "expected_output": "Quality caveats are understood before downstream use."
+    },
+    {
+      "step_id": "check-reconciliation",
+      "title": "Check reconciliation state",
+      "instruction": "Confirm whether the related reconciliation record leaves the subject active, superseded, rejected, corrected, or unresolved.",
+      "expected_output": "Downstream users understand the current result state."
+    },
+    {
+      "step_id": "check-exchange",
+      "title": "Check exchange receipt",
+      "instruction": "Confirm the exchange receipt state and whether the bundle was accepted, rejected, or still needs review.",
+      "expected_output": "Bundle handoff status is clear."
+    },
+    {
+      "step_id": "record-action-update",
+      "title": "Record action update if needed",
+      "instruction": "If monitoring changes state, update or add an action record rather than editing evidence records.",
+      "expected_output": "Operational state is kept separate from evidence."
+    }
+  ],
+  "stop_conditions": [
+    "quality assessment is missing",
+    "reconciliation result is unresolved",
+    "exchange receipt indicates rejection",
+    "required referenced records cannot be found"
+  ]
+}

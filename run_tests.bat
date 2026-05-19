@@ -41,6 +41,11 @@ python tools\pfem_actions.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM playbook validation...
+python tools\pfem_playbooks.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM review validation...
 python tools\pfem_review.py
 if errorlevel 1 exit /b 1

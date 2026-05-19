@@ -16,6 +16,7 @@ from pfem.exchange import load_exchange_receipts
 from pfem.handling import load_handling_policy
 from pfem.integrity import load_integrity_manifest
 from pfem.node_runtime import load_node_registry
+from pfem.playbook import load_playbooks
 from pfem.policy import load_sharing_policy
 from pfem.profile_runtime import load_profile_registry
 from pfem.quality import load_quality_assessments, load_quality_policy
@@ -123,6 +124,18 @@ def _action_policy_rows(root: Path) -> list[dict[str, Any]]:
     return [{"action_kind": kind.action_kind, "display_name": kind.display_name} for kind in policy.action_kinds]
 
 
+def _playbook_rows(root: Path) -> list[dict[str, Any]]:
+    return [
+        {
+            "playbook_id": playbook.playbook_id,
+            "playbook_kind": playbook.playbook_kind,
+            "status": playbook.status,
+            "steps": len(playbook.steps),
+        }
+        for _, playbook in load_playbooks(root)
+    ]
+
+
 def _handling_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "handling" / "handling-policy.json"
     if not p.exists():
@@ -174,6 +187,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     quality_assessments = _quality_assessment_rows(root)
     action_kinds = _action_policy_rows(root)
     action_records = _action_rows(root)
+    playbooks = _playbook_rows(root)
     handling_labels = _handling_rows(root)
     retention_classes = _retention_rows(root)
     integrity_receipts = _integrity_rows(root)
@@ -191,6 +205,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "quality_assessments": len(quality_assessments),
             "action_kinds": len(action_kinds),
             "action_records": len(action_records),
+            "playbooks": len(playbooks),
             "handling_labels": len(handling_labels), "retention_classes": len(retention_classes),
             "integrity_receipts": len(integrity_receipts), "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
@@ -203,6 +218,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "quality_assessments": quality_assessments,
         "action_kinds": action_kinds,
         "action_records": action_records,
+        "playbooks": playbooks,
         "handling_labels": handling_labels, "retention_classes": retention_classes,
         "integrity_receipts": integrity_receipts, "sharing_scopes": sharing_scopes, "review_gates": review_gates,
     }
@@ -233,6 +249,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['reconciliation_records']} reconciliation records, "
         f"{counts['quality_levels']} quality levels, {counts['quality_assessments']} quality assessments, "
         f"{counts['action_kinds']} action kinds, {counts['action_records']} action records, "
+        f"{counts['playbooks']} playbooks, "
         f"{counts['handling_labels']} handling labels, {counts['retention_classes']} retention classes, "
         f"{counts['integrity_receipts']} integrity receipts, {counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
@@ -252,6 +269,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Quality Assessments", catalog["quality_assessments"], ["quality_assessment_id", "confidence_level", "flags"]))
     lines.extend(_format_table("Action Kinds", catalog["action_kinds"], ["action_kind", "display_name"]))
     lines.extend(_format_table("Action Records", catalog["action_records"], ["action_id", "action_kind", "priority", "action_state"]))
+    lines.extend(_format_table("Playbooks", catalog["playbooks"], ["playbook_id", "playbook_kind", "status", "steps"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
     lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))

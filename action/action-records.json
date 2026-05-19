@@ -14,10 +14,13 @@
       "review-rollup-basic-001",
       "quality-basic-rollup-001"
     ],
+    "playbook_refs": [
+      "playbook-monitor-accepted-rollup"
+    ],
     "priority": "routine",
     "action_state": "proposed",
     "summary": "Example action to monitor accepted synthetic rollup exchange.",
-    "next_step": "Use as a fixture showing that PFEM can attach a next-step action to quality/reconciliation outcomes.",
+    "next_step": "Use the accepted-rollup monitoring playbook as a fixture procedure.",
     "completion_refs": []
   }
 ]

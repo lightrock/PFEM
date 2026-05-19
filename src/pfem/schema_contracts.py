@@ -28,6 +28,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "quality_assessment.schema.json": ["quality/quality-assessments.json"],
     "action_policy.schema.json": ["action/action-policy.json"],
     "action_record.schema.json": ["action/action-records.json"],
+    "playbook.schema.json": ["playbooks/**/*.playbook.json"],
 }
 
 
