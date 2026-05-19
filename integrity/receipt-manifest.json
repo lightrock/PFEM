@@ -413,6 +413,12 @@
       "purpose": "retention decision approvals"
     },
     {
+      "path": "retention/retention-action-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "2abf4cf74d41629fb17ad3975f886dbd65fe3c8f3f1c4c42fb79c944794e5799",
+      "purpose": "retention action receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -493,7 +499,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "b08bcc4ceb7ab342089ca4fa70627b144d41f891f9fe8a6d999db56fa5e368b4",
+      "digest": "65f73c9879a29a6adfffd86100d8bb07aa12364bf37739b20d3c107f8977cc7c",
       "purpose": "audit journal"
     },
     {

@@ -326,6 +326,11 @@ python tools\pfem_retention_decision_approvals.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention action receipt validation...
+python tools\pfem_retention_action_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

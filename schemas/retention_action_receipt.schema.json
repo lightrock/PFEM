@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_action_receipt.schema.json",
+  "title": "PFEM Retention Action Receipts",
+  "type": "object",
+  "required": [
+    "retention_action_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "retention_decision_approval_id",
+    "retention_decision_record_id",
+    "action_state",
+    "action",
+    "action_scope",
+    "acted_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "action_ref_digest",
+    "acted_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_action_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_decision_approval_id": {
+      "type": "string"
+    },
+    "retention_decision_record_id": {
+      "type": "string"
+    },
+    "action_state": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "action_scope": {
+      "type": "string"
+    },
+    "acted_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "action_ref_digest": {
+      "type": "string"
+    },
+    "acted_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
