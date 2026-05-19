@@ -812,5 +812,18 @@
     ],
     "summary": "Example archive lifecycle verification receipts was recorded.",
     "source_tool": "pfem_archive_lifecycle_verification_receipts"
+  },
+  {
+    "audit_id": "audit-archive-lifecycle-closeout-basic-001",
+    "event_kind": "archive_lifecycle_closeout_recorded",
+    "created_time": "2026-01-01T00:01:05Z",
+    "actor_ref": "tools/pfem_archive_lifecycle_closeout_records.py",
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001"
+    ],
+    "summary": "Example archive lifecycle closeout records was recorded.",
+    "source_tool": "pfem_archive_lifecycle_closeout_records"
   }
 ]

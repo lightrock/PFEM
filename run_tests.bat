@@ -276,6 +276,11 @@ python tools\pfem_archive_lifecycle_verification_receipts.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM archive lifecycle closeout record validation...
+python tools\pfem_archive_lifecycle_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1
