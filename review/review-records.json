@@ -1,0 +1,15 @@
+[
+  {
+    "review_id": "review-rollup-basic-001",
+    "review_gate": "review-before-rollup",
+    "decision": "approved",
+    "reviewer_role": "example-reviewer",
+    "created_time": "2026-01-01T00:00:04Z",
+    "subject_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "sharing_scope": "example",
+    "notes": "Example review record proving the review-gate pattern."
+  }
+]

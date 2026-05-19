@@ -1,8 +1,4 @@
-"""Lightweight PFEM schema contract checks.
-
-This is not a full JSON Schema implementation. It checks the minimum contract
-fields declared in PFEM schema files so fixture records do not silently drift.
-"""
+"""Lightweight PFEM schema contract checks."""
 
 from __future__ import annotations
 
@@ -21,6 +17,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "evidence_package.schema.json": ["tests/fixtures/**/evidence_package.json"],
     "rollup_summary.schema.json": ["tests/fixtures/**/rollup_summary.json"],
     "federation_message.schema.json": ["tests/fixtures/**/federation_message.json"],
+    "review_record.schema.json": ["review/review-records.json"],
 }
 
 
@@ -71,7 +68,7 @@ def validate_records_against_schema(schema_path: Path, record_paths: list[Path],
             checked += 1
             record_label = f"{record_path.relative_to(root)}[{index}]"
             for field in required:
-                if field not in record or record[field] in (None, ""):
+                if field not in record or record[field] in (None, "", []):
                     failures.append(
                         f"{record_label} missing required field {field!r} from {schema_path.name}"
                     )

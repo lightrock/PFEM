@@ -12,6 +12,7 @@ from pfem.example_runtime import load_example_registry
 from pfem.node_runtime import load_node_registry
 from pfem.policy import load_sharing_policy
 from pfem.profile_runtime import load_profile_registry
+from pfem.review import load_review_records
 from pfem.source_runtime import load_source_registry
 
 
@@ -25,46 +26,36 @@ def _capability_rows(root: Path) -> list[dict[str, Any]]:
 
 def _adapter_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "adapters" / "adapter-registry.json"
-    if not p.exists():
-        return []
-    return [{"adapter_id": e.adapter_id, "adapter_kind": e.adapter_kind, "status": e.status, "path": e.path} for e in load_adapter_registry(p).adapters]
+    return [] if not p.exists() else [{"adapter_id": e.adapter_id, "adapter_kind": e.adapter_kind, "status": e.status, "path": e.path} for e in load_adapter_registry(p).adapters]
 
 
 def _profile_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "profiles" / "profile-registry.json"
-    if not p.exists():
-        return []
-    return [{"profile_id": e.profile_id, "profile_kind": e.profile_kind, "status": e.status, "path": e.path} for e in load_profile_registry(p).profiles]
+    return [] if not p.exists() else [{"profile_id": e.profile_id, "profile_kind": e.profile_kind, "status": e.status, "path": e.path} for e in load_profile_registry(p).profiles]
 
 
 def _node_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "nodes" / "node-registry.json"
-    if not p.exists():
-        return []
-    return [{"node_id": e.node_id, "profile_id": e.profile_id, "status": e.status, "path": e.path} for e in load_node_registry(p).nodes]
+    return [] if not p.exists() else [{"node_id": e.node_id, "profile_id": e.profile_id, "status": e.status, "path": e.path} for e in load_node_registry(p).nodes]
 
 
 def _source_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "sources" / "source-registry.json"
     if not p.exists():
         return []
-    return [
-        {
-            "source_id": e.source_id,
-            "source_kind": e.source_kind,
-            "adapter_id": e.adapter_id,
-            "node_id": e.node_id,
-            "status": e.status,
-        }
-        for e in load_source_registry(p).sources
-    ]
+    return [{"source_id": e.source_id, "source_kind": e.source_kind, "adapter_id": e.adapter_id, "node_id": e.node_id, "status": e.status} for e in load_source_registry(p).sources]
 
 
 def _example_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "examples" / "example-registry.json"
+    return [] if not p.exists() else [{"example_id": e.example_id, "profile_id": e.profile_id, "runnable": e.runnable, "status": e.status, "path": e.path} for e in load_example_registry(p).examples]
+
+
+def _review_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "review" / "review-records.json"
     if not p.exists():
         return []
-    return [{"example_id": e.example_id, "profile_id": e.profile_id, "runnable": e.runnable, "status": e.status, "path": e.path} for e in load_example_registry(p).examples]
+    return [{"review_id": r.review_id, "review_gate": r.review_gate, "decision": r.decision, "sharing_scope": r.sharing_scope or ""} for r in load_review_records(p)]
 
 
 def _policy_rows(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -85,6 +76,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     nodes = _node_rows(root)
     sources = _source_rows(root)
     examples = _example_rows(root)
+    reviews = _review_rows(root)
     sharing_scopes, review_gates = _policy_rows(root)
 
     return {
@@ -96,6 +88,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "nodes": len(nodes),
             "sources": len(sources),
             "examples": len(examples),
+            "reviews": len(reviews),
             "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
         },
@@ -105,6 +98,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "nodes": nodes,
         "sources": sources,
         "examples": examples,
+        "reviews": reviews,
         "sharing_scopes": sharing_scopes,
         "review_gates": review_gates,
     }
@@ -134,6 +128,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['nodes']} nodes, "
         f"{counts['sources']} sources, "
         f"{counts['examples']} examples, "
+        f"{counts['reviews']} reviews, "
         f"{counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
     ]
@@ -143,6 +138,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Nodes", catalog["nodes"], ["node_id", "profile_id", "status", "path"]))
     lines.extend(_format_table("Sources", catalog["sources"], ["source_id", "source_kind", "adapter_id", "node_id", "status"]))
     lines.extend(_format_table("Examples", catalog["examples"], ["example_id", "profile_id", "runnable", "status", "path"]))
+    lines.extend(_format_table("Reviews", catalog["reviews"], ["review_id", "review_gate", "decision", "sharing_scope"]))
     lines.extend(_format_table("Sharing Scopes", catalog["sharing_scopes"], ["scope_id", "display_name", "path"]))
     lines.extend(_format_table("Review Gates", catalog["review_gates"], ["gate_id", "display_name", "path"]))
     return "\n".join(lines)

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/review_record.schema.json",
+  "title": "PFEM Review Record",
+  "type": "object",
+  "required": [
+    "review_id",
+    "review_gate",
+    "decision",
+    "reviewer_role",
+    "created_time",
+    "subject_refs"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "review_gate": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "reviewer_role": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sharing_scope": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

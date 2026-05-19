@@ -10,6 +10,7 @@ from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.policy import format_policy_report, validate_policy_repository
+from pfem.review import format_review_report, validate_review_repository
 from pfem.rollup import format_rollup_report, validate_rollup_dir
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
 from pfem.source_runtime.registry import format_source_provenance_report, validate_source_provenance_repository
@@ -35,6 +36,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     policy = subparsers.add_parser("policy", help="Validate PFEM sharing policy")
     policy.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+
+    review = subparsers.add_parser("review", help="Validate PFEM review records")
+    review.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     schemas = subparsers.add_parser("schema-contracts", help="Validate PFEM fixture records against minimum schemas")
     schemas.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
@@ -78,6 +82,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "policy":
         report = validate_policy_repository(Path(args.path))
         print(format_policy_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "review":
+        report = validate_review_repository(Path(args.path))
+        print(format_review_report(report))
         return 0 if report.ok else 1
 
     if args.command == "schema-contracts":
