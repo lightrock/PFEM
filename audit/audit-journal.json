@@ -310,5 +310,18 @@
     ],
     "summary": "Example snapshot manifest was recorded for a known-good state checkpoint.",
     "source_tool": "pfem_snapshot_manifests"
+  },
+  {
+    "audit_id": "audit-snapshot-verification-basic-001",
+    "event_kind": "snapshot_verification_recorded",
+    "created_time": "2026-01-01T00:00:26Z",
+    "actor_ref": "tools/pfem_snapshot_verification_receipts.py",
+    "subject_refs": [
+      "snapshot-verification-basic-state-001",
+      "snapshot-manifest-basic-state-001",
+      "state-checkpoint-basic-after-apply-001"
+    ],
+    "summary": "Example snapshot verification receipt was recorded for a snapshot manifest.",
+    "source_tool": "pfem_snapshot_verification_receipts"
   }
 ]

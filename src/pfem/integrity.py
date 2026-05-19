@@ -33,6 +33,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("state/state-checkpoints.json", "state checkpoints"),
     ("state/state-transitions.json", "state transitions"),
     ("snapshots/snapshot-manifests.json", "snapshot manifests"),
+    ("snapshots/snapshot-verification-receipts.json", "snapshot verification receipts"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),

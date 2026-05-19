@@ -119,6 +119,12 @@
       "purpose": "snapshot manifests"
     },
     {
+      "path": "snapshots/snapshot-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "56fff3c5111ebd375be49e7141d3312a31461fd7e60a29145830d95aa24523ba",
+      "purpose": "snapshot verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -199,7 +205,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "96191b2234eb52ecddb611054853c57b6b2002fb55312a2b869d69d639fe32ee",
+      "digest": "b0c25f2a4467f22246c7ff15eb3be0f5b5f5825916eded8ea68076f01d0607a5",
       "purpose": "audit journal"
     },
     {

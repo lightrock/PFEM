@@ -36,6 +36,7 @@ from pfem.rollup import format_rollup_report, validate_rollup_dir
 from pfem.routing import format_routing_report, validate_routing_policy
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
 from pfem.snapshot_manifest import format_snapshot_manifest_report, validate_snapshot_manifests
+from pfem.snapshot_verification_receipt import format_snapshot_verification_receipt_report, validate_snapshot_verification_receipts
 from pfem.source_runtime.registry import format_source_provenance_report, validate_source_provenance_repository
 from pfem.state_checkpoint import format_state_checkpoint_report, validate_state_checkpoints
 from pfem.state_transition import format_state_transition_report, validate_state_transitions
@@ -63,6 +64,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("state-checkpoints", "Validate PFEM state checkpoints"),
         ("state-transitions", "Validate PFEM state transitions"),
         ("snapshot-manifests", "Validate PFEM snapshot manifests"),
+        ("snapshot-verification-receipts", "Validate PFEM snapshot verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -126,6 +128,7 @@ def main(argv: list[str] | None = None) -> int:
         "state-checkpoints": (validate_state_checkpoints, format_state_checkpoint_report),
         "state-transitions": (validate_state_transitions, format_state_transition_report),
         "snapshot-manifests": (validate_snapshot_manifests, format_snapshot_manifest_report),
+        "snapshot-verification-receipts": (validate_snapshot_verification_receipts, format_snapshot_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

@@ -1,0 +1,30 @@
+[
+  {
+    "snapshot_verification_receipt_id": "snapshot-verification-basic-state-001",
+    "receipt_kind": "snapshot_manifest_verification",
+    "created_time": "2026-01-01T00:00:26Z",
+    "node_id": "formal-rollup-node-example",
+    "snapshot_manifest_id": "snapshot-manifest-basic-state-001",
+    "state_checkpoint_id": "state-checkpoint-basic-after-apply-001",
+    "state_transition_id": "state-transition-basic-after-apply-001",
+    "verification_state": "passed",
+    "checked_item_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "checked_source_paths": [
+      "tests/fixtures/rollup/basic/rollup_summary.json",
+      "tests/fixtures/rollup/basic/federation_message.json"
+    ],
+    "basis_refs": [
+      "snapshot-manifest-basic-state-001",
+      "state-checkpoint-basic-after-apply-001",
+      "state-transition-basic-after-apply-001"
+    ],
+    "digest_algorithm": "sha256-canonical-snapshot-items",
+    "expected_snapshot_digest": "ceccbd94ed646514a7d5cf1915492b3efdcbfdf1c5067ae88f807390f0f41c47",
+    "actual_snapshot_digest": "ceccbd94ed646514a7d5cf1915492b3efdcbfdf1c5067ae88f807390f0f41c47",
+    "verified_by_ref": "tools/pfem_snapshot_verification_receipts.py",
+    "summary": "Synthetic example verification receipt showing the snapshot manifest items and digest were checked successfully."
+  }
+]

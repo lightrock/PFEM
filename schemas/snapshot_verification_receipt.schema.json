@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/snapshot_verification_receipt.schema.json",
+  "title": "PFEM Snapshot Verification Receipt",
+  "type": "object",
+  "required": [
+    "snapshot_verification_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "snapshot_manifest_id",
+    "state_checkpoint_id",
+    "verification_state",
+    "checked_item_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "expected_snapshot_digest",
+    "actual_snapshot_digest",
+    "verified_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "snapshot_verification_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "snapshot_manifest_id": {
+      "type": "string"
+    },
+    "state_checkpoint_id": {
+      "type": "string"
+    },
+    "state_transition_id": {
+      "type": "string"
+    },
+    "verification_state": {
+      "type": "string"
+    },
+    "checked_item_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checked_source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "expected_snapshot_digest": {
+      "type": "string"
+    },
+    "actual_snapshot_digest": {
+      "type": "string"
+    },
+    "verified_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
