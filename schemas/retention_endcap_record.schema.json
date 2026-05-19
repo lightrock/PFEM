@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_endcap_record.schema.json",
+  "title": "PFEM Retention Endcap Records",
+  "type": "object",
+  "required": [
+    "retention_endcap_record_id",
+    "endcap_kind",
+    "created_time",
+    "node_id",
+    "retention_archive_anchor_closeout_record_id",
+    "retention_archive_anchor_verification_receipt_id",
+    "endcap_state",
+    "endcap_scope",
+    "endcap_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "endcap_ref_digest",
+    "endcap_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_endcap_record_id": {
+      "type": "string"
+    },
+    "endcap_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_archive_anchor_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_archive_anchor_verification_receipt_id": {
+      "type": "string"
+    },
+    "endcap_state": {
+      "type": "string"
+    },
+    "endcap_scope": {
+      "type": "string"
+    },
+    "endcap_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "endcap_ref_digest": {
+      "type": "string"
+    },
+    "endcap_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

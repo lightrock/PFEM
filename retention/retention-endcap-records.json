@@ -1,0 +1,34 @@
+[
+  {
+    "retention_endcap_record_id": "retention-endcap-basic-restore-001",
+    "endcap_kind": "retention_endcap",
+    "created_time": "2026-01-01T00:02:38Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_archive_anchor_closeout_record_id": "retention-archive-anchor-closeout-basic-restore-001",
+    "retention_archive_anchor_verification_receipt_id": "retention-archive-anchor-verification-basic-restore-001",
+    "endcap_state": "recorded",
+    "endcap_scope": "closed_retention_archive_anchor",
+    "endcap_refs": [
+      "retention-archive-anchor-closeout-basic-restore-001",
+      "retention-archive-anchor-verification-basic-restore-001",
+      "retention-archive-anchor-basic-restore-001",
+      "retention-notarization-closeout-basic-restore-001",
+      "retention-seal-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-archive-anchor-closeout-basic-restore-001",
+      "retention-archive-anchor-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-endcap-ref-list",
+    "endcap_ref_digest": "5ae7baea052cc821a087f9d6519d4796fec9913496c475cb7b0eb17e3c5f4faa",
+    "endcap_by_ref": "tools/pfem_retention_endcap_records.py",
+    "summary": "Synthetic example retention endcap record built from the closed retention archive anchor path."
+  }
+]

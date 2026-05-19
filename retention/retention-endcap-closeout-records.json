@@ -1,0 +1,32 @@
+[
+  {
+    "retention_endcap_closeout_record_id": "retention-endcap-closeout-basic-restore-001",
+    "closeout_kind": "retention_endcap_closeout",
+    "created_time": "2026-01-01T00:02:40Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_endcap_verification_receipt_id": "retention-endcap-verification-basic-restore-001",
+    "retention_endcap_record_id": "retention-endcap-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "retention_endcap_verified_and_closed",
+    "closed_refs": [
+      "retention-archive-anchor-closeout-basic-restore-001",
+      "retention-archive-anchor-verification-basic-restore-001",
+      "retention-archive-anchor-basic-restore-001",
+      "retention-notarization-closeout-basic-restore-001",
+      "retention-seal-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-endcap-verification-basic-restore-001",
+      "retention-endcap-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_retention_endcap_closeout_records.py",
+    "summary": "Synthetic example retention endcap closeout record showing workflow was closed after verification."
+  }
+]

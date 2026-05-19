@@ -1,0 +1,34 @@
+[
+  {
+    "retention_archive_anchor_record_id": "retention-archive-anchor-basic-restore-001",
+    "archive_anchor_kind": "retention_archive_anchor",
+    "created_time": "2026-01-01T00:02:35Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_notarization_closeout_record_id": "retention-notarization-closeout-basic-restore-001",
+    "retention_notarization_verification_receipt_id": "retention-notarization-verification-basic-restore-001",
+    "archive_anchor_state": "recorded",
+    "archive_anchor_scope": "closed_retention_notarization",
+    "archive_anchor_refs": [
+      "retention-notarization-closeout-basic-restore-001",
+      "retention-notarization-verification-basic-restore-001",
+      "retention-notarization-basic-restore-001",
+      "retention-seal-closeout-basic-restore-001",
+      "retention-closure-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-notarization-closeout-basic-restore-001",
+      "retention-notarization-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-archive-anchor-ref-list",
+    "archive_anchor_ref_digest": "7df1ae3d8744b500e222bd6ce62ea961a542a1b0d795c4467cc18514d16d8cb9",
+    "archive_anchor_by_ref": "tools/pfem_retention_archive_anchor_records.py",
+    "summary": "Synthetic example retention archive anchor record built from the closed retention notarization path."
+  }
+]

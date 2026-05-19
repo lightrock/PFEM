@@ -1,0 +1,35 @@
+[
+  {
+    "retention_notarization_verification_receipt_id": "retention-notarization-verification-basic-restore-001",
+    "receipt_kind": "retention_notarization_verification",
+    "created_time": "2026-01-01T00:02:33Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_notarization_record_id": "retention-notarization-basic-restore-001",
+    "retention_seal_closeout_record_id": "retention-seal-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_notarization_refs": [
+      "retention-seal-closeout-basic-restore-001",
+      "retention-seal-verification-basic-restore-001",
+      "retention-seal-basic-restore-001",
+      "retention-attestation-closeout-basic-restore-001",
+      "retention-completion-closeout-basic-restore-001"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-notarization-basic-restore-001",
+      "retention-seal-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-notarization-ref-list",
+    "expected_notarization_ref_digest": "f04afb2b278a54ce9f39ba163dcbd908b606f96501c8f7c0f04bc9c27e631905",
+    "actual_notarization_ref_digest": "f04afb2b278a54ce9f39ba163dcbd908b606f96501c8f7c0f04bc9c27e631905",
+    "verified_by_ref": "tools/pfem_retention_notarization_verification_receipts.py",
+    "summary": "Synthetic example retention notarization verification receipt showing refs and digest were checked."
+  }
+]

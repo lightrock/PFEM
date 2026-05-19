@@ -711,6 +711,56 @@ python tools\pfem_retention_seal_closeout_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention notarization record validation...
+python tools\pfem_retention_notarization_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention notarization verification receipt validation...
+python tools\pfem_retention_notarization_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention notarization closeout record validation...
+python tools\pfem_retention_notarization_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention archive anchor record validation...
+python tools\pfem_retention_archive_anchor_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention archive anchor verification receipt validation...
+python tools\pfem_retention_archive_anchor_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention archive anchor closeout record validation...
+python tools\pfem_retention_archive_anchor_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention endcap record validation...
+python tools\pfem_retention_endcap_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention endcap verification receipt validation...
+python tools\pfem_retention_endcap_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention endcap closeout record validation...
+python tools\pfem_retention_endcap_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention final index record validation...
+python tools\pfem_retention_final_index_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

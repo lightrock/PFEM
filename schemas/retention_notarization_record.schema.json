@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_notarization_record.schema.json",
+  "title": "PFEM Retention Notarization Records",
+  "type": "object",
+  "required": [
+    "retention_notarization_record_id",
+    "notarization_kind",
+    "created_time",
+    "node_id",
+    "retention_seal_closeout_record_id",
+    "retention_seal_verification_receipt_id",
+    "notarization_state",
+    "notarization_scope",
+    "notarization_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "notarization_ref_digest",
+    "notarization_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_notarization_record_id": {
+      "type": "string"
+    },
+    "notarization_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_seal_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_seal_verification_receipt_id": {
+      "type": "string"
+    },
+    "notarization_state": {
+      "type": "string"
+    },
+    "notarization_scope": {
+      "type": "string"
+    },
+    "notarization_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "notarization_ref_digest": {
+      "type": "string"
+    },
+    "notarization_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
