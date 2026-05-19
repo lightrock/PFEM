@@ -76,6 +76,11 @@ python tools\pfem_state_transitions.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM snapshot manifest validation...
+python tools\pfem_snapshot_manifests.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

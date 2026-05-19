@@ -36,6 +36,7 @@ from pfem.retention import validate_retention_policy
 from pfem.review import validate_review_repository
 from pfem.routing import validate_routing_policy
 from pfem.schema_contracts import validate_schema_contracts
+from pfem.snapshot_manifest import validate_snapshot_manifests
 from pfem.source_runtime import validate_source_provenance_repository
 from pfem.state_checkpoint import validate_state_checkpoints
 from pfem.state_transition import validate_state_transitions
@@ -56,6 +57,7 @@ EXPECTED_PATHS = [
     "docs/architecture/apply-receipts.md",
     "docs/architecture/state-checkpoints.md",
     "docs/architecture/state-transitions.md",
+    "docs/architecture/snapshot-manifests.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -71,6 +73,7 @@ EXPECTED_PATHS = [
     "contracts/apply-receipt-contract.md",
     "contracts/state-checkpoint-contract.md",
     "contracts/state-transition-contract.md",
+    "contracts/snapshot-manifest-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -86,6 +89,7 @@ EXPECTED_PATHS = [
     "schemas/apply_receipt.schema.json",
     "schemas/state_checkpoint.schema.json",
     "schemas/state_transition.schema.json",
+    "schemas/snapshot_manifest.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -100,6 +104,7 @@ EXPECTED_PATHS = [
     "conflicts/README.md", "conflicts/conflict-records.json",
     "apply/README.md", "apply/apply-receipts.json",
     "state/README.md", "state/state-checkpoints.json", "state/state-transitions.json",
+    "snapshots/README.md", "snapshots/snapshot-manifests.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -109,7 +114,7 @@ EXPECTED_PATHS = [
     "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "imports", "conflicts", "merge", "apply", "state", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "imports", "conflicts", "merge", "apply", "state", "snapshots", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
 NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "transport", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
@@ -274,6 +279,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_apply_receipts(root).failures)
     report.failures.extend(validate_state_checkpoints(root).failures)
     report.failures.extend(validate_state_transitions(root).failures)
+    report.failures.extend(validate_snapshot_manifests(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

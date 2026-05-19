@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/snapshot_manifest.schema.json",
+  "title": "PFEM Snapshot Manifest",
+  "type": "object",
+  "required": [
+    "snapshot_manifest_id",
+    "manifest_kind",
+    "created_time",
+    "node_id",
+    "state_checkpoint_id",
+    "snapshot_state",
+    "items",
+    "basis_refs",
+    "digest_algorithm",
+    "snapshot_digest",
+    "manifested_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "snapshot_manifest_id": {
+      "type": "string"
+    },
+    "manifest_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "state_checkpoint_id": {
+      "type": "string"
+    },
+    "state_transition_id": {
+      "type": "string"
+    },
+    "snapshot_state": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "snapshot_digest": {
+      "type": "string"
+    },
+    "manifested_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

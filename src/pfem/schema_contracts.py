@@ -31,6 +31,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "apply_receipt.schema.json": ["apply/apply-receipts.json"],
     "state_checkpoint.schema.json": ["state/state-checkpoints.json"],
     "state_transition.schema.json": ["state/state-transitions.json"],
+    "snapshot_manifest.schema.json": ["snapshots/snapshot-manifests.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

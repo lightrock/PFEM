@@ -140,6 +140,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("apply/apply-receipts.json", "apply_receipt_id"),
         ("state/state-checkpoints.json", "state_checkpoint_id"),
         ("state/state-transitions.json", "state_transition_id"),
+        ("snapshots/snapshot-manifests.json", "snapshot_manifest_id"),
         ("reconciliation/reconciliation-records.json", "reconciliation_id"),
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
@@ -179,7 +180,7 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     folders = [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "dispatch", "routing", "delivery", "outbox",
-        "inbox", "intake", "imports", "conflicts", "merge", "apply", "state",
+        "inbox", "intake", "imports", "conflicts", "merge", "apply", "state", "snapshots",
         "transport", "topology", "review", "audit", "exchange", "reconciliation",
         "quality", "action", "playbooks", "integrity", "schemas", "contracts",
         "docs", "bundles", "tests",

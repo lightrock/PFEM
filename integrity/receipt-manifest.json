@@ -113,6 +113,12 @@
       "purpose": "state transitions"
     },
     {
+      "path": "snapshots/snapshot-manifests.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9bdeb7b4ce1859eb05d577770b584971b622847f0ec4d69b99b7a2f6718927cc",
+      "purpose": "snapshot manifests"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -193,7 +199,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "fb55b436e35f7734959679a419bf7afdb9476c53bd264f2a47f5070775a08592",
+      "digest": "96191b2234eb52ecddb611054853c57b6b2002fb55312a2b869d69d639fe32ee",
       "purpose": "audit journal"
     },
     {
