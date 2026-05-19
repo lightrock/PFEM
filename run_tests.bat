@@ -861,6 +861,56 @@ python tools\pfem_retention_release_acknowledgement_closeout_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention release confirmation record validation...
+python tools\pfem_retention_release_confirmation_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention release confirmation verification receipt validation...
+python tools\pfem_retention_release_confirmation_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention release confirmation closeout record validation...
+python tools\pfem_retention_release_confirmation_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention distribution package record validation...
+python tools\pfem_retention_distribution_package_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention distribution package verification receipt validation...
+python tools\pfem_retention_distribution_package_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention distribution package closeout record validation...
+python tools\pfem_retention_distribution_package_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention distribution manifest record validation...
+python tools\pfem_retention_distribution_manifest_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention distribution manifest verification receipt validation...
+python tools\pfem_retention_distribution_manifest_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention distribution manifest closeout record validation...
+python tools\pfem_retention_distribution_manifest_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention access publication record validation...
+python tools\pfem_retention_access_publication_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_distribution_package_record_id": "retention-distribution-package-basic-restore-001",
+    "distribution_package_kind": "retention_distribution_package",
+    "created_time": "2026-01-01T00:03:05Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_confirmation_closeout_record_id": "retention-release-confirmation-closeout-basic-restore-001",
+    "retention_release_confirmation_verification_receipt_id": "retention-release-confirmation-verification-basic-restore-001",
+    "distribution_package_state": "packaged",
+    "distribution_package_scope": "closed_retention_release_confirmation",
+    "distribution_package_refs": [
+      "retention-release-confirmation-closeout-basic-restore-001",
+      "retention-release-confirmation-verification-basic-restore-001",
+      "retention-release-confirmation-basic-restore-001",
+      "retention-release-acknowledgement-closeout-basic-restore-001",
+      "retention-repository-release-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-release-confirmation-closeout-basic-restore-001",
+      "retention-release-confirmation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-distribution-package-ref-list",
+    "distribution_package_ref_digest": "6293ce3715d62cc4cb20b89d12d70873043aceebd5dd895fbaa38c7de080e52d",
+    "distribution_package_by_ref": "tools/pfem_retention_distribution_package_records.py",
+    "summary": "Synthetic example retention distribution package record built from the closed retention release confirmation path."
+  }
+]

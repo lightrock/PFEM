@@ -1,0 +1,34 @@
+[
+  {
+    "retention_access_publication_record_id": "retention-access-publication-basic-restore-001",
+    "access_publication_kind": "retention_access_publication",
+    "created_time": "2026-01-01T00:03:11Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_distribution_manifest_closeout_record_id": "retention-distribution-manifest-closeout-basic-restore-001",
+    "retention_distribution_manifest_verification_receipt_id": "retention-distribution-manifest-verification-basic-restore-001",
+    "access_publication_state": "published",
+    "access_publication_scope": "closed_retention_distribution_manifest",
+    "access_publication_refs": [
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention-distribution-manifest-verification-basic-restore-001",
+      "retention-distribution-manifest-basic-restore-001",
+      "retention-distribution-package-closeout-basic-restore-001",
+      "retention-release-acknowledgement-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-distribution-manifest-closeout-basic-restore-001",
+      "retention-distribution-manifest-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-access-publication-ref-list",
+    "access_publication_ref_digest": "78a9aba37fade3ee8ff0af95406c9bdbcfe5b421c776a56f9ca65caa8d022dd4",
+    "access_publication_by_ref": "tools/pfem_retention_access_publication_records.py",
+    "summary": "Synthetic example retention access publication record built from the closed retention distribution manifest path."
+  }
+]

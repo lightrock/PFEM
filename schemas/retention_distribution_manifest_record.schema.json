@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_distribution_manifest_record.schema.json",
+  "title": "PFEM Retention Distribution Manifest Records",
+  "type": "object",
+  "required": [
+    "retention_distribution_manifest_record_id",
+    "distribution_manifest_kind",
+    "created_time",
+    "node_id",
+    "retention_distribution_package_closeout_record_id",
+    "retention_distribution_package_verification_receipt_id",
+    "distribution_manifest_state",
+    "distribution_manifest_scope",
+    "distribution_manifest_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "distribution_manifest_ref_digest",
+    "distribution_manifest_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_distribution_manifest_record_id": {
+      "type": "string"
+    },
+    "distribution_manifest_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_distribution_package_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_distribution_package_verification_receipt_id": {
+      "type": "string"
+    },
+    "distribution_manifest_state": {
+      "type": "string"
+    },
+    "distribution_manifest_scope": {
+      "type": "string"
+    },
+    "distribution_manifest_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "distribution_manifest_ref_digest": {
+      "type": "string"
+    },
+    "distribution_manifest_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
