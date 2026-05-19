@@ -52,6 +52,7 @@ from pfem.archive_lifecycle_closeout_record import format_archive_lifecycle_clos
 from pfem.preservation_record import format_preservation_record_report, validate_preservation_records
 from pfem.preservation_verification_receipt import format_preservation_verification_receipt_report, validate_preservation_verification_receipts
 from pfem.preservation_closeout_record import format_preservation_closeout_record_report, validate_preservation_closeout_records
+from pfem.preservation_chain_record import format_preservation_chain_record_report, validate_preservation_chain_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -149,6 +150,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("preservation-records", "Validate PFEM preservation records"),
         ("preservation-verification-receipts", "Validate PFEM preservation verification receipts"),
         ("preservation-closeout-records", "Validate PFEM preservation closeout records"),
+        ("preservation-chain-records", "Validate PFEM preservation chain records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -255,6 +257,7 @@ def main(argv: list[str] | None = None) -> int:
         "preservation-records": (validate_preservation_records, format_preservation_record_report),
         "preservation-verification-receipts": (validate_preservation_verification_receipts, format_preservation_verification_receipt_report),
         "preservation-closeout-records": (validate_preservation_closeout_records, format_preservation_closeout_record_report),
+        "preservation-chain-records": (validate_preservation_chain_records, format_preservation_chain_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

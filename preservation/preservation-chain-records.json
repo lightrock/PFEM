@@ -1,0 +1,33 @@
+[
+  {
+    "preservation_chain_record_id": "preservation-chain-basic-restore-001",
+    "chain_kind": "closed_preservation_chain",
+    "created_time": "2026-01-01T00:01:09Z",
+    "node_id": "formal-rollup-node-example",
+    "start_ref": "preservation-basic-restore-001",
+    "terminal_ref": "preservation-closeout-basic-restore-001",
+    "chain_state": "closed",
+    "final_outcome": "preservation_verified",
+    "chain_refs": [
+      "preservation-basic-restore-001",
+      "preservation-verification-basic-restore-001",
+      "preservation-closeout-basic-restore-001"
+    ],
+    "preserved_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "preservation-closeout-basic-restore-001",
+      "preservation-verification-basic-restore-001",
+      "preservation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-preservation-chain-ref-list",
+    "chain_ref_digest": "96158f2dcf0065d1796bf52cd3784b9b8b409fc6ed544cf7b8511060e5e777fa",
+    "summarized_by_ref": "tools/pfem_preservation_chain_records.py",
+    "summary": "Synthetic example preservation chain record summarizing preservation record, verification receipt, and closeout."
+  }
+]

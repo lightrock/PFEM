@@ -52,6 +52,7 @@ from pfem.archive_lifecycle_closeout_record import load_archive_lifecycle_closeo
 from pfem.preservation_record import load_preservation_records
 from pfem.preservation_verification_receipt import load_preservation_verification_receipts
 from pfem.preservation_closeout_record import load_preservation_closeout_records
+from pfem.preservation_chain_record import load_preservation_chain_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -428,6 +429,11 @@ def _preservation_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"preservation_closeout_record_id": r["preservation_closeout_record_id"], "preservation_verification_receipt_id": r["preservation_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_preservation_closeout_records(p)]
 
 
+def _preservation_chain_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "preservation/preservation-chain-records.json"
+    return [] if not p.exists() else [{"preservation_chain_record_id": r["preservation_chain_record_id"], "terminal_ref": r["terminal_ref"], "chain_state": r["chain_state"], "chain_refs": len(r["chain_refs"])} for r in load_preservation_chain_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -561,6 +567,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "preservation_records": _preservation_record_rows(root),
         "preservation_verification_receipts": _preservation_verification_receipt_rows(root),
         "preservation_closeout_records": _preservation_closeout_record_rows(root),
+        "preservation_chain_records": _preservation_chain_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -651,6 +658,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('preservation_records', 0)} preservation records, "
         f"{counts.get('preservation_verification_receipts', 0)} preservation verification receipts, "
         f"{counts.get('preservation_closeout_records', 0)} preservation closeout records, "
+        f"{counts.get('preservation_chain_records', 0)} preservation chain records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -727,6 +735,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Preservation Records", catalog["preservation_records"], ["preservation_record_id", "archive_lifecycle_closeout_record_id", "preservation_state", "preserved_refs"]))
     lines.extend(_format_table("Preservation Verification Receipts", catalog["preservation_verification_receipts"], ["preservation_verification_receipt_id", "preservation_record_id", "verification_state", "checked_preserved_refs"]))
     lines.extend(_format_table("Preservation Closeout Records", catalog["preservation_closeout_records"], ["preservation_closeout_record_id", "preservation_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Preservation Chain Records", catalog["preservation_chain_records"], ["preservation_chain_record_id", "terminal_ref", "chain_state", "chain_refs"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

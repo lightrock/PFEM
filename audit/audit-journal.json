@@ -863,5 +863,18 @@
     ],
     "summary": "Example preservation closeout records was recorded.",
     "source_tool": "pfem_preservation_closeout_records"
+  },
+  {
+    "audit_id": "audit-preservation-chain-basic-001",
+    "event_kind": "preservation_chain_recorded",
+    "created_time": "2026-01-01T00:01:09Z",
+    "actor_ref": "tools/pfem_preservation_chain_records.py",
+    "subject_refs": [
+      "preservation-chain-basic-restore-001",
+      "preservation-basic-restore-001",
+      "preservation-closeout-basic-restore-001"
+    ],
+    "summary": "Example preservation chain records was recorded.",
+    "source_tool": "pfem_preservation_chain_records"
   }
 ]
