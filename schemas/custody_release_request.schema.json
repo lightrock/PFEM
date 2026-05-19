@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/custody_release_request.schema.json",
+  "title": "PFEM Custody Release Requests",
+  "type": "object",
+  "required": [
+    "custody_release_request_id",
+    "request_kind",
+    "created_time",
+    "node_id",
+    "custody_ledger_verification_receipt_id",
+    "custody_ledger_record_id",
+    "source_workflow_kind",
+    "source_closeout_ref",
+    "request_state",
+    "release_scope",
+    "requested_refs",
+    "basis_refs",
+    "requested_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "custody_release_request_id": {
+      "type": "string"
+    },
+    "request_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "custody_ledger_verification_receipt_id": {
+      "type": "string"
+    },
+    "custody_ledger_record_id": {
+      "type": "string"
+    },
+    "source_workflow_kind": {
+      "type": "string"
+    },
+    "source_closeout_ref": {
+      "type": "string"
+    },
+    "request_state": {
+      "type": "string"
+    },
+    "release_scope": {
+      "type": "string"
+    },
+    "requested_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "requested_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

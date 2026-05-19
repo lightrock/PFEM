@@ -544,5 +544,18 @@
     ],
     "summary": "Example custody ledger verification receipts was recorded.",
     "source_tool": "pfem_custody_ledger_verification_receipts"
+  },
+  {
+    "audit_id": "audit-custody-release-request-basic-001",
+    "event_kind": "custody_release_request_recorded",
+    "created_time": "2026-01-01T00:00:44Z",
+    "actor_ref": "tools/pfem_custody_release_requests.py",
+    "subject_refs": [
+      "custody-release-request-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001",
+      "custody-ledger-basic-restore-001"
+    ],
+    "summary": "Example custody release requests was recorded.",
+    "source_tool": "pfem_custody_release_requests"
   }
 ]

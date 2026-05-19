@@ -28,6 +28,7 @@ from pfem.custody_chain_record import validate_custody_chain_records
 from pfem.custody_chain_verification_receipt import validate_custody_chain_verification_receipts
 from pfem.custody_ledger_record import validate_custody_ledger_records
 from pfem.custody_ledger_verification_receipt import validate_custody_ledger_verification_receipts
+from pfem.custody_release_request import validate_custody_release_requests
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -94,6 +95,7 @@ EXPECTED_PATHS = [
     "docs/architecture/custody-chain-verification-receipts.md",
     "docs/architecture/custody-ledger-records.md",
     "docs/architecture/custody-ledger-verification-receipts.md",
+    "docs/architecture/custody-release-requests.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -128,6 +130,7 @@ EXPECTED_PATHS = [
     "contracts/custody-chain-verification-receipt-contract.md",
     "contracts/custody-ledger-record-contract.md",
     "contracts/custody-ledger-verification-receipt-contract.md",
+    "contracts/custody-release-request-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -162,6 +165,7 @@ EXPECTED_PATHS = [
     "schemas/custody_chain_verification_receipt.schema.json",
     "schemas/custody_ledger_record.schema.json",
     "schemas/custody_ledger_verification_receipt.schema.json",
+    "schemas/custody_release_request.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -180,7 +184,7 @@ EXPECTED_PATHS = [
     "recovery/README.md", "recovery/recovery-points.json",
     "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json", "restore/restore-receipts.json", "restore/restore-verification-receipts.json", "restore/restore-closeout-records.json",
     "disposition/README.md", "disposition/disposition-records.json", "disposition/disposition-receipts.json",
-    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json",
+    "custody/README.md", "custody/custody-records.json", "custody/custody-verification-receipts.json", "custody/custody-transfer-records.json", "custody/custody-transfer-verification-receipts.json", "custody/custody-closeout-records.json", "custody/custody-chain-records.json", "custody/custody-chain-verification-receipts.json", "custody/custody-ledger-records.json", "custody/custody-ledger-verification-receipts.json", "custody/custody-release-requests.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -374,6 +378,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_custody_chain_verification_receipts(root).failures)
     report.failures.extend(validate_custody_ledger_records(root).failures)
     report.failures.extend(validate_custody_ledger_verification_receipts(root).failures)
+    report.failures.extend(validate_custody_release_requests(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

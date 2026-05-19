@@ -1,0 +1,25 @@
+[
+  {
+    "custody_release_request_id": "custody-release-request-basic-restore-001",
+    "request_kind": "custody_release_request",
+    "created_time": "2026-01-01T00:00:44Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_ledger_verification_receipt_id": "custody-ledger-verification-basic-restore-001",
+    "custody_ledger_record_id": "custody-ledger-basic-restore-001",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "request_state": "pending_approval",
+    "release_scope": "closed_custody_chain_artifacts",
+    "requested_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "basis_refs": [
+      "custody-ledger-verification-basic-restore-001",
+      "custody-ledger-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "requested_by_ref": "tools/pfem_custody_release_requests.py",
+    "summary": "Synthetic example custody release request asking to release closed custody-chain artifacts from active custody handling."
+  }
+]
