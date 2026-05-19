@@ -24,6 +24,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("retention/retention-policy.json", "retention policy"),
     ("dispatch/dispatch-policy.json", "dispatch policy"),
     ("dispatch/dispatch-decisions.json", "dispatch decisions"),
+    ("outbox/outbox-items.json", "outbox items"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
     ("delivery/delivery-jobs.json", "delivery jobs"),

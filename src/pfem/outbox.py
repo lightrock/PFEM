@@ -1,4 +1,4 @@
-"""PFEM transport receipt validation."""
+"""PFEM outbox item validation."""
 
 from __future__ import annotations
 
@@ -9,55 +9,57 @@ from typing import Any
 
 from pfem.delivery import collect_delivery_channel_ids
 from pfem.delivery_job import collect_delivery_job_ids
+from pfem.dispatch_decision import collect_dispatch_decision_ids
 from pfem.node_runtime import collect_node_ids
-from pfem.outbox import collect_outbox_item_ids
 from pfem.routing import load_routing_policy
 from pfem.transport import collect_transport_adapter_ids
 
 
 JsonObject = dict[str, Any]
 
-KNOWN_RECEIPT_KINDS = {
-    "delivery_attempt",
-    "delivery_result",
-    "delivery_acknowledgement",
+KNOWN_ITEM_KINDS = {
+    "exchange_bundle",
+    "evidence_package",
+    "rollup_summary",
+    "federation_message",
+    "report",
+    "operator_message",
 }
 
-KNOWN_TRANSPORT_STATES = {
-    "queued",
-    "attempted",
-    "sent",
-    "received",
-    "succeeded",
-    "failed",
+KNOWN_OUTBOX_STATES = {
+    "staged",
+    "ready",
+    "picked_up",
     "cancelled",
-    "unknown",
+    "expired",
+    "failed",
 }
 
 
 @dataclass(frozen=True)
-class TransportReceipt:
-    transport_receipt_id: str
-    receipt_kind: str
+class OutboxItem:
+    outbox_item_id: str
+    item_kind: str
     created_time: str
     delivery_job_id: str
-    outbox_item_id: str
-    transport_adapter_id: str
-    delivery_channel_id: str
+    dispatch_decision_id: str
     route_id: str
+    delivery_channel_id: str
+    transport_adapter_id: str
     source_node_id: str
     destination_node_id: str
     subject_refs: list[str]
-    basis_refs: list[str]
-    transport_state: str
     artifact_refs: list[str]
-    outcome_summary: str
+    basis_refs: list[str]
+    outbox_state: str
+    staged_by_ref: str
+    summary: str
 
 
 @dataclass(frozen=True)
-class TransportReceiptReport:
+class OutboxReport:
     source: str
-    checked_receipts: int = 0
+    checked_items: int = 0
     failures: list[str] = field(default_factory=list)
 
     @property
@@ -85,27 +87,35 @@ def _load_records(path: Path) -> list[JsonObject]:
     raise ValueError(f"expected JSON object or array in {path}")
 
 
-def load_transport_receipts(path: str | Path) -> list[TransportReceipt]:
+def load_outbox_items(path: str | Path) -> list[OutboxItem]:
     return [
-        TransportReceipt(
-            transport_receipt_id=str(record.get("transport_receipt_id", "")),
-            receipt_kind=str(record.get("receipt_kind", "")),
+        OutboxItem(
+            outbox_item_id=str(record.get("outbox_item_id", "")),
+            item_kind=str(record.get("item_kind", "")),
             created_time=str(record.get("created_time", "")),
             delivery_job_id=str(record.get("delivery_job_id", "")),
-            outbox_item_id=str(record.get("outbox_item_id", "")),
-            transport_adapter_id=str(record.get("transport_adapter_id", "")),
-            delivery_channel_id=str(record.get("delivery_channel_id", "")),
+            dispatch_decision_id=str(record.get("dispatch_decision_id", "")),
             route_id=str(record.get("route_id", "")),
+            delivery_channel_id=str(record.get("delivery_channel_id", "")),
+            transport_adapter_id=str(record.get("transport_adapter_id", "")),
             source_node_id=str(record.get("source_node_id", "")),
             destination_node_id=str(record.get("destination_node_id", "")),
             subject_refs=_as_list(record.get("subject_refs", [])),
-            basis_refs=_as_list(record.get("basis_refs", [])),
-            transport_state=str(record.get("transport_state", "")),
             artifact_refs=_as_list(record.get("artifact_refs", [])),
-            outcome_summary=str(record.get("outcome_summary", "")),
+            basis_refs=_as_list(record.get("basis_refs", [])),
+            outbox_state=str(record.get("outbox_state", "")),
+            staged_by_ref=str(record.get("staged_by_ref", "")),
+            summary=str(record.get("summary", "")),
         )
         for record in _load_records(Path(path))
     ]
+
+
+def collect_outbox_item_ids(root: str | Path) -> set[str]:
+    outbox_path = Path(root) / "outbox" / "outbox-items.json"
+    if not outbox_path.exists():
+        return set()
+    return {item.outbox_item_id for item in load_outbox_items(outbox_path) if item.outbox_item_id}
 
 
 def _collect_route_ids(root: Path) -> set[str]:
@@ -185,82 +195,83 @@ def _known_ref(ref: str, known_ids: set[str], known_paths: set[str]) -> bool:
     return ref in known_ids or ref.replace("\\", "/") in known_paths
 
 
-def validate_transport_receipts(root: str | Path) -> TransportReceiptReport:
+def validate_outbox_items(root: str | Path) -> OutboxReport:
     root_path = Path(root)
-    receipts_path = root_path / "transport" / "transport-receipts.json"
+    outbox_path = root_path / "outbox" / "outbox-items.json"
     failures: list[str] = []
 
-    if not receipts_path.exists():
-        return TransportReceiptReport(
-            source=str(receipts_path),
-            failures=["missing transport receipts: transport/transport-receipts.json"],
-        )
+    if not outbox_path.exists():
+        return OutboxReport(source=str(outbox_path), failures=["missing outbox items: outbox/outbox-items.json"])
 
-    receipts = load_transport_receipts(receipts_path)
-    if not receipts:
-        failures.append("transport receipts file has no receipts")
+    items = load_outbox_items(outbox_path)
+    if not items:
+        failures.append("outbox items file has no items")
 
     delivery_job_ids = collect_delivery_job_ids(root_path)
-    outbox_item_ids = collect_outbox_item_ids(root_path)
-    transport_adapter_ids = collect_transport_adapter_ids(root_path)
-    delivery_channel_ids = collect_delivery_channel_ids(root_path)
+    dispatch_decision_ids = collect_dispatch_decision_ids(root_path)
     route_ids = _collect_route_ids(root_path)
+    delivery_channel_ids = collect_delivery_channel_ids(root_path)
+    transport_adapter_ids = collect_transport_adapter_ids(root_path)
     node_ids = collect_node_ids(root_path)
     known_ids = _collect_known_record_ids(root_path)
     known_paths = _collect_known_artifact_paths(root_path)
     seen_ids: set[str] = set()
 
-    for receipt in receipts:
-        if not receipt.transport_receipt_id:
-            failures.append("transport receipt missing transport_receipt_id")
+    for item in items:
+        if not item.outbox_item_id:
+            failures.append("outbox item missing outbox_item_id")
             continue
-        if receipt.transport_receipt_id in seen_ids:
-            failures.append(f"duplicate transport_receipt_id {receipt.transport_receipt_id!r}")
-        seen_ids.add(receipt.transport_receipt_id)
+        if item.outbox_item_id in seen_ids:
+            failures.append(f"duplicate outbox_item_id {item.outbox_item_id!r}")
+        seen_ids.add(item.outbox_item_id)
 
-        if receipt.receipt_kind not in KNOWN_RECEIPT_KINDS:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} uses unknown receipt_kind {receipt.receipt_kind!r}")
-        if not receipt.created_time:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} missing created_time")
-        if delivery_job_ids and receipt.delivery_job_id not in delivery_job_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown delivery_job_id {receipt.delivery_job_id!r}")
-        if outbox_item_ids and receipt.outbox_item_id not in outbox_item_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown outbox_item_id {receipt.outbox_item_id!r}")
-        if transport_adapter_ids and receipt.transport_adapter_id not in transport_adapter_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown transport_adapter_id {receipt.transport_adapter_id!r}")
-        if delivery_channel_ids and receipt.delivery_channel_id not in delivery_channel_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown delivery_channel_id {receipt.delivery_channel_id!r}")
-        if route_ids and receipt.route_id not in route_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown route_id {receipt.route_id!r}")
-        if node_ids and receipt.source_node_id not in node_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown source_node_id {receipt.source_node_id!r}")
-        if node_ids and receipt.destination_node_id not in node_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown destination_node_id {receipt.destination_node_id!r}")
-        if not receipt.subject_refs:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} has no subject_refs")
-        for ref in receipt.subject_refs:
+        if item.item_kind not in KNOWN_ITEM_KINDS:
+            failures.append(f"outbox item {item.outbox_item_id!r} uses unknown item_kind {item.item_kind!r}")
+        if not item.created_time:
+            failures.append(f"outbox item {item.outbox_item_id!r} missing created_time")
+        if delivery_job_ids and item.delivery_job_id not in delivery_job_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown delivery_job_id {item.delivery_job_id!r}")
+        if dispatch_decision_ids and item.dispatch_decision_id not in dispatch_decision_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown dispatch_decision_id {item.dispatch_decision_id!r}")
+        if route_ids and item.route_id not in route_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown route_id {item.route_id!r}")
+        if delivery_channel_ids and item.delivery_channel_id not in delivery_channel_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown delivery_channel_id {item.delivery_channel_id!r}")
+        if transport_adapter_ids and item.transport_adapter_id not in transport_adapter_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown transport_adapter_id {item.transport_adapter_id!r}")
+        if node_ids and item.source_node_id not in node_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown source_node_id {item.source_node_id!r}")
+        if node_ids and item.destination_node_id not in node_ids:
+            failures.append(f"outbox item {item.outbox_item_id!r} references unknown destination_node_id {item.destination_node_id!r}")
+        if item.outbox_state not in KNOWN_OUTBOX_STATES:
+            failures.append(f"outbox item {item.outbox_item_id!r} uses unknown outbox_state {item.outbox_state!r}")
+        if not item.staged_by_ref:
+            failures.append(f"outbox item {item.outbox_item_id!r} missing staged_by_ref")
+        if not item.subject_refs:
+            failures.append(f"outbox item {item.outbox_item_id!r} has no subject_refs")
+        for ref in item.subject_refs:
             if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown subject_ref {ref!r}")
-        if not receipt.basis_refs:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} has no basis_refs")
-        for ref in receipt.basis_refs:
+                failures.append(f"outbox item {item.outbox_item_id!r} references unknown subject_ref {ref!r}")
+        if not item.artifact_refs:
+            failures.append(f"outbox item {item.outbox_item_id!r} has no artifact_refs")
+        for ref in item.artifact_refs:
             if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown basis_ref {ref!r}")
-        if receipt.transport_state not in KNOWN_TRANSPORT_STATES:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} uses unknown transport_state {receipt.transport_state!r}")
-        for ref in receipt.artifact_refs:
+                failures.append(f"outbox item {item.outbox_item_id!r} references unknown artifact_ref {ref!r}")
+        if not item.basis_refs:
+            failures.append(f"outbox item {item.outbox_item_id!r} has no basis_refs")
+        for ref in item.basis_refs:
             if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown artifact_ref {ref!r}")
-        if not receipt.outcome_summary:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} missing outcome_summary")
+                failures.append(f"outbox item {item.outbox_item_id!r} references unknown basis_ref {ref!r}")
+        if not item.summary:
+            failures.append(f"outbox item {item.outbox_item_id!r} missing summary")
 
-    return TransportReceiptReport(source=str(receipts_path), checked_receipts=len(receipts), failures=failures)
+    return OutboxReport(source=str(outbox_path), checked_items=len(items), failures=failures)
 
 
-def format_transport_receipt_report(report: TransportReceiptReport) -> str:
+def format_outbox_report(report: OutboxReport) -> str:
     lines: list[str] = []
-    lines.append(f"PFEM transport receipt source: {report.source}")
-    lines.append(f"Transport receipts checked: {report.checked_receipts}")
+    lines.append(f"PFEM outbox source: {report.source}")
+    lines.append(f"Outbox items checked: {report.checked_items}")
 
     if report.failures:
         lines.append("")
@@ -268,9 +279,9 @@ def format_transport_receipt_report(report: TransportReceiptReport) -> str:
         for failure in report.failures:
             lines.append(f"  - {failure}")
         lines.append("")
-        lines.append("PFEM transport receipt validation failed.")
+        lines.append("PFEM outbox validation failed.")
     else:
         lines.append("")
-        lines.append("PFEM transport receipt validation passed.")
+        lines.append("PFEM outbox validation passed.")
 
     return "\n".join(lines)

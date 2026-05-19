@@ -4,6 +4,7 @@
     "receipt_kind": "delivery_attempt",
     "created_time": "2026-01-01T00:00:16Z",
     "delivery_job_id": "delivery-job-basic-manual-export-001",
+    "outbox_item_id": "outbox-item-basic-manual-export-001",
     "transport_adapter_id": "transport-manual-export",
     "delivery_channel_id": "manual-export",
     "route_id": "route-exchange-bundles-to-formal-rollup",
@@ -13,6 +14,7 @@
       "bundle-basic-rollup-exchange-001"
     ],
     "basis_refs": [
+      "outbox-item-basic-manual-export-001",
       "delivery-job-basic-manual-export-001",
       "route-exchange-bundles-to-formal-rollup",
       "manual-export",

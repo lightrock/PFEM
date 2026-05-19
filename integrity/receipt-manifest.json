@@ -65,6 +65,12 @@
       "purpose": "dispatch decisions"
     },
     {
+      "path": "outbox/outbox-items.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "2ec88f5ae110147330a1424a616a9b5a46aa64c524046ad35438d759ad1d3f1d",
+      "purpose": "outbox items"
+    },
+    {
       "path": "routing/routing-policy.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "3a373c1d1b2d13eb5e8940e1573829c65495b07b0dbe80b973ed31cd870d5f84",
@@ -91,7 +97,7 @@
     {
       "path": "transport/transport-receipts.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "d56275b048a1da77ba534a5e24db663a46f13082b627ee8daf786e5032b7be52",
+      "digest": "e13bd5dad91a614d6834c94f8c6094f7b8e655d7a86604b7c240ce3601274368",
       "purpose": "transport receipts"
     },
     {
@@ -139,7 +145,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "2bfd25f25b26408806986ee2bd1275b909ece1864145f5d1ba5948ceead09a94",
+      "digest": "12325934907d3e3059a3336feb36c821264d73ea16884fdffe58f2c8f93e7fb3",
       "purpose": "audit journal"
     },
     {

@@ -23,6 +23,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "retention_policy.schema.json": ["retention/retention-policy.json"],
     "dispatch_policy.schema.json": ["dispatch/dispatch-policy.json"],
     "dispatch_decision.schema.json": ["dispatch/dispatch-decisions.json"],
+    "outbox_item.schema.json": ["outbox/outbox-items.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],
     "transport_adapter_registry.schema.json": ["transport/transport-adapter-registry.json"],

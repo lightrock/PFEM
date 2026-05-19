@@ -1,0 +1,29 @@
+[
+  {
+    "outbox_item_id": "outbox-item-basic-manual-export-001",
+    "item_kind": "exchange_bundle",
+    "created_time": "2026-01-01T00:00:15Z",
+    "delivery_job_id": "delivery-job-basic-manual-export-001",
+    "dispatch_decision_id": "dispatch-decision-basic-manual-export-001",
+    "route_id": "route-exchange-bundles-to-formal-rollup",
+    "delivery_channel_id": "manual-export",
+    "transport_adapter_id": "transport-manual-export",
+    "source_node_id": "field-radio-node-example",
+    "destination_node_id": "formal-rollup-node-example",
+    "subject_refs": [
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "artifact_refs": [
+      "bundles/examples/basic-rollup-exchange.bundle.json"
+    ],
+    "basis_refs": [
+      "delivery-job-basic-manual-export-001",
+      "dispatch-decision-basic-manual-export-001",
+      "dispatch-manual-export-routine-bundle",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "outbox_state": "picked_up",
+    "staged_by_ref": "tools/pfem_outbox.py",
+    "summary": "Synthetic example outbox item staging the basic rollup exchange bundle for manual export."
+  }
+]

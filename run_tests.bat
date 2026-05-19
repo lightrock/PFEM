@@ -31,6 +31,11 @@ python tools\pfem_dispatch_decisions.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM outbox validation...
+python tools\pfem_outbox.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1
