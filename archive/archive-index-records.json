@@ -1,0 +1,44 @@
+[
+  {
+    "archive_index_record_id": "archive-index-basic-restore-001",
+    "index_kind": "closed_archive_lookup_index",
+    "created_time": "2026-01-01T00:01:00Z",
+    "node_id": "formal-rollup-node-example",
+    "archive_chain_verification_receipt_id": "archive-chain-verification-basic-restore-001",
+    "archive_chain_record_id": "archive-chain-basic-restore-001",
+    "index_state": "indexed",
+    "index_scope": "closed_archive_chain",
+    "indexed_refs": [
+      "archive-chain-verification-basic-restore-001",
+      "archive-chain-basic-restore-001",
+      "archive-closeout-basic-restore-001",
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "index_entries": [
+      {
+        "lookup_key": "restore-basic-custody-lifecycle",
+        "subject_refs": [
+          "custody-lifecycle-closeout-basic-restore-001",
+          "custody-lifecycle-verification-basic-restore-001",
+          "custody-lifecycle-basic-restore-001",
+          "custody-ledger-verification-basic-restore-001"
+        ],
+        "archive_location_ref": "local-repository",
+        "archive_chain_ref": "archive-chain-basic-restore-001"
+      }
+    ],
+    "basis_refs": [
+      "archive-chain-verification-basic-restore-001",
+      "archive-chain-basic-restore-001",
+      "archive-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-indexed-ref-list",
+    "indexed_ref_digest": "eeb8867f4882b7f5b7b4f0d29cae6ed09bc0a837f79a5357bb86c5498bcec256",
+    "indexed_by_ref": "tools/pfem_archive_index_records.py",
+    "summary": "Synthetic example archive index record making the verified archive chain discoverable by lookup key and subject refs."
+  }
+]

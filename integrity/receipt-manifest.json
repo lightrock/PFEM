@@ -323,6 +323,12 @@
       "purpose": "archive chain verification receipts"
     },
     {
+      "path": "archive/archive-index-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e7fa85526ccc2a94667dc67f1dc45e8308373663f719ce5be25a8aa36e1c8923",
+      "purpose": "archive index records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -403,7 +409,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "64061b78daaff69f61c097cc8332d6f465d8ab64abdf196711b8ec424a373ab0",
+      "digest": "d76e5c4c013c681ae1902f458ecf33dbe3363ce98612ab9c1df36da043c40433",
       "purpose": "audit journal"
     },
     {

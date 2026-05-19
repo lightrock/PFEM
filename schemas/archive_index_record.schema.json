@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/archive_index_record.schema.json",
+  "title": "PFEM Archive Index Records",
+  "type": "object",
+  "required": [
+    "archive_index_record_id",
+    "index_kind",
+    "created_time",
+    "node_id",
+    "archive_chain_verification_receipt_id",
+    "archive_chain_record_id",
+    "index_state",
+    "index_scope",
+    "indexed_refs",
+    "index_entries",
+    "basis_refs",
+    "digest_algorithm",
+    "indexed_ref_digest",
+    "indexed_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "archive_index_record_id": {
+      "type": "string"
+    },
+    "index_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "archive_chain_verification_receipt_id": {
+      "type": "string"
+    },
+    "archive_chain_record_id": {
+      "type": "string"
+    },
+    "index_state": {
+      "type": "string"
+    },
+    "index_scope": {
+      "type": "string"
+    },
+    "indexed_refs": {
+      "type": "array"
+    },
+    "index_entries": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "indexed_ref_digest": {
+      "type": "string"
+    },
+    "indexed_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
