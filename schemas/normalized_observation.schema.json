@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/normalized_observation.schema.json",
+  "title": "PFEM Normalized Observation",
+  "type": "object",
+  "required": ["observation_id", "observation_kind", "source_evidence_ids", "observed_time"],
+  "properties": {
+    "observation_id": { "type": "string" },
+    "observation_kind": { "type": "string" },
+    "source_evidence_ids": { "type": "array", "items": { "type": "string" } },
+    "observed_time": { "type": "string" },
+    "normalized_fields": { "type": "object" },
+    "confidence": { "type": "number" },
+    "uncertainty_notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}
