@@ -71,6 +71,12 @@
       "purpose": "transport adapter registry"
     },
     {
+      "path": "transport/transport-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c6e3d239122a0fe8c7293163615a2951ffbe8461ce43f147aaa05438b1768190",
+      "purpose": "transport receipts"
+    },
+    {
       "path": "quality/quality-policy.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "cde88f5fcd90f572f2ab41b3479d43e6219d57b5625aeab9eb2bb99ca49a5b09",
@@ -115,7 +121,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "866d3e5bfc5196d69666d2a42abc0981ab80154bb6c8dfef0b830aab50c25057",
+      "digest": "e453ae6a316359fb29fdddbb23ac01ce282fc1662bfc08e4e90d64b60728d2fc",
       "purpose": "audit journal"
     },
     {

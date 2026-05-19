@@ -18,7 +18,7 @@ KNOWN_EVENT_KINDS = {
     "exchange_bundle_rejected", "reconciliation_recorded",
     "quality_assessment_recorded", "action_recorded", "playbook_registered",
     "routing_policy_registered", "delivery_channel_registered",
-    "transport_adapter_registered",
+    "transport_adapter_registered", "transport_receipt_recorded",
 }
 
 
@@ -65,7 +65,6 @@ def _load_records(path: Path) -> list[JsonObject]:
 
 
 def load_audit_events(path: str | Path) -> list[AuditEvent]:
-    records = _load_records(Path(path))
     return [
         AuditEvent(
             audit_id=str(record.get("audit_id", "")),
@@ -76,7 +75,7 @@ def load_audit_events(path: str | Path) -> list[AuditEvent]:
             summary=str(record.get("summary", "")),
             source_tool=str(record["source_tool"]) if "source_tool" in record else None,
         )
-        for record in records
+        for record in _load_records(Path(path))
     ]
 
 
@@ -97,6 +96,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
         ("playbooks/**/*.playbook.json", "playbook_id"),
+        ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()
     for pattern, key in patterns:
@@ -105,29 +105,18 @@ def _collect_known_record_ids(root: Path) -> set[str]:
                 if record.get(key):
                     ids.add(str(record[key]))
 
-    routing_path = root / "routing" / "routing-policy.json"
-    if routing_path.exists():
-        raw = json.loads(routing_path.read_text(encoding="utf-8"))
+    for path, array_key, id_key in [
+        (root / "routing" / "routing-policy.json", "routes", "route_id"),
+        (root / "delivery" / "delivery-channel-registry.json", "channels", "channel_id"),
+        (root / "transport" / "transport-adapter-registry.json", "adapters", "transport_adapter_id"),
+    ]:
+        if not path.exists():
+            continue
+        raw = json.loads(path.read_text(encoding="utf-8"))
         if isinstance(raw, dict):
-            for route in raw.get("routes", []):
-                if isinstance(route, dict) and route.get("route_id"):
-                    ids.add(str(route["route_id"]))
-
-    delivery_path = root / "delivery" / "delivery-channel-registry.json"
-    if delivery_path.exists():
-        raw = json.loads(delivery_path.read_text(encoding="utf-8"))
-        if isinstance(raw, dict):
-            for channel in raw.get("channels", []):
-                if isinstance(channel, dict) and channel.get("channel_id"):
-                    ids.add(str(channel["channel_id"]))
-
-    transport_path = root / "transport" / "transport-adapter-registry.json"
-    if transport_path.exists():
-        raw = json.loads(transport_path.read_text(encoding="utf-8"))
-        if isinstance(raw, dict):
-            for adapter in raw.get("adapters", []):
-                if isinstance(adapter, dict) and adapter.get("transport_adapter_id"):
-                    ids.add(str(adapter["transport_adapter_id"]))
+            for item in raw.get(array_key, []):
+                if isinstance(item, dict) and item.get(id_key):
+                    ids.add(str(item[id_key]))
 
     return ids
 

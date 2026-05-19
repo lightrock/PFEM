@@ -29,18 +29,21 @@ from pfem.schema_contracts import validate_schema_contracts
 from pfem.source_runtime import validate_source_provenance_repository
 from pfem.topology import validate_topology_repository
 from pfem.transport import validate_transport_adapter_registry
+from pfem.transport_receipt import validate_transport_receipts
 
 
 EXPECTED_PATHS = [
     "README.md", "AGENTS.md", "docs/AI_START_HERE.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
-    "docs/architecture/transport-adapters.md",
+    "docs/architecture/transport-adapters.md", "docs/architecture/transport-receipts.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
-    "contracts/transport-adapter-contract.md",
+    "contracts/transport-adapter-contract.md", "contracts/transport-receipt-contract.md",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/transport_adapter_registry.schema.json",
+    "schemas/transport_receipt.schema.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "transport/README.md", "transport/transport-adapter-registry.json",
+    "transport/transport-receipts.json",
     "routing/README.md", "routing/routing-policy.json",
     "src/pfem/__init__.py",
 ]
@@ -203,6 +206,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_retention_policy(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)
     report.failures.extend(validate_transport_adapter_registry(root).failures)
+    report.failures.extend(validate_transport_receipts(root).failures)
     report.failures.extend(validate_routing_policy(root).failures)
     report.failures.extend(validate_quality_repository(root).failures)
     report.failures.extend(validate_action_repository(root).failures)

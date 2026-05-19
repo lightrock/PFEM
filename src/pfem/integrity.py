@@ -25,6 +25,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),
     ("transport/transport-adapter-registry.json", "transport adapter registry"),
+    ("transport/transport-receipts.json", "transport receipts"),
     ("quality/quality-policy.json", "quality policy"),
     ("quality/quality-assessments.json", "quality assessments"),
     ("action/action-policy.json", "action policy"),

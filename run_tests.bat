@@ -31,6 +31,11 @@ python tools\pfem_transport.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM transport receipt validation...
+python tools\pfem_transport_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM routing validation...
 python tools\pfem_routing.py
 if errorlevel 1 exit /b 1

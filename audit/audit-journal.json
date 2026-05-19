@@ -121,5 +121,17 @@
     ],
     "summary": "Example transport adapter registry was recorded.",
     "source_tool": "pfem_transport"
+  },
+  {
+    "audit_id": "audit-transport-receipt-basic-001",
+    "event_kind": "transport_receipt_recorded",
+    "created_time": "2026-01-01T00:00:16Z",
+    "actor_ref": "tools/pfem_transport_receipts.py",
+    "subject_refs": [
+      "transport-receipt-basic-manual-export-001",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "summary": "Example transport receipt was recorded.",
+    "source_tool": "pfem_transport_receipts"
   }
 ]
