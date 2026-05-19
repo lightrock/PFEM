@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from pfem.action import validate_action_repository
+from pfem.apply_receipt import validate_apply_receipts
 from pfem.adapter_runtime import load_adapter_manifest, validate_adapter_registry
 from pfem.audit import validate_audit_repository
 from pfem.bundle import validate_bundle_repository
@@ -50,6 +51,7 @@ EXPECTED_PATHS = [
     "docs/architecture/intake-decisions.md",
     "docs/architecture/import-records.md",
     "docs/architecture/conflict-records.md",
+    "docs/architecture/apply-receipts.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -62,6 +64,7 @@ EXPECTED_PATHS = [
     "contracts/intake-decision-contract.md",
     "contracts/import-record-contract.md",
     "contracts/conflict-record-contract.md",
+    "contracts/apply-receipt-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -74,6 +77,7 @@ EXPECTED_PATHS = [
     "schemas/intake_decision.schema.json",
     "schemas/import_record.schema.json",
     "schemas/conflict_record.schema.json",
+    "schemas/apply_receipt.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -86,6 +90,7 @@ EXPECTED_PATHS = [
     "intake/README.md", "intake/intake-decisions.json",
     "imports/README.md", "imports/import-records.json",
     "conflicts/README.md", "conflicts/conflict-records.json",
+    "apply/README.md", "apply/apply-receipts.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -95,7 +100,7 @@ EXPECTED_PATHS = [
     "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "imports", "conflicts", "merge", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "intake", "imports", "conflicts", "merge", "apply", "transport", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
 NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "dispatch", "routing", "delivery", "outbox", "inbox", "transport", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
@@ -257,6 +262,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_inbox_items(root).failures)
     report.failures.extend(validate_import_records(root).failures)
     report.failures.extend(validate_conflict_records(root).failures)
+    report.failures.extend(validate_apply_receipts(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)

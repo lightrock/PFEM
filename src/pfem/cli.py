@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from pfem.action import format_action_report, validate_action_repository
+from pfem.apply_receipt import format_apply_receipt_report, validate_apply_receipts
 from pfem.audit import format_audit_report, validate_audit_repository
 from pfem.conflict_record import format_conflict_record_report, validate_conflict_records
 from pfem.bundle import format_bundle_report, validate_bundle_repository
@@ -55,6 +56,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("inbox", "Validate PFEM inbox items"),
         ("intake-decisions", "Validate PFEM intake decisions"),
         ("import-records", "Validate PFEM import records"),
+        ("apply-receipts", "Validate PFEM apply receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -114,6 +116,7 @@ def main(argv: list[str] | None = None) -> int:
         "inbox": (validate_inbox_items, format_inbox_report),
         "intake-decisions": (validate_intake_decisions, format_intake_decision_report),
         "import-records": (validate_import_records, format_import_record_report),
+        "apply-receipts": (validate_apply_receipts, format_apply_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

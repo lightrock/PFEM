@@ -95,6 +95,12 @@
       "purpose": "conflict records"
     },
     {
+      "path": "apply/apply-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f37e8f4b6108cd175d7e3fa86d7e2c2808838b84cb4abd43f530dc47a4e3cb12",
+      "purpose": "apply receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -175,7 +181,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "7ff517992e6fa12d521d78ed4fb7473338925a493f577e667ecde8a41ad30ef9",
+      "digest": "f3cddc1c6db04ca1d46a3db6ebb658bf0fd17c8b067bb5aaa3fd02a9da1185bf",
       "purpose": "audit journal"
     },
     {

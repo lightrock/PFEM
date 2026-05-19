@@ -29,6 +29,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("intake/intake-decisions.json", "intake decisions"),
     ("imports/import-records.json", "import records"),
     ("conflicts/conflict-records.json", "conflict records"),
+    ("apply/apply-receipts.json", "apply receipts"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),

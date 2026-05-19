@@ -258,5 +258,18 @@
     ],
     "summary": "Example conflict check record was recorded before merge decision.",
     "source_tool": "pfem_conflict_records"
+  },
+  {
+    "audit_id": "audit-apply-receipt-basic-001",
+    "event_kind": "apply_receipt_recorded",
+    "created_time": "2026-01-01T00:00:22Z",
+    "actor_ref": "tools/pfem_apply_receipts.py",
+    "subject_refs": [
+      "apply-receipt-basic-merge-001",
+      "merge-decision-basic-import-001",
+      "import-record-basic-exchange-001"
+    ],
+    "summary": "Example apply receipt was recorded after merge decision.",
+    "source_tool": "pfem_apply_receipts"
   }
 ]

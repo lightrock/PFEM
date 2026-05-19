@@ -1,0 +1,28 @@
+[
+  {
+    "apply_receipt_id": "apply-receipt-basic-merge-001",
+    "receipt_kind": "local_record_apply",
+    "created_time": "2026-01-01T00:00:22Z",
+    "merge_decision_id": "merge-decision-basic-import-001",
+    "conflict_record_id": "conflict-record-basic-import-001",
+    "import_record_id": "import-record-basic-exchange-001",
+    "exchange_receipt_id": "exchange-receipt-basic-accept-001",
+    "bundle_id": "bundle-basic-rollup-exchange-001",
+    "apply_state": "applied",
+    "applied_by_ref": "tools/pfem_apply_receipts.py",
+    "created_refs": [],
+    "updated_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "skipped_refs": [],
+    "failed_refs": [],
+    "basis_refs": [
+      "merge-decision-basic-import-001",
+      "conflict-record-basic-import-001",
+      "import-record-basic-exchange-001",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "summary": "Synthetic example apply receipt showing that the merge decision was applied to the local rollup and federation records."
+  }
+]
