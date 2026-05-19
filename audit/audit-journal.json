@@ -362,5 +362,18 @@
     ],
     "summary": "Example restore approval was recorded for a restore plan.",
     "source_tool": "pfem_restore_approvals"
+  },
+  {
+    "audit_id": "audit-restore-receipt-basic-001",
+    "event_kind": "restore_receipt_recorded",
+    "created_time": "2026-01-01T00:00:30Z",
+    "actor_ref": "tools/pfem_restore_receipts.py",
+    "subject_refs": [
+      "restore-receipt-basic-state-001",
+      "restore-approval-basic-state-001",
+      "restore-plan-basic-state-001"
+    ],
+    "summary": "Example restore receipt was recorded after restore execution.",
+    "source_tool": "pfem_restore_receipts"
   }
 ]

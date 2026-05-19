@@ -37,6 +37,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("recovery/recovery-points.json", "recovery points"),
     ("restore/restore-plans.json", "restore plans"),
     ("restore/restore-approvals.json", "restore approvals"),
+    ("restore/restore-receipts.json", "restore receipts"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),

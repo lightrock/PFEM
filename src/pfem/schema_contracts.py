@@ -36,6 +36,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "recovery_point.schema.json": ["recovery/recovery-points.json"],
     "restore_plan.schema.json": ["restore/restore-plans.json"],
     "restore_approval.schema.json": ["restore/restore-approvals.json"],
+    "restore_receipt.schema.json": ["restore/restore-receipts.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

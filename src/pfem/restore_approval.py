@@ -157,6 +157,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("recovery/recovery-points.json", "recovery_point_id"),
         ("restore/restore-plans.json", "restore_plan_id"),
         ("restore/restore-approvals.json", "restore_approval_id"),
+        ("restore/restore-receipts.json", "restore_receipt_id"),
         ("reconciliation/reconciliation-records.json", "reconciliation_id"),
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),

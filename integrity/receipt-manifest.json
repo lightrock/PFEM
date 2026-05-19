@@ -143,6 +143,12 @@
       "purpose": "restore approvals"
     },
     {
+      "path": "restore/restore-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "304087a1309038c4bb0be1eaeba2cd9a728ac851307784547698f1b19b7da31a",
+      "purpose": "restore receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -223,7 +229,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "851577f356d3df0fe59aedd36e4d2281ae556f3b20aaac452049f08a91fd456e",
+      "digest": "faa9ccaf3c2f8ddae5139848102ef779190e24eb8a31b542bb55cdbea5089fe9",
       "purpose": "audit journal"
     },
     {
