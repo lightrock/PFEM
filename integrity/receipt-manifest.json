@@ -71,6 +71,12 @@
       "purpose": "audit journal"
     },
     {
+      "path": "bundles/examples/basic-rollup-exchange.bundle.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9ae8d633823c2fb5aef15539863d97987cfe49b4a315420324562fb33b45532b",
+      "purpose": "basic exchange bundle"
+    },
+    {
       "path": "tests/fixtures/lifecycle/basic/raw_evidence.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "e96d37056fe1df557266411e9ecf53e938eda0ea325b4c8c2639e980c1af3eb5",

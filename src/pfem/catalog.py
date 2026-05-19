@@ -7,6 +7,7 @@ from typing import Any
 
 from pfem.adapter_runtime import load_adapter_registry
 from pfem.audit import load_audit_events
+from pfem.bundle import load_exchange_bundle
 from pfem.capability_runtime import load_capability_manifest
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
@@ -63,6 +64,22 @@ def _audit_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"audit_id": e.audit_id, "event_kind": e.event_kind, "actor_ref": e.actor_ref} for e in load_audit_events(p)]
 
 
+def _bundle_rows(root: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    bundles_dir = root / "bundles"
+    if not bundles_dir.exists():
+        return rows
+    for path in sorted(bundles_dir.glob("**/*.bundle.json")):
+        bundle = load_exchange_bundle(path)
+        rows.append({
+            "bundle_id": bundle.bundle_id,
+            "bundle_kind": bundle.bundle_kind,
+            "sharing_scope": bundle.sharing_scope,
+            "path": str(path.relative_to(root)),
+        })
+    return rows
+
+
 def _handling_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "handling" / "handling-policy.json"
     if not p.exists():
@@ -107,6 +124,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     examples = _example_rows(root)
     reviews = _review_rows(root)
     audit_events = _audit_rows(root)
+    bundles = _bundle_rows(root)
     handling_labels = _handling_rows(root)
     retention_classes = _retention_rows(root)
     integrity_receipts = _integrity_rows(root)
@@ -117,14 +135,14 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "counts": {
             "capabilities": len(capabilities), "adapters": len(adapters), "profiles": len(profiles),
             "nodes": len(nodes), "sources": len(sources), "examples": len(examples),
-            "reviews": len(reviews), "audit_events": len(audit_events),
+            "reviews": len(reviews), "audit_events": len(audit_events), "bundles": len(bundles),
             "handling_labels": len(handling_labels), "retention_classes": len(retention_classes),
             "integrity_receipts": len(integrity_receipts), "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
         },
         "capabilities": capabilities, "adapters": adapters, "profiles": profiles, "nodes": nodes,
         "sources": sources, "examples": examples, "reviews": reviews, "audit_events": audit_events,
-        "handling_labels": handling_labels, "retention_classes": retention_classes,
+        "bundles": bundles, "handling_labels": handling_labels, "retention_classes": retention_classes,
         "integrity_receipts": integrity_receipts, "sharing_scopes": sharing_scopes, "review_gates": review_gates,
     }
 
@@ -150,9 +168,9 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['capabilities']} capabilities, {counts['adapters']} adapters, "
         f"{counts['profiles']} profiles, {counts['nodes']} nodes, {counts['sources']} sources, "
         f"{counts['examples']} examples, {counts['reviews']} reviews, {counts['audit_events']} audit events, "
-        f"{counts['handling_labels']} handling labels, {counts['retention_classes']} retention classes, "
-        f"{counts['integrity_receipts']} integrity receipts, {counts['sharing_scopes']} sharing scopes, "
-        f"{counts['review_gates']} review gates",
+        f"{counts['bundles']} bundles, {counts['handling_labels']} handling labels, "
+        f"{counts['retention_classes']} retention classes, {counts['integrity_receipts']} integrity receipts, "
+        f"{counts['sharing_scopes']} sharing scopes, {counts['review_gates']} review gates",
     ]
     lines.extend(_format_table("Capabilities", catalog["capabilities"], ["capability_id", "capability_kind", "path"]))
     lines.extend(_format_table("Adapters", catalog["adapters"], ["adapter_id", "adapter_kind", "status", "path"]))
@@ -162,6 +180,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Examples", catalog["examples"], ["example_id", "profile_id", "runnable", "status", "path"]))
     lines.extend(_format_table("Reviews", catalog["reviews"], ["review_id", "review_gate", "decision", "sharing_scope"]))
     lines.extend(_format_table("Audit Events", catalog["audit_events"], ["audit_id", "event_kind", "actor_ref"]))
+    lines.extend(_format_table("Bundles", catalog["bundles"], ["bundle_id", "bundle_kind", "sharing_scope", "path"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
     lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))

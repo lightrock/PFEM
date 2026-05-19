@@ -25,6 +25,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("topology/federation-topology.json", "federation topology"),
     ("review/review-records.json", "review records"),
     ("audit/audit-journal.json", "audit journal"),
+    ("bundles/examples/basic-rollup-exchange.bundle.json", "basic exchange bundle"),
     ("tests/fixtures/lifecycle/basic/raw_evidence.json", "basic lifecycle raw evidence"),
     ("tests/fixtures/lifecycle/basic/normalized_observation.json", "basic lifecycle normalized observation"),
     ("tests/fixtures/lifecycle/basic/finding.json", "basic lifecycle finding"),

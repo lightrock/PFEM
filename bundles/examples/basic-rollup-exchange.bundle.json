@@ -1,0 +1,30 @@
+{
+  "bundle_id": "bundle-basic-rollup-exchange-001",
+  "bundle_kind": "federation_exchange",
+  "created_time": "2026-01-01T00:00:06Z",
+  "producer_node_id": "field-radio-node-example",
+  "recipient_node_ids": [
+    "formal-rollup-node-example"
+  ],
+  "sharing_scope": "example",
+  "handling_label": "summary-shareable",
+  "redaction_state": "redacted-summary",
+  "retention_class": "synthetic-example",
+  "disposition_state": "active",
+  "included_record_refs": [
+    "package-rollup-001",
+    "rollup-basic-001",
+    "federation-basic-001",
+    "review-rollup-basic-001",
+    "audit-review-rollup-basic-001"
+  ],
+  "included_artifact_paths": [
+    "tests/fixtures/rollup/basic/lifecycle/evidence_package.json",
+    "tests/fixtures/rollup/basic/rollup_summary.json",
+    "tests/fixtures/rollup/basic/federation_message.json",
+    "review/review-records.json",
+    "audit/audit-journal.json"
+  ],
+  "purpose": "Example exchange bundle proving portable handoff shape.",
+  "notes": "Synthetic fixture bundle."
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/exchange_bundle.schema.json",
+  "title": "PFEM Exchange Bundle",
+  "type": "object",
+  "required": [
+    "bundle_id",
+    "bundle_kind",
+    "created_time",
+    "producer_node_id",
+    "recipient_node_ids",
+    "sharing_scope",
+    "handling_label",
+    "redaction_state",
+    "retention_class",
+    "disposition_state",
+    "included_record_refs",
+    "included_artifact_paths",
+    "purpose"
+  ],
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "bundle_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "producer_node_id": {
+      "type": "string"
+    },
+    "recipient_node_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sharing_scope": {
+      "type": "string"
+    },
+    "handling_label": {
+      "type": "string"
+    },
+    "redaction_state": {
+      "type": "string"
+    },
+    "retention_class": {
+      "type": "string"
+    },
+    "disposition_state": {
+      "type": "string"
+    },
+    "included_record_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "included_artifact_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
