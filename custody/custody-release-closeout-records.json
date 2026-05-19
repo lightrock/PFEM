@@ -1,0 +1,27 @@
+[
+  {
+    "custody_release_closeout_record_id": "custody-release-closeout-basic-restore-001",
+    "closeout_kind": "custody_release_workflow_closeout",
+    "created_time": "2026-01-01T00:00:48Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_release_verification_receipt_id": "custody-release-verification-basic-restore-001",
+    "custody_release_receipt_id": "custody-release-receipt-basic-restore-001",
+    "custody_release_approval_id": "custody-release-approval-basic-restore-001",
+    "custody_release_request_id": "custody-release-request-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "release_verified",
+    "closed_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "basis_refs": [
+      "custody-release-verification-basic-restore-001",
+      "custody-release-receipt-basic-restore-001",
+      "custody-release-approval-basic-restore-001",
+      "custody-release-request-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_custody_release_closeout_records.py",
+    "summary": "Synthetic example custody release closeout record showing the release workflow was closed after release verification passed."
+  }
+]
