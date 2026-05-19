@@ -1,0 +1,8 @@
+capability_id: action-recommendations
+display_name: Action Recommendations
+capability_kind: dashboard
+description: Generate human-reviewable suggested next steps.
+requires:
+  - dashboard-view
+produces:
+  - dashboard_action

@@ -1,0 +1,8 @@
+capability_id: cross-node-review
+display_name: Cross Node Review
+capability_kind: review
+description: Support review across information received from multiple nodes.
+requires:
+  - federation-input
+produces:
+  []

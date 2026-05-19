@@ -1,0 +1,8 @@
+capability_id: synthetic-input
+display_name: Synthetic Input
+capability_kind: test
+description: Produce synthetic records for testing.
+requires:
+  []
+produces:
+  - raw_evidence

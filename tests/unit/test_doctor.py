@@ -13,6 +13,7 @@ class DoctorTests(unittest.TestCase):
         self.assertTrue(report.ok, format_report(report))
         self.assertGreater(report.checked_json_files, 0)
         self.assertGreater(report.checked_adapter_manifests, 0)
+        self.assertGreater(report.checked_capability_manifests, 0)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,8 @@
+capability_id: scenario-export
+display_name: Scenario Export
+capability_kind: test
+description: Export scenario records and results.
+requires:
+  - metric-collection
+produces:
+  []

@@ -1,0 +1,8 @@
+capability_id: evidence-package-production
+display_name: Evidence Package Production
+capability_kind: evidence
+description: Collect linked records into reviewable evidence packages.
+requires:
+  - local-memory
+produces:
+  - evidence_package

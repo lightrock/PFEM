@@ -1,0 +1,8 @@
+capability_id: manual-observer-report
+display_name: Manual Observer Report
+capability_kind: input
+description: Capture a manually entered observer report.
+requires:
+  []
+produces:
+  - raw_evidence

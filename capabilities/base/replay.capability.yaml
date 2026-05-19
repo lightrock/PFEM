@@ -1,0 +1,8 @@
+capability_id: replay
+display_name: Replay
+capability_kind: test
+description: Replay stored scenarios and sample records.
+requires:
+  []
+produces:
+  []

@@ -1,0 +1,8 @@
+capability_id: summary-output
+display_name: Summary Output
+capability_kind: output
+description: Produce human-readable or machine-readable summaries.
+requires:
+  []
+produces:
+  - rollup_summary

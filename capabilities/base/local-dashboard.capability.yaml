@@ -1,0 +1,8 @@
+capability_id: local-dashboard
+display_name: Local Dashboard
+capability_kind: dashboard
+description: Provide local human-facing review screens.
+requires:
+  []
+produces:
+  - dashboard_action

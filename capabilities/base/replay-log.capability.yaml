@@ -1,0 +1,8 @@
+capability_id: replay-log
+display_name: Replay Log
+capability_kind: test
+description: Read saved log records for replay.
+requires:
+  []
+produces:
+  - raw_evidence

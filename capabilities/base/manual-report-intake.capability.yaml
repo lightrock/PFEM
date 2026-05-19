@@ -1,0 +1,8 @@
+capability_id: manual-report-intake
+display_name: Manual Report Intake
+capability_kind: input
+description: Accept human-entered or manually imported reports.
+requires:
+  []
+produces:
+  - raw_evidence

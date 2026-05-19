@@ -1,0 +1,8 @@
+capability_id: configured-by-site
+display_name: Configured By Site
+capability_kind: configuration
+description: Placeholder for a deployment-selected adapter set.
+requires:
+  []
+produces:
+  []

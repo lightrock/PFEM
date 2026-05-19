@@ -1,0 +1,8 @@
+capability_id: metric-collection
+display_name: Metric Collection
+capability_kind: test
+description: Collect measurements from runs and scenarios.
+requires:
+  []
+produces:
+  []

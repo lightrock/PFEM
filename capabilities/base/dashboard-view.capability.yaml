@@ -1,0 +1,8 @@
+capability_id: dashboard-view
+display_name: Dashboard View
+capability_kind: dashboard
+description: Show review state, summaries, and next-step context.
+requires:
+  []
+produces:
+  - dashboard_action

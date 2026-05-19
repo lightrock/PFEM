@@ -1,0 +1,8 @@
+capability_id: multi-profile-test
+display_name: Multi Profile Test
+capability_kind: test
+description: Exercise more than one profile shape in a single evaluation run.
+requires:
+  - simulation
+produces:
+  []

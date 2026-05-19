@@ -1,0 +1,8 @@
+capability_id: normalized-observation-handling
+display_name: Normalized Observation Handling
+capability_kind: processing
+description: Handle observations derived from raw evidence.
+requires:
+  - source-input
+produces:
+  - normalized_observation

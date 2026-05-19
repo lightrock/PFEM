@@ -1,0 +1,8 @@
+capability_id: federation-output
+display_name: Federation Output
+capability_kind: federation
+description: Send attributable federation messages to configured peers or rollups.
+requires:
+  []
+produces:
+  - federation_message

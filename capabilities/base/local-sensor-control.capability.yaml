@@ -1,0 +1,8 @@
+capability_id: local-sensor-control
+display_name: Local Sensor Control
+capability_kind: input
+description: Interact with locally configured source equipment when permitted.
+requires:
+  []
+produces:
+  []

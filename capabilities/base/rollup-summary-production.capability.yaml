@@ -1,0 +1,8 @@
+capability_id: rollup-summary-production
+display_name: Rollup Summary Production
+capability_kind: rollup
+description: Produce derived summaries for other nodes or review layers.
+requires:
+  - local-memory
+produces:
+  - rollup_summary

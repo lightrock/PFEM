@@ -1,0 +1,8 @@
+capability_id: peer-federation
+display_name: Peer Federation
+capability_kind: federation
+description: Exchange attributable messages with peer nodes.
+requires:
+  []
+produces:
+  - federation_message

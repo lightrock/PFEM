@@ -1,0 +1,8 @@
+capability_id: offline-operation
+display_name: Offline Operation
+capability_kind: runtime
+description: Continue useful local operation without continuous connectivity.
+requires:
+  []
+produces:
+  []

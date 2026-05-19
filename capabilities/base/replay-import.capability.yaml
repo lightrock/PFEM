@@ -1,0 +1,8 @@
+capability_id: replay-import
+display_name: Replay Import
+capability_kind: test
+description: Replay saved records for testing, review, or demonstrations.
+requires:
+  []
+produces:
+  - raw_evidence

@@ -1,0 +1,8 @@
+capability_id: federation-link
+display_name: Federation Link
+capability_kind: federation
+description: Use federation messages as an adapter-style input or output link.
+requires:
+  []
+produces:
+  - federation_message

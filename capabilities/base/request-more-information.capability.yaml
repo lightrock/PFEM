@@ -1,0 +1,8 @@
+capability_id: request-more-information
+display_name: Request More Information
+capability_kind: workflow
+description: Create a request for additional context or confirmation.
+requires:
+  - federation-output
+produces:
+  - federation_message

@@ -1,0 +1,8 @@
+capability_id: local-memory
+display_name: Local Memory
+capability_kind: memory
+description: Keep local state, evidence references, and review context.
+requires:
+  []
+produces:
+  []

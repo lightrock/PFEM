@@ -1,0 +1,8 @@
+capability_id: file-import
+display_name: File Import
+capability_kind: input
+description: Import records from local files.
+requires:
+  []
+produces:
+  - raw_evidence

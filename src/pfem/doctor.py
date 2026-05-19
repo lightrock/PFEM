@@ -1,8 +1,8 @@
 """PFEM repository doctor.
 
 The doctor is a dependency-free sanity check for a PFEM checkout. It checks
-architecture anchors, JSON syntax, adapter manifests, node profiles, and public
-neutral-language guardrails.
+architecture anchors, JSON syntax, adapter manifests, capability manifests,
+node profiles, and public neutral-language guardrails.
 """
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from pfem.adapter_runtime import load_adapter_manifest
+from pfem.capability_runtime import load_capability_manifest
 from pfem.profile_runtime import load_node_profile
 
 
@@ -21,6 +22,7 @@ EXPECTED_PATHS = [
     "docs/AI_START_HERE.md",
     "docs/architecture/neutral-language.md",
     "docs/architecture/architecture-stack.md",
+    "docs/architecture/capability-model.md",
     "docs/architecture/evidence-lifecycle.md",
     "ai/architecture-rules.md",
     "ai/adapter-rules.md",
@@ -34,6 +36,7 @@ EXPECTED_PATHS = [
     "schemas/node_profile.schema.json",
     "schemas/raw_evidence.schema.json",
     "schemas/normalized_observation.schema.json",
+    "capabilities/README.md",
     "src/pfem/__init__.py",
 ]
 
@@ -51,11 +54,10 @@ NEUTRAL_LANGUAGE_SCAN_DIRS = [
     "profiles",
     "schemas",
     "adapters",
+    "capabilities",
     ".github",
 ]
 
-# Keep this list intentionally small. It catches obvious public-repo leaks while
-# avoiding a brittle censor-bot that blocks ordinary architecture language.
 DISCOURAGED_PUBLIC_TERMS = [
     "DARPA",
     "DOD",
@@ -69,6 +71,7 @@ class DoctorReport:
     root: Path
     checked_json_files: int = 0
     checked_adapter_manifests: int = 0
+    checked_capability_manifests: int = 0
     checked_node_profiles: int = 0
     failures: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
@@ -132,12 +135,16 @@ def check_json_syntax(root: Path, report: DoctorReport) -> None:
         report.checked_json_files += 1
         try:
             json.loads(path.read_text(encoding="utf-8"))
-        except Exception as exc:  # noqa: BLE001 - doctor should report all parse failures
+        except Exception as exc:  # noqa: BLE001
             report.failures.append(f"invalid JSON: {path.relative_to(root)}: {exc}")
 
 
 def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
-    for path in sorted((root / "adapters").rglob("adapter.yaml")) if (root / "adapters").exists() else []:
+    adapters_dir = root / "adapters"
+    if not adapters_dir.exists():
+        return
+
+    for path in sorted(adapters_dir.rglob("adapter.yaml")):
         report.checked_adapter_manifests += 1
         try:
             manifest = load_adapter_manifest(path)
@@ -151,7 +158,36 @@ def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
             report.failures.append(f"adapter manifest missing display_name: {path.relative_to(root)}")
 
 
-def check_node_profiles(root: Path, report: DoctorReport) -> None:
+def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
+    capabilities_dir = root / "capabilities"
+    capability_ids: set[str] = set()
+
+    if not capabilities_dir.exists():
+        return capability_ids
+
+    for path in sorted(capabilities_dir.rglob("*.capability.yaml")):
+        report.checked_capability_manifests += 1
+        try:
+            manifest = load_capability_manifest(path)
+        except Exception as exc:  # noqa: BLE001
+            report.failures.append(f"capability manifest failed to load: {path.relative_to(root)}: {exc}")
+            continue
+
+        if not manifest.capability_id:
+            report.failures.append(f"capability manifest missing capability_id: {path.relative_to(root)}")
+        if not manifest.display_name:
+            report.failures.append(f"capability manifest missing display_name: {path.relative_to(root)}")
+        if not manifest.capability_kind:
+            report.failures.append(f"capability manifest missing capability_kind: {path.relative_to(root)}")
+        if manifest.capability_id in capability_ids:
+            report.failures.append(f"duplicate capability_id {manifest.capability_id!r}: {path.relative_to(root)}")
+
+        capability_ids.add(manifest.capability_id)
+
+    return capability_ids
+
+
+def check_node_profiles(root: Path, report: DoctorReport, capability_ids: set[str]) -> None:
     profiles_dir = root / "profiles"
     if not profiles_dir.exists():
         return
@@ -168,6 +204,12 @@ def check_node_profiles(root: Path, report: DoctorReport) -> None:
             report.failures.append(f"node profile missing profile_id: {path.relative_to(root)}")
         if not profile.profile_kind:
             report.failures.append(f"node profile missing profile_kind: {path.relative_to(root)}")
+
+        for capability in [*profile.enabled_capabilities, *profile.disabled_capabilities]:
+            if capability and capability not in capability_ids:
+                report.warnings.append(
+                    f"profile references unknown capability {capability!r}: {path.relative_to(root)}"
+                )
 
 
 def check_neutral_language(root: Path, report: DoctorReport) -> None:
@@ -192,7 +234,8 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     check_expected_paths(root, report)
     check_json_syntax(root, report)
     check_adapter_manifests(root, report)
-    check_node_profiles(root, report)
+    capability_ids = collect_capability_ids(root, report)
+    check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)
 
     return report
@@ -203,6 +246,7 @@ def format_report(report: DoctorReport) -> str:
     lines.append(f"PFEM doctor root: {report.root}")
     lines.append(f"JSON files checked: {report.checked_json_files}")
     lines.append(f"Adapter manifests checked: {report.checked_adapter_manifests}")
+    lines.append(f"Capability manifests checked: {report.checked_capability_manifests}")
     lines.append(f"Node profiles checked: {report.checked_node_profiles}")
 
     if report.warnings:

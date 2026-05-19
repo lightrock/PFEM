@@ -1,0 +1,8 @@
+capability_id: source-input
+display_name: Source Input
+capability_kind: input
+description: Receive input from configured sources through adapters.
+requires:
+  []
+produces:
+  - raw_evidence

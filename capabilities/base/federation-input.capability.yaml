@@ -1,0 +1,8 @@
+capability_id: federation-input
+display_name: Federation Input
+capability_kind: federation
+description: Receive attributable federation messages from configured sources.
+requires:
+  []
+produces:
+  - federation_message
