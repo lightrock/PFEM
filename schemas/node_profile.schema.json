@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/node_profile.schema.json",
+  "title": "PFEM Node Profile",
+  "type": "object",
+  "required": ["profile_id", "profile_kind", "enabled_capabilities"],
+  "properties": {
+    "profile_id": { "type": "string" },
+    "profile_kind": { "type": "string" },
+    "enabled_capabilities": { "type": "array", "items": { "type": "string" } },
+    "disabled_capabilities": { "type": "array", "items": { "type": "string" } },
+    "default_adapters": { "type": "array", "items": { "type": "string" } },
+    "dashboard_mode": { "type": "string" },
+    "review_gates": { "type": "array", "items": { "type": "string" } },
+    "offline_behavior": { "type": "string" }
+  },
+  "additionalProperties": true
+}
