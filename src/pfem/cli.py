@@ -75,6 +75,16 @@ from pfem.retention_obligation_record import format_retention_obligation_record_
 from pfem.retention_obligation_verification_receipt import format_retention_obligation_verification_receipt_report, validate_retention_obligation_verification_receipts
 from pfem.retention_schedule_record import format_retention_schedule_record_report, validate_retention_schedule_records
 from pfem.retention_schedule_verification_receipt import format_retention_schedule_verification_receipt_report, validate_retention_schedule_verification_receipts
+from pfem.retention_schedule_closeout_record import format_retention_schedule_closeout_record_report, validate_retention_schedule_closeout_records
+from pfem.retention_cycle_record import format_retention_cycle_record_report, validate_retention_cycle_records
+from pfem.retention_cycle_verification_receipt import format_retention_cycle_verification_receipt_report, validate_retention_cycle_verification_receipts
+from pfem.retention_cycle_closeout_record import format_retention_cycle_closeout_record_report, validate_retention_cycle_closeout_records
+from pfem.retention_hold_record import format_retention_hold_record_report, validate_retention_hold_records
+from pfem.retention_hold_verification_receipt import format_retention_hold_verification_receipt_report, validate_retention_hold_verification_receipts
+from pfem.retention_hold_closeout_record import format_retention_hold_closeout_record_report, validate_retention_hold_closeout_records
+from pfem.retention_status_snapshot_record import format_retention_status_snapshot_record_report, validate_retention_status_snapshot_records
+from pfem.retention_status_snapshot_verification_receipt import format_retention_status_snapshot_verification_receipt_report, validate_retention_status_snapshot_verification_receipts
+from pfem.retention_rollup_record import format_retention_rollup_record_report, validate_retention_rollup_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -195,6 +205,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-obligation-verification-receipts", "Validate PFEM retention obligation verification receipts"),
         ("retention-schedule-records", "Validate PFEM retention schedule records"),
         ("retention-schedule-verification-receipts", "Validate PFEM retention schedule verification receipts"),
+        ("retention-schedule-closeout-records", "Validate PFEM retention schedule closeout records"),
+        ("retention-cycle-records", "Validate PFEM retention cycle records"),
+        ("retention-cycle-verification-receipts", "Validate PFEM retention cycle verification receipts"),
+        ("retention-cycle-closeout-records", "Validate PFEM retention cycle closeout records"),
+        ("retention-hold-records", "Validate PFEM retention hold records"),
+        ("retention-hold-verification-receipts", "Validate PFEM retention hold verification receipts"),
+        ("retention-hold-closeout-records", "Validate PFEM retention hold closeout records"),
+        ("retention-status-snapshot-records", "Validate PFEM retention status snapshot records"),
+        ("retention-status-snapshot-verification-receipts", "Validate PFEM retention status snapshot verification receipts"),
+        ("retention-rollup-records", "Validate PFEM retention rollup records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -324,6 +344,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-obligation-verification-receipts": (validate_retention_obligation_verification_receipts, format_retention_obligation_verification_receipt_report),
         "retention-schedule-records": (validate_retention_schedule_records, format_retention_schedule_record_report),
         "retention-schedule-verification-receipts": (validate_retention_schedule_verification_receipts, format_retention_schedule_verification_receipt_report),
+        "retention-schedule-closeout-records": (validate_retention_schedule_closeout_records, format_retention_schedule_closeout_record_report),
+        "retention-cycle-records": (validate_retention_cycle_records, format_retention_cycle_record_report),
+        "retention-cycle-verification-receipts": (validate_retention_cycle_verification_receipts, format_retention_cycle_verification_receipt_report),
+        "retention-cycle-closeout-records": (validate_retention_cycle_closeout_records, format_retention_cycle_closeout_record_report),
+        "retention-hold-records": (validate_retention_hold_records, format_retention_hold_record_report),
+        "retention-hold-verification-receipts": (validate_retention_hold_verification_receipts, format_retention_hold_verification_receipt_report),
+        "retention-hold-closeout-records": (validate_retention_hold_closeout_records, format_retention_hold_closeout_record_report),
+        "retention-status-snapshot-records": (validate_retention_status_snapshot_records, format_retention_status_snapshot_record_report),
+        "retention-status-snapshot-verification-receipts": (validate_retention_status_snapshot_verification_receipts, format_retention_status_snapshot_verification_receipt_report),
+        "retention-rollup-records": (validate_retention_rollup_records, format_retention_rollup_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

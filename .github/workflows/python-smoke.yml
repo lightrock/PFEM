@@ -93,6 +93,16 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_retention_obligation_verification_receipts.py
       - run: PYTHONPATH=src python tools/pfem_retention_schedule_records.py
       - run: PYTHONPATH=src python tools/pfem_retention_schedule_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_schedule_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_cycle_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_cycle_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_cycle_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_hold_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_hold_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_hold_closeout_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_status_snapshot_records.py
+      - run: PYTHONPATH=src python tools/pfem_retention_status_snapshot_verification_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_rollup_records.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

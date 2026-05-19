@@ -1,0 +1,35 @@
+[
+  {
+    "retention_hold_record_id": "retention-hold-basic-restore-001",
+    "hold_kind": "continued_preservation_hold",
+    "created_time": "2026-01-01T00:01:36Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_cycle_closeout_record_id": "retention-cycle-closeout-basic-restore-001",
+    "retention_obligation_verification_receipt_id": "retention-obligation-verification-basic-restore-001",
+    "hold_state": "active",
+    "hold_scope": "verified_retention_cycle",
+    "held_refs": [
+      "retention-cycle-verification-basic-restore-001",
+      "retention-cycle-basic-restore-001",
+      "retention-schedule-closeout-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-cycle-closeout-basic-restore-001",
+      "retention-cycle-verification-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-hold-ref-list",
+    "hold_ref_digest": "97e59b3faea6f75f3bb4eac20edbc98fc1fc7ce900358051209573c429c097c6",
+    "recorded_by_ref": "tools/pfem_retention_hold_records.py",
+    "summary": "Synthetic example retention hold record showing artifacts are under an active continue-preservation hold."
+  }
+]

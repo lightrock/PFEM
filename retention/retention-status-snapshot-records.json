@@ -1,0 +1,36 @@
+[
+  {
+    "retention_status_snapshot_record_id": "retention-status-snapshot-basic-restore-001",
+    "snapshot_kind": "retention_status_snapshot",
+    "created_time": "2026-01-01T00:01:39Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_hold_closeout_record_id": "retention-hold-closeout-basic-restore-001",
+    "retention_cycle_closeout_record_id": "retention-cycle-closeout-basic-restore-001",
+    "snapshot_state": "current",
+    "retention_status": "continue_preservation_active",
+    "snapshot_refs": [
+      "retention-hold-closeout-basic-restore-001",
+      "retention-hold-verification-basic-restore-001",
+      "retention-hold-basic-restore-001",
+      "retention-cycle-closeout-basic-restore-001",
+      "retention-cycle-verification-basic-restore-001",
+      "retention-cycle-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-hold-closeout-basic-restore-001",
+      "retention-cycle-closeout-basic-restore-001",
+      "retention-schedule-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-status-ref-list",
+    "snapshot_ref_digest": "09682b33d3509e488afebaacb43fd499cc0295f9d1a0348a1f814d1cc0eab9ae",
+    "recorded_by_ref": "tools/pfem_retention_status_snapshot_records.py",
+    "summary": "Synthetic example retention status snapshot showing continued preservation is active for the verified retention cycle."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "retention_cycle_record_id": "retention-cycle-basic-restore-001",
+    "cycle_kind": "closed_retention_cycle_summary",
+    "created_time": "2026-01-01T00:01:33Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_schedule_closeout_record_id": "retention-schedule-closeout-basic-restore-001",
+    "cycle_state": "closed",
+    "final_outcome": "continue_preservation_scheduled",
+    "cycle_refs": [
+      "retention-review-basic-restore-001",
+      "retention-review-verification-basic-restore-001",
+      "retention-decision-basic-restore-001",
+      "retention-decision-approval-basic-restore-001",
+      "retention-action-receipt-basic-restore-001",
+      "retention-action-verification-basic-restore-001",
+      "retention-action-closeout-basic-restore-001",
+      "retention-chain-basic-restore-001",
+      "retention-chain-verification-basic-restore-001",
+      "retention-lifecycle-basic-restore-001",
+      "retention-lifecycle-verification-basic-restore-001",
+      "retention-lifecycle-closeout-basic-restore-001",
+      "retention-ledger-basic-restore-001",
+      "retention-ledger-verification-basic-restore-001",
+      "retention-ledger-closeout-basic-restore-001",
+      "retention-policy-compliance-basic-restore-001",
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention-obligation-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001",
+      "retention-schedule-basic-restore-001",
+      "retention-schedule-verification-basic-restore-001",
+      "retention-schedule-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-schedule-closeout-basic-restore-001",
+      "retention-schedule-verification-basic-restore-001",
+      "retention-obligation-verification-basic-restore-001",
+      "retention-policy-compliance-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-cycle-ref-list",
+    "cycle_ref_digest": "7a73ad8ee58847df40abeaf2d31b431037f56c268c34063eac9aee3b7ae90fe9",
+    "summarized_by_ref": "tools/pfem_retention_cycle_records.py",
+    "summary": "Synthetic example retention cycle record summarizing the retention review, decision, action, obligation, and schedule cycle."
+  }
+]

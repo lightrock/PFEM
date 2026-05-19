@@ -515,6 +515,66 @@
       "purpose": "retention schedule verification receipts"
     },
     {
+      "path": "retention/retention-schedule-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "7fa11559950313fa1579e7ac8dc6b3e867979584bd887093d2a18ebf06708bb0",
+      "purpose": "retention schedule closeout records"
+    },
+    {
+      "path": "retention/retention-cycle-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "76fac959293c8040d3ae3767417ab0fcecf5bddc495b07f0613ac25dc04f5a6c",
+      "purpose": "retention cycle records"
+    },
+    {
+      "path": "retention/retention-cycle-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "6274bd49a248365df34b8da3bd9f96decbc28e4a82c26323c761e9025f754877",
+      "purpose": "retention cycle verification receipts"
+    },
+    {
+      "path": "retention/retention-cycle-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "8cc9468d12c3f84e0c194f1c2bd17d7b6a52b60fb400bc2a66655a490b33069c",
+      "purpose": "retention cycle closeout records"
+    },
+    {
+      "path": "retention/retention-hold-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "061f9fb388a6de44c85bb77a10cb1296a4d6a3777349eeaa24ed0647a951792e",
+      "purpose": "retention hold records"
+    },
+    {
+      "path": "retention/retention-hold-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1cda9e0d589ae456044fab3bd45077befe20f0daab71f85a35a215ad4e098c85",
+      "purpose": "retention hold verification receipts"
+    },
+    {
+      "path": "retention/retention-hold-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "d0366af9ddd869541d8d4b36379afae881a00f4a3de18e1021de2ffc29973577",
+      "purpose": "retention hold closeout records"
+    },
+    {
+      "path": "retention/retention-status-snapshot-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "55f38eb782592c2af6e4141e105a721e48979b782bd67a131f8152b470d40f5b",
+      "purpose": "retention status snapshot records"
+    },
+    {
+      "path": "retention/retention-status-snapshot-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "5b158381235f2151963ae4686c5c2708e281bdbf54fcc4e616d2179c48ce8995",
+      "purpose": "retention status snapshot verification receipts"
+    },
+    {
+      "path": "retention/retention-rollup-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "073e339f5a175749ef38ce9d32bcf2a89e0474ed63bdb83916824f90bf6aea54",
+      "purpose": "retention rollup records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -595,7 +655,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "51258d461f23a111982e22e37ee2a2ef83682c0d101b86e47e0d31d10fd55a80",
+      "digest": "802f426ba0e169bc441e1e470620d00249e968f8fd1d2c7f5f42843b7352c071",
       "purpose": "audit journal"
     },
     {
