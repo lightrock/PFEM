@@ -736,5 +736,18 @@
     ],
     "summary": "Example archive chain records was recorded.",
     "source_tool": "pfem_archive_chain_records"
+  },
+  {
+    "audit_id": "audit-archive-chain-verification-basic-001",
+    "event_kind": "archive_chain_verification_recorded",
+    "created_time": "2026-01-01T00:00:59Z",
+    "actor_ref": "tools/pfem_archive_chain_verification_receipts.py",
+    "subject_refs": [
+      "archive-chain-verification-basic-restore-001",
+      "archive-chain-basic-restore-001",
+      "archive-closeout-basic-restore-001"
+    ],
+    "summary": "Example archive chain verification receipts was recorded.",
+    "source_tool": "pfem_archive_chain_verification_receipts"
   }
 ]
