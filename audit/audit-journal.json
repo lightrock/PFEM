@@ -876,5 +876,18 @@
     ],
     "summary": "Example preservation chain records was recorded.",
     "source_tool": "pfem_preservation_chain_records"
+  },
+  {
+    "audit_id": "audit-preservation-chain-verification-basic-001",
+    "event_kind": "preservation_chain_verification_recorded",
+    "created_time": "2026-01-01T00:01:10Z",
+    "actor_ref": "tools/pfem_preservation_chain_verification_receipts.py",
+    "subject_refs": [
+      "preservation-chain-verification-basic-restore-001",
+      "preservation-chain-basic-restore-001",
+      "preservation-closeout-basic-restore-001"
+    ],
+    "summary": "Example preservation chain verification receipts was recorded.",
+    "source_tool": "pfem_preservation_chain_verification_receipts"
   }
 ]

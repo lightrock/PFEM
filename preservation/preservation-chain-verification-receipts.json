@@ -1,0 +1,35 @@
+[
+  {
+    "preservation_chain_verification_receipt_id": "preservation-chain-verification-basic-restore-001",
+    "receipt_kind": "preservation_chain_summary_verification",
+    "created_time": "2026-01-01T00:01:10Z",
+    "node_id": "formal-rollup-node-example",
+    "preservation_chain_record_id": "preservation-chain-basic-restore-001",
+    "terminal_ref": "preservation-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_chain_refs": [
+      "preservation-basic-restore-001",
+      "preservation-verification-basic-restore-001",
+      "preservation-closeout-basic-restore-001"
+    ],
+    "checked_preserved_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "preservation-chain-basic-restore-001",
+      "preservation-closeout-basic-restore-001",
+      "preservation-verification-basic-restore-001",
+      "preservation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-preservation-chain-ref-list",
+    "expected_chain_ref_digest": "96158f2dcf0065d1796bf52cd3784b9b8b409fc6ed544cf7b8511060e5e777fa",
+    "actual_chain_ref_digest": "96158f2dcf0065d1796bf52cd3784b9b8b409fc6ed544cf7b8511060e5e777fa",
+    "verified_by_ref": "tools/pfem_preservation_chain_verification_receipts.py",
+    "summary": "Synthetic example preservation chain verification receipt showing the preservation chain summary and digest were checked."
+  }
+]
