@@ -77,6 +77,7 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_retention_decision_records.py
       - run: PYTHONPATH=src python tools/pfem_retention_decision_approvals.py
       - run: PYTHONPATH=src python tools/pfem_retention_action_receipts.py
+      - run: PYTHONPATH=src python tools/pfem_retention_action_verification_receipts.py
       - run: PYTHONPATH=src python tools/pfem_delivery.py
       - run: PYTHONPATH=src python tools/pfem_delivery_jobs.py
       - run: PYTHONPATH=src python tools/pfem_transport.py

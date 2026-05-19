@@ -59,6 +59,7 @@ from pfem.retention_review_verification_receipt import format_retention_review_v
 from pfem.retention_decision_record import format_retention_decision_record_report, validate_retention_decision_records
 from pfem.retention_decision_approval import format_retention_decision_approval_report, validate_retention_decision_approvals
 from pfem.retention_action_receipt import format_retention_action_receipt_report, validate_retention_action_receipts
+from pfem.retention_action_verification_receipt import format_retention_action_verification_receipt_report, validate_retention_action_verification_receipts
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -163,6 +164,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-decision-records", "Validate PFEM retention decision records"),
         ("retention-decision-approvals", "Validate PFEM retention decision approvals"),
         ("retention-action-receipts", "Validate PFEM retention action receipts"),
+        ("retention-action-verification-receipts", "Validate PFEM retention action verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -276,6 +278,7 @@ def main(argv: list[str] | None = None) -> int:
         "retention-decision-records": (validate_retention_decision_records, format_retention_decision_record_report),
         "retention-decision-approvals": (validate_retention_decision_approvals, format_retention_decision_approval_report),
         "retention-action-receipts": (validate_retention_action_receipts, format_retention_action_receipt_report),
+        "retention-action-verification-receipts": (validate_retention_action_verification_receipts, format_retention_action_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

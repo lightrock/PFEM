@@ -954,5 +954,18 @@
     ],
     "summary": "Example retention action receipts was recorded.",
     "source_tool": "pfem_retention_action_receipts"
+  },
+  {
+    "audit_id": "audit-retention-action-verification-basic-001",
+    "event_kind": "retention_action_verification_recorded",
+    "created_time": "2026-01-01T00:01:16Z",
+    "actor_ref": "tools/pfem_retention_action_verification_receipts.py",
+    "subject_refs": [
+      "retention-action-verification-basic-restore-001",
+      "retention-action-receipt-basic-restore-001",
+      "retention-decision-approval-basic-restore-001"
+    ],
+    "summary": "Example retention action verification receipts was recorded.",
+    "source_tool": "pfem_retention_action_verification_receipts"
   }
 ]
