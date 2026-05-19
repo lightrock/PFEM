@@ -137,6 +137,12 @@
       "purpose": "restore plans"
     },
     {
+      "path": "restore/restore-approvals.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ce8df7e66265af1a0aa1f4de38320189781ec9f3381dc9d9fce4596ba6e90e44",
+      "purpose": "restore approvals"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -217,7 +223,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "172c9d3127fd29d07c57c3968627d5ae5627ead7676b37a8b27f06e003e4034e",
+      "digest": "851577f356d3df0fe59aedd36e4d2281ae556f3b20aaac452049f08a91fd456e",
       "purpose": "audit journal"
     },
     {

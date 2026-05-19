@@ -1,0 +1,27 @@
+[
+  {
+    "restore_approval_id": "restore-approval-basic-state-001",
+    "approval_kind": "operator_restore_approval",
+    "created_time": "2026-01-01T00:00:29Z",
+    "node_id": "formal-rollup-node-example",
+    "restore_plan_id": "restore-plan-basic-state-001",
+    "recovery_point_id": "recovery-point-basic-state-001",
+    "approval_state": "approved",
+    "approved_scope": "local_repository_state",
+    "approved_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "approver_ref": "operator-review-basic-restore",
+    "approval_basis_refs": [
+      "restore-plan-basic-state-001",
+      "recovery-point-basic-state-001",
+      "snapshot-verification-basic-state-001"
+    ],
+    "approval_constraints": [
+      "execute_only_if_current_state_matches_plan_preconditions",
+      "write_restore_receipt_after_execution"
+    ],
+    "summary": "Synthetic example restore approval authorizing the basic restore plan before any restore is executed."
+  }
+]

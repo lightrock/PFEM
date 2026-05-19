@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/restore_approval.schema.json",
+  "title": "PFEM Restore Approval",
+  "type": "object",
+  "required": [
+    "restore_approval_id",
+    "approval_kind",
+    "created_time",
+    "node_id",
+    "restore_plan_id",
+    "recovery_point_id",
+    "approval_state",
+    "approved_scope",
+    "approved_refs",
+    "approver_ref",
+    "approval_basis_refs",
+    "summary"
+  ],
+  "properties": {
+    "restore_approval_id": {
+      "type": "string"
+    },
+    "approval_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "restore_plan_id": {
+      "type": "string"
+    },
+    "recovery_point_id": {
+      "type": "string"
+    },
+    "approval_state": {
+      "type": "string"
+    },
+    "approved_scope": {
+      "type": "string"
+    },
+    "approved_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approver_ref": {
+      "type": "string"
+    },
+    "approval_basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approval_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

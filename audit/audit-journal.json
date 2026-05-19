@@ -349,5 +349,18 @@
     ],
     "summary": "Example restore plan was recorded from an available recovery point.",
     "source_tool": "pfem_restore_plans"
+  },
+  {
+    "audit_id": "audit-restore-approval-basic-001",
+    "event_kind": "restore_approval_recorded",
+    "created_time": "2026-01-01T00:00:29Z",
+    "actor_ref": "tools/pfem_restore_approvals.py",
+    "subject_refs": [
+      "restore-approval-basic-state-001",
+      "restore-plan-basic-state-001",
+      "recovery-point-basic-state-001"
+    ],
+    "summary": "Example restore approval was recorded for a restore plan.",
+    "source_tool": "pfem_restore_approvals"
   }
 ]

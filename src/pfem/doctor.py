@@ -35,6 +35,7 @@ from pfem.reconciliation import validate_reconciliation_repository
 from pfem.recovery_point import validate_recovery_points
 from pfem.retention import validate_retention_policy
 from pfem.restore_plan import validate_restore_plans
+from pfem.restore_approval import validate_restore_approvals
 from pfem.review import validate_review_repository
 from pfem.routing import validate_routing_policy
 from pfem.schema_contracts import validate_schema_contracts
@@ -64,6 +65,7 @@ EXPECTED_PATHS = [
     "docs/architecture/snapshot-verification-receipts.md",
     "docs/architecture/recovery-points.md",
     "docs/architecture/restore-plans.md",
+    "docs/architecture/restore-approvals.md",
     "docs/architecture/merge-decisions.md",
     "docs/architecture/exchange-receipt-intake-linkage.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
@@ -83,6 +85,7 @@ EXPECTED_PATHS = [
     "contracts/snapshot-verification-receipt-contract.md",
     "contracts/recovery-point-contract.md",
     "contracts/restore-plan-contract.md",
+    "contracts/restore-approval-contract.md",
     "contracts/merge-decision-contract.md",
     "contracts/exchange-receipt-intake-linkage-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
@@ -102,6 +105,7 @@ EXPECTED_PATHS = [
     "schemas/snapshot_verification_receipt.schema.json",
     "schemas/recovery_point.schema.json",
     "schemas/restore_plan.schema.json",
+    "schemas/restore_approval.schema.json",
     "schemas/merge_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
@@ -118,7 +122,7 @@ EXPECTED_PATHS = [
     "state/README.md", "state/state-checkpoints.json", "state/state-transitions.json",
     "snapshots/README.md", "snapshots/snapshot-manifests.json", "snapshots/snapshot-verification-receipts.json",
     "recovery/README.md", "recovery/recovery-points.json",
-    "restore/README.md", "restore/restore-plans.json",
+    "restore/README.md", "restore/restore-plans.json", "restore/restore-approvals.json",
     "merge/README.md", "merge/merge-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
@@ -297,6 +301,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_snapshot_verification_receipts(root).failures)
     report.failures.extend(validate_recovery_points(root).failures)
     report.failures.extend(validate_restore_plans(root).failures)
+    report.failures.extend(validate_restore_approvals(root).failures)
     report.failures.extend(validate_merge_decisions(root).failures)
     report.failures.extend(validate_intake_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)
