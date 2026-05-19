@@ -26,6 +26,11 @@ python tools\pfem_review.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM audit validation...
+python tools\pfem_audit.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM schema contract validation...
 python tools\pfem_schema_contracts.py
 if errorlevel 1 exit /b 1

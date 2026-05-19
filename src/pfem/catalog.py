@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from pfem.adapter_runtime import load_adapter_registry
+from pfem.audit import load_audit_events
 from pfem.capability_runtime import load_capability_manifest
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
@@ -55,6 +56,11 @@ def _review_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"review_id": r.review_id, "review_gate": r.review_gate, "decision": r.decision, "sharing_scope": r.sharing_scope or ""} for r in load_review_records(p)]
 
 
+def _audit_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "audit" / "audit-journal.json"
+    return [] if not p.exists() else [{"audit_id": e.audit_id, "event_kind": e.event_kind, "actor_ref": e.actor_ref} for e in load_audit_events(p)]
+
+
 def _integrity_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "integrity" / "receipt-manifest.json"
     if not p.exists():
@@ -82,6 +88,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     sources = _source_rows(root)
     examples = _example_rows(root)
     reviews = _review_rows(root)
+    audit_events = _audit_rows(root)
     integrity_receipts = _integrity_rows(root)
     sharing_scopes, review_gates = _policy_rows(root)
 
@@ -95,6 +102,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "sources": len(sources),
             "examples": len(examples),
             "reviews": len(reviews),
+            "audit_events": len(audit_events),
             "integrity_receipts": len(integrity_receipts),
             "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
@@ -106,6 +114,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "sources": sources,
         "examples": examples,
         "reviews": reviews,
+        "audit_events": audit_events,
         "integrity_receipts": integrity_receipts,
         "sharing_scopes": sharing_scopes,
         "review_gates": review_gates,
@@ -137,6 +146,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['sources']} sources, "
         f"{counts['examples']} examples, "
         f"{counts['reviews']} reviews, "
+        f"{counts['audit_events']} audit events, "
         f"{counts['integrity_receipts']} integrity receipts, "
         f"{counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
@@ -148,6 +158,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Sources", catalog["sources"], ["source_id", "source_kind", "adapter_id", "node_id", "status"]))
     lines.extend(_format_table("Examples", catalog["examples"], ["example_id", "profile_id", "runnable", "status", "path"]))
     lines.extend(_format_table("Reviews", catalog["reviews"], ["review_id", "review_gate", "decision", "sharing_scope"]))
+    lines.extend(_format_table("Audit Events", catalog["audit_events"], ["audit_id", "event_kind", "actor_ref"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))
     lines.extend(_format_table("Sharing Scopes", catalog["sharing_scopes"], ["scope_id", "display_name", "path"]))
     lines.extend(_format_table("Review Gates", catalog["review_gates"], ["gate_id", "display_name", "path"]))

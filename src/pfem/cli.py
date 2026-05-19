@@ -6,13 +6,10 @@ import argparse
 import json
 from pathlib import Path
 
+from pfem.audit import format_audit_report, validate_audit_repository
 from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
-from pfem.integrity import (
-    format_integrity_report,
-    validate_integrity_manifest,
-    write_integrity_manifest,
-)
+from pfem.integrity import format_integrity_report, validate_integrity_manifest, write_integrity_manifest
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.policy import format_policy_report, validate_policy_repository
 from pfem.review import format_review_report, validate_review_repository
@@ -32,6 +29,9 @@ def build_parser() -> argparse.ArgumentParser:
     catalog = subparsers.add_parser("catalog", help="Print PFEM catalog from disk")
     catalog.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
     catalog.add_argument("--json", action="store_true", help="Print catalog as JSON.")
+
+    audit = subparsers.add_parser("audit", help="Validate PFEM audit journal")
+    audit.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     lineage = subparsers.add_parser("lineage", help="Validate PFEM lifecycle lineage records")
     lineage.add_argument("path", nargs="?", default="tests/fixtures/lifecycle/basic")
@@ -79,6 +79,11 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(format_catalog(catalog))
         return 0
+
+    if args.command == "audit":
+        report = validate_audit_repository(Path(args.path))
+        print(format_audit_report(report))
+        return 0 if report.ok else 1
 
     if args.command == "lineage":
         report = validate_lifecycle_dir(Path(args.path))

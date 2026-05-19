@@ -1,0 +1,28 @@
+[
+  {
+    "audit_id": "audit-review-rollup-basic-001",
+    "event_kind": "review_approved",
+    "created_time": "2026-01-01T00:00:04Z",
+    "actor_ref": "example-reviewer",
+    "subject_refs": [
+      "review-rollup-basic-001",
+      "federation-basic-001",
+      "rollup-basic-001"
+    ],
+    "summary": "Example review approved a basic rollup federation message.",
+    "source_tool": "pfem_review"
+  },
+  {
+    "audit_id": "audit-integrity-basic-001",
+    "event_kind": "integrity_receipts_generated",
+    "created_time": "2026-01-01T00:00:06Z",
+    "actor_ref": "tools/pfem_integrity_update.py",
+    "subject_refs": [
+      "policy/sharing-policy.json",
+      "topology/federation-topology.json",
+      "review/review-records.json"
+    ],
+    "summary": "Example audit event showing that integrity receipts were generated for key artifacts.",
+    "source_tool": "pfem_integrity_update"
+  }
+]

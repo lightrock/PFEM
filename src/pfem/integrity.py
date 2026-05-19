@@ -22,6 +22,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("policy/sharing-policy.json", "sharing policy"),
     ("topology/federation-topology.json", "federation topology"),
     ("review/review-records.json", "review records"),
+    ("audit/audit-journal.json", "audit journal"),
     ("tests/fixtures/lifecycle/basic/raw_evidence.json", "basic lifecycle raw evidence"),
     ("tests/fixtures/lifecycle/basic/normalized_observation.json", "basic lifecycle normalized observation"),
     ("tests/fixtures/lifecycle/basic/finding.json", "basic lifecycle finding"),

@@ -18,6 +18,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "rollup_summary.schema.json": ["tests/fixtures/**/rollup_summary.json"],
     "federation_message.schema.json": ["tests/fixtures/**/federation_message.json"],
     "review_record.schema.json": ["review/review-records.json"],
+    "audit_event.schema.json": ["audit/audit-journal.json"],
 }
 
 

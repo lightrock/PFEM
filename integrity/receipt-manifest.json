@@ -53,6 +53,12 @@
       "purpose": "review records"
     },
     {
+      "path": "audit/audit-journal.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "cb858e49a29a85603b79ba8c6ef6d243562928adfb6a66173f42741663ecd04b",
+      "purpose": "audit journal"
+    },
+    {
       "path": "tests/fixtures/lifecycle/basic/raw_evidence.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "e96d37056fe1df557266411e9ecf53e938eda0ea325b4c8c2639e980c1af3eb5",

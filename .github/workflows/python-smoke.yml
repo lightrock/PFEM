@@ -16,6 +16,7 @@ jobs:
       - run: PYTHONPATH=src python tools/pfem_sources.py
       - run: PYTHONPATH=src python tools/pfem_topology.py
       - run: PYTHONPATH=src python tools/pfem_review.py
+      - run: PYTHONPATH=src python tools/pfem_audit.py
       - run: PYTHONPATH=src python tools/pfem_schema_contracts.py
       - run: PYTHONPATH=src python tools/pfem_policy.py
       - run: PYTHONPATH=src python tools/pfem_lineage.py
