@@ -16,5 +16,7 @@
   "completeness_notes": "Not complete local truth.",
   "sharing_scope": "example",
   "handling_label": "summary-shareable",
-  "redaction_state": "redacted-summary"
+  "redaction_state": "redacted-summary",
+  "retention_class": "synthetic-example",
+  "disposition_state": "active"
 }

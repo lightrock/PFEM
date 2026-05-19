@@ -20,6 +20,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "review_record.schema.json": ["review/review-records.json"],
     "audit_event.schema.json": ["audit/audit-journal.json"],
     "handling_policy.schema.json": ["handling/handling-policy.json"],
+    "retention_policy.schema.json": ["retention/retention-policy.json"],
 }
 
 

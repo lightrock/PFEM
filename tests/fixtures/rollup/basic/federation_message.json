@@ -18,6 +18,8 @@
   "sharing_scope": "example",
   "handling_label": "summary-shareable",
   "redaction_state": "redacted-summary",
+  "retention_class": "synthetic-example",
+  "disposition_state": "active",
   "attribution": {
     "producer_node_id": "field-radio-node-example"
   }

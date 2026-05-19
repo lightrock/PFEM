@@ -8,5 +8,7 @@
     "alert-basic-001"
   ],
   "scope": "example lifecycle fixture",
-  "summary": "Example evidence package showing valid lineage."
+  "summary": "Example evidence package showing valid lineage.",
+  "retention_class": "synthetic-example",
+  "disposition_state": "active"
 }

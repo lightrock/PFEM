@@ -47,6 +47,12 @@
       "purpose": "handling policy"
     },
     {
+      "path": "retention/retention-policy.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "74eb517ac2d1d1adeb9ad5b40898e623dd207cc8d59311098ead45a6914b5ff9",
+      "purpose": "retention policy"
+    },
+    {
       "path": "topology/federation-topology.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "f8dd3b954cfba4b36710e87ad37f2c34df9a7683055ef06154ff622feb35beff",
@@ -91,7 +97,7 @@
     {
       "path": "tests/fixtures/lifecycle/basic/evidence_package.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "5f437e5d5dfd3c97cfb74905957e6e581ed3989c379245a7bc11e25390cfc150",
+      "digest": "ef9a1c1f0a5c194d04c496452320357763553fc6a0a4c5c0d613121f63c9d216",
       "purpose": "basic lifecycle evidence package"
     },
     {
@@ -121,19 +127,19 @@
     {
       "path": "tests/fixtures/rollup/basic/lifecycle/evidence_package.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "86ab394cf92939e0e77f3909de304d2daed696e88d14e24aac1f690911a9681d",
+      "digest": "eaacdb15c2e629e8f98fb6f88246e60064c4e3a11d93539938111de071d9a7ff",
       "purpose": "basic rollup evidence package"
     },
     {
       "path": "tests/fixtures/rollup/basic/rollup_summary.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "605f19bf2aa9b2f6e4d1ba6a74bbdff0cf1d8df370692ad16e268ca7c18d7d81",
+      "digest": "abb5bc0505724d3b8915f6f0c67714cacf5c96114251de18f845c02fc327e372",
       "purpose": "basic rollup summary"
     },
     {
       "path": "tests/fixtures/rollup/basic/federation_message.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "96c18162932ac7650aa26f5b38f2d3432ba0359c88b1e3fe6ffd7de0ee783b9b",
+      "digest": "2afac42c5ea00038aad3937e110d3d9fc74e053e76e8a241e49cab1bc4928d98",
       "purpose": "basic federation message"
     }
   ]

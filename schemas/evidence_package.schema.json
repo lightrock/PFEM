@@ -8,7 +8,9 @@
     "created_time",
     "included_refs",
     "scope",
-    "summary"
+    "summary",
+    "retention_class",
+    "disposition_state"
   ],
   "properties": {
     "package_id": {
@@ -27,6 +29,12 @@
       "type": "string"
     },
     "summary": {
+      "type": "string"
+    },
+    "retention_class": {
+      "type": "string"
+    },
+    "disposition_state": {
       "type": "string"
     }
   },

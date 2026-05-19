@@ -8,5 +8,7 @@
     "alert-rollup-001"
   ],
   "scope": "example rollup fixture",
-  "summary": "Example package used by rollup fixture."
+  "summary": "Example package used by rollup fixture.",
+  "retention_class": "synthetic-example",
+  "disposition_state": "active"
 }

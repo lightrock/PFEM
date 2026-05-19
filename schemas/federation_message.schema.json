@@ -12,7 +12,9 @@
     "lineage_refs",
     "sharing_scope",
     "handling_label",
-    "redaction_state"
+    "redaction_state",
+    "retention_class",
+    "disposition_state"
   ],
   "properties": {
     "message_id": {
@@ -55,6 +57,12 @@
       "type": "string"
     },
     "redaction_state": {
+      "type": "string"
+    },
+    "retention_class": {
+      "type": "string"
+    },
+    "disposition_state": {
       "type": "string"
     },
     "attribution": {

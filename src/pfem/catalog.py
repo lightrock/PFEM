@@ -15,6 +15,7 @@ from pfem.integrity import load_integrity_manifest
 from pfem.node_runtime import load_node_registry
 from pfem.policy import load_sharing_policy
 from pfem.profile_runtime import load_profile_registry
+from pfem.retention import load_retention_policy
 from pfem.review import load_review_records
 from pfem.source_runtime import load_source_registry
 
@@ -67,14 +68,15 @@ def _handling_rows(root: Path) -> list[dict[str, Any]]:
     if not p.exists():
         return []
     policy = load_handling_policy(p)
-    return [
-        {
-            "label_id": label.label_id,
-            "allowed_sharing_scopes": ",".join(label.allowed_sharing_scopes),
-            "requires_redaction": label.requires_redaction_before_share,
-        }
-        for label in policy.handling_labels
-    ]
+    return [{"label_id": label.label_id, "allowed_sharing_scopes": ",".join(label.allowed_sharing_scopes), "requires_redaction": label.requires_redaction_before_share} for label in policy.handling_labels]
+
+
+def _retention_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention" / "retention-policy.json"
+    if not p.exists():
+        return []
+    policy = load_retention_policy(p)
+    return [{"retention_class": item.retention_class, "default_duration": item.default_duration, "allowed_states": ",".join(item.allowed_disposition_states)} for item in policy.retention_classes]
 
 
 def _integrity_rows(root: Path) -> list[dict[str, Any]]:
@@ -106,37 +108,24 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     reviews = _review_rows(root)
     audit_events = _audit_rows(root)
     handling_labels = _handling_rows(root)
+    retention_classes = _retention_rows(root)
     integrity_receipts = _integrity_rows(root)
     sharing_scopes, review_gates = _policy_rows(root)
 
     return {
         "root": str(root),
         "counts": {
-            "capabilities": len(capabilities),
-            "adapters": len(adapters),
-            "profiles": len(profiles),
-            "nodes": len(nodes),
-            "sources": len(sources),
-            "examples": len(examples),
-            "reviews": len(reviews),
-            "audit_events": len(audit_events),
-            "handling_labels": len(handling_labels),
-            "integrity_receipts": len(integrity_receipts),
-            "sharing_scopes": len(sharing_scopes),
+            "capabilities": len(capabilities), "adapters": len(adapters), "profiles": len(profiles),
+            "nodes": len(nodes), "sources": len(sources), "examples": len(examples),
+            "reviews": len(reviews), "audit_events": len(audit_events),
+            "handling_labels": len(handling_labels), "retention_classes": len(retention_classes),
+            "integrity_receipts": len(integrity_receipts), "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
         },
-        "capabilities": capabilities,
-        "adapters": adapters,
-        "profiles": profiles,
-        "nodes": nodes,
-        "sources": sources,
-        "examples": examples,
-        "reviews": reviews,
-        "audit_events": audit_events,
-        "handling_labels": handling_labels,
-        "integrity_receipts": integrity_receipts,
-        "sharing_scopes": sharing_scopes,
-        "review_gates": review_gates,
+        "capabilities": capabilities, "adapters": adapters, "profiles": profiles, "nodes": nodes,
+        "sources": sources, "examples": examples, "reviews": reviews, "audit_events": audit_events,
+        "handling_labels": handling_labels, "retention_classes": retention_classes,
+        "integrity_receipts": integrity_receipts, "sharing_scopes": sharing_scopes, "review_gates": review_gates,
     }
 
 
@@ -158,17 +147,11 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines = [
         f"PFEM catalog root: {catalog['root']}",
         "Counts: "
-        f"{counts['capabilities']} capabilities, "
-        f"{counts['adapters']} adapters, "
-        f"{counts['profiles']} profiles, "
-        f"{counts['nodes']} nodes, "
-        f"{counts['sources']} sources, "
-        f"{counts['examples']} examples, "
-        f"{counts['reviews']} reviews, "
-        f"{counts['audit_events']} audit events, "
-        f"{counts['handling_labels']} handling labels, "
-        f"{counts['integrity_receipts']} integrity receipts, "
-        f"{counts['sharing_scopes']} sharing scopes, "
+        f"{counts['capabilities']} capabilities, {counts['adapters']} adapters, "
+        f"{counts['profiles']} profiles, {counts['nodes']} nodes, {counts['sources']} sources, "
+        f"{counts['examples']} examples, {counts['reviews']} reviews, {counts['audit_events']} audit events, "
+        f"{counts['handling_labels']} handling labels, {counts['retention_classes']} retention classes, "
+        f"{counts['integrity_receipts']} integrity receipts, {counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
     ]
     lines.extend(_format_table("Capabilities", catalog["capabilities"], ["capability_id", "capability_kind", "path"]))
@@ -180,6 +163,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Reviews", catalog["reviews"], ["review_id", "review_gate", "decision", "sharing_scope"]))
     lines.extend(_format_table("Audit Events", catalog["audit_events"], ["audit_id", "event_kind", "actor_ref"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
+    lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))
     lines.extend(_format_table("Sharing Scopes", catalog["sharing_scopes"], ["scope_id", "display_name", "path"]))
     lines.extend(_format_table("Review Gates", catalog["review_gates"], ["gate_id", "display_name", "path"]))

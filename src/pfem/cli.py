@@ -13,6 +13,7 @@ from pfem.handling import format_handling_report, validate_handling_policy
 from pfem.integrity import format_integrity_report, validate_integrity_manifest, write_integrity_manifest
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.policy import format_policy_report, validate_policy_repository
+from pfem.retention import format_retention_report, validate_retention_policy
 from pfem.review import format_review_report, validate_review_repository
 from pfem.rollup import format_rollup_report, validate_rollup_dir
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
@@ -24,45 +25,30 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="pfem", description="PFEM helper commands")
     subparsers = parser.add_subparsers(dest="command")
 
-    doctor = subparsers.add_parser("doctor", help="Run PFEM repository sanity checks")
-    doctor.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    catalog = subparsers.add_parser("catalog", help="Print PFEM catalog from disk")
-    catalog.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-    catalog.add_argument("--json", action="store_true", help="Print catalog as JSON.")
-
-    audit = subparsers.add_parser("audit", help="Validate PFEM audit journal")
-    audit.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    handling = subparsers.add_parser("handling", help="Validate PFEM handling/redaction policy")
-    handling.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+    for name, help_text in [
+        ("doctor", "Run PFEM repository sanity checks"),
+        ("catalog", "Print PFEM catalog from disk"),
+        ("audit", "Validate PFEM audit journal"),
+        ("handling", "Validate PFEM handling/redaction policy"),
+        ("retention", "Validate PFEM retention/disposition policy"),
+        ("policy", "Validate PFEM sharing policy"),
+        ("review", "Validate PFEM review records"),
+        ("schema-contracts", "Validate PFEM fixture records against minimum schemas"),
+        ("topology", "Validate PFEM federation topology"),
+        ("sources", "Validate PFEM source provenance"),
+        ("integrity", "Validate PFEM integrity receipts"),
+        ("integrity-update", "Update PFEM integrity receipts"),
+    ]:
+        sub = subparsers.add_parser(name, help=help_text)
+        sub.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+        if name == "catalog":
+            sub.add_argument("--json", action="store_true", help="Print catalog as JSON.")
 
     lineage = subparsers.add_parser("lineage", help="Validate PFEM lifecycle lineage records")
     lineage.add_argument("path", nargs="?", default="tests/fixtures/lifecycle/basic")
 
     rollup = subparsers.add_parser("rollup", help="Validate PFEM rollup and federation records")
     rollup.add_argument("path", nargs="?", default="tests/fixtures/rollup/basic")
-
-    policy = subparsers.add_parser("policy", help="Validate PFEM sharing policy")
-    policy.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    review = subparsers.add_parser("review", help="Validate PFEM review records")
-    review.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    schemas = subparsers.add_parser("schema-contracts", help="Validate PFEM fixture records against minimum schemas")
-    schemas.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    topology = subparsers.add_parser("topology", help="Validate PFEM federation topology")
-    topology.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    sources = subparsers.add_parser("sources", help="Validate PFEM source provenance")
-    sources.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    integrity = subparsers.add_parser("integrity", help="Validate PFEM integrity receipts")
-    integrity.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
-
-    integrity_update = subparsers.add_parser("integrity-update", help="Update PFEM integrity receipts")
-    integrity_update.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     return parser
 
@@ -92,6 +78,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "handling":
         report = validate_handling_policy(Path(args.path))
         print(format_handling_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "retention":
+        report = validate_retention_policy(Path(args.path))
+        print(format_retention_report(report))
         return 0 if report.ok else 1
 
     if args.command == "lineage":

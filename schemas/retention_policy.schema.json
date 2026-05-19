@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_policy.schema.json",
+  "title": "PFEM Retention Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "retention_classes",
+    "record_type_defaults"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "retention_classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "retention_class",
+          "display_name",
+          "description",
+          "default_duration",
+          "allowed_disposition_states"
+        ],
+        "properties": {
+          "retention_class": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "default_duration": {
+            "type": "string"
+          },
+          "allowed_disposition_states": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "record_type_defaults": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_type",
+          "retention_class"
+        ],
+        "properties": {
+          "record_type": {
+            "type": "string"
+          },
+          "retention_class": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -21,6 +21,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("examples/example-registry.json", "example registry"),
     ("policy/sharing-policy.json", "sharing policy"),
     ("handling/handling-policy.json", "handling policy"),
+    ("retention/retention-policy.json", "retention policy"),
     ("topology/federation-topology.json", "federation topology"),
     ("review/review-records.json", "review records"),
     ("audit/audit-journal.json", "audit journal"),

@@ -1,0 +1,91 @@
+{
+  "policy_id": "pfem-retention-policy",
+  "version": "0.1",
+  "retention_classes": [
+    {
+      "retention_class": "transient-local",
+      "display_name": "Transient Local",
+      "description": "Short-lived local working material.",
+      "default_duration": "P7D",
+      "allowed_disposition_states": [
+        "active",
+        "review-due",
+        "purge-eligible",
+        "purged"
+      ]
+    },
+    {
+      "retention_class": "case-working",
+      "display_name": "Case Working",
+      "description": "Working record retained while review or action is active.",
+      "default_duration": "P90D",
+      "allowed_disposition_states": [
+        "active",
+        "review-due",
+        "archived",
+        "legal-hold",
+        "purge-eligible"
+      ]
+    },
+    {
+      "retention_class": "shared-summary",
+      "display_name": "Shared Summary",
+      "description": "Shared summary retained for audit, replay, and accountability.",
+      "default_duration": "P1Y",
+      "allowed_disposition_states": [
+        "active",
+        "review-due",
+        "archived",
+        "legal-hold"
+      ]
+    },
+    {
+      "retention_class": "synthetic-example",
+      "display_name": "Synthetic Example",
+      "description": "Repository fixture or synthetic example data.",
+      "default_duration": "indefinite",
+      "allowed_disposition_states": [
+        "active",
+        "archived"
+      ]
+    }
+  ],
+  "record_type_defaults": [
+    {
+      "record_type": "raw_evidence",
+      "retention_class": "case-working"
+    },
+    {
+      "record_type": "normalized_observation",
+      "retention_class": "case-working"
+    },
+    {
+      "record_type": "finding",
+      "retention_class": "case-working"
+    },
+    {
+      "record_type": "alert",
+      "retention_class": "case-working"
+    },
+    {
+      "record_type": "evidence_package",
+      "retention_class": "shared-summary"
+    },
+    {
+      "record_type": "rollup_summary",
+      "retention_class": "shared-summary"
+    },
+    {
+      "record_type": "federation_message",
+      "retention_class": "shared-summary"
+    },
+    {
+      "record_type": "review_record",
+      "retention_class": "shared-summary"
+    },
+    {
+      "record_type": "audit_event",
+      "retention_class": "shared-summary"
+    }
+  ]
+}
