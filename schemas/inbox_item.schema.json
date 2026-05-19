@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/inbox_item.schema.json",
+  "title": "PFEM Inbox Item",
+  "type": "object",
+  "required": [
+    "inbox_item_id",
+    "item_kind",
+    "created_time",
+    "transport_receipt_id",
+    "source_node_id",
+    "destination_node_id",
+    "subject_refs",
+    "artifact_refs",
+    "basis_refs",
+    "inbox_state",
+    "received_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "inbox_item_id": {
+      "type": "string"
+    },
+    "item_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "transport_receipt_id": {
+      "type": "string"
+    },
+    "outbox_item_id": {
+      "type": "string"
+    },
+    "source_node_id": {
+      "type": "string"
+    },
+    "destination_node_id": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inbox_state": {
+      "type": "string"
+    },
+    "received_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -159,6 +159,18 @@
     "source_tool": "pfem_outbox"
   },
   {
+    "audit_id": "audit-inbox-basic-001",
+    "event_kind": "inbox_item_received",
+    "created_time": "2026-01-01T00:00:17Z",
+    "actor_ref": "tools/pfem_inbox.py",
+    "subject_refs": [
+      "inbox-item-basic-manual-export-001",
+      "transport-receipt-basic-manual-export-001"
+    ],
+    "summary": "Example inbox item was received and staged.",
+    "source_tool": "pfem_inbox"
+  },
+  {
     "audit_id": "audit-delivery-job-basic-001",
     "event_kind": "delivery_job_recorded",
     "created_time": "2026-01-01T00:00:15Z",

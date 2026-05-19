@@ -108,6 +108,17 @@ def load_transport_receipts(path: str | Path) -> list[TransportReceipt]:
     ]
 
 
+def collect_transport_receipt_ids(root: str | Path) -> set[str]:
+    receipts_path = Path(root) / "transport" / "transport-receipts.json"
+    if not receipts_path.exists():
+        return set()
+    return {
+        receipt.transport_receipt_id
+        for receipt in load_transport_receipts(receipts_path)
+        if receipt.transport_receipt_id
+    }
+
+
 def _collect_route_ids(root: Path) -> set[str]:
     policy_path = root / "routing" / "routing-policy.json"
     if not policy_path.exists():
@@ -136,6 +147,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("delivery/delivery-jobs.json", "delivery_job_id"),
         ("dispatch/dispatch-decisions.json", "dispatch_decision_id"),
         ("outbox/outbox-items.json", "outbox_item_id"),
+        ("inbox/inbox-items.json", "inbox_item_id"),
         ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()
@@ -166,9 +178,9 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     folders = [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "dispatch", "routing", "delivery", "outbox",
-        "transport", "topology", "review", "audit", "exchange", "reconciliation",
-        "quality", "action", "playbooks", "integrity", "schemas", "contracts",
-        "docs", "bundles", "tests",
+        "inbox", "transport", "topology", "review", "audit", "exchange",
+        "reconciliation", "quality", "action", "playbooks", "integrity",
+        "schemas", "contracts", "docs", "bundles", "tests",
     ]
     paths: set[str] = set()
     for folder in folders:
