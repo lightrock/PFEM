@@ -1,0 +1,28 @@
+[
+  {
+    "retention_decision_approval_id": "retention-decision-approval-basic-restore-001",
+    "approval_kind": "retention_decision_approval",
+    "created_time": "2026-01-01T00:01:14Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_decision_record_id": "retention-decision-basic-restore-001",
+    "retention_review_verification_receipt_id": "retention-review-verification-basic-restore-001",
+    "approval_state": "approved",
+    "approved_decision": "continue_preservation",
+    "approved_scope": "verified_preservation_chain",
+    "approved_refs": [
+      "retention-decision-basic-restore-001",
+      "retention-review-verification-basic-restore-001",
+      "retention-review-basic-restore-001"
+    ],
+    "constraints": [
+      "continue preserving archived artifacts under current retention policy"
+    ],
+    "basis_refs": [
+      "retention-decision-basic-restore-001",
+      "retention-review-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "approved_by_ref": "tools/pfem_retention_decision_approvals.py",
+    "summary": "Synthetic example retention decision approval authorizing the continue-preservation decision."
+  }
+]

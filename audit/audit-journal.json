@@ -928,5 +928,18 @@
     ],
     "summary": "Example retention decision records was recorded.",
     "source_tool": "pfem_retention_decision_records"
+  },
+  {
+    "audit_id": "audit-retention-decision-approval-basic-001",
+    "event_kind": "retention_decision_approval_recorded",
+    "created_time": "2026-01-01T00:01:14Z",
+    "actor_ref": "tools/pfem_retention_decision_approvals.py",
+    "subject_refs": [
+      "retention-decision-approval-basic-restore-001",
+      "retention-decision-basic-restore-001",
+      "retention-review-verification-basic-restore-001"
+    ],
+    "summary": "Example retention decision approvals was recorded.",
+    "source_tool": "pfem_retention_decision_approvals"
   }
 ]
