@@ -648,5 +648,17 @@
     ],
     "summary": "Example custody lifecycle records was recorded.",
     "source_tool": "pfem_custody_lifecycle_records"
+  },
+  {
+    "audit_id": "audit-custody-lifecycle-verification-basic-001",
+    "event_kind": "custody_lifecycle_verification_recorded",
+    "created_time": "2026-01-01T00:00:52Z",
+    "actor_ref": "tools/pfem_custody_lifecycle_verification_receipts.py",
+    "subject_refs": [
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001"
+    ],
+    "summary": "Example custody lifecycle verification receipts was recorded.",
+    "source_tool": "pfem_custody_lifecycle_verification_receipts"
   }
 ]

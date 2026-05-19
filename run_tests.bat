@@ -211,6 +211,11 @@ python tools\pfem_custody_lifecycle_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM custody lifecycle verification receipt validation...
+python tools\pfem_custody_lifecycle_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1
