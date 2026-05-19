@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/preservation_record.schema.json",
+  "title": "PFEM Preservation Records",
+  "type": "object",
+  "required": [
+    "preservation_record_id",
+    "preservation_kind",
+    "created_time",
+    "node_id",
+    "archive_lifecycle_closeout_record_id",
+    "preservation_state",
+    "preservation_scope",
+    "preserved_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "preserved_ref_digest",
+    "recorded_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "preservation_record_id": {
+      "type": "string"
+    },
+    "preservation_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "archive_lifecycle_closeout_record_id": {
+      "type": "string"
+    },
+    "preservation_state": {
+      "type": "string"
+    },
+    "preservation_scope": {
+      "type": "string"
+    },
+    "preserved_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "preserved_ref_digest": {
+      "type": "string"
+    },
+    "recorded_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

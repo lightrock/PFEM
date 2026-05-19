@@ -1,0 +1,33 @@
+[
+  {
+    "preservation_record_id": "preservation-basic-restore-001",
+    "preservation_kind": "archived_artifact_preservation",
+    "created_time": "2026-01-01T00:01:06Z",
+    "node_id": "formal-rollup-node-example",
+    "archive_lifecycle_closeout_record_id": "archive-lifecycle-closeout-basic-restore-001",
+    "preservation_state": "active",
+    "preservation_scope": "closed_archive_lifecycle",
+    "preserved_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "basis_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-preserved-ref-list",
+    "preserved_ref_digest": "264f987b5d99b9042b2f44708624b14f667b1ff2306aaa04bc19c93f28da109a",
+    "recorded_by_ref": "tools/pfem_preservation_records.py",
+    "summary": "Synthetic example preservation record showing the closed archive lifecycle is under active preservation."
+  }
+]
