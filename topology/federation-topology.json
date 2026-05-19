@@ -1,0 +1,58 @@
+{
+  "topology_id": "pfem-example-federation-topology",
+  "version": "0.1",
+  "links": [
+    {
+      "link_id": "field-radio-to-formal-rollup-example",
+      "from_node_id": "field-radio-node-example",
+      "to_node_id": "formal-rollup-node-example",
+      "allowed_message_kinds": [
+        "rollup_summary"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "review_gate": "review-before-rollup",
+      "status": "active-example"
+    },
+    {
+      "link_id": "community-mesh-to-civil-dashboard-example",
+      "from_node_id": "field-radio-node-example",
+      "to_node_id": "civil-dashboard-node-example",
+      "allowed_message_kinds": [
+        "rollup_summary"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "review_gate": "review-before-public-summary",
+      "status": "shape-example"
+    },
+    {
+      "link_id": "infrastructure-site-to-formal-rollup-example",
+      "from_node_id": "infrastructure-site-node-example",
+      "to_node_id": "formal-rollup-node-example",
+      "allowed_message_kinds": [
+        "rollup_summary"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "review_gate": "review-before-external-share",
+      "status": "shape-example"
+    },
+    {
+      "link_id": "formal-rollup-to-civil-dashboard-example",
+      "from_node_id": "formal-rollup-node-example",
+      "to_node_id": "civil-dashboard-node-example",
+      "allowed_message_kinds": [
+        "rollup_summary"
+      ],
+      "allowed_sharing_scopes": [
+        "example"
+      ],
+      "review_gate": "review-before-redistribution",
+      "status": "shape-example"
+    }
+  ]
+}

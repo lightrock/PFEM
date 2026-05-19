@@ -12,6 +12,7 @@ from pfem.lineage import format_lineage_report, validate_lifecycle_dir
 from pfem.policy import format_policy_report, validate_policy_repository
 from pfem.rollup import format_rollup_report, validate_rollup_dir
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
+from pfem.topology import format_topology_report, validate_topology_repository
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -36,6 +37,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     schemas = subparsers.add_parser("schema-contracts", help="Validate PFEM fixture records against minimum schemas")
     schemas.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+
+    topology = subparsers.add_parser("topology", help="Validate PFEM federation topology")
+    topology.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     return parser
 
@@ -75,6 +79,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "schema-contracts":
         report = validate_schema_contracts(Path(args.path))
         print(format_schema_contract_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "topology":
+        report = validate_topology_repository(Path(args.path))
+        print(format_topology_report(report))
         return 0 if report.ok else 1
 
     parser.print_help()

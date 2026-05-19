@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/federation_topology.schema.json",
+  "title": "PFEM Federation Topology",
+  "type": "object",
+  "required": [
+    "topology_id",
+    "version",
+    "links"
+  ],
+  "properties": {
+    "topology_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "link_id",
+          "from_node_id",
+          "to_node_id",
+          "allowed_message_kinds",
+          "allowed_sharing_scopes",
+          "status"
+        ],
+        "properties": {
+          "link_id": {
+            "type": "string"
+          },
+          "from_node_id": {
+            "type": "string"
+          },
+          "to_node_id": {
+            "type": "string"
+          },
+          "allowed_message_kinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_sharing_scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "review_gate": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

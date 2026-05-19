@@ -13,6 +13,7 @@ from pfem.node_runtime import validate_node_registry
 from pfem.policy import validate_policy_repository
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
 from pfem.schema_contracts import validate_schema_contracts
+from pfem.topology import validate_topology_repository
 
 
 EXPECTED_PATHS = [
@@ -28,6 +29,7 @@ EXPECTED_PATHS = [
     "docs/architecture/sharing-policy.md",
     "docs/architecture/record-schemas.md",
     "docs/architecture/node-identity.md",
+    "docs/architecture/federation-topology.md",
     "ai/architecture-rules.md",
     "ai/adapter-rules.md",
     "ai/evidence-rules.md",
@@ -39,6 +41,7 @@ EXPECTED_PATHS = [
     "contracts/lifecycle-contract.md",
     "contracts/federation-contract.md",
     "contracts/node-identity-contract.md",
+    "contracts/federation-topology-contract.md",
     "schemas/adapter_manifest.schema.json",
     "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json",
@@ -53,12 +56,15 @@ EXPECTED_PATHS = [
     "schemas/evidence_package.schema.json",
     "schemas/rollup_summary.schema.json",
     "schemas/federation_message.schema.json",
+    "schemas/federation_topology.schema.json",
     "schemas/sharing_policy.schema.json",
     "capabilities/README.md",
     "adapters/adapter-registry.json",
     "profiles/profile-registry.json",
     "nodes/README.md",
     "nodes/node-registry.json",
+    "topology/README.md",
+    "topology/federation-topology.json",
     "examples/README.md",
     "examples/example-registry.json",
     "policy/README.md",
@@ -66,8 +72,8 @@ EXPECTED_PATHS = [
     "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -220,6 +226,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_example_registry(root))
     report.failures.extend(validate_policy_repository(root).failures)
     report.failures.extend(validate_schema_contracts(root).failures)
+    report.failures.extend(validate_topology_repository(root).failures)
     capability_ids = collect_capability_ids(root, report)
     check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)

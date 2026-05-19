@@ -2,6 +2,9 @@
   "message_id": "federation-basic-001",
   "message_kind": "rollup_summary",
   "sender_node_id": "field-radio-node-example",
+  "recipient_node_ids": [
+    "formal-rollup-node-example"
+  ],
   "created_time": "2026-01-01T00:00:05Z",
   "subject_refs": [
     "manual-report-rollup"
