@@ -1,0 +1,63 @@
+{
+  "policy_id": "pfem-sharing-policy",
+  "version": "0.1",
+  "sharing_scopes": [
+    {
+      "scope_id": "local",
+      "display_name": "Local",
+      "description": "Kept on the producing node."
+    },
+    {
+      "scope_id": "peer",
+      "display_name": "Peer",
+      "description": "Shared with configured peer nodes."
+    },
+    {
+      "scope_id": "rollup",
+      "display_name": "Rollup",
+      "description": "Shared upward or outward as a summary."
+    },
+    {
+      "scope_id": "public-summary",
+      "display_name": "Public Summary",
+      "description": "Shared as a public-facing summary after review."
+    },
+    {
+      "scope_id": "research",
+      "display_name": "Research",
+      "description": "Shared for testbed, replay, measurement, or analysis use."
+    },
+    {
+      "scope_id": "example",
+      "display_name": "Example",
+      "description": "Used only by repository fixtures and examples."
+    }
+  ],
+  "review_gates": [
+    {
+      "gate_id": "review-before-external-share",
+      "display_name": "Review Before External Share",
+      "description": "Human review is required before information leaves the local node or site."
+    },
+    {
+      "gate_id": "review-before-public-summary",
+      "display_name": "Review Before Public Summary",
+      "description": "Human review is required before a public-facing summary is produced."
+    },
+    {
+      "gate_id": "review-before-rollup",
+      "display_name": "Review Before Rollup",
+      "description": "Human review is required before sending a rollup summary."
+    },
+    {
+      "gate_id": "review-before-publishing-results",
+      "display_name": "Review Before Publishing Results",
+      "description": "Human review is required before research/test results are published."
+    },
+    {
+      "gate_id": "review-before-redistribution",
+      "display_name": "Review Before Redistribution",
+      "description": "Human review is required before redistributing received information."
+    }
+  ]
+}

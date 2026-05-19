@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/sharing_policy.schema.json",
+  "title": "PFEM Sharing Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "sharing_scopes",
+    "review_gates"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "sharing_scopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scope_id",
+          "display_name",
+          "description"
+        ],
+        "properties": {
+          "scope_id": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "review_gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gate_id",
+          "display_name",
+          "description"
+        ],
+        "properties": {
+          "gate_id": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

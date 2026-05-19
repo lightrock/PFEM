@@ -12,6 +12,7 @@ from pfem.adapter_runtime import load_adapter_registry
 from pfem.capability_runtime import load_capability_manifest
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
+from pfem.policy import load_sharing_policy
 from pfem.profile_runtime import load_profile_registry
 
 
@@ -87,6 +88,31 @@ def _example_rows(root: Path) -> list[dict[str, Any]]:
     ]
 
 
+def _policy_rows(root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    policy_path = root / "policy" / "sharing-policy.json"
+    if not policy_path.exists():
+        return [], []
+
+    policy = load_sharing_policy(policy_path)
+    scopes = [
+        {
+            "scope_id": scope.scope_id,
+            "display_name": scope.display_name,
+            "path": str(policy_path.relative_to(root)),
+        }
+        for scope in policy.sharing_scopes
+    ]
+    gates = [
+        {
+            "gate_id": gate.gate_id,
+            "display_name": gate.display_name,
+            "path": str(policy_path.relative_to(root)),
+        }
+        for gate in policy.review_gates
+    ]
+    return scopes, gates
+
+
 def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     """Build a read-only PFEM catalog."""
     root = find_repo_root(start)
@@ -95,6 +121,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     adapters = _adapter_rows(root)
     profiles = _profile_rows(root)
     examples = _example_rows(root)
+    sharing_scopes, review_gates = _policy_rows(root)
 
     return {
         "root": str(root),
@@ -103,11 +130,15 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "adapters": len(adapters),
             "profiles": len(profiles),
             "examples": len(examples),
+            "sharing_scopes": len(sharing_scopes),
+            "review_gates": len(review_gates),
         },
         "capabilities": capabilities,
         "adapters": adapters,
         "profiles": profiles,
         "examples": examples,
+        "sharing_scopes": sharing_scopes,
+        "review_gates": review_gates,
     }
 
 
@@ -147,7 +178,9 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['capabilities']} capabilities, "
         f"{counts['adapters']} adapters, "
         f"{counts['profiles']} profiles, "
-        f"{counts['examples']} examples"
+        f"{counts['examples']} examples, "
+        f"{counts['sharing_scopes']} sharing scopes, "
+        f"{counts['review_gates']} review gates"
     )
 
     lines.extend(_format_table(
@@ -169,6 +202,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         "Examples",
         catalog["examples"],
         ["example_id", "profile_id", "runnable", "status", "path"],
+    ))
+    lines.extend(_format_table(
+        "Sharing Scopes",
+        catalog["sharing_scopes"],
+        ["scope_id", "display_name", "path"],
+    ))
+    lines.extend(_format_table(
+        "Review Gates",
+        catalog["review_gates"],
+        ["gate_id", "display_name", "path"],
     ))
 
     return "\n".join(lines)

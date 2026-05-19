@@ -9,6 +9,7 @@ from pathlib import Path
 from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
+from pfem.policy import format_policy_report, validate_policy_repository
 from pfem.rollup import format_rollup_report, validate_rollup_dir
 
 
@@ -17,41 +18,20 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command")
 
     doctor = subparsers.add_parser("doctor", help="Run PFEM repository sanity checks")
-    doctor.add_argument(
-        "path",
-        nargs="?",
-        default=".",
-        help="Path inside the PFEM repository. Defaults to current directory.",
-    )
+    doctor.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     catalog = subparsers.add_parser("catalog", help="Print PFEM catalog from disk")
-    catalog.add_argument(
-        "path",
-        nargs="?",
-        default=".",
-        help="Path inside the PFEM repository. Defaults to current directory.",
-    )
-    catalog.add_argument(
-        "--json",
-        action="store_true",
-        help="Print catalog as JSON.",
-    )
+    catalog.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
+    catalog.add_argument("--json", action="store_true", help="Print catalog as JSON.")
 
     lineage = subparsers.add_parser("lineage", help="Validate PFEM lifecycle lineage records")
-    lineage.add_argument(
-        "path",
-        nargs="?",
-        default="tests/fixtures/lifecycle/basic",
-        help="Lifecycle fixture directory. Defaults to tests/fixtures/lifecycle/basic.",
-    )
+    lineage.add_argument("path", nargs="?", default="tests/fixtures/lifecycle/basic")
 
     rollup = subparsers.add_parser("rollup", help="Validate PFEM rollup and federation records")
-    rollup.add_argument(
-        "path",
-        nargs="?",
-        default="tests/fixtures/rollup/basic",
-        help="Rollup fixture directory. Defaults to tests/fixtures/rollup/basic.",
-    )
+    rollup.add_argument("path", nargs="?", default="tests/fixtures/rollup/basic")
+
+    policy = subparsers.add_parser("policy", help="Validate PFEM sharing policy")
+    policy.add_argument("path", nargs="?", default=".", help="Path inside the PFEM repository.")
 
     return parser
 
@@ -81,6 +61,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "rollup":
         report = validate_rollup_dir(Path(args.path))
         print(format_rollup_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "policy":
+        report = validate_policy_repository(Path(args.path))
+        print(format_policy_report(report))
         return 0 if report.ok else 1
 
     parser.print_help()

@@ -13,6 +13,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: PYTHONPATH=src python tools/pfem_catalog.py
+      - run: PYTHONPATH=src python tools/pfem_policy.py
       - run: PYTHONPATH=src python tools/pfem_lineage.py
       - run: PYTHONPATH=src python tools/pfem_rollup.py
       - run: PYTHONPATH=src python tools/pfem_doctor.py
