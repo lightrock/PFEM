@@ -6,6 +6,11 @@ cd /d "%ROOT%"
 
 set "PYTHONPATH=%ROOT%src"
 
+echo Running PFEM doctor...
+python tools\pfem_doctor.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM smoke check...
 python tools\pfem_smoke.py
 if errorlevel 1 exit /b 1
