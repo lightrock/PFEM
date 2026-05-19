@@ -341,6 +341,11 @@ python tools\pfem_retention_action_closeout_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention chain record validation...
+python tools\pfem_retention_chain_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

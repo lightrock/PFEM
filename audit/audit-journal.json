@@ -980,5 +980,18 @@
     ],
     "summary": "Example retention action closeout records was recorded.",
     "source_tool": "pfem_retention_action_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-chain-basic-001",
+    "event_kind": "retention_chain_recorded",
+    "created_time": "2026-01-01T00:01:18Z",
+    "actor_ref": "tools/pfem_retention_chain_records.py",
+    "subject_refs": [
+      "retention-chain-basic-restore-001",
+      "retention-review-basic-restore-001",
+      "retention-action-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention chain records was recorded.",
+    "source_tool": "pfem_retention_chain_records"
   }
 ]
