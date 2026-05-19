@@ -13,6 +13,7 @@ from pfem.capability_runtime import load_capability_manifest
 from pfem.delivery import load_delivery_channel_registry
 from pfem.delivery_job import load_delivery_jobs
 from pfem.dispatch import load_dispatch_policy
+from pfem.dispatch_decision import load_dispatch_decisions
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -114,6 +115,11 @@ def _dispatch_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"dispatch_rule_id": r.dispatch_rule_id, "enabled": r.enabled, "max_attempts": r.max_attempts, "retry_delay_seconds": r.retry_delay_seconds} for r in load_dispatch_policy(p).rules]
 
 
+def _dispatch_decision_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "dispatch" / "dispatch-decisions.json"
+    return [] if not p.exists() else [{"dispatch_decision_id": d.dispatch_decision_id, "delivery_job_id": d.delivery_job_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_dispatch_decisions(p)]
+
+
 def _routing_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "routing" / "routing-policy.json"
     return [] if not p.exists() else [{"route_id": route.route_id, "route_kind": route.route_kind, "enabled": route.enabled, "channels": len(route.allowed_delivery_channel_ids)} for route in load_routing_policy(p).routes]
@@ -185,6 +191,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "action_records": _action_rows(root),
         "playbooks": _playbook_rows(root),
         "dispatch_rules": _dispatch_rows(root),
+        "dispatch_decisions": _dispatch_decision_rows(root),
         "routes": _routing_rows(root),
         "delivery_channels": _delivery_rows(root),
         "delivery_jobs": _delivery_job_rows(root),
@@ -221,6 +228,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('capabilities', 0)} capabilities, {counts.get('adapters', 0)} adapters, "
         f"{counts.get('profiles', 0)} profiles, {counts.get('nodes', 0)} nodes, "
         f"{counts.get('sources', 0)} sources, {counts.get('dispatch_rules', 0)} dispatch rules, "
+        f"{counts.get('dispatch_decisions', 0)} dispatch decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
         f"{counts.get('delivery_jobs', 0)} delivery jobs, "
         f"{counts.get('transport_adapters', 0)} transport adapters, "
@@ -243,6 +251,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Action Records", catalog["action_records"], ["action_id", "action_kind", "priority", "action_state"]))
     lines.extend(_format_table("Playbooks", catalog["playbooks"], ["playbook_id", "playbook_kind", "status", "steps"]))
     lines.extend(_format_table("Dispatch Rules", catalog["dispatch_rules"], ["dispatch_rule_id", "enabled", "max_attempts", "retry_delay_seconds"]))
+    lines.extend(_format_table("Dispatch Decisions", catalog["dispatch_decisions"], ["dispatch_decision_id", "delivery_job_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
     lines.extend(_format_table("Delivery Channels", catalog["delivery_channels"], ["channel_id", "channel_kind", "status", "route_kinds"]))
     lines.extend(_format_table("Delivery Jobs", catalog["delivery_jobs"], ["delivery_job_id", "dispatch_rule_id", "job_state", "priority"]))

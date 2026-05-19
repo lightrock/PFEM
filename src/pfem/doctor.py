@@ -14,6 +14,7 @@ from pfem.capability_runtime import load_capability_manifest
 from pfem.delivery import validate_delivery_channel_registry
 from pfem.delivery_job import validate_delivery_jobs
 from pfem.dispatch import validate_dispatch_policy
+from pfem.dispatch_decision import validate_dispatch_decisions
 from pfem.example_runtime import validate_example_registry
 from pfem.exchange import validate_exchange_repository
 from pfem.handling import validate_handling_policy
@@ -37,19 +38,23 @@ from pfem.transport_receipt import validate_transport_receipts
 EXPECTED_PATHS = [
     "README.md", "AGENTS.md", "docs/AI_START_HERE.md",
     "docs/architecture/dispatch-policy.md",
+    "docs/architecture/dispatch-decisions.md",
     "docs/architecture/routing-policy.md", "docs/architecture/delivery-channels.md",
     "docs/architecture/delivery-jobs.md",
     "docs/architecture/transport-adapters.md", "docs/architecture/transport-receipts.md",
     "contracts/dispatch-policy-contract.md",
+    "contracts/dispatch-decision-contract.md",
     "contracts/routing-contract.md", "contracts/delivery-channel-contract.md",
     "contracts/delivery-job-contract.md",
     "contracts/transport-adapter-contract.md", "contracts/transport-receipt-contract.md",
     "schemas/dispatch_policy.schema.json",
+    "schemas/dispatch_decision.schema.json",
     "schemas/delivery_channel_registry.schema.json",
     "schemas/delivery_job.schema.json",
     "schemas/transport_adapter_registry.schema.json",
     "schemas/transport_receipt.schema.json",
     "dispatch/README.md", "dispatch/dispatch-policy.json",
+    "dispatch/dispatch-decisions.json",
     "delivery/README.md", "delivery/delivery-channel-registry.json",
     "delivery/delivery-jobs.json",
     "transport/README.md", "transport/transport-adapter-registry.json",
@@ -215,6 +220,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_handling_policy(root).failures)
     report.failures.extend(validate_retention_policy(root).failures)
     report.failures.extend(validate_dispatch_policy(root).failures)
+    report.failures.extend(validate_dispatch_decisions(root).failures)
     report.failures.extend(validate_delivery_channel_registry(root).failures)
     report.failures.extend(validate_delivery_jobs(root).failures)
     report.failures.extend(validate_transport_adapter_registry(root).failures)

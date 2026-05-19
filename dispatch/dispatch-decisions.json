@@ -1,0 +1,21 @@
+[
+  {
+    "dispatch_decision_id": "dispatch-decision-basic-manual-export-001",
+    "decision_kind": "eligibility_check",
+    "created_time": "2026-01-01T00:00:15Z",
+    "delivery_job_id": "delivery-job-basic-manual-export-001",
+    "dispatch_rule_id": "dispatch-manual-export-routine-bundle",
+    "decision": "allowed",
+    "reason_code": "matches_dispatch_rule",
+    "decided_by_ref": "tools/pfem_dispatch_decisions.py",
+    "basis_refs": [
+      "dispatch-manual-export-routine-bundle",
+      "delivery-job-basic-manual-export-001",
+      "route-exchange-bundles-to-formal-rollup",
+      "manual-export",
+      "transport-manual-export"
+    ],
+    "resulting_job_state": "ready",
+    "summary": "Synthetic example dispatch decision allowing the manual export delivery job."
+  }
+]
