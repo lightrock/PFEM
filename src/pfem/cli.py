@@ -125,6 +125,16 @@ from pfem.retention_registry_verification_receipt import format_retention_regist
 from pfem.retention_registry_closeout_record import format_retention_registry_closeout_record_report, validate_retention_registry_closeout_records
 from pfem.retention_closure_record import format_retention_closure_record_report, validate_retention_closure_records
 from pfem.retention_closure_verification_receipt import format_retention_closure_verification_receipt_report, validate_retention_closure_verification_receipts
+from pfem.retention_closure_closeout_record import format_retention_closure_closeout_record_report, validate_retention_closure_closeout_records
+from pfem.retention_completion_record import format_retention_completion_record_report, validate_retention_completion_records
+from pfem.retention_completion_verification_receipt import format_retention_completion_verification_receipt_report, validate_retention_completion_verification_receipts
+from pfem.retention_completion_closeout_record import format_retention_completion_closeout_record_report, validate_retention_completion_closeout_records
+from pfem.retention_attestation_record import format_retention_attestation_record_report, validate_retention_attestation_records
+from pfem.retention_attestation_verification_receipt import format_retention_attestation_verification_receipt_report, validate_retention_attestation_verification_receipts
+from pfem.retention_attestation_closeout_record import format_retention_attestation_closeout_record_report, validate_retention_attestation_closeout_records
+from pfem.retention_seal_record import format_retention_seal_record_report, validate_retention_seal_records
+from pfem.retention_seal_verification_receipt import format_retention_seal_verification_receipt_report, validate_retention_seal_verification_receipts
+from pfem.retention_seal_closeout_record import format_retention_seal_closeout_record_report, validate_retention_seal_closeout_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -295,6 +305,16 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-registry-closeout-records", "Validate PFEM retention registry closeout records"),
         ("retention-closure-records", "Validate PFEM retention closure records"),
         ("retention-closure-verification-receipts", "Validate PFEM retention closure verification receipts"),
+        ("retention-closure-closeout-records", "Validate PFEM retention closure closeout records"),
+        ("retention-completion-records", "Validate PFEM retention completion records"),
+        ("retention-completion-verification-receipts", "Validate PFEM retention completion verification receipts"),
+        ("retention-completion-closeout-records", "Validate PFEM retention completion closeout records"),
+        ("retention-attestation-records", "Validate PFEM retention attestation records"),
+        ("retention-attestation-verification-receipts", "Validate PFEM retention attestation verification receipts"),
+        ("retention-attestation-closeout-records", "Validate PFEM retention attestation closeout records"),
+        ("retention-seal-records", "Validate PFEM retention seal records"),
+        ("retention-seal-verification-receipts", "Validate PFEM retention seal verification receipts"),
+        ("retention-seal-closeout-records", "Validate PFEM retention seal closeout records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -474,6 +494,16 @@ def main(argv: list[str] | None = None) -> int:
         "retention-registry-closeout-records": (validate_retention_registry_closeout_records, format_retention_registry_closeout_record_report),
         "retention-closure-records": (validate_retention_closure_records, format_retention_closure_record_report),
         "retention-closure-verification-receipts": (validate_retention_closure_verification_receipts, format_retention_closure_verification_receipt_report),
+        "retention-closure-closeout-records": (validate_retention_closure_closeout_records, format_retention_closure_closeout_record_report),
+        "retention-completion-records": (validate_retention_completion_records, format_retention_completion_record_report),
+        "retention-completion-verification-receipts": (validate_retention_completion_verification_receipts, format_retention_completion_verification_receipt_report),
+        "retention-completion-closeout-records": (validate_retention_completion_closeout_records, format_retention_completion_closeout_record_report),
+        "retention-attestation-records": (validate_retention_attestation_records, format_retention_attestation_record_report),
+        "retention-attestation-verification-receipts": (validate_retention_attestation_verification_receipts, format_retention_attestation_verification_receipt_report),
+        "retention-attestation-closeout-records": (validate_retention_attestation_closeout_records, format_retention_attestation_closeout_record_report),
+        "retention-seal-records": (validate_retention_seal_records, format_retention_seal_record_report),
+        "retention-seal-verification-receipts": (validate_retention_seal_verification_receipts, format_retention_seal_verification_receipt_report),
+        "retention-seal-closeout-records": (validate_retention_seal_closeout_records, format_retention_seal_closeout_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_seal_record_id": "retention-seal-basic-restore-001",
+    "seal_kind": "retention_seal",
+    "created_time": "2026-01-01T00:02:29Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_attestation_closeout_record_id": "retention-attestation-closeout-basic-restore-001",
+    "retention_attestation_verification_receipt_id": "retention-attestation-verification-basic-restore-001",
+    "seal_state": "sealed",
+    "seal_scope": "closed_retention_attestation",
+    "seal_refs": [
+      "retention-attestation-closeout-basic-restore-001",
+      "retention-attestation-verification-basic-restore-001",
+      "retention-attestation-basic-restore-001",
+      "retention-completion-closeout-basic-restore-001",
+      "retention-closure-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-attestation-closeout-basic-restore-001",
+      "retention-attestation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-seal-ref-list",
+    "seal_ref_digest": "e3f37293ddd998fc9622016ef8142165240f82fca0bc2e63ec6bb10b57fe4aa9",
+    "seal_by_ref": "tools/pfem_retention_seal_records.py",
+    "summary": "Synthetic example retention seal record built from the closed retention attestation path."
+  }
+]

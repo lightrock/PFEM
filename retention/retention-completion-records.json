@@ -1,0 +1,34 @@
+[
+  {
+    "retention_completion_record_id": "retention-completion-basic-restore-001",
+    "completion_kind": "retention_completion",
+    "created_time": "2026-01-01T00:02:23Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_closure_closeout_record_id": "retention-closure-closeout-basic-restore-001",
+    "retention_closure_verification_receipt_id": "retention-closure-verification-basic-restore-001",
+    "completion_state": "completed",
+    "completion_scope": "closed_retention_closure",
+    "completion_refs": [
+      "retention-closure-closeout-basic-restore-001",
+      "retention-closure-verification-basic-restore-001",
+      "retention-closure-basic-restore-001",
+      "retention-registry-closeout-basic-restore-001",
+      "retention-certificate-closeout-basic-restore-001"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-closure-closeout-basic-restore-001",
+      "retention-closure-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-completion-ref-list",
+    "completion_ref_digest": "bf6052b32a113cd79db95663cc2245894362f52346a53988e328bac0bd54a645",
+    "completion_by_ref": "tools/pfem_retention_completion_records.py",
+    "summary": "Synthetic example retention completion record built from the closed retention closure path."
+  }
+]

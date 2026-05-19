@@ -125,6 +125,16 @@ from pfem.retention_registry_verification_receipt import load_retention_registry
 from pfem.retention_registry_closeout_record import load_retention_registry_closeout_records
 from pfem.retention_closure_record import load_retention_closure_records
 from pfem.retention_closure_verification_receipt import load_retention_closure_verification_receipts
+from pfem.retention_closure_closeout_record import load_retention_closure_closeout_records
+from pfem.retention_completion_record import load_retention_completion_records
+from pfem.retention_completion_verification_receipt import load_retention_completion_verification_receipts
+from pfem.retention_completion_closeout_record import load_retention_completion_closeout_records
+from pfem.retention_attestation_record import load_retention_attestation_records
+from pfem.retention_attestation_verification_receipt import load_retention_attestation_verification_receipts
+from pfem.retention_attestation_closeout_record import load_retention_attestation_closeout_records
+from pfem.retention_seal_record import load_retention_seal_records
+from pfem.retention_seal_verification_receipt import load_retention_seal_verification_receipts
+from pfem.retention_seal_closeout_record import load_retention_seal_closeout_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -866,6 +876,56 @@ def _retention_closure_verification_receipt_rows(root: Path) -> list[dict[str, A
     return [] if not p.exists() else [{"retention_closure_verification_receipt_id": r["retention_closure_verification_receipt_id"], "retention_closure_record_id": r["retention_closure_record_id"], "verification_state": r["verification_state"], "checked_closure_refs": len(r["checked_closure_refs"])} for r in load_retention_closure_verification_receipts(p)]
 
 
+def _retention_closure_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-closure-closeout-records.json"
+    return [] if not p.exists() else [{"retention_closure_closeout_record_id": r["retention_closure_closeout_record_id"], "retention_closure_verification_receipt_id": r["retention_closure_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_closure_closeout_records(p)]
+
+
+def _retention_completion_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-completion-records.json"
+    return [] if not p.exists() else [{"retention_completion_record_id": r["retention_completion_record_id"], "retention_closure_closeout_record_id": r["retention_closure_closeout_record_id"], "completion_state": r["completion_state"], "completion_scope": r["completion_scope"]} for r in load_retention_completion_records(p)]
+
+
+def _retention_completion_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-completion-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_completion_verification_receipt_id": r["retention_completion_verification_receipt_id"], "retention_completion_record_id": r["retention_completion_record_id"], "verification_state": r["verification_state"], "checked_completion_refs": len(r["checked_completion_refs"])} for r in load_retention_completion_verification_receipts(p)]
+
+
+def _retention_completion_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-completion-closeout-records.json"
+    return [] if not p.exists() else [{"retention_completion_closeout_record_id": r["retention_completion_closeout_record_id"], "retention_completion_verification_receipt_id": r["retention_completion_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_completion_closeout_records(p)]
+
+
+def _retention_attestation_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-attestation-records.json"
+    return [] if not p.exists() else [{"retention_attestation_record_id": r["retention_attestation_record_id"], "retention_completion_closeout_record_id": r["retention_completion_closeout_record_id"], "attestation_state": r["attestation_state"], "attestation_scope": r["attestation_scope"]} for r in load_retention_attestation_records(p)]
+
+
+def _retention_attestation_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-attestation-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_attestation_verification_receipt_id": r["retention_attestation_verification_receipt_id"], "retention_attestation_record_id": r["retention_attestation_record_id"], "verification_state": r["verification_state"], "checked_attestation_refs": len(r["checked_attestation_refs"])} for r in load_retention_attestation_verification_receipts(p)]
+
+
+def _retention_attestation_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-attestation-closeout-records.json"
+    return [] if not p.exists() else [{"retention_attestation_closeout_record_id": r["retention_attestation_closeout_record_id"], "retention_attestation_verification_receipt_id": r["retention_attestation_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_attestation_closeout_records(p)]
+
+
+def _retention_seal_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-seal-records.json"
+    return [] if not p.exists() else [{"retention_seal_record_id": r["retention_seal_record_id"], "retention_attestation_closeout_record_id": r["retention_attestation_closeout_record_id"], "seal_state": r["seal_state"], "seal_scope": r["seal_scope"]} for r in load_retention_seal_records(p)]
+
+
+def _retention_seal_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-seal-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_seal_verification_receipt_id": r["retention_seal_verification_receipt_id"], "retention_seal_record_id": r["retention_seal_record_id"], "verification_state": r["verification_state"], "checked_seal_refs": len(r["checked_seal_refs"])} for r in load_retention_seal_verification_receipts(p)]
+
+
+def _retention_seal_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-seal-closeout-records.json"
+    return [] if not p.exists() else [{"retention_seal_closeout_record_id": r["retention_seal_closeout_record_id"], "retention_seal_verification_receipt_id": r["retention_seal_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_seal_closeout_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -1072,6 +1132,16 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_registry_closeout_records": _retention_registry_closeout_record_rows(root),
         "retention_closure_records": _retention_closure_record_rows(root),
         "retention_closure_verification_receipts": _retention_closure_verification_receipt_rows(root),
+        "retention_closure_closeout_records": _retention_closure_closeout_record_rows(root),
+        "retention_completion_records": _retention_completion_record_rows(root),
+        "retention_completion_verification_receipts": _retention_completion_verification_receipt_rows(root),
+        "retention_completion_closeout_records": _retention_completion_closeout_record_rows(root),
+        "retention_attestation_records": _retention_attestation_record_rows(root),
+        "retention_attestation_verification_receipts": _retention_attestation_verification_receipt_rows(root),
+        "retention_attestation_closeout_records": _retention_attestation_closeout_record_rows(root),
+        "retention_seal_records": _retention_seal_record_rows(root),
+        "retention_seal_verification_receipts": _retention_seal_verification_receipt_rows(root),
+        "retention_seal_closeout_records": _retention_seal_closeout_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -1235,6 +1305,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_registry_closeout_records', 0)} retention registry closeout records, "
         f"{counts.get('retention_closure_records', 0)} retention closure records, "
         f"{counts.get('retention_closure_verification_receipts', 0)} retention closure verification receipts, "
+        f"{counts.get('retention_closure_closeout_records', 0)} retention closure closeout records, "
+        f"{counts.get('retention_completion_records', 0)} retention completion records, "
+        f"{counts.get('retention_completion_verification_receipts', 0)} retention completion verification receipts, "
+        f"{counts.get('retention_completion_closeout_records', 0)} retention completion closeout records, "
+        f"{counts.get('retention_attestation_records', 0)} retention attestation records, "
+        f"{counts.get('retention_attestation_verification_receipts', 0)} retention attestation verification receipts, "
+        f"{counts.get('retention_attestation_closeout_records', 0)} retention attestation closeout records, "
+        f"{counts.get('retention_seal_records', 0)} retention seal records, "
+        f"{counts.get('retention_seal_verification_receipts', 0)} retention seal verification receipts, "
+        f"{counts.get('retention_seal_closeout_records', 0)} retention seal closeout records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -1384,6 +1464,16 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Retention Registry Closeout Records", catalog["retention_registry_closeout_records"], ["retention_registry_closeout_record_id", "retention_registry_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Retention Closure Records", catalog["retention_closure_records"], ["retention_closure_record_id", "retention_registry_closeout_record_id", "closure_state", "closure_scope"]))
     lines.extend(_format_table("Retention Closure Verification Receipts", catalog["retention_closure_verification_receipts"], ["retention_closure_verification_receipt_id", "retention_closure_record_id", "verification_state", "checked_closure_refs"]))
+    lines.extend(_format_table("Retention Closure Closeout Records", catalog["retention_closure_closeout_records"], ["retention_closure_closeout_record_id", "retention_closure_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Completion Records", catalog["retention_completion_records"], ["retention_completion_record_id", "retention_closure_closeout_record_id", "completion_state", "completion_scope"]))
+    lines.extend(_format_table("Retention Completion Verification Receipts", catalog["retention_completion_verification_receipts"], ["retention_completion_verification_receipt_id", "retention_completion_record_id", "verification_state", "checked_completion_refs"]))
+    lines.extend(_format_table("Retention Completion Closeout Records", catalog["retention_completion_closeout_records"], ["retention_completion_closeout_record_id", "retention_completion_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Attestation Records", catalog["retention_attestation_records"], ["retention_attestation_record_id", "retention_completion_closeout_record_id", "attestation_state", "attestation_scope"]))
+    lines.extend(_format_table("Retention Attestation Verification Receipts", catalog["retention_attestation_verification_receipts"], ["retention_attestation_verification_receipt_id", "retention_attestation_record_id", "verification_state", "checked_attestation_refs"]))
+    lines.extend(_format_table("Retention Attestation Closeout Records", catalog["retention_attestation_closeout_records"], ["retention_attestation_closeout_record_id", "retention_attestation_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Seal Records", catalog["retention_seal_records"], ["retention_seal_record_id", "retention_attestation_closeout_record_id", "seal_state", "seal_scope"]))
+    lines.extend(_format_table("Retention Seal Verification Receipts", catalog["retention_seal_verification_receipts"], ["retention_seal_verification_receipt_id", "retention_seal_record_id", "verification_state", "checked_seal_refs"]))
+    lines.extend(_format_table("Retention Seal Closeout Records", catalog["retention_seal_closeout_records"], ["retention_seal_closeout_record_id", "retention_seal_verification_receipt_id", "closeout_state", "outcome"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))
