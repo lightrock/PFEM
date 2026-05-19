@@ -36,6 +36,7 @@ from pfem.custody_release_chain_record import format_custody_release_chain_recor
 from pfem.custody_release_chain_verification_receipt import format_custody_release_chain_verification_receipt_report, validate_custody_release_chain_verification_receipts
 from pfem.custody_lifecycle_record import format_custody_lifecycle_record_report, validate_custody_lifecycle_records
 from pfem.custody_lifecycle_verification_receipt import format_custody_lifecycle_verification_receipt_report, validate_custody_lifecycle_verification_receipts
+from pfem.custody_lifecycle_closeout_record import format_custody_lifecycle_closeout_record_report, validate_custody_lifecycle_closeout_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -117,6 +118,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("custody-release-chain-verification-receipts", "Validate PFEM custody release chain verification receipts"),
         ("custody-lifecycle-records", "Validate PFEM custody lifecycle records"),
         ("custody-lifecycle-verification-receipts", "Validate PFEM custody lifecycle verification receipts"),
+        ("custody-lifecycle-closeout-records", "Validate PFEM custody lifecycle closeout records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -207,6 +209,7 @@ def main(argv: list[str] | None = None) -> int:
         "custody-release-chain-verification-receipts": (validate_custody_release_chain_verification_receipts, format_custody_release_chain_verification_receipt_report),
         "custody-lifecycle-records": (validate_custody_lifecycle_records, format_custody_lifecycle_record_report),
         "custody-lifecycle-verification-receipts": (validate_custody_lifecycle_verification_receipts, format_custody_lifecycle_verification_receipt_report),
+        "custody-lifecycle-closeout-records": (validate_custody_lifecycle_closeout_records, format_custody_lifecycle_closeout_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),
