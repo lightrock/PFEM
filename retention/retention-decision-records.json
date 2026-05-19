@@ -1,0 +1,34 @@
+[
+  {
+    "retention_decision_record_id": "retention-decision-basic-restore-001",
+    "decision_kind": "retention_decision",
+    "created_time": "2026-01-01T00:01:13Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_review_verification_receipt_id": "retention-review-verification-basic-restore-001",
+    "retention_review_record_id": "retention-review-basic-restore-001",
+    "decision_state": "decided",
+    "decision": "continue_preservation",
+    "decision_scope": "verified_preservation_chain",
+    "decision_refs": [
+      "retention-review-verification-basic-restore-001",
+      "retention-review-basic-restore-001",
+      "preservation-chain-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-review-verification-basic-restore-001",
+      "retention-review-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-decision-ref-list",
+    "decision_ref_digest": "0a3077bc3ccba4d54de897412651feed39e61129b1ee5f5f4c8dbcbb13c60983",
+    "decided_by_ref": "tools/pfem_retention_decision_records.py",
+    "summary": "Synthetic example retention decision record converting the verified review recommendation into a continue-preservation decision."
+  }
+]

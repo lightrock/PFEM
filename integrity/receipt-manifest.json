@@ -401,6 +401,12 @@
       "purpose": "retention review verification receipts"
     },
     {
+      "path": "retention/retention-decision-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "2f490d6decfcc5d5b8aa002d995783fa354ad1c2cfce7edc2f0ffd26d9e404d8",
+      "purpose": "retention decision records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -481,7 +487,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "f699692caa520f41b0a4dee5e4be34d8f5d2dad9a75ba251a7e8a78103048826",
+      "digest": "3089cd53624172ed951491707792c35764543750d360be8b7b1f63a8937d3fe4",
       "purpose": "audit journal"
     },
     {
