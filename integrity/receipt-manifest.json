@@ -287,6 +287,12 @@
       "purpose": "custody lifecycle closeout records"
     },
     {
+      "path": "archive/archive-manifest-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "e6d498b2d3416d3afb17788815e2f2d49accfed40a63008a1567e219192f0dc1",
+      "purpose": "archive manifest records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -367,7 +373,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "7e5f556507c00d1dc021f1c7c422d866395e71c1554e7688f33793bd3691cc4c",
+      "digest": "979139231ce55c5f8130e9a3a59905428c4b96b29b7dec162b44e4c425b074dd",
       "purpose": "audit journal"
     },
     {

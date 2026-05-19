@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/archive_manifest_record.schema.json",
+  "title": "PFEM Archive Manifest Records",
+  "type": "object",
+  "required": [
+    "archive_manifest_record_id",
+    "manifest_kind",
+    "created_time",
+    "node_id",
+    "custody_lifecycle_closeout_record_id",
+    "manifest_state",
+    "archive_scope",
+    "manifested_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "manifest_ref_digest",
+    "manifested_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "archive_manifest_record_id": {
+      "type": "string"
+    },
+    "manifest_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "custody_lifecycle_closeout_record_id": {
+      "type": "string"
+    },
+    "manifest_state": {
+      "type": "string"
+    },
+    "archive_scope": {
+      "type": "string"
+    },
+    "manifested_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "manifest_ref_digest": {
+      "type": "string"
+    },
+    "manifested_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

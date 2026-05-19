@@ -61,6 +61,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("custody/custody-lifecycle-records.json", "custody lifecycle records"),
     ("custody/custody-lifecycle-verification-receipts.json", "custody lifecycle verification receipts"),
     ("custody/custody-lifecycle-closeout-records.json", "custody lifecycle closeout records"),
+    ("archive/archive-manifest-records.json", "archive manifest records"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),

@@ -1,0 +1,31 @@
+[
+  {
+    "archive_manifest_record_id": "archive-manifest-basic-restore-001",
+    "manifest_kind": "custody_lifecycle_archive_manifest",
+    "created_time": "2026-01-01T00:00:54Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_lifecycle_closeout_record_id": "custody-lifecycle-closeout-basic-restore-001",
+    "manifest_state": "ready",
+    "archive_scope": "closed_custody_lifecycle",
+    "manifested_refs": [
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "custody-ledger-verification-basic-restore-001"
+    ],
+    "subject_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "basis_refs": [
+      "custody-lifecycle-closeout-basic-restore-001",
+      "custody-lifecycle-verification-basic-restore-001",
+      "custody-lifecycle-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-manifest-ref-list",
+    "manifest_ref_digest": "549a4d190651c22f0e64c62e84393862f166b9da5bcb00fa90a97c9e20b7692a",
+    "manifested_by_ref": "tools/pfem_archive_manifest_records.py",
+    "summary": "Synthetic example archive manifest record listing the custody lifecycle artifacts prepared for archive."
+  }
+]
