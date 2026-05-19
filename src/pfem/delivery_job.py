@@ -1,4 +1,4 @@
-"""PFEM transport receipt validation."""
+"""PFEM delivery job validation."""
 
 from __future__ import annotations
 
@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pfem.action import load_action_policy
 from pfem.delivery import collect_delivery_channel_ids
-from pfem.delivery_job import collect_delivery_job_ids
 from pfem.node_runtime import collect_node_ids
 from pfem.routing import load_routing_policy
 from pfem.transport import collect_transport_adapter_ids
@@ -16,46 +16,49 @@ from pfem.transport import collect_transport_adapter_ids
 
 JsonObject = dict[str, Any]
 
-KNOWN_RECEIPT_KINDS = {
-    "delivery_attempt",
-    "delivery_result",
-    "delivery_acknowledgement",
+KNOWN_JOB_KINDS = {
+    "action_delivery",
+    "bundle_delivery",
+    "summary_delivery",
+    "review_delivery",
+    "exchange_delivery",
 }
 
-KNOWN_TRANSPORT_STATES = {
+KNOWN_JOB_STATES = {
+    "proposed",
     "queued",
-    "attempted",
-    "sent",
-    "received",
-    "succeeded",
+    "ready",
+    "in_progress",
+    "completed",
     "failed",
     "cancelled",
-    "unknown",
+    "blocked",
 }
 
 
 @dataclass(frozen=True)
-class TransportReceipt:
-    transport_receipt_id: str
-    receipt_kind: str
-    created_time: str
+class DeliveryJob:
     delivery_job_id: str
-    transport_adapter_id: str
-    delivery_channel_id: str
+    job_kind: str
+    created_time: str
+    requested_by_ref: str | None
     route_id: str
+    delivery_channel_id: str
+    transport_adapter_id: str
     source_node_id: str
     destination_node_id: str
     subject_refs: list[str]
     basis_refs: list[str]
-    transport_state: str
-    artifact_refs: list[str]
-    outcome_summary: str
+    job_state: str
+    priority: str
+    not_before_time: str | None
+    summary: str
 
 
 @dataclass(frozen=True)
-class TransportReceiptReport:
+class DeliveryJobReport:
     source: str
-    checked_receipts: int = 0
+    checked_jobs: int = 0
     failures: list[str] = field(default_factory=list)
 
     @property
@@ -83,26 +86,34 @@ def _load_records(path: Path) -> list[JsonObject]:
     raise ValueError(f"expected JSON object or array in {path}")
 
 
-def load_transport_receipts(path: str | Path) -> list[TransportReceipt]:
+def load_delivery_jobs(path: str | Path) -> list[DeliveryJob]:
     return [
-        TransportReceipt(
-            transport_receipt_id=str(record.get("transport_receipt_id", "")),
-            receipt_kind=str(record.get("receipt_kind", "")),
-            created_time=str(record.get("created_time", "")),
+        DeliveryJob(
             delivery_job_id=str(record.get("delivery_job_id", "")),
-            transport_adapter_id=str(record.get("transport_adapter_id", "")),
-            delivery_channel_id=str(record.get("delivery_channel_id", "")),
+            job_kind=str(record.get("job_kind", "")),
+            created_time=str(record.get("created_time", "")),
+            requested_by_ref=str(record["requested_by_ref"]) if "requested_by_ref" in record else None,
             route_id=str(record.get("route_id", "")),
+            delivery_channel_id=str(record.get("delivery_channel_id", "")),
+            transport_adapter_id=str(record.get("transport_adapter_id", "")),
             source_node_id=str(record.get("source_node_id", "")),
             destination_node_id=str(record.get("destination_node_id", "")),
             subject_refs=_as_list(record.get("subject_refs", [])),
             basis_refs=_as_list(record.get("basis_refs", [])),
-            transport_state=str(record.get("transport_state", "")),
-            artifact_refs=_as_list(record.get("artifact_refs", [])),
-            outcome_summary=str(record.get("outcome_summary", "")),
+            job_state=str(record.get("job_state", "")),
+            priority=str(record.get("priority", "")),
+            not_before_time=str(record["not_before_time"]) if "not_before_time" in record else None,
+            summary=str(record.get("summary", "")),
         )
         for record in _load_records(Path(path))
     ]
+
+
+def collect_delivery_job_ids(root: str | Path) -> set[str]:
+    jobs_path = Path(root) / "delivery" / "delivery-jobs.json"
+    if not jobs_path.exists():
+        return set()
+    return {job.delivery_job_id for job in load_delivery_jobs(jobs_path) if job.delivery_job_id}
 
 
 def _collect_route_ids(root: Path) -> set[str]:
@@ -111,6 +122,14 @@ def _collect_route_ids(root: Path) -> set[str]:
         return set()
     policy = load_routing_policy(policy_path)
     return {route.route_id for route in policy.routes if route.route_id}
+
+
+def _collect_priorities(root: Path) -> set[str]:
+    policy_path = root / "action" / "action-policy.json"
+    if not policy_path.exists():
+        return set()
+    policy = load_action_policy(policy_path)
+    return {priority.priority for priority in policy.priority_levels if priority.priority}
 
 
 def _collect_known_record_ids(root: Path) -> set[str]:
@@ -179,83 +198,85 @@ def _known_ref(ref: str, known_ids: set[str], known_paths: set[str]) -> bool:
     return ref in known_ids or ref.replace("\\", "/") in known_paths
 
 
-def validate_transport_receipts(root: str | Path) -> TransportReceiptReport:
+def validate_delivery_jobs(root: str | Path) -> DeliveryJobReport:
     root_path = Path(root)
-    receipts_path = root_path / "transport" / "transport-receipts.json"
+    jobs_path = root_path / "delivery" / "delivery-jobs.json"
     failures: list[str] = []
 
-    if not receipts_path.exists():
-        return TransportReceiptReport(
-            source=str(receipts_path),
-            failures=["missing transport receipts: transport/transport-receipts.json"],
+    if not jobs_path.exists():
+        return DeliveryJobReport(
+            source=str(jobs_path),
+            failures=["missing delivery jobs: delivery/delivery-jobs.json"],
         )
 
-    receipts = load_transport_receipts(receipts_path)
-    if not receipts:
-        failures.append("transport receipts file has no receipts")
+    jobs = load_delivery_jobs(jobs_path)
+    if not jobs:
+        failures.append("delivery jobs file has no jobs")
 
-    delivery_job_ids = collect_delivery_job_ids(root_path)
-    transport_adapter_ids = collect_transport_adapter_ids(root_path)
-    delivery_channel_ids = collect_delivery_channel_ids(root_path)
     route_ids = _collect_route_ids(root_path)
+    delivery_channel_ids = collect_delivery_channel_ids(root_path)
+    transport_adapter_ids = collect_transport_adapter_ids(root_path)
     node_ids = collect_node_ids(root_path)
+    priorities = _collect_priorities(root_path)
     known_ids = _collect_known_record_ids(root_path)
     known_paths = _collect_known_artifact_paths(root_path)
     seen_ids: set[str] = set()
 
-    for receipt in receipts:
-        if not receipt.transport_receipt_id:
-            failures.append("transport receipt missing transport_receipt_id")
+    for job in jobs:
+        if not job.delivery_job_id:
+            failures.append("delivery job missing delivery_job_id")
             continue
-        if receipt.transport_receipt_id in seen_ids:
-            failures.append(f"duplicate transport_receipt_id {receipt.transport_receipt_id!r}")
-        seen_ids.add(receipt.transport_receipt_id)
+        if job.delivery_job_id in seen_ids:
+            failures.append(f"duplicate delivery_job_id {job.delivery_job_id!r}")
+        seen_ids.add(job.delivery_job_id)
 
-        if receipt.receipt_kind not in KNOWN_RECEIPT_KINDS:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} uses unknown receipt_kind {receipt.receipt_kind!r}")
-        if not receipt.created_time:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} missing created_time")
-        if delivery_job_ids and receipt.delivery_job_id not in delivery_job_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown delivery_job_id {receipt.delivery_job_id!r}")
-        if transport_adapter_ids and receipt.transport_adapter_id not in transport_adapter_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown transport_adapter_id {receipt.transport_adapter_id!r}")
-        if delivery_channel_ids and receipt.delivery_channel_id not in delivery_channel_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown delivery_channel_id {receipt.delivery_channel_id!r}")
-        if route_ids and receipt.route_id not in route_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown route_id {receipt.route_id!r}")
-        if node_ids and receipt.source_node_id not in node_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown source_node_id {receipt.source_node_id!r}")
-        if node_ids and receipt.destination_node_id not in node_ids:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown destination_node_id {receipt.destination_node_id!r}")
-        if not receipt.subject_refs:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} has no subject_refs")
-        for ref in receipt.subject_refs:
-            if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown subject_ref {ref!r}")
-        if not receipt.basis_refs:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} has no basis_refs")
-        for ref in receipt.basis_refs:
-            if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown basis_ref {ref!r}")
-        if receipt.transport_state not in KNOWN_TRANSPORT_STATES:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} uses unknown transport_state {receipt.transport_state!r}")
-        for ref in receipt.artifact_refs:
-            if not _known_ref(ref, known_ids, known_paths):
-                failures.append(f"transport receipt {receipt.transport_receipt_id!r} references unknown artifact_ref {ref!r}")
-        if not receipt.outcome_summary:
-            failures.append(f"transport receipt {receipt.transport_receipt_id!r} missing outcome_summary")
+        if job.job_kind not in KNOWN_JOB_KINDS:
+            failures.append(f"delivery job {job.delivery_job_id!r} uses unknown job_kind {job.job_kind!r}")
+        if not job.created_time:
+            failures.append(f"delivery job {job.delivery_job_id!r} missing created_time")
+        if job.requested_by_ref and not _known_ref(job.requested_by_ref, known_ids, known_paths):
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown requested_by_ref {job.requested_by_ref!r}")
+        if route_ids and job.route_id not in route_ids:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown route_id {job.route_id!r}")
+        if delivery_channel_ids and job.delivery_channel_id not in delivery_channel_ids:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown delivery_channel_id {job.delivery_channel_id!r}")
+        if transport_adapter_ids and job.transport_adapter_id not in transport_adapter_ids:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown transport_adapter_id {job.transport_adapter_id!r}")
+        if node_ids and job.source_node_id not in node_ids:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown source_node_id {job.source_node_id!r}")
+        if node_ids and job.destination_node_id not in node_ids:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown destination_node_id {job.destination_node_id!r}")
 
-    return TransportReceiptReport(
-        source=str(receipts_path),
-        checked_receipts=len(receipts),
+        if not job.subject_refs:
+            failures.append(f"delivery job {job.delivery_job_id!r} has no subject_refs")
+        for ref in job.subject_refs:
+            if not _known_ref(ref, known_ids, known_paths):
+                failures.append(f"delivery job {job.delivery_job_id!r} references unknown subject_ref {ref!r}")
+
+        if not job.basis_refs:
+            failures.append(f"delivery job {job.delivery_job_id!r} has no basis_refs")
+        for ref in job.basis_refs:
+            if not _known_ref(ref, known_ids, known_paths):
+                failures.append(f"delivery job {job.delivery_job_id!r} references unknown basis_ref {ref!r}")
+
+        if job.job_state not in KNOWN_JOB_STATES:
+            failures.append(f"delivery job {job.delivery_job_id!r} uses unknown job_state {job.job_state!r}")
+        if priorities and job.priority not in priorities:
+            failures.append(f"delivery job {job.delivery_job_id!r} references unknown priority {job.priority!r}")
+        if not job.summary:
+            failures.append(f"delivery job {job.delivery_job_id!r} missing summary")
+
+    return DeliveryJobReport(
+        source=str(jobs_path),
+        checked_jobs=len(jobs),
         failures=failures,
     )
 
 
-def format_transport_receipt_report(report: TransportReceiptReport) -> str:
+def format_delivery_job_report(report: DeliveryJobReport) -> str:
     lines: list[str] = []
-    lines.append(f"PFEM transport receipt source: {report.source}")
-    lines.append(f"Transport receipts checked: {report.checked_receipts}")
+    lines.append(f"PFEM delivery job source: {report.source}")
+    lines.append(f"Delivery jobs checked: {report.checked_jobs}")
 
     if report.failures:
         lines.append("")
@@ -263,9 +284,9 @@ def format_transport_receipt_report(report: TransportReceiptReport) -> str:
         for failure in report.failures:
             lines.append(f"  - {failure}")
         lines.append("")
-        lines.append("PFEM transport receipt validation failed.")
+        lines.append("PFEM delivery job validation failed.")
     else:
         lines.append("")
-        lines.append("PFEM transport receipt validation passed.")
+        lines.append("PFEM delivery job validation passed.")
 
     return "\n".join(lines)

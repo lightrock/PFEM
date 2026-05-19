@@ -13,6 +13,7 @@ class TransportReceiptTests(unittest.TestCase):
 
         self.assertGreaterEqual(len(receipts), 1)
         self.assertEqual(receipts[0].transport_receipt_id, "transport-receipt-basic-manual-export-001")
+        self.assertEqual(receipts[0].delivery_job_id, "delivery-job-basic-manual-export-001")
         self.assertEqual(receipts[0].transport_state, "succeeded")
 
     def test_transport_receipts_validate(self):

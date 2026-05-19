@@ -1,0 +1,26 @@
+[
+  {
+    "delivery_job_id": "delivery-job-basic-manual-export-001",
+    "job_kind": "bundle_delivery",
+    "created_time": "2026-01-01T00:00:15Z",
+    "requested_by_ref": "action-basic-rollup-monitor-001",
+    "route_id": "route-exchange-bundles-to-formal-rollup",
+    "delivery_channel_id": "manual-export",
+    "transport_adapter_id": "transport-manual-export",
+    "source_node_id": "field-radio-node-example",
+    "destination_node_id": "formal-rollup-node-example",
+    "subject_refs": [
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "basis_refs": [
+      "route-exchange-bundles-to-formal-rollup",
+      "manual-export",
+      "transport-manual-export",
+      "bundle-basic-rollup-exchange-001"
+    ],
+    "job_state": "completed",
+    "priority": "routine",
+    "not_before_time": "2026-01-01T00:00:15Z",
+    "summary": "Synthetic example delivery job for manually exporting a basic rollup exchange bundle."
+  }
+]

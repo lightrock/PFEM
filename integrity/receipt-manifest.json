@@ -65,6 +65,12 @@
       "purpose": "delivery channel registry"
     },
     {
+      "path": "delivery/delivery-jobs.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "a6ebda5b250789a4beb61f82f330423dad648bd0e36c452adcc99ffaf23b9554",
+      "purpose": "delivery jobs"
+    },
+    {
       "path": "transport/transport-adapter-registry.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "c2bd355a139e2f1fbcc07b8f7da30b5f59b4675c03d3e58c19c9ef7badadeb0c",
@@ -73,7 +79,7 @@
     {
       "path": "transport/transport-receipts.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "c6e3d239122a0fe8c7293163615a2951ffbe8461ce43f147aaa05438b1768190",
+      "digest": "d56275b048a1da77ba534a5e24db663a46f13082b627ee8daf786e5032b7be52",
       "purpose": "transport receipts"
     },
     {
@@ -121,7 +127,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "e453ae6a316359fb29fdddbb23ac01ce282fc1662bfc08e4e90d64b60728d2fc",
+      "digest": "1833163fc8a7d9b22ecbae805e2daf52486ef7abbf3ef91421a74cb1fbc7e015",
       "purpose": "audit journal"
     },
     {

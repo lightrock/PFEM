@@ -18,7 +18,8 @@ KNOWN_EVENT_KINDS = {
     "exchange_bundle_rejected", "reconciliation_recorded",
     "quality_assessment_recorded", "action_recorded", "playbook_registered",
     "routing_policy_registered", "delivery_channel_registered",
-    "transport_adapter_registered", "transport_receipt_recorded",
+    "transport_adapter_registered", "delivery_job_recorded",
+    "transport_receipt_recorded",
 }
 
 
@@ -96,6 +97,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
         ("playbooks/**/*.playbook.json", "playbook_id"),
+        ("delivery/delivery-jobs.json", "delivery_job_id"),
         ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()

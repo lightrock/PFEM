@@ -1,43 +1,43 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://pfem.local/schemas/transport_receipt.schema.json",
-  "title": "PFEM Transport Receipt",
+  "$id": "https://pfem.local/schemas/delivery_job.schema.json",
+  "title": "PFEM Delivery Job",
   "type": "object",
   "required": [
-    "transport_receipt_id",
-    "receipt_kind",
-    "created_time",
     "delivery_job_id",
-    "transport_adapter_id",
-    "delivery_channel_id",
+    "job_kind",
+    "created_time",
     "route_id",
+    "delivery_channel_id",
+    "transport_adapter_id",
     "source_node_id",
     "destination_node_id",
     "subject_refs",
     "basis_refs",
-    "transport_state",
-    "outcome_summary"
+    "job_state",
+    "priority",
+    "summary"
   ],
   "properties": {
-    "transport_receipt_id": {
+    "delivery_job_id": {
       "type": "string"
     },
-    "receipt_kind": {
+    "job_kind": {
       "type": "string"
     },
     "created_time": {
       "type": "string"
     },
-    "delivery_job_id": {
+    "requested_by_ref": {
       "type": "string"
     },
-    "transport_adapter_id": {
+    "route_id": {
       "type": "string"
     },
     "delivery_channel_id": {
       "type": "string"
     },
-    "route_id": {
+    "transport_adapter_id": {
       "type": "string"
     },
     "source_node_id": {
@@ -58,16 +58,16 @@
         "type": "string"
       }
     },
-    "transport_state": {
+    "job_state": {
       "type": "string"
     },
-    "artifact_refs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "priority": {
+      "type": "string"
     },
-    "outcome_summary": {
+    "not_before_time": {
+      "type": "string"
+    },
+    "summary": {
       "type": "string"
     }
   },
