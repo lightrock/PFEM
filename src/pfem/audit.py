@@ -20,7 +20,7 @@ KNOWN_EVENT_KINDS = {
     "routing_policy_registered", "delivery_channel_registered",
     "transport_adapter_registered", "dispatch_policy_registered",
     "dispatch_decision_recorded", "outbox_item_staged", "inbox_item_received",
-    "intake_decision_recorded", "import_recorded", "conflict_recorded", "merge_decision_recorded", "apply_receipt_recorded", "state_checkpoint_recorded", "state_transition_recorded", "snapshot_manifest_recorded", "snapshot_verification_recorded", "recovery_point_recorded", "restore_plan_recorded", "restore_approval_recorded", "restore_receipt_recorded", "restore_verification_recorded",
+    "intake_decision_recorded", "import_recorded", "conflict_recorded", "merge_decision_recorded", "apply_receipt_recorded", "state_checkpoint_recorded", "state_transition_recorded", "snapshot_manifest_recorded", "snapshot_verification_recorded", "recovery_point_recorded", "restore_plan_recorded", "restore_approval_recorded", "restore_receipt_recorded", "restore_verification_recorded", "restore_closeout_recorded",
     "delivery_job_recorded", "transport_receipt_recorded",
 }
 
@@ -117,6 +117,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("restore/restore-approvals.json", "restore_approval_id"),
         ("restore/restore-receipts.json", "restore_receipt_id"),
         ("restore/restore-verification-receipts.json", "restore_verification_receipt_id"),
+        ("restore/restore-closeout-records.json", "restore_closeout_record_id"),
         ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()

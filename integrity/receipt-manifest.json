@@ -155,6 +155,12 @@
       "purpose": "restore verification receipts"
     },
     {
+      "path": "restore/restore-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "039c7d5972958b734972e77c2c5e4f34ae6b1d37023574a9f08f95ed3c6ebffe",
+      "purpose": "restore closeout records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -235,7 +241,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "1899b4aaaccf94a2bf97547154f896004a908d5bdcbb77a1147e8b5532867c4c",
+      "digest": "48d2b6698fddd3e22d817bcabcfd4a9c6e1149f85dc10006c440772dcffa741b",
       "purpose": "audit journal"
     },
     {

@@ -111,6 +111,11 @@ python tools\pfem_restore_verification_receipts.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM restore closeout record validation...
+python tools\pfem_restore_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

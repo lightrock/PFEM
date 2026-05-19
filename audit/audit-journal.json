@@ -388,5 +388,18 @@
     ],
     "summary": "Example restore verification receipt was recorded after restore execution.",
     "source_tool": "pfem_restore_verification_receipts"
+  },
+  {
+    "audit_id": "audit-restore-closeout-basic-001",
+    "event_kind": "restore_closeout_recorded",
+    "created_time": "2026-01-01T00:00:32Z",
+    "actor_ref": "tools/pfem_restore_closeout_records.py",
+    "subject_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001",
+      "restore-receipt-basic-state-001"
+    ],
+    "summary": "Example restore closeout record was recorded after restore verification.",
+    "source_tool": "pfem_restore_closeout_records"
   }
 ]

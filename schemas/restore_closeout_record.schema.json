@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/restore_closeout_record.schema.json",
+  "title": "PFEM Restore Closeout Record",
+  "type": "object",
+  "required": [
+    "restore_closeout_record_id",
+    "closeout_kind",
+    "created_time",
+    "node_id",
+    "restore_verification_receipt_id",
+    "restore_receipt_id",
+    "restore_approval_id",
+    "restore_plan_id",
+    "recovery_point_id",
+    "closeout_state",
+    "outcome",
+    "closed_refs",
+    "basis_refs",
+    "closed_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "restore_closeout_record_id": {
+      "type": "string"
+    },
+    "closeout_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "restore_verification_receipt_id": {
+      "type": "string"
+    },
+    "restore_receipt_id": {
+      "type": "string"
+    },
+    "restore_approval_id": {
+      "type": "string"
+    },
+    "restore_plan_id": {
+      "type": "string"
+    },
+    "recovery_point_id": {
+      "type": "string"
+    },
+    "closeout_state": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "closed_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "closed_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
