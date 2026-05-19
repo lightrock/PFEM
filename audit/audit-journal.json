@@ -788,5 +788,17 @@
     ],
     "summary": "Example archive index closeout records was recorded.",
     "source_tool": "pfem_archive_index_closeout_records"
+  },
+  {
+    "audit_id": "audit-archive-lifecycle-basic-001",
+    "event_kind": "archive_lifecycle_recorded",
+    "created_time": "2026-01-01T00:01:03Z",
+    "actor_ref": "tools/pfem_archive_lifecycle_records.py",
+    "subject_refs": [
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "summary": "Example archive lifecycle records was recorded.",
+    "source_tool": "pfem_archive_lifecycle_records"
   }
 ]

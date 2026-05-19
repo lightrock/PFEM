@@ -341,6 +341,12 @@
       "purpose": "archive index closeout records"
     },
     {
+      "path": "archive/archive-lifecycle-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c1116f053230377ec0a023dc0c11b5e98d93edd22dcd3c74421b4b74f83672a4",
+      "purpose": "archive lifecycle records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -421,7 +427,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "0dec99d1dcb9cae431a1fb86e63cda53c7afe44043fe0696deec441ac266b805",
+      "digest": "7ad163f68469f0a1b1d804b140eb59be62bc6d78832ebc9081998aae2911ca08",
       "purpose": "audit journal"
     },
     {

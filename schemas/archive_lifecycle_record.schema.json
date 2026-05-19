@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/archive_lifecycle_record.schema.json",
+  "title": "PFEM Archive Lifecycle Records",
+  "type": "object",
+  "required": [
+    "archive_lifecycle_record_id",
+    "lifecycle_kind",
+    "created_time",
+    "node_id",
+    "archive_index_closeout_record_id",
+    "lifecycle_state",
+    "final_outcome",
+    "lifecycle_refs",
+    "archived_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "lifecycle_ref_digest",
+    "summarized_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "archive_lifecycle_record_id": {
+      "type": "string"
+    },
+    "lifecycle_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "archive_index_closeout_record_id": {
+      "type": "string"
+    },
+    "lifecycle_state": {
+      "type": "string"
+    },
+    "final_outcome": {
+      "type": "string"
+    },
+    "lifecycle_refs": {
+      "type": "array"
+    },
+    "archived_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "lifecycle_ref_digest": {
+      "type": "string"
+    },
+    "summarized_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
