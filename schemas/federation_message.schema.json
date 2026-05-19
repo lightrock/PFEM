@@ -7,7 +7,9 @@
     "message_id",
     "message_kind",
     "sender_node_id",
-    "created_time"
+    "created_time",
+    "lineage_refs",
+    "sharing_scope"
   ],
   "properties": {
     "message_id": {

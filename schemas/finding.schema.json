@@ -19,13 +19,13 @@
     "created_time": {
       "type": "string"
     },
-    "subject_refs": {
+    "source_observation_ids": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "source_observation_ids": {
+    "subject_refs": {
       "type": "array",
       "items": {
         "type": "string"
@@ -36,9 +36,6 @@
     },
     "confidence": {
       "type": "number"
-    },
-    "uncertainty_notes": {
-      "type": "string"
     }
   },
   "additionalProperties": true

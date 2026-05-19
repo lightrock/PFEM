@@ -7,7 +7,9 @@
     "rollup_id",
     "producer_node_id",
     "created_time",
-    "summary_kind"
+    "summary_kind",
+    "source_lineage_refs",
+    "sharing_scope"
   ],
   "properties": {
     "rollup_id": {
@@ -19,10 +21,10 @@
     "created_time": {
       "type": "string"
     },
-    "scope": {
+    "summary_kind": {
       "type": "string"
     },
-    "summary_kind": {
+    "scope": {
       "type": "string"
     },
     "included_subject_refs": {

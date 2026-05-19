@@ -6,7 +6,9 @@
   "required": [
     "package_id",
     "created_time",
-    "included_refs"
+    "included_refs",
+    "scope",
+    "summary"
   ],
   "properties": {
     "package_id": {
@@ -15,19 +17,16 @@
     "created_time": {
       "type": "string"
     },
-    "scope": {
-      "type": "string"
-    },
     "included_refs": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "summary": {
+    "scope": {
       "type": "string"
     },
-    "lineage_notes": {
+    "summary": {
       "type": "string"
     }
   },

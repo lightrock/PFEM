@@ -1,10 +1,4 @@
-"""PFEM repository doctor.
-
-The doctor is a dependency-free sanity check for a PFEM checkout. It checks
-architecture anchors, JSON syntax, adapter manifests, adapter registry,
-capability manifests, node profiles, profile registry, example registry, policy,
-and public neutral-language guardrails.
-"""
+"""PFEM repository doctor."""
 
 from __future__ import annotations
 
@@ -17,6 +11,7 @@ from pfem.capability_runtime import load_capability_manifest
 from pfem.example_runtime import validate_example_registry
 from pfem.policy import validate_policy_repository
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
+from pfem.schema_contracts import validate_schema_contracts
 
 
 EXPECTED_PATHS = [
@@ -30,6 +25,7 @@ EXPECTED_PATHS = [
     "docs/architecture/examples.md",
     "docs/architecture/example-registry.md",
     "docs/architecture/sharing-policy.md",
+    "docs/architecture/record-schemas.md",
     "ai/architecture-rules.md",
     "ai/adapter-rules.md",
     "ai/evidence-rules.md",
@@ -38,6 +34,8 @@ EXPECTED_PATHS = [
     "contracts/adapter-contract.md",
     "contracts/evidence-contract.md",
     "contracts/node-profile-contract.md",
+    "contracts/lifecycle-contract.md",
+    "contracts/federation-contract.md",
     "schemas/adapter_manifest.schema.json",
     "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json",
@@ -45,6 +43,11 @@ EXPECTED_PATHS = [
     "schemas/profile_registry.schema.json",
     "schemas/raw_evidence.schema.json",
     "schemas/normalized_observation.schema.json",
+    "schemas/finding.schema.json",
+    "schemas/alert.schema.json",
+    "schemas/evidence_package.schema.json",
+    "schemas/rollup_summary.schema.json",
+    "schemas/federation_message.schema.json",
     "schemas/sharing_policy.schema.json",
     "capabilities/README.md",
     "adapters/adapter-registry.json",
@@ -188,6 +191,11 @@ def check_policy(root: Path, report: DoctorReport) -> None:
     report.failures.extend(policy_report.failures)
 
 
+def check_schema_contracts(root: Path, report: DoctorReport) -> None:
+    schema_report = validate_schema_contracts(root)
+    report.failures.extend(schema_report.failures)
+
+
 def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
     capabilities_dir = root / "capabilities"
     capability_ids: set[str] = set()
@@ -258,6 +266,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     check_profile_registry(root, report)
     check_example_registry(root, report)
     check_policy(root, report)
+    check_schema_contracts(root, report)
     capability_ids = collect_capability_ids(root, report)
     check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)

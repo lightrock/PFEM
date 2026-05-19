@@ -8,7 +8,8 @@
     "alert_kind",
     "finding_id",
     "created_time",
-    "status"
+    "status",
+    "severity"
   ],
   "properties": {
     "alert_id": {
@@ -23,16 +24,13 @@
     "created_time": {
       "type": "string"
     },
+    "status": {
+      "type": "string"
+    },
     "severity": {
       "type": "string"
     },
     "policy_basis": {
-      "type": "string"
-    },
-    "recommended_review_path": {
-      "type": "string"
-    },
-    "status": {
       "type": "string"
     }
   },
