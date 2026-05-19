@@ -401,5 +401,18 @@
     ],
     "summary": "Example restore closeout record was recorded after restore verification.",
     "source_tool": "pfem_restore_closeout_records"
+  },
+  {
+    "audit_id": "audit-disposition-record-basic-001",
+    "event_kind": "disposition_recorded",
+    "created_time": "2026-01-01T00:00:33Z",
+    "actor_ref": "tools/pfem_disposition_records.py",
+    "subject_refs": [
+      "disposition-record-basic-restore-001",
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "summary": "Example disposition record was recorded after restore closeout.",
+    "source_tool": "pfem_disposition_records"
   }
 ]

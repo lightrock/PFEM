@@ -166,6 +166,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("restore/restore-receipts.json", "restore_receipt_id"),
         ("restore/restore-verification-receipts.json", "restore_verification_receipt_id"),
         ("restore/restore-closeout-records.json", "restore_closeout_record_id"),
+        ("disposition/disposition-records.json", "disposition_record_id"),
         ("reconciliation/reconciliation-records.json", "reconciliation_id"),
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
@@ -206,7 +207,7 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
         "handling", "retention", "dispatch", "routing", "delivery", "outbox",
         "inbox", "intake", "imports", "conflicts", "merge", "apply", "state",
-        "snapshots", "recovery", "restore", "transport", "topology", "review",
+        "snapshots", "recovery", "restore", "disposition", "transport", "topology", "review",
         "audit", "exchange", "reconciliation", "quality", "action", "playbooks",
         "integrity", "schemas", "contracts", "docs", "bundles", "tests",
     ]

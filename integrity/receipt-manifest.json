@@ -161,6 +161,12 @@
       "purpose": "restore closeout records"
     },
     {
+      "path": "disposition/disposition-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "8802deba41927a623ccd7190dfd7a6e33af43700de1fa5d7e9873a50d615395d",
+      "purpose": "disposition records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -241,7 +247,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "48d2b6698fddd3e22d817bcabcfd4a9c6e1149f85dc10006c440772dcffa741b",
+      "digest": "dc3b66695fc0aaf5c44eb3b5e792fe1d634ec7fc3d9cb44868672e289dff3612",
       "purpose": "audit journal"
     },
     {

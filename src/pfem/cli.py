@@ -16,6 +16,7 @@ from pfem.delivery import format_delivery_report, validate_delivery_channel_regi
 from pfem.delivery_job import format_delivery_job_report, validate_delivery_jobs
 from pfem.dispatch import format_dispatch_report, validate_dispatch_policy
 from pfem.dispatch_decision import format_dispatch_decision_report, validate_dispatch_decisions
+from pfem.disposition_record import format_disposition_record_report, validate_disposition_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -77,6 +78,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("restore-receipts", "Validate PFEM restore receipts"),
         ("restore-verification-receipts", "Validate PFEM restore verification receipts"),
         ("restore-closeout-records", "Validate PFEM restore closeout records"),
+        ("disposition-records", "Validate PFEM disposition records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -147,6 +149,7 @@ def main(argv: list[str] | None = None) -> int:
         "restore-receipts": (validate_restore_receipts, format_restore_receipt_report),
         "restore-verification-receipts": (validate_restore_verification_receipts, format_restore_verification_receipt_report),
         "restore-closeout-records": (validate_restore_closeout_records, format_restore_closeout_record_report),
+        "disposition-records": (validate_disposition_records, format_disposition_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

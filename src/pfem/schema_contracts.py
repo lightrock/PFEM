@@ -39,6 +39,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "restore_receipt.schema.json": ["restore/restore-receipts.json"],
     "restore_verification_receipt.schema.json": ["restore/restore-verification-receipts.json"],
     "restore_closeout_record.schema.json": ["restore/restore-closeout-records.json"],
+    "disposition_record.schema.json": ["disposition/disposition-records.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

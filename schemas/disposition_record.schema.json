@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/disposition_record.schema.json",
+  "title": "PFEM Disposition Record",
+  "type": "object",
+  "required": [
+    "disposition_record_id",
+    "disposition_kind",
+    "created_time",
+    "node_id",
+    "source_workflow_kind",
+    "source_closeout_ref",
+    "disposition_state",
+    "subject_refs",
+    "actions",
+    "basis_refs",
+    "disposed_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "disposition_record_id": {
+      "type": "string"
+    },
+    "disposition_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "source_workflow_kind": {
+      "type": "string"
+    },
+    "source_closeout_ref": {
+      "type": "string"
+    },
+    "disposition_state": {
+      "type": "string"
+    },
+    "retention_basis": {
+      "type": "string"
+    },
+    "retention_policy_ref": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disposed_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
