@@ -34,6 +34,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "snapshot_manifest.schema.json": ["snapshots/snapshot-manifests.json"],
     "snapshot_verification_receipt.schema.json": ["snapshots/snapshot-verification-receipts.json"],
     "recovery_point.schema.json": ["recovery/recovery-points.json"],
+    "restore_plan.schema.json": ["restore/restore-plans.json"],
     "merge_decision.schema.json": ["merge/merge-decisions.json"],
     "delivery_channel_registry.schema.json": ["delivery/delivery-channel-registry.json"],
     "delivery_job.schema.json": ["delivery/delivery-jobs.json"],

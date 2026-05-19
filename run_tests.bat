@@ -91,6 +91,11 @@ python tools\pfem_recovery_points.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM restore plan validation...
+python tools\pfem_restore_plans.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

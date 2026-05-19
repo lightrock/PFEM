@@ -336,5 +336,18 @@
     ],
     "summary": "Example recovery point was recorded from a verified snapshot.",
     "source_tool": "pfem_recovery_points"
+  },
+  {
+    "audit_id": "audit-restore-plan-basic-001",
+    "event_kind": "restore_plan_recorded",
+    "created_time": "2026-01-01T00:00:28Z",
+    "actor_ref": "tools/pfem_restore_plans.py",
+    "subject_refs": [
+      "restore-plan-basic-state-001",
+      "recovery-point-basic-state-001",
+      "snapshot-verification-basic-state-001"
+    ],
+    "summary": "Example restore plan was recorded from an available recovery point.",
+    "source_tool": "pfem_restore_plans"
   }
 ]

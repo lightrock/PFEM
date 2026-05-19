@@ -36,6 +36,7 @@ from pfem.recovery_point import load_recovery_points
 from pfem.snapshot_manifest import load_snapshot_manifests
 from pfem.snapshot_verification_receipt import load_snapshot_verification_receipts
 from pfem.retention import load_retention_policy
+from pfem.restore_plan import load_restore_plans
 from pfem.review import load_review_records
 from pfem.routing import load_routing_policy
 from pfem.source_runtime import load_source_registry
@@ -182,6 +183,11 @@ def _recovery_point_rows(root: Path) -> list[dict[str, Any]]:
     return [] if not p.exists() else [{"recovery_point_id": r.recovery_point_id, "snapshot_verification_receipt_id": r.snapshot_verification_receipt_id, "recovery_state": r.recovery_state, "restore_scope": r.restore_scope} for r in load_recovery_points(p)]
 
 
+def _restore_plan_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "restore" / "restore-plans.json"
+    return [] if not p.exists() else [{"restore_plan_id": r.restore_plan_id, "recovery_point_id": r.recovery_point_id, "plan_state": r.plan_state, "restore_scope": r.restore_scope} for r in load_restore_plans(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -274,6 +280,7 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "snapshot_manifests": _snapshot_manifest_rows(root),
         "snapshot_verification_receipts": _snapshot_verification_receipt_rows(root),
         "recovery_points": _recovery_point_rows(root),
+        "restore_plans": _restore_plan_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -323,6 +330,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('snapshot_manifests', 0)} snapshot manifests, "
         f"{counts.get('snapshot_verification_receipts', 0)} snapshot verification receipts, "
         f"{counts.get('recovery_points', 0)} recovery points, "
+        f"{counts.get('restore_plans', 0)} restore plans, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -358,6 +366,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Snapshot Manifests", catalog["snapshot_manifests"], ["snapshot_manifest_id", "state_checkpoint_id", "snapshot_state", "items"]))
     lines.extend(_format_table("Snapshot Verification Receipts", catalog["snapshot_verification_receipts"], ["snapshot_verification_receipt_id", "snapshot_manifest_id", "verification_state", "checked_items"]))
     lines.extend(_format_table("Recovery Points", catalog["recovery_points"], ["recovery_point_id", "snapshot_verification_receipt_id", "recovery_state", "restore_scope"]))
+    lines.extend(_format_table("Restore Plans", catalog["restore_plans"], ["restore_plan_id", "recovery_point_id", "plan_state", "restore_scope"]))
     lines.extend(_format_table("Merge Decisions", catalog["merge_decisions"], ["merge_decision_id", "import_record_id", "decision", "reason_code"]))
     lines.extend(_format_table("Intake Decisions", catalog["intake_decisions"], ["intake_decision_id", "inbox_item_id", "decision", "reason_code"]))
     lines.extend(_format_table("Routes", catalog["routes"], ["route_id", "route_kind", "enabled", "channels"]))

@@ -131,6 +131,12 @@
       "purpose": "recovery points"
     },
     {
+      "path": "restore/restore-plans.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "78c5ca7df640fdcec6d9da57ed7a343437a0d6761afdfce48912d1c66e7e587e",
+      "purpose": "restore plans"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -211,7 +217,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "ee4ae2b7efbad3c839777a5ae1f415054524650f98116a0830a1707c9088a9b6",
+      "digest": "172c9d3127fd29d07c57c3968627d5ae5627ead7676b37a8b27f06e003e4034e",
       "purpose": "audit journal"
     },
     {
