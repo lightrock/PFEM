@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/raw_evidence.schema.json",
+  "title": "PFEM Raw Evidence",
+  "type": "object",
+  "required": ["evidence_id", "evidence_kind", "source_id", "received_time"],
+  "properties": {
+    "evidence_id": { "type": "string" },
+    "evidence_kind": { "type": "string" },
+    "source_id": { "type": "string" },
+    "received_time": { "type": "string" },
+    "observed_time": { "type": "string" },
+    "payload_ref": { "type": "string" },
+    "payload": {},
+    "integrity": { "type": "object" },
+    "provenance": { "type": "object" },
+    "uncertainty_notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}
