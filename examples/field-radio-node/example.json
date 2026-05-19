@@ -1,0 +1,10 @@
+{
+  "example_id": "field-radio-node-manual-report",
+  "description": "Field radio profile using manual observer report input.",
+  "profile_id": "field-radio-node",
+  "profile_path": "profiles/field-radio/field-radio.profile.yaml",
+  "adapter_id": "manual-observer-report",
+  "adapter_path": "adapters/community/manual-observer-report",
+  "input_path": "input/manual-report.json",
+  "expected_observation_path": "expected/normalized-observation.json"
+}

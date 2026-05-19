@@ -1,0 +1,8 @@
+{
+  "example_id": "infrastructure-site-node-shape",
+  "description": "Site-oriented profile shape with local input, memory, evidence packaging, and federation output.",
+  "profile_id": "infrastructure-site-node",
+  "profile_path": "profiles/infrastructure-site/infrastructure-site.profile.yaml",
+  "runnable": false,
+  "reason": "This example demonstrates node shape; real source adapters are deployment-selected."
+}

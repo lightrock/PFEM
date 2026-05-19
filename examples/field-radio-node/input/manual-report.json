@@ -1,0 +1,10 @@
+{
+  "report_id": "field-001",
+  "reported_time": "2026-01-01T00:00:00Z",
+  "observer_label": "field-radio-example",
+  "description": "Observed unusual activity near the west gate.",
+  "location_text": "west gate",
+  "source_channel": "manual-entry",
+  "attachments": [],
+  "uncertainty_notes": "Observer was moving; location is approximate."
+}

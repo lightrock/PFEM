@@ -1,0 +1,8 @@
+{
+  "example_id": "civil-dashboard-node-shape",
+  "description": "Dashboard-only profile shape with federation input and action recommendations.",
+  "profile_id": "civil-dashboard-node",
+  "profile_path": "profiles/civil-dashboard/civil-dashboard.profile.yaml",
+  "runnable": false,
+  "reason": "This example demonstrates node shape; it does not ingest local source input."
+}

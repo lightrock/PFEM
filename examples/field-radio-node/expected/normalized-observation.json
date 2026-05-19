@@ -1,0 +1,17 @@
+{
+  "observation_id": "obs-manual-report-field-001",
+  "observation_kind": "manual_observer_report",
+  "source_evidence_ids": [
+    "manual-report-field-001"
+  ],
+  "observed_time": "2026-01-01T00:00:00Z",
+  "normalized_fields": {
+    "description": "Observed unusual activity near the west gate.",
+    "observer_label": "field-radio-example",
+    "location_text": "west gate",
+    "source_channel": "manual-entry",
+    "attachments": []
+  },
+  "confidence": 0.5,
+  "uncertainty_notes": "Observer was moving; location is approximate."
+}

@@ -25,6 +25,7 @@ EXPECTED_PATHS = [
     "docs/architecture/architecture-stack.md",
     "docs/architecture/capability-model.md",
     "docs/architecture/evidence-lifecycle.md",
+    "docs/architecture/examples.md",
     "ai/architecture-rules.md",
     "ai/adapter-rules.md",
     "ai/evidence-rules.md",
@@ -42,6 +43,7 @@ EXPECTED_PATHS = [
     "capabilities/README.md",
     "adapters/adapter-registry.json",
     "profiles/profile-registry.json",
+    "examples/README.md",
     "src/pfem/__init__.py",
 ]
 
@@ -50,6 +52,7 @@ JSON_CHECK_DIRS = [
     "tests/fixtures",
     "adapters",
     "profiles",
+    "examples",
 ]
 
 NEUTRAL_LANGUAGE_SCAN_DIRS = [
@@ -61,6 +64,7 @@ NEUTRAL_LANGUAGE_SCAN_DIRS = [
     "schemas",
     "adapters",
     "capabilities",
+    "examples",
     ".github",
 ]
 
@@ -88,16 +92,12 @@ class DoctorReport:
 
 
 def find_repo_root(start: str | Path | None = None) -> Path:
-    """Find the nearest parent that looks like the PFEM repo root."""
     current = Path(start or Path.cwd()).resolve()
-
     if current.is_file():
         current = current.parent
-
     for candidate in [current, *current.parents]:
         if (candidate / ".git").exists() or (candidate / "pyproject.toml").exists():
             return candidate
-
     return current
 
 
@@ -113,7 +113,6 @@ def _iter_json_files(root: Path) -> list[Path]:
 def _iter_public_text_files(root: Path) -> list[Path]:
     files: list[Path] = []
     extensions = {".md", ".txt", ".yaml", ".yml", ".json", ".py", ".bat"}
-
     for rel in NEUTRAL_LANGUAGE_SCAN_DIRS:
         path = root / rel
         if not path.exists():
@@ -126,7 +125,6 @@ def _iter_public_text_files(root: Path) -> list[Path]:
                 for file in sorted(path.rglob("*"))
                 if file.is_file() and file.suffix.lower() in extensions
             )
-
     return files
 
 
@@ -149,7 +147,6 @@ def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
     adapters_dir = root / "adapters"
     if not adapters_dir.exists():
         return
-
     for path in sorted(adapters_dir.rglob("adapter.yaml")):
         report.checked_adapter_manifests += 1
         try:
@@ -157,7 +154,6 @@ def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
         except Exception as exc:  # noqa: BLE001
             report.failures.append(f"adapter manifest failed to load: {path.relative_to(root)}: {exc}")
             continue
-
         if not manifest.adapter_id:
             report.failures.append(f"adapter manifest missing adapter_id: {path.relative_to(root)}")
         if not manifest.display_name:
@@ -175,10 +171,8 @@ def check_profile_registry(root: Path, report: DoctorReport) -> None:
 def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
     capabilities_dir = root / "capabilities"
     capability_ids: set[str] = set()
-
     if not capabilities_dir.exists():
         return capability_ids
-
     for path in sorted(capabilities_dir.rglob("*.capability.yaml")):
         report.checked_capability_manifests += 1
         try:
@@ -186,7 +180,6 @@ def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
         except Exception as exc:  # noqa: BLE001
             report.failures.append(f"capability manifest failed to load: {path.relative_to(root)}: {exc}")
             continue
-
         if not manifest.capability_id:
             report.failures.append(f"capability manifest missing capability_id: {path.relative_to(root)}")
         if not manifest.display_name:
@@ -195,9 +188,7 @@ def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
             report.failures.append(f"capability manifest missing capability_kind: {path.relative_to(root)}")
         if manifest.capability_id in capability_ids:
             report.failures.append(f"duplicate capability_id {manifest.capability_id!r}: {path.relative_to(root)}")
-
         capability_ids.add(manifest.capability_id)
-
     return capability_ids
 
 
@@ -205,7 +196,6 @@ def check_node_profiles(root: Path, report: DoctorReport, capability_ids: set[st
     profiles_dir = root / "profiles"
     if not profiles_dir.exists():
         return
-
     for path in sorted(profiles_dir.rglob("*.profile.yaml")):
         report.checked_node_profiles += 1
         try:
@@ -213,12 +203,10 @@ def check_node_profiles(root: Path, report: DoctorReport, capability_ids: set[st
         except Exception as exc:  # noqa: BLE001
             report.failures.append(f"node profile failed to load: {path.relative_to(root)}: {exc}")
             continue
-
         if not profile.profile_id:
             report.failures.append(f"node profile missing profile_id: {path.relative_to(root)}")
         if not profile.profile_kind:
             report.failures.append(f"node profile missing profile_kind: {path.relative_to(root)}")
-
         for capability in [*profile.enabled_capabilities, *profile.disabled_capabilities]:
             if capability and capability not in capability_ids:
                 report.warnings.append(
@@ -233,7 +221,6 @@ def check_neutral_language(root: Path, report: DoctorReport) -> None:
         except Exception as exc:  # noqa: BLE001
             report.warnings.append(f"could not scan text file: {path.relative_to(root)}: {exc}")
             continue
-
         for term in DISCOURAGED_PUBLIC_TERMS:
             if term in text:
                 report.warnings.append(
@@ -244,7 +231,6 @@ def check_neutral_language(root: Path, report: DoctorReport) -> None:
 def run_doctor(start: str | Path | None = None) -> DoctorReport:
     root = find_repo_root(start)
     report = DoctorReport(root=root)
-
     check_expected_paths(root, report)
     check_json_syntax(root, report)
     check_adapter_manifests(root, report)
@@ -253,7 +239,6 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     capability_ids = collect_capability_ids(root, report)
     check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)
-
     return report
 
 
@@ -264,13 +249,11 @@ def format_report(report: DoctorReport) -> str:
     lines.append(f"Adapter manifests checked: {report.checked_adapter_manifests}")
     lines.append(f"Capability manifests checked: {report.checked_capability_manifests}")
     lines.append(f"Node profiles checked: {report.checked_node_profiles}")
-
     if report.warnings:
         lines.append("")
         lines.append("Warnings:")
         for warning in report.warnings:
             lines.append(f"  - {warning}")
-
     if report.failures:
         lines.append("")
         lines.append("Failures:")
@@ -281,5 +264,4 @@ def format_report(report: DoctorReport) -> str:
     else:
         lines.append("")
         lines.append("PFEM doctor passed.")
-
     return "\n".join(lines)
