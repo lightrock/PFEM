@@ -1,0 +1,8 @@
+node_id: infrastructure-site-node-example
+display_name: Infrastructure Site Node Example
+profile_id: infrastructure-site-node
+node_kind: example
+status: active-example
+default_sharing_scope: example
+configured_adapters:
+  - configured-by-site

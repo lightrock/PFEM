@@ -9,6 +9,7 @@ from pathlib import Path
 from pfem.adapter_runtime import load_adapter_manifest, validate_adapter_registry
 from pfem.capability_runtime import load_capability_manifest
 from pfem.example_runtime import validate_example_registry
+from pfem.node_runtime import validate_node_registry
 from pfem.policy import validate_policy_repository
 from pfem.profile_runtime import load_node_profile, validate_profile_registry
 from pfem.schema_contracts import validate_schema_contracts
@@ -26,6 +27,7 @@ EXPECTED_PATHS = [
     "docs/architecture/example-registry.md",
     "docs/architecture/sharing-policy.md",
     "docs/architecture/record-schemas.md",
+    "docs/architecture/node-identity.md",
     "ai/architecture-rules.md",
     "ai/adapter-rules.md",
     "ai/evidence-rules.md",
@@ -36,9 +38,12 @@ EXPECTED_PATHS = [
     "contracts/node-profile-contract.md",
     "contracts/lifecycle-contract.md",
     "contracts/federation-contract.md",
+    "contracts/node-identity-contract.md",
     "schemas/adapter_manifest.schema.json",
     "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json",
+    "schemas/node_manifest.schema.json",
+    "schemas/node_registry.schema.json",
     "schemas/node_profile.schema.json",
     "schemas/profile_registry.schema.json",
     "schemas/raw_evidence.schema.json",
@@ -52,6 +57,8 @@ EXPECTED_PATHS = [
     "capabilities/README.md",
     "adapters/adapter-registry.json",
     "profiles/profile-registry.json",
+    "nodes/README.md",
+    "nodes/node-registry.json",
     "examples/README.md",
     "examples/example-registry.json",
     "policy/README.md",
@@ -59,35 +66,9 @@ EXPECTED_PATHS = [
     "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = [
-    "schemas",
-    "tests/fixtures",
-    "adapters",
-    "profiles",
-    "examples",
-    "policy",
-]
-
-NEUTRAL_LANGUAGE_SCAN_DIRS = [
-    "README.md",
-    "docs",
-    "ai",
-    "contracts",
-    "profiles",
-    "schemas",
-    "adapters",
-    "capabilities",
-    "examples",
-    "policy",
-    ".github",
-]
-
-DISCOURAGED_PUBLIC_TERMS = [
-    "DARPA",
-    "DOD",
-    "DoD",
-    "Department of Defense",
-]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
 @dataclass
@@ -134,11 +115,7 @@ def _iter_public_text_files(root: Path) -> list[Path]:
         if path.is_file() and path.suffix.lower() in extensions:
             files.append(path)
         elif path.is_dir():
-            files.extend(
-                file
-                for file in sorted(path.rglob("*"))
-                if file.is_file() and file.suffix.lower() in extensions
-            )
+            files.extend(file for file in sorted(path.rglob("*")) if file.is_file() and file.suffix.lower() in extensions)
     return files
 
 
@@ -153,7 +130,7 @@ def check_json_syntax(root: Path, report: DoctorReport) -> None:
         report.checked_json_files += 1
         try:
             json.loads(path.read_text(encoding="utf-8"))
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             report.failures.append(f"invalid JSON: {path.relative_to(root)}: {exc}")
 
 
@@ -165,7 +142,7 @@ def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
         report.checked_adapter_manifests += 1
         try:
             manifest = load_adapter_manifest(path)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             report.failures.append(f"adapter manifest failed to load: {path.relative_to(root)}: {exc}")
             continue
         if not manifest.adapter_id:
@@ -174,38 +151,16 @@ def check_adapter_manifests(root: Path, report: DoctorReport) -> None:
             report.failures.append(f"adapter manifest missing display_name: {path.relative_to(root)}")
 
 
-def check_adapter_registry(root: Path, report: DoctorReport) -> None:
-    report.failures.extend(validate_adapter_registry(root))
-
-
-def check_profile_registry(root: Path, report: DoctorReport) -> None:
-    report.failures.extend(validate_profile_registry(root))
-
-
-def check_example_registry(root: Path, report: DoctorReport) -> None:
-    report.failures.extend(validate_example_registry(root))
-
-
-def check_policy(root: Path, report: DoctorReport) -> None:
-    policy_report = validate_policy_repository(root)
-    report.failures.extend(policy_report.failures)
-
-
-def check_schema_contracts(root: Path, report: DoctorReport) -> None:
-    schema_report = validate_schema_contracts(root)
-    report.failures.extend(schema_report.failures)
-
-
 def collect_capability_ids(root: Path, report: DoctorReport) -> set[str]:
-    capabilities_dir = root / "capabilities"
     capability_ids: set[str] = set()
+    capabilities_dir = root / "capabilities"
     if not capabilities_dir.exists():
         return capability_ids
     for path in sorted(capabilities_dir.rglob("*.capability.yaml")):
         report.checked_capability_manifests += 1
         try:
             manifest = load_capability_manifest(path)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             report.failures.append(f"capability manifest failed to load: {path.relative_to(root)}: {exc}")
             continue
         if not manifest.capability_id:
@@ -228,7 +183,7 @@ def check_node_profiles(root: Path, report: DoctorReport, capability_ids: set[st
         report.checked_node_profiles += 1
         try:
             profile = load_node_profile(path)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             report.failures.append(f"node profile failed to load: {path.relative_to(root)}: {exc}")
             continue
         if not profile.profile_id:
@@ -237,36 +192,34 @@ def check_node_profiles(root: Path, report: DoctorReport, capability_ids: set[st
             report.failures.append(f"node profile missing profile_kind: {path.relative_to(root)}")
         for capability in [*profile.enabled_capabilities, *profile.disabled_capabilities]:
             if capability and capability not in capability_ids:
-                report.warnings.append(
-                    f"profile references unknown capability {capability!r}: {path.relative_to(root)}"
-                )
+                report.warnings.append(f"profile references unknown capability {capability!r}: {path.relative_to(root)}")
 
 
 def check_neutral_language(root: Path, report: DoctorReport) -> None:
     for path in _iter_public_text_files(root):
         try:
             text = path.read_text(encoding="utf-8", errors="replace")
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             report.warnings.append(f"could not scan text file: {path.relative_to(root)}: {exc}")
             continue
         for term in DISCOURAGED_PUBLIC_TERMS:
             if term in text:
-                report.warnings.append(
-                    f"discouraged public term {term!r} in {path.relative_to(root)}"
-                )
+                report.warnings.append(f"discouraged public term {term!r} in {path.relative_to(root)}")
 
 
 def run_doctor(start: str | Path | None = None) -> DoctorReport:
     root = find_repo_root(start)
     report = DoctorReport(root=root)
+
     check_expected_paths(root, report)
     check_json_syntax(root, report)
     check_adapter_manifests(root, report)
-    check_adapter_registry(root, report)
-    check_profile_registry(root, report)
-    check_example_registry(root, report)
-    check_policy(root, report)
-    check_schema_contracts(root, report)
+    report.failures.extend(validate_adapter_registry(root))
+    report.failures.extend(validate_profile_registry(root))
+    report.failures.extend(validate_node_registry(root))
+    report.failures.extend(validate_example_registry(root))
+    report.failures.extend(validate_policy_repository(root).failures)
+    report.failures.extend(validate_schema_contracts(root).failures)
     capability_ids = collect_capability_ids(root, report)
     check_node_profiles(root, report, capability_ids)
     check_neutral_language(root, report)
@@ -274,12 +227,13 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
 
 
 def format_report(report: DoctorReport) -> str:
-    lines: list[str] = []
-    lines.append(f"PFEM doctor root: {report.root}")
-    lines.append(f"JSON files checked: {report.checked_json_files}")
-    lines.append(f"Adapter manifests checked: {report.checked_adapter_manifests}")
-    lines.append(f"Capability manifests checked: {report.checked_capability_manifests}")
-    lines.append(f"Node profiles checked: {report.checked_node_profiles}")
+    lines = [
+        f"PFEM doctor root: {report.root}",
+        f"JSON files checked: {report.checked_json_files}",
+        f"Adapter manifests checked: {report.checked_adapter_manifests}",
+        f"Capability manifests checked: {report.checked_capability_manifests}",
+        f"Node profiles checked: {report.checked_node_profiles}",
+    ]
     if report.warnings:
         lines.append("")
         lines.append("Warnings:")

@@ -1,0 +1,8 @@
+node_id: formal-rollup-node-example
+display_name: Formal Rollup Node Example
+profile_id: formal-authority-rollup-node
+node_kind: example
+status: active-example
+default_sharing_scope: example
+configured_adapters:
+  - federation-link

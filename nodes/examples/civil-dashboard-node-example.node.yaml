@@ -1,0 +1,8 @@
+node_id: civil-dashboard-node-example
+display_name: Civil Dashboard Node Example
+profile_id: civil-dashboard-node
+node_kind: example
+status: active-example
+default_sharing_scope: example
+configured_adapters:
+  - federation-link

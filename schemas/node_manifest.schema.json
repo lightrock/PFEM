@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/node_manifest.schema.json",
+  "title": "PFEM Node Manifest",
+  "type": "object",
+  "required": [
+    "node_id",
+    "display_name",
+    "profile_id",
+    "node_kind",
+    "status"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "node_kind": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "default_sharing_scope": {
+      "type": "string"
+    },
+    "configured_adapters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

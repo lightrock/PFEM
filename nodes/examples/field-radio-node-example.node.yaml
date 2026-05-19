@@ -1,0 +1,8 @@
+node_id: field-radio-node-example
+display_name: Field Radio Node Example
+profile_id: field-radio-node
+node_kind: example
+status: active-example
+default_sharing_scope: example
+configured_adapters:
+  - manual-observer-report
