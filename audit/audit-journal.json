@@ -271,5 +271,18 @@
     ],
     "summary": "Example apply receipt was recorded after merge decision.",
     "source_tool": "pfem_apply_receipts"
+  },
+  {
+    "audit_id": "audit-state-checkpoint-basic-001",
+    "event_kind": "state_checkpoint_recorded",
+    "created_time": "2026-01-01T00:00:23Z",
+    "actor_ref": "tools/pfem_state_checkpoints.py",
+    "subject_refs": [
+      "state-checkpoint-basic-after-apply-001",
+      "apply-receipt-basic-merge-001",
+      "merge-decision-basic-import-001"
+    ],
+    "summary": "Example state checkpoint was recorded after apply receipt.",
+    "source_tool": "pfem_state_checkpoints"
   }
 ]

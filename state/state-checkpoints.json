@@ -1,0 +1,26 @@
+[
+  {
+    "state_checkpoint_id": "state-checkpoint-basic-after-apply-001",
+    "checkpoint_kind": "local_repository_state",
+    "created_time": "2026-01-01T00:00:23Z",
+    "node_id": "formal-rollup-node-example",
+    "apply_receipt_id": "apply-receipt-basic-merge-001",
+    "merge_decision_id": "merge-decision-basic-import-001",
+    "import_record_id": "import-record-basic-exchange-001",
+    "checkpoint_state": "current",
+    "included_refs": [
+      "rollup-basic-001",
+      "federation-basic-001"
+    ],
+    "basis_refs": [
+      "apply-receipt-basic-merge-001",
+      "merge-decision-basic-import-001",
+      "conflict-record-basic-import-001",
+      "import-record-basic-exchange-001"
+    ],
+    "digest_algorithm": "sha256-sorted-ref-list",
+    "state_digest": "c902e70123a542598838ebe4720bf72ee14d55e47660859c6dcdd2cbfe9b0763",
+    "checkpointed_by_ref": "tools/pfem_state_checkpoints.py",
+    "summary": "Synthetic example state checkpoint showing the local known-good repository state after applying the basic merge decision."
+  }
+]

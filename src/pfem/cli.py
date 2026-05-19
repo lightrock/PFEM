@@ -36,6 +36,7 @@ from pfem.rollup import format_rollup_report, validate_rollup_dir
 from pfem.routing import format_routing_report, validate_routing_policy
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
 from pfem.source_runtime.registry import format_source_provenance_report, validate_source_provenance_repository
+from pfem.state_checkpoint import format_state_checkpoint_report, validate_state_checkpoints
 from pfem.topology import format_topology_report, validate_topology_repository
 from pfem.transport import format_transport_report, validate_transport_adapter_registry
 from pfem.transport_receipt import format_transport_receipt_report, validate_transport_receipts
@@ -57,6 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("intake-decisions", "Validate PFEM intake decisions"),
         ("import-records", "Validate PFEM import records"),
         ("apply-receipts", "Validate PFEM apply receipts"),
+        ("state-checkpoints", "Validate PFEM state checkpoints"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -117,6 +119,7 @@ def main(argv: list[str] | None = None) -> int:
         "intake-decisions": (validate_intake_decisions, format_intake_decision_report),
         "import-records": (validate_import_records, format_import_record_report),
         "apply-receipts": (validate_apply_receipts, format_apply_receipt_report),
+        "state-checkpoints": (validate_state_checkpoints, format_state_checkpoint_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

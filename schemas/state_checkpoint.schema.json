@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/state_checkpoint.schema.json",
+  "title": "PFEM State Checkpoint",
+  "type": "object",
+  "required": [
+    "state_checkpoint_id",
+    "checkpoint_kind",
+    "created_time",
+    "node_id",
+    "checkpoint_state",
+    "included_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "state_digest",
+    "checkpointed_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "state_checkpoint_id": {
+      "type": "string"
+    },
+    "checkpoint_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "apply_receipt_id": {
+      "type": "string"
+    },
+    "merge_decision_id": {
+      "type": "string"
+    },
+    "import_record_id": {
+      "type": "string"
+    },
+    "checkpoint_state": {
+      "type": "string"
+    },
+    "included_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "state_digest": {
+      "type": "string"
+    },
+    "checkpointed_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
