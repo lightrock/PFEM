@@ -269,6 +269,12 @@
       "purpose": "custody release chain verification receipts"
     },
     {
+      "path": "custody/custody-lifecycle-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b9c13bb56ce7a4be39daa178290815e604675fed76ae045df1286162e46840eb",
+      "purpose": "custody lifecycle records"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -349,7 +355,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "41058663aa3fd135c410bf8c3404a9e3c85ecd4629cd5bb2b189364d4bcc239e",
+      "digest": "3b69c026296cbf97f8cb53540936c443d010970102400a94a5634d317439b518",
       "purpose": "audit journal"
     },
     {
