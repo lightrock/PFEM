@@ -466,5 +466,18 @@
     ],
     "summary": "Example custody transfer record was recorded after custody verification.",
     "source_tool": "pfem_custody_transfer_records"
+  },
+  {
+    "audit_id": "audit-custody-transfer-verification-basic-001",
+    "event_kind": "custody_transfer_verification_recorded",
+    "created_time": "2026-01-01T00:00:38Z",
+    "actor_ref": "tools/pfem_custody_transfer_verification_receipts.py",
+    "subject_refs": [
+      "custody-transfer-verification-basic-restore-001",
+      "custody-transfer-basic-restore-001",
+      "custody-verification-basic-restore-001"
+    ],
+    "summary": "Example custody transfer verification receipt was recorded after custody transfer.",
+    "source_tool": "pfem_custody_transfer_verification_receipts"
   }
 ]

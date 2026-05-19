@@ -1,0 +1,35 @@
+[
+  {
+    "custody_transfer_verification_receipt_id": "custody-transfer-verification-basic-restore-001",
+    "receipt_kind": "post_transfer_custody_verification",
+    "created_time": "2026-01-01T00:00:38Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_transfer_record_id": "custody-transfer-basic-restore-001",
+    "custody_verification_receipt_id": "custody-verification-basic-restore-001",
+    "custody_record_id": "custody-record-basic-restore-001",
+    "disposition_receipt_id": "disposition-receipt-basic-restore-001",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "verification_state": "passed",
+    "verified_custodian_ref": "formal-rollup-node-example",
+    "verified_location_ref": "local-repository",
+    "verified_location_kind": "repository_path",
+    "checked_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "custody-transfer-basic-restore-001",
+      "custody-verification-basic-restore-001",
+      "custody-record-basic-restore-001",
+      "disposition-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-ref-list",
+    "expected_checked_ref_digest": "811cb489a5ece848bfab801d204d36fd87cd9143342978780c335e15e9d8062a",
+    "actual_checked_ref_digest": "811cb489a5ece848bfab801d204d36fd87cd9143342978780c335e15e9d8062a",
+    "verified_by_ref": "tools/pfem_custody_transfer_verification_receipts.py",
+    "summary": "Synthetic example custody transfer verification receipt showing the destination custody state was checked after the transfer/re-assertion."
+  }
+]

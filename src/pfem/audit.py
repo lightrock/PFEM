@@ -20,7 +20,7 @@ KNOWN_EVENT_KINDS = {
     "routing_policy_registered", "delivery_channel_registered",
     "transport_adapter_registered", "dispatch_policy_registered",
     "dispatch_decision_recorded", "outbox_item_staged", "inbox_item_received",
-    "intake_decision_recorded", "import_recorded", "conflict_recorded", "merge_decision_recorded", "apply_receipt_recorded", "state_checkpoint_recorded", "state_transition_recorded", "snapshot_manifest_recorded", "snapshot_verification_recorded", "recovery_point_recorded", "restore_plan_recorded", "restore_approval_recorded", "restore_receipt_recorded", "restore_verification_recorded", "restore_closeout_recorded", "disposition_recorded", "disposition_receipt_recorded", "custody_recorded", "custody_verification_recorded", "custody_transfer_recorded",
+    "intake_decision_recorded", "import_recorded", "conflict_recorded", "merge_decision_recorded", "apply_receipt_recorded", "state_checkpoint_recorded", "state_transition_recorded", "snapshot_manifest_recorded", "snapshot_verification_recorded", "recovery_point_recorded", "restore_plan_recorded", "restore_approval_recorded", "restore_receipt_recorded", "restore_verification_recorded", "restore_closeout_recorded", "disposition_recorded", "disposition_receipt_recorded", "custody_recorded", "custody_verification_recorded", "custody_transfer_recorded", "custody_transfer_verification_recorded",
     "delivery_job_recorded", "transport_receipt_recorded",
 }
 
@@ -123,6 +123,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("custody/custody-records.json", "custody_record_id"),
         ("custody/custody-verification-receipts.json", "custody_verification_receipt_id"),
         ("custody/custody-transfer-records.json", "custody_transfer_record_id"),
+        ("custody/custody-transfer-verification-receipts.json", "custody_transfer_verification_receipt_id"),
         ("transport/transport-receipts.json", "transport_receipt_id"),
     ]
     ids: set[str] = set()
