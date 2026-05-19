@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/exchange_receipt.schema.json",
+  "title": "PFEM Exchange Receipt",
+  "type": "object",
+  "required": [
+    "exchange_receipt_id",
+    "receipt_kind",
+    "bundle_id",
+    "created_time",
+    "from_node_id",
+    "to_node_id",
+    "decision",
+    "subject_refs",
+    "summary"
+  ],
+  "properties": {
+    "exchange_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "from_node_id": {
+      "type": "string"
+    },
+    "to_node_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "exchange_receipt_id": "exchange-receipt-basic-export-001",
+    "receipt_kind": "exported",
+    "bundle_id": "bundle-basic-rollup-exchange-001",
+    "created_time": "2026-01-01T00:00:07Z",
+    "from_node_id": "field-radio-node-example",
+    "to_node_id": "formal-rollup-node-example",
+    "decision": "prepared",
+    "subject_refs": [
+      "bundle-basic-rollup-exchange-001",
+      "federation-basic-001",
+      "rollup-basic-001"
+    ],
+    "artifact_refs": [
+      "bundles/examples/basic-rollup-exchange.bundle.json"
+    ],
+    "summary": "Example bundle export receipt."
+  },
+  {
+    "exchange_receipt_id": "exchange-receipt-basic-accept-001",
+    "receipt_kind": "accepted",
+    "bundle_id": "bundle-basic-rollup-exchange-001",
+    "created_time": "2026-01-01T00:00:08Z",
+    "from_node_id": "field-radio-node-example",
+    "to_node_id": "formal-rollup-node-example",
+    "decision": "accepted",
+    "subject_refs": [
+      "bundle-basic-rollup-exchange-001",
+      "review-rollup-basic-001"
+    ],
+    "artifact_refs": [
+      "bundles/examples/basic-rollup-exchange.bundle.json"
+    ],
+    "summary": "Example receiver accepted the exchange bundle."
+  }
+]

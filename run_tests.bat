@@ -46,6 +46,11 @@ python tools\pfem_bundles.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM exchange validation...
+python tools\pfem_exchange.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM schema contract validation...
 python tools\pfem_schema_contracts.py
 if errorlevel 1 exit /b 1

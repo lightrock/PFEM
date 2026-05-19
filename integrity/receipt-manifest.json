@@ -67,8 +67,14 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "cb858e49a29a85603b79ba8c6ef6d243562928adfb6a66173f42741663ecd04b",
+      "digest": "aa90d133b2ce6ba291cd530494432222810d578e9599fcfff8bd28d9d9eaf1f1",
       "purpose": "audit journal"
+    },
+    {
+      "path": "exchange/exchange-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b987ce8f9be9aa2f00e860d107967fda5309a20116acf55cd33f618cc16840fd",
+      "purpose": "exchange receipts"
     },
     {
       "path": "bundles/examples/basic-rollup-exchange.bundle.json",

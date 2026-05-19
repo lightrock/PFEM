@@ -22,6 +22,7 @@ SCHEMA_TO_FIXTURE_FILES = {
     "handling_policy.schema.json": ["handling/handling-policy.json"],
     "retention_policy.schema.json": ["retention/retention-policy.json"],
     "exchange_bundle.schema.json": ["bundles/**/*.bundle.json"],
+    "exchange_receipt.schema.json": ["exchange/exchange-receipts.json"],
 }
 
 

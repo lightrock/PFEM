@@ -10,6 +10,7 @@ from pfem.audit import format_audit_report, validate_audit_repository
 from pfem.bundle import format_bundle_report, validate_bundle_repository
 from pfem.catalog import build_catalog, format_catalog
 from pfem.doctor import format_report, run_doctor
+from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
 from pfem.integrity import format_integrity_report, validate_integrity_manifest, write_integrity_manifest
 from pfem.lineage import format_lineage_report, validate_lifecycle_dir
@@ -31,6 +32,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("catalog", "Print PFEM catalog from disk"),
         ("audit", "Validate PFEM audit journal"),
         ("bundles", "Validate PFEM exchange bundles"),
+        ("exchange", "Validate PFEM exchange receipts"),
         ("handling", "Validate PFEM handling/redaction policy"),
         ("retention", "Validate PFEM retention/disposition policy"),
         ("policy", "Validate PFEM sharing policy"),
@@ -80,6 +82,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "bundles":
         report = validate_bundle_repository(Path(args.path))
         print(format_bundle_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "exchange":
+        report = validate_exchange_repository(Path(args.path))
+        print(format_exchange_report(report))
         return 0 if report.ok else 1
 
     if args.command == "handling":

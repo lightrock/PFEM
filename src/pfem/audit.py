@@ -18,6 +18,10 @@ KNOWN_EVENT_KINDS = {
     "topology_changed",
     "federation_message_prepared",
     "evidence_package_assembled",
+    "exchange_bundle_exported",
+    "exchange_bundle_received",
+    "exchange_bundle_accepted",
+    "exchange_bundle_rejected",
 }
 
 
@@ -90,6 +94,8 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("tests/fixtures/**/federation_message.json", "message_id"),
         ("review/review-records.json", "review_id"),
         ("audit/audit-journal.json", "audit_id"),
+        ("bundles/**/*.bundle.json", "bundle_id"),
+        ("exchange/exchange-receipts.json", "exchange_receipt_id"),
     ]
     ids: set[str] = set()
     for pattern, key in patterns:
@@ -109,12 +115,17 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
         "sources",
         "examples",
         "policy",
+        "handling",
+        "retention",
         "topology",
         "review",
+        "audit",
+        "exchange",
         "integrity",
         "schemas",
         "contracts",
         "docs",
+        "bundles",
     ]:
         base = root / folder
         if not base.exists():
