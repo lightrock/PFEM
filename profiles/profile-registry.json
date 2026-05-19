@@ -1,0 +1,42 @@
+{
+  "registry_id": "pfem-profile-registry",
+  "version": "0.1",
+  "profiles": [
+    {
+      "profile_id": "field-radio-node",
+      "path": "profiles/field-radio/field-radio.profile.yaml",
+      "profile_kind": "field",
+      "status": "active-example"
+    },
+    {
+      "profile_id": "community-mesh-node",
+      "path": "profiles/community-mesh/community-mesh.profile.yaml",
+      "profile_kind": "mesh",
+      "status": "active-example"
+    },
+    {
+      "profile_id": "infrastructure-site-node",
+      "path": "profiles/infrastructure-site/infrastructure-site.profile.yaml",
+      "profile_kind": "site",
+      "status": "active-example"
+    },
+    {
+      "profile_id": "civil-dashboard-node",
+      "path": "profiles/civil-dashboard/civil-dashboard.profile.yaml",
+      "profile_kind": "dashboard",
+      "status": "active-example"
+    },
+    {
+      "profile_id": "research-testbed-node",
+      "path": "profiles/research-testbed/research-testbed.profile.yaml",
+      "profile_kind": "testbed",
+      "status": "active-example"
+    },
+    {
+      "profile_id": "formal-authority-rollup-node",
+      "path": "profiles/formal-rollup/formal-rollup.profile.yaml",
+      "profile_kind": "rollup",
+      "status": "active-example"
+    }
+  ]
+}
