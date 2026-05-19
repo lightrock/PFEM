@@ -505,5 +505,18 @@
     ],
     "summary": "Example custody chain record was recorded after custody closeout.",
     "source_tool": "pfem_custody_chain_records"
+  },
+  {
+    "audit_id": "audit-custody-chain-verification-basic-001",
+    "event_kind": "custody_chain_verification_recorded",
+    "created_time": "2026-01-01T00:00:41Z",
+    "actor_ref": "tools/pfem_custody_chain_verification_receipts.py",
+    "subject_refs": [
+      "custody-chain-verification-basic-restore-001",
+      "custody-chain-basic-restore-001",
+      "custody-closeout-basic-restore-001"
+    ],
+    "summary": "Example custody chain verification receipt was recorded after custody chain record.",
+    "source_tool": "pfem_custody_chain_verification_receipts"
   }
 ]

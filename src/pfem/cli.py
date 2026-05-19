@@ -24,6 +24,7 @@ from pfem.custody_transfer_record import format_custody_transfer_record_report, 
 from pfem.custody_transfer_verification_receipt import format_custody_transfer_verification_receipt_report, validate_custody_transfer_verification_receipts
 from pfem.custody_closeout_record import format_custody_closeout_record_report, validate_custody_closeout_records
 from pfem.custody_chain_record import format_custody_chain_record_report, validate_custody_chain_records
+from pfem.custody_chain_verification_receipt import format_custody_chain_verification_receipt_report, validate_custody_chain_verification_receipts
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -93,6 +94,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("custody-transfer-verification-receipts", "Validate PFEM custody transfer verification receipts"),
         ("custody-closeout-records", "Validate PFEM custody closeout records"),
         ("custody-chain-records", "Validate PFEM custody chain records"),
+        ("custody-chain-verification-receipts", "Validate PFEM custody chain verification receipts"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -171,6 +173,7 @@ def main(argv: list[str] | None = None) -> int:
         "custody-transfer-verification-receipts": (validate_custody_transfer_verification_receipts, format_custody_transfer_verification_receipt_report),
         "custody-closeout-records": (validate_custody_closeout_records, format_custody_closeout_record_report),
         "custody-chain-records": (validate_custody_chain_records, format_custody_chain_record_report),
+        "custody-chain-verification-receipts": (validate_custody_chain_verification_receipts, format_custody_chain_verification_receipt_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

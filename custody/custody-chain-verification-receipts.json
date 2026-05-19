@@ -1,0 +1,39 @@
+[
+  {
+    "custody_chain_verification_receipt_id": "custody-chain-verification-basic-restore-001",
+    "receipt_kind": "custody_chain_summary_verification",
+    "created_time": "2026-01-01T00:00:41Z",
+    "node_id": "formal-rollup-node-example",
+    "custody_chain_record_id": "custody-chain-basic-restore-001",
+    "terminal_ref": "custody-closeout-basic-restore-001",
+    "source_workflow_kind": "restore_workflow",
+    "source_closeout_ref": "restore-closeout-basic-state-001",
+    "verification_state": "passed",
+    "checked_chain_refs": [
+      "custody-record-basic-restore-001",
+      "custody-verification-basic-restore-001",
+      "custody-transfer-basic-restore-001",
+      "custody-transfer-verification-basic-restore-001",
+      "custody-closeout-basic-restore-001"
+    ],
+    "checked_held_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "custody-chain-basic-restore-001",
+      "custody-closeout-basic-restore-001",
+      "custody-transfer-verification-basic-restore-001",
+      "custody-transfer-basic-restore-001",
+      "custody-verification-basic-restore-001",
+      "custody-record-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-chain-ref-list",
+    "expected_chain_ref_digest": "80ff99307dcdc763e09bee0b5193bd88c2936f14bc56f50a087d7674f7f659fb",
+    "actual_chain_ref_digest": "80ff99307dcdc763e09bee0b5193bd88c2936f14bc56f50a087d7674f7f659fb",
+    "verified_by_ref": "tools/pfem_custody_chain_verification_receipts.py",
+    "summary": "Synthetic example custody chain verification receipt showing the custody chain record summary and digest were checked after chain closeout."
+  }
+]

@@ -156,6 +156,11 @@ python tools\pfem_custody_chain_records.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM custody chain verification receipt validation...
+python tools\pfem_custody_chain_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

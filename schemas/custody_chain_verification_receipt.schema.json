@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/custody_chain_verification_receipt.schema.json",
+  "title": "PFEM Custody Chain Verification Receipt",
+  "type": "object",
+  "required": [
+    "custody_chain_verification_receipt_id",
+    "receipt_kind",
+    "created_time",
+    "node_id",
+    "custody_chain_record_id",
+    "terminal_ref",
+    "source_workflow_kind",
+    "source_closeout_ref",
+    "verification_state",
+    "checked_chain_refs",
+    "checked_held_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "expected_chain_ref_digest",
+    "actual_chain_ref_digest",
+    "verified_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "custody_chain_verification_receipt_id": {
+      "type": "string"
+    },
+    "receipt_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "custody_chain_record_id": {
+      "type": "string"
+    },
+    "terminal_ref": {
+      "type": "string"
+    },
+    "source_workflow_kind": {
+      "type": "string"
+    },
+    "source_closeout_ref": {
+      "type": "string"
+    },
+    "verification_state": {
+      "type": "string"
+    },
+    "checked_chain_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checked_held_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "expected_chain_ref_digest": {
+      "type": "string"
+    },
+    "actual_chain_ref_digest": {
+      "type": "string"
+    },
+    "verified_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

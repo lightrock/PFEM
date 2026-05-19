@@ -203,6 +203,7 @@ def _collect_known_record_ids(root: Path) -> set[str]:
         ("custody/custody-transfer-verification-receipts.json", "custody_transfer_verification_receipt_id"),
         ("custody/custody-closeout-records.json", "custody_closeout_record_id"),
         ("custody/custody-chain-records.json", "custody_chain_record_id"),
+        ("custody/custody-chain-verification-receipts.json", "custody_chain_verification_receipt_id"),
         ("reconciliation/reconciliation-records.json", "reconciliation_id"),
         ("quality/quality-assessments.json", "quality_assessment_id"),
         ("action/action-records.json", "action_id"),
