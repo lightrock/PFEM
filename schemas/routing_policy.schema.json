@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/routing_policy.schema.json",
+  "title": "PFEM Routing Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "routes"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "route_id",
+          "route_kind",
+          "enabled",
+          "summary"
+        ],
+        "properties": {
+          "route_id": {
+            "type": "string"
+          },
+          "route_kind": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "source_node_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_profile_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "destination_node_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "destination_profile_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "applies_to_action_kinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "applies_to_bundle_kinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "applies_to_priorities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "applies_to_sharing_scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_handling_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

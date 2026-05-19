@@ -22,6 +22,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("policy/sharing-policy.json", "sharing policy"),
     ("handling/handling-policy.json", "handling policy"),
     ("retention/retention-policy.json", "retention policy"),
+    ("routing/routing-policy.json", "routing policy"),
     ("quality/quality-policy.json", "quality policy"),
     ("quality/quality-assessments.json", "quality assessments"),
     ("action/action-policy.json", "action policy"),

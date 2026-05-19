@@ -23,6 +23,7 @@ from pfem.quality import validate_quality_repository
 from pfem.reconciliation import validate_reconciliation_repository
 from pfem.retention import validate_retention_policy
 from pfem.review import validate_review_repository
+from pfem.routing import validate_routing_policy
 from pfem.schema_contracts import validate_schema_contracts
 from pfem.source_runtime import validate_source_provenance_repository
 from pfem.topology import validate_topology_repository
@@ -41,8 +42,7 @@ EXPECTED_PATHS = [
     "docs/architecture/exchange-bundles.md", "docs/architecture/exchange-receipts.md",
     "docs/architecture/reconciliation-records.md", "docs/architecture/confidence-quality.md",
     "docs/architecture/action-records.md", "docs/architecture/playbooks.md",
-    "ai/architecture-rules.md", "ai/adapter-rules.md", "ai/evidence-rules.md",
-    "ai/node-profile-rules.md", "ai/review-checklist.md",
+    "docs/architecture/routing-policy.md",
     "contracts/adapter-contract.md", "contracts/evidence-contract.md",
     "contracts/node-profile-contract.md", "contracts/lifecycle-contract.md",
     "contracts/federation-contract.md", "contracts/node-identity-contract.md",
@@ -52,18 +52,18 @@ EXPECTED_PATHS = [
     "contracts/retention-disposition-contract.md", "contracts/exchange-bundle-contract.md",
     "contracts/exchange-receipt-contract.md", "contracts/reconciliation-contract.md",
     "contracts/confidence-quality-contract.md", "contracts/action-contract.md",
-    "contracts/playbook-contract.md",
+    "contracts/playbook-contract.md", "contracts/routing-contract.md",
     "schemas/adapter_manifest.schema.json", "schemas/adapter_registry.schema.json",
     "schemas/example_registry.schema.json", "schemas/node_manifest.schema.json",
     "schemas/node_registry.schema.json", "schemas/node_profile.schema.json",
     "schemas/profile_registry.schema.json", "schemas/source_registry.schema.json",
     "schemas/review_record.schema.json", "schemas/integrity_receipt_manifest.schema.json",
     "schemas/audit_event.schema.json", "schemas/handling_policy.schema.json",
-    "schemas/retention_policy.schema.json", "schemas/exchange_bundle.schema.json",
-    "schemas/exchange_receipt.schema.json", "schemas/reconciliation_record.schema.json",
-    "schemas/quality_policy.schema.json", "schemas/quality_assessment.schema.json",
-    "schemas/action_policy.schema.json", "schemas/action_record.schema.json",
-    "schemas/playbook.schema.json",
+    "schemas/retention_policy.schema.json", "schemas/routing_policy.schema.json",
+    "schemas/exchange_bundle.schema.json", "schemas/exchange_receipt.schema.json",
+    "schemas/reconciliation_record.schema.json", "schemas/quality_policy.schema.json",
+    "schemas/quality_assessment.schema.json", "schemas/action_policy.schema.json",
+    "schemas/action_record.schema.json", "schemas/playbook.schema.json",
     "schemas/raw_evidence.schema.json", "schemas/normalized_observation.schema.json",
     "schemas/finding.schema.json", "schemas/alert.schema.json",
     "schemas/evidence_package.schema.json", "schemas/rollup_summary.schema.json",
@@ -79,6 +79,7 @@ EXPECTED_PATHS = [
     "quality/README.md", "quality/quality-policy.json", "quality/quality-assessments.json",
     "action/README.md", "action/action-policy.json", "action/action-records.json",
     "playbooks/README.md", "playbooks/examples/monitor-accepted-rollup.playbook.json",
+    "routing/README.md", "routing/routing-policy.json",
     "handling/README.md", "handling/handling-policy.json",
     "retention/README.md", "retention/retention-policy.json",
     "bundles/README.md", "bundles/examples/basic-rollup-exchange.bundle.json",
@@ -88,8 +89,8 @@ EXPECTED_PATHS = [
     "policy/README.md", "policy/sharing-policy.json", "src/pfem/__init__.py",
 ]
 
-JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
-NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
+JSON_CHECK_DIRS = ["schemas", "tests/fixtures", "adapters", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "routing", "handling", "retention", "bundles", "integrity", "topology", "examples", "policy"]
+NEUTRAL_LANGUAGE_SCAN_DIRS = ["README.md", "docs", "ai", "contracts", "profiles", "nodes", "sources", "review", "audit", "exchange", "reconciliation", "quality", "action", "playbooks", "routing", "handling", "retention", "bundles", "integrity", "topology", "schemas", "adapters", "capabilities", "examples", "policy", ".github"]
 DISCOURAGED_PUBLIC_TERMS = ["DARPA", "DOD", "DoD", "Department of Defense"]
 
 
@@ -244,6 +245,7 @@ def run_doctor(start: str | Path | None = None) -> DoctorReport:
     report.failures.extend(validate_policy_repository(root).failures)
     report.failures.extend(validate_handling_policy(root).failures)
     report.failures.extend(validate_retention_policy(root).failures)
+    report.failures.extend(validate_routing_policy(root).failures)
     report.failures.extend(validate_quality_repository(root).failures)
     report.failures.extend(validate_action_repository(root).failures)
     report.failures.extend(validate_playbook_repository(root).failures)

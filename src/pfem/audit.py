@@ -26,6 +26,7 @@ KNOWN_EVENT_KINDS = {
     "quality_assessment_recorded",
     "action_recorded",
     "playbook_registered",
+    "routing_policy_registered",
 }
 
 
@@ -111,6 +112,15 @@ def _collect_known_record_ids(root: Path) -> set[str]:
             for record in _load_records(path):
                 if record.get(key):
                     ids.add(str(record[key]))
+
+    routing_path = root / "routing" / "routing-policy.json"
+    if routing_path.exists():
+        raw = json.loads(routing_path.read_text(encoding="utf-8"))
+        if isinstance(raw, dict):
+            for route in raw.get("routes", []):
+                if isinstance(route, dict) and route.get("route_id"):
+                    ids.add(str(route["route_id"]))
+
     return ids
 
 
@@ -118,7 +128,7 @@ def _collect_known_artifact_paths(root: Path) -> set[str]:
     paths: set[str] = set()
     for folder in [
         "adapters", "profiles", "nodes", "sources", "examples", "policy",
-        "handling", "retention", "topology", "review", "audit", "exchange",
+        "handling", "retention", "routing", "topology", "review", "audit", "exchange",
         "reconciliation", "quality", "action", "playbooks", "integrity",
         "schemas", "contracts", "docs", "bundles",
     ]:

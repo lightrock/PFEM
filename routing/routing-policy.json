@@ -1,0 +1,55 @@
+{
+  "policy_id": "pfem-routing-policy",
+  "version": "0.1",
+  "routes": [
+    {
+      "route_id": "route-monitor-actions-to-formal-rollup",
+      "route_kind": "action",
+      "enabled": true,
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "destination_profile_ids": [],
+      "applies_to_action_kinds": [
+        "monitor"
+      ],
+      "applies_to_priorities": [
+        "routine",
+        "elevated",
+        "urgent"
+      ],
+      "applies_to_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Route routine monitoring actions from the example field node to the example formal rollup node."
+    },
+    {
+      "route_id": "route-exchange-bundles-to-formal-rollup",
+      "route_kind": "bundle",
+      "enabled": true,
+      "source_node_ids": [
+        "field-radio-node-example"
+      ],
+      "destination_node_ids": [
+        "formal-rollup-node-example"
+      ],
+      "destination_profile_ids": [],
+      "applies_to_bundle_kinds": [
+        "federation_exchange"
+      ],
+      "applies_to_sharing_scopes": [
+        "example"
+      ],
+      "allowed_handling_labels": [
+        "summary-shareable"
+      ],
+      "summary": "Route example federation exchange bundles toward the formal rollup node."
+    }
+  ]
+}

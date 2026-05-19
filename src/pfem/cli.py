@@ -22,6 +22,7 @@ from pfem.reconciliation import format_reconciliation_report, validate_reconcili
 from pfem.retention import format_retention_report, validate_retention_policy
 from pfem.review import format_review_report, validate_review_repository
 from pfem.rollup import format_rollup_report, validate_rollup_dir
+from pfem.routing import format_routing_report, validate_routing_policy
 from pfem.schema_contracts import format_schema_contract_report, validate_schema_contracts
 from pfem.source_runtime.registry import format_source_provenance_report, validate_source_provenance_repository
 from pfem.topology import format_topology_report, validate_topology_repository
@@ -36,6 +37,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("catalog", "Print PFEM catalog from disk"),
         ("actions", "Validate PFEM action records"),
         ("playbooks", "Validate PFEM playbooks"),
+        ("routing", "Validate PFEM routing policy"),
         ("audit", "Validate PFEM audit journal"),
         ("bundles", "Validate PFEM exchange bundles"),
         ("exchange", "Validate PFEM exchange receipts"),
@@ -90,6 +92,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "playbooks":
         report = validate_playbook_repository(Path(args.path))
         print(format_playbook_report(report))
+        return 0 if report.ok else 1
+
+    if args.command == "routing":
+        report = validate_routing_policy(Path(args.path))
+        print(format_routing_report(report))
         return 0 if report.ok else 1
 
     if args.command == "audit":
