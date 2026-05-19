@@ -1,0 +1,72 @@
+{
+  "policy_id": "pfem-action-policy",
+  "version": "0.1",
+  "action_kinds": [
+    {
+      "action_kind": "review",
+      "display_name": "Review",
+      "description": "Review records before accepting, sharing, or using them."
+    },
+    {
+      "action_kind": "notify",
+      "display_name": "Notify",
+      "description": "Notify a node, role, contact, or downstream system."
+    },
+    {
+      "action_kind": "investigate",
+      "display_name": "Investigate",
+      "description": "Gather more evidence or inspect a discrepancy."
+    },
+    {
+      "action_kind": "escalate",
+      "display_name": "Escalate",
+      "description": "Raise attention or route to a higher authority/profile/workflow."
+    },
+    {
+      "action_kind": "monitor",
+      "display_name": "Monitor",
+      "description": "Keep watching without immediate escalation."
+    },
+    {
+      "action_kind": "correct",
+      "display_name": "Correct",
+      "description": "Correct, annotate, or supersede a record."
+    },
+    {
+      "action_kind": "handoff",
+      "display_name": "Handoff",
+      "description": "Prepare or complete a bundle/exchange handoff."
+    },
+    {
+      "action_kind": "archive",
+      "display_name": "Archive",
+      "description": "Move records toward archive/disposition handling."
+    }
+  ],
+  "priority_levels": [
+    {
+      "priority": "routine",
+      "rank": 1,
+      "description": "Normal handling."
+    },
+    {
+      "priority": "elevated",
+      "rank": 2,
+      "description": "Needs attention but is not immediate."
+    },
+    {
+      "priority": "urgent",
+      "rank": 3,
+      "description": "Time-sensitive action."
+    }
+  ],
+  "action_states": [
+    "proposed",
+    "assigned",
+    "in-progress",
+    "blocked",
+    "completed",
+    "cancelled",
+    "deferred"
+  ]
+}

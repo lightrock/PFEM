@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/action_record.schema.json",
+  "title": "PFEM Action Record",
+  "type": "object",
+  "required": [
+    "action_id",
+    "action_kind",
+    "created_time",
+    "owner_ref",
+    "subject_refs",
+    "basis_refs",
+    "priority",
+    "action_state",
+    "summary",
+    "next_step"
+  ],
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "action_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "owner_ref": {
+      "type": "string"
+    },
+    "subject_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "basis_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priority": {
+      "type": "string"
+    },
+    "action_state": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "next_step": {
+      "type": "string"
+    },
+    "completion_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

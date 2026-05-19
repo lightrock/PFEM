@@ -6,6 +6,7 @@ import argparse
 import json
 from pathlib import Path
 
+from pfem.action import format_action_report, validate_action_repository
 from pfem.audit import format_audit_report, validate_audit_repository
 from pfem.bundle import format_bundle_report, validate_bundle_repository
 from pfem.catalog import build_catalog, format_catalog
@@ -32,6 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
     for name, help_text in [
         ("doctor", "Run PFEM repository sanity checks"),
         ("catalog", "Print PFEM catalog from disk"),
+        ("actions", "Validate PFEM action records"),
         ("audit", "Validate PFEM audit journal"),
         ("bundles", "Validate PFEM exchange bundles"),
         ("exchange", "Validate PFEM exchange receipts"),
@@ -77,6 +79,11 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(format_catalog(catalog))
         return 0
+
+    if args.command == "actions":
+        report = validate_action_repository(Path(args.path))
+        print(format_action_report(report))
+        return 0 if report.ok else 1
 
     if args.command == "audit":
         report = validate_audit_repository(Path(args.path))

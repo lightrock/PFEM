@@ -26,6 +26,8 @@ SCHEMA_TO_FIXTURE_FILES = {
     "reconciliation_record.schema.json": ["reconciliation/reconciliation-records.json"],
     "quality_policy.schema.json": ["quality/quality-policy.json"],
     "quality_assessment.schema.json": ["quality/quality-assessments.json"],
+    "action_policy.schema.json": ["action/action-policy.json"],
+    "action_record.schema.json": ["action/action-records.json"],
 }
 
 

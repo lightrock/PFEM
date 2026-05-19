@@ -5,6 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from pfem.action import load_action_policy, load_action_records
 from pfem.adapter_runtime import load_adapter_registry
 from pfem.audit import load_audit_events
 from pfem.bundle import load_exchange_bundle
@@ -96,14 +97,7 @@ def _quality_assessment_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "quality" / "quality-assessments.json"
     if not p.exists():
         return []
-    return [
-        {
-            "quality_assessment_id": q.quality_assessment_id,
-            "confidence_level": q.confidence_level,
-            "flags": ",".join(q.quality_flags),
-        }
-        for q in load_quality_assessments(p)
-    ]
+    return [{"quality_assessment_id": q.quality_assessment_id, "confidence_level": q.confidence_level, "flags": ",".join(q.quality_flags)} for q in load_quality_assessments(p)]
 
 
 def _quality_policy_rows(root: Path) -> list[dict[str, Any]]:
@@ -112,6 +106,21 @@ def _quality_policy_rows(root: Path) -> list[dict[str, Any]]:
         return []
     policy = load_quality_policy(p)
     return [{"confidence_level": level.confidence_level, "rank": level.rank, "display_name": level.display_name} for level in policy.confidence_levels]
+
+
+def _action_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "action" / "action-records.json"
+    if not p.exists():
+        return []
+    return [{"action_id": a.action_id, "action_kind": a.action_kind, "priority": a.priority, "action_state": a.action_state} for a in load_action_records(p)]
+
+
+def _action_policy_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "action" / "action-policy.json"
+    if not p.exists():
+        return []
+    policy = load_action_policy(p)
+    return [{"action_kind": kind.action_kind, "display_name": kind.display_name} for kind in policy.action_kinds]
 
 
 def _handling_rows(root: Path) -> list[dict[str, Any]]:
@@ -163,6 +172,8 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
     reconciliation_records = _reconciliation_rows(root)
     quality_levels = _quality_policy_rows(root)
     quality_assessments = _quality_assessment_rows(root)
+    action_kinds = _action_policy_rows(root)
+    action_records = _action_rows(root)
     handling_labels = _handling_rows(root)
     retention_classes = _retention_rows(root)
     integrity_receipts = _integrity_rows(root)
@@ -178,6 +189,8 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
             "reconciliation_records": len(reconciliation_records),
             "quality_levels": len(quality_levels),
             "quality_assessments": len(quality_assessments),
+            "action_kinds": len(action_kinds),
+            "action_records": len(action_records),
             "handling_labels": len(handling_labels), "retention_classes": len(retention_classes),
             "integrity_receipts": len(integrity_receipts), "sharing_scopes": len(sharing_scopes),
             "review_gates": len(review_gates),
@@ -188,6 +201,8 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "reconciliation_records": reconciliation_records,
         "quality_levels": quality_levels,
         "quality_assessments": quality_assessments,
+        "action_kinds": action_kinds,
+        "action_records": action_records,
         "handling_labels": handling_labels, "retention_classes": retention_classes,
         "integrity_receipts": integrity_receipts, "sharing_scopes": sharing_scopes, "review_gates": review_gates,
     }
@@ -217,6 +232,7 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts['bundles']} bundles, {counts['exchange_receipts']} exchange receipts, "
         f"{counts['reconciliation_records']} reconciliation records, "
         f"{counts['quality_levels']} quality levels, {counts['quality_assessments']} quality assessments, "
+        f"{counts['action_kinds']} action kinds, {counts['action_records']} action records, "
         f"{counts['handling_labels']} handling labels, {counts['retention_classes']} retention classes, "
         f"{counts['integrity_receipts']} integrity receipts, {counts['sharing_scopes']} sharing scopes, "
         f"{counts['review_gates']} review gates",
@@ -234,6 +250,8 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Reconciliation Records", catalog["reconciliation_records"], ["reconciliation_id", "reconciliation_kind", "decision", "result_state"]))
     lines.extend(_format_table("Quality Levels", catalog["quality_levels"], ["confidence_level", "rank", "display_name"]))
     lines.extend(_format_table("Quality Assessments", catalog["quality_assessments"], ["quality_assessment_id", "confidence_level", "flags"]))
+    lines.extend(_format_table("Action Kinds", catalog["action_kinds"], ["action_kind", "display_name"]))
+    lines.extend(_format_table("Action Records", catalog["action_records"], ["action_id", "action_kind", "priority", "action_state"]))
     lines.extend(_format_table("Handling Labels", catalog["handling_labels"], ["label_id", "allowed_sharing_scopes", "requires_redaction"]))
     lines.extend(_format_table("Retention Classes", catalog["retention_classes"], ["retention_class", "default_duration", "allowed_states"]))
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))

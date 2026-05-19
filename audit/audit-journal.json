@@ -61,5 +61,17 @@
     ],
     "summary": "Example quality assessment was recorded.",
     "source_tool": "pfem_quality"
+  },
+  {
+    "audit_id": "audit-action-basic-001",
+    "event_kind": "action_recorded",
+    "created_time": "2026-01-01T00:00:11Z",
+    "actor_ref": "tools/pfem_actions.py",
+    "subject_refs": [
+      "action-basic-rollup-monitor-001",
+      "quality-basic-rollup-001"
+    ],
+    "summary": "Example action record was recorded.",
+    "source_tool": "pfem_actions"
   }
 ]

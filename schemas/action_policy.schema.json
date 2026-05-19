@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/action_policy.schema.json",
+  "title": "PFEM Action Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "action_kinds",
+    "priority_levels",
+    "action_states"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "action_kinds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action_kind",
+          "display_name",
+          "description"
+        ],
+        "properties": {
+          "action_kind": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "priority_levels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "priority",
+          "rank",
+          "description"
+        ],
+        "properties": {
+          "priority": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "action_states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}
