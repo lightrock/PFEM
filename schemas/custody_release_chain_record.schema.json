@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/custody_release_chain_record.schema.json",
+  "title": "PFEM Custody Release Chain Records",
+  "type": "object",
+  "required": [
+    "custody_release_chain_record_id",
+    "chain_kind",
+    "created_time",
+    "node_id",
+    "start_ref",
+    "terminal_ref",
+    "chain_state",
+    "final_outcome",
+    "chain_refs",
+    "released_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "chain_ref_digest",
+    "summarized_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "custody_release_chain_record_id": {
+      "type": "string"
+    },
+    "chain_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "start_ref": {
+      "type": "string"
+    },
+    "terminal_ref": {
+      "type": "string"
+    },
+    "chain_state": {
+      "type": "string"
+    },
+    "final_outcome": {
+      "type": "string"
+    },
+    "chain_refs": {
+      "type": "array"
+    },
+    "released_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "chain_ref_digest": {
+      "type": "string"
+    },
+    "summarized_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -56,6 +56,7 @@ DEFAULT_RECEIPT_TARGETS = [
     ("custody/custody-release-receipts.json", "custody release receipts"),
     ("custody/custody-release-verification-receipts.json", "custody release verification receipts"),
     ("custody/custody-release-closeout-records.json", "custody release closeout records"),
+    ("custody/custody-release-chain-records.json", "custody release chain records"),
     ("merge/merge-decisions.json", "merge decisions"),
     ("routing/routing-policy.json", "routing policy"),
     ("delivery/delivery-channel-registry.json", "delivery channel registry"),

@@ -1,0 +1,35 @@
+[
+  {
+    "custody_release_chain_record_id": "custody-release-chain-basic-restore-001",
+    "chain_kind": "closed_custody_release_chain",
+    "created_time": "2026-01-01T00:00:49Z",
+    "node_id": "formal-rollup-node-example",
+    "start_ref": "custody-release-request-basic-restore-001",
+    "terminal_ref": "custody-release-closeout-basic-restore-001",
+    "chain_state": "closed",
+    "final_outcome": "release_verified",
+    "chain_refs": [
+      "custody-release-request-basic-restore-001",
+      "custody-release-approval-basic-restore-001",
+      "custody-release-receipt-basic-restore-001",
+      "custody-release-verification-basic-restore-001",
+      "custody-release-closeout-basic-restore-001"
+    ],
+    "released_refs": [
+      "restore-closeout-basic-state-001",
+      "restore-verification-basic-state-001"
+    ],
+    "basis_refs": [
+      "custody-release-closeout-basic-restore-001",
+      "custody-release-verification-basic-restore-001",
+      "custody-release-receipt-basic-restore-001",
+      "custody-release-approval-basic-restore-001",
+      "custody-release-request-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-release-chain-ref-list",
+    "chain_ref_digest": "691c04dbcb10abfc1a95ae7e26f301937129b9c46b38fa9fc21237ddc865095d",
+    "summarized_by_ref": "tools/pfem_custody_release_chain_records.py",
+    "summary": "Synthetic example custody release chain record summarizing request, approval, receipt, verification, and closeout."
+  }
+]

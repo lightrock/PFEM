@@ -609,5 +609,18 @@
     ],
     "summary": "Example custody release closeout records was recorded.",
     "source_tool": "pfem_custody_release_closeout_records"
+  },
+  {
+    "audit_id": "audit-custody-release-chain-basic-001",
+    "event_kind": "custody_release_chain_recorded",
+    "created_time": "2026-01-01T00:00:49Z",
+    "actor_ref": "tools/pfem_custody_release_chain_records.py",
+    "subject_refs": [
+      "custody-release-chain-basic-restore-001",
+      "custody-release-request-basic-restore-001",
+      "custody-release-closeout-basic-restore-001"
+    ],
+    "summary": "Example custody release chain records was recorded.",
+    "source_tool": "pfem_custody_release_chain_records"
   }
 ]
