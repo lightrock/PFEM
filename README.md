@@ -91,7 +91,7 @@ Follow PFEM boundary language, workorder discipline, and patch safety rules.
 If any filename has changed, inspect the closest current equivalent in the repository before proceeding.
 ```
 
-PFEM has a project-level command protocol for humans and AI assistants.
+Once your AI assistant has executed those startup instructions, it will automatically know how to handle the following project commands and workflows.
 
 When any developer says `start a new tab`, the worker should produce the canonical PFEM new-tab handoff prompt instead of continuing implementation work.
 
