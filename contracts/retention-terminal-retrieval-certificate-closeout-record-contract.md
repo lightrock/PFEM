@@ -1,0 +1,19 @@
+# Retention Terminal Retrieval Certificate Closeout Records Contract
+
+A PFEM retention terminal retrieval certificate closeout records record should identify:
+
+- `retention_terminal_retrieval_certificate_closeout_record_id`
+- `closeout_kind`
+- `created_time`
+- `node_id`
+- `retention_terminal_retrieval_certificate_verification_receipt_id`
+- `retention_terminal_retrieval_certificate_record_id`
+- `closeout_state`
+- `outcome`
+- `closed_refs`
+- `subject_refs`
+- `basis_refs`
+- `closed_by_ref`
+- `summary`
+
+This record keeps its boundary separate from the preceding PFEM artifact.

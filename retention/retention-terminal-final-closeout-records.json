@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_final_closeout_record_id": "retention-terminal-final-closeout-basic-restore-001",
+    "terminal_final_closeout_kind": "retention_terminal_final_closeout",
+    "created_time": "2026-01-01T00:06:02Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_publication_terminal_status_closeout_record_id": "retention-publication-terminal-status-closeout-basic-restore-001",
+    "retention_publication_terminal_status_verification_receipt_id": "retention-publication-terminal-status-verification-basic-restore-001",
+    "terminal_final_closeout_state": "closed",
+    "terminal_final_closeout_scope": "closed_retention_publication_terminal_status",
+    "terminal_final_closeout_refs": [
+      "retention-publication-terminal-status-closeout-basic-restore-001",
+      "retention-publication-terminal-status-verification-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-publication-terminal-status-closeout-basic-restore-001",
+      "retention-publication-terminal-status-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-final-closeout-ref-list",
+    "terminal_final_closeout_ref_digest": "072cccff5096eb7b357eece6bb59e0c5ada00d59bf26281abe1912eb80a8ee02",
+    "terminal_final_closeout_by_ref": "tools/pfem_retention_terminal_final_closeout_records.py",
+    "summary": "Synthetic example retention terminal final closeout record built from the closed retention publication terminal status path."
+  }
+]

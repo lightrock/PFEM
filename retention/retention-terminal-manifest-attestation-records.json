@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_manifest_attestation_record_id": "retention-terminal-manifest-attestation-basic-restore-001",
+    "terminal_manifest_attestation_kind": "retention_terminal_manifest_attestation",
+    "created_time": "2026-01-01T00:06:08Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_evidence_index_closeout_record_id": "retention-terminal-evidence-index-closeout-basic-restore-001",
+    "retention_terminal_evidence_index_verification_receipt_id": "retention-terminal-evidence-index-verification-basic-restore-001",
+    "terminal_manifest_attestation_state": "attested",
+    "terminal_manifest_attestation_scope": "closed_retention_terminal_evidence_index",
+    "terminal_manifest_attestation_refs": [
+      "retention-terminal-evidence-index-closeout-basic-restore-001",
+      "retention-terminal-evidence-index-verification-basic-restore-001",
+      "retention-terminal-evidence-index-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-evidence-index-closeout-basic-restore-001",
+      "retention-terminal-evidence-index-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-manifest-attestation-ref-list",
+    "terminal_manifest_attestation_ref_digest": "920cbbce55e4155d0ec4fde8658bb1e0f0900fffa52481c712c86b75e16c60c1",
+    "terminal_manifest_attestation_by_ref": "tools/pfem_retention_terminal_manifest_attestation_records.py",
+    "summary": "Synthetic example retention terminal manifest attestation record built from the closed retention terminal evidence index path."
+  }
+]

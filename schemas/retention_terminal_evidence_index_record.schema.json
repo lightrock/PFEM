@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_terminal_evidence_index_record.schema.json",
+  "title": "PFEM Retention Terminal Evidence Index Records",
+  "type": "object",
+  "required": [
+    "retention_terminal_evidence_index_record_id",
+    "terminal_evidence_index_kind",
+    "created_time",
+    "node_id",
+    "retention_terminal_final_closeout_closeout_record_id",
+    "retention_terminal_final_closeout_verification_receipt_id",
+    "terminal_evidence_index_state",
+    "terminal_evidence_index_scope",
+    "terminal_evidence_index_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "terminal_evidence_index_ref_digest",
+    "terminal_evidence_index_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_terminal_evidence_index_record_id": {
+      "type": "string"
+    },
+    "terminal_evidence_index_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_terminal_final_closeout_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_terminal_final_closeout_verification_receipt_id": {
+      "type": "string"
+    },
+    "terminal_evidence_index_state": {
+      "type": "string"
+    },
+    "terminal_evidence_index_scope": {
+      "type": "string"
+    },
+    "terminal_evidence_index_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "terminal_evidence_index_ref_digest": {
+      "type": "string"
+    },
+    "terminal_evidence_index_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

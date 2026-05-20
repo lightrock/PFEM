@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_manifest_attestation_verification_receipt_id": "retention-terminal-manifest-attestation-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_manifest_attestation_verification",
+    "created_time": "2026-01-01T00:06:09Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_manifest_attestation_record_id": "retention-terminal-manifest-attestation-basic-restore-001",
+    "retention_terminal_evidence_index_closeout_record_id": "retention-terminal-evidence-index-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_manifest_attestation_refs": [
+      "retention-terminal-evidence-index-closeout-basic-restore-001",
+      "retention-terminal-evidence-index-verification-basic-restore-001",
+      "retention-terminal-evidence-index-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-manifest-attestation-basic-restore-001",
+      "retention-terminal-evidence-index-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-manifest-attestation-ref-list",
+    "expected_terminal_manifest_attestation_ref_digest": "920cbbce55e4155d0ec4fde8658bb1e0f0900fffa52481c712c86b75e16c60c1",
+    "actual_terminal_manifest_attestation_ref_digest": "920cbbce55e4155d0ec4fde8658bb1e0f0900fffa52481c712c86b75e16c60c1",
+    "verified_by_ref": "tools/pfem_retention_terminal_manifest_attestation_verification_receipts.py",
+    "summary": "Synthetic example retention terminal manifest attestation verification receipt showing refs and digest were checked."
+  }
+]

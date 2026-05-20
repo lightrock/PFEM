@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_disposition_ledger_verification_receipt_id": "retention-terminal-disposition-ledger-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_disposition_ledger_verification",
+    "created_time": "2026-01-01T00:06:18Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_disposition_ledger_record_id": "retention-terminal-disposition-ledger-basic-restore-001",
+    "retention_terminal_rollup_report_closeout_record_id": "retention-terminal-rollup-report-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_disposition_ledger_refs": [
+      "retention-terminal-rollup-report-closeout-basic-restore-001",
+      "retention-terminal-rollup-report-verification-basic-restore-001",
+      "retention-terminal-rollup-report-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-disposition-ledger-basic-restore-001",
+      "retention-terminal-rollup-report-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-disposition-ledger-ref-list",
+    "expected_terminal_disposition_ledger_ref_digest": "ff2c437e03a6cecae7fe5ffcb302ec0ce71fdf2562ad88e2af5185e10db3757e",
+    "actual_terminal_disposition_ledger_ref_digest": "ff2c437e03a6cecae7fe5ffcb302ec0ce71fdf2562ad88e2af5185e10db3757e",
+    "verified_by_ref": "tools/pfem_retention_terminal_disposition_ledger_verification_receipts.py",
+    "summary": "Synthetic example retention terminal disposition ledger verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_disposition_ledger_record_id": "retention-terminal-disposition-ledger-basic-restore-001",
+    "terminal_disposition_ledger_kind": "retention_terminal_disposition_ledger",
+    "created_time": "2026-01-01T00:06:17Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_rollup_report_closeout_record_id": "retention-terminal-rollup-report-closeout-basic-restore-001",
+    "retention_terminal_rollup_report_verification_receipt_id": "retention-terminal-rollup-report-verification-basic-restore-001",
+    "terminal_disposition_ledger_state": "indexed",
+    "terminal_disposition_ledger_scope": "closed_retention_terminal_rollup_report",
+    "terminal_disposition_ledger_refs": [
+      "retention-terminal-rollup-report-closeout-basic-restore-001",
+      "retention-terminal-rollup-report-verification-basic-restore-001",
+      "retention-terminal-rollup-report-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-rollup-report-closeout-basic-restore-001",
+      "retention-terminal-rollup-report-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-disposition-ledger-ref-list",
+    "terminal_disposition_ledger_ref_digest": "ff2c437e03a6cecae7fe5ffcb302ec0ce71fdf2562ad88e2af5185e10db3757e",
+    "terminal_disposition_ledger_by_ref": "tools/pfem_retention_terminal_disposition_ledger_records.py",
+    "summary": "Synthetic example retention terminal disposition ledger record built from the closed retention terminal rollup report path."
+  }
+]

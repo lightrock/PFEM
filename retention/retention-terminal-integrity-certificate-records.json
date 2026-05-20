@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_integrity_certificate_record_id": "retention-terminal-integrity-certificate-basic-restore-001",
+    "terminal_integrity_certificate_kind": "retention_terminal_integrity_certificate",
+    "created_time": "2026-01-01T00:06:11Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_manifest_attestation_closeout_record_id": "retention-terminal-manifest-attestation-closeout-basic-restore-001",
+    "retention_terminal_manifest_attestation_verification_receipt_id": "retention-terminal-manifest-attestation-verification-basic-restore-001",
+    "terminal_integrity_certificate_state": "certified",
+    "terminal_integrity_certificate_scope": "closed_retention_terminal_manifest_attestation",
+    "terminal_integrity_certificate_refs": [
+      "retention-terminal-manifest-attestation-closeout-basic-restore-001",
+      "retention-terminal-manifest-attestation-verification-basic-restore-001",
+      "retention-terminal-manifest-attestation-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-manifest-attestation-closeout-basic-restore-001",
+      "retention-terminal-manifest-attestation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-integrity-certificate-ref-list",
+    "terminal_integrity_certificate_ref_digest": "718e8d337a324396d50aba5f8d611b1dcc3b385c0b78ec2b1b23183cad445cdc",
+    "terminal_integrity_certificate_by_ref": "tools/pfem_retention_terminal_integrity_certificate_records.py",
+    "summary": "Synthetic example retention terminal integrity certificate record built from the closed retention terminal manifest attestation path."
+  }
+]

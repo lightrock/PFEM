@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_policy_attestation_record_id": "retention-terminal-policy-attestation-basic-restore-001",
+    "terminal_policy_attestation_kind": "retention_terminal_policy_attestation",
+    "created_time": "2026-01-01T00:06:32Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_retrieval_certificate_closeout_record_id": "retention-terminal-retrieval-certificate-closeout-basic-restore-001",
+    "retention_terminal_retrieval_certificate_verification_receipt_id": "retention-terminal-retrieval-certificate-verification-basic-restore-001",
+    "terminal_policy_attestation_state": "attested",
+    "terminal_policy_attestation_scope": "closed_retention_terminal_retrieval_certificate",
+    "terminal_policy_attestation_refs": [
+      "retention-terminal-retrieval-certificate-closeout-basic-restore-001",
+      "retention-terminal-retrieval-certificate-verification-basic-restore-001",
+      "retention-terminal-retrieval-certificate-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-retrieval-certificate-closeout-basic-restore-001",
+      "retention-terminal-retrieval-certificate-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-policy-attestation-ref-list",
+    "terminal_policy_attestation_ref_digest": "58a56f2791d13d678eaeae0ae78955a730b8450e67f9fb82bc0b065ac3f8a959",
+    "terminal_policy_attestation_by_ref": "tools/pfem_retention_terminal_policy_attestation_records.py",
+    "summary": "Synthetic example retention terminal policy attestation record built from the closed retention terminal retrieval certificate path."
+  }
+]

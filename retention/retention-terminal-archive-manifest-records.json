@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_archive_manifest_record_id": "retention-terminal-archive-manifest-basic-restore-001",
+    "terminal_archive_manifest_kind": "retention_terminal_archive_manifest",
+    "created_time": "2026-01-01T00:06:23Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_custody_certificate_closeout_record_id": "retention-terminal-custody-certificate-closeout-basic-restore-001",
+    "retention_terminal_custody_certificate_verification_receipt_id": "retention-terminal-custody-certificate-verification-basic-restore-001",
+    "terminal_archive_manifest_state": "published",
+    "terminal_archive_manifest_scope": "closed_retention_terminal_custody_certificate",
+    "terminal_archive_manifest_refs": [
+      "retention-terminal-custody-certificate-closeout-basic-restore-001",
+      "retention-terminal-custody-certificate-verification-basic-restore-001",
+      "retention-terminal-custody-certificate-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-custody-certificate-closeout-basic-restore-001",
+      "retention-terminal-custody-certificate-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-archive-manifest-ref-list",
+    "terminal_archive_manifest_ref_digest": "1280d9c47ca32148bbbe4791e52951206df22e2c6f3e599e60ef86529af1d6c6",
+    "terminal_archive_manifest_by_ref": "tools/pfem_retention_terminal_archive_manifest_records.py",
+    "summary": "Synthetic example retention terminal archive manifest record built from the closed retention terminal custody certificate path."
+  }
+]

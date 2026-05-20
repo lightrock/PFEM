@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_control_snapshot_verification_receipt_id": "retention-terminal-control-snapshot-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_control_snapshot_verification",
+    "created_time": "2026-01-01T00:06:36Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_control_snapshot_record_id": "retention-terminal-control-snapshot-basic-restore-001",
+    "retention_terminal_policy_attestation_closeout_record_id": "retention-terminal-policy-attestation-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_control_snapshot_refs": [
+      "retention-terminal-policy-attestation-closeout-basic-restore-001",
+      "retention-terminal-policy-attestation-verification-basic-restore-001",
+      "retention-terminal-policy-attestation-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-control-snapshot-basic-restore-001",
+      "retention-terminal-policy-attestation-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-control-snapshot-ref-list",
+    "expected_terminal_control_snapshot_ref_digest": "c949c736cabc5ac0a6b4487f8b75652b20685a14ab48eed99ee5e16712ef9609",
+    "actual_terminal_control_snapshot_ref_digest": "c949c736cabc5ac0a6b4487f8b75652b20685a14ab48eed99ee5e16712ef9609",
+    "verified_by_ref": "tools/pfem_retention_terminal_control_snapshot_verification_receipts.py",
+    "summary": "Synthetic example retention terminal control snapshot verification receipt showing refs and digest were checked."
+  }
+]

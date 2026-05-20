@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_compliance_report_record_id": "retention-terminal-compliance-report-basic-restore-001",
+    "terminal_compliance_report_kind": "retention_terminal_compliance_report",
+    "created_time": "2026-01-01T00:06:38Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_control_snapshot_closeout_record_id": "retention-terminal-control-snapshot-closeout-basic-restore-001",
+    "retention_terminal_control_snapshot_verification_receipt_id": "retention-terminal-control-snapshot-verification-basic-restore-001",
+    "terminal_compliance_report_state": "reported",
+    "terminal_compliance_report_scope": "closed_retention_terminal_control_snapshot",
+    "terminal_compliance_report_refs": [
+      "retention-terminal-control-snapshot-closeout-basic-restore-001",
+      "retention-terminal-control-snapshot-verification-basic-restore-001",
+      "retention-terminal-control-snapshot-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-control-snapshot-closeout-basic-restore-001",
+      "retention-terminal-control-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-compliance-report-ref-list",
+    "terminal_compliance_report_ref_digest": "f6a319069175ea029d7e015e7677a2b9d3123cb7559f7a8f5a19ef6991eb4724",
+    "terminal_compliance_report_by_ref": "tools/pfem_retention_terminal_compliance_report_records.py",
+    "summary": "Synthetic example retention terminal compliance report record built from the closed retention terminal control snapshot path."
+  }
+]

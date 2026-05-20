@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_retrieval_certificate_verification_receipt_id": "retention-terminal-retrieval-certificate-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_retrieval_certificate_verification",
+    "created_time": "2026-01-01T00:06:30Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_retrieval_certificate_record_id": "retention-terminal-retrieval-certificate-basic-restore-001",
+    "retention_terminal_storage_receipt_closeout_record_id": "retention-terminal-storage-receipt-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_retrieval_certificate_refs": [
+      "retention-terminal-storage-receipt-closeout-basic-restore-001",
+      "retention-terminal-storage-receipt-verification-basic-restore-001",
+      "retention-terminal-storage-receipt-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-retrieval-certificate-basic-restore-001",
+      "retention-terminal-storage-receipt-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-retrieval-certificate-ref-list",
+    "expected_terminal_retrieval_certificate_ref_digest": "4b9e75c6373ebcb5554bd251f8bf08b69602e6d956f69a5b0fcf5bb393b26bc4",
+    "actual_terminal_retrieval_certificate_ref_digest": "4b9e75c6373ebcb5554bd251f8bf08b69602e6d956f69a5b0fcf5bb393b26bc4",
+    "verified_by_ref": "tools/pfem_retention_terminal_retrieval_certificate_verification_receipts.py",
+    "summary": "Synthetic example retention terminal retrieval certificate verification receipt showing refs and digest were checked."
+  }
+]

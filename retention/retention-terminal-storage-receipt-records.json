@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_storage_receipt_record_id": "retention-terminal-storage-receipt-basic-restore-001",
+    "terminal_storage_receipt_kind": "retention_terminal_storage_receipt",
+    "created_time": "2026-01-01T00:06:26Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_archive_manifest_closeout_record_id": "retention-terminal-archive-manifest-closeout-basic-restore-001",
+    "retention_terminal_archive_manifest_verification_receipt_id": "retention-terminal-archive-manifest-verification-basic-restore-001",
+    "terminal_storage_receipt_state": "archived",
+    "terminal_storage_receipt_scope": "closed_retention_terminal_archive_manifest",
+    "terminal_storage_receipt_refs": [
+      "retention-terminal-archive-manifest-closeout-basic-restore-001",
+      "retention-terminal-archive-manifest-verification-basic-restore-001",
+      "retention-terminal-archive-manifest-basic-restore-001",
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-archive-manifest-closeout-basic-restore-001",
+      "retention-terminal-archive-manifest-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-storage-receipt-ref-list",
+    "terminal_storage_receipt_ref_digest": "285b250449aaf67e4286a1412ab9fc6af377af51ddf7f508ae76b5d05ffcd429",
+    "terminal_storage_receipt_by_ref": "tools/pfem_retention_terminal_storage_receipt_records.py",
+    "summary": "Synthetic example retention terminal storage receipt record built from the closed retention terminal archive manifest path."
+  }
+]
