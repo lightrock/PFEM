@@ -8,6 +8,7 @@ Before editing, read:
 - `docs/architecture/neutral-language.md`
 - `docs/architecture/architecture-stack.md`
 - `docs/architecture/evidence-lifecycle.md`
+- `docs/developer/pfem-adapters-and-subsystems.md`
 - `ai/architecture-rules.md`
 - `ai/adapter-rules.md`
 - `ai/evidence-rules.md`
@@ -24,6 +25,7 @@ Core rules:
 - Schemas define contracts; code should follow schemas.
 - Reports and dashboards are outputs, not source evidence.
 - Do not add infrastructure, databases, queues, identity systems, or background services unless the architecture docs justify it.
+- Do not confuse external subsystems, PFEM adapters, evidence sources, consumers, and PFEM core. PFEM observes contracts, provenance, timing, and confidence metadata; it does not automatically know real-world truth inside external subsystems.
 
 When unsure, make the smallest doctrine-preserving change and explain the boundary affected.
 
@@ -36,6 +38,7 @@ docs/developer/pfem-boundary-language-generation-standard.md
 docs/developer/pfem-new-chat-handoff.md
 docs/developer/pfem-terminal-tail-stabilization.md
 docs/developer/pfem-architecture-theory-notes.md
+docs/developer/pfem-adapters-and-subsystems.md
 docs/developer/pfem-ai-patch-safety-rules.md
 workorders/README.md
 tools/pfem_check_manifest.json
