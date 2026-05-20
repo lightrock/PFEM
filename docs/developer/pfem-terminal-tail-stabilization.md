@@ -1,6 +1,6 @@
 # PFEM Terminal Tail Stabilization
 
-This is the first post-doodad stabilization check.
+This is the first post-record-species generation stabilization check.
 
 The final permanent-archive terminal tail now ends at:
 

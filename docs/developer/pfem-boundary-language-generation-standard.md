@@ -1,8 +1,16 @@
-# PFEM Doodad Generation Standard
+# PFEM Boundary-Language Generation Standard
 
-This file exists so a new chat, Codex session, or human contributor does not have to recover PFEM's generation rules from conversation history.
+This file exists so a new chat, Codex session, or human contributor does not have to recover PFEM's generated-boundary rules from conversation history.
 
-A PFEM “doodad” is a small, auditable record species. It is not just a JSON file. A valid doodad boundary includes data, schema, validation code, tool wiring, audit/catalog/doctor integration, docs, contracts, tests, and gate coverage.
+PFEM uses three related terms:
+
+```text
+record species       the formal PFEM record type or semantic niche
+generated boundary  the complete implementation bundle for that species
+boundary language   the formal vocabulary and rules for these boundaries
+```
+
+A PFEM record species is not just a JSON file. A valid generated boundary includes data, schema, validation code, tool wiring, audit/catalog/doctor integration, docs, contracts, tests, and gate coverage.
 
 ## Naming
 
@@ -25,7 +33,7 @@ hyphen-case: permanent-archive-terminal-closure-final-endcap
 
 ## Standard generated boundary types
 
-Most PFEM doodads are one of these:
+Most PFEM generated boundaries are one of these:
 
 ```text
 record
@@ -43,7 +51,7 @@ retention <stem> closeout records
 
 If a batch stops halfway through a three-step boundary, the next batch must resume that exact boundary before inventing a new stem.
 
-## Required files for a generated doodad
+## Required files for a generated boundary
 
 For a `record` boundary:
 
@@ -83,7 +91,7 @@ contracts/retention-<stem-hyphen>-closeout-record-contract.md
 
 ## Required cross-file updates
 
-Every doodad must be wired into:
+Every generated boundary must be wired into:
 
 ```text
 audit/audit-journal.json
@@ -115,7 +123,7 @@ missing_refs should be present as an optional array property.
 missing_refs should not be listed in required for passed verification receipt schemas.
 ```
 
-Why: the schema-contract checker treats empty required arrays as missing. We hit this twice during terminal closure/endcap work. Do not repeat it.
+Why: the schema-contract checker treats empty required arrays as missing. PFEM has already hit this failure mode during terminal closure/endcap work. Do not repeat it.
 
 ## Runtime and launcher rule
 
@@ -156,7 +164,7 @@ Then print the status-file path.
 
 ## Normal focused check sequence
 
-For a doodad patch, run focused checks first:
+For a generated-boundary patch, run focused checks first:
 
 ```text
 new generated validators
@@ -170,7 +178,7 @@ tools/pfem_doctor.py
 pfem_check.bat --quick --timings
 ```
 
-Do not demand a full gate after every batch while generating many doodads. Use focused gates during generation and a full gate at stabilization/release boundaries.
+Do not demand a full gate after every generated-boundary batch. Use focused gates during generation and a full gate at stabilization/release boundaries.
 
 ## Full gate timing
 
@@ -187,7 +195,7 @@ a broad refactor changes check plumbing
 
 Do not keep generating record species just because generation is easy.
 
-Stop adding doodads when the chain reaches a real semantic endcap.
+Stop adding record species when the chain reaches a real semantic endcap.
 
 For the current permanent-archive terminal tail, the endcap is:
 

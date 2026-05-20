@@ -1,8 +1,9 @@
-"""Audit PFEM doodad-generation standards.
+"""Audit PFEM boundary-language generation standards.
 
-This audit is intentionally about *process guardrails*, not another PFEM
-record species. It keeps future generated doodads from drifting away from the
-standards that made the retention/permanent-archive chain testable.
+This audit is intentionally about process guardrails, not another PFEM
+record species. It keeps future generated boundaries from drifting away from
+the standards that make retention, verification, closeout, and terminal
+archive chains testable.
 """
 
 from __future__ import annotations
@@ -14,9 +15,11 @@ from typing import Any
 
 
 REQUIRED_GUIDE_PATHS = [
-    Path("docs/developer/pfem-doodad-generation-standard.md"),
+    Path("docs/developer/pfem-boundary-language-generation-standard.md"),
     Path("docs/developer/pfem-new-chat-handoff.md"),
     Path("docs/developer/pfem-terminal-tail-stabilization.md"),
+    Path("docs/developer/pfem-architecture-theory-notes.md"),
+    Path("docs/developer/pfem-ai-patch-safety-rules.md"),
 ]
 
 ALLOWED_ROOT_PFEM_BATS = {
@@ -25,7 +28,7 @@ ALLOWED_ROOT_PFEM_BATS = {
 
 
 @dataclass(frozen=True)
-class DoodadStandardsAuditReport:
+class BoundaryLanguageStandardsAuditReport:
     root: str
     manifest_steps_checked: int = 0
     verification_schemas_checked: int = 0
@@ -57,7 +60,7 @@ def _as_records(raw: Any, path: Path) -> list[dict[str, Any]]:
 def _check_required_guides(root: Path, failures: list[str]) -> None:
     for rel in REQUIRED_GUIDE_PATHS:
         if not (root / rel).exists():
-            failures.append(f"missing PFEM doodad guide/handoff file: {rel}")
+            failures.append(f"missing PFEM boundary-language guide/handoff file: {rel}")
 
 
 def _check_no_root_bat_churn(root: Path, failures: list[str]) -> None:
@@ -83,9 +86,14 @@ def _check_manifest(root: Path, failures: list[str]) -> int:
 
     checked = 0
     seen_args: set[tuple[str, ...]] = set()
+    has_boundary_language_audit = False
 
     for index, step in enumerate(steps):
         checked += 1
+        if not isinstance(step, dict):
+            failures.append(f"manifest step {index} is not an object")
+            continue
+
         label = step.get("label")
         args = step.get("args")
 
@@ -102,18 +110,28 @@ def _check_manifest(root: Path, failures: list[str]) -> int:
         seen_args.add(args_tuple)
 
         first = str(args[0])
+        if first == "tools/pfem_boundary_language_standards_audit.py":
+            has_boundary_language_audit = True
+        if "generated boundary" in first.lower() or (isinstance(label, str) and "generated boundary" in label.lower()):
+            failures.append(f"manifest still contains deprecated placeholder language at step {index}")
         if first.lower().endswith(".bat"):
             failures.append(f"manifest step should not call BAT wrapper: {first}")
         if first.startswith("tools/") and first.endswith(".py") and not (root / first).exists():
             failures.append(f"manifest references missing tool: {first}")
+
+    if not has_boundary_language_audit:
+        failures.append("manifest is missing tools/pfem_boundary_language_standards_audit.py")
 
     return checked
 
 
 def _check_verification_receipt_schemas(root: Path, failures: list[str]) -> int:
     checked = 0
+    schemas_dir = root / "schemas"
+    if not schemas_dir.exists():
+        return checked
 
-    for schema_path in sorted((root / "schemas").glob("*_verification_receipt.schema.json")):
+    for schema_path in sorted(schemas_dir.glob("*_verification_receipt.schema.json")):
         checked += 1
         schema = _load_json(schema_path)
         required = schema.get("required", [])
@@ -137,8 +155,11 @@ def _check_verification_receipt_schemas(root: Path, failures: list[str]) -> int:
 
 def _check_verification_receipts(root: Path, failures: list[str]) -> int:
     checked = 0
+    retention_dir = root / "retention"
+    if not retention_dir.exists():
+        return checked
 
-    for receipt_path in sorted((root / "retention").glob("retention-*-verification-receipts.json")):
+    for receipt_path in sorted(retention_dir.glob("retention-*-verification-receipts.json")):
         raw = _load_json(receipt_path)
         records = _as_records(raw, receipt_path)
 
@@ -160,7 +181,7 @@ def _check_verification_receipts(root: Path, failures: list[str]) -> int:
     return checked
 
 
-def audit_doodad_standards(root: str | Path) -> DoodadStandardsAuditReport:
+def audit_boundary_language_standards(root: str | Path) -> BoundaryLanguageStandardsAuditReport:
     root_path = Path(root)
     failures: list[str] = []
 
@@ -170,7 +191,7 @@ def audit_doodad_standards(root: str | Path) -> DoodadStandardsAuditReport:
     schema_count = _check_verification_receipt_schemas(root_path, failures)
     receipt_count = _check_verification_receipts(root_path, failures)
 
-    return DoodadStandardsAuditReport(
+    return BoundaryLanguageStandardsAuditReport(
         root=str(root_path),
         manifest_steps_checked=manifest_steps,
         verification_schemas_checked=schema_count,
@@ -179,9 +200,9 @@ def audit_doodad_standards(root: str | Path) -> DoodadStandardsAuditReport:
     )
 
 
-def format_doodad_standards_audit_report(report: DoodadStandardsAuditReport) -> str:
+def format_boundary_language_standards_audit_report(report: BoundaryLanguageStandardsAuditReport) -> str:
     lines: list[str] = []
-    lines.append(f"PFEM doodad standards audit root: {report.root}")
+    lines.append(f"PFEM boundary-language standards audit root: {report.root}")
     lines.append(f"Manifest steps checked: {report.manifest_steps_checked}")
     lines.append(f"Verification schemas checked: {report.verification_schemas_checked}")
     lines.append(f"Verification receipts checked: {report.verification_receipts_checked}")
@@ -192,9 +213,9 @@ def format_doodad_standards_audit_report(report: DoodadStandardsAuditReport) -> 
         for failure in report.failures:
             lines.append(f"  - {failure}")
         lines.append("")
-        lines.append("PFEM doodad standards audit failed.")
+        lines.append("PFEM boundary-language standards audit failed.")
     else:
         lines.append("")
-        lines.append("PFEM doodad standards audit passed.")
+        lines.append("PFEM boundary-language standards audit passed.")
 
     return "\n".join(lines)

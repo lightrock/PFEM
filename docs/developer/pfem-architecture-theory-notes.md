@@ -226,7 +226,7 @@ Use these files together:
 ```text
 README.md
 AGENTS.md
-docs/developer/pfem-doodad-generation-standard.md
+docs/developer/pfem-boundary-language-generation-standard.md
 docs/developer/pfem-new-chat-handoff.md
 docs/developer/pfem-terminal-tail-stabilization.md
 docs/developer/pfem-architecture-theory-notes.md

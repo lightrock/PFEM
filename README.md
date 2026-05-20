@@ -52,7 +52,7 @@ Architecture principles:
 
 - Keep evidence, interpretation, action, package, report, and rollup concepts separate.
 - Prefer explicit record species over ambiguous blobs when a boundary matters.
-- Treat each generated “doodad” as a full contract boundary: data, schema, validator, tool, catalog, audit, doctor wiring, docs, contract, tests, and check-manifest registration.
+- Treat each generated “generated boundary” as a full contract boundary: data, schema, validator, tool, catalog, audit, doctor wiring, docs, contract, tests, and check-manifest registration.
 - Use real domain nouns for generated boundaries. Names should describe the PFEM responsibility, not the implementation trick.
 - Stop generating new species when a chain reaches a real semantic endcap. After an endcap, stabilize and run gates.
 - Do not preserve project knowledge only in chat. Put doctrine, handoff, standards, and gotchas in the repo.
@@ -71,7 +71,7 @@ Testing principles:
 Contributor handoff:
 
 - Start with `AGENTS.md`.
-- Read `docs/developer/pfem-doodad-generation-standard.md`.
+- Read `docs/developer/pfem-boundary-language-generation-standard.md`.
 - Read `docs/developer/pfem-new-chat-handoff.md`.
 - Read `docs/developer/pfem-terminal-tail-stabilization.md`.
 - Inspect `tools/pfem_check_manifest.json`.

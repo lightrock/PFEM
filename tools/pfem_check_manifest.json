@@ -5055,9 +5055,9 @@
       ]
     },
     {
-      "label": "Running PFEM doodad standards audit",
+      "label": "Running PFEM boundary-language standards audit",
       "args": [
-        "tools/pfem_doodad_standards_audit.py"
+        "tools/pfem_boundary_language_standards_audit.py"
       ]
     },
     {

@@ -8,7 +8,7 @@ Use this file when starting a new ChatGPT tab, Codex session, or human review.
 We are working in the PFEM repository: lightrock/PFEM.
 Before proposing or generating changes, inspect the current repo state on main and read:
 - AGENTS.md
-- docs/developer/pfem-doodad-generation-standard.md
+- docs/developer/pfem-boundary-language-generation-standard.md
 - docs/developer/pfem-terminal-tail-stabilization.md
 - docs/developer/pfem-new-chat-handoff.md
 - tools/pfem_check_manifest.json
@@ -18,7 +18,7 @@ Do not rely only on conversation memory.
 
 ## Current state
 
-The permanent-archive terminal doodad chain has reached its semantic endcap:
+The permanent-archive terminal record-species chain has reached its semantic endcap:
 
 ```text
 retention permanent archive terminal closure final endcap closeout records
@@ -28,7 +28,7 @@ The terminal tail stabilization audit guards that endcap and the `missing_refs` 
 
 ## Do not blindly continue 50-batches
 
-More doodads are allowed only when one of these is true:
+More record species are allowed only when one of these is true:
 
 ```text
 a gate exposes a real missing boundary
@@ -101,5 +101,6 @@ missing_refs is not in required
 
 ## Human sanity rule
 
-If the assistant starts inventing more terminal/endcap/final/final-final/final-final-final doodads without a concrete reason, stop it and make it run the gate.
+If the assistant starts inventing more terminal/endcap/final/final-final/final-final-final record species without a concrete reason, stop it and make it run the gate.
 - `docs/developer/pfem-architecture-theory-notes.md`
+- docs/developer/pfem-ai-patch-safety-rules.md

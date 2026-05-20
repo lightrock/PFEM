@@ -32,14 +32,15 @@ When unsure, make the smallest doctrine-preserving change and explain the bounda
 Before making PFEM changes, read:
 
 ```text
-docs/developer/pfem-doodad-generation-standard.md
+docs/developer/pfem-boundary-language-generation-standard.md
 docs/developer/pfem-new-chat-handoff.md
 docs/developer/pfem-terminal-tail-stabilization.md
 docs/developer/pfem-architecture-theory-notes.md
+docs/developer/pfem-ai-patch-safety-rules.md
 tools/pfem_check_manifest.json
 ```
 
-Do not add more doodad species after the permanent-archive terminal final endcap unless a gate, document, or human request identifies a real missing boundary.
+Do not add more record species after the permanent-archive terminal final endcap unless a gate, document, or human request identifies a real missing boundary.
 
 PFEM generated checks belong in Python tools under `tools/` and must be registered in `tools/pfem_check_manifest.json`. Do not add root-level `pfem_*.bat` wrappers other than `pfem_check.bat`.
 
