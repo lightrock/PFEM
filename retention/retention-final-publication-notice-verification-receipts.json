@@ -1,0 +1,35 @@
+[
+  {
+    "retention_final_publication_notice_verification_receipt_id": "retention-final-publication-notice-verification-basic-restore-001",
+    "receipt_kind": "retention_final_publication_notice_verification",
+    "created_time": "2026-01-01T00:04:51Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_final_publication_notice_record_id": "retention-final-publication-notice-basic-restore-001",
+    "retention_release_terminal_report_closeout_record_id": "retention-release-terminal-report-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_final_publication_notice_refs": [
+      "retention-release-terminal-report-closeout-basic-restore-001",
+      "retention-release-terminal-report-verification-basic-restore-001",
+      "retention-release-terminal-report-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-final-publication-notice-basic-restore-001",
+      "retention-release-terminal-report-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-final-publication-notice-ref-list",
+    "expected_final_publication_notice_ref_digest": "21c1a773d4600e6d9685b9cbba2234a7b090f50efa46c8a2bc64687f048b1648",
+    "actual_final_publication_notice_ref_digest": "21c1a773d4600e6d9685b9cbba2234a7b090f50efa46c8a2bc64687f048b1648",
+    "verified_by_ref": "tools/pfem_retention_final_publication_notice_verification_receipts.py",
+    "summary": "Synthetic example retention final publication notice verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_final_publication_notice_record.schema.json",
+  "title": "PFEM Retention Final Publication Notice Records",
+  "type": "object",
+  "required": [
+    "retention_final_publication_notice_record_id",
+    "final_publication_notice_kind",
+    "created_time",
+    "node_id",
+    "retention_release_terminal_report_closeout_record_id",
+    "retention_release_terminal_report_verification_receipt_id",
+    "final_publication_notice_state",
+    "final_publication_notice_scope",
+    "final_publication_notice_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "final_publication_notice_ref_digest",
+    "final_publication_notice_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_final_publication_notice_record_id": {
+      "type": "string"
+    },
+    "final_publication_notice_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_release_terminal_report_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_release_terminal_report_verification_receipt_id": {
+      "type": "string"
+    },
+    "final_publication_notice_state": {
+      "type": "string"
+    },
+    "final_publication_notice_scope": {
+      "type": "string"
+    },
+    "final_publication_notice_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "final_publication_notice_ref_digest": {
+      "type": "string"
+    },
+    "final_publication_notice_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

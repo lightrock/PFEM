@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_distribution_closure_notice_record.schema.json",
+  "title": "PFEM Retention Distribution Closure Notice Records",
+  "type": "object",
+  "required": [
+    "retention_distribution_closure_notice_record_id",
+    "distribution_closure_notice_kind",
+    "created_time",
+    "node_id",
+    "retention_publication_certificate_closeout_record_id",
+    "retention_publication_certificate_verification_receipt_id",
+    "distribution_closure_notice_state",
+    "distribution_closure_notice_scope",
+    "distribution_closure_notice_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "distribution_closure_notice_ref_digest",
+    "distribution_closure_notice_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_distribution_closure_notice_record_id": {
+      "type": "string"
+    },
+    "distribution_closure_notice_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_publication_certificate_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_publication_certificate_verification_receipt_id": {
+      "type": "string"
+    },
+    "distribution_closure_notice_state": {
+      "type": "string"
+    },
+    "distribution_closure_notice_scope": {
+      "type": "string"
+    },
+    "distribution_closure_notice_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "distribution_closure_notice_ref_digest": {
+      "type": "string"
+    },
+    "distribution_closure_notice_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

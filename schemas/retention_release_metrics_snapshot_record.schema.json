@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_release_metrics_snapshot_record.schema.json",
+  "title": "PFEM Retention Release Metrics Snapshot Records",
+  "type": "object",
+  "required": [
+    "retention_release_metrics_snapshot_record_id",
+    "release_metrics_snapshot_kind",
+    "created_time",
+    "node_id",
+    "retention_release_exception_summary_closeout_record_id",
+    "retention_release_exception_summary_verification_receipt_id",
+    "release_metrics_snapshot_state",
+    "release_metrics_snapshot_scope",
+    "release_metrics_snapshot_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "release_metrics_snapshot_ref_digest",
+    "release_metrics_snapshot_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_release_metrics_snapshot_record_id": {
+      "type": "string"
+    },
+    "release_metrics_snapshot_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_release_exception_summary_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_release_exception_summary_verification_receipt_id": {
+      "type": "string"
+    },
+    "release_metrics_snapshot_state": {
+      "type": "string"
+    },
+    "release_metrics_snapshot_scope": {
+      "type": "string"
+    },
+    "release_metrics_snapshot_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "release_metrics_snapshot_ref_digest": {
+      "type": "string"
+    },
+    "release_metrics_snapshot_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_public_release_receipt_record_id": "retention-public-release-receipt-basic-restore-001",
+    "public_release_receipt_kind": "retention_public_release_receipt",
+    "created_time": "2026-01-01T00:04:35Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_consumer_availability_notice_closeout_record_id": "retention-consumer-availability-notice-closeout-basic-restore-001",
+    "retention_consumer_availability_notice_verification_receipt_id": "retention-consumer-availability-notice-verification-basic-restore-001",
+    "public_release_receipt_state": "acknowledged",
+    "public_release_receipt_scope": "closed_retention_consumer_availability_notice",
+    "public_release_receipt_refs": [
+      "retention-consumer-availability-notice-closeout-basic-restore-001",
+      "retention-consumer-availability-notice-verification-basic-restore-001",
+      "retention-consumer-availability-notice-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-consumer-availability-notice-closeout-basic-restore-001",
+      "retention-consumer-availability-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-public-release-receipt-ref-list",
+    "public_release_receipt_ref_digest": "9ed9535b4e6270ebdb2c1119fb6b58945ab7c8c0c0517ef657da16e9578d27c9",
+    "public_release_receipt_by_ref": "tools/pfem_retention_public_release_receipt_records.py",
+    "summary": "Synthetic example retention public release receipt record built from the closed retention consumer availability notice path."
+  }
+]

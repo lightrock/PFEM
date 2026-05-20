@@ -1,0 +1,34 @@
+[
+  {
+    "retention_release_access_index_record_id": "retention-release-access-index-basic-restore-001",
+    "release_access_index_kind": "retention_release_access_index",
+    "created_time": "2026-01-01T00:04:17Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_public_access_register_closeout_record_id": "retention-public-access-register-closeout-basic-restore-001",
+    "retention_public_access_register_verification_receipt_id": "retention-public-access-register-verification-basic-restore-001",
+    "release_access_index_state": "indexed",
+    "release_access_index_scope": "closed_retention_public_access_register",
+    "release_access_index_refs": [
+      "retention-public-access-register-closeout-basic-restore-001",
+      "retention-public-access-register-verification-basic-restore-001",
+      "retention-public-access-register-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-public-access-register-closeout-basic-restore-001",
+      "retention-public-access-register-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-access-index-ref-list",
+    "release_access_index_ref_digest": "3c60c97c658ab8fb9f81046c57453ca5c6472d6ca6256cc4d3d033939a166d6b",
+    "release_access_index_by_ref": "tools/pfem_retention_release_access_index_records.py",
+    "summary": "Synthetic example retention release access index record built from the closed retention public access register path."
+  }
+]

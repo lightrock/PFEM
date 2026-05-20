@@ -1,0 +1,35 @@
+[
+  {
+    "retention_distribution_closure_notice_verification_receipt_id": "retention-distribution-closure-notice-verification-basic-restore-001",
+    "receipt_kind": "retention_distribution_closure_notice_verification",
+    "created_time": "2026-01-01T00:04:12Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_distribution_closure_notice_record_id": "retention-distribution-closure-notice-basic-restore-001",
+    "retention_publication_certificate_closeout_record_id": "retention-publication-certificate-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_distribution_closure_notice_refs": [
+      "retention-publication-certificate-closeout-basic-restore-001",
+      "retention-publication-certificate-verification-basic-restore-001",
+      "retention-publication-certificate-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-distribution-closure-notice-basic-restore-001",
+      "retention-publication-certificate-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-distribution-closure-notice-ref-list",
+    "expected_distribution_closure_notice_ref_digest": "54ff669e447d43e92aeb616136b9e8cc9cb20b85879ff781053b238767bad733",
+    "actual_distribution_closure_notice_ref_digest": "54ff669e447d43e92aeb616136b9e8cc9cb20b85879ff781053b238767bad733",
+    "verified_by_ref": "tools/pfem_retention_distribution_closure_notice_verification_receipts.py",
+    "summary": "Synthetic example retention distribution closure notice verification receipt showing refs and digest were checked."
+  }
+]

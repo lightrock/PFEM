@@ -1,0 +1,35 @@
+[
+  {
+    "retention_release_access_closeout_summary_verification_receipt_id": "retention-release-access-closeout-summary-verification-basic-restore-001",
+    "receipt_kind": "retention_release_access_closeout_summary_verification",
+    "created_time": "2026-01-01T00:04:24Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_access_closeout_summary_record_id": "retention-release-access-closeout-summary-basic-restore-001",
+    "retention_release_access_verification_summary_closeout_record_id": "retention-release-access-verification-summary-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_release_access_closeout_summary_refs": [
+      "retention-release-access-verification-summary-closeout-basic-restore-001",
+      "retention-release-access-verification-summary-verification-basic-restore-001",
+      "retention-release-access-verification-summary-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-release-access-closeout-summary-basic-restore-001",
+      "retention-release-access-verification-summary-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-access-closeout-summary-ref-list",
+    "expected_release_access_closeout_summary_ref_digest": "5340d993f6685bfdf60754e6ae9fa9603b55f1cfcb8fdfc5d419b9c299285f03",
+    "actual_release_access_closeout_summary_ref_digest": "5340d993f6685bfdf60754e6ae9fa9603b55f1cfcb8fdfc5d419b9c299285f03",
+    "verified_by_ref": "tools/pfem_retention_release_access_closeout_summary_verification_receipts.py",
+    "summary": "Synthetic example retention release access closeout summary verification receipt showing refs and digest were checked."
+  }
+]

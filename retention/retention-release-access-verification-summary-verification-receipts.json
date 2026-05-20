@@ -1,0 +1,35 @@
+[
+  {
+    "retention_release_access_verification_summary_verification_receipt_id": "retention-release-access-verification-summary-verification-basic-restore-001",
+    "receipt_kind": "retention_release_access_verification_summary_verification",
+    "created_time": "2026-01-01T00:04:21Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_access_verification_summary_record_id": "retention-release-access-verification-summary-basic-restore-001",
+    "retention_release_access_index_closeout_record_id": "retention-release-access-index-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_release_access_verification_summary_refs": [
+      "retention-release-access-index-closeout-basic-restore-001",
+      "retention-release-access-index-verification-basic-restore-001",
+      "retention-release-access-index-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-release-access-verification-summary-basic-restore-001",
+      "retention-release-access-index-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-access-verification-summary-ref-list",
+    "expected_release_access_verification_summary_ref_digest": "3e611c44e8ff2cea8e0097c2ecc4e1b02e4280573f684479ce2f7b0168b776d4",
+    "actual_release_access_verification_summary_ref_digest": "3e611c44e8ff2cea8e0097c2ecc4e1b02e4280573f684479ce2f7b0168b776d4",
+    "verified_by_ref": "tools/pfem_retention_release_access_verification_summary_verification_receipts.py",
+    "summary": "Synthetic example retention release access verification summary verification receipt showing refs and digest were checked."
+  }
+]

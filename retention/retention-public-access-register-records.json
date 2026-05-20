@@ -1,0 +1,34 @@
+[
+  {
+    "retention_public_access_register_record_id": "retention-public-access-register-basic-restore-001",
+    "public_access_register_kind": "retention_public_access_register",
+    "created_time": "2026-01-01T00:04:14Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_distribution_closure_notice_closeout_record_id": "retention-distribution-closure-notice-closeout-basic-restore-001",
+    "retention_distribution_closure_notice_verification_receipt_id": "retention-distribution-closure-notice-verification-basic-restore-001",
+    "public_access_register_state": "indexed",
+    "public_access_register_scope": "closed_retention_distribution_closure_notice",
+    "public_access_register_refs": [
+      "retention-distribution-closure-notice-closeout-basic-restore-001",
+      "retention-distribution-closure-notice-verification-basic-restore-001",
+      "retention-distribution-closure-notice-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-distribution-closure-notice-closeout-basic-restore-001",
+      "retention-distribution-closure-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-public-access-register-ref-list",
+    "public_access_register_ref_digest": "dab0a7cc4547bf67d3631d25f056b9de4d93bd8e6ec6f84488a639d9e793854f",
+    "public_access_register_by_ref": "tools/pfem_retention_public_access_register_records.py",
+    "summary": "Synthetic example retention public access register record built from the closed retention distribution closure notice path."
+  }
+]

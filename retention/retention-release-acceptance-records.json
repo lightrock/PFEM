@@ -1,0 +1,34 @@
+[
+  {
+    "retention_release_acceptance_record_id": "retention-release-acceptance-basic-restore-001",
+    "release_acceptance_kind": "retention_release_acceptance",
+    "created_time": "2026-01-01T00:04:02Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_access_notice_closeout_record_id": "retention-terminal-access-notice-closeout-basic-restore-001",
+    "retention_terminal_access_notice_verification_receipt_id": "retention-terminal-access-notice-verification-basic-restore-001",
+    "release_acceptance_state": "accepted",
+    "release_acceptance_scope": "closed_retention_terminal_access_notice",
+    "release_acceptance_refs": [
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention-terminal-access-notice-verification-basic-restore-001",
+      "retention-terminal-access-notice-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention-terminal-access-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-acceptance-ref-list",
+    "release_acceptance_ref_digest": "ee65c65138d84a1505326eb28dd36a56441f253bbc77eafb903bc79eea25d691",
+    "release_acceptance_by_ref": "tools/pfem_retention_release_acceptance_records.py",
+    "summary": "Synthetic example retention release acceptance record built from the closed retention terminal access notice path."
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_retrieval_readiness_snapshot_record_id": "retention-retrieval-readiness-snapshot-basic-restore-001",
+    "retrieval_readiness_snapshot_kind": "retention_retrieval_readiness_snapshot",
+    "created_time": "2026-01-01T00:04:29Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_archive_availability_rollup_closeout_record_id": "retention-archive-availability-rollup-closeout-basic-restore-001",
+    "retention_archive_availability_rollup_verification_receipt_id": "retention-archive-availability-rollup-verification-basic-restore-001",
+    "retrieval_readiness_snapshot_state": "recorded",
+    "retrieval_readiness_snapshot_scope": "closed_retention_archive_availability_rollup",
+    "retrieval_readiness_snapshot_refs": [
+      "retention-archive-availability-rollup-closeout-basic-restore-001",
+      "retention-archive-availability-rollup-verification-basic-restore-001",
+      "retention-archive-availability-rollup-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-archive-availability-rollup-closeout-basic-restore-001",
+      "retention-archive-availability-rollup-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-retrieval-readiness-snapshot-ref-list",
+    "retrieval_readiness_snapshot_ref_digest": "4d7f69e690b53abb307fa8e437d921cf2b3890685c97c6c3a0ae72cac2c01b69",
+    "retrieval_readiness_snapshot_by_ref": "tools/pfem_retention_retrieval_readiness_snapshot_records.py",
+    "summary": "Synthetic example retention retrieval readiness snapshot record built from the closed retention archive availability rollup path."
+  }
+]

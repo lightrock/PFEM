@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_archive_availability_rollup_record.schema.json",
+  "title": "PFEM Retention Archive Availability Rollup Records",
+  "type": "object",
+  "required": [
+    "retention_archive_availability_rollup_record_id",
+    "archive_availability_rollup_kind",
+    "created_time",
+    "node_id",
+    "retention_release_access_closeout_summary_closeout_record_id",
+    "retention_release_access_closeout_summary_verification_receipt_id",
+    "archive_availability_rollup_state",
+    "archive_availability_rollup_scope",
+    "archive_availability_rollup_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "archive_availability_rollup_ref_digest",
+    "archive_availability_rollup_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_archive_availability_rollup_record_id": {
+      "type": "string"
+    },
+    "archive_availability_rollup_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_release_access_closeout_summary_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_release_access_closeout_summary_verification_receipt_id": {
+      "type": "string"
+    },
+    "archive_availability_rollup_state": {
+      "type": "string"
+    },
+    "archive_availability_rollup_scope": {
+      "type": "string"
+    },
+    "archive_availability_rollup_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "archive_availability_rollup_ref_digest": {
+      "type": "string"
+    },
+    "archive_availability_rollup_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

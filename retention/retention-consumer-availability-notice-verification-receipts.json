@@ -1,0 +1,35 @@
+[
+  {
+    "retention_consumer_availability_notice_verification_receipt_id": "retention-consumer-availability-notice-verification-basic-restore-001",
+    "receipt_kind": "retention_consumer_availability_notice_verification",
+    "created_time": "2026-01-01T00:04:33Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_consumer_availability_notice_record_id": "retention-consumer-availability-notice-basic-restore-001",
+    "retention_retrieval_readiness_snapshot_closeout_record_id": "retention-retrieval-readiness-snapshot-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_consumer_availability_notice_refs": [
+      "retention-retrieval-readiness-snapshot-closeout-basic-restore-001",
+      "retention-retrieval-readiness-snapshot-verification-basic-restore-001",
+      "retention-retrieval-readiness-snapshot-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-consumer-availability-notice-basic-restore-001",
+      "retention-retrieval-readiness-snapshot-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-consumer-availability-notice-ref-list",
+    "expected_consumer_availability_notice_ref_digest": "9b14eaf6c748f9d92a915c1e5e6e9d7f09d9b5047f593808f89460a28c3b2dbb",
+    "actual_consumer_availability_notice_ref_digest": "9b14eaf6c748f9d92a915c1e5e6e9d7f09d9b5047f593808f89460a28c3b2dbb",
+    "verified_by_ref": "tools/pfem_retention_consumer_availability_notice_verification_receipts.py",
+    "summary": "Synthetic example retention consumer availability notice verification receipt showing refs and digest were checked."
+  }
+]

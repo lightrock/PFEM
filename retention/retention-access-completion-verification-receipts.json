@@ -1,0 +1,35 @@
+[
+  {
+    "retention_access_completion_verification_receipt_id": "retention-access-completion-verification-basic-restore-001",
+    "receipt_kind": "retention_access_completion_verification",
+    "created_time": "2026-01-01T00:04:06Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_access_completion_record_id": "retention-access-completion-basic-restore-001",
+    "retention_release_acceptance_closeout_record_id": "retention-release-acceptance-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_access_completion_refs": [
+      "retention-release-acceptance-closeout-basic-restore-001",
+      "retention-release-acceptance-verification-basic-restore-001",
+      "retention-release-acceptance-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-access-completion-basic-restore-001",
+      "retention-release-acceptance-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-access-completion-ref-list",
+    "expected_access_completion_ref_digest": "eb30dfb4ef47e30a455aa6008880e09af1028f9a8e1770acc3b3f1125c7eaea6",
+    "actual_access_completion_ref_digest": "eb30dfb4ef47e30a455aa6008880e09af1028f9a8e1770acc3b3f1125c7eaea6",
+    "verified_by_ref": "tools/pfem_retention_access_completion_verification_receipts.py",
+    "summary": "Synthetic example retention access completion verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "retention_archive_availability_rollup_verification_receipt_id": "retention-archive-availability-rollup-verification-basic-restore-001",
+    "receipt_kind": "retention_archive_availability_rollup_verification",
+    "created_time": "2026-01-01T00:04:27Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_archive_availability_rollup_record_id": "retention-archive-availability-rollup-basic-restore-001",
+    "retention_release_access_closeout_summary_closeout_record_id": "retention-release-access-closeout-summary-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_archive_availability_rollup_refs": [
+      "retention-release-access-closeout-summary-closeout-basic-restore-001",
+      "retention-release-access-closeout-summary-verification-basic-restore-001",
+      "retention-release-access-closeout-summary-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-archive-availability-rollup-basic-restore-001",
+      "retention-release-access-closeout-summary-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-archive-availability-rollup-ref-list",
+    "expected_archive_availability_rollup_ref_digest": "a276b5fc38bb241f27b4124ef5fb63d2b99283f1638879fa7306cb96fcda9e7b",
+    "actual_archive_availability_rollup_ref_digest": "a276b5fc38bb241f27b4124ef5fb63d2b99283f1638879fa7306cb96fcda9e7b",
+    "verified_by_ref": "tools/pfem_retention_archive_availability_rollup_verification_receipts.py",
+    "summary": "Synthetic example retention archive availability rollup verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_release_access_verification_summary_record_id": "retention-release-access-verification-summary-basic-restore-001",
+    "release_access_verification_summary_kind": "retention_release_access_verification_summary",
+    "created_time": "2026-01-01T00:04:20Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_release_access_index_closeout_record_id": "retention-release-access-index-closeout-basic-restore-001",
+    "retention_release_access_index_verification_receipt_id": "retention-release-access-index-verification-basic-restore-001",
+    "release_access_verification_summary_state": "summarized",
+    "release_access_verification_summary_scope": "closed_retention_release_access_index",
+    "release_access_verification_summary_refs": [
+      "retention-release-access-index-closeout-basic-restore-001",
+      "retention-release-access-index-verification-basic-restore-001",
+      "retention-release-access-index-basic-restore-001",
+      "retention-terminal-access-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-release-access-index-closeout-basic-restore-001",
+      "retention-release-access-index-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-release-access-verification-summary-ref-list",
+    "release_access_verification_summary_ref_digest": "3e611c44e8ff2cea8e0097c2ecc4e1b02e4280573f684479ce2f7b0168b776d4",
+    "release_access_verification_summary_by_ref": "tools/pfem_retention_release_access_verification_summary_records.py",
+    "summary": "Synthetic example retention release access verification summary record built from the closed retention release access index path."
+  }
+]
