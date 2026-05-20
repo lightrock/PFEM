@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_retrieval_snapshot_record_id": "retention-permanent-archive-terminal-retrieval-snapshot-basic-restore-001",
+    "permanent_archive_terminal_retrieval_snapshot_kind": "retention_permanent_archive_terminal_retrieval_snapshot",
+    "created_time": "2026-01-01T00:09:38Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_access_snapshot_closeout_record_id": "retention-permanent-archive-terminal-access-snapshot-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_access_snapshot_verification_receipt_id": "retention-permanent-archive-terminal-access-snapshot-verification-basic-restore-001",
+    "permanent_archive_terminal_retrieval_snapshot_state": "snapshotted",
+    "permanent_archive_terminal_retrieval_snapshot_scope": "closed_retention_permanent_archive_terminal_access_snapshot",
+    "permanent_archive_terminal_retrieval_snapshot_refs": [
+      "retention-permanent-archive-terminal-access-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-access-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-access-snapshot-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-release-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-access-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-access-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-retrieval-snapshot-ref-list",
+    "permanent_archive_terminal_retrieval_snapshot_ref_digest": "5ec198891869704929258805152cc6efe668be451b06ad6efcc30ed431264951",
+    "permanent_archive_terminal_retrieval_snapshot_by_ref": "tools/pfem_retention_permanent_archive_terminal_retrieval_snapshot_records.py",
+    "summary": "Synthetic example retention permanent archive terminal retrieval snapshot record built from the closed retention permanent archive terminal access snapshot path."
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_health_snapshot_verification_receipt_id": "retention-permanent-archive-terminal-health-snapshot-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_health_snapshot_verification",
+    "created_time": "2026-01-01T00:09:48Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_health_snapshot_record_id": "retention-permanent-archive-terminal-health-snapshot-basic-restore-001",
+    "retention_permanent_archive_terminal_service_snapshot_closeout_record_id": "retention-permanent-archive-terminal-service-snapshot-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_health_snapshot_refs": [
+      "retention-permanent-archive-terminal-service-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-service-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-service-snapshot-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-release-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-health-snapshot-basic-restore-001",
+      "retention-permanent-archive-terminal-service-snapshot-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-health-snapshot-ref-list",
+    "expected_permanent_archive_terminal_health_snapshot_ref_digest": "2dbdd85f7fc0c9937e1f917f9677cc76a37bce93a39fffab5df598e22fce16e6",
+    "actual_permanent_archive_terminal_health_snapshot_ref_digest": "2dbdd85f7fc0c9937e1f917f9677cc76a37bce93a39fffab5df598e22fce16e6",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_health_snapshot_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal health snapshot verification receipt showing refs and digest were checked."
+  }
+]

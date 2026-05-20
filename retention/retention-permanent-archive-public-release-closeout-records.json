@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_public_release_closeout_record_id": "retention-permanent-archive-public-release-closeout-basic-restore-001",
+    "permanent_archive_public_release_closeout_kind": "retention_permanent_archive_public_release_closeout",
+    "created_time": "2026-01-01T00:09:08Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_public_release_receipt_closeout_record_id": "retention-permanent-archive-public-release-receipt-closeout-basic-restore-001",
+    "retention_permanent_archive_public_release_receipt_verification_receipt_id": "retention-permanent-archive-public-release-receipt-verification-basic-restore-001",
+    "permanent_archive_public_release_closeout_state": "closed",
+    "permanent_archive_public_release_closeout_scope": "closed_retention_permanent_archive_public_release_receipt",
+    "permanent_archive_public_release_closeout_refs": [
+      "retention-permanent-archive-public-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-public-release-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-public-release-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-release-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-public-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-public-release-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-public-release-closeout-ref-list",
+    "permanent_archive_public_release_closeout_ref_digest": "70dc3d1b52a6f3c771bbdb69923d080d6971fb25703d417adbeb1f96b24ea6af",
+    "permanent_archive_public_release_closeout_by_ref": "tools/pfem_retention_permanent_archive_public_release_closeout_records.py",
+    "summary": "Synthetic example retention permanent archive public release closeout record built from the closed retention permanent archive public release receipt path."
+  }
+]

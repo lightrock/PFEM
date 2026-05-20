@@ -1,0 +1,29 @@
+[
+  {
+    "retention_permanent_archive_terminal_publication_audit_snapshot_closeout_record_id": "retention-permanent-archive-terminal-publication-audit-snapshot-closeout-basic-restore-001",
+    "closeout_kind": "retention_permanent_archive_terminal_publication_audit_snapshot_closeout",
+    "created_time": "2026-01-01T00:09:25Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_publication_audit_snapshot_verification_receipt_id": "retention-permanent-archive-terminal-publication-audit-snapshot-verification-basic-restore-001",
+    "retention_permanent_archive_terminal_publication_audit_snapshot_record_id": "retention-permanent-archive-terminal-publication-audit-snapshot-basic-restore-001",
+    "closeout_state": "closed",
+    "outcome": "retention_permanent_archive_terminal_publication_audit_snapshot_verified_and_closed",
+    "closed_refs": [
+      "retention-permanent-archive-terminal-publication-audit-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-publication-audit-snapshot-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-release-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-publication-audit-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-publication-audit-snapshot-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "closed_by_ref": "tools/pfem_retention_permanent_archive_terminal_publication_audit_snapshot_closeout_records.py",
+    "summary": "Synthetic example retention permanent archive terminal publication audit snapshot closeout record showing workflow was closed after verification."
+  }
+]

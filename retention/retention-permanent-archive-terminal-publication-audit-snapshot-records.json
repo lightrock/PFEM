@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_publication_audit_snapshot_record_id": "retention-permanent-archive-terminal-publication-audit-snapshot-basic-restore-001",
+    "permanent_archive_terminal_publication_audit_snapshot_kind": "retention_permanent_archive_terminal_publication_audit_snapshot",
+    "created_time": "2026-01-01T00:09:23Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_publication_digest_closeout_record_id": "retention-permanent-archive-terminal-publication-digest-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_publication_digest_verification_receipt_id": "retention-permanent-archive-terminal-publication-digest-verification-basic-restore-001",
+    "permanent_archive_terminal_publication_audit_snapshot_state": "snapshotted",
+    "permanent_archive_terminal_publication_audit_snapshot_scope": "closed_retention_permanent_archive_terminal_publication_digest",
+    "permanent_archive_terminal_publication_audit_snapshot_refs": [
+      "retention-permanent-archive-terminal-publication-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-publication-digest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-publication-digest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-release-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-publication-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-publication-digest-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-publication-audit-snapshot-ref-list",
+    "permanent_archive_terminal_publication_audit_snapshot_ref_digest": "52b4ab2770c01e14274d2bd6ecfe3952e7a7e9d0e5ba04da43fbe4a26d0d2dc1",
+    "permanent_archive_terminal_publication_audit_snapshot_by_ref": "tools/pfem_retention_permanent_archive_terminal_publication_audit_snapshot_records.py",
+    "summary": "Synthetic example retention permanent archive terminal publication audit snapshot record built from the closed retention permanent archive terminal publication digest path."
+  }
+]

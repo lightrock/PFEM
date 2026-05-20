@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_publication_manifest_record_id": "retention-permanent-archive-terminal-publication-manifest-basic-restore-001",
+    "permanent_archive_terminal_publication_manifest_kind": "retention_permanent_archive_terminal_publication_manifest",
+    "created_time": "2026-01-01T00:09:11Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_public_release_closeout_closeout_record_id": "retention-permanent-archive-public-release-closeout-closeout-basic-restore-001",
+    "retention_permanent_archive_public_release_closeout_verification_receipt_id": "retention-permanent-archive-public-release-closeout-verification-basic-restore-001",
+    "permanent_archive_terminal_publication_manifest_state": "published",
+    "permanent_archive_terminal_publication_manifest_scope": "closed_retention_permanent_archive_public_release_closeout",
+    "permanent_archive_terminal_publication_manifest_refs": [
+      "retention-permanent-archive-public-release-closeout-closeout-basic-restore-001",
+      "retention-permanent-archive-public-release-closeout-verification-basic-restore-001",
+      "retention-permanent-archive-public-release-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-release-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-public-release-closeout-closeout-basic-restore-001",
+      "retention-permanent-archive-public-release-closeout-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-publication-manifest-ref-list",
+    "permanent_archive_terminal_publication_manifest_ref_digest": "60d8e98cb449ea78032a322de17b6f18fb4ea46aa6e5ba5f5a3aea06766758fa",
+    "permanent_archive_terminal_publication_manifest_by_ref": "tools/pfem_retention_permanent_archive_terminal_publication_manifest_records.py",
+    "summary": "Synthetic example retention permanent archive terminal publication manifest record built from the closed retention permanent archive public release closeout path."
+  }
+]
