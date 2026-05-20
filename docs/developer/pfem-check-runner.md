@@ -69,3 +69,31 @@ sh pfem_check.sh --check-launchers
 ```
 
 Normal runner modes check the launcher pair before running checks. Use `--skip-launcher-check` only when deliberately testing a broken launcher state.
+
+## Quiet check output and logs
+
+`pfem_check.py` is quiet by default. It shows one progress line per step:
+
+```text
+[1/404] Running PFEM catalog ... OK 1.044s
+```
+
+Detailed stdout/stderr is written to per-step log files:
+
+```text
+build/pfem-check-logs/<timestamp>/
+```
+
+Use verbose mode when you want the old firehose in the terminal:
+
+```bat
+pfem_check.bat --full --verbose --timings
+```
+
+Use `--log-dir` to choose the log location:
+
+```bat
+pfem_check.bat --quick --timings --log-dir build/pfem-check-logs/latest
+```
+
+On failure, the runner prints the failed step, the log path, and an output tail.

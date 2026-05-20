@@ -7,19 +7,20 @@ The root .bat/.sh files are intentionally thin launchers.
 from __future__ import annotations
 
 import argparse
+from dataclasses import dataclass
 import json
 import os
-import re
 from pathlib import Path
+import re
 import subprocess
 import sys
 import time
-from dataclasses import dataclass
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 MANIFEST = ROOT / "tools" / "pfem_check_manifest.json"
+LOG_ROOT = ROOT / "build" / "pfem-check-logs"
 LAUNCHER_VERSION = "1"
 
 
@@ -27,6 +28,15 @@ LAUNCHER_VERSION = "1"
 class CheckStep:
     label: str
     args: list[str]
+
+
+@dataclass(frozen=True)
+class StepResult:
+    label: str
+    elapsed: float
+    returncode: int
+    log_path: Path
+
 
 def check_launchers(*, quiet: bool = False) -> int:
     """Verify pfem_check.bat and pfem_check.sh stay paired."""
@@ -72,7 +82,6 @@ def check_launchers(*, quiet: bool = False) -> int:
         print(f"PFEM launcher check passed. Version: {LAUNCHER_VERSION}")
 
     return 0
-
 
 
 def _env() -> dict[str, str]:
@@ -170,42 +179,145 @@ def _apply_start_at(steps: list[CheckStep], needle: str | None) -> list[CheckSte
     raise SystemExit(f"--start-at did not match any step: {needle!r}")
 
 
-def run_steps(steps: list[CheckStep], *, timings: bool) -> int:
+def _slug(text: str) -> str:
+    value = re.sub(r"[^A-Za-z0-9._-]+", "-", text.strip().lower()).strip("-")
+    return value[:90] or "pfem-check"
+
+
+def _prepare_log_dir(path: str | None) -> Path:
+    if path:
+        log_dir = Path(path)
+        if not log_dir.is_absolute():
+            log_dir = ROOT / log_dir
+    else:
+        log_dir = LOG_ROOT / time.strftime("%Y%m%d-%H%M%S")
+
+    log_dir.mkdir(parents=True, exist_ok=True)
+    return log_dir
+
+
+def _write_log(
+    *,
+    log_path: Path,
+    step: CheckStep,
+    command: list[str],
+    returncode: int,
+    elapsed: float,
+    stdout: str,
+    stderr: str,
+) -> None:
+    log_path.write_text(
+        "\n".join(
+            [
+                f"label: {step.label}",
+                f"command: {' '.join(command)}",
+                f"returncode: {returncode}",
+                f"elapsed_seconds: {elapsed:.3f}",
+                "",
+                "--- stdout ---",
+                stdout.rstrip(),
+                "",
+                "--- stderr ---",
+                stderr.rstrip(),
+                "",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+
+def _tail(text: str, *, lines: int = 200) -> str:
+    split = text.splitlines()
+    if len(split) <= lines:
+        return text.rstrip()
+    return "\n".join(["... output truncated ...", *split[-lines:]]).rstrip()
+
+
+def run_steps(steps: list[CheckStep], *, timings: bool, verbose: bool, log_dir: Path) -> int:
     env = _env()
-    durations: list[tuple[float, str]] = []
+    results: list[StepResult] = []
     started = time.perf_counter()
 
-    for index, step in enumerate(steps, start=1):
-        print()
-        print(f"[{index}/{len(steps)}] {step.label}")
-        command = _normalize_args(step.args)
-        t0 = time.perf_counter()
-        result = subprocess.run(command, cwd=ROOT, env=env)
-        elapsed = time.perf_counter() - t0
-        durations.append((elapsed, step.label))
+    print(f"PFEM check logs: {log_dir}")
 
-        if result.returncode != 0:
+    for index, step in enumerate(steps, start=1):
+        command = _normalize_args(step.args)
+        log_path = log_dir / f"{index:03d}-{_slug(step.label)}.log"
+
+        print(f"[{index}/{len(steps)}] {step.label} ... ", end="", flush=True)
+        t0 = time.perf_counter()
+        completed = subprocess.run(
+            command,
+            cwd=ROOT,
+            env=env,
+            text=True,
+            capture_output=True,
+        )
+        elapsed = time.perf_counter() - t0
+
+        _write_log(
+            log_path=log_path,
+            step=step,
+            command=command,
+            returncode=completed.returncode,
+            elapsed=elapsed,
+            stdout=completed.stdout,
+            stderr=completed.stderr,
+        )
+
+        results.append(
+            StepResult(
+                label=step.label,
+                elapsed=elapsed,
+                returncode=completed.returncode,
+                log_path=log_path,
+            )
+        )
+
+        if completed.returncode != 0:
+            print(f"FAILED {elapsed:.3f}s")
             print()
-            print(f"PFEM check failed after {elapsed:.3f}s: {step.label}")
+            print(f"PFEM check failed: {step.label}")
+            print(f"Log: {log_path}")
+
+            output = "\n".join(part for part in [completed.stdout, completed.stderr] if part)
+            if output.strip():
+                print()
+                print("--- output tail ---")
+                print(_tail(output))
+
             if timings:
-                print_timings(durations)
-            return result.returncode
+                print_timings(results)
+            return completed.returncode
+
+        print(f"OK {elapsed:.3f}s")
+
+        if verbose:
+            if completed.stdout.strip():
+                print()
+                print(completed.stdout.rstrip())
+            if completed.stderr.strip():
+                print()
+                print(completed.stderr.rstrip(), file=sys.stderr)
 
     total = time.perf_counter() - started
     print()
     print(f"PFEM checks passed in {total:.3f}s.")
+    print(f"Logs: {log_dir}")
 
     if timings:
-        print_timings(durations)
+        print_timings(results)
 
     return 0
 
 
-def print_timings(durations: list[tuple[float, str]]) -> None:
+def print_timings(results: list[StepResult]) -> None:
     print()
     print("Slowest PFEM checks:")
-    for elapsed, label in sorted(durations, reverse=True)[:15]:
-        print(f"  {elapsed:8.3f}s  {label}")
+    for result in sorted(results, key=lambda item: item.elapsed, reverse=True)[:15]:
+        print(f"  {result.elapsed:8.3f}s  {result.label}")
+        print(f"             log: {result.log_path}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -219,6 +331,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--list", action="store_true", help="List selected checks instead of running them.")
     parser.add_argument("--start-at", help="Start at the first selected step whose label/command contains this text.")
     parser.add_argument("--timings", action="store_true", help="Print slowest checks at the end.")
+    parser.add_argument("--verbose", action="store_true", help="Echo each check's stdout/stderr to the terminal.")
+    parser.add_argument("--log-dir", help="Directory for per-step logs. Defaults to build/pfem-check-logs/<timestamp>.")
     parser.add_argument("--check-launchers", action="store_true", help="Verify pfem_check.bat and pfem_check.sh stay paired, then exit.")
     parser.add_argument("--skip-launcher-check", action="store_true", help="Skip launcher pair validation before running checks.")
 
@@ -250,7 +364,12 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{index:4d}. {step.label} :: python {' '.join(step.args)}")
         return 0
 
-    return run_steps(steps, timings=args.timings)
+    return run_steps(
+        steps,
+        timings=args.timings,
+        verbose=args.verbose,
+        log_dir=_prepare_log_dir(args.log_dir),
+    )
 
 
 if __name__ == "__main__":
