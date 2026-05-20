@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_fixity_register_record_id": "retention-terminal-permanent-fixity-register-basic-restore-001",
+    "terminal_permanent_fixity_register_kind": "retention_terminal_permanent_fixity_register",
+    "created_time": "2026-01-01T00:07:33Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_integrity_receipt_closeout_record_id": "retention-terminal-permanent-integrity-receipt-closeout-basic-restore-001",
+    "retention_terminal_permanent_integrity_receipt_verification_receipt_id": "retention-terminal-permanent-integrity-receipt-verification-basic-restore-001",
+    "terminal_permanent_fixity_register_state": "indexed",
+    "terminal_permanent_fixity_register_scope": "closed_retention_terminal_permanent_integrity_receipt",
+    "terminal_permanent_fixity_register_refs": [
+      "retention-terminal-permanent-integrity-receipt-closeout-basic-restore-001",
+      "retention-terminal-permanent-integrity-receipt-verification-basic-restore-001",
+      "retention-terminal-permanent-integrity-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-integrity-receipt-closeout-basic-restore-001",
+      "retention-terminal-permanent-integrity-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-fixity-register-ref-list",
+    "terminal_permanent_fixity_register_ref_digest": "ac755fcf7fd6966d0a5589465335f241ffd5569fe94605b9c74e0199b67c9cc3",
+    "terminal_permanent_fixity_register_by_ref": "tools/pfem_retention_terminal_permanent_fixity_register_records.py",
+    "summary": "Synthetic example retention terminal permanent fixity register record built from the closed retention terminal permanent integrity receipt path."
+  }
+]

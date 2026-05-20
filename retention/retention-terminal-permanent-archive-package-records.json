@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_archive_package_record_id": "retention-terminal-permanent-archive-package-basic-restore-001",
+    "terminal_permanent_archive_package_kind": "retention_terminal_permanent_archive_package",
+    "created_time": "2026-01-01T00:07:06Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_archival_accession_closeout_record_id": "retention-terminal-archival-accession-closeout-basic-restore-001",
+    "retention_terminal_archival_accession_verification_receipt_id": "retention-terminal-archival-accession-verification-basic-restore-001",
+    "terminal_permanent_archive_package_state": "archived",
+    "terminal_permanent_archive_package_scope": "closed_retention_terminal_archival_accession",
+    "terminal_permanent_archive_package_refs": [
+      "retention-terminal-archival-accession-closeout-basic-restore-001",
+      "retention-terminal-archival-accession-verification-basic-restore-001",
+      "retention-terminal-archival-accession-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-archival-accession-closeout-basic-restore-001",
+      "retention-terminal-archival-accession-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-archive-package-ref-list",
+    "terminal_permanent_archive_package_ref_digest": "b08d1d11c4535c385813d2f849a5ae8bf79aa227979b6288954aaa9ac5f536a4",
+    "terminal_permanent_archive_package_by_ref": "tools/pfem_retention_terminal_permanent_archive_package_records.py",
+    "summary": "Synthetic example retention terminal permanent archive package record built from the closed retention terminal archival accession path."
+  }
+]

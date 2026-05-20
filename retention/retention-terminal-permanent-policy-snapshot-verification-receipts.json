@@ -1,0 +1,33 @@
+[
+  {
+    "retention_terminal_permanent_policy_snapshot_verification_receipt_id": "retention-terminal-permanent-policy-snapshot-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_permanent_policy_snapshot_verification",
+    "created_time": "2026-01-01T00:07:28Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_policy_snapshot_record_id": "retention-terminal-permanent-policy-snapshot-basic-restore-001",
+    "retention_terminal_permanent_access_control_closeout_record_id": "retention-terminal-permanent-access-control-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_permanent_policy_snapshot_refs": [
+      "retention-terminal-permanent-access-control-closeout-basic-restore-001",
+      "retention-terminal-permanent-access-control-verification-basic-restore-001",
+      "retention-terminal-permanent-access-control-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-permanent-policy-snapshot-basic-restore-001",
+      "retention-terminal-permanent-access-control-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-policy-snapshot-ref-list",
+    "expected_terminal_permanent_policy_snapshot_ref_digest": "f0c858f459f06bebd5448222fb26b858273bf9e183e94e1418213c0c3a0fdb46",
+    "actual_terminal_permanent_policy_snapshot_ref_digest": "f0c858f459f06bebd5448222fb26b858273bf9e183e94e1418213c0c3a0fdb46",
+    "verified_by_ref": "tools/pfem_retention_terminal_permanent_policy_snapshot_verification_receipts.py",
+    "summary": "Synthetic example retention terminal permanent policy snapshot verification receipt showing refs and digest were checked."
+  }
+]

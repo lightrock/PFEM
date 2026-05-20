@@ -1,0 +1,33 @@
+[
+  {
+    "retention_terminal_permanent_storage_receipt_verification_receipt_id": "retention-terminal-permanent-storage-receipt-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_permanent_storage_receipt_verification",
+    "created_time": "2026-01-01T00:07:19Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_storage_receipt_record_id": "retention-terminal-permanent-storage-receipt-basic-restore-001",
+    "retention_terminal_permanent_storage_deposit_closeout_record_id": "retention-terminal-permanent-storage-deposit-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_permanent_storage_receipt_refs": [
+      "retention-terminal-permanent-storage-deposit-closeout-basic-restore-001",
+      "retention-terminal-permanent-storage-deposit-verification-basic-restore-001",
+      "retention-terminal-permanent-storage-deposit-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-permanent-storage-receipt-basic-restore-001",
+      "retention-terminal-permanent-storage-deposit-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-storage-receipt-ref-list",
+    "expected_terminal_permanent_storage_receipt_ref_digest": "26180bcb73e74b14c2d3dd09d77771d19c5112e8f7d9902e02b5b5ca6bce40a2",
+    "actual_terminal_permanent_storage_receipt_ref_digest": "26180bcb73e74b14c2d3dd09d77771d19c5112e8f7d9902e02b5b5ca6bce40a2",
+    "verified_by_ref": "tools/pfem_retention_terminal_permanent_storage_receipt_verification_receipts.py",
+    "summary": "Synthetic example retention terminal permanent storage receipt verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_access_control_record_id": "retention-terminal-permanent-access-control-basic-restore-001",
+    "terminal_permanent_access_control_kind": "retention_terminal_permanent_access_control",
+    "created_time": "2026-01-01T00:07:24Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_retrieval_index_closeout_record_id": "retention-terminal-permanent-retrieval-index-closeout-basic-restore-001",
+    "retention_terminal_permanent_retrieval_index_verification_receipt_id": "retention-terminal-permanent-retrieval-index-verification-basic-restore-001",
+    "terminal_permanent_access_control_state": "locked",
+    "terminal_permanent_access_control_scope": "closed_retention_terminal_permanent_retrieval_index",
+    "terminal_permanent_access_control_refs": [
+      "retention-terminal-permanent-retrieval-index-closeout-basic-restore-001",
+      "retention-terminal-permanent-retrieval-index-verification-basic-restore-001",
+      "retention-terminal-permanent-retrieval-index-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-retrieval-index-closeout-basic-restore-001",
+      "retention-terminal-permanent-retrieval-index-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-access-control-ref-list",
+    "terminal_permanent_access_control_ref_digest": "e355c9a31615829030ba42a899568733d735538fd1e814bc238cf69ffff81a84",
+    "terminal_permanent_access_control_by_ref": "tools/pfem_retention_terminal_permanent_access_control_records.py",
+    "summary": "Synthetic example retention terminal permanent access control record built from the closed retention terminal permanent retrieval index path."
+  }
+]

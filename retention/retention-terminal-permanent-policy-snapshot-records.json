@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_policy_snapshot_record_id": "retention-terminal-permanent-policy-snapshot-basic-restore-001",
+    "terminal_permanent_policy_snapshot_kind": "retention_terminal_permanent_policy_snapshot",
+    "created_time": "2026-01-01T00:07:27Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_access_control_closeout_record_id": "retention-terminal-permanent-access-control-closeout-basic-restore-001",
+    "retention_terminal_permanent_access_control_verification_receipt_id": "retention-terminal-permanent-access-control-verification-basic-restore-001",
+    "terminal_permanent_policy_snapshot_state": "recorded",
+    "terminal_permanent_policy_snapshot_scope": "closed_retention_terminal_permanent_access_control",
+    "terminal_permanent_policy_snapshot_refs": [
+      "retention-terminal-permanent-access-control-closeout-basic-restore-001",
+      "retention-terminal-permanent-access-control-verification-basic-restore-001",
+      "retention-terminal-permanent-access-control-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-access-control-closeout-basic-restore-001",
+      "retention-terminal-permanent-access-control-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-policy-snapshot-ref-list",
+    "terminal_permanent_policy_snapshot_ref_digest": "f0c858f459f06bebd5448222fb26b858273bf9e183e94e1418213c0c3a0fdb46",
+    "terminal_permanent_policy_snapshot_by_ref": "tools/pfem_retention_terminal_permanent_policy_snapshot_records.py",
+    "summary": "Synthetic example retention terminal permanent policy snapshot record built from the closed retention terminal permanent access control path."
+  }
+]

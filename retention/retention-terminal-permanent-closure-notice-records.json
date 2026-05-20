@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_closure_notice_record_id": "retention-terminal-permanent-closure-notice-basic-restore-001",
+    "terminal_permanent_closure_notice_kind": "retention_terminal_permanent_closure_notice",
+    "created_time": "2026-01-01T00:07:45Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_public_register_closeout_record_id": "retention-terminal-permanent-public-register-closeout-basic-restore-001",
+    "retention_terminal_permanent_public_register_verification_receipt_id": "retention-terminal-permanent-public-register-verification-basic-restore-001",
+    "terminal_permanent_closure_notice_state": "published",
+    "terminal_permanent_closure_notice_scope": "closed_retention_terminal_permanent_public_register",
+    "terminal_permanent_closure_notice_refs": [
+      "retention-terminal-permanent-public-register-closeout-basic-restore-001",
+      "retention-terminal-permanent-public-register-verification-basic-restore-001",
+      "retention-terminal-permanent-public-register-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-public-register-closeout-basic-restore-001",
+      "retention-terminal-permanent-public-register-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-closure-notice-ref-list",
+    "terminal_permanent_closure_notice_ref_digest": "de5859dbe674706f7f6683954ac5d186141e4446ea83418f284ea832ef780ac3",
+    "terminal_permanent_closure_notice_by_ref": "tools/pfem_retention_terminal_permanent_closure_notice_records.py",
+    "summary": "Synthetic example retention terminal permanent closure notice record built from the closed retention terminal permanent public register path."
+  }
+]

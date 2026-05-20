@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_finalization_audit_record_id": "retention-terminal-finalization-audit-basic-restore-001",
+    "terminal_finalization_audit_kind": "retention_terminal_finalization_audit",
+    "created_time": "2026-01-01T00:07:00Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_finalization_record_closeout_record_id": "retention-terminal-finalization-record-closeout-basic-restore-001",
+    "retention_terminal_finalization_record_verification_receipt_id": "retention-terminal-finalization-record-verification-basic-restore-001",
+    "terminal_finalization_audit_state": "reported",
+    "terminal_finalization_audit_scope": "closed_retention_terminal_finalization_record",
+    "terminal_finalization_audit_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-finalization-audit-ref-list",
+    "terminal_finalization_audit_ref_digest": "7d24d1278a35151a9cb01eea798a5fafe4b2b52f942185c411308b45b3809ead",
+    "terminal_finalization_audit_by_ref": "tools/pfem_retention_terminal_finalization_audit_records.py",
+    "summary": "Synthetic example retention terminal finalization audit record built from the closed retention terminal finalization record path."
+  }
+]

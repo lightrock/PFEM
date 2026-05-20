@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_retrieval_index_record_id": "retention-terminal-permanent-retrieval-index-basic-restore-001",
+    "terminal_permanent_retrieval_index_kind": "retention_terminal_permanent_retrieval_index",
+    "created_time": "2026-01-01T00:07:21Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_storage_receipt_closeout_record_id": "retention-terminal-permanent-storage-receipt-closeout-basic-restore-001",
+    "retention_terminal_permanent_storage_receipt_verification_receipt_id": "retention-terminal-permanent-storage-receipt-verification-basic-restore-001",
+    "terminal_permanent_retrieval_index_state": "indexed",
+    "terminal_permanent_retrieval_index_scope": "closed_retention_terminal_permanent_storage_receipt",
+    "terminal_permanent_retrieval_index_refs": [
+      "retention-terminal-permanent-storage-receipt-closeout-basic-restore-001",
+      "retention-terminal-permanent-storage-receipt-verification-basic-restore-001",
+      "retention-terminal-permanent-storage-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-storage-receipt-closeout-basic-restore-001",
+      "retention-terminal-permanent-storage-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-retrieval-index-ref-list",
+    "terminal_permanent_retrieval_index_ref_digest": "830f19e93d2ccaebbec2cc7483cfe045208994aa141313dc2c675f0bb2e94fdb",
+    "terminal_permanent_retrieval_index_by_ref": "tools/pfem_retention_terminal_permanent_retrieval_index_records.py",
+    "summary": "Synthetic example retention terminal permanent retrieval index record built from the closed retention terminal permanent storage receipt path."
+  }
+]

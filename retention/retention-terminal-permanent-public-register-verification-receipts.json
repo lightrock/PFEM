@@ -1,0 +1,33 @@
+[
+  {
+    "retention_terminal_permanent_public_register_verification_receipt_id": "retention-terminal-permanent-public-register-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_permanent_public_register_verification",
+    "created_time": "2026-01-01T00:07:43Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_public_register_record_id": "retention-terminal-permanent-public-register-basic-restore-001",
+    "retention_terminal_permanent_custody_transfer_closeout_record_id": "retention-terminal-permanent-custody-transfer-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_permanent_public_register_refs": [
+      "retention-terminal-permanent-custody-transfer-closeout-basic-restore-001",
+      "retention-terminal-permanent-custody-transfer-verification-basic-restore-001",
+      "retention-terminal-permanent-custody-transfer-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-permanent-public-register-basic-restore-001",
+      "retention-terminal-permanent-custody-transfer-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-public-register-ref-list",
+    "expected_terminal_permanent_public_register_ref_digest": "023defbef52a106f0c01b21fb22991a6a712dfc959c4d6c44b264c6b0bcb5512",
+    "actual_terminal_permanent_public_register_ref_digest": "023defbef52a106f0c01b21fb22991a6a712dfc959c4d6c44b264c6b0bcb5512",
+    "verified_by_ref": "tools/pfem_retention_terminal_permanent_public_register_verification_receipts.py",
+    "summary": "Synthetic example retention terminal permanent public register verification receipt showing refs and digest were checked."
+  }
+]

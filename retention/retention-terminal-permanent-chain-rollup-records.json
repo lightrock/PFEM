@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_chain_rollup_record_id": "retention-terminal-permanent-chain-rollup-basic-restore-001",
+    "terminal_permanent_chain_rollup_kind": "retention_terminal_permanent_chain_rollup",
+    "created_time": "2026-01-01T00:07:36Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_fixity_register_closeout_record_id": "retention-terminal-permanent-fixity-register-closeout-basic-restore-001",
+    "retention_terminal_permanent_fixity_register_verification_receipt_id": "retention-terminal-permanent-fixity-register-verification-basic-restore-001",
+    "terminal_permanent_chain_rollup_state": "summarized",
+    "terminal_permanent_chain_rollup_scope": "closed_retention_terminal_permanent_fixity_register",
+    "terminal_permanent_chain_rollup_refs": [
+      "retention-terminal-permanent-fixity-register-closeout-basic-restore-001",
+      "retention-terminal-permanent-fixity-register-verification-basic-restore-001",
+      "retention-terminal-permanent-fixity-register-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-fixity-register-closeout-basic-restore-001",
+      "retention-terminal-permanent-fixity-register-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-chain-rollup-ref-list",
+    "terminal_permanent_chain_rollup_ref_digest": "5d64444c85ceb2a29599494ce0c0f9bc73bbd6ee35eede3cc55545abda922066",
+    "terminal_permanent_chain_rollup_by_ref": "tools/pfem_retention_terminal_permanent_chain_rollup_records.py",
+    "summary": "Synthetic example retention terminal permanent chain rollup record built from the closed retention terminal permanent fixity register path."
+  }
+]

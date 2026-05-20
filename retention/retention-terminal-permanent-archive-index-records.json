@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_archive_index_record_id": "retention-terminal-permanent-archive-index-basic-restore-001",
+    "terminal_permanent_archive_index_kind": "retention_terminal_permanent_archive_index",
+    "created_time": "2026-01-01T00:07:09Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_archive_package_closeout_record_id": "retention-terminal-permanent-archive-package-closeout-basic-restore-001",
+    "retention_terminal_permanent_archive_package_verification_receipt_id": "retention-terminal-permanent-archive-package-verification-basic-restore-001",
+    "terminal_permanent_archive_index_state": "indexed",
+    "terminal_permanent_archive_index_scope": "closed_retention_terminal_permanent_archive_package",
+    "terminal_permanent_archive_index_refs": [
+      "retention-terminal-permanent-archive-package-closeout-basic-restore-001",
+      "retention-terminal-permanent-archive-package-verification-basic-restore-001",
+      "retention-terminal-permanent-archive-package-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-archive-package-closeout-basic-restore-001",
+      "retention-terminal-permanent-archive-package-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-archive-index-ref-list",
+    "terminal_permanent_archive_index_ref_digest": "bea336717191227c29d34a0a62f8bbeba2d0c7c49fb6875c0f1fb6c45637253c",
+    "terminal_permanent_archive_index_by_ref": "tools/pfem_retention_terminal_permanent_archive_index_records.py",
+    "summary": "Synthetic example retention terminal permanent archive index record built from the closed retention terminal permanent archive package path."
+  }
+]

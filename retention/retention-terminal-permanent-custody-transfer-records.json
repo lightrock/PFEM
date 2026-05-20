@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_permanent_custody_transfer_record_id": "retention-terminal-permanent-custody-transfer-basic-restore-001",
+    "terminal_permanent_custody_transfer_kind": "retention_terminal_permanent_custody_transfer",
+    "created_time": "2026-01-01T00:07:39Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_permanent_chain_rollup_closeout_record_id": "retention-terminal-permanent-chain-rollup-closeout-basic-restore-001",
+    "retention_terminal_permanent_chain_rollup_verification_receipt_id": "retention-terminal-permanent-chain-rollup-verification-basic-restore-001",
+    "terminal_permanent_custody_transfer_state": "transferred",
+    "terminal_permanent_custody_transfer_scope": "closed_retention_terminal_permanent_chain_rollup",
+    "terminal_permanent_custody_transfer_refs": [
+      "retention-terminal-permanent-chain-rollup-closeout-basic-restore-001",
+      "retention-terminal-permanent-chain-rollup-verification-basic-restore-001",
+      "retention-terminal-permanent-chain-rollup-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-permanent-chain-rollup-closeout-basic-restore-001",
+      "retention-terminal-permanent-chain-rollup-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-permanent-custody-transfer-ref-list",
+    "terminal_permanent_custody_transfer_ref_digest": "12eee540d4d01281f9ca7f75058ccfed50c8abdbe441c0f4eda5e95c05305533",
+    "terminal_permanent_custody_transfer_by_ref": "tools/pfem_retention_terminal_permanent_custody_transfer_records.py",
+    "summary": "Synthetic example retention terminal permanent custody transfer record built from the closed retention terminal permanent chain rollup path."
+  }
+]

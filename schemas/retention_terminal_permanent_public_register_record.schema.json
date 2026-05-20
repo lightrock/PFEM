@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_terminal_permanent_public_register_record.schema.json",
+  "title": "PFEM Retention Terminal Permanent Public Register Records",
+  "type": "object",
+  "required": [
+    "retention_terminal_permanent_public_register_record_id",
+    "terminal_permanent_public_register_kind",
+    "created_time",
+    "node_id",
+    "retention_terminal_permanent_custody_transfer_closeout_record_id",
+    "retention_terminal_permanent_custody_transfer_verification_receipt_id",
+    "terminal_permanent_public_register_state",
+    "terminal_permanent_public_register_scope",
+    "terminal_permanent_public_register_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "terminal_permanent_public_register_ref_digest",
+    "terminal_permanent_public_register_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_terminal_permanent_public_register_record_id": {
+      "type": "string"
+    },
+    "terminal_permanent_public_register_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_terminal_permanent_custody_transfer_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_terminal_permanent_custody_transfer_verification_receipt_id": {
+      "type": "string"
+    },
+    "terminal_permanent_public_register_state": {
+      "type": "string"
+    },
+    "terminal_permanent_public_register_scope": {
+      "type": "string"
+    },
+    "terminal_permanent_public_register_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "terminal_permanent_public_register_ref_digest": {
+      "type": "string"
+    },
+    "terminal_permanent_public_register_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "retention_terminal_archival_accession_record_id": "retention-terminal-archival-accession-basic-restore-001",
+    "terminal_archival_accession_kind": "retention_terminal_archival_accession",
+    "created_time": "2026-01-01T00:07:03Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_finalization_audit_closeout_record_id": "retention-terminal-finalization-audit-closeout-basic-restore-001",
+    "retention_terminal_finalization_audit_verification_receipt_id": "retention-terminal-finalization-audit-verification-basic-restore-001",
+    "terminal_archival_accession_state": "accessioned",
+    "terminal_archival_accession_scope": "closed_retention_terminal_finalization_audit",
+    "terminal_archival_accession_refs": [
+      "retention-terminal-finalization-audit-closeout-basic-restore-001",
+      "retention-terminal-finalization-audit-verification-basic-restore-001",
+      "retention-terminal-finalization-audit-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-terminal-finalization-record-closeout-basic-restore-001",
+      "retention-terminal-finalization-record-verification-basic-restore-001",
+      "retention-terminal-finalization-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-finalization-audit-closeout-basic-restore-001",
+      "retention-terminal-finalization-audit-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-archival-accession-ref-list",
+    "terminal_archival_accession_ref_digest": "2f45de3300fc514334d113765926f19df9add2aad4032c469cf7f2b822b96d21",
+    "terminal_archival_accession_by_ref": "tools/pfem_retention_terminal_archival_accession_records.py",
+    "summary": "Synthetic example retention terminal archival accession record built from the closed retention terminal finalization audit path."
+  }
+]
