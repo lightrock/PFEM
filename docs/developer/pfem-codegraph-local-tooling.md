@@ -2,17 +2,31 @@
 
 CodeGraph is optional local developer tooling for repository navigation by humans and AI executors working in PFEM.
 
-Use it when preparing broad PFEM edits that touch check runners, generated validators, check manifests, adapter/subsystem docs, workorders, or doctrine files.
+CodeGraph is not PFEM runtime architecture and is not part of PFEM deployments, release gates, or evidence semantics.
 
-CodeGraph is not part of PFEM runtime architecture and is not required for PFEM deployments, validation gates, or releases.
+## When to use CodeGraph
 
-## Local-only artifacts
+Use CodeGraph before broad edits that touch:
 
-CodeGraph index data under `.codegraph/` is local-only and must not be committed.
+- check runners;
+- generated validators;
+- manifests;
+- doctrine documents;
+- adapter/subsystem documentation;
+- workorders;
+- related PFEM plumbing surfaces.
 
-## Safe local commands
+Lack of CodeGraph does not block PFEM work.
 
-Run from repository root:
+## Pre-edit discovery flow for AI executors
+
+1. Start from repository root.
+2. Initialize/index CodeGraph if needed.
+3. Check status.
+4. Run targeted PFEM queries to locate likely edit surfaces.
+5. Open and inspect exact repository files before patching.
+
+Use the normal local path:
 
 ```bash
 npx -y @colbymchenry/codegraph init -i
@@ -20,8 +34,37 @@ npx -y @colbymchenry/codegraph status --json
 npx -y @colbymchenry/codegraph sync
 ```
 
-Use manual sync unless a developer deliberately approves git-hook installation.
+Manual sync is the default. Git hooks require explicit developer approval.
 
-## AI executor usage
+## Targeted PFEM query examples
 
-AI executors should use CodeGraph to locate likely PFEM surfaces before broad edits, then still inspect exact files before patching.
+Use queries like:
+
+```bash
+npx -y @colbymchenry/codegraph query "pfem_check"
+npx -y @colbymchenry/codegraph query "pfem_check_manifest"
+npx -y @colbymchenry/codegraph query "run_doctor"
+npx -y @colbymchenry/codegraph query "workorders"
+npx -y @colbymchenry/codegraph query "adapter subsystem doctrine"
+npx -y @colbymchenry/codegraph query "retention_terminal_tail_audit"
+```
+
+CodeGraph discovery is advisory only. Executors must still inspect exact files before making changes.
+
+## Fallback when CodeGraph is unavailable
+
+If CodeGraph cannot run, say so in completion notes, then use ordinary repo inspection. Do not force the environment or pretend CodeGraph discovery passed.
+
+## What CodeGraph does not replace
+
+CodeGraph does not replace:
+
+- direct inspection of exact files before patching;
+- PFEM architecture doctrine and terminology discipline;
+- PFEM runtime contracts;
+- release-gate checks;
+- evidence-semantics boundaries.
+
+## Local-only artifacts
+
+`.codegraph/` is local-only and must not be committed.
