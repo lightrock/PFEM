@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closeout_integrity_certificate_verification_receipt_id": "retention-permanent-archive-terminal-closeout-integrity-certificate-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_closeout_integrity_certificate_verification",
+    "created_time": "2026-01-01T00:12:24Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closeout_integrity_certificate_record_id": "retention-permanent-archive-terminal-closeout-integrity-certificate-basic-restore-001",
+    "retention_permanent_archive_terminal_closeout_custody_certificate_closeout_record_id": "retention-permanent-archive-terminal-closeout-custody-certificate-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_closeout_integrity_certificate_refs": [
+      "retention-permanent-archive-terminal-closeout-custody-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-custody-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-custody-certificate-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closeout-integrity-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-custody-certificate-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closeout-integrity-certificate-ref-list",
+    "expected_permanent_archive_terminal_closeout_integrity_certificate_ref_digest": "da2137597921dc82f5c3a9546b0a53d1625350a86db9996dc4b4c605acb01bf2",
+    "actual_permanent_archive_terminal_closeout_integrity_certificate_ref_digest": "da2137597921dc82f5c3a9546b0a53d1625350a86db9996dc4b4c605acb01bf2",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_closeout_integrity_certificate_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal closeout integrity certificate verification receipt showing refs and digest were checked."
+  }
+]

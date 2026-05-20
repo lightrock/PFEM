@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_closeout_manifest_record_id": "retention-permanent-archive-terminal-closeout-manifest-basic-restore-001",
+    "permanent_archive_terminal_closeout_manifest_kind": "retention_permanent_archive_terminal_closeout_manifest",
+    "created_time": "2026-01-01T00:12:05Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closeout_package_closeout_record_id": "retention-permanent-archive-terminal-closeout-package-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closeout_package_verification_receipt_id": "retention-permanent-archive-terminal-closeout-package-verification-basic-restore-001",
+    "permanent_archive_terminal_closeout_manifest_state": "published",
+    "permanent_archive_terminal_closeout_manifest_scope": "closed_retention_permanent_archive_terminal_closeout_package",
+    "permanent_archive_terminal_closeout_manifest_refs": [
+      "retention-permanent-archive-terminal-closeout-package-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-package-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-package-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closeout-package-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-package-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closeout-manifest-ref-list",
+    "permanent_archive_terminal_closeout_manifest_ref_digest": "c57dc5ed5ad6c33603c093ebe03a9f13db921fed5d5ecdc916ab770746c77933",
+    "permanent_archive_terminal_closeout_manifest_by_ref": "tools/pfem_retention_permanent_archive_terminal_closeout_manifest_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closeout manifest record built from the closed retention permanent archive terminal closeout package path."
+  }
+]

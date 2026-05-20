@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_closeout_retrieval_certificate_record_id": "retention-permanent-archive-terminal-closeout-retrieval-certificate-basic-restore-001",
+    "permanent_archive_terminal_closeout_retrieval_certificate_kind": "retention_permanent_archive_terminal_closeout_retrieval_certificate",
+    "created_time": "2026-01-01T00:12:29Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closeout_access_certificate_closeout_record_id": "retention-permanent-archive-terminal-closeout-access-certificate-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closeout_access_certificate_verification_receipt_id": "retention-permanent-archive-terminal-closeout-access-certificate-verification-basic-restore-001",
+    "permanent_archive_terminal_closeout_retrieval_certificate_state": "certified",
+    "permanent_archive_terminal_closeout_retrieval_certificate_scope": "closed_retention_permanent_archive_terminal_closeout_access_certificate",
+    "permanent_archive_terminal_closeout_retrieval_certificate_refs": [
+      "retention-permanent-archive-terminal-closeout-access-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-access-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-access-certificate-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closeout-access-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-access-certificate-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closeout-retrieval-certificate-ref-list",
+    "permanent_archive_terminal_closeout_retrieval_certificate_ref_digest": "40009e7518e511f426d6bdc27bc6e1203ac51bcbeb15f3fd183d733a45484153",
+    "permanent_archive_terminal_closeout_retrieval_certificate_by_ref": "tools/pfem_retention_permanent_archive_terminal_closeout_retrieval_certificate_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closeout retrieval certificate record built from the closed retention permanent archive terminal closeout access certificate path."
+  }
+]

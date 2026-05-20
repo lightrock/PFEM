@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_closeout_governance_attestation_record_id": "retention-permanent-archive-terminal-closeout-governance-attestation-basic-restore-001",
+    "permanent_archive_terminal_closeout_governance_attestation_kind": "retention_permanent_archive_terminal_closeout_governance_attestation",
+    "created_time": "2026-01-01T00:12:41Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closeout_exception_summary_closeout_record_id": "retention-permanent-archive-terminal-closeout-exception-summary-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closeout_exception_summary_verification_receipt_id": "retention-permanent-archive-terminal-closeout-exception-summary-verification-basic-restore-001",
+    "permanent_archive_terminal_closeout_governance_attestation_state": "attested",
+    "permanent_archive_terminal_closeout_governance_attestation_scope": "closed_retention_permanent_archive_terminal_closeout_exception_summary",
+    "permanent_archive_terminal_closeout_governance_attestation_refs": [
+      "retention-permanent-archive-terminal-closeout-exception-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-exception-summary-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-exception-summary-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closeout-exception-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-exception-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closeout-governance-attestation-ref-list",
+    "permanent_archive_terminal_closeout_governance_attestation_ref_digest": "18604af1be834b9009339f8ec2ece1388aaf7f31a547fd6f3326fc19e371cbb4",
+    "permanent_archive_terminal_closeout_governance_attestation_by_ref": "tools/pfem_retention_permanent_archive_terminal_closeout_governance_attestation_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closeout governance attestation record built from the closed retention permanent archive terminal closeout exception summary path."
+  }
+]

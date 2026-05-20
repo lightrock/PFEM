@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_closeout_public_notice_record_id": "retention-permanent-archive-terminal-closeout-public-notice-basic-restore-001",
+    "permanent_archive_terminal_closeout_public_notice_kind": "retention_permanent_archive_terminal_closeout_public_notice",
+    "created_time": "2026-01-01T00:12:17Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closeout_certificate_closeout_record_id": "retention-permanent-archive-terminal-closeout-certificate-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closeout_certificate_verification_receipt_id": "retention-permanent-archive-terminal-closeout-certificate-verification-basic-restore-001",
+    "permanent_archive_terminal_closeout_public_notice_state": "published",
+    "permanent_archive_terminal_closeout_public_notice_scope": "closed_retention_permanent_archive_terminal_closeout_certificate",
+    "permanent_archive_terminal_closeout_public_notice_refs": [
+      "retention-permanent-archive-terminal-closeout-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-certificate-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closeout-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-certificate-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closeout-public-notice-ref-list",
+    "permanent_archive_terminal_closeout_public_notice_ref_digest": "530ba04cdabf628448e93e6d7e367ad133a7ce1a7e805baad1144cf468a9241d",
+    "permanent_archive_terminal_closeout_public_notice_by_ref": "tools/pfem_retention_permanent_archive_terminal_closeout_public_notice_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closeout public notice record built from the closed retention permanent archive terminal closeout certificate path."
+  }
+]

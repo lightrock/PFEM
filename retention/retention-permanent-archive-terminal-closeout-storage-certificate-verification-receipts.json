@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closeout_storage_certificate_verification_receipt_id": "retention-permanent-archive-terminal-closeout-storage-certificate-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_closeout_storage_certificate_verification",
+    "created_time": "2026-01-01T00:12:33Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closeout_storage_certificate_record_id": "retention-permanent-archive-terminal-closeout-storage-certificate-basic-restore-001",
+    "retention_permanent_archive_terminal_closeout_retrieval_certificate_closeout_record_id": "retention-permanent-archive-terminal-closeout-retrieval-certificate-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_closeout_storage_certificate_refs": [
+      "retention-permanent-archive-terminal-closeout-retrieval-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-retrieval-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-retrieval-certificate-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closeout-storage-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closeout-retrieval-certificate-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closeout-storage-certificate-ref-list",
+    "expected_permanent_archive_terminal_closeout_storage_certificate_ref_digest": "411c57424ca7ddac0da47b55e580f932adc4dfc4394880be189fa50e7ca93a2d",
+    "actual_permanent_archive_terminal_closeout_storage_certificate_ref_digest": "411c57424ca7ddac0da47b55e580f932adc4dfc4394880be189fa50e7ca93a2d",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_closeout_storage_certificate_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal closeout storage certificate verification receipt showing refs and digest were checked."
+  }
+]

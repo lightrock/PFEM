@@ -1,0 +1,19 @@
+# Retention Permanent Archive Terminal Closeout Certificate Records Contract
+
+A PFEM retention permanent archive terminal closeout certificate records record should identify:
+
+- `retention_permanent_archive_terminal_closeout_certificate_record_id`
+- `permanent_archive_terminal_closeout_certificate_kind`
+- `created_time`
+- `node_id`
+- `retention_permanent_archive_terminal_closeout_digest_closeout_record_id`
+- `retention_permanent_archive_terminal_closeout_digest_verification_receipt_id`
+- `permanent_archive_terminal_closeout_certificate_state`
+- `permanent_archive_terminal_closeout_certificate_scope`
+- `permanent_archive_terminal_closeout_certificate_refs`
+- `subject_refs`
+- `basis_refs`
+- `digest_algorithm`
+- `permanent_archive_terminal_closeout_certificate_ref_digest`
+- `permanent_archive_terminal_closeout_certificate_by_ref`
+- `summary`
