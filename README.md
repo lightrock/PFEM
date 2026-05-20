@@ -160,7 +160,7 @@ Tiny safe edits do not need workorders. Standing-process changes usually do.
 
 PFEM has project terms that can stop a conversation long enough to prevent a bad architectural assumption.
 
-This is not a `.py` file feature and it is not a runtime parser. It is a developer and AI working rule. The detailed rules live in:
+It is a developer and AI working rule. The detailed rules live in:
 
 ```text
 docs/developer/pfem-terminology-brake-rules.md
