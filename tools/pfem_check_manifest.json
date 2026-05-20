@@ -5055,6 +5055,12 @@
       ]
     },
     {
+      "label": "Running PFEM retention terminal tail audit",
+      "args": [
+        "tools/pfem_retention_terminal_tail_audit.py"
+      ]
+    },
+    {
       "label": "Running PFEM audit validation",
       "args": [
         "tools/pfem_audit.py"
