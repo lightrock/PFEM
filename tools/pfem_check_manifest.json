@@ -5061,6 +5061,12 @@
       ]
     },
     {
+      "label": "Running PFEM contributor command protocol audit",
+      "args": [
+        "tools/pfem_contributor_command_protocol_audit.py"
+      ]
+    },
+    {
       "label": "Running PFEM retention terminal tail audit",
       "args": [
         "tools/pfem_retention_terminal_tail_audit.py"

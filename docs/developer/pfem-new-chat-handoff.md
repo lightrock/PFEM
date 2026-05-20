@@ -104,3 +104,15 @@ missing_refs is not in required
 If the assistant starts inventing more terminal/endcap/final/final-final/final-final-final record species without a concrete reason, stop it and make it run the gate.
 - `docs/developer/pfem-architecture-theory-notes.md`
 - docs/developer/pfem-ai-patch-safety-rules.md
+
+## Start-a-new-tab command
+
+When any developer says `start a new tab`, do not continue implementation work.
+
+Produce the canonical PFEM new-tab handoff prompt from:
+
+```text
+docs/developer/pfem-new-tab-prompt.md
+```
+
+The prompt must instruct the next working context to inspect current `main`, read the repo discipline files, and follow PFEM patch-delivery and boundary-generation rules.

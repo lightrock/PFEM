@@ -77,3 +77,16 @@ Contributor handoff:
 - Inspect `tools/pfem_check_manifest.json`.
 - `docs/developer/pfem-architecture-theory-notes.md` for the higher-level PFEM theory vocabulary.
 - Inspect current `main` before assuming conversation memory is current.
+
+## Contributor command protocol
+
+PFEM has a project-level command protocol for humans and AI assistants.
+
+When any developer says `start a new tab`, the worker should produce the canonical PFEM new-tab handoff prompt instead of continuing implementation work.
+
+See:
+
+```text
+docs/developer/pfem-contributor-command-protocol.md
+docs/developer/pfem-new-tab-prompt.md
+```

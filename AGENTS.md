@@ -47,3 +47,19 @@ PFEM generated checks belong in Python tools under `tools/` and must be register
 For passed verification receipts, `missing_refs` is an optional diagnostic array. It may be present as `[]`, but it must not be required by the schema.
 
 Patch scripts should write noisy `git status --short` output to `build/pfem-patch-status/` instead of dumping it into the terminal.
+
+# PFEM Contributor Command Protocol
+
+This protocol applies to any PFEM contributor, including human developers, AI assistants, Copilot sessions, Codex sessions, contractors, maintainers, and review tools.
+
+When any developer says `start a new tab`, do not continue implementation work.
+
+Instead, produce the canonical PFEM new-tab handoff prompt from:
+
+```text
+docs/developer/pfem-new-tab-prompt.md
+```
+
+The handoff prompt must point the next working context to the current repo discipline files and require inspection of current `main` before relying on memory.
+
+Do not expose private chain-of-thought. Provide architecture rationale, operating discipline, concrete repo-reading instructions, and decision rules.
