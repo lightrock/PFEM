@@ -102,3 +102,4 @@ missing_refs is not in required
 ## Human sanity rule
 
 If the assistant starts inventing more terminal/endcap/final/final-final/final-final-final doodads without a concrete reason, stop it and make it run the gate.
+- `docs/developer/pfem-architecture-theory-notes.md`

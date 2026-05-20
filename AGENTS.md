@@ -35,6 +35,7 @@ Before making PFEM changes, read:
 docs/developer/pfem-doodad-generation-standard.md
 docs/developer/pfem-new-chat-handoff.md
 docs/developer/pfem-terminal-tail-stabilization.md
+docs/developer/pfem-architecture-theory-notes.md
 tools/pfem_check_manifest.json
 ```
 

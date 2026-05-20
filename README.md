@@ -75,4 +75,5 @@ Contributor handoff:
 - Read `docs/developer/pfem-new-chat-handoff.md`.
 - Read `docs/developer/pfem-terminal-tail-stabilization.md`.
 - Inspect `tools/pfem_check_manifest.json`.
+- `docs/developer/pfem-architecture-theory-notes.md` for the higher-level PFEM theory vocabulary.
 - Inspect current `main` before assuming conversation memory is current.
