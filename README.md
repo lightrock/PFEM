@@ -79,6 +79,7 @@ Contributor handoff:
 - Inspect `tools/pfem_check_manifest.json`.
 - Read `workorders/README.md` before creating or executing substantial task instructions.
 - `docs/developer/pfem-architecture-theory-notes.md` for the higher-level PFEM theory vocabulary.
+- `docs/developer/pfem-codegraph-local-tooling.md` for optional local CodeGraph navigation setup.
 - Inspect current `main` before assuming conversation memory is current.
 
 ## Your first new session instruction to an AI

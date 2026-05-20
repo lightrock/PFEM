@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# CodeGraph local indexing artifacts
+.codegraph/
+codegraph.db
+codegraph-*.db
+codegraph-*.log
