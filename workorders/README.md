@@ -19,6 +19,8 @@ The workorder file is the contract, not the AI vendor.
 
 Workorders are meant to be generated for developers by a foreground assistant, not hand-written by developers in Notepad.
 
+Official workorders happen entirely through the GitHub repository process: create the workorder as a committed repository file, launch the executor from that committed path, and reference the exact workorder path in the PR or completion notes. Local-only files, Notepad drafts, downloadable prompts, and chat-only text are not official PFEM workorders.
+
 The normal flow is:
 
 1. A developer discusses a substantial task with a foreground assistant.
