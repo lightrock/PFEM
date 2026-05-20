@@ -1,0 +1,2436 @@
+{
+  "schema": "pfem_check_manifest.v1",
+  "source": "generated from run_tests.bat during PFEM check-runner cleanup",
+  "steps": [
+    {
+      "label": "Running PFEM catalog",
+      "args": [
+        "tools/pfem_catalog.py"
+      ]
+    },
+    {
+      "label": "Running PFEM source provenance validation",
+      "args": [
+        "tools/pfem_sources.py"
+      ]
+    },
+    {
+      "label": "Running PFEM topology validation",
+      "args": [
+        "tools/pfem_topology.py"
+      ]
+    },
+    {
+      "label": "Running PFEM dispatch validation",
+      "args": [
+        "tools/pfem_dispatch.py"
+      ]
+    },
+    {
+      "label": "Running PFEM dispatch decision validation",
+      "args": [
+        "tools/pfem_dispatch_decisions.py"
+      ]
+    },
+    {
+      "label": "Running PFEM outbox validation",
+      "args": [
+        "tools/pfem_outbox.py"
+      ]
+    },
+    {
+      "label": "Running PFEM inbox validation",
+      "args": [
+        "tools/pfem_inbox.py"
+      ]
+    },
+    {
+      "label": "Running PFEM intake decision validation",
+      "args": [
+        "tools/pfem_intake_decisions.py"
+      ]
+    },
+    {
+      "label": "Running PFEM import record validation",
+      "args": [
+        "tools/pfem_import_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM merge decision validation",
+      "args": [
+        "tools/pfem_merge_decisions.py"
+      ]
+    },
+    {
+      "label": "Running PFEM conflict record validation",
+      "args": [
+        "tools/pfem_conflict_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM apply receipt validation",
+      "args": [
+        "tools/pfem_apply_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM state checkpoint validation",
+      "args": [
+        "tools/pfem_state_checkpoints.py"
+      ]
+    },
+    {
+      "label": "Running PFEM state transition validation",
+      "args": [
+        "tools/pfem_state_transitions.py"
+      ]
+    },
+    {
+      "label": "Running PFEM snapshot manifest validation",
+      "args": [
+        "tools/pfem_snapshot_manifests.py"
+      ]
+    },
+    {
+      "label": "Running PFEM snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM recovery point validation",
+      "args": [
+        "tools/pfem_recovery_points.py"
+      ]
+    },
+    {
+      "label": "Running PFEM restore plan validation",
+      "args": [
+        "tools/pfem_restore_plans.py"
+      ]
+    },
+    {
+      "label": "Running PFEM restore approval validation",
+      "args": [
+        "tools/pfem_restore_approvals.py"
+      ]
+    },
+    {
+      "label": "Running PFEM restore receipt validation",
+      "args": [
+        "tools/pfem_restore_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM restore verification receipt validation",
+      "args": [
+        "tools/pfem_restore_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM restore closeout record validation",
+      "args": [
+        "tools/pfem_restore_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM disposition record validation",
+      "args": [
+        "tools/pfem_disposition_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM disposition receipt validation",
+      "args": [
+        "tools/pfem_disposition_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody record validation",
+      "args": [
+        "tools/pfem_custody_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody verification receipt validation",
+      "args": [
+        "tools/pfem_custody_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody transfer record validation",
+      "args": [
+        "tools/pfem_custody_transfer_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody transfer verification receipt validation",
+      "args": [
+        "tools/pfem_custody_transfer_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody closeout record validation",
+      "args": [
+        "tools/pfem_custody_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody chain record validation",
+      "args": [
+        "tools/pfem_custody_chain_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody chain verification receipt validation",
+      "args": [
+        "tools/pfem_custody_chain_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody ledger record validation",
+      "args": [
+        "tools/pfem_custody_ledger_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody ledger verification receipt validation",
+      "args": [
+        "tools/pfem_custody_ledger_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release request validation",
+      "args": [
+        "tools/pfem_custody_release_requests.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release approval validation",
+      "args": [
+        "tools/pfem_custody_release_approvals.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release receipt validation",
+      "args": [
+        "tools/pfem_custody_release_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release verification receipt validation",
+      "args": [
+        "tools/pfem_custody_release_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release closeout record validation",
+      "args": [
+        "tools/pfem_custody_release_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release chain record validation",
+      "args": [
+        "tools/pfem_custody_release_chain_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody release chain verification receipt validation",
+      "args": [
+        "tools/pfem_custody_release_chain_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody lifecycle record validation",
+      "args": [
+        "tools/pfem_custody_lifecycle_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody lifecycle verification receipt validation",
+      "args": [
+        "tools/pfem_custody_lifecycle_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM custody lifecycle closeout record validation",
+      "args": [
+        "tools/pfem_custody_lifecycle_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive manifest record validation",
+      "args": [
+        "tools/pfem_archive_manifest_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive receipt validation",
+      "args": [
+        "tools/pfem_archive_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive verification receipt validation",
+      "args": [
+        "tools/pfem_archive_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive closeout record validation",
+      "args": [
+        "tools/pfem_archive_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive chain record validation",
+      "args": [
+        "tools/pfem_archive_chain_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive chain verification receipt validation",
+      "args": [
+        "tools/pfem_archive_chain_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive index record validation",
+      "args": [
+        "tools/pfem_archive_index_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive index verification receipt validation",
+      "args": [
+        "tools/pfem_archive_index_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive index closeout record validation",
+      "args": [
+        "tools/pfem_archive_index_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive lifecycle record validation",
+      "args": [
+        "tools/pfem_archive_lifecycle_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive lifecycle verification receipt validation",
+      "args": [
+        "tools/pfem_archive_lifecycle_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM archive lifecycle closeout record validation",
+      "args": [
+        "tools/pfem_archive_lifecycle_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM preservation record validation",
+      "args": [
+        "tools/pfem_preservation_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM preservation verification receipt validation",
+      "args": [
+        "tools/pfem_preservation_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM preservation closeout record validation",
+      "args": [
+        "tools/pfem_preservation_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM preservation chain record validation",
+      "args": [
+        "tools/pfem_preservation_chain_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM preservation chain verification receipt validation",
+      "args": [
+        "tools/pfem_preservation_chain_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention review record validation",
+      "args": [
+        "tools/pfem_retention_review_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention review verification receipt validation",
+      "args": [
+        "tools/pfem_retention_review_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention decision record validation",
+      "args": [
+        "tools/pfem_retention_decision_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention decision approval validation",
+      "args": [
+        "tools/pfem_retention_decision_approvals.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention action receipt validation",
+      "args": [
+        "tools/pfem_retention_action_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention action verification receipt validation",
+      "args": [
+        "tools/pfem_retention_action_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention action closeout record validation",
+      "args": [
+        "tools/pfem_retention_action_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention chain record validation",
+      "args": [
+        "tools/pfem_retention_chain_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention chain verification receipt validation",
+      "args": [
+        "tools/pfem_retention_chain_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention lifecycle record validation",
+      "args": [
+        "tools/pfem_retention_lifecycle_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention lifecycle verification receipt validation",
+      "args": [
+        "tools/pfem_retention_lifecycle_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention lifecycle closeout record validation",
+      "args": [
+        "tools/pfem_retention_lifecycle_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention ledger record validation",
+      "args": [
+        "tools/pfem_retention_ledger_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention ledger verification receipt validation",
+      "args": [
+        "tools/pfem_retention_ledger_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention ledger closeout record validation",
+      "args": [
+        "tools/pfem_retention_ledger_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention policy compliance record validation",
+      "args": [
+        "tools/pfem_retention_policy_compliance_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention policy compliance verification receipt validation",
+      "args": [
+        "tools/pfem_retention_policy_compliance_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention obligation record validation",
+      "args": [
+        "tools/pfem_retention_obligation_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention obligation verification receipt validation",
+      "args": [
+        "tools/pfem_retention_obligation_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention schedule record validation",
+      "args": [
+        "tools/pfem_retention_schedule_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention schedule verification receipt validation",
+      "args": [
+        "tools/pfem_retention_schedule_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention schedule closeout record validation",
+      "args": [
+        "tools/pfem_retention_schedule_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention cycle record validation",
+      "args": [
+        "tools/pfem_retention_cycle_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention cycle verification receipt validation",
+      "args": [
+        "tools/pfem_retention_cycle_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention cycle closeout record validation",
+      "args": [
+        "tools/pfem_retention_cycle_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention hold record validation",
+      "args": [
+        "tools/pfem_retention_hold_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention hold verification receipt validation",
+      "args": [
+        "tools/pfem_retention_hold_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention hold closeout record validation",
+      "args": [
+        "tools/pfem_retention_hold_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention status snapshot record validation",
+      "args": [
+        "tools/pfem_retention_status_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention status snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_status_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention rollup record validation",
+      "args": [
+        "tools/pfem_retention_rollup_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention rollup verification receipt validation",
+      "args": [
+        "tools/pfem_retention_rollup_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention rollup closeout record validation",
+      "args": [
+        "tools/pfem_retention_rollup_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention report record validation",
+      "args": [
+        "tools/pfem_retention_report_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention report verification receipt validation",
+      "args": [
+        "tools/pfem_retention_report_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention report closeout record validation",
+      "args": [
+        "tools/pfem_retention_report_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication record validation",
+      "args": [
+        "tools/pfem_retention_publication_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication verification receipt validation",
+      "args": [
+        "tools/pfem_retention_publication_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication closeout record validation",
+      "args": [
+        "tools/pfem_retention_publication_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention dashboard snapshot record validation",
+      "args": [
+        "tools/pfem_retention_dashboard_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention dashboard snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_dashboard_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention dashboard snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_dashboard_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention summary record validation",
+      "args": [
+        "tools/pfem_retention_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention export record validation",
+      "args": [
+        "tools/pfem_retention_export_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention export verification receipt validation",
+      "args": [
+        "tools/pfem_retention_export_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention export closeout record validation",
+      "args": [
+        "tools/pfem_retention_export_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention handoff record validation",
+      "args": [
+        "tools/pfem_retention_handoff_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention handoff verification receipt validation",
+      "args": [
+        "tools/pfem_retention_handoff_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention handoff closeout record validation",
+      "args": [
+        "tools/pfem_retention_handoff_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention acceptance record validation",
+      "args": [
+        "tools/pfem_retention_acceptance_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention acceptance verification receipt validation",
+      "args": [
+        "tools/pfem_retention_acceptance_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention acceptance closeout record validation",
+      "args": [
+        "tools/pfem_retention_acceptance_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention package record validation",
+      "args": [
+        "tools/pfem_retention_package_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention package verification receipt validation",
+      "args": [
+        "tools/pfem_retention_package_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention package closeout record validation",
+      "args": [
+        "tools/pfem_retention_package_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention finalization record validation",
+      "args": [
+        "tools/pfem_retention_finalization_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention finalization verification receipt validation",
+      "args": [
+        "tools/pfem_retention_finalization_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention finalization closeout record validation",
+      "args": [
+        "tools/pfem_retention_finalization_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal status record validation",
+      "args": [
+        "tools/pfem_retention_terminal_status_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal status verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_status_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal status closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_status_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention certificate record validation",
+      "args": [
+        "tools/pfem_retention_certificate_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention certificate verification receipt validation",
+      "args": [
+        "tools/pfem_retention_certificate_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention certificate closeout record validation",
+      "args": [
+        "tools/pfem_retention_certificate_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention registry record validation",
+      "args": [
+        "tools/pfem_retention_registry_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention registry verification receipt validation",
+      "args": [
+        "tools/pfem_retention_registry_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention registry closeout record validation",
+      "args": [
+        "tools/pfem_retention_registry_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention closure record validation",
+      "args": [
+        "tools/pfem_retention_closure_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention closure verification receipt validation",
+      "args": [
+        "tools/pfem_retention_closure_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention closure closeout record validation",
+      "args": [
+        "tools/pfem_retention_closure_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention completion record validation",
+      "args": [
+        "tools/pfem_retention_completion_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention completion verification receipt validation",
+      "args": [
+        "tools/pfem_retention_completion_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention completion closeout record validation",
+      "args": [
+        "tools/pfem_retention_completion_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention attestation record validation",
+      "args": [
+        "tools/pfem_retention_attestation_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention attestation verification receipt validation",
+      "args": [
+        "tools/pfem_retention_attestation_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention attestation closeout record validation",
+      "args": [
+        "tools/pfem_retention_attestation_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention seal record validation",
+      "args": [
+        "tools/pfem_retention_seal_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention seal verification receipt validation",
+      "args": [
+        "tools/pfem_retention_seal_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention seal closeout record validation",
+      "args": [
+        "tools/pfem_retention_seal_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention notarization record validation",
+      "args": [
+        "tools/pfem_retention_notarization_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention notarization verification receipt validation",
+      "args": [
+        "tools/pfem_retention_notarization_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention notarization closeout record validation",
+      "args": [
+        "tools/pfem_retention_notarization_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention archive anchor record validation",
+      "args": [
+        "tools/pfem_retention_archive_anchor_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention archive anchor verification receipt validation",
+      "args": [
+        "tools/pfem_retention_archive_anchor_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention archive anchor closeout record validation",
+      "args": [
+        "tools/pfem_retention_archive_anchor_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention endcap record validation",
+      "args": [
+        "tools/pfem_retention_endcap_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention endcap verification receipt validation",
+      "args": [
+        "tools/pfem_retention_endcap_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention endcap closeout record validation",
+      "args": [
+        "tools/pfem_retention_endcap_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final index record validation",
+      "args": [
+        "tools/pfem_retention_final_index_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final index verification receipt validation",
+      "args": [
+        "tools/pfem_retention_final_index_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final index closeout record validation",
+      "args": [
+        "tools/pfem_retention_final_index_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention master ledger record validation",
+      "args": [
+        "tools/pfem_retention_master_ledger_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention master ledger verification receipt validation",
+      "args": [
+        "tools/pfem_retention_master_ledger_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention master ledger closeout record validation",
+      "args": [
+        "tools/pfem_retention_master_ledger_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal manifest record validation",
+      "args": [
+        "tools/pfem_retention_terminal_manifest_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal manifest verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_manifest_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal manifest closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_manifest_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention repository release record validation",
+      "args": [
+        "tools/pfem_retention_repository_release_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention repository release verification receipt validation",
+      "args": [
+        "tools/pfem_retention_repository_release_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention repository release closeout record validation",
+      "args": [
+        "tools/pfem_retention_repository_release_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention deployment release record validation",
+      "args": [
+        "tools/pfem_retention_deployment_release_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention deployment release verification receipt validation",
+      "args": [
+        "tools/pfem_retention_deployment_release_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention deployment release closeout record validation",
+      "args": [
+        "tools/pfem_retention_deployment_release_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention availability notice record validation",
+      "args": [
+        "tools/pfem_retention_availability_notice_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention availability notice verification receipt validation",
+      "args": [
+        "tools/pfem_retention_availability_notice_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention availability notice closeout record validation",
+      "args": [
+        "tools/pfem_retention_availability_notice_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release acknowledgement record validation",
+      "args": [
+        "tools/pfem_retention_release_acknowledgement_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release acknowledgement verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_acknowledgement_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release acknowledgement closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_acknowledgement_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release confirmation record validation",
+      "args": [
+        "tools/pfem_retention_release_confirmation_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release confirmation verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_confirmation_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release confirmation closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_confirmation_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution package record validation",
+      "args": [
+        "tools/pfem_retention_distribution_package_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution package verification receipt validation",
+      "args": [
+        "tools/pfem_retention_distribution_package_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution package closeout record validation",
+      "args": [
+        "tools/pfem_retention_distribution_package_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution manifest record validation",
+      "args": [
+        "tools/pfem_retention_distribution_manifest_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution manifest verification receipt validation",
+      "args": [
+        "tools/pfem_retention_distribution_manifest_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution manifest closeout record validation",
+      "args": [
+        "tools/pfem_retention_distribution_manifest_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access publication record validation",
+      "args": [
+        "tools/pfem_retention_access_publication_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access publication verification receipt validation",
+      "args": [
+        "tools/pfem_retention_access_publication_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access publication closeout record validation",
+      "args": [
+        "tools/pfem_retention_access_publication_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access grant record validation",
+      "args": [
+        "tools/pfem_retention_access_grant_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access grant verification receipt validation",
+      "args": [
+        "tools/pfem_retention_access_grant_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access grant closeout record validation",
+      "args": [
+        "tools/pfem_retention_access_grant_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access ledger record validation",
+      "args": [
+        "tools/pfem_retention_access_ledger_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access ledger verification receipt validation",
+      "args": [
+        "tools/pfem_retention_access_ledger_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access ledger closeout record validation",
+      "args": [
+        "tools/pfem_retention_access_ledger_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval catalog record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_catalog_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval catalog verification receipt validation",
+      "args": [
+        "tools/pfem_retention_retrieval_catalog_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval catalog closeout record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_catalog_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval endpoint record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_endpoint_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval endpoint verification receipt validation",
+      "args": [
+        "tools/pfem_retention_retrieval_endpoint_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval endpoint closeout record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_endpoint_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval token record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_token_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval token verification receipt validation",
+      "args": [
+        "tools/pfem_retention_retrieval_token_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval token closeout record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_token_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention consumer receipt record validation",
+      "args": [
+        "tools/pfem_retention_consumer_receipt_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention consumer receipt verification receipt validation",
+      "args": [
+        "tools/pfem_retention_consumer_receipt_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention consumer receipt closeout record validation",
+      "args": [
+        "tools/pfem_retention_consumer_receipt_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication rollup record validation",
+      "args": [
+        "tools/pfem_retention_publication_rollup_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication rollup verification receipt validation",
+      "args": [
+        "tools/pfem_retention_publication_rollup_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication rollup closeout record validation",
+      "args": [
+        "tools/pfem_retention_publication_rollup_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution receipt record validation",
+      "args": [
+        "tools/pfem_retention_distribution_receipt_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution receipt verification receipt validation",
+      "args": [
+        "tools/pfem_retention_distribution_receipt_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution receipt closeout record validation",
+      "args": [
+        "tools/pfem_retention_distribution_receipt_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access audit snapshot record validation",
+      "args": [
+        "tools/pfem_retention_access_audit_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access audit snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_access_audit_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access audit snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_access_audit_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release health snapshot record validation",
+      "args": [
+        "tools/pfem_retention_release_health_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release health snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_health_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release health snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_health_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release usage summary record validation",
+      "args": [
+        "tools/pfem_retention_release_usage_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release usage summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_usage_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release usage summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_usage_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retention exposure report record validation",
+      "args": [
+        "tools/pfem_retention_retention_exposure_report_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retention exposure report verification receipt validation",
+      "args": [
+        "tools/pfem_retention_retention_exposure_report_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retention exposure report closeout record validation",
+      "args": [
+        "tools/pfem_retention_retention_exposure_report_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release closeout summary record validation",
+      "args": [
+        "tools/pfem_retention_release_closeout_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release closeout summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_closeout_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release closeout summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_closeout_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public record index record validation",
+      "args": [
+        "tools/pfem_retention_public_record_index_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public record index verification receipt validation",
+      "args": [
+        "tools/pfem_retention_public_record_index_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public record index closeout record validation",
+      "args": [
+        "tools/pfem_retention_public_record_index_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final release bundle record validation",
+      "args": [
+        "tools/pfem_retention_final_release_bundle_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final release bundle verification receipt validation",
+      "args": [
+        "tools/pfem_retention_final_release_bundle_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final release bundle closeout record validation",
+      "args": [
+        "tools/pfem_retention_final_release_bundle_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal access notice record validation",
+      "args": [
+        "tools/pfem_retention_terminal_access_notice_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal access notice verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_access_notice_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal access notice closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_access_notice_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release acceptance record validation",
+      "args": [
+        "tools/pfem_retention_release_acceptance_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release acceptance verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_acceptance_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release acceptance closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_acceptance_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access completion record validation",
+      "args": [
+        "tools/pfem_retention_access_completion_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access completion verification receipt validation",
+      "args": [
+        "tools/pfem_retention_access_completion_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention access completion closeout record validation",
+      "args": [
+        "tools/pfem_retention_access_completion_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication certificate record validation",
+      "args": [
+        "tools/pfem_retention_publication_certificate_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication certificate verification receipt validation",
+      "args": [
+        "tools/pfem_retention_publication_certificate_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication certificate closeout record validation",
+      "args": [
+        "tools/pfem_retention_publication_certificate_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution closure notice record validation",
+      "args": [
+        "tools/pfem_retention_distribution_closure_notice_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution closure notice verification receipt validation",
+      "args": [
+        "tools/pfem_retention_distribution_closure_notice_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention distribution closure notice closeout record validation",
+      "args": [
+        "tools/pfem_retention_distribution_closure_notice_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public access register record validation",
+      "args": [
+        "tools/pfem_retention_public_access_register_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public access register verification receipt validation",
+      "args": [
+        "tools/pfem_retention_public_access_register_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public access register closeout record validation",
+      "args": [
+        "tools/pfem_retention_public_access_register_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access index record validation",
+      "args": [
+        "tools/pfem_retention_release_access_index_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access index verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_access_index_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access index closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_access_index_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access verification summary record validation",
+      "args": [
+        "tools/pfem_retention_release_access_verification_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access verification summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_access_verification_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access verification summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_access_verification_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access closeout summary record validation",
+      "args": [
+        "tools/pfem_retention_release_access_closeout_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access closeout summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_access_closeout_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release access closeout summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_access_closeout_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention archive availability rollup record validation",
+      "args": [
+        "tools/pfem_retention_archive_availability_rollup_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention archive availability rollup verification receipt validation",
+      "args": [
+        "tools/pfem_retention_archive_availability_rollup_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention archive availability rollup closeout record validation",
+      "args": [
+        "tools/pfem_retention_archive_availability_rollup_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval readiness snapshot record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_readiness_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval readiness snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_retrieval_readiness_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention retrieval readiness snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_retrieval_readiness_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention consumer availability notice record validation",
+      "args": [
+        "tools/pfem_retention_consumer_availability_notice_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention consumer availability notice verification receipt validation",
+      "args": [
+        "tools/pfem_retention_consumer_availability_notice_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention consumer availability notice closeout record validation",
+      "args": [
+        "tools/pfem_retention_consumer_availability_notice_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public release receipt record validation",
+      "args": [
+        "tools/pfem_retention_public_release_receipt_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public release receipt verification receipt validation",
+      "args": [
+        "tools/pfem_retention_public_release_receipt_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention public release receipt closeout record validation",
+      "args": [
+        "tools/pfem_retention_public_release_receipt_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release exception register record validation",
+      "args": [
+        "tools/pfem_retention_release_exception_register_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release exception register verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_exception_register_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release exception register closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_exception_register_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release exception summary record validation",
+      "args": [
+        "tools/pfem_retention_release_exception_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release exception summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_exception_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release exception summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_exception_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release metrics snapshot record validation",
+      "args": [
+        "tools/pfem_retention_release_metrics_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release metrics snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_metrics_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release metrics snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_metrics_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release terminal report record validation",
+      "args": [
+        "tools/pfem_retention_release_terminal_report_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release terminal report verification receipt validation",
+      "args": [
+        "tools/pfem_retention_release_terminal_report_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention release terminal report closeout record validation",
+      "args": [
+        "tools/pfem_retention_release_terminal_report_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final publication notice record validation",
+      "args": [
+        "tools/pfem_retention_final_publication_notice_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final publication notice verification receipt validation",
+      "args": [
+        "tools/pfem_retention_final_publication_notice_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention final publication notice closeout record validation",
+      "args": [
+        "tools/pfem_retention_final_publication_notice_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication completion record validation",
+      "args": [
+        "tools/pfem_retention_publication_completion_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication completion verification receipt validation",
+      "args": [
+        "tools/pfem_retention_publication_completion_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication completion closeout record validation",
+      "args": [
+        "tools/pfem_retention_publication_completion_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication closure certificate record validation",
+      "args": [
+        "tools/pfem_retention_publication_closure_certificate_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication closure certificate verification receipt validation",
+      "args": [
+        "tools/pfem_retention_publication_closure_certificate_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication closure certificate closeout record validation",
+      "args": [
+        "tools/pfem_retention_publication_closure_certificate_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public index record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_index_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public index verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_index_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public index closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_index_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public digest record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_digest_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public digest verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_digest_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public digest closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_digest_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public archive copy record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_archive_copy_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public archive copy verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_archive_copy_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public archive copy closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_archive_copy_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public audit snapshot record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_audit_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public audit snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_audit_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public audit snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_audit_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public metrics snapshot record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_metrics_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public metrics snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_metrics_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public metrics snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_metrics_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public release summary record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_release_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public release summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_release_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal public release summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_public_release_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal distribution summary record validation",
+      "args": [
+        "tools/pfem_retention_terminal_distribution_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal distribution summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_distribution_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal distribution summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_distribution_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal access summary record validation",
+      "args": [
+        "tools/pfem_retention_terminal_access_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal access summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_access_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal access summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_access_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal retrieval summary record validation",
+      "args": [
+        "tools/pfem_retention_terminal_retrieval_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal retrieval summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_retrieval_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal retrieval summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_retrieval_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal consumer summary record validation",
+      "args": [
+        "tools/pfem_retention_terminal_consumer_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal consumer summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_consumer_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal consumer summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_consumer_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal exception summary record validation",
+      "args": [
+        "tools/pfem_retention_terminal_exception_summary_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal exception summary verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_exception_summary_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal exception summary closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_exception_summary_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal archive report record validation",
+      "args": [
+        "tools/pfem_retention_terminal_archive_report_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal archive report verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_archive_report_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal archive report closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_archive_report_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal release annex record validation",
+      "args": [
+        "tools/pfem_retention_terminal_release_annex_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal release annex verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_release_annex_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal release annex closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_release_annex_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal publication bundle record validation",
+      "args": [
+        "tools/pfem_retention_terminal_publication_bundle_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal publication bundle verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_publication_bundle_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal publication bundle closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_publication_bundle_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication terminal status record validation",
+      "args": [
+        "tools/pfem_retention_publication_terminal_status_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication terminal status verification receipt validation",
+      "args": [
+        "tools/pfem_retention_publication_terminal_status_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention publication terminal status closeout record validation",
+      "args": [
+        "tools/pfem_retention_publication_terminal_status_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final closeout verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_closeout_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final closeout closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_closeout_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal evidence index record validation",
+      "args": [
+        "tools/pfem_retention_terminal_evidence_index_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal evidence index verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_evidence_index_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal evidence index closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_evidence_index_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal manifest attestation record validation",
+      "args": [
+        "tools/pfem_retention_terminal_manifest_attestation_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal manifest attestation verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_manifest_attestation_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal manifest attestation closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_manifest_attestation_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal integrity certificate record validation",
+      "args": [
+        "tools/pfem_retention_terminal_integrity_certificate_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal integrity certificate verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_integrity_certificate_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal integrity certificate closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_integrity_certificate_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal rollup report record validation",
+      "args": [
+        "tools/pfem_retention_terminal_rollup_report_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal rollup report verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_rollup_report_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal rollup report closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_rollup_report_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal disposition ledger record validation",
+      "args": [
+        "tools/pfem_retention_terminal_disposition_ledger_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal disposition ledger verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_disposition_ledger_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal disposition ledger closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_disposition_ledger_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal custody certificate record validation",
+      "args": [
+        "tools/pfem_retention_terminal_custody_certificate_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal custody certificate verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_custody_certificate_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal custody certificate closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_custody_certificate_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal archive manifest record validation",
+      "args": [
+        "tools/pfem_retention_terminal_archive_manifest_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal archive manifest verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_archive_manifest_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal archive manifest closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_archive_manifest_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal storage receipt record validation",
+      "args": [
+        "tools/pfem_retention_terminal_storage_receipt_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal storage receipt verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_storage_receipt_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal storage receipt closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_storage_receipt_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal retrieval certificate record validation",
+      "args": [
+        "tools/pfem_retention_terminal_retrieval_certificate_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal retrieval certificate verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_retrieval_certificate_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal retrieval certificate closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_retrieval_certificate_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal policy attestation record validation",
+      "args": [
+        "tools/pfem_retention_terminal_policy_attestation_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal policy attestation verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_policy_attestation_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal policy attestation closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_policy_attestation_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal control snapshot record validation",
+      "args": [
+        "tools/pfem_retention_terminal_control_snapshot_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal control snapshot verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_control_snapshot_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal control snapshot closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_control_snapshot_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal compliance report record validation",
+      "args": [
+        "tools/pfem_retention_terminal_compliance_report_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal compliance report verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_compliance_report_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal compliance report closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_compliance_report_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final digest record validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_digest_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final digest verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_digest_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final digest closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_digest_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final seal record validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_seal_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final seal verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_seal_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal final seal closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_final_seal_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal finalization record record validation",
+      "args": [
+        "tools/pfem_retention_terminal_finalization_record_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal finalization record verification receipt validation",
+      "args": [
+        "tools/pfem_retention_terminal_finalization_record_verification_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention terminal finalization record closeout record validation",
+      "args": [
+        "tools/pfem_retention_terminal_finalization_record_closeout_records.py"
+      ]
+    },
+    {
+      "label": "Running PFEM delivery validation",
+      "args": [
+        "tools/pfem_delivery.py"
+      ]
+    },
+    {
+      "label": "Running PFEM delivery job validation",
+      "args": [
+        "tools/pfem_delivery_jobs.py"
+      ]
+    },
+    {
+      "label": "Running PFEM transport validation",
+      "args": [
+        "tools/pfem_transport.py"
+      ]
+    },
+    {
+      "label": "Running PFEM transport receipt validation",
+      "args": [
+        "tools/pfem_transport_receipts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM routing validation",
+      "args": [
+        "tools/pfem_routing.py"
+      ]
+    },
+    {
+      "label": "Running PFEM handling validation",
+      "args": [
+        "tools/pfem_handling.py"
+      ]
+    },
+    {
+      "label": "Running PFEM retention validation",
+      "args": [
+        "tools/pfem_retention.py"
+      ]
+    },
+    {
+      "label": "Running PFEM quality validation",
+      "args": [
+        "tools/pfem_quality.py"
+      ]
+    },
+    {
+      "label": "Running PFEM action validation",
+      "args": [
+        "tools/pfem_actions.py"
+      ]
+    },
+    {
+      "label": "Running PFEM playbook validation",
+      "args": [
+        "tools/pfem_playbooks.py"
+      ]
+    },
+    {
+      "label": "Running PFEM review validation",
+      "args": [
+        "tools/pfem_review.py"
+      ]
+    },
+    {
+      "label": "Running PFEM audit validation",
+      "args": [
+        "tools/pfem_audit.py"
+      ]
+    },
+    {
+      "label": "Running PFEM bundle validation",
+      "args": [
+        "tools/pfem_bundles.py"
+      ]
+    },
+    {
+      "label": "Running PFEM exchange validation",
+      "args": [
+        "tools/pfem_exchange.py"
+      ]
+    },
+    {
+      "label": "Running PFEM reconciliation validation",
+      "args": [
+        "tools/pfem_reconciliation.py"
+      ]
+    },
+    {
+      "label": "Running PFEM schema contract validation",
+      "args": [
+        "tools/pfem_schema_contracts.py"
+      ]
+    },
+    {
+      "label": "Running PFEM policy validation",
+      "args": [
+        "tools/pfem_policy.py"
+      ]
+    },
+    {
+      "label": "Running PFEM lineage validation",
+      "args": [
+        "tools/pfem_lineage.py"
+      ]
+    },
+    {
+      "label": "Running PFEM rollup validation",
+      "args": [
+        "tools/pfem_rollup.py"
+      ]
+    },
+    {
+      "label": "Running PFEM integrity validation",
+      "args": [
+        "tools/pfem_integrity.py"
+      ]
+    },
+    {
+      "label": "Running PFEM doctor",
+      "args": [
+        "tools/pfem_doctor.py"
+      ]
+    },
+    {
+      "label": "Running PFEM smoke check",
+      "args": [
+        "tools/pfem_smoke.py"
+      ]
+    },
+    {
+      "label": "Running PFEM unit tests",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/unit",
+        "-p",
+        "test_*.py"
+      ]
+    }
+  ]
+}
