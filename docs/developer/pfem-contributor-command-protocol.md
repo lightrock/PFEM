@@ -100,3 +100,33 @@ docs/developer/pfem-new-tab-prompt.md
 ```
 
 When in doubt, output that prompt.
+
+
+## Command: Read workorders/... and execute it
+
+When any developer says:
+
+```text
+Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute it.
+```
+
+the executor must:
+
+```text
+1. Read the exact committed workorder file.
+2. Inspect recent workorders for overlap/conflict before editing.
+3. Perform only the named scope unless the developer explicitly expands it.
+4. Run the required checks (or the closest available checks) and report exactly what ran.
+5. Reference the exact workorder path in completion notes and PR body.
+```
+
+### Mandatory PR/body line for workorder execution
+
+For workorder-driven changes, include this exact section in the PR body:
+
+```text
+## Workorder
+Executed: workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md
+```
+
+Do not rely on optional templates to carry this line. Put it directly in the submitted PR body text.
