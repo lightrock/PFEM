@@ -95,7 +95,7 @@ PFEM has a project-level command protocol for humans and AI assistants.
 
 When any developer says `start a new tab`, the worker should produce the canonical PFEM new-tab handoff prompt instead of continuing implementation work.
 
-When any developer says `create a workorder`, `write a workorder`, or `make a workorder`, create a dated PFEM workorder file under `workorders/` instead of treating the task as throwaway chat text.
+When any developer says `create a workorder`, `write a workorder`, or `make a workorder`, the foreground assistant should generate a dated PFEM workorder file under `workorders/` and give the developer the exact one-line instruction to paste into the executor. The developer should not have to hand-write the workorder in Notepad.
 
 See:
 
@@ -108,12 +108,24 @@ workorders/AGENTS.md
 
 ## Workorders
 
-PFEM can split substantial AI-assisted work into two lanes:
+Workorders are meant to be generated for developers, not hand-written by developers.
+
+The normal workflow is:
+
+1. A developer discusses a substantial task with a foreground assistant such as GPT.
+2. The foreground assistant decides the task needs a durable handoff.
+3. The foreground assistant creates a dated workorder file under `workorders/`.
+4. The foreground assistant gives the developer one exact line to paste into the executor, such as Codex, another AI, or a human working session.
+5. The executor reads that committed workorder file and carries out the task.
+
+The developer's job is to decide and approve the work. The foreground assistant's job is to turn that decision into a clear workorder when the work is substantial enough to need one.
+
+A workorder is the bridge between two lanes:
 
 - a foreground assistant or human frames the work, constraints, and checks;
 - an executor, such as Codex, another AI, or a human developer, carries out the named task.
 
-A workorder is the bridge between those lanes. It is a committed pre-action decision record and executable task contract. It keeps the project from losing the reason for a change inside a chat window, local patch folder, or vendor-specific AI session.
+A workorder is also a committed pre-action decision record and executable task contract. It keeps the project from losing the reason for a change inside a chat window, local patch folder, or vendor-specific AI session.
 
 This matters because a GitHub PR alone may show the final code diff without preserving what the foreground assistant asked the executor to do. A workorder gives the PR a durable breadcrumb: the executor should name the exact `workorders/...md` file it used so future reviewers can trace the instruction, implementation, and review path.
 
