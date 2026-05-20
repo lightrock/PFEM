@@ -140,6 +140,8 @@ Use workorders for substantial or process-sensitive work, especially changes tha
 
 A workorder may also ask the executor to record a lessons-learned note when it encounters a hard, repeated, or high-impact problem. The point is replay value: if the same class of task happens again, the next human or AI should not have to rediscover the same lesson from scratch.
 
+If a lot of lessons learned are being generated, this should be treated as a smoke signal architecturally "something's burning!"
+
 The standard filename shape is:
 
 ```text
