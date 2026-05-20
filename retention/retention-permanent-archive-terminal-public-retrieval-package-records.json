@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_public_retrieval_package_record_id": "retention-permanent-archive-terminal-public-retrieval-package-basic-restore-001",
+    "permanent_archive_terminal_public_retrieval_package_kind": "retention_permanent_archive_terminal_public_retrieval_package",
+    "created_time": "2026-01-01T00:14:22Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_public_access_notice_closeout_record_id": "retention-permanent-archive-terminal-public-access-notice-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_public_access_notice_verification_receipt_id": "retention-permanent-archive-terminal-public-access-notice-verification-basic-restore-001",
+    "permanent_archive_terminal_public_retrieval_package_state": "packaged",
+    "permanent_archive_terminal_public_retrieval_package_scope": "closed_retention_permanent_archive_terminal_public_access_notice",
+    "permanent_archive_terminal_public_retrieval_package_refs": [
+      "retention-permanent-archive-terminal-public-access-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-notice-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-notice-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-record-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-public-access-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-notice-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-notice-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-public-retrieval-package-ref-list",
+    "permanent_archive_terminal_public_retrieval_package_ref_digest": "7bd55597d2b63f390ca3ee92e0b34324fd0878f9cc487c78840478ee9551a068",
+    "permanent_archive_terminal_public_retrieval_package_by_ref": "tools/pfem_retention_permanent_archive_terminal_public_retrieval_package_records.py",
+    "summary": "Synthetic example retention permanent archive terminal public retrieval package record built from the closed retention permanent archive terminal public access notice path."
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_public_retrieval_receipt_record_id": "retention-permanent-archive-terminal-public-retrieval-receipt-basic-restore-001",
+    "permanent_archive_terminal_public_retrieval_receipt_kind": "retention_permanent_archive_terminal_public_retrieval_receipt",
+    "created_time": "2026-01-01T00:14:25Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id": "retention-permanent-archive-terminal-public-retrieval-package-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id": "retention-permanent-archive-terminal-public-retrieval-package-verification-basic-restore-001",
+    "permanent_archive_terminal_public_retrieval_receipt_state": "acknowledged",
+    "permanent_archive_terminal_public_retrieval_receipt_scope": "closed_retention_permanent_archive_terminal_public_retrieval_package",
+    "permanent_archive_terminal_public_retrieval_receipt_refs": [
+      "retention-permanent-archive-terminal-public-retrieval-package-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-public-retrieval-package-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-public-retrieval-package-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-record-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-public-retrieval-package-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-public-retrieval-package-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-public-retrieval-package-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-public-retrieval-receipt-ref-list",
+    "permanent_archive_terminal_public_retrieval_receipt_ref_digest": "6d53e079ce00b8cb2222dc2b80814d388a46529fea246a407f6d7a4965c12fd8",
+    "permanent_archive_terminal_public_retrieval_receipt_by_ref": "tools/pfem_retention_permanent_archive_terminal_public_retrieval_receipt_records.py",
+    "summary": "Synthetic example retention permanent archive terminal public retrieval receipt record built from the closed retention permanent archive terminal public retrieval package path."
+  }
+]

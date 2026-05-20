@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_public_access_notice_record_id": "retention-permanent-archive-terminal-public-access-notice-basic-restore-001",
+    "permanent_archive_terminal_public_access_notice_kind": "retention_permanent_archive_terminal_public_access_notice",
+    "created_time": "2026-01-01T00:14:19Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_public_access_register_closeout_record_id": "retention-permanent-archive-terminal-public-access-register-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_public_access_register_verification_receipt_id": "retention-permanent-archive-terminal-public-access-register-verification-basic-restore-001",
+    "permanent_archive_terminal_public_access_notice_state": "published",
+    "permanent_archive_terminal_public_access_notice_scope": "closed_retention_permanent_archive_terminal_public_access_register",
+    "permanent_archive_terminal_public_access_notice_refs": [
+      "retention-permanent-archive-terminal-public-access-register-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-register-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-register-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-record-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-public-access-register-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-register-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-public-access-register-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-public-access-notice-ref-list",
+    "permanent_archive_terminal_public_access_notice_ref_digest": "788eb7e883212eb5025d4b15a157f8620144328c1109fed105cb327adf69483e",
+    "permanent_archive_terminal_public_access_notice_by_ref": "tools/pfem_retention_permanent_archive_terminal_public_access_notice_records.py",
+    "summary": "Synthetic example retention permanent archive terminal public access notice record built from the closed retention permanent archive terminal public access register path."
+  }
+]

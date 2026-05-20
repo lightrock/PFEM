@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id": "retention-permanent-archive-terminal-closure-rollup-report-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_closure_rollup_report_verification",
+    "created_time": "2026-01-01T00:14:47Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_rollup_report_record_id": "retention-permanent-archive-terminal-closure-rollup-report-basic-restore-001",
+    "retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id": "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_closure_rollup_report_refs": [
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-closure-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-record-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-rollup-report-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-rollup-report-ref-list",
+    "expected_permanent_archive_terminal_closure_rollup_report_ref_digest": "8a83330fdedd250ead84deba9b127e3623810f83555d1579bc31e2e338030158",
+    "actual_permanent_archive_terminal_closure_rollup_report_ref_digest": "8a83330fdedd250ead84deba9b127e3623810f83555d1579bc31e2e338030158",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_rollup_report_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal closure rollup report verification receipt showing refs and digest were checked."
+  }
+]

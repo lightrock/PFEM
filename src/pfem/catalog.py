@@ -725,6 +725,56 @@ from pfem.retention_permanent_archive_terminal_final_distribution_summary_verifi
 from pfem.retention_permanent_archive_terminal_final_distribution_summary_closeout_record import load_retention_permanent_archive_terminal_final_distribution_summary_closeout_records
 from pfem.retention_permanent_archive_terminal_closure_record_record import load_retention_permanent_archive_terminal_closure_record_records
 from pfem.retention_permanent_archive_terminal_closure_record_verification_receipt import load_retention_permanent_archive_terminal_closure_record_verification_receipts
+from pfem.retention_permanent_archive_terminal_closure_record_closeout_record import load_retention_permanent_archive_terminal_closure_record_closeout_records
+from pfem.retention_permanent_archive_terminal_closure_certificate_record import load_retention_permanent_archive_terminal_closure_certificate_records
+from pfem.retention_permanent_archive_terminal_closure_certificate_verification_receipt import load_retention_permanent_archive_terminal_closure_certificate_verification_receipts
+from pfem.retention_permanent_archive_terminal_closure_certificate_closeout_record import load_retention_permanent_archive_terminal_closure_certificate_closeout_records
+from pfem.retention_permanent_archive_terminal_closure_manifest_record import load_retention_permanent_archive_terminal_closure_manifest_records
+from pfem.retention_permanent_archive_terminal_closure_manifest_verification_receipt import load_retention_permanent_archive_terminal_closure_manifest_verification_receipts
+from pfem.retention_permanent_archive_terminal_closure_manifest_closeout_record import load_retention_permanent_archive_terminal_closure_manifest_closeout_records
+from pfem.retention_permanent_archive_terminal_closure_index_record import load_retention_permanent_archive_terminal_closure_index_records
+from pfem.retention_permanent_archive_terminal_closure_index_verification_receipt import load_retention_permanent_archive_terminal_closure_index_verification_receipts
+from pfem.retention_permanent_archive_terminal_closure_index_closeout_record import load_retention_permanent_archive_terminal_closure_index_closeout_records
+from pfem.retention_permanent_archive_terminal_closure_digest_record import load_retention_permanent_archive_terminal_closure_digest_records
+from pfem.retention_permanent_archive_terminal_closure_digest_verification_receipt import load_retention_permanent_archive_terminal_closure_digest_verification_receipts
+from pfem.retention_permanent_archive_terminal_closure_digest_closeout_record import load_retention_permanent_archive_terminal_closure_digest_closeout_records
+from pfem.retention_permanent_archive_terminal_public_record_index_record import load_retention_permanent_archive_terminal_public_record_index_records
+from pfem.retention_permanent_archive_terminal_public_record_index_verification_receipt import load_retention_permanent_archive_terminal_public_record_index_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_record_index_closeout_record import load_retention_permanent_archive_terminal_public_record_index_closeout_records
+from pfem.retention_permanent_archive_terminal_public_access_register_record import load_retention_permanent_archive_terminal_public_access_register_records
+from pfem.retention_permanent_archive_terminal_public_access_register_verification_receipt import load_retention_permanent_archive_terminal_public_access_register_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_access_register_closeout_record import load_retention_permanent_archive_terminal_public_access_register_closeout_records
+from pfem.retention_permanent_archive_terminal_public_access_notice_record import load_retention_permanent_archive_terminal_public_access_notice_records
+from pfem.retention_permanent_archive_terminal_public_access_notice_verification_receipt import load_retention_permanent_archive_terminal_public_access_notice_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_access_notice_closeout_record import load_retention_permanent_archive_terminal_public_access_notice_closeout_records
+from pfem.retention_permanent_archive_terminal_public_retrieval_package_record import load_retention_permanent_archive_terminal_public_retrieval_package_records
+from pfem.retention_permanent_archive_terminal_public_retrieval_package_verification_receipt import load_retention_permanent_archive_terminal_public_retrieval_package_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_retrieval_package_closeout_record import load_retention_permanent_archive_terminal_public_retrieval_package_closeout_records
+from pfem.retention_permanent_archive_terminal_public_retrieval_receipt_record import load_retention_permanent_archive_terminal_public_retrieval_receipt_records
+from pfem.retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt import load_retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record import load_retention_permanent_archive_terminal_public_retrieval_receipt_closeout_records
+from pfem.retention_permanent_archive_terminal_public_distribution_manifest_record import load_retention_permanent_archive_terminal_public_distribution_manifest_records
+from pfem.retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt import load_retention_permanent_archive_terminal_public_distribution_manifest_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_distribution_manifest_closeout_record import load_retention_permanent_archive_terminal_public_distribution_manifest_closeout_records
+from pfem.retention_permanent_archive_terminal_public_distribution_receipt_record import load_retention_permanent_archive_terminal_public_distribution_receipt_records
+from pfem.retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt import load_retention_permanent_archive_terminal_public_distribution_receipt_verification_receipts
+from pfem.retention_permanent_archive_terminal_public_distribution_receipt_closeout_record import load_retention_permanent_archive_terminal_public_distribution_receipt_closeout_records
+from pfem.retention_permanent_archive_terminal_authority_closure_notice_record import load_retention_permanent_archive_terminal_authority_closure_notice_records
+from pfem.retention_permanent_archive_terminal_authority_closure_notice_verification_receipt import load_retention_permanent_archive_terminal_authority_closure_notice_verification_receipts
+from pfem.retention_permanent_archive_terminal_authority_closure_notice_closeout_record import load_retention_permanent_archive_terminal_authority_closure_notice_closeout_records
+from pfem.retention_permanent_archive_terminal_authority_closure_receipt_record import load_retention_permanent_archive_terminal_authority_closure_receipt_records
+from pfem.retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt import load_retention_permanent_archive_terminal_authority_closure_receipt_verification_receipts
+from pfem.retention_permanent_archive_terminal_authority_closure_receipt_closeout_record import load_retention_permanent_archive_terminal_authority_closure_receipt_closeout_records
+from pfem.retention_permanent_archive_terminal_authority_release_certificate_record import load_retention_permanent_archive_terminal_authority_release_certificate_records
+from pfem.retention_permanent_archive_terminal_authority_release_certificate_verification_receipt import load_retention_permanent_archive_terminal_authority_release_certificate_verification_receipts
+from pfem.retention_permanent_archive_terminal_authority_release_certificate_closeout_record import load_retention_permanent_archive_terminal_authority_release_certificate_closeout_records
+from pfem.retention_permanent_archive_terminal_authority_release_receipt_record import load_retention_permanent_archive_terminal_authority_release_receipt_records
+from pfem.retention_permanent_archive_terminal_authority_release_receipt_verification_receipt import load_retention_permanent_archive_terminal_authority_release_receipt_verification_receipts
+from pfem.retention_permanent_archive_terminal_authority_release_receipt_closeout_record import load_retention_permanent_archive_terminal_authority_release_receipt_closeout_records
+from pfem.retention_permanent_archive_terminal_closure_rollup_report_record import load_retention_permanent_archive_terminal_closure_rollup_report_records
+from pfem.retention_permanent_archive_terminal_closure_rollup_report_verification_receipt import load_retention_permanent_archive_terminal_closure_rollup_report_verification_receipts
+from pfem.retention_permanent_archive_terminal_closure_rollup_report_closeout_record import load_retention_permanent_archive_terminal_closure_rollup_report_closeout_records
+from pfem.retention_permanent_archive_terminal_closure_final_summary_record import load_retention_permanent_archive_terminal_closure_final_summary_records
 from pfem.doctor import find_repo_root
 from pfem.example_runtime import load_example_registry
 from pfem.exchange import load_exchange_receipts
@@ -4466,6 +4516,256 @@ def _retention_permanent_archive_terminal_closure_record_verification_receipt_ro
     return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_record_verification_receipt_id": r["retention_permanent_archive_terminal_closure_record_verification_receipt_id"], "retention_permanent_archive_terminal_closure_record_record_id": r["retention_permanent_archive_terminal_closure_record_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_closure_record_refs": len(r["checked_permanent_archive_terminal_closure_record_refs"])} for r in load_retention_permanent_archive_terminal_closure_record_verification_receipts(p)]
 
 
+def _retention_permanent_archive_terminal_closure_record_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-record-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_record_closeout_record_id": r["retention_permanent_archive_terminal_closure_record_closeout_record_id"], "retention_permanent_archive_terminal_closure_record_verification_receipt_id": r["retention_permanent_archive_terminal_closure_record_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_closure_record_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_certificate_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-certificate-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_certificate_record_id": r["retention_permanent_archive_terminal_closure_certificate_record_id"], "retention_permanent_archive_terminal_closure_record_closeout_record_id": r["retention_permanent_archive_terminal_closure_record_closeout_record_id"], "permanent_archive_terminal_closure_certificate_state": r["permanent_archive_terminal_closure_certificate_state"], "permanent_archive_terminal_closure_certificate_scope": r["permanent_archive_terminal_closure_certificate_scope"]} for r in load_retention_permanent_archive_terminal_closure_certificate_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_certificate_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-certificate-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_certificate_verification_receipt_id": r["retention_permanent_archive_terminal_closure_certificate_verification_receipt_id"], "retention_permanent_archive_terminal_closure_certificate_record_id": r["retention_permanent_archive_terminal_closure_certificate_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_closure_certificate_refs": len(r["checked_permanent_archive_terminal_closure_certificate_refs"])} for r in load_retention_permanent_archive_terminal_closure_certificate_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_closure_certificate_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-certificate-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_certificate_closeout_record_id": r["retention_permanent_archive_terminal_closure_certificate_closeout_record_id"], "retention_permanent_archive_terminal_closure_certificate_verification_receipt_id": r["retention_permanent_archive_terminal_closure_certificate_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_closure_certificate_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_manifest_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-manifest-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_manifest_record_id": r["retention_permanent_archive_terminal_closure_manifest_record_id"], "retention_permanent_archive_terminal_closure_certificate_closeout_record_id": r["retention_permanent_archive_terminal_closure_certificate_closeout_record_id"], "permanent_archive_terminal_closure_manifest_state": r["permanent_archive_terminal_closure_manifest_state"], "permanent_archive_terminal_closure_manifest_scope": r["permanent_archive_terminal_closure_manifest_scope"]} for r in load_retention_permanent_archive_terminal_closure_manifest_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_manifest_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-manifest-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_manifest_verification_receipt_id": r["retention_permanent_archive_terminal_closure_manifest_verification_receipt_id"], "retention_permanent_archive_terminal_closure_manifest_record_id": r["retention_permanent_archive_terminal_closure_manifest_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_closure_manifest_refs": len(r["checked_permanent_archive_terminal_closure_manifest_refs"])} for r in load_retention_permanent_archive_terminal_closure_manifest_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_closure_manifest_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-manifest-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_manifest_closeout_record_id": r["retention_permanent_archive_terminal_closure_manifest_closeout_record_id"], "retention_permanent_archive_terminal_closure_manifest_verification_receipt_id": r["retention_permanent_archive_terminal_closure_manifest_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_closure_manifest_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_index_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-index-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_index_record_id": r["retention_permanent_archive_terminal_closure_index_record_id"], "retention_permanent_archive_terminal_closure_manifest_closeout_record_id": r["retention_permanent_archive_terminal_closure_manifest_closeout_record_id"], "permanent_archive_terminal_closure_index_state": r["permanent_archive_terminal_closure_index_state"], "permanent_archive_terminal_closure_index_scope": r["permanent_archive_terminal_closure_index_scope"]} for r in load_retention_permanent_archive_terminal_closure_index_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_index_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-index-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_index_verification_receipt_id": r["retention_permanent_archive_terminal_closure_index_verification_receipt_id"], "retention_permanent_archive_terminal_closure_index_record_id": r["retention_permanent_archive_terminal_closure_index_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_closure_index_refs": len(r["checked_permanent_archive_terminal_closure_index_refs"])} for r in load_retention_permanent_archive_terminal_closure_index_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_closure_index_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-index-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_index_closeout_record_id": r["retention_permanent_archive_terminal_closure_index_closeout_record_id"], "retention_permanent_archive_terminal_closure_index_verification_receipt_id": r["retention_permanent_archive_terminal_closure_index_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_closure_index_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_digest_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-digest-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_digest_record_id": r["retention_permanent_archive_terminal_closure_digest_record_id"], "retention_permanent_archive_terminal_closure_index_closeout_record_id": r["retention_permanent_archive_terminal_closure_index_closeout_record_id"], "permanent_archive_terminal_closure_digest_state": r["permanent_archive_terminal_closure_digest_state"], "permanent_archive_terminal_closure_digest_scope": r["permanent_archive_terminal_closure_digest_scope"]} for r in load_retention_permanent_archive_terminal_closure_digest_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_digest_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-digest-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_digest_verification_receipt_id": r["retention_permanent_archive_terminal_closure_digest_verification_receipt_id"], "retention_permanent_archive_terminal_closure_digest_record_id": r["retention_permanent_archive_terminal_closure_digest_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_closure_digest_refs": len(r["checked_permanent_archive_terminal_closure_digest_refs"])} for r in load_retention_permanent_archive_terminal_closure_digest_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_closure_digest_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-digest-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_digest_closeout_record_id": r["retention_permanent_archive_terminal_closure_digest_closeout_record_id"], "retention_permanent_archive_terminal_closure_digest_verification_receipt_id": r["retention_permanent_archive_terminal_closure_digest_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_closure_digest_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_record_index_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-record-index-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_record_index_record_id": r["retention_permanent_archive_terminal_public_record_index_record_id"], "retention_permanent_archive_terminal_closure_digest_closeout_record_id": r["retention_permanent_archive_terminal_closure_digest_closeout_record_id"], "permanent_archive_terminal_public_record_index_state": r["permanent_archive_terminal_public_record_index_state"], "permanent_archive_terminal_public_record_index_scope": r["permanent_archive_terminal_public_record_index_scope"]} for r in load_retention_permanent_archive_terminal_public_record_index_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_record_index_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-record-index-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_record_index_verification_receipt_id": r["retention_permanent_archive_terminal_public_record_index_verification_receipt_id"], "retention_permanent_archive_terminal_public_record_index_record_id": r["retention_permanent_archive_terminal_public_record_index_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_record_index_refs": len(r["checked_permanent_archive_terminal_public_record_index_refs"])} for r in load_retention_permanent_archive_terminal_public_record_index_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_record_index_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-record-index-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_record_index_closeout_record_id": r["retention_permanent_archive_terminal_public_record_index_closeout_record_id"], "retention_permanent_archive_terminal_public_record_index_verification_receipt_id": r["retention_permanent_archive_terminal_public_record_index_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_record_index_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_access_register_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-access-register-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_access_register_record_id": r["retention_permanent_archive_terminal_public_access_register_record_id"], "retention_permanent_archive_terminal_public_record_index_closeout_record_id": r["retention_permanent_archive_terminal_public_record_index_closeout_record_id"], "permanent_archive_terminal_public_access_register_state": r["permanent_archive_terminal_public_access_register_state"], "permanent_archive_terminal_public_access_register_scope": r["permanent_archive_terminal_public_access_register_scope"]} for r in load_retention_permanent_archive_terminal_public_access_register_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_access_register_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-access-register-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_access_register_verification_receipt_id": r["retention_permanent_archive_terminal_public_access_register_verification_receipt_id"], "retention_permanent_archive_terminal_public_access_register_record_id": r["retention_permanent_archive_terminal_public_access_register_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_access_register_refs": len(r["checked_permanent_archive_terminal_public_access_register_refs"])} for r in load_retention_permanent_archive_terminal_public_access_register_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_access_register_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-access-register-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_access_register_closeout_record_id": r["retention_permanent_archive_terminal_public_access_register_closeout_record_id"], "retention_permanent_archive_terminal_public_access_register_verification_receipt_id": r["retention_permanent_archive_terminal_public_access_register_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_access_register_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_access_notice_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-access-notice-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_access_notice_record_id": r["retention_permanent_archive_terminal_public_access_notice_record_id"], "retention_permanent_archive_terminal_public_access_register_closeout_record_id": r["retention_permanent_archive_terminal_public_access_register_closeout_record_id"], "permanent_archive_terminal_public_access_notice_state": r["permanent_archive_terminal_public_access_notice_state"], "permanent_archive_terminal_public_access_notice_scope": r["permanent_archive_terminal_public_access_notice_scope"]} for r in load_retention_permanent_archive_terminal_public_access_notice_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_access_notice_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-access-notice-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_access_notice_verification_receipt_id": r["retention_permanent_archive_terminal_public_access_notice_verification_receipt_id"], "retention_permanent_archive_terminal_public_access_notice_record_id": r["retention_permanent_archive_terminal_public_access_notice_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_access_notice_refs": len(r["checked_permanent_archive_terminal_public_access_notice_refs"])} for r in load_retention_permanent_archive_terminal_public_access_notice_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_access_notice_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-access-notice-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_access_notice_closeout_record_id": r["retention_permanent_archive_terminal_public_access_notice_closeout_record_id"], "retention_permanent_archive_terminal_public_access_notice_verification_receipt_id": r["retention_permanent_archive_terminal_public_access_notice_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_access_notice_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_retrieval_package_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-retrieval-package-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_retrieval_package_record_id": r["retention_permanent_archive_terminal_public_retrieval_package_record_id"], "retention_permanent_archive_terminal_public_access_notice_closeout_record_id": r["retention_permanent_archive_terminal_public_access_notice_closeout_record_id"], "permanent_archive_terminal_public_retrieval_package_state": r["permanent_archive_terminal_public_retrieval_package_state"], "permanent_archive_terminal_public_retrieval_package_scope": r["permanent_archive_terminal_public_retrieval_package_scope"]} for r in load_retention_permanent_archive_terminal_public_retrieval_package_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-retrieval-package-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id": r["retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id"], "retention_permanent_archive_terminal_public_retrieval_package_record_id": r["retention_permanent_archive_terminal_public_retrieval_package_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_retrieval_package_refs": len(r["checked_permanent_archive_terminal_public_retrieval_package_refs"])} for r in load_retention_permanent_archive_terminal_public_retrieval_package_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_retrieval_package_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-retrieval-package-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id": r["retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id"], "retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id": r["retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_retrieval_package_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_retrieval_receipt_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-retrieval-receipt-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_retrieval_receipt_record_id": r["retention_permanent_archive_terminal_public_retrieval_receipt_record_id"], "retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id": r["retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id"], "permanent_archive_terminal_public_retrieval_receipt_state": r["permanent_archive_terminal_public_retrieval_receipt_state"], "permanent_archive_terminal_public_retrieval_receipt_scope": r["permanent_archive_terminal_public_retrieval_receipt_scope"]} for r in load_retention_permanent_archive_terminal_public_retrieval_receipt_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-retrieval-receipt-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_id"], "retention_permanent_archive_terminal_public_retrieval_receipt_record_id": r["retention_permanent_archive_terminal_public_retrieval_receipt_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_retrieval_receipt_refs": len(r["checked_permanent_archive_terminal_public_retrieval_receipt_refs"])} for r in load_retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-retrieval-receipt-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_id": r["retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_id"], "retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_retrieval_receipt_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_distribution_manifest_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-distribution-manifest-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_distribution_manifest_record_id": r["retention_permanent_archive_terminal_public_distribution_manifest_record_id"], "retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_id": r["retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_id"], "permanent_archive_terminal_public_distribution_manifest_state": r["permanent_archive_terminal_public_distribution_manifest_state"], "permanent_archive_terminal_public_distribution_manifest_scope": r["permanent_archive_terminal_public_distribution_manifest_scope"]} for r in load_retention_permanent_archive_terminal_public_distribution_manifest_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-distribution-manifest-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_id": r["retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_id"], "retention_permanent_archive_terminal_public_distribution_manifest_record_id": r["retention_permanent_archive_terminal_public_distribution_manifest_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_distribution_manifest_refs": len(r["checked_permanent_archive_terminal_public_distribution_manifest_refs"])} for r in load_retention_permanent_archive_terminal_public_distribution_manifest_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-distribution-manifest-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_id": r["retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_id"], "retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_id": r["retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_distribution_manifest_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_distribution_receipt_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-distribution-receipt-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_distribution_receipt_record_id": r["retention_permanent_archive_terminal_public_distribution_receipt_record_id"], "retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_id": r["retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_id"], "permanent_archive_terminal_public_distribution_receipt_state": r["permanent_archive_terminal_public_distribution_receipt_state"], "permanent_archive_terminal_public_distribution_receipt_scope": r["permanent_archive_terminal_public_distribution_receipt_scope"]} for r in load_retention_permanent_archive_terminal_public_distribution_receipt_records(p)]
+
+
+def _retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-distribution-receipt-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_id"], "retention_permanent_archive_terminal_public_distribution_receipt_record_id": r["retention_permanent_archive_terminal_public_distribution_receipt_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_public_distribution_receipt_refs": len(r["checked_permanent_archive_terminal_public_distribution_receipt_refs"])} for r in load_retention_permanent_archive_terminal_public_distribution_receipt_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-public-distribution-receipt-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_id": r["retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_id"], "retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_public_distribution_receipt_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_closure_notice_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-closure-notice-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_closure_notice_record_id": r["retention_permanent_archive_terminal_authority_closure_notice_record_id"], "retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_id": r["retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_id"], "permanent_archive_terminal_authority_closure_notice_state": r["permanent_archive_terminal_authority_closure_notice_state"], "permanent_archive_terminal_authority_closure_notice_scope": r["permanent_archive_terminal_authority_closure_notice_scope"]} for r in load_retention_permanent_archive_terminal_authority_closure_notice_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-closure-notice-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_id": r["retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_id"], "retention_permanent_archive_terminal_authority_closure_notice_record_id": r["retention_permanent_archive_terminal_authority_closure_notice_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_authority_closure_notice_refs": len(r["checked_permanent_archive_terminal_authority_closure_notice_refs"])} for r in load_retention_permanent_archive_terminal_authority_closure_notice_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_authority_closure_notice_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-closure-notice-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_closure_notice_closeout_record_id": r["retention_permanent_archive_terminal_authority_closure_notice_closeout_record_id"], "retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_id": r["retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_authority_closure_notice_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_closure_receipt_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-closure-receipt-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_closure_receipt_record_id": r["retention_permanent_archive_terminal_authority_closure_receipt_record_id"], "retention_permanent_archive_terminal_authority_closure_notice_closeout_record_id": r["retention_permanent_archive_terminal_authority_closure_notice_closeout_record_id"], "permanent_archive_terminal_authority_closure_receipt_state": r["permanent_archive_terminal_authority_closure_receipt_state"], "permanent_archive_terminal_authority_closure_receipt_scope": r["permanent_archive_terminal_authority_closure_receipt_scope"]} for r in load_retention_permanent_archive_terminal_authority_closure_receipt_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-closure-receipt-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_id"], "retention_permanent_archive_terminal_authority_closure_receipt_record_id": r["retention_permanent_archive_terminal_authority_closure_receipt_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_authority_closure_receipt_refs": len(r["checked_permanent_archive_terminal_authority_closure_receipt_refs"])} for r in load_retention_permanent_archive_terminal_authority_closure_receipt_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-closure-receipt-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_id": r["retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_id"], "retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_authority_closure_receipt_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_release_certificate_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-release-certificate-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_release_certificate_record_id": r["retention_permanent_archive_terminal_authority_release_certificate_record_id"], "retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_id": r["retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_id"], "permanent_archive_terminal_authority_release_certificate_state": r["permanent_archive_terminal_authority_release_certificate_state"], "permanent_archive_terminal_authority_release_certificate_scope": r["permanent_archive_terminal_authority_release_certificate_scope"]} for r in load_retention_permanent_archive_terminal_authority_release_certificate_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-release-certificate-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_id": r["retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_id"], "retention_permanent_archive_terminal_authority_release_certificate_record_id": r["retention_permanent_archive_terminal_authority_release_certificate_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_authority_release_certificate_refs": len(r["checked_permanent_archive_terminal_authority_release_certificate_refs"])} for r in load_retention_permanent_archive_terminal_authority_release_certificate_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_authority_release_certificate_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-release-certificate-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_release_certificate_closeout_record_id": r["retention_permanent_archive_terminal_authority_release_certificate_closeout_record_id"], "retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_id": r["retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_authority_release_certificate_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_release_receipt_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-release-receipt-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_release_receipt_record_id": r["retention_permanent_archive_terminal_authority_release_receipt_record_id"], "retention_permanent_archive_terminal_authority_release_certificate_closeout_record_id": r["retention_permanent_archive_terminal_authority_release_certificate_closeout_record_id"], "permanent_archive_terminal_authority_release_receipt_state": r["permanent_archive_terminal_authority_release_receipt_state"], "permanent_archive_terminal_authority_release_receipt_scope": r["permanent_archive_terminal_authority_release_receipt_scope"]} for r in load_retention_permanent_archive_terminal_authority_release_receipt_records(p)]
+
+
+def _retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-release-receipt-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_id"], "retention_permanent_archive_terminal_authority_release_receipt_record_id": r["retention_permanent_archive_terminal_authority_release_receipt_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_authority_release_receipt_refs": len(r["checked_permanent_archive_terminal_authority_release_receipt_refs"])} for r in load_retention_permanent_archive_terminal_authority_release_receipt_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_authority_release_receipt_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-authority-release-receipt-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id": r["retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id"], "retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_id": r["retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_authority_release_receipt_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_rollup_report_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-rollup-report-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_rollup_report_record_id": r["retention_permanent_archive_terminal_closure_rollup_report_record_id"], "retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id": r["retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id"], "permanent_archive_terminal_closure_rollup_report_state": r["permanent_archive_terminal_closure_rollup_report_state"], "permanent_archive_terminal_closure_rollup_report_scope": r["permanent_archive_terminal_closure_rollup_report_scope"]} for r in load_retention_permanent_archive_terminal_closure_rollup_report_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-rollup-report-verification-receipts.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id": r["retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id"], "retention_permanent_archive_terminal_closure_rollup_report_record_id": r["retention_permanent_archive_terminal_closure_rollup_report_record_id"], "verification_state": r["verification_state"], "checked_permanent_archive_terminal_closure_rollup_report_refs": len(r["checked_permanent_archive_terminal_closure_rollup_report_refs"])} for r in load_retention_permanent_archive_terminal_closure_rollup_report_verification_receipts(p)]
+
+
+def _retention_permanent_archive_terminal_closure_rollup_report_closeout_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-rollup-report-closeout-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_rollup_report_closeout_record_id": r["retention_permanent_archive_terminal_closure_rollup_report_closeout_record_id"], "retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id": r["retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id"], "closeout_state": r["closeout_state"], "outcome": r["outcome"]} for r in load_retention_permanent_archive_terminal_closure_rollup_report_closeout_records(p)]
+
+
+def _retention_permanent_archive_terminal_closure_final_summary_record_rows(root: Path) -> list[dict[str, Any]]:
+    p = root / "retention/retention-permanent-archive-terminal-closure-final-summary-records.json"
+    return [] if not p.exists() else [{"retention_permanent_archive_terminal_closure_final_summary_record_id": r["retention_permanent_archive_terminal_closure_final_summary_record_id"], "retention_permanent_archive_terminal_closure_rollup_report_closeout_record_id": r["retention_permanent_archive_terminal_closure_rollup_report_closeout_record_id"], "permanent_archive_terminal_closure_final_summary_state": r["permanent_archive_terminal_closure_final_summary_state"], "permanent_archive_terminal_closure_final_summary_scope": r["permanent_archive_terminal_closure_final_summary_scope"]} for r in load_retention_permanent_archive_terminal_closure_final_summary_records(p)]
+
+
 def _merge_decision_rows(root: Path) -> list[dict[str, Any]]:
     p = root / "merge" / "merge-decisions.json"
     return [] if not p.exists() else [{"merge_decision_id": d.merge_decision_id, "import_record_id": d.import_record_id, "decision": d.decision, "reason_code": d.reason_code} for d in load_merge_decisions(p)]
@@ -5272,6 +5572,56 @@ def build_catalog(start: str | Path | None = None) -> dict[str, Any]:
         "retention_permanent_archive_terminal_final_distribution_summary_closeout_records": _retention_permanent_archive_terminal_final_distribution_summary_closeout_record_rows(root),
         "retention_permanent_archive_terminal_closure_record_records": _retention_permanent_archive_terminal_closure_record_record_rows(root),
         "retention_permanent_archive_terminal_closure_record_verification_receipts": _retention_permanent_archive_terminal_closure_record_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_closure_record_closeout_records": _retention_permanent_archive_terminal_closure_record_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_closure_certificate_records": _retention_permanent_archive_terminal_closure_certificate_record_rows(root),
+        "retention_permanent_archive_terminal_closure_certificate_verification_receipts": _retention_permanent_archive_terminal_closure_certificate_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_closure_certificate_closeout_records": _retention_permanent_archive_terminal_closure_certificate_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_closure_manifest_records": _retention_permanent_archive_terminal_closure_manifest_record_rows(root),
+        "retention_permanent_archive_terminal_closure_manifest_verification_receipts": _retention_permanent_archive_terminal_closure_manifest_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_closure_manifest_closeout_records": _retention_permanent_archive_terminal_closure_manifest_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_closure_index_records": _retention_permanent_archive_terminal_closure_index_record_rows(root),
+        "retention_permanent_archive_terminal_closure_index_verification_receipts": _retention_permanent_archive_terminal_closure_index_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_closure_index_closeout_records": _retention_permanent_archive_terminal_closure_index_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_closure_digest_records": _retention_permanent_archive_terminal_closure_digest_record_rows(root),
+        "retention_permanent_archive_terminal_closure_digest_verification_receipts": _retention_permanent_archive_terminal_closure_digest_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_closure_digest_closeout_records": _retention_permanent_archive_terminal_closure_digest_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_record_index_records": _retention_permanent_archive_terminal_public_record_index_record_rows(root),
+        "retention_permanent_archive_terminal_public_record_index_verification_receipts": _retention_permanent_archive_terminal_public_record_index_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_record_index_closeout_records": _retention_permanent_archive_terminal_public_record_index_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_access_register_records": _retention_permanent_archive_terminal_public_access_register_record_rows(root),
+        "retention_permanent_archive_terminal_public_access_register_verification_receipts": _retention_permanent_archive_terminal_public_access_register_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_access_register_closeout_records": _retention_permanent_archive_terminal_public_access_register_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_access_notice_records": _retention_permanent_archive_terminal_public_access_notice_record_rows(root),
+        "retention_permanent_archive_terminal_public_access_notice_verification_receipts": _retention_permanent_archive_terminal_public_access_notice_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_access_notice_closeout_records": _retention_permanent_archive_terminal_public_access_notice_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_retrieval_package_records": _retention_permanent_archive_terminal_public_retrieval_package_record_rows(root),
+        "retention_permanent_archive_terminal_public_retrieval_package_verification_receipts": _retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_retrieval_package_closeout_records": _retention_permanent_archive_terminal_public_retrieval_package_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_retrieval_receipt_records": _retention_permanent_archive_terminal_public_retrieval_receipt_record_rows(root),
+        "retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipts": _retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_retrieval_receipt_closeout_records": _retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_distribution_manifest_records": _retention_permanent_archive_terminal_public_distribution_manifest_record_rows(root),
+        "retention_permanent_archive_terminal_public_distribution_manifest_verification_receipts": _retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_distribution_manifest_closeout_records": _retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_public_distribution_receipt_records": _retention_permanent_archive_terminal_public_distribution_receipt_record_rows(root),
+        "retention_permanent_archive_terminal_public_distribution_receipt_verification_receipts": _retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_public_distribution_receipt_closeout_records": _retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_authority_closure_notice_records": _retention_permanent_archive_terminal_authority_closure_notice_record_rows(root),
+        "retention_permanent_archive_terminal_authority_closure_notice_verification_receipts": _retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_authority_closure_notice_closeout_records": _retention_permanent_archive_terminal_authority_closure_notice_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_authority_closure_receipt_records": _retention_permanent_archive_terminal_authority_closure_receipt_record_rows(root),
+        "retention_permanent_archive_terminal_authority_closure_receipt_verification_receipts": _retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_authority_closure_receipt_closeout_records": _retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_authority_release_certificate_records": _retention_permanent_archive_terminal_authority_release_certificate_record_rows(root),
+        "retention_permanent_archive_terminal_authority_release_certificate_verification_receipts": _retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_authority_release_certificate_closeout_records": _retention_permanent_archive_terminal_authority_release_certificate_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_authority_release_receipt_records": _retention_permanent_archive_terminal_authority_release_receipt_record_rows(root),
+        "retention_permanent_archive_terminal_authority_release_receipt_verification_receipts": _retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_authority_release_receipt_closeout_records": _retention_permanent_archive_terminal_authority_release_receipt_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_closure_rollup_report_records": _retention_permanent_archive_terminal_closure_rollup_report_record_rows(root),
+        "retention_permanent_archive_terminal_closure_rollup_report_verification_receipts": _retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_rows(root),
+        "retention_permanent_archive_terminal_closure_rollup_report_closeout_records": _retention_permanent_archive_terminal_closure_rollup_report_closeout_record_rows(root),
+        "retention_permanent_archive_terminal_closure_final_summary_records": _retention_permanent_archive_terminal_closure_final_summary_record_rows(root),
         "merge_decisions": _merge_decision_rows(root),
         "intake_decisions": _intake_decision_rows(root),
         "routes": _routing_rows(root),
@@ -6035,6 +6385,56 @@ def format_catalog(catalog: dict[str, Any]) -> str:
         f"{counts.get('retention_permanent_archive_terminal_final_distribution_summary_closeout_records', 0)} retention permanent archive terminal final distribution summary closeout records, "
         f"{counts.get('retention_permanent_archive_terminal_closure_record_records', 0)} retention permanent archive terminal closure record records, "
         f"{counts.get('retention_permanent_archive_terminal_closure_record_verification_receipts', 0)} retention permanent archive terminal closure record verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_record_closeout_records', 0)} retention permanent archive terminal closure record closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_certificate_records', 0)} retention permanent archive terminal closure certificate records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_certificate_verification_receipts', 0)} retention permanent archive terminal closure certificate verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_certificate_closeout_records', 0)} retention permanent archive terminal closure certificate closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_manifest_records', 0)} retention permanent archive terminal closure manifest records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_manifest_verification_receipts', 0)} retention permanent archive terminal closure manifest verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_manifest_closeout_records', 0)} retention permanent archive terminal closure manifest closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_index_records', 0)} retention permanent archive terminal closure index records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_index_verification_receipts', 0)} retention permanent archive terminal closure index verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_index_closeout_records', 0)} retention permanent archive terminal closure index closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_digest_records', 0)} retention permanent archive terminal closure digest records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_digest_verification_receipts', 0)} retention permanent archive terminal closure digest verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_digest_closeout_records', 0)} retention permanent archive terminal closure digest closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_record_index_records', 0)} retention permanent archive terminal public record index records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_record_index_verification_receipts', 0)} retention permanent archive terminal public record index verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_record_index_closeout_records', 0)} retention permanent archive terminal public record index closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_access_register_records', 0)} retention permanent archive terminal public access register records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_access_register_verification_receipts', 0)} retention permanent archive terminal public access register verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_access_register_closeout_records', 0)} retention permanent archive terminal public access register closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_access_notice_records', 0)} retention permanent archive terminal public access notice records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_access_notice_verification_receipts', 0)} retention permanent archive terminal public access notice verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_access_notice_closeout_records', 0)} retention permanent archive terminal public access notice closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_retrieval_package_records', 0)} retention permanent archive terminal public retrieval package records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_retrieval_package_verification_receipts', 0)} retention permanent archive terminal public retrieval package verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_retrieval_package_closeout_records', 0)} retention permanent archive terminal public retrieval package closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_retrieval_receipt_records', 0)} retention permanent archive terminal public retrieval receipt records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipts', 0)} retention permanent archive terminal public retrieval receipt verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_retrieval_receipt_closeout_records', 0)} retention permanent archive terminal public retrieval receipt closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_distribution_manifest_records', 0)} retention permanent archive terminal public distribution manifest records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_distribution_manifest_verification_receipts', 0)} retention permanent archive terminal public distribution manifest verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_distribution_manifest_closeout_records', 0)} retention permanent archive terminal public distribution manifest closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_distribution_receipt_records', 0)} retention permanent archive terminal public distribution receipt records, "
+        f"{counts.get('retention_permanent_archive_terminal_public_distribution_receipt_verification_receipts', 0)} retention permanent archive terminal public distribution receipt verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_public_distribution_receipt_closeout_records', 0)} retention permanent archive terminal public distribution receipt closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_closure_notice_records', 0)} retention permanent archive terminal authority closure notice records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_closure_notice_verification_receipts', 0)} retention permanent archive terminal authority closure notice verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_closure_notice_closeout_records', 0)} retention permanent archive terminal authority closure notice closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_closure_receipt_records', 0)} retention permanent archive terminal authority closure receipt records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_closure_receipt_verification_receipts', 0)} retention permanent archive terminal authority closure receipt verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_closure_receipt_closeout_records', 0)} retention permanent archive terminal authority closure receipt closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_release_certificate_records', 0)} retention permanent archive terminal authority release certificate records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_release_certificate_verification_receipts', 0)} retention permanent archive terminal authority release certificate verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_release_certificate_closeout_records', 0)} retention permanent archive terminal authority release certificate closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_release_receipt_records', 0)} retention permanent archive terminal authority release receipt records, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_release_receipt_verification_receipts', 0)} retention permanent archive terminal authority release receipt verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_authority_release_receipt_closeout_records', 0)} retention permanent archive terminal authority release receipt closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_rollup_report_records', 0)} retention permanent archive terminal closure rollup report records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_rollup_report_verification_receipts', 0)} retention permanent archive terminal closure rollup report verification receipts, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_rollup_report_closeout_records', 0)} retention permanent archive terminal closure rollup report closeout records, "
+        f"{counts.get('retention_permanent_archive_terminal_closure_final_summary_records', 0)} retention permanent archive terminal closure final summary records, "
         f"{counts.get('merge_decisions', 0)} merge decisions, "
         f"{counts.get('intake_decisions', 0)} intake decisions, "
         f"{counts.get('routes', 0)} routes, {counts.get('delivery_channels', 0)} delivery channels, "
@@ -6796,4 +7196,54 @@ def format_catalog(catalog: dict[str, Any]) -> str:
     lines.extend(_format_table("Integrity Receipts", catalog["integrity_receipts"], ["path", "digest_algorithm", "purpose"]))
     lines.extend(_format_table("Sharing Scopes", catalog["sharing_scopes"], ["scope_id", "display_name", "path"]))
     lines.extend(_format_table("Review Gates", catalog["review_gates"], ["gate_id", "display_name", "path"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Record Closeout Records", catalog["retention_permanent_archive_terminal_closure_record_closeout_records"], ["retention_permanent_archive_terminal_closure_record_closeout_record_id", "retention_permanent_archive_terminal_closure_record_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Certificate Records", catalog["retention_permanent_archive_terminal_closure_certificate_records"], ["retention_permanent_archive_terminal_closure_certificate_record_id", "retention_permanent_archive_terminal_closure_record_closeout_record_id", "permanent_archive_terminal_closure_certificate_state", "permanent_archive_terminal_closure_certificate_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Certificate Verification Receipts", catalog["retention_permanent_archive_terminal_closure_certificate_verification_receipts"], ["retention_permanent_archive_terminal_closure_certificate_verification_receipt_id", "retention_permanent_archive_terminal_closure_certificate_record_id", "verification_state", "checked_permanent_archive_terminal_closure_certificate_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Certificate Closeout Records", catalog["retention_permanent_archive_terminal_closure_certificate_closeout_records"], ["retention_permanent_archive_terminal_closure_certificate_closeout_record_id", "retention_permanent_archive_terminal_closure_certificate_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Manifest Records", catalog["retention_permanent_archive_terminal_closure_manifest_records"], ["retention_permanent_archive_terminal_closure_manifest_record_id", "retention_permanent_archive_terminal_closure_certificate_closeout_record_id", "permanent_archive_terminal_closure_manifest_state", "permanent_archive_terminal_closure_manifest_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Manifest Verification Receipts", catalog["retention_permanent_archive_terminal_closure_manifest_verification_receipts"], ["retention_permanent_archive_terminal_closure_manifest_verification_receipt_id", "retention_permanent_archive_terminal_closure_manifest_record_id", "verification_state", "checked_permanent_archive_terminal_closure_manifest_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Manifest Closeout Records", catalog["retention_permanent_archive_terminal_closure_manifest_closeout_records"], ["retention_permanent_archive_terminal_closure_manifest_closeout_record_id", "retention_permanent_archive_terminal_closure_manifest_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Index Records", catalog["retention_permanent_archive_terminal_closure_index_records"], ["retention_permanent_archive_terminal_closure_index_record_id", "retention_permanent_archive_terminal_closure_manifest_closeout_record_id", "permanent_archive_terminal_closure_index_state", "permanent_archive_terminal_closure_index_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Index Verification Receipts", catalog["retention_permanent_archive_terminal_closure_index_verification_receipts"], ["retention_permanent_archive_terminal_closure_index_verification_receipt_id", "retention_permanent_archive_terminal_closure_index_record_id", "verification_state", "checked_permanent_archive_terminal_closure_index_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Index Closeout Records", catalog["retention_permanent_archive_terminal_closure_index_closeout_records"], ["retention_permanent_archive_terminal_closure_index_closeout_record_id", "retention_permanent_archive_terminal_closure_index_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Digest Records", catalog["retention_permanent_archive_terminal_closure_digest_records"], ["retention_permanent_archive_terminal_closure_digest_record_id", "retention_permanent_archive_terminal_closure_index_closeout_record_id", "permanent_archive_terminal_closure_digest_state", "permanent_archive_terminal_closure_digest_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Digest Verification Receipts", catalog["retention_permanent_archive_terminal_closure_digest_verification_receipts"], ["retention_permanent_archive_terminal_closure_digest_verification_receipt_id", "retention_permanent_archive_terminal_closure_digest_record_id", "verification_state", "checked_permanent_archive_terminal_closure_digest_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Digest Closeout Records", catalog["retention_permanent_archive_terminal_closure_digest_closeout_records"], ["retention_permanent_archive_terminal_closure_digest_closeout_record_id", "retention_permanent_archive_terminal_closure_digest_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Record Index Records", catalog["retention_permanent_archive_terminal_public_record_index_records"], ["retention_permanent_archive_terminal_public_record_index_record_id", "retention_permanent_archive_terminal_closure_digest_closeout_record_id", "permanent_archive_terminal_public_record_index_state", "permanent_archive_terminal_public_record_index_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Record Index Verification Receipts", catalog["retention_permanent_archive_terminal_public_record_index_verification_receipts"], ["retention_permanent_archive_terminal_public_record_index_verification_receipt_id", "retention_permanent_archive_terminal_public_record_index_record_id", "verification_state", "checked_permanent_archive_terminal_public_record_index_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Record Index Closeout Records", catalog["retention_permanent_archive_terminal_public_record_index_closeout_records"], ["retention_permanent_archive_terminal_public_record_index_closeout_record_id", "retention_permanent_archive_terminal_public_record_index_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Access Register Records", catalog["retention_permanent_archive_terminal_public_access_register_records"], ["retention_permanent_archive_terminal_public_access_register_record_id", "retention_permanent_archive_terminal_public_record_index_closeout_record_id", "permanent_archive_terminal_public_access_register_state", "permanent_archive_terminal_public_access_register_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Access Register Verification Receipts", catalog["retention_permanent_archive_terminal_public_access_register_verification_receipts"], ["retention_permanent_archive_terminal_public_access_register_verification_receipt_id", "retention_permanent_archive_terminal_public_access_register_record_id", "verification_state", "checked_permanent_archive_terminal_public_access_register_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Access Register Closeout Records", catalog["retention_permanent_archive_terminal_public_access_register_closeout_records"], ["retention_permanent_archive_terminal_public_access_register_closeout_record_id", "retention_permanent_archive_terminal_public_access_register_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Access Notice Records", catalog["retention_permanent_archive_terminal_public_access_notice_records"], ["retention_permanent_archive_terminal_public_access_notice_record_id", "retention_permanent_archive_terminal_public_access_register_closeout_record_id", "permanent_archive_terminal_public_access_notice_state", "permanent_archive_terminal_public_access_notice_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Access Notice Verification Receipts", catalog["retention_permanent_archive_terminal_public_access_notice_verification_receipts"], ["retention_permanent_archive_terminal_public_access_notice_verification_receipt_id", "retention_permanent_archive_terminal_public_access_notice_record_id", "verification_state", "checked_permanent_archive_terminal_public_access_notice_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Access Notice Closeout Records", catalog["retention_permanent_archive_terminal_public_access_notice_closeout_records"], ["retention_permanent_archive_terminal_public_access_notice_closeout_record_id", "retention_permanent_archive_terminal_public_access_notice_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Retrieval Package Records", catalog["retention_permanent_archive_terminal_public_retrieval_package_records"], ["retention_permanent_archive_terminal_public_retrieval_package_record_id", "retention_permanent_archive_terminal_public_access_notice_closeout_record_id", "permanent_archive_terminal_public_retrieval_package_state", "permanent_archive_terminal_public_retrieval_package_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Retrieval Package Verification Receipts", catalog["retention_permanent_archive_terminal_public_retrieval_package_verification_receipts"], ["retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id", "retention_permanent_archive_terminal_public_retrieval_package_record_id", "verification_state", "checked_permanent_archive_terminal_public_retrieval_package_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Retrieval Package Closeout Records", catalog["retention_permanent_archive_terminal_public_retrieval_package_closeout_records"], ["retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id", "retention_permanent_archive_terminal_public_retrieval_package_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Retrieval Receipt Records", catalog["retention_permanent_archive_terminal_public_retrieval_receipt_records"], ["retention_permanent_archive_terminal_public_retrieval_receipt_record_id", "retention_permanent_archive_terminal_public_retrieval_package_closeout_record_id", "permanent_archive_terminal_public_retrieval_receipt_state", "permanent_archive_terminal_public_retrieval_receipt_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Retrieval Receipt Verification Receipts", catalog["retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipts"], ["retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_id", "retention_permanent_archive_terminal_public_retrieval_receipt_record_id", "verification_state", "checked_permanent_archive_terminal_public_retrieval_receipt_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Retrieval Receipt Closeout Records", catalog["retention_permanent_archive_terminal_public_retrieval_receipt_closeout_records"], ["retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_id", "retention_permanent_archive_terminal_public_retrieval_receipt_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Distribution Manifest Records", catalog["retention_permanent_archive_terminal_public_distribution_manifest_records"], ["retention_permanent_archive_terminal_public_distribution_manifest_record_id", "retention_permanent_archive_terminal_public_retrieval_receipt_closeout_record_id", "permanent_archive_terminal_public_distribution_manifest_state", "permanent_archive_terminal_public_distribution_manifest_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Distribution Manifest Verification Receipts", catalog["retention_permanent_archive_terminal_public_distribution_manifest_verification_receipts"], ["retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_id", "retention_permanent_archive_terminal_public_distribution_manifest_record_id", "verification_state", "checked_permanent_archive_terminal_public_distribution_manifest_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Distribution Manifest Closeout Records", catalog["retention_permanent_archive_terminal_public_distribution_manifest_closeout_records"], ["retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_id", "retention_permanent_archive_terminal_public_distribution_manifest_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Distribution Receipt Records", catalog["retention_permanent_archive_terminal_public_distribution_receipt_records"], ["retention_permanent_archive_terminal_public_distribution_receipt_record_id", "retention_permanent_archive_terminal_public_distribution_manifest_closeout_record_id", "permanent_archive_terminal_public_distribution_receipt_state", "permanent_archive_terminal_public_distribution_receipt_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Distribution Receipt Verification Receipts", catalog["retention_permanent_archive_terminal_public_distribution_receipt_verification_receipts"], ["retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_id", "retention_permanent_archive_terminal_public_distribution_receipt_record_id", "verification_state", "checked_permanent_archive_terminal_public_distribution_receipt_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Public Distribution Receipt Closeout Records", catalog["retention_permanent_archive_terminal_public_distribution_receipt_closeout_records"], ["retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_id", "retention_permanent_archive_terminal_public_distribution_receipt_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Closure Notice Records", catalog["retention_permanent_archive_terminal_authority_closure_notice_records"], ["retention_permanent_archive_terminal_authority_closure_notice_record_id", "retention_permanent_archive_terminal_public_distribution_receipt_closeout_record_id", "permanent_archive_terminal_authority_closure_notice_state", "permanent_archive_terminal_authority_closure_notice_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Closure Notice Verification Receipts", catalog["retention_permanent_archive_terminal_authority_closure_notice_verification_receipts"], ["retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_id", "retention_permanent_archive_terminal_authority_closure_notice_record_id", "verification_state", "checked_permanent_archive_terminal_authority_closure_notice_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Closure Notice Closeout Records", catalog["retention_permanent_archive_terminal_authority_closure_notice_closeout_records"], ["retention_permanent_archive_terminal_authority_closure_notice_closeout_record_id", "retention_permanent_archive_terminal_authority_closure_notice_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Closure Receipt Records", catalog["retention_permanent_archive_terminal_authority_closure_receipt_records"], ["retention_permanent_archive_terminal_authority_closure_receipt_record_id", "retention_permanent_archive_terminal_authority_closure_notice_closeout_record_id", "permanent_archive_terminal_authority_closure_receipt_state", "permanent_archive_terminal_authority_closure_receipt_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Closure Receipt Verification Receipts", catalog["retention_permanent_archive_terminal_authority_closure_receipt_verification_receipts"], ["retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_id", "retention_permanent_archive_terminal_authority_closure_receipt_record_id", "verification_state", "checked_permanent_archive_terminal_authority_closure_receipt_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Closure Receipt Closeout Records", catalog["retention_permanent_archive_terminal_authority_closure_receipt_closeout_records"], ["retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_id", "retention_permanent_archive_terminal_authority_closure_receipt_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Release Certificate Records", catalog["retention_permanent_archive_terminal_authority_release_certificate_records"], ["retention_permanent_archive_terminal_authority_release_certificate_record_id", "retention_permanent_archive_terminal_authority_closure_receipt_closeout_record_id", "permanent_archive_terminal_authority_release_certificate_state", "permanent_archive_terminal_authority_release_certificate_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Release Certificate Verification Receipts", catalog["retention_permanent_archive_terminal_authority_release_certificate_verification_receipts"], ["retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_id", "retention_permanent_archive_terminal_authority_release_certificate_record_id", "verification_state", "checked_permanent_archive_terminal_authority_release_certificate_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Release Certificate Closeout Records", catalog["retention_permanent_archive_terminal_authority_release_certificate_closeout_records"], ["retention_permanent_archive_terminal_authority_release_certificate_closeout_record_id", "retention_permanent_archive_terminal_authority_release_certificate_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Release Receipt Records", catalog["retention_permanent_archive_terminal_authority_release_receipt_records"], ["retention_permanent_archive_terminal_authority_release_receipt_record_id", "retention_permanent_archive_terminal_authority_release_certificate_closeout_record_id", "permanent_archive_terminal_authority_release_receipt_state", "permanent_archive_terminal_authority_release_receipt_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Release Receipt Verification Receipts", catalog["retention_permanent_archive_terminal_authority_release_receipt_verification_receipts"], ["retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_id", "retention_permanent_archive_terminal_authority_release_receipt_record_id", "verification_state", "checked_permanent_archive_terminal_authority_release_receipt_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Authority Release Receipt Closeout Records", catalog["retention_permanent_archive_terminal_authority_release_receipt_closeout_records"], ["retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id", "retention_permanent_archive_terminal_authority_release_receipt_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Rollup Report Records", catalog["retention_permanent_archive_terminal_closure_rollup_report_records"], ["retention_permanent_archive_terminal_closure_rollup_report_record_id", "retention_permanent_archive_terminal_authority_release_receipt_closeout_record_id", "permanent_archive_terminal_closure_rollup_report_state", "permanent_archive_terminal_closure_rollup_report_scope"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Rollup Report Verification Receipts", catalog["retention_permanent_archive_terminal_closure_rollup_report_verification_receipts"], ["retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id", "retention_permanent_archive_terminal_closure_rollup_report_record_id", "verification_state", "checked_permanent_archive_terminal_closure_rollup_report_refs"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Rollup Report Closeout Records", catalog["retention_permanent_archive_terminal_closure_rollup_report_closeout_records"], ["retention_permanent_archive_terminal_closure_rollup_report_closeout_record_id", "retention_permanent_archive_terminal_closure_rollup_report_verification_receipt_id", "closeout_state", "outcome"]))
+    lines.extend(_format_table("Retention Permanent Archive Terminal Closure Final Summary Records", catalog["retention_permanent_archive_terminal_closure_final_summary_records"], ["retention_permanent_archive_terminal_closure_final_summary_record_id", "retention_permanent_archive_terminal_closure_rollup_report_closeout_record_id", "permanent_archive_terminal_closure_final_summary_state", "permanent_archive_terminal_closure_final_summary_scope"]))
     return "\n".join(lines)
