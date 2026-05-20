@@ -52,7 +52,7 @@ Architecture principles:
 
 - Keep evidence, interpretation, action, package, report, and rollup concepts separate.
 - Prefer explicit record species over ambiguous blobs when a boundary matters.
-- Treat each generated “generated boundary” as a full contract boundary: data, schema, validator, tool, catalog, audit, doctor wiring, docs, contract, tests, and check-manifest registration.
+- Treat each generated PFEM boundary as a full contract boundary: data, schema, validator, tool, catalog, audit, doctor wiring, docs, contract, tests, and check-manifest registration.
 - Use real domain nouns for generated boundaries. Names should describe the PFEM responsibility, not the implementation trick.
 - Stop generating new species when a chain reaches a real semantic endcap. After an endcap, stabilize and run gates.
 - Do not preserve project knowledge only in chat. Put doctrine, handoff, standards, and gotchas in the repo.
@@ -78,7 +78,17 @@ Contributor handoff:
 - `docs/developer/pfem-architecture-theory-notes.md` for the higher-level PFEM theory vocabulary.
 - Inspect current `main` before assuming conversation memory is current.
 
-## Contributor AI command protocol
+## Your first new session instruction to an AI
+
+Before asking a new AI/chat/development session to work on PFEM, paste this first:
+
+```text
+We are working in the PFEM repository: lightrock/PFEM.
+Inspect current main before relying on chat memory.
+Read AGENTS.md, README.md, docs/AI_START_HERE.md, docs/developer/pfem-contributor-command-protocol.md, docs/developer/pfem-new-tab-prompt.md, and tools/pfem_check_manifest.json before making changes.
+Follow PFEM boundary language and patch safety rules.
+If any filename has changed, inspect the closest current equivalent in the repository before proceeding.
+```
 
 PFEM has a project-level command protocol for humans and AI assistants.
 
