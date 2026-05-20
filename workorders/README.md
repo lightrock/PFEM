@@ -87,6 +87,20 @@ Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute
 
 Use the actual dated filename.
 
+
+## Required completion note and PR citation
+
+For any executed workorder, the executor must cite the exact file path in completion notes and PR body.
+
+Required PR-body block:
+
+```text
+## Workorder
+Executed: workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md
+```
+
+This citation is mandatory even when other PR templates are used. If a template conflicts, keep this block and add template content around it.
+
 ## Required workorder sections
 
 A useful PFEM workorder should include:

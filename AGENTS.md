@@ -86,5 +86,6 @@ Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute
 ```
 
 The executor's job is to read the committed workorder, inspect recent workorders for conflicts, perform only the named scope, run/report checks, and cite the exact workorder path in its PR or completion notes.
+For workorder-driven PRs, include an explicit `## Workorder` section with `Executed: workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md` in the PR body text itself.
 
 Tiny safe edits do not need workorders. Standing-process changes usually do.
