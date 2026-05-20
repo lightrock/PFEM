@@ -129,6 +129,8 @@ A workorder is the bridge between two lanes:
 
 A workorder is also a committed pre-action decision record and executable task contract. It keeps the project from losing the reason for a change inside a chat window, local patch folder, or vendor-specific AI session.
 
+In github, if there is a merge conflict, provided there are work order file references, a connected AI can re-figure the original intents and resolve conflicts with much greater effectiveness.
+
 This matters because a GitHub PR alone may show the final code diff without preserving what the foreground assistant asked the executor to do. A workorder gives the PR a durable breadcrumb: the executor should name the exact `workorders/...md` file it used so future reviewers can trace the instruction, implementation, and review path.
 
 Use workorders for substantial or process-sensitive work, especially changes that affect:
