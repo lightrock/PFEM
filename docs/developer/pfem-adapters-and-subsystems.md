@@ -14,6 +14,32 @@ PFEM core = the repository/runtime contracts, checks, catalogs, receipts, and re
 consumer = the downstream human, system, policy layer, node, or review process that decides what evidence means operationally
 ```
 
+## Stop-and-clarify rule
+
+When any developer asks:
+
+```text
+what do you mean adapter
+what kind of adapter
+adapter as in what
+```
+
+or otherwise signals confusion about adapter terminology, stop implementation work.
+
+Do not keep designing, coding, or generating files while the term is ambiguous.
+
+First explain the PFEM distinction:
+
+```text
+external subsystem = real-world or separately deployed capability
+PFEM adapter = software boundary glue that translates to/from PFEM contracts
+evidence source = producer of evidence/confidence messages
+consumer = downstream human/system/policy layer deciding what evidence means
+PFEM core = contracts, checks, catalogs, receipts, relay logic, timing/provenance/confidence handling
+```
+
+Then identify which meaning is being used in the current task. Only continue after the intended meaning is clear.
+
 ## External subsystem
 
 An external subsystem is a real operational capability outside the PFEM core.
@@ -170,5 +196,7 @@ PFEM core
 ```
 
 If a task uses the word adapter, inspect the surrounding docs and ask which meaning is intended before changing architecture.
+
+If a developer asks what adapter means, treat that as a brake, not an invitation to guess. Stop, explain the vocabulary split, and then continue only after the specific meaning is clear.
 
 Prefer precise phrasing over familiar software assumptions.
