@@ -108,7 +108,9 @@ workorders/AGENTS.md
 
 ## Workorders
 
-PFEM uses workorders for substantial or process-sensitive work. This is worth bringing over from SkyWrong because PFEM is now AI-assisted, repo-disciplined, and likely to cross chat windows, coding agents, manual edits, and future release gates.
+PFEM has the ability to differente your AI interactions with an extra audit trail.  If you are in GPT for example, and you tell it to do something substantial, it may decide it should hand this process off to Codex (or another AI).  If so, it will generate a Work Order and stick that into the repository and tell you to "copy this line and paste it to Codex (or another AI). This line will tell Codex (or another AI) to go read and execute that file. A github PR alone does not carry the trail of what GPT said to Codex. Codex should respond when making a PR what GPT workorder filename that it used. There is an audit trail that is AI vendor agnostic here between foreground AI and automated AI. This is worth it because PFEM is AI-assisted, repo-disciplined, and likely to cross chat windows, coding agents, manual edits, and future release gates.
+
+Now, if Codex encounters a hard problem it also automatically carries instructions to generate a "lessons learned" in the Work Order History in case this action should be replayed in the future and if so it will be more efficient the next time.
 
 A workorder is a committed pre-action decision record and executable task contract. It is useful when the work affects boundaries, command protocol, AGENTS/AI_START_HERE, check runners, release gates, architecture doctrine, or broad contributor behavior.
 
