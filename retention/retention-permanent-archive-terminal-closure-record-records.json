@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_record_record_id": "retention-permanent-archive-terminal-closure-record-basic-restore-001",
+    "permanent_archive_terminal_closure_record_kind": "retention_permanent_archive_terminal_closure_record",
+    "created_time": "2026-01-01T00:13:48Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_distribution_summary_closeout_record_id": "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_distribution_summary_verification_receipt_id": "retention-permanent-archive-terminal-final-distribution-summary-verification-basic-restore-001",
+    "permanent_archive_terminal_closure_record_state": "closed",
+    "permanent_archive_terminal_closure_record_scope": "closed_retention_permanent_archive_terminal_final_distribution_summary",
+    "permanent_archive_terminal_closure_record_refs": [
+      "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-acceptance-record-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-distribution-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-distribution-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-record-ref-list",
+    "permanent_archive_terminal_closure_record_ref_digest": "85ec9a84c6be47d331c335821ed8b13481d73e86d37aeebcc045e8d14db06118",
+    "permanent_archive_terminal_closure_record_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_record_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closure record record built from the closed retention permanent archive terminal final distribution summary path."
+  }
+]

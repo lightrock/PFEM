@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_access_lock_verification_receipt_id": "retention-permanent-archive-terminal-final-access-lock-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_final_access_lock_verification",
+    "created_time": "2026-01-01T00:13:28Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_access_lock_record_id": "retention-permanent-archive-terminal-final-access-lock-basic-restore-001",
+    "retention_permanent_archive_terminal_final_storage_lock_closeout_record_id": "retention-permanent-archive-terminal-final-storage-lock-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_final_access_lock_refs": [
+      "retention-permanent-archive-terminal-final-storage-lock-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-storage-lock-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-storage-lock-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-final-acceptance-record-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-access-lock-basic-restore-001",
+      "retention-permanent-archive-terminal-final-storage-lock-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-access-lock-ref-list",
+    "expected_permanent_archive_terminal_final_access_lock_ref_digest": "c14f07081e0402ebcef7c5a1416622354951a384e895a185ec17440229e8860d",
+    "actual_permanent_archive_terminal_final_access_lock_ref_digest": "c14f07081e0402ebcef7c5a1416622354951a384e895a185ec17440229e8860d",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_access_lock_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal final access lock verification receipt showing refs and digest were checked."
+  }
+]

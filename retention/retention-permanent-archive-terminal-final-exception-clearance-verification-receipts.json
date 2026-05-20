@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_exception_clearance_verification_receipt_id": "retention-permanent-archive-terminal-final-exception-clearance-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_final_exception_clearance_verification",
+    "created_time": "2026-01-01T00:13:22Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_exception_clearance_record_id": "retention-permanent-archive-terminal-final-exception-clearance-basic-restore-001",
+    "retention_permanent_archive_terminal_final_hold_release_closeout_record_id": "retention-permanent-archive-terminal-final-hold-release-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_final_exception_clearance_refs": [
+      "retention-permanent-archive-terminal-final-hold-release-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-hold-release-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-hold-release-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-final-acceptance-record-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-exception-clearance-basic-restore-001",
+      "retention-permanent-archive-terminal-final-hold-release-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-exception-clearance-ref-list",
+    "expected_permanent_archive_terminal_final_exception_clearance_ref_digest": "d09e11133b38f58bddb3ce321a3111dd72c4e0389b6064a743f0c0e1877fa475",
+    "actual_permanent_archive_terminal_final_exception_clearance_ref_digest": "d09e11133b38f58bddb3ce321a3111dd72c4e0389b6064a743f0c0e1877fa475",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_exception_clearance_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal final exception clearance verification receipt showing refs and digest were checked."
+  }
+]

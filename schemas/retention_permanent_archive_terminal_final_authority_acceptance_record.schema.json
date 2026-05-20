@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfem.local/schemas/retention_permanent_archive_terminal_final_authority_acceptance_record.schema.json",
+  "title": "PFEM Retention Permanent Archive Terminal Final Authority Acceptance Records",
+  "type": "object",
+  "required": [
+    "retention_permanent_archive_terminal_final_authority_acceptance_record_id",
+    "permanent_archive_terminal_final_authority_acceptance_kind",
+    "created_time",
+    "node_id",
+    "retention_permanent_archive_terminal_final_approval_record_closeout_record_id",
+    "retention_permanent_archive_terminal_final_approval_record_verification_receipt_id",
+    "permanent_archive_terminal_final_authority_acceptance_state",
+    "permanent_archive_terminal_final_authority_acceptance_scope",
+    "permanent_archive_terminal_final_authority_acceptance_refs",
+    "subject_refs",
+    "basis_refs",
+    "digest_algorithm",
+    "permanent_archive_terminal_final_authority_acceptance_ref_digest",
+    "permanent_archive_terminal_final_authority_acceptance_by_ref",
+    "summary"
+  ],
+  "properties": {
+    "retention_permanent_archive_terminal_final_authority_acceptance_record_id": {
+      "type": "string"
+    },
+    "permanent_archive_terminal_final_authority_acceptance_kind": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "retention_permanent_archive_terminal_final_approval_record_closeout_record_id": {
+      "type": "string"
+    },
+    "retention_permanent_archive_terminal_final_approval_record_verification_receipt_id": {
+      "type": "string"
+    },
+    "permanent_archive_terminal_final_authority_acceptance_state": {
+      "type": "string"
+    },
+    "permanent_archive_terminal_final_authority_acceptance_scope": {
+      "type": "string"
+    },
+    "permanent_archive_terminal_final_authority_acceptance_refs": {
+      "type": "array"
+    },
+    "subject_refs": {
+      "type": "array"
+    },
+    "basis_refs": {
+      "type": "array"
+    },
+    "digest_algorithm": {
+      "type": "string"
+    },
+    "permanent_archive_terminal_final_authority_acceptance_ref_digest": {
+      "type": "string"
+    },
+    "permanent_archive_terminal_final_authority_acceptance_by_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,19 @@
+# Retention Permanent Archive Terminal Final Access Lock Verification Receipts Contract
+
+A PFEM retention permanent archive terminal final access lock verification receipts record should identify:
+
+- `retention_permanent_archive_terminal_final_access_lock_verification_receipt_id`
+- `receipt_kind`
+- `created_time`
+- `node_id`
+- `retention_permanent_archive_terminal_final_access_lock_record_id`
+- `retention_permanent_archive_terminal_final_storage_lock_closeout_record_id`
+- `verification_state`
+- `checked_permanent_archive_terminal_final_access_lock_refs`
+- `checked_subject_refs`
+- `basis_refs`
+- `digest_algorithm`
+- `expected_permanent_archive_terminal_final_access_lock_ref_digest`
+- `actual_permanent_archive_terminal_final_access_lock_ref_digest`
+- `verified_by_ref`
+- `summary`

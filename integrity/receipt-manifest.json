@@ -4115,6 +4115,306 @@
       "purpose": "retention permanent archive terminal final acceptance record closeout records"
     },
     {
+      "path": "retention/retention-permanent-archive-terminal-final-approval-record-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c91dde3ed3d31d1631becd218b1b0058eec44837dff137efa913dabd32e4d9a5",
+      "purpose": "retention permanent archive terminal final approval record records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-approval-record-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "966a1099115068ee75177b6f8b8204df95a282ff804427076153ddbd61333feb",
+      "purpose": "retention permanent archive terminal final approval record verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-approval-record-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "eaf80871e70432d4923cb9510243ccb215eca81f9a4fdc526907eb27f51be487",
+      "purpose": "retention permanent archive terminal final approval record closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-authority-acceptance-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "750d17a0a921c529bb95c783138e002c422b7c4683ed2a7b2a60d3b7f93c00dc",
+      "purpose": "retention permanent archive terminal final authority acceptance records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-authority-acceptance-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "04756ac5adf12ac80d49daad6b847f9e671124d96e780dc192349db80b5bc206",
+      "purpose": "retention permanent archive terminal final authority acceptance verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-authority-acceptance-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "11639e47c7f4da45fde849d7d51b4ba69efac28d1937a68c3dd06178475f34a9",
+      "purpose": "retention permanent archive terminal final authority acceptance closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-public-availability-notice-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c37868bdbbee43cc7fb0cf22a1138ef4e3045b4453d60025f0c4eb149ead2dbf",
+      "purpose": "retention permanent archive terminal final public availability notice records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-public-availability-notice-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "56a40b89f00cf602a0ab2670fb6d8712721dd7c4d0945b7d44033cece6a4aa01",
+      "purpose": "retention permanent archive terminal final public availability notice verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-public-availability-notice-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "b603f165470764b7499dd418615c31efb75f909dd3b9ef566f8377b13e70958e",
+      "purpose": "retention permanent archive terminal final public availability notice closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-retrieval-endpoint-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "147e3bf530e49abdb425201965e8f08decab4543fd35582d6ac3ebc30cd255a8",
+      "purpose": "retention permanent archive terminal final retrieval endpoint records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-retrieval-endpoint-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1176ef8841512a374316f50966169c765b809d96135ec51be04d9c6302e416b1",
+      "purpose": "retention permanent archive terminal final retrieval endpoint verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-retrieval-endpoint-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "a34135234c099d3f736e921b56a4dbdb325e77fa4780850a5f56427606e0a75b",
+      "purpose": "retention permanent archive terminal final retrieval endpoint closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-audit-snapshot-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "71092decd1669f2fc5c462ef95082dc1eb29acce27726ccb6c08143cc523f3f5",
+      "purpose": "retention permanent archive terminal final audit snapshot records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-audit-snapshot-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "eebb04caf8a990f2e50021830d91732284dcfa259c01e580af688169e2f8d6aa",
+      "purpose": "retention permanent archive terminal final audit snapshot verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-audit-snapshot-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "3e0748a7f0d3e7db347484d772096748d77942c53b3efef9af79e2bf122399b2",
+      "purpose": "retention permanent archive terminal final audit snapshot closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-service-freeze-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "47d85d435cf256b963a3958e93307109e0955923b70becc6e8c37c5d5a85243b",
+      "purpose": "retention permanent archive terminal final service freeze records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-service-freeze-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c12ae1814c01a7f5a8a83cdc6326cc153bedffca5bb70c8f46bf779f32772f4b",
+      "purpose": "retention permanent archive terminal final service freeze verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-service-freeze-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "61e0dbb5ed43c5283eb023fd6f32a2a981e34635dbf254f005d6c71cb4afad73",
+      "purpose": "retention permanent archive terminal final service freeze closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-hold-release-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "30205e8a55f35c33b9db9d482f5bdf4e12643eb362575af2096708a609696a7d",
+      "purpose": "retention permanent archive terminal final hold release records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-hold-release-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "5ae48eab2a31dd4d7b23ae07423094b10f831edd972fdcdf23bd9d346b38f08e",
+      "purpose": "retention permanent archive terminal final hold release verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-hold-release-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "8d21f760447a57cffd031cab451cae5835052600050a9e8ff8b11e2d11b33040",
+      "purpose": "retention permanent archive terminal final hold release closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-exception-clearance-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "03fcd5ece3aec9401b392a26032eb76acaa275b502b2531d20ac2ad48032c94d",
+      "purpose": "retention permanent archive terminal final exception clearance records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-exception-clearance-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "04b037258d2ff036618e720c7c0da0ec2e1dc5b4fda1f13e8b7779a4eec1f3f1",
+      "purpose": "retention permanent archive terminal final exception clearance verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-exception-clearance-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "243558eebcca0a4308b56742dc23a50b124502ba0282271a765e824745cf7235",
+      "purpose": "retention permanent archive terminal final exception clearance closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-storage-lock-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ddc34eaeba0721bb3c35255c0bffd2ed72d90c2339064af796baea776226c77c",
+      "purpose": "retention permanent archive terminal final storage lock records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-storage-lock-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "f25733ceb66922e3c68faf657ed20f916e938f82e933188cfc01bee5d3a8d492",
+      "purpose": "retention permanent archive terminal final storage lock verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-storage-lock-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "09d2c6959156e1e5c68b059f85dd7916c618353300d93491335b5b5f256fbe9f",
+      "purpose": "retention permanent archive terminal final storage lock closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-access-lock-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "6ec473ddd15c9fb77c046a386880fd6c1c82c6ad82fba83d962aa74d62809f8f",
+      "purpose": "retention permanent archive terminal final access lock records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-access-lock-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "263da33331988023efddecb1e2e794defb77ea7e344901f7c58df8fefdbaf2b1",
+      "purpose": "retention permanent archive terminal final access lock verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-access-lock-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "139d93dff33731190c0e750082d99ff9d8bf6443c21bcb4ae3cb29e27b6259fd",
+      "purpose": "retention permanent archive terminal final access lock closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-policy-lock-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c5928d6fbac971be8ceb8dbe5cec16872fb31191e98767a809738dd60310dbb0",
+      "purpose": "retention permanent archive terminal final policy lock records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-policy-lock-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1c02a15a9ba3e0e93885a833e03606dce27b6d6b13913715e1a98738df024554",
+      "purpose": "retention permanent archive terminal final policy lock verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-policy-lock-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "fa886913a824f3e29f28e769d12db02da4d8885a5da03de92239ec92bcd76d30",
+      "purpose": "retention permanent archive terminal final policy lock closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-governance-certificate-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "0edfcfc3b4b90ee14975469388a4eb39a63125f00799a6fcb1f856041bd2f59f",
+      "purpose": "retention permanent archive terminal final governance certificate records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-governance-certificate-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "d1b4970218ad678280c32c803487ee4289b9aab9fa221aaf8fd81c0e78d98637",
+      "purpose": "retention permanent archive terminal final governance certificate verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-governance-certificate-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "3ce94beaad52863261557ff7c632bd8d8018a2b9d466f7207686e7ee1cdf4bf6",
+      "purpose": "retention permanent archive terminal final governance certificate closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-operations-handoff-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "d255c199236d02d2dfcb0faee94b61d17999947a93b6c548076e341ab3d4b2d5",
+      "purpose": "retention permanent archive terminal final operations handoff records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-operations-handoff-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "de8247735a7394b163462fc6fb5bfbce06e1d21889d2b66ecfb195c8102ab1ea",
+      "purpose": "retention permanent archive terminal final operations handoff verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-operations-handoff-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "7d8ff1bca64ae736887b018e76279b82afaa62b9d3e22e098f278b9167978bfb",
+      "purpose": "retention permanent archive terminal final operations handoff closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-repository-handoff-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "1281fe416fd8c1fe1e52a507a4a79add5bdad9f540aaee0d588a4777169630d8",
+      "purpose": "retention permanent archive terminal final repository handoff records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-repository-handoff-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "34c7c37dc12749523349521ef9008685d29dffe047e87646642cfe508062908d",
+      "purpose": "retention permanent archive terminal final repository handoff verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-repository-handoff-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "979f12a358e697467b786b72cf4ba80538c6cfea228c6cde72bf20fb002f55d0",
+      "purpose": "retention permanent archive terminal final repository handoff closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-consumer-notice-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "c807cc0e065ae9f951e2bb38a58828dfe304a33583e362174d3f8569fc2fb3f4",
+      "purpose": "retention permanent archive terminal final consumer notice records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-consumer-notice-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "633322735ae9cb9f85e51533d156a3a2417b7b08ae4ca3de488a2a0171be3d6e",
+      "purpose": "retention permanent archive terminal final consumer notice verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-consumer-notice-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "ed06fa447c8a21fd41447daf6471586c9627bcb000d16e37a24f30504d73b128",
+      "purpose": "retention permanent archive terminal final consumer notice closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-distribution-summary-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9a97360c738bbb3edf4db3f8eb9967f130b648f6d25473e82621916579307aad",
+      "purpose": "retention permanent archive terminal final distribution summary records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-distribution-summary-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "9b611d503a6e8d8e0841c682e22891449feb0d4db143bb9f1862b5f2581011ea",
+      "purpose": "retention permanent archive terminal final distribution summary verification receipts"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-final-distribution-summary-closeout-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "a177ddd7dabd6be538bc76806d6c1cdfcb7dd14419b10ce797791a59c08c25f9",
+      "purpose": "retention permanent archive terminal final distribution summary closeout records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-closure-record-records.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "396b457de29bb0cba6464cff054cd3ccab0caab346e1c0646d476ed1f9796beb",
+      "purpose": "retention permanent archive terminal closure record records"
+    },
+    {
+      "path": "retention/retention-permanent-archive-terminal-closure-record-verification-receipts.json",
+      "digest_algorithm": "sha256-canonical-json",
+      "digest": "86e2fc26685ccbaac7791df8541d4b1e106d51ca6ae0325a26e9405f45149248",
+      "purpose": "retention permanent archive terminal closure record verification receipts"
+    },
+    {
       "path": "merge/merge-decisions.json",
       "digest_algorithm": "sha256-canonical-json",
       "digest": "2e55acaeea603cf724924dca2634eb95627f9f4f80177af39e3f28add2d8330c",
@@ -4195,7 +4495,7 @@
     {
       "path": "audit/audit-journal.json",
       "digest_algorithm": "sha256-canonical-json",
-      "digest": "9871f3e958c4671210bb4d3193e6981866d3dc6767d95fa62917872f3b45b19b",
+      "digest": "a1f0fc835fd025facd82e6d40fd4ea15ae1a36d6d8c0057265e132223f65168f",
       "purpose": "audit journal"
     },
     {

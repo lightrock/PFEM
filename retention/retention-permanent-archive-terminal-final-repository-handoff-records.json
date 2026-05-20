@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_repository_handoff_record_id": "retention-permanent-archive-terminal-final-repository-handoff-basic-restore-001",
+    "permanent_archive_terminal_final_repository_handoff_kind": "retention_permanent_archive_terminal_final_repository_handoff",
+    "created_time": "2026-01-01T00:13:39Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_operations_handoff_closeout_record_id": "retention-permanent-archive-terminal-final-operations-handoff-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_operations_handoff_verification_receipt_id": "retention-permanent-archive-terminal-final-operations-handoff-verification-basic-restore-001",
+    "permanent_archive_terminal_final_repository_handoff_state": "transferred",
+    "permanent_archive_terminal_final_repository_handoff_scope": "closed_retention_permanent_archive_terminal_final_operations_handoff",
+    "permanent_archive_terminal_final_repository_handoff_refs": [
+      "retention-permanent-archive-terminal-final-operations-handoff-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-operations-handoff-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-operations-handoff-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-acceptance-record-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-operations-handoff-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-operations-handoff-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-repository-handoff-ref-list",
+    "permanent_archive_terminal_final_repository_handoff_ref_digest": "f76b93bde9ab5279cea79bc374e466a87ac3582f5f0132dd4345f75112f1363a",
+    "permanent_archive_terminal_final_repository_handoff_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_repository_handoff_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final repository handoff record built from the closed retention permanent archive terminal final operations handoff path."
+  }
+]

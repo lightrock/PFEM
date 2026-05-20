@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_retrieval_endpoint_record_id": "retention-permanent-archive-terminal-final-retrieval-endpoint-basic-restore-001",
+    "permanent_archive_terminal_final_retrieval_endpoint_kind": "retention_permanent_archive_terminal_final_retrieval_endpoint",
+    "created_time": "2026-01-01T00:13:09Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_public_availability_notice_closeout_record_id": "retention-permanent-archive-terminal-final-public-availability-notice-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_public_availability_notice_verification_receipt_id": "retention-permanent-archive-terminal-final-public-availability-notice-verification-basic-restore-001",
+    "permanent_archive_terminal_final_retrieval_endpoint_state": "registered",
+    "permanent_archive_terminal_final_retrieval_endpoint_scope": "closed_retention_permanent_archive_terminal_final_public_availability_notice",
+    "permanent_archive_terminal_final_retrieval_endpoint_refs": [
+      "retention-permanent-archive-terminal-final-public-availability-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-public-availability-notice-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-public-availability-notice-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-acceptance-record-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-public-availability-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-public-availability-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-retrieval-endpoint-ref-list",
+    "permanent_archive_terminal_final_retrieval_endpoint_ref_digest": "96420de344503474c8b4933918d3ffce51149c21bf6bf9225d5ca136850b05c5",
+    "permanent_archive_terminal_final_retrieval_endpoint_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_retrieval_endpoint_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final retrieval endpoint record built from the closed retention permanent archive terminal final public availability notice path."
+  }
+]

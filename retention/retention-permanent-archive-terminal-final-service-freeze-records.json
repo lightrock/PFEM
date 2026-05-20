@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_service_freeze_record_id": "retention-permanent-archive-terminal-final-service-freeze-basic-restore-001",
+    "permanent_archive_terminal_final_service_freeze_kind": "retention_permanent_archive_terminal_final_service_freeze",
+    "created_time": "2026-01-01T00:13:15Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_audit_snapshot_closeout_record_id": "retention-permanent-archive-terminal-final-audit-snapshot-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_audit_snapshot_verification_receipt_id": "retention-permanent-archive-terminal-final-audit-snapshot-verification-basic-restore-001",
+    "permanent_archive_terminal_final_service_freeze_state": "frozen",
+    "permanent_archive_terminal_final_service_freeze_scope": "closed_retention_permanent_archive_terminal_final_audit_snapshot",
+    "permanent_archive_terminal_final_service_freeze_refs": [
+      "retention-permanent-archive-terminal-final-audit-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-audit-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-audit-snapshot-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-final-acceptance-record-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-acceptance-record-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-audit-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-audit-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-service-freeze-ref-list",
+    "permanent_archive_terminal_final_service_freeze_ref_digest": "f516453fbd23d62dc26b4dfcec5cefecfc08c572792984de9d7477298c565c57",
+    "permanent_archive_terminal_final_service_freeze_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_service_freeze_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final service freeze record built from the closed retention permanent archive terminal final audit snapshot path."
+  }
+]
