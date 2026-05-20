@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_authority_notice_verification_receipt_id": "retention-permanent-archive-terminal-authority-notice-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_authority_notice_verification",
+    "created_time": "2026-01-01T00:10:40Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_authority_notice_record_id": "retention-permanent-archive-terminal-authority-notice-basic-restore-001",
+    "retention_permanent_archive_terminal_governance_attestation_closeout_record_id": "retention-permanent-archive-terminal-governance-attestation-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_authority_notice_refs": [
+      "retention-permanent-archive-terminal-governance-attestation-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-governance-attestation-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-governance-attestation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-health-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-health-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-health-snapshot-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-authority-notice-basic-restore-001",
+      "retention-permanent-archive-terminal-governance-attestation-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-authority-notice-ref-list",
+    "expected_permanent_archive_terminal_authority_notice_ref_digest": "c77d1425daa5dcebf934e08a16fe53af54d485a7defb01fe6d24e789868e94a3",
+    "actual_permanent_archive_terminal_authority_notice_ref_digest": "c77d1425daa5dcebf934e08a16fe53af54d485a7defb01fe6d24e789868e94a3",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_authority_notice_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal authority notice verification receipt showing refs and digest were checked."
+  }
+]

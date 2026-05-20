@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_compliance_attestation_record_id": "retention-permanent-archive-terminal-compliance-attestation-basic-restore-001",
+    "permanent_archive_terminal_compliance_attestation_kind": "retention_permanent_archive_terminal_compliance_attestation",
+    "created_time": "2026-01-01T00:10:03Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_assurance_report_closeout_record_id": "retention-permanent-archive-terminal-assurance-report-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_assurance_report_verification_receipt_id": "retention-permanent-archive-terminal-assurance-report-verification-basic-restore-001",
+    "permanent_archive_terminal_compliance_attestation_state": "attested",
+    "permanent_archive_terminal_compliance_attestation_scope": "closed_retention_permanent_archive_terminal_assurance_report",
+    "permanent_archive_terminal_compliance_attestation_refs": [
+      "retention-permanent-archive-terminal-assurance-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-assurance-report-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-assurance-report-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-health-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-health-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-health-snapshot-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-assurance-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-assurance-report-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-compliance-attestation-ref-list",
+    "permanent_archive_terminal_compliance_attestation_ref_digest": "ecc906e3739e28daf3e1a3e735b3ec99aae63a0ddd2c6d813c39010fa2341e55",
+    "permanent_archive_terminal_compliance_attestation_by_ref": "tools/pfem_retention_permanent_archive_terminal_compliance_attestation_records.py",
+    "summary": "Synthetic example retention permanent archive terminal compliance attestation record built from the closed retention permanent archive terminal assurance report path."
+  }
+]

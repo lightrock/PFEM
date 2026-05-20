@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_monitoring_snapshot_record_id": "retention-permanent-archive-terminal-monitoring-snapshot-basic-restore-001",
+    "permanent_archive_terminal_monitoring_snapshot_kind": "retention_permanent_archive_terminal_monitoring_snapshot",
+    "created_time": "2026-01-01T00:10:12Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_fixity_certificate_closeout_record_id": "retention-permanent-archive-terminal-fixity-certificate-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_fixity_certificate_verification_receipt_id": "retention-permanent-archive-terminal-fixity-certificate-verification-basic-restore-001",
+    "permanent_archive_terminal_monitoring_snapshot_state": "snapshotted",
+    "permanent_archive_terminal_monitoring_snapshot_scope": "closed_retention_permanent_archive_terminal_fixity_certificate",
+    "permanent_archive_terminal_monitoring_snapshot_refs": [
+      "retention-permanent-archive-terminal-fixity-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-fixity-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-fixity-certificate-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-health-snapshot-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-health-snapshot-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-health-snapshot-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-fixity-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-fixity-certificate-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-monitoring-snapshot-ref-list",
+    "permanent_archive_terminal_monitoring_snapshot_ref_digest": "468fe16b156e9983848441a97abd3a73af42a44cc6af74506878d26a0a7dbe74",
+    "permanent_archive_terminal_monitoring_snapshot_by_ref": "tools/pfem_retention_permanent_archive_terminal_monitoring_snapshot_records.py",
+    "summary": "Synthetic example retention permanent archive terminal monitoring snapshot record built from the closed retention permanent archive terminal fixity certificate path."
+  }
+]
