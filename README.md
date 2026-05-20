@@ -155,3 +155,44 @@ Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute
 ```
 
 Tiny safe edits do not need workorders. Standing-process changes usually do.
+
+# Break words
+
+PFEM has project terms that can stop a conversation long enough to prevent a bad architectural assumption.
+
+This is not a `.py` file feature and it is not a runtime parser. It is a developer and AI working rule. The detailed rules live in:
+
+```text
+docs/developer/pfem-terminology-brake-rules.md
+```
+
+You may be interrupted to clarify when a term is overloaded enough that continuing could create the wrong architecture, wrong records, wrong checks, or misleading documentation.
+
+Examples include:
+
+```text
+adapter
+subsystem
+source
+consumer
+validate
+verify
+prove
+certify
+truth
+confidence
+mesh
+boundary
+profile
+policy
+evidence
+finding
+report
+rollup
+federation
+workorder
+full gate
+release
+```
+
+If one of these terms is ambiguous, the assistant or contributor should pause implementation work, explain the PFEM-specific meanings, identify which meaning is intended, and then continue with the smallest doctrine-preserving change.
