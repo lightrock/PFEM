@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_final_index_record_id": "retention-permanent-archive-terminal-closure-final-index-basic-restore-001",
+    "permanent_archive_terminal_closure_final_index_kind": "retention_permanent_archive_terminal_closure_final_index",
+    "created_time": "2026-01-01T00:15:08Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_final_digest_closeout_record_id": "retention-permanent-archive-terminal-closure-final-digest-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closure_final_digest_verification_receipt_id": "retention-permanent-archive-terminal-closure-final-digest-verification-basic-restore-001",
+    "permanent_archive_terminal_closure_final_index_state": "indexed",
+    "permanent_archive_terminal_closure_final_index_scope": "closed_retention_permanent_archive_terminal_closure_final_digest",
+    "permanent_archive_terminal_closure_final_index_refs": [
+      "retention-permanent-archive-terminal-closure-final-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-final-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-final-index-ref-list",
+    "permanent_archive_terminal_closure_final_index_ref_digest": "5a32a20b198e9d3394c5fa39951dd53a0865940336583e1696628871196595ae",
+    "permanent_archive_terminal_closure_final_index_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_index_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closure final index record built from the closed retention permanent archive terminal closure final digest path."
+  }
+]

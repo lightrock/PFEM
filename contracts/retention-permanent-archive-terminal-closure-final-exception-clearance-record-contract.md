@@ -1,0 +1,17 @@
+# Retention Permanent Archive Terminal Closure Final Exception Clearance Records Contract
+
+- `retention_permanent_archive_terminal_closure_final_exception_clearance_record_id`
+- `permanent_archive_terminal_closure_final_exception_clearance_kind`
+- `created_time`
+- `node_id`
+- `retention_permanent_archive_terminal_closure_final_storage_seal_closeout_record_id`
+- `retention_permanent_archive_terminal_closure_final_storage_seal_verification_receipt_id`
+- `permanent_archive_terminal_closure_final_exception_clearance_state`
+- `permanent_archive_terminal_closure_final_exception_clearance_scope`
+- `permanent_archive_terminal_closure_final_exception_clearance_refs`
+- `subject_refs`
+- `basis_refs`
+- `digest_algorithm`
+- `permanent_archive_terminal_closure_final_exception_clearance_ref_digest`
+- `permanent_archive_terminal_closure_final_exception_clearance_by_ref`
+- `summary`

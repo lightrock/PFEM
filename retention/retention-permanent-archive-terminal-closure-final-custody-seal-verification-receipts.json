@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_final_custody_seal_verification_receipt_id": "retention-permanent-archive-terminal-closure-final-custody-seal-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_closure_final_custody_seal_verification",
+    "created_time": "2026-01-01T00:15:27Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_final_custody_seal_record_id": "retention-permanent-archive-terminal-closure-final-custody-seal-basic-restore-001",
+    "retention_permanent_archive_terminal_closure_final_retrieval_certificate_closeout_record_id": "retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_closure_final_custody_seal_refs": [
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-final-custody-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-final-custody-seal-ref-list",
+    "expected_permanent_archive_terminal_closure_final_custody_seal_ref_digest": "4ff4a6636ddb74e49c211c7960e0d322806a9e8146e11d50d3e6d38ee0ced9b3",
+    "actual_permanent_archive_terminal_closure_final_custody_seal_ref_digest": "4ff4a6636ddb74e49c211c7960e0d322806a9e8146e11d50d3e6d38ee0ced9b3",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_custody_seal_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal closure final custody seal verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_final_exception_clearance_record_id": "retention-permanent-archive-terminal-closure-final-exception-clearance-basic-restore-001",
+    "permanent_archive_terminal_closure_final_exception_clearance_kind": "retention_permanent_archive_terminal_closure_final_exception_clearance",
+    "created_time": "2026-01-01T00:15:41Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_final_storage_seal_closeout_record_id": "retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closure_final_storage_seal_verification_receipt_id": "retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-restore-001",
+    "permanent_archive_terminal_closure_final_exception_clearance_state": "cleared",
+    "permanent_archive_terminal_closure_final_exception_clearance_scope": "closed_retention_permanent_archive_terminal_closure_final_storage_seal",
+    "permanent_archive_terminal_closure_final_exception_clearance_refs": [
+      "retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-final-exception-clearance-ref-list",
+    "permanent_archive_terminal_closure_final_exception_clearance_ref_digest": "1b34a7524acb0dcecdb1673f177030e326ee913b295806277d9d505a98a9682b",
+    "permanent_archive_terminal_closure_final_exception_clearance_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closure final exception clearance record built from the closed retention permanent archive terminal closure final storage seal path."
+  }
+]

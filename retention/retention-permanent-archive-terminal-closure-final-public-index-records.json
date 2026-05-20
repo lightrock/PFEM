@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_final_public_index_record_id": "retention-permanent-archive-terminal-closure-final-public-index-basic-restore-001",
+    "permanent_archive_terminal_closure_final_public_index_kind": "retention_permanent_archive_terminal_closure_final_public_index",
+    "created_time": "2026-01-01T00:15:44Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_final_exception_clearance_closeout_record_id": "retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closure_final_exception_clearance_verification_receipt_id": "retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-restore-001",
+    "permanent_archive_terminal_closure_final_public_index_state": "indexed",
+    "permanent_archive_terminal_closure_final_public_index_scope": "closed_retention_permanent_archive_terminal_closure_final_exception_clearance",
+    "permanent_archive_terminal_closure_final_public_index_refs": [
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-final-public-index-ref-list",
+    "permanent_archive_terminal_closure_final_public_index_ref_digest": "04a44cdef1f2f91e0510f90700432c05f544283505d5f8f41fcbe9618a112aca",
+    "permanent_archive_terminal_closure_final_public_index_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_index_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closure final public index record built from the closed retention permanent archive terminal closure final exception clearance path."
+  }
+]

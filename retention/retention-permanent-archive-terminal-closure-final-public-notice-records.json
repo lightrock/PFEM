@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_final_public_notice_record_id": "retention-permanent-archive-terminal-closure-final-public-notice-basic-restore-001",
+    "permanent_archive_terminal_closure_final_public_notice_kind": "retention_permanent_archive_terminal_closure_final_public_notice",
+    "created_time": "2026-01-01T00:15:14Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_final_manifest_closeout_record_id": "retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closure_final_manifest_verification_receipt_id": "retention-permanent-archive-terminal-closure-final-manifest-verification-basic-restore-001",
+    "permanent_archive_terminal_closure_final_public_notice_state": "published",
+    "permanent_archive_terminal_closure_final_public_notice_scope": "closed_retention_permanent_archive_terminal_closure_final_manifest",
+    "permanent_archive_terminal_closure_final_public_notice_refs": [
+      "retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-final-public-notice-ref-list",
+    "permanent_archive_terminal_closure_final_public_notice_ref_digest": "2036298b7bacc6691ce4a52f3179e759c58a9be4811f71a6d69dd01b878fda2e",
+    "permanent_archive_terminal_closure_final_public_notice_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_notice_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closure final public notice record built from the closed retention permanent archive terminal closure final manifest path."
+  }
+]

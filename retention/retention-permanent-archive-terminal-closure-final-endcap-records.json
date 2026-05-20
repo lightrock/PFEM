@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_closure_final_endcap_record_id": "retention-permanent-archive-terminal-closure-final-endcap-basic-restore-001",
+    "permanent_archive_terminal_closure_final_endcap_kind": "retention_permanent_archive_terminal_closure_final_endcap",
+    "created_time": "2026-01-01T00:15:47Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_closure_final_public_index_closeout_record_id": "retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_closure_final_public_index_verification_receipt_id": "retention-permanent-archive-terminal-closure-final-public-index-verification-basic-restore-001",
+    "permanent_archive_terminal_closure_final_endcap_state": "closed",
+    "permanent_archive_terminal_closure_final_endcap_scope": "closed_retention_permanent_archive_terminal_closure_final_public_index",
+    "permanent_archive_terminal_closure_final_endcap_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-authority-release-receipt-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-closure-final-endcap-ref-list",
+    "permanent_archive_terminal_closure_final_endcap_ref_digest": "0670dee20a11e7bc328ce7e98cbb6750d0422877a4291a1a3f77d55c1401bba1",
+    "permanent_archive_terminal_closure_final_endcap_by_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_endcap_records.py",
+    "summary": "Synthetic example retention permanent archive terminal closure final endcap record built from the closed retention permanent archive terminal closure final public index path."
+  }
+]

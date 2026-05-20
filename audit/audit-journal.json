@@ -10206,5 +10206,655 @@
     ],
     "summary": "Example retention permanent archive terminal closure final summary records was recorded.",
     "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-summary-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_summary_verification_recorded",
+    "created_time": "2026-01-01T00:15:00Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-rollup-report-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-summary-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:15:01Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-summary-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-summary-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final summary closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-certificate-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_certificate_recorded",
+    "created_time": "2026-01-01T00:15:02Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_certificate_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final certificate records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_certificate_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-certificate-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_certificate_verification_recorded",
+    "created_time": "2026-01-01T00:15:03Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_certificate_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final certificate verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_certificate_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-certificate-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_certificate_closeout_recorded",
+    "created_time": "2026-01-01T00:15:04Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_certificate_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-certificate-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final certificate closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_certificate_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-digest-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_digest_recorded",
+    "created_time": "2026-01-01T00:15:05Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_digest_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-digest-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-certificate-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final digest records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_digest_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-digest-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_digest_verification_recorded",
+    "created_time": "2026-01-01T00:15:06Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_digest_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-digest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-certificate-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final digest verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_digest_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-digest-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_digest_closeout_recorded",
+    "created_time": "2026-01-01T00:15:07Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_digest_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final digest closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_digest_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-index-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_index_recorded",
+    "created_time": "2026-01-01T00:15:08Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_index_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-index-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final index records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_index_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-index-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_index_verification_recorded",
+    "created_time": "2026-01-01T00:15:09Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_index_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-index-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-index-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-digest-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final index verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_index_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-index-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_index_closeout_recorded",
+    "created_time": "2026-01-01T00:15:10Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_index_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-index-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-index-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-index-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final index closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_index_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-manifest-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_manifest_recorded",
+    "created_time": "2026-01-01T00:15:11Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_manifest_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-manifest-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-index-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-index-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final manifest records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_manifest_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-manifest-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_manifest_verification_recorded",
+    "created_time": "2026-01-01T00:15:12Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_manifest_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-manifest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-index-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final manifest verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_manifest_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_manifest_closeout_recorded",
+    "created_time": "2026-01-01T00:15:13Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_manifest_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final manifest closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_manifest_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-public-notice-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_public_notice_recorded",
+    "created_time": "2026-01-01T00:15:14Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_notice_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-notice-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final public notice records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_public_notice_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-public-notice-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_public_notice_verification_recorded",
+    "created_time": "2026-01-01T00:15:15Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_notice_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-notice-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-notice-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-manifest-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final public notice verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_public_notice_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-public-notice-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_public_notice_closeout_recorded",
+    "created_time": "2026-01-01T00:15:16Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_notice_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-notice-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-notice-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final public notice closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_public_notice_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-authority-receipt-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_authority_receipt_recorded",
+    "created_time": "2026-01-01T00:15:17Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_authority_receipt_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-notice-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final authority receipt records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_authority_receipt_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-authority-receipt-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_authority_receipt_verification_recorded",
+    "created_time": "2026-01-01T00:15:18Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_authority_receipt_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-notice-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final authority receipt verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_authority_receipt_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-authority-receipt-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_authority_receipt_closeout_recorded",
+    "created_time": "2026-01-01T00:15:19Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_authority_receipt_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final authority receipt closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_authority_receipt_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-availability-certificate-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_availability_certificate_recorded",
+    "created_time": "2026-01-01T00:15:20Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_availability_certificate_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final availability certificate records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_availability_certificate_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-availability-certificate-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_availability_certificate_verification_recorded",
+    "created_time": "2026-01-01T00:15:21Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_availability_certificate_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-authority-receipt-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final availability certificate verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_availability_certificate_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-availability-certificate-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_availability_certificate_closeout_recorded",
+    "created_time": "2026-01-01T00:15:22Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_availability_certificate_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final availability certificate closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_availability_certificate_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-retrieval-certificate-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_retrieval_certificate_recorded",
+    "created_time": "2026-01-01T00:15:23Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_retrieval_certificate_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final retrieval certificate records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_retrieval_certificate_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-retrieval-certificate-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_retrieval_certificate_verification_recorded",
+    "created_time": "2026-01-01T00:15:24Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_retrieval_certificate_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-availability-certificate-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final retrieval certificate verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_retrieval_certificate_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_retrieval_certificate_closeout_recorded",
+    "created_time": "2026-01-01T00:15:25Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_retrieval_certificate_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final retrieval certificate closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_retrieval_certificate_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-custody-seal-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_custody_seal_recorded",
+    "created_time": "2026-01-01T00:15:26Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_custody_seal_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-custody-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final custody seal records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_custody_seal_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-custody-seal-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_custody_seal_verification_recorded",
+    "created_time": "2026-01-01T00:15:27Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_custody_seal_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-custody-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-custody-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-retrieval-certificate-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final custody seal verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_custody_seal_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-custody-seal-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_custody_seal_closeout_recorded",
+    "created_time": "2026-01-01T00:15:28Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_custody_seal_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-custody-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-custody-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-custody-seal-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final custody seal closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_custody_seal_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-integrity-seal-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_integrity_seal_recorded",
+    "created_time": "2026-01-01T00:15:29Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_integrity_seal_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-custody-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-custody-seal-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final integrity seal records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_integrity_seal_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-integrity-seal-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_integrity_seal_verification_recorded",
+    "created_time": "2026-01-01T00:15:30Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_integrity_seal_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-custody-seal-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final integrity seal verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_integrity_seal_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-integrity-seal-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_integrity_seal_closeout_recorded",
+    "created_time": "2026-01-01T00:15:31Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_integrity_seal_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final integrity seal closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_integrity_seal_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-policy-seal-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_policy_seal_recorded",
+    "created_time": "2026-01-01T00:15:32Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_policy_seal_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-policy-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final policy seal records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_policy_seal_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-policy-seal-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_policy_seal_verification_recorded",
+    "created_time": "2026-01-01T00:15:33Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_policy_seal_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-policy-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-policy-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-integrity-seal-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final policy seal verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_policy_seal_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-policy-seal-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_policy_seal_closeout_recorded",
+    "created_time": "2026-01-01T00:15:34Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_policy_seal_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-policy-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-policy-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-policy-seal-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final policy seal closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_policy_seal_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-access-seal-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_access_seal_recorded",
+    "created_time": "2026-01-01T00:15:35Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_access_seal_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-access-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-policy-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-policy-seal-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final access seal records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_access_seal_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-access-seal-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_access_seal_verification_recorded",
+    "created_time": "2026-01-01T00:15:36Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_access_seal_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-access-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-access-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-policy-seal-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final access seal verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_access_seal_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-access-seal-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_access_seal_closeout_recorded",
+    "created_time": "2026-01-01T00:15:37Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_access_seal_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-access-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-access-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-access-seal-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final access seal closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_access_seal_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-storage-seal-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_storage_seal_recorded",
+    "created_time": "2026-01-01T00:15:38Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_storage_seal_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-storage-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-access-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-access-seal-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final storage seal records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_storage_seal_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_storage_seal_verification_recorded",
+    "created_time": "2026-01-01T00:15:39Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_storage_seal_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-access-seal-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final storage seal verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_storage_seal_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_storage_seal_closeout_recorded",
+    "created_time": "2026-01-01T00:15:40Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_storage_seal_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final storage seal closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_storage_seal_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-exception-clearance-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_exception_clearance_recorded",
+    "created_time": "2026-01-01T00:15:41Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final exception clearance records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_exception_clearance_verification_recorded",
+    "created_time": "2026-01-01T00:15:42Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-storage-seal-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final exception clearance verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_exception_clearance_closeout_recorded",
+    "created_time": "2026-01-01T00:15:43Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final exception clearance closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_exception_clearance_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-public-index-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_public_index_recorded",
+    "created_time": "2026-01-01T00:15:44Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_index_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-index-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final public index records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_public_index_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-public-index-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_public_index_verification_recorded",
+    "created_time": "2026-01-01T00:15:45Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_index_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-index-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-exception-clearance-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final public index verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_public_index_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_public_index_closeout_recorded",
+    "created_time": "2026-01-01T00:15:46Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_public_index_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final public index closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_public_index_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-endcap-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_endcap_recorded",
+    "created_time": "2026-01-01T00:15:47Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_endcap_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-endcap-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-verification-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final endcap records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_endcap_records"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-endcap-verification-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_endcap_verification_recorded",
+    "created_time": "2026-01-01T00:15:48Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_endcap_verification_receipts.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-endcap-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-endcap-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-public-index-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final endcap verification receipts was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_endcap_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-permanent-archive-terminal-closure-final-endcap-closeout-basic-001",
+    "event_kind": "retention_permanent_archive_terminal_closure_final_endcap_closeout_recorded",
+    "created_time": "2026-01-01T00:15:49Z",
+    "actor_ref": "tools/pfem_retention_permanent_archive_terminal_closure_final_endcap_closeout_records.py",
+    "subject_refs": [
+      "retention-permanent-archive-terminal-closure-final-endcap-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-endcap-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-closure-final-endcap-basic-restore-001"
+    ],
+    "summary": "Example retention permanent archive terminal closure final endcap closeout records was recorded.",
+    "source_tool": "pfem_retention_permanent_archive_terminal_closure_final_endcap_closeout_records"
   }
 ]
