@@ -15,6 +15,20 @@ Each workorder should help two audiences:
 
 The workorder file is the contract, not the AI vendor.
 
+## Normal workflow
+
+Workorders are meant to be generated for developers by a foreground assistant, not hand-written by developers in Notepad.
+
+The normal flow is:
+
+1. A developer discusses a substantial task with a foreground assistant.
+2. The foreground assistant recognizes that the task is complex, broad, slow, environment-dependent, or better handled by an executor with the repository environment.
+3. The foreground assistant creates a dated workorder file under `workorders/`.
+4. The foreground assistant gives the developer one exact executor instruction to paste elsewhere.
+5. The executor reads the committed workorder and performs only that named scope.
+
+The developer decides and approves the work. The foreground assistant turns that decision into a durable task contract when the work needs one.
+
 ## When to create a workorder
 
 Create a dated workorder for substantial or process-sensitive work, including:
@@ -25,6 +39,14 @@ Create a dated workorder for substantial or process-sensitive work, including:
 - architecture doctrine changes that future AI sessions will rely on;
 - broad documentation changes that affect contributor behavior;
 - tasks intended for Codex or another coding agent to execute later.
+
+Also create a workorder when the foreground assistant cannot safely or efficiently do the work in its current UI because it lacks the executor environment. Examples:
+
+- many coordinated file edits;
+- long-running tests or full-gate runs;
+- local repository commands that require the developer's checkout;
+- branch, PR, or CI workflow tasks;
+- changes that require Codex or another executor to inspect files, run checks, and report results from a real environment.
 
 Do not create a workorder for every typo, one-line README fix, or tiny safe direct edit unless the change modifies standing process or future contributor behavior.
 
@@ -55,7 +77,7 @@ workorders/next.md
 
 ## Launch instruction
 
-After a workorder exists, the short instruction to an executor should be:
+After a workorder exists, the foreground assistant should give the developer one exact line to paste into the executor:
 
 ```text
 Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute it.
