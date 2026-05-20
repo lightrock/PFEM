@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_handoff_package_record_id": "retention-permanent-archive-handoff-package-basic-restore-001",
+    "permanent_archive_handoff_package_kind": "retention_permanent_archive_handoff_package",
+    "created_time": "2026-01-01T00:08:01Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_accession_summary_closeout_record_id": "retention-permanent-archive-accession-summary-closeout-basic-restore-001",
+    "retention_permanent_archive_accession_summary_verification_receipt_id": "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+    "permanent_archive_handoff_package_state": "transferred",
+    "permanent_archive_handoff_package_scope": "closed_retention_permanent_archive_accession_summary",
+    "permanent_archive_handoff_package_refs": [
+      "retention-permanent-archive-accession-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention-permanent-archive-accession-summary-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention-permanent-archive-accession-summary-basic-restore-001",
+      "retention-terminal-permanent-closure-notice-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-accession-summary-closeout-basic-restore-001",
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-handoff-package-ref-list",
+    "permanent_archive_handoff_package_ref_digest": "cc1c1b0a8068c2073858b93892ed6ad254d192d16fe7097e6ee00873de89a340",
+    "permanent_archive_handoff_package_by_ref": "tools/pfem_retention_permanent_archive_handoff_package_records.py",
+    "summary": "Synthetic example retention permanent archive handoff package record built from the closed retention permanent archive accession summary path."
+  }
+]

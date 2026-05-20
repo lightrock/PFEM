@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_public_notice_record_id": "retention-permanent-archive-public-notice-basic-restore-001",
+    "permanent_archive_public_notice_kind": "retention_permanent_archive_public_notice",
+    "created_time": "2026-01-01T00:08:22Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_public_digest_closeout_record_id": "retention-permanent-archive-public-digest-closeout-basic-restore-001",
+    "retention_permanent_archive_public_digest_verification_receipt_id": "retention-permanent-archive-public-digest-verification-basic-restore-001",
+    "permanent_archive_public_notice_state": "published",
+    "permanent_archive_public_notice_scope": "closed_retention_permanent_archive_public_digest",
+    "permanent_archive_public_notice_refs": [
+      "retention-permanent-archive-public-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-public-digest-verification-basic-restore-001",
+      "retention-permanent-archive-public-digest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention-permanent-archive-accession-summary-basic-restore-001",
+      "retention-terminal-permanent-closure-notice-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-public-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-public-digest-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-public-notice-ref-list",
+    "permanent_archive_public_notice_ref_digest": "c88bd7ac8bb65d8733523b2854ab1a00c6b132c0b234c5f0dd49170abc268f5b",
+    "permanent_archive_public_notice_by_ref": "tools/pfem_retention_permanent_archive_public_notice_records.py",
+    "summary": "Synthetic example retention permanent archive public notice record built from the closed retention permanent archive public digest path."
+  }
+]

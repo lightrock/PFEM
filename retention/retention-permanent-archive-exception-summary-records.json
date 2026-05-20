@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_exception_summary_record_id": "retention-permanent-archive-exception-summary-basic-restore-001",
+    "permanent_archive_exception_summary_kind": "retention_permanent_archive_exception_summary",
+    "created_time": "2026-01-01T00:08:34Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_exception_register_closeout_record_id": "retention-permanent-archive-exception-register-closeout-basic-restore-001",
+    "retention_permanent_archive_exception_register_verification_receipt_id": "retention-permanent-archive-exception-register-verification-basic-restore-001",
+    "permanent_archive_exception_summary_state": "summarized",
+    "permanent_archive_exception_summary_scope": "closed_retention_permanent_archive_exception_register",
+    "permanent_archive_exception_summary_refs": [
+      "retention-permanent-archive-exception-register-closeout-basic-restore-001",
+      "retention-permanent-archive-exception-register-verification-basic-restore-001",
+      "retention-permanent-archive-exception-register-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention-permanent-archive-accession-summary-basic-restore-001",
+      "retention-terminal-permanent-closure-notice-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-exception-register-closeout-basic-restore-001",
+      "retention-permanent-archive-exception-register-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-exception-summary-ref-list",
+    "permanent_archive_exception_summary_ref_digest": "2f82862b30f32f3e9cf0af807e2f36bfccfe8f8abb5fd4b98f79e927c7aeb264",
+    "permanent_archive_exception_summary_by_ref": "tools/pfem_retention_permanent_archive_exception_summary_records.py",
+    "summary": "Synthetic example retention permanent archive exception summary record built from the closed retention permanent archive exception register path."
+  }
+]

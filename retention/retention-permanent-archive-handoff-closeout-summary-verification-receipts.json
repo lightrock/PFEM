@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_handoff_closeout_summary_verification_receipt_id": "retention-permanent-archive-handoff-closeout-summary-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_handoff_closeout_summary_verification",
+    "created_time": "2026-01-01T00:08:08Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_handoff_closeout_summary_record_id": "retention-permanent-archive-handoff-closeout-summary-basic-restore-001",
+    "retention_permanent_archive_handoff_receipt_closeout_record_id": "retention-permanent-archive-handoff-receipt-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_handoff_closeout_summary_refs": [
+      "retention-permanent-archive-handoff-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-handoff-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-handoff-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention-permanent-archive-accession-summary-basic-restore-001",
+      "retention-terminal-permanent-closure-notice-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-handoff-closeout-summary-basic-restore-001",
+      "retention-permanent-archive-handoff-receipt-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-handoff-closeout-summary-ref-list",
+    "expected_permanent_archive_handoff_closeout_summary_ref_digest": "5ef46fe1520a84b01e69ff6c5dbf634b220f5f9309517217e01fdba0991bf449",
+    "actual_permanent_archive_handoff_closeout_summary_ref_digest": "5ef46fe1520a84b01e69ff6c5dbf634b220f5f9309517217e01fdba0991bf449",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_handoff_closeout_summary_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive handoff closeout summary verification receipt showing refs and digest were checked."
+  }
+]

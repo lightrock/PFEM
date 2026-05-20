@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_release_receipt_record_id": "retention-permanent-archive-release-receipt-basic-restore-001",
+    "permanent_archive_release_receipt_kind": "retention_permanent_archive_release_receipt",
+    "created_time": "2026-01-01T00:08:46Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_release_register_closeout_record_id": "retention-permanent-archive-release-register-closeout-basic-restore-001",
+    "retention_permanent_archive_release_register_verification_receipt_id": "retention-permanent-archive-release-register-verification-basic-restore-001",
+    "permanent_archive_release_receipt_state": "released",
+    "permanent_archive_release_receipt_scope": "closed_retention_permanent_archive_release_register",
+    "permanent_archive_release_receipt_refs": [
+      "retention-permanent-archive-release-register-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-verification-basic-restore-001",
+      "retention-permanent-archive-release-register-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-accession-summary-verification-basic-restore-001",
+      "retention-permanent-archive-accession-summary-basic-restore-001",
+      "retention-terminal-permanent-closure-notice-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-release-register-closeout-basic-restore-001",
+      "retention-permanent-archive-release-register-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-release-receipt-ref-list",
+    "permanent_archive_release_receipt_ref_digest": "a752369f6bf0fdfc1aaba7eec1fe1dc7c81b4d1f16c9ebf555592208ceeab32e",
+    "permanent_archive_release_receipt_by_ref": "tools/pfem_retention_permanent_archive_release_receipt_records.py",
+    "summary": "Synthetic example retention permanent archive release receipt record built from the closed retention permanent archive release register path."
+  }
+]
