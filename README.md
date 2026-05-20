@@ -41,6 +41,8 @@ Start here:
 
 - `docs/AI_START_HERE.md`
 - `docs/architecture/neutral-language.md`
+- `docs/architecture/pfem-node-shapes.md`
+- `docs/architecture/cross-node-sharing-model.md`
 - `ai/architecture-rules.md`
 - `contracts/adapter-contract.md`
 
