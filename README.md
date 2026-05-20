@@ -75,6 +75,7 @@ Contributor handoff:
 - Read `docs/developer/pfem-new-chat-handoff.md`.
 - Read `docs/developer/pfem-terminal-tail-stabilization.md`.
 - Inspect `tools/pfem_check_manifest.json`.
+- Read `workorders/README.md` before creating or executing substantial task instructions.
 - `docs/developer/pfem-architecture-theory-notes.md` for the higher-level PFEM theory vocabulary.
 - Inspect current `main` before assuming conversation memory is current.
 
@@ -85,8 +86,8 @@ Before asking a new AI/chat/development session to work on PFEM, paste this firs
 ```text
 We are working in the PFEM repository: lightrock/PFEM.
 Inspect current main before relying on chat memory.
-Read AGENTS.md, README.md, docs/AI_START_HERE.md, docs/developer/pfem-contributor-command-protocol.md, docs/developer/pfem-new-tab-prompt.md, and tools/pfem_check_manifest.json before making changes.
-Follow PFEM boundary language and patch safety rules.
+Read AGENTS.md, README.md, docs/AI_START_HERE.md, docs/developer/pfem-contributor-command-protocol.md, docs/developer/pfem-new-tab-prompt.md, workorders/README.md, and tools/pfem_check_manifest.json before making changes.
+Follow PFEM boundary language, workorder discipline, and patch safety rules.
 If any filename has changed, inspect the closest current equivalent in the repository before proceeding.
 ```
 
@@ -94,9 +95,33 @@ PFEM has a project-level command protocol for humans and AI assistants.
 
 When any developer says `start a new tab`, the worker should produce the canonical PFEM new-tab handoff prompt instead of continuing implementation work.
 
+When any developer says `create a workorder`, `write a workorder`, or `make a workorder`, create a dated PFEM workorder file under `workorders/` instead of treating the task as throwaway chat text.
+
 See:
 
 ```text
 docs/developer/pfem-contributor-command-protocol.md
 docs/developer/pfem-new-tab-prompt.md
+workorders/README.md
+workorders/AGENTS.md
 ```
+
+## Workorders
+
+PFEM uses workorders for substantial or process-sensitive work. This is worth bringing over from SkyWrong because PFEM is now AI-assisted, repo-disciplined, and likely to cross chat windows, coding agents, manual edits, and future release gates.
+
+A workorder is a committed pre-action decision record and executable task contract. It is useful when the work affects boundaries, command protocol, AGENTS/AI_START_HERE, check runners, release gates, architecture doctrine, or broad contributor behavior.
+
+The standard filename shape is:
+
+```text
+workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md
+```
+
+After a workorder is created, the executor instruction is:
+
+```text
+Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute it.
+```
+
+Tiny safe edits do not need workorders. Standing-process changes usually do.
