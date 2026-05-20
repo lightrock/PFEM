@@ -78,7 +78,7 @@ Contributor handoff:
 - `docs/developer/pfem-architecture-theory-notes.md` for the higher-level PFEM theory vocabulary.
 - Inspect current `main` before assuming conversation memory is current.
 
-## Contributor command protocol
+## Contributor AI command protocol
 
 PFEM has a project-level command protocol for humans and AI assistants.
 
