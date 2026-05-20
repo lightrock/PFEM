@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_distribution_summary_record_id": "retention-terminal-distribution-summary-basic-restore-001",
+    "terminal_distribution_summary_kind": "retention_terminal_distribution_summary",
+    "created_time": "2026-01-01T00:05:25Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_public_release_summary_closeout_record_id": "retention-terminal-public-release-summary-closeout-basic-restore-001",
+    "retention_terminal_public_release_summary_verification_receipt_id": "retention-terminal-public-release-summary-verification-basic-restore-001",
+    "terminal_distribution_summary_state": "summarized",
+    "terminal_distribution_summary_scope": "closed_retention_terminal_public_release_summary",
+    "terminal_distribution_summary_refs": [
+      "retention-terminal-public-release-summary-closeout-basic-restore-001",
+      "retention-terminal-public-release-summary-verification-basic-restore-001",
+      "retention-terminal-public-release-summary-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-public-release-summary-closeout-basic-restore-001",
+      "retention-terminal-public-release-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-distribution-summary-ref-list",
+    "terminal_distribution_summary_ref_digest": "5bf32fbd83cc790e9edd36e4d34c3719a85d6a9c5a63f392c0b7f18a91203c77",
+    "terminal_distribution_summary_by_ref": "tools/pfem_retention_terminal_distribution_summary_records.py",
+    "summary": "Synthetic example retention terminal distribution summary record built from the closed retention terminal public release summary path."
+  }
+]

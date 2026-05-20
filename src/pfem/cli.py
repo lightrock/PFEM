@@ -275,6 +275,56 @@ from pfem.retention_release_terminal_report_verification_receipt import format_r
 from pfem.retention_release_terminal_report_closeout_record import format_retention_release_terminal_report_closeout_record_report, validate_retention_release_terminal_report_closeout_records
 from pfem.retention_final_publication_notice_record import format_retention_final_publication_notice_record_report, validate_retention_final_publication_notice_records
 from pfem.retention_final_publication_notice_verification_receipt import format_retention_final_publication_notice_verification_receipt_report, validate_retention_final_publication_notice_verification_receipts
+from pfem.retention_final_publication_notice_closeout_record import format_retention_final_publication_notice_closeout_record_report, validate_retention_final_publication_notice_closeout_records
+from pfem.retention_publication_completion_record import format_retention_publication_completion_record_report, validate_retention_publication_completion_records
+from pfem.retention_publication_completion_verification_receipt import format_retention_publication_completion_verification_receipt_report, validate_retention_publication_completion_verification_receipts
+from pfem.retention_publication_completion_closeout_record import format_retention_publication_completion_closeout_record_report, validate_retention_publication_completion_closeout_records
+from pfem.retention_publication_closure_certificate_record import format_retention_publication_closure_certificate_record_report, validate_retention_publication_closure_certificate_records
+from pfem.retention_publication_closure_certificate_verification_receipt import format_retention_publication_closure_certificate_verification_receipt_report, validate_retention_publication_closure_certificate_verification_receipts
+from pfem.retention_publication_closure_certificate_closeout_record import format_retention_publication_closure_certificate_closeout_record_report, validate_retention_publication_closure_certificate_closeout_records
+from pfem.retention_terminal_public_index_record import format_retention_terminal_public_index_record_report, validate_retention_terminal_public_index_records
+from pfem.retention_terminal_public_index_verification_receipt import format_retention_terminal_public_index_verification_receipt_report, validate_retention_terminal_public_index_verification_receipts
+from pfem.retention_terminal_public_index_closeout_record import format_retention_terminal_public_index_closeout_record_report, validate_retention_terminal_public_index_closeout_records
+from pfem.retention_terminal_public_digest_record import format_retention_terminal_public_digest_record_report, validate_retention_terminal_public_digest_records
+from pfem.retention_terminal_public_digest_verification_receipt import format_retention_terminal_public_digest_verification_receipt_report, validate_retention_terminal_public_digest_verification_receipts
+from pfem.retention_terminal_public_digest_closeout_record import format_retention_terminal_public_digest_closeout_record_report, validate_retention_terminal_public_digest_closeout_records
+from pfem.retention_terminal_public_archive_copy_record import format_retention_terminal_public_archive_copy_record_report, validate_retention_terminal_public_archive_copy_records
+from pfem.retention_terminal_public_archive_copy_verification_receipt import format_retention_terminal_public_archive_copy_verification_receipt_report, validate_retention_terminal_public_archive_copy_verification_receipts
+from pfem.retention_terminal_public_archive_copy_closeout_record import format_retention_terminal_public_archive_copy_closeout_record_report, validate_retention_terminal_public_archive_copy_closeout_records
+from pfem.retention_terminal_public_audit_snapshot_record import format_retention_terminal_public_audit_snapshot_record_report, validate_retention_terminal_public_audit_snapshot_records
+from pfem.retention_terminal_public_audit_snapshot_verification_receipt import format_retention_terminal_public_audit_snapshot_verification_receipt_report, validate_retention_terminal_public_audit_snapshot_verification_receipts
+from pfem.retention_terminal_public_audit_snapshot_closeout_record import format_retention_terminal_public_audit_snapshot_closeout_record_report, validate_retention_terminal_public_audit_snapshot_closeout_records
+from pfem.retention_terminal_public_metrics_snapshot_record import format_retention_terminal_public_metrics_snapshot_record_report, validate_retention_terminal_public_metrics_snapshot_records
+from pfem.retention_terminal_public_metrics_snapshot_verification_receipt import format_retention_terminal_public_metrics_snapshot_verification_receipt_report, validate_retention_terminal_public_metrics_snapshot_verification_receipts
+from pfem.retention_terminal_public_metrics_snapshot_closeout_record import format_retention_terminal_public_metrics_snapshot_closeout_record_report, validate_retention_terminal_public_metrics_snapshot_closeout_records
+from pfem.retention_terminal_public_release_summary_record import format_retention_terminal_public_release_summary_record_report, validate_retention_terminal_public_release_summary_records
+from pfem.retention_terminal_public_release_summary_verification_receipt import format_retention_terminal_public_release_summary_verification_receipt_report, validate_retention_terminal_public_release_summary_verification_receipts
+from pfem.retention_terminal_public_release_summary_closeout_record import format_retention_terminal_public_release_summary_closeout_record_report, validate_retention_terminal_public_release_summary_closeout_records
+from pfem.retention_terminal_distribution_summary_record import format_retention_terminal_distribution_summary_record_report, validate_retention_terminal_distribution_summary_records
+from pfem.retention_terminal_distribution_summary_verification_receipt import format_retention_terminal_distribution_summary_verification_receipt_report, validate_retention_terminal_distribution_summary_verification_receipts
+from pfem.retention_terminal_distribution_summary_closeout_record import format_retention_terminal_distribution_summary_closeout_record_report, validate_retention_terminal_distribution_summary_closeout_records
+from pfem.retention_terminal_access_summary_record import format_retention_terminal_access_summary_record_report, validate_retention_terminal_access_summary_records
+from pfem.retention_terminal_access_summary_verification_receipt import format_retention_terminal_access_summary_verification_receipt_report, validate_retention_terminal_access_summary_verification_receipts
+from pfem.retention_terminal_access_summary_closeout_record import format_retention_terminal_access_summary_closeout_record_report, validate_retention_terminal_access_summary_closeout_records
+from pfem.retention_terminal_retrieval_summary_record import format_retention_terminal_retrieval_summary_record_report, validate_retention_terminal_retrieval_summary_records
+from pfem.retention_terminal_retrieval_summary_verification_receipt import format_retention_terminal_retrieval_summary_verification_receipt_report, validate_retention_terminal_retrieval_summary_verification_receipts
+from pfem.retention_terminal_retrieval_summary_closeout_record import format_retention_terminal_retrieval_summary_closeout_record_report, validate_retention_terminal_retrieval_summary_closeout_records
+from pfem.retention_terminal_consumer_summary_record import format_retention_terminal_consumer_summary_record_report, validate_retention_terminal_consumer_summary_records
+from pfem.retention_terminal_consumer_summary_verification_receipt import format_retention_terminal_consumer_summary_verification_receipt_report, validate_retention_terminal_consumer_summary_verification_receipts
+from pfem.retention_terminal_consumer_summary_closeout_record import format_retention_terminal_consumer_summary_closeout_record_report, validate_retention_terminal_consumer_summary_closeout_records
+from pfem.retention_terminal_exception_summary_record import format_retention_terminal_exception_summary_record_report, validate_retention_terminal_exception_summary_records
+from pfem.retention_terminal_exception_summary_verification_receipt import format_retention_terminal_exception_summary_verification_receipt_report, validate_retention_terminal_exception_summary_verification_receipts
+from pfem.retention_terminal_exception_summary_closeout_record import format_retention_terminal_exception_summary_closeout_record_report, validate_retention_terminal_exception_summary_closeout_records
+from pfem.retention_terminal_archive_report_record import format_retention_terminal_archive_report_record_report, validate_retention_terminal_archive_report_records
+from pfem.retention_terminal_archive_report_verification_receipt import format_retention_terminal_archive_report_verification_receipt_report, validate_retention_terminal_archive_report_verification_receipts
+from pfem.retention_terminal_archive_report_closeout_record import format_retention_terminal_archive_report_closeout_record_report, validate_retention_terminal_archive_report_closeout_records
+from pfem.retention_terminal_release_annex_record import format_retention_terminal_release_annex_record_report, validate_retention_terminal_release_annex_records
+from pfem.retention_terminal_release_annex_verification_receipt import format_retention_terminal_release_annex_verification_receipt_report, validate_retention_terminal_release_annex_verification_receipts
+from pfem.retention_terminal_release_annex_closeout_record import format_retention_terminal_release_annex_closeout_record_report, validate_retention_terminal_release_annex_closeout_records
+from pfem.retention_terminal_publication_bundle_record import format_retention_terminal_publication_bundle_record_report, validate_retention_terminal_publication_bundle_records
+from pfem.retention_terminal_publication_bundle_verification_receipt import format_retention_terminal_publication_bundle_verification_receipt_report, validate_retention_terminal_publication_bundle_verification_receipts
+from pfem.retention_terminal_publication_bundle_closeout_record import format_retention_terminal_publication_bundle_closeout_record_report, validate_retention_terminal_publication_bundle_closeout_records
+from pfem.retention_publication_terminal_status_record import format_retention_publication_terminal_status_record_report, validate_retention_publication_terminal_status_records
 from pfem.doctor import format_report, run_doctor
 from pfem.exchange import format_exchange_report, validate_exchange_repository
 from pfem.handling import format_handling_report, validate_handling_policy
@@ -595,6 +645,56 @@ def build_parser() -> argparse.ArgumentParser:
         ("retention-release-terminal-report-closeout-records", "Validate PFEM retention release terminal report closeout records"),
         ("retention-final-publication-notice-records", "Validate PFEM retention final publication notice records"),
         ("retention-final-publication-notice-verification-receipts", "Validate PFEM retention final publication notice verification receipts"),
+        ("retention-final-publication-notice-closeout-records", "Validate PFEM retention final publication notice closeout records"),
+        ("retention-publication-completion-records", "Validate PFEM retention publication completion records"),
+        ("retention-publication-completion-verification-receipts", "Validate PFEM retention publication completion verification receipts"),
+        ("retention-publication-completion-closeout-records", "Validate PFEM retention publication completion closeout records"),
+        ("retention-publication-closure-certificate-records", "Validate PFEM retention publication closure certificate records"),
+        ("retention-publication-closure-certificate-verification-receipts", "Validate PFEM retention publication closure certificate verification receipts"),
+        ("retention-publication-closure-certificate-closeout-records", "Validate PFEM retention publication closure certificate closeout records"),
+        ("retention-terminal-public-index-records", "Validate PFEM retention terminal public index records"),
+        ("retention-terminal-public-index-verification-receipts", "Validate PFEM retention terminal public index verification receipts"),
+        ("retention-terminal-public-index-closeout-records", "Validate PFEM retention terminal public index closeout records"),
+        ("retention-terminal-public-digest-records", "Validate PFEM retention terminal public digest records"),
+        ("retention-terminal-public-digest-verification-receipts", "Validate PFEM retention terminal public digest verification receipts"),
+        ("retention-terminal-public-digest-closeout-records", "Validate PFEM retention terminal public digest closeout records"),
+        ("retention-terminal-public-archive-copy-records", "Validate PFEM retention terminal public archive copy records"),
+        ("retention-terminal-public-archive-copy-verification-receipts", "Validate PFEM retention terminal public archive copy verification receipts"),
+        ("retention-terminal-public-archive-copy-closeout-records", "Validate PFEM retention terminal public archive copy closeout records"),
+        ("retention-terminal-public-audit-snapshot-records", "Validate PFEM retention terminal public audit snapshot records"),
+        ("retention-terminal-public-audit-snapshot-verification-receipts", "Validate PFEM retention terminal public audit snapshot verification receipts"),
+        ("retention-terminal-public-audit-snapshot-closeout-records", "Validate PFEM retention terminal public audit snapshot closeout records"),
+        ("retention-terminal-public-metrics-snapshot-records", "Validate PFEM retention terminal public metrics snapshot records"),
+        ("retention-terminal-public-metrics-snapshot-verification-receipts", "Validate PFEM retention terminal public metrics snapshot verification receipts"),
+        ("retention-terminal-public-metrics-snapshot-closeout-records", "Validate PFEM retention terminal public metrics snapshot closeout records"),
+        ("retention-terminal-public-release-summary-records", "Validate PFEM retention terminal public release summary records"),
+        ("retention-terminal-public-release-summary-verification-receipts", "Validate PFEM retention terminal public release summary verification receipts"),
+        ("retention-terminal-public-release-summary-closeout-records", "Validate PFEM retention terminal public release summary closeout records"),
+        ("retention-terminal-distribution-summary-records", "Validate PFEM retention terminal distribution summary records"),
+        ("retention-terminal-distribution-summary-verification-receipts", "Validate PFEM retention terminal distribution summary verification receipts"),
+        ("retention-terminal-distribution-summary-closeout-records", "Validate PFEM retention terminal distribution summary closeout records"),
+        ("retention-terminal-access-summary-records", "Validate PFEM retention terminal access summary records"),
+        ("retention-terminal-access-summary-verification-receipts", "Validate PFEM retention terminal access summary verification receipts"),
+        ("retention-terminal-access-summary-closeout-records", "Validate PFEM retention terminal access summary closeout records"),
+        ("retention-terminal-retrieval-summary-records", "Validate PFEM retention terminal retrieval summary records"),
+        ("retention-terminal-retrieval-summary-verification-receipts", "Validate PFEM retention terminal retrieval summary verification receipts"),
+        ("retention-terminal-retrieval-summary-closeout-records", "Validate PFEM retention terminal retrieval summary closeout records"),
+        ("retention-terminal-consumer-summary-records", "Validate PFEM retention terminal consumer summary records"),
+        ("retention-terminal-consumer-summary-verification-receipts", "Validate PFEM retention terminal consumer summary verification receipts"),
+        ("retention-terminal-consumer-summary-closeout-records", "Validate PFEM retention terminal consumer summary closeout records"),
+        ("retention-terminal-exception-summary-records", "Validate PFEM retention terminal exception summary records"),
+        ("retention-terminal-exception-summary-verification-receipts", "Validate PFEM retention terminal exception summary verification receipts"),
+        ("retention-terminal-exception-summary-closeout-records", "Validate PFEM retention terminal exception summary closeout records"),
+        ("retention-terminal-archive-report-records", "Validate PFEM retention terminal archive report records"),
+        ("retention-terminal-archive-report-verification-receipts", "Validate PFEM retention terminal archive report verification receipts"),
+        ("retention-terminal-archive-report-closeout-records", "Validate PFEM retention terminal archive report closeout records"),
+        ("retention-terminal-release-annex-records", "Validate PFEM retention terminal release annex records"),
+        ("retention-terminal-release-annex-verification-receipts", "Validate PFEM retention terminal release annex verification receipts"),
+        ("retention-terminal-release-annex-closeout-records", "Validate PFEM retention terminal release annex closeout records"),
+        ("retention-terminal-publication-bundle-records", "Validate PFEM retention terminal publication bundle records"),
+        ("retention-terminal-publication-bundle-verification-receipts", "Validate PFEM retention terminal publication bundle verification receipts"),
+        ("retention-terminal-publication-bundle-closeout-records", "Validate PFEM retention terminal publication bundle closeout records"),
+        ("retention-publication-terminal-status-records", "Validate PFEM retention publication terminal status records"),
         ("conflict-records", "Validate PFEM conflict records"),
         ("merge-decisions", "Validate PFEM merge decisions"),
         ("routing", "Validate PFEM routing policy"),
@@ -924,6 +1024,56 @@ def main(argv: list[str] | None = None) -> int:
         "retention-release-terminal-report-closeout-records": (validate_retention_release_terminal_report_closeout_records, format_retention_release_terminal_report_closeout_record_report),
         "retention-final-publication-notice-records": (validate_retention_final_publication_notice_records, format_retention_final_publication_notice_record_report),
         "retention-final-publication-notice-verification-receipts": (validate_retention_final_publication_notice_verification_receipts, format_retention_final_publication_notice_verification_receipt_report),
+        "retention-final-publication-notice-closeout-records": (validate_retention_final_publication_notice_closeout_records, format_retention_final_publication_notice_closeout_record_report),
+        "retention-publication-completion-records": (validate_retention_publication_completion_records, format_retention_publication_completion_record_report),
+        "retention-publication-completion-verification-receipts": (validate_retention_publication_completion_verification_receipts, format_retention_publication_completion_verification_receipt_report),
+        "retention-publication-completion-closeout-records": (validate_retention_publication_completion_closeout_records, format_retention_publication_completion_closeout_record_report),
+        "retention-publication-closure-certificate-records": (validate_retention_publication_closure_certificate_records, format_retention_publication_closure_certificate_record_report),
+        "retention-publication-closure-certificate-verification-receipts": (validate_retention_publication_closure_certificate_verification_receipts, format_retention_publication_closure_certificate_verification_receipt_report),
+        "retention-publication-closure-certificate-closeout-records": (validate_retention_publication_closure_certificate_closeout_records, format_retention_publication_closure_certificate_closeout_record_report),
+        "retention-terminal-public-index-records": (validate_retention_terminal_public_index_records, format_retention_terminal_public_index_record_report),
+        "retention-terminal-public-index-verification-receipts": (validate_retention_terminal_public_index_verification_receipts, format_retention_terminal_public_index_verification_receipt_report),
+        "retention-terminal-public-index-closeout-records": (validate_retention_terminal_public_index_closeout_records, format_retention_terminal_public_index_closeout_record_report),
+        "retention-terminal-public-digest-records": (validate_retention_terminal_public_digest_records, format_retention_terminal_public_digest_record_report),
+        "retention-terminal-public-digest-verification-receipts": (validate_retention_terminal_public_digest_verification_receipts, format_retention_terminal_public_digest_verification_receipt_report),
+        "retention-terminal-public-digest-closeout-records": (validate_retention_terminal_public_digest_closeout_records, format_retention_terminal_public_digest_closeout_record_report),
+        "retention-terminal-public-archive-copy-records": (validate_retention_terminal_public_archive_copy_records, format_retention_terminal_public_archive_copy_record_report),
+        "retention-terminal-public-archive-copy-verification-receipts": (validate_retention_terminal_public_archive_copy_verification_receipts, format_retention_terminal_public_archive_copy_verification_receipt_report),
+        "retention-terminal-public-archive-copy-closeout-records": (validate_retention_terminal_public_archive_copy_closeout_records, format_retention_terminal_public_archive_copy_closeout_record_report),
+        "retention-terminal-public-audit-snapshot-records": (validate_retention_terminal_public_audit_snapshot_records, format_retention_terminal_public_audit_snapshot_record_report),
+        "retention-terminal-public-audit-snapshot-verification-receipts": (validate_retention_terminal_public_audit_snapshot_verification_receipts, format_retention_terminal_public_audit_snapshot_verification_receipt_report),
+        "retention-terminal-public-audit-snapshot-closeout-records": (validate_retention_terminal_public_audit_snapshot_closeout_records, format_retention_terminal_public_audit_snapshot_closeout_record_report),
+        "retention-terminal-public-metrics-snapshot-records": (validate_retention_terminal_public_metrics_snapshot_records, format_retention_terminal_public_metrics_snapshot_record_report),
+        "retention-terminal-public-metrics-snapshot-verification-receipts": (validate_retention_terminal_public_metrics_snapshot_verification_receipts, format_retention_terminal_public_metrics_snapshot_verification_receipt_report),
+        "retention-terminal-public-metrics-snapshot-closeout-records": (validate_retention_terminal_public_metrics_snapshot_closeout_records, format_retention_terminal_public_metrics_snapshot_closeout_record_report),
+        "retention-terminal-public-release-summary-records": (validate_retention_terminal_public_release_summary_records, format_retention_terminal_public_release_summary_record_report),
+        "retention-terminal-public-release-summary-verification-receipts": (validate_retention_terminal_public_release_summary_verification_receipts, format_retention_terminal_public_release_summary_verification_receipt_report),
+        "retention-terminal-public-release-summary-closeout-records": (validate_retention_terminal_public_release_summary_closeout_records, format_retention_terminal_public_release_summary_closeout_record_report),
+        "retention-terminal-distribution-summary-records": (validate_retention_terminal_distribution_summary_records, format_retention_terminal_distribution_summary_record_report),
+        "retention-terminal-distribution-summary-verification-receipts": (validate_retention_terminal_distribution_summary_verification_receipts, format_retention_terminal_distribution_summary_verification_receipt_report),
+        "retention-terminal-distribution-summary-closeout-records": (validate_retention_terminal_distribution_summary_closeout_records, format_retention_terminal_distribution_summary_closeout_record_report),
+        "retention-terminal-access-summary-records": (validate_retention_terminal_access_summary_records, format_retention_terminal_access_summary_record_report),
+        "retention-terminal-access-summary-verification-receipts": (validate_retention_terminal_access_summary_verification_receipts, format_retention_terminal_access_summary_verification_receipt_report),
+        "retention-terminal-access-summary-closeout-records": (validate_retention_terminal_access_summary_closeout_records, format_retention_terminal_access_summary_closeout_record_report),
+        "retention-terminal-retrieval-summary-records": (validate_retention_terminal_retrieval_summary_records, format_retention_terminal_retrieval_summary_record_report),
+        "retention-terminal-retrieval-summary-verification-receipts": (validate_retention_terminal_retrieval_summary_verification_receipts, format_retention_terminal_retrieval_summary_verification_receipt_report),
+        "retention-terminal-retrieval-summary-closeout-records": (validate_retention_terminal_retrieval_summary_closeout_records, format_retention_terminal_retrieval_summary_closeout_record_report),
+        "retention-terminal-consumer-summary-records": (validate_retention_terminal_consumer_summary_records, format_retention_terminal_consumer_summary_record_report),
+        "retention-terminal-consumer-summary-verification-receipts": (validate_retention_terminal_consumer_summary_verification_receipts, format_retention_terminal_consumer_summary_verification_receipt_report),
+        "retention-terminal-consumer-summary-closeout-records": (validate_retention_terminal_consumer_summary_closeout_records, format_retention_terminal_consumer_summary_closeout_record_report),
+        "retention-terminal-exception-summary-records": (validate_retention_terminal_exception_summary_records, format_retention_terminal_exception_summary_record_report),
+        "retention-terminal-exception-summary-verification-receipts": (validate_retention_terminal_exception_summary_verification_receipts, format_retention_terminal_exception_summary_verification_receipt_report),
+        "retention-terminal-exception-summary-closeout-records": (validate_retention_terminal_exception_summary_closeout_records, format_retention_terminal_exception_summary_closeout_record_report),
+        "retention-terminal-archive-report-records": (validate_retention_terminal_archive_report_records, format_retention_terminal_archive_report_record_report),
+        "retention-terminal-archive-report-verification-receipts": (validate_retention_terminal_archive_report_verification_receipts, format_retention_terminal_archive_report_verification_receipt_report),
+        "retention-terminal-archive-report-closeout-records": (validate_retention_terminal_archive_report_closeout_records, format_retention_terminal_archive_report_closeout_record_report),
+        "retention-terminal-release-annex-records": (validate_retention_terminal_release_annex_records, format_retention_terminal_release_annex_record_report),
+        "retention-terminal-release-annex-verification-receipts": (validate_retention_terminal_release_annex_verification_receipts, format_retention_terminal_release_annex_verification_receipt_report),
+        "retention-terminal-release-annex-closeout-records": (validate_retention_terminal_release_annex_closeout_records, format_retention_terminal_release_annex_closeout_record_report),
+        "retention-terminal-publication-bundle-records": (validate_retention_terminal_publication_bundle_records, format_retention_terminal_publication_bundle_record_report),
+        "retention-terminal-publication-bundle-verification-receipts": (validate_retention_terminal_publication_bundle_verification_receipts, format_retention_terminal_publication_bundle_verification_receipt_report),
+        "retention-terminal-publication-bundle-closeout-records": (validate_retention_terminal_publication_bundle_closeout_records, format_retention_terminal_publication_bundle_closeout_record_report),
+        "retention-publication-terminal-status-records": (validate_retention_publication_terminal_status_records, format_retention_publication_terminal_status_record_report),
         "conflict-records": (validate_conflict_records, format_conflict_record_report),
         "merge-decisions": (validate_merge_decisions, format_merge_decision_report),
         "routing": (validate_routing_policy, format_routing_report),

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_public_release_summary_record_id": "retention-terminal-public-release-summary-basic-restore-001",
+    "terminal_public_release_summary_kind": "retention_terminal_public_release_summary",
+    "created_time": "2026-01-01T00:05:22Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_public_metrics_snapshot_closeout_record_id": "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+    "retention_terminal_public_metrics_snapshot_verification_receipt_id": "retention-terminal-public-metrics-snapshot-verification-basic-restore-001",
+    "terminal_public_release_summary_state": "summarized",
+    "terminal_public_release_summary_scope": "closed_retention_terminal_public_metrics_snapshot",
+    "terminal_public_release_summary_refs": [
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-verification-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-public-release-summary-ref-list",
+    "terminal_public_release_summary_ref_digest": "50b22b8d30590867054dff927822944b2c8bcae291f3cc7ed5c4f0d2106fcdb8",
+    "terminal_public_release_summary_by_ref": "tools/pfem_retention_terminal_public_release_summary_records.py",
+    "summary": "Synthetic example retention terminal public release summary record built from the closed retention terminal public metrics snapshot path."
+  }
+]

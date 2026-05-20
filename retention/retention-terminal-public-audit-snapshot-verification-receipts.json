@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_public_audit_snapshot_verification_receipt_id": "retention-terminal-public-audit-snapshot-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_public_audit_snapshot_verification",
+    "created_time": "2026-01-01T00:05:17Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_public_audit_snapshot_record_id": "retention-terminal-public-audit-snapshot-basic-restore-001",
+    "retention_terminal_public_archive_copy_closeout_record_id": "retention-terminal-public-archive-copy-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_public_audit_snapshot_refs": [
+      "retention-terminal-public-archive-copy-closeout-basic-restore-001",
+      "retention-terminal-public-archive-copy-verification-basic-restore-001",
+      "retention-terminal-public-archive-copy-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-public-audit-snapshot-basic-restore-001",
+      "retention-terminal-public-archive-copy-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-public-audit-snapshot-ref-list",
+    "expected_terminal_public_audit_snapshot_ref_digest": "992e9f564c308f4008b41a851d335031e64c90c759c4000acd222576217f8cdc",
+    "actual_terminal_public_audit_snapshot_ref_digest": "992e9f564c308f4008b41a851d335031e64c90c759c4000acd222576217f8cdc",
+    "verified_by_ref": "tools/pfem_retention_terminal_public_audit_snapshot_verification_receipts.py",
+    "summary": "Synthetic example retention terminal public audit snapshot verification receipt showing refs and digest were checked."
+  }
+]

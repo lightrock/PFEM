@@ -1411,6 +1411,256 @@ python tools\pfem_retention_final_publication_notice_verification_receipts.py
 if errorlevel 1 exit /b 1
 
 echo.
+echo Running PFEM retention final publication notice closeout record validation...
+python tools\pfem_retention_final_publication_notice_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication completion record validation...
+python tools\pfem_retention_publication_completion_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication completion verification receipt validation...
+python tools\pfem_retention_publication_completion_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication completion closeout record validation...
+python tools\pfem_retention_publication_completion_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication closure certificate record validation...
+python tools\pfem_retention_publication_closure_certificate_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication closure certificate verification receipt validation...
+python tools\pfem_retention_publication_closure_certificate_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication closure certificate closeout record validation...
+python tools\pfem_retention_publication_closure_certificate_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public index record validation...
+python tools\pfem_retention_terminal_public_index_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public index verification receipt validation...
+python tools\pfem_retention_terminal_public_index_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public index closeout record validation...
+python tools\pfem_retention_terminal_public_index_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public digest record validation...
+python tools\pfem_retention_terminal_public_digest_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public digest verification receipt validation...
+python tools\pfem_retention_terminal_public_digest_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public digest closeout record validation...
+python tools\pfem_retention_terminal_public_digest_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public archive copy record validation...
+python tools\pfem_retention_terminal_public_archive_copy_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public archive copy verification receipt validation...
+python tools\pfem_retention_terminal_public_archive_copy_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public archive copy closeout record validation...
+python tools\pfem_retention_terminal_public_archive_copy_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public audit snapshot record validation...
+python tools\pfem_retention_terminal_public_audit_snapshot_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public audit snapshot verification receipt validation...
+python tools\pfem_retention_terminal_public_audit_snapshot_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public audit snapshot closeout record validation...
+python tools\pfem_retention_terminal_public_audit_snapshot_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public metrics snapshot record validation...
+python tools\pfem_retention_terminal_public_metrics_snapshot_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public metrics snapshot verification receipt validation...
+python tools\pfem_retention_terminal_public_metrics_snapshot_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public metrics snapshot closeout record validation...
+python tools\pfem_retention_terminal_public_metrics_snapshot_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public release summary record validation...
+python tools\pfem_retention_terminal_public_release_summary_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public release summary verification receipt validation...
+python tools\pfem_retention_terminal_public_release_summary_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal public release summary closeout record validation...
+python tools\pfem_retention_terminal_public_release_summary_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal distribution summary record validation...
+python tools\pfem_retention_terminal_distribution_summary_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal distribution summary verification receipt validation...
+python tools\pfem_retention_terminal_distribution_summary_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal distribution summary closeout record validation...
+python tools\pfem_retention_terminal_distribution_summary_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal access summary record validation...
+python tools\pfem_retention_terminal_access_summary_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal access summary verification receipt validation...
+python tools\pfem_retention_terminal_access_summary_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal access summary closeout record validation...
+python tools\pfem_retention_terminal_access_summary_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal retrieval summary record validation...
+python tools\pfem_retention_terminal_retrieval_summary_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal retrieval summary verification receipt validation...
+python tools\pfem_retention_terminal_retrieval_summary_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal retrieval summary closeout record validation...
+python tools\pfem_retention_terminal_retrieval_summary_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal consumer summary record validation...
+python tools\pfem_retention_terminal_consumer_summary_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal consumer summary verification receipt validation...
+python tools\pfem_retention_terminal_consumer_summary_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal consumer summary closeout record validation...
+python tools\pfem_retention_terminal_consumer_summary_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal exception summary record validation...
+python tools\pfem_retention_terminal_exception_summary_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal exception summary verification receipt validation...
+python tools\pfem_retention_terminal_exception_summary_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal exception summary closeout record validation...
+python tools\pfem_retention_terminal_exception_summary_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal archive report record validation...
+python tools\pfem_retention_terminal_archive_report_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal archive report verification receipt validation...
+python tools\pfem_retention_terminal_archive_report_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal archive report closeout record validation...
+python tools\pfem_retention_terminal_archive_report_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal release annex record validation...
+python tools\pfem_retention_terminal_release_annex_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal release annex verification receipt validation...
+python tools\pfem_retention_terminal_release_annex_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal release annex closeout record validation...
+python tools\pfem_retention_terminal_release_annex_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal publication bundle record validation...
+python tools\pfem_retention_terminal_publication_bundle_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal publication bundle verification receipt validation...
+python tools\pfem_retention_terminal_publication_bundle_verification_receipts.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention terminal publication bundle closeout record validation...
+python tools\pfem_retention_terminal_publication_bundle_closeout_records.py
+if errorlevel 1 exit /b 1
+
+echo.
+echo Running PFEM retention publication terminal status record validation...
+python tools\pfem_retention_publication_terminal_status_records.py
+if errorlevel 1 exit /b 1
+
+echo.
 echo Running PFEM delivery validation...
 python tools\pfem_delivery.py
 if errorlevel 1 exit /b 1

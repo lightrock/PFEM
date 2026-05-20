@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_exception_summary_verification_receipt_id": "retention-terminal-exception-summary-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_exception_summary_verification",
+    "created_time": "2026-01-01T00:05:38Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_exception_summary_record_id": "retention-terminal-exception-summary-basic-restore-001",
+    "retention_terminal_consumer_summary_closeout_record_id": "retention-terminal-consumer-summary-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_exception_summary_refs": [
+      "retention-terminal-consumer-summary-closeout-basic-restore-001",
+      "retention-terminal-consumer-summary-verification-basic-restore-001",
+      "retention-terminal-consumer-summary-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-exception-summary-basic-restore-001",
+      "retention-terminal-consumer-summary-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-exception-summary-ref-list",
+    "expected_terminal_exception_summary_ref_digest": "cb6c3c6eddf949c0cbb1356dc1709ffc339f58e6adb1906a95eaf70ae5107711",
+    "actual_terminal_exception_summary_ref_digest": "cb6c3c6eddf949c0cbb1356dc1709ffc339f58e6adb1906a95eaf70ae5107711",
+    "verified_by_ref": "tools/pfem_retention_terminal_exception_summary_verification_receipts.py",
+    "summary": "Synthetic example retention terminal exception summary verification receipt showing refs and digest were checked."
+  }
+]

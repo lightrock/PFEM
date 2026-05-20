@@ -3706,5 +3706,655 @@
     ],
     "summary": "Example retention final publication notice verification receipts was recorded.",
     "source_tool": "pfem_retention_final_publication_notice_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-final-publication-notice-closeout-basic-001",
+    "event_kind": "retention_final_publication_notice_closeout_recorded",
+    "created_time": "2026-01-01T00:05:00Z",
+    "actor_ref": "tools/pfem_retention_final_publication_notice_closeout_records.py",
+    "subject_refs": [
+      "retention-final-publication-notice-closeout-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention-final-publication-notice-basic-restore-001"
+    ],
+    "summary": "Example retention final publication notice closeout records was recorded.",
+    "source_tool": "pfem_retention_final_publication_notice_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-publication-completion-basic-001",
+    "event_kind": "retention_publication_completion_recorded",
+    "created_time": "2026-01-01T00:05:01Z",
+    "actor_ref": "tools/pfem_retention_publication_completion_records.py",
+    "subject_refs": [
+      "retention-publication-completion-basic-restore-001",
+      "retention-final-publication-notice-closeout-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001"
+    ],
+    "summary": "Example retention publication completion records was recorded.",
+    "source_tool": "pfem_retention_publication_completion_records"
+  },
+  {
+    "audit_id": "audit-retention-publication-completion-verification-basic-001",
+    "event_kind": "retention_publication_completion_verification_recorded",
+    "created_time": "2026-01-01T00:05:02Z",
+    "actor_ref": "tools/pfem_retention_publication_completion_verification_receipts.py",
+    "subject_refs": [
+      "retention-publication-completion-verification-basic-restore-001",
+      "retention-publication-completion-basic-restore-001",
+      "retention-final-publication-notice-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention publication completion verification receipts was recorded.",
+    "source_tool": "pfem_retention_publication_completion_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-publication-completion-closeout-basic-001",
+    "event_kind": "retention_publication_completion_closeout_recorded",
+    "created_time": "2026-01-01T00:05:03Z",
+    "actor_ref": "tools/pfem_retention_publication_completion_closeout_records.py",
+    "subject_refs": [
+      "retention-publication-completion-closeout-basic-restore-001",
+      "retention-publication-completion-verification-basic-restore-001",
+      "retention-publication-completion-basic-restore-001"
+    ],
+    "summary": "Example retention publication completion closeout records was recorded.",
+    "source_tool": "pfem_retention_publication_completion_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-publication-closure-certificate-basic-001",
+    "event_kind": "retention_publication_closure_certificate_recorded",
+    "created_time": "2026-01-01T00:05:04Z",
+    "actor_ref": "tools/pfem_retention_publication_closure_certificate_records.py",
+    "subject_refs": [
+      "retention-publication-closure-certificate-basic-restore-001",
+      "retention-publication-completion-closeout-basic-restore-001",
+      "retention-publication-completion-verification-basic-restore-001"
+    ],
+    "summary": "Example retention publication closure certificate records was recorded.",
+    "source_tool": "pfem_retention_publication_closure_certificate_records"
+  },
+  {
+    "audit_id": "audit-retention-publication-closure-certificate-verification-basic-001",
+    "event_kind": "retention_publication_closure_certificate_verification_recorded",
+    "created_time": "2026-01-01T00:05:05Z",
+    "actor_ref": "tools/pfem_retention_publication_closure_certificate_verification_receipts.py",
+    "subject_refs": [
+      "retention-publication-closure-certificate-verification-basic-restore-001",
+      "retention-publication-closure-certificate-basic-restore-001",
+      "retention-publication-completion-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention publication closure certificate verification receipts was recorded.",
+    "source_tool": "pfem_retention_publication_closure_certificate_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-publication-closure-certificate-closeout-basic-001",
+    "event_kind": "retention_publication_closure_certificate_closeout_recorded",
+    "created_time": "2026-01-01T00:05:06Z",
+    "actor_ref": "tools/pfem_retention_publication_closure_certificate_closeout_records.py",
+    "subject_refs": [
+      "retention-publication-closure-certificate-closeout-basic-restore-001",
+      "retention-publication-closure-certificate-verification-basic-restore-001",
+      "retention-publication-closure-certificate-basic-restore-001"
+    ],
+    "summary": "Example retention publication closure certificate closeout records was recorded.",
+    "source_tool": "pfem_retention_publication_closure_certificate_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-index-basic-001",
+    "event_kind": "retention_terminal_public_index_recorded",
+    "created_time": "2026-01-01T00:05:07Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_index_records.py",
+    "subject_refs": [
+      "retention-terminal-public-index-basic-restore-001",
+      "retention-publication-closure-certificate-closeout-basic-restore-001",
+      "retention-publication-closure-certificate-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public index records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_index_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-index-verification-basic-001",
+    "event_kind": "retention_terminal_public_index_verification_recorded",
+    "created_time": "2026-01-01T00:05:08Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_index_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-public-index-verification-basic-restore-001",
+      "retention-terminal-public-index-basic-restore-001",
+      "retention-publication-closure-certificate-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public index verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_public_index_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-index-closeout-basic-001",
+    "event_kind": "retention_terminal_public_index_closeout_recorded",
+    "created_time": "2026-01-01T00:05:09Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_index_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-public-index-closeout-basic-restore-001",
+      "retention-terminal-public-index-verification-basic-restore-001",
+      "retention-terminal-public-index-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public index closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_index_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-digest-basic-001",
+    "event_kind": "retention_terminal_public_digest_recorded",
+    "created_time": "2026-01-01T00:05:10Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_digest_records.py",
+    "subject_refs": [
+      "retention-terminal-public-digest-basic-restore-001",
+      "retention-terminal-public-index-closeout-basic-restore-001",
+      "retention-terminal-public-index-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public digest records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_digest_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-digest-verification-basic-001",
+    "event_kind": "retention_terminal_public_digest_verification_recorded",
+    "created_time": "2026-01-01T00:05:11Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_digest_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-public-digest-verification-basic-restore-001",
+      "retention-terminal-public-digest-basic-restore-001",
+      "retention-terminal-public-index-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public digest verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_public_digest_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-digest-closeout-basic-001",
+    "event_kind": "retention_terminal_public_digest_closeout_recorded",
+    "created_time": "2026-01-01T00:05:12Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_digest_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-public-digest-closeout-basic-restore-001",
+      "retention-terminal-public-digest-verification-basic-restore-001",
+      "retention-terminal-public-digest-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public digest closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_digest_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-archive-copy-basic-001",
+    "event_kind": "retention_terminal_public_archive_copy_recorded",
+    "created_time": "2026-01-01T00:05:13Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_archive_copy_records.py",
+    "subject_refs": [
+      "retention-terminal-public-archive-copy-basic-restore-001",
+      "retention-terminal-public-digest-closeout-basic-restore-001",
+      "retention-terminal-public-digest-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public archive copy records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_archive_copy_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-archive-copy-verification-basic-001",
+    "event_kind": "retention_terminal_public_archive_copy_verification_recorded",
+    "created_time": "2026-01-01T00:05:14Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_archive_copy_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-public-archive-copy-verification-basic-restore-001",
+      "retention-terminal-public-archive-copy-basic-restore-001",
+      "retention-terminal-public-digest-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public archive copy verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_public_archive_copy_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-archive-copy-closeout-basic-001",
+    "event_kind": "retention_terminal_public_archive_copy_closeout_recorded",
+    "created_time": "2026-01-01T00:05:15Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_archive_copy_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-public-archive-copy-closeout-basic-restore-001",
+      "retention-terminal-public-archive-copy-verification-basic-restore-001",
+      "retention-terminal-public-archive-copy-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public archive copy closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_archive_copy_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-audit-snapshot-basic-001",
+    "event_kind": "retention_terminal_public_audit_snapshot_recorded",
+    "created_time": "2026-01-01T00:05:16Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_audit_snapshot_records.py",
+    "subject_refs": [
+      "retention-terminal-public-audit-snapshot-basic-restore-001",
+      "retention-terminal-public-archive-copy-closeout-basic-restore-001",
+      "retention-terminal-public-archive-copy-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public audit snapshot records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_audit_snapshot_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-audit-snapshot-verification-basic-001",
+    "event_kind": "retention_terminal_public_audit_snapshot_verification_recorded",
+    "created_time": "2026-01-01T00:05:17Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_audit_snapshot_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-public-audit-snapshot-verification-basic-restore-001",
+      "retention-terminal-public-audit-snapshot-basic-restore-001",
+      "retention-terminal-public-archive-copy-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public audit snapshot verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_public_audit_snapshot_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-audit-snapshot-closeout-basic-001",
+    "event_kind": "retention_terminal_public_audit_snapshot_closeout_recorded",
+    "created_time": "2026-01-01T00:05:18Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_audit_snapshot_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-public-audit-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-audit-snapshot-verification-basic-restore-001",
+      "retention-terminal-public-audit-snapshot-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public audit snapshot closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_audit_snapshot_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-metrics-snapshot-basic-001",
+    "event_kind": "retention_terminal_public_metrics_snapshot_recorded",
+    "created_time": "2026-01-01T00:05:19Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_metrics_snapshot_records.py",
+    "subject_refs": [
+      "retention-terminal-public-metrics-snapshot-basic-restore-001",
+      "retention-terminal-public-audit-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-audit-snapshot-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public metrics snapshot records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_metrics_snapshot_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-metrics-snapshot-verification-basic-001",
+    "event_kind": "retention_terminal_public_metrics_snapshot_verification_recorded",
+    "created_time": "2026-01-01T00:05:20Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_metrics_snapshot_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-public-metrics-snapshot-verification-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-basic-restore-001",
+      "retention-terminal-public-audit-snapshot-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public metrics snapshot verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_public_metrics_snapshot_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-metrics-snapshot-closeout-basic-001",
+    "event_kind": "retention_terminal_public_metrics_snapshot_closeout_recorded",
+    "created_time": "2026-01-01T00:05:21Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_metrics_snapshot_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-verification-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public metrics snapshot closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_metrics_snapshot_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-release-summary-basic-001",
+    "event_kind": "retention_terminal_public_release_summary_recorded",
+    "created_time": "2026-01-01T00:05:22Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_release_summary_records.py",
+    "subject_refs": [
+      "retention-terminal-public-release-summary-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public release summary records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_release_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-release-summary-verification-basic-001",
+    "event_kind": "retention_terminal_public_release_summary_verification_recorded",
+    "created_time": "2026-01-01T00:05:23Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_release_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-public-release-summary-verification-basic-restore-001",
+      "retention-terminal-public-release-summary-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public release summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_public_release_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-public-release-summary-closeout-basic-001",
+    "event_kind": "retention_terminal_public_release_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:05:24Z",
+    "actor_ref": "tools/pfem_retention_terminal_public_release_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-public-release-summary-closeout-basic-restore-001",
+      "retention-terminal-public-release-summary-verification-basic-restore-001",
+      "retention-terminal-public-release-summary-basic-restore-001"
+    ],
+    "summary": "Example retention terminal public release summary closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_public_release_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-distribution-summary-basic-001",
+    "event_kind": "retention_terminal_distribution_summary_recorded",
+    "created_time": "2026-01-01T00:05:25Z",
+    "actor_ref": "tools/pfem_retention_terminal_distribution_summary_records.py",
+    "subject_refs": [
+      "retention-terminal-distribution-summary-basic-restore-001",
+      "retention-terminal-public-release-summary-closeout-basic-restore-001",
+      "retention-terminal-public-release-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal distribution summary records was recorded.",
+    "source_tool": "pfem_retention_terminal_distribution_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-distribution-summary-verification-basic-001",
+    "event_kind": "retention_terminal_distribution_summary_verification_recorded",
+    "created_time": "2026-01-01T00:05:26Z",
+    "actor_ref": "tools/pfem_retention_terminal_distribution_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-distribution-summary-verification-basic-restore-001",
+      "retention-terminal-distribution-summary-basic-restore-001",
+      "retention-terminal-public-release-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal distribution summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_distribution_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-distribution-summary-closeout-basic-001",
+    "event_kind": "retention_terminal_distribution_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:05:27Z",
+    "actor_ref": "tools/pfem_retention_terminal_distribution_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-distribution-summary-closeout-basic-restore-001",
+      "retention-terminal-distribution-summary-verification-basic-restore-001",
+      "retention-terminal-distribution-summary-basic-restore-001"
+    ],
+    "summary": "Example retention terminal distribution summary closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_distribution_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-access-summary-basic-001",
+    "event_kind": "retention_terminal_access_summary_recorded",
+    "created_time": "2026-01-01T00:05:28Z",
+    "actor_ref": "tools/pfem_retention_terminal_access_summary_records.py",
+    "subject_refs": [
+      "retention-terminal-access-summary-basic-restore-001",
+      "retention-terminal-distribution-summary-closeout-basic-restore-001",
+      "retention-terminal-distribution-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal access summary records was recorded.",
+    "source_tool": "pfem_retention_terminal_access_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-access-summary-verification-basic-001",
+    "event_kind": "retention_terminal_access_summary_verification_recorded",
+    "created_time": "2026-01-01T00:05:29Z",
+    "actor_ref": "tools/pfem_retention_terminal_access_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-access-summary-verification-basic-restore-001",
+      "retention-terminal-access-summary-basic-restore-001",
+      "retention-terminal-distribution-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal access summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_access_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-access-summary-closeout-basic-001",
+    "event_kind": "retention_terminal_access_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:05:30Z",
+    "actor_ref": "tools/pfem_retention_terminal_access_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-access-summary-closeout-basic-restore-001",
+      "retention-terminal-access-summary-verification-basic-restore-001",
+      "retention-terminal-access-summary-basic-restore-001"
+    ],
+    "summary": "Example retention terminal access summary closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_access_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-retrieval-summary-basic-001",
+    "event_kind": "retention_terminal_retrieval_summary_recorded",
+    "created_time": "2026-01-01T00:05:31Z",
+    "actor_ref": "tools/pfem_retention_terminal_retrieval_summary_records.py",
+    "subject_refs": [
+      "retention-terminal-retrieval-summary-basic-restore-001",
+      "retention-terminal-access-summary-closeout-basic-restore-001",
+      "retention-terminal-access-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal retrieval summary records was recorded.",
+    "source_tool": "pfem_retention_terminal_retrieval_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-retrieval-summary-verification-basic-001",
+    "event_kind": "retention_terminal_retrieval_summary_verification_recorded",
+    "created_time": "2026-01-01T00:05:32Z",
+    "actor_ref": "tools/pfem_retention_terminal_retrieval_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-retrieval-summary-verification-basic-restore-001",
+      "retention-terminal-retrieval-summary-basic-restore-001",
+      "retention-terminal-access-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal retrieval summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_retrieval_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-retrieval-summary-closeout-basic-001",
+    "event_kind": "retention_terminal_retrieval_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:05:33Z",
+    "actor_ref": "tools/pfem_retention_terminal_retrieval_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-retrieval-summary-closeout-basic-restore-001",
+      "retention-terminal-retrieval-summary-verification-basic-restore-001",
+      "retention-terminal-retrieval-summary-basic-restore-001"
+    ],
+    "summary": "Example retention terminal retrieval summary closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_retrieval_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-consumer-summary-basic-001",
+    "event_kind": "retention_terminal_consumer_summary_recorded",
+    "created_time": "2026-01-01T00:05:34Z",
+    "actor_ref": "tools/pfem_retention_terminal_consumer_summary_records.py",
+    "subject_refs": [
+      "retention-terminal-consumer-summary-basic-restore-001",
+      "retention-terminal-retrieval-summary-closeout-basic-restore-001",
+      "retention-terminal-retrieval-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal consumer summary records was recorded.",
+    "source_tool": "pfem_retention_terminal_consumer_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-consumer-summary-verification-basic-001",
+    "event_kind": "retention_terminal_consumer_summary_verification_recorded",
+    "created_time": "2026-01-01T00:05:35Z",
+    "actor_ref": "tools/pfem_retention_terminal_consumer_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-consumer-summary-verification-basic-restore-001",
+      "retention-terminal-consumer-summary-basic-restore-001",
+      "retention-terminal-retrieval-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal consumer summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_consumer_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-consumer-summary-closeout-basic-001",
+    "event_kind": "retention_terminal_consumer_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:05:36Z",
+    "actor_ref": "tools/pfem_retention_terminal_consumer_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-consumer-summary-closeout-basic-restore-001",
+      "retention-terminal-consumer-summary-verification-basic-restore-001",
+      "retention-terminal-consumer-summary-basic-restore-001"
+    ],
+    "summary": "Example retention terminal consumer summary closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_consumer_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-exception-summary-basic-001",
+    "event_kind": "retention_terminal_exception_summary_recorded",
+    "created_time": "2026-01-01T00:05:37Z",
+    "actor_ref": "tools/pfem_retention_terminal_exception_summary_records.py",
+    "subject_refs": [
+      "retention-terminal-exception-summary-basic-restore-001",
+      "retention-terminal-consumer-summary-closeout-basic-restore-001",
+      "retention-terminal-consumer-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal exception summary records was recorded.",
+    "source_tool": "pfem_retention_terminal_exception_summary_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-exception-summary-verification-basic-001",
+    "event_kind": "retention_terminal_exception_summary_verification_recorded",
+    "created_time": "2026-01-01T00:05:38Z",
+    "actor_ref": "tools/pfem_retention_terminal_exception_summary_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-exception-summary-verification-basic-restore-001",
+      "retention-terminal-exception-summary-basic-restore-001",
+      "retention-terminal-consumer-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal exception summary verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_exception_summary_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-exception-summary-closeout-basic-001",
+    "event_kind": "retention_terminal_exception_summary_closeout_recorded",
+    "created_time": "2026-01-01T00:05:39Z",
+    "actor_ref": "tools/pfem_retention_terminal_exception_summary_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-exception-summary-closeout-basic-restore-001",
+      "retention-terminal-exception-summary-verification-basic-restore-001",
+      "retention-terminal-exception-summary-basic-restore-001"
+    ],
+    "summary": "Example retention terminal exception summary closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_exception_summary_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-archive-report-basic-001",
+    "event_kind": "retention_terminal_archive_report_recorded",
+    "created_time": "2026-01-01T00:05:40Z",
+    "actor_ref": "tools/pfem_retention_terminal_archive_report_records.py",
+    "subject_refs": [
+      "retention-terminal-archive-report-basic-restore-001",
+      "retention-terminal-exception-summary-closeout-basic-restore-001",
+      "retention-terminal-exception-summary-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal archive report records was recorded.",
+    "source_tool": "pfem_retention_terminal_archive_report_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-archive-report-verification-basic-001",
+    "event_kind": "retention_terminal_archive_report_verification_recorded",
+    "created_time": "2026-01-01T00:05:41Z",
+    "actor_ref": "tools/pfem_retention_terminal_archive_report_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-archive-report-verification-basic-restore-001",
+      "retention-terminal-archive-report-basic-restore-001",
+      "retention-terminal-exception-summary-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal archive report verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_archive_report_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-archive-report-closeout-basic-001",
+    "event_kind": "retention_terminal_archive_report_closeout_recorded",
+    "created_time": "2026-01-01T00:05:42Z",
+    "actor_ref": "tools/pfem_retention_terminal_archive_report_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-archive-report-closeout-basic-restore-001",
+      "retention-terminal-archive-report-verification-basic-restore-001",
+      "retention-terminal-archive-report-basic-restore-001"
+    ],
+    "summary": "Example retention terminal archive report closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_archive_report_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-release-annex-basic-001",
+    "event_kind": "retention_terminal_release_annex_recorded",
+    "created_time": "2026-01-01T00:05:43Z",
+    "actor_ref": "tools/pfem_retention_terminal_release_annex_records.py",
+    "subject_refs": [
+      "retention-terminal-release-annex-basic-restore-001",
+      "retention-terminal-archive-report-closeout-basic-restore-001",
+      "retention-terminal-archive-report-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal release annex records was recorded.",
+    "source_tool": "pfem_retention_terminal_release_annex_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-release-annex-verification-basic-001",
+    "event_kind": "retention_terminal_release_annex_verification_recorded",
+    "created_time": "2026-01-01T00:05:44Z",
+    "actor_ref": "tools/pfem_retention_terminal_release_annex_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-release-annex-verification-basic-restore-001",
+      "retention-terminal-release-annex-basic-restore-001",
+      "retention-terminal-archive-report-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal release annex verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_release_annex_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-release-annex-closeout-basic-001",
+    "event_kind": "retention_terminal_release_annex_closeout_recorded",
+    "created_time": "2026-01-01T00:05:45Z",
+    "actor_ref": "tools/pfem_retention_terminal_release_annex_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-release-annex-closeout-basic-restore-001",
+      "retention-terminal-release-annex-verification-basic-restore-001",
+      "retention-terminal-release-annex-basic-restore-001"
+    ],
+    "summary": "Example retention terminal release annex closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_release_annex_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-publication-bundle-basic-001",
+    "event_kind": "retention_terminal_publication_bundle_recorded",
+    "created_time": "2026-01-01T00:05:46Z",
+    "actor_ref": "tools/pfem_retention_terminal_publication_bundle_records.py",
+    "subject_refs": [
+      "retention-terminal-publication-bundle-basic-restore-001",
+      "retention-terminal-release-annex-closeout-basic-restore-001",
+      "retention-terminal-release-annex-verification-basic-restore-001"
+    ],
+    "summary": "Example retention terminal publication bundle records was recorded.",
+    "source_tool": "pfem_retention_terminal_publication_bundle_records"
+  },
+  {
+    "audit_id": "audit-retention-terminal-publication-bundle-verification-basic-001",
+    "event_kind": "retention_terminal_publication_bundle_verification_recorded",
+    "created_time": "2026-01-01T00:05:47Z",
+    "actor_ref": "tools/pfem_retention_terminal_publication_bundle_verification_receipts.py",
+    "subject_refs": [
+      "retention-terminal-publication-bundle-verification-basic-restore-001",
+      "retention-terminal-publication-bundle-basic-restore-001",
+      "retention-terminal-release-annex-closeout-basic-restore-001"
+    ],
+    "summary": "Example retention terminal publication bundle verification receipts was recorded.",
+    "source_tool": "pfem_retention_terminal_publication_bundle_verification_receipts"
+  },
+  {
+    "audit_id": "audit-retention-terminal-publication-bundle-closeout-basic-001",
+    "event_kind": "retention_terminal_publication_bundle_closeout_recorded",
+    "created_time": "2026-01-01T00:05:48Z",
+    "actor_ref": "tools/pfem_retention_terminal_publication_bundle_closeout_records.py",
+    "subject_refs": [
+      "retention-terminal-publication-bundle-closeout-basic-restore-001",
+      "retention-terminal-publication-bundle-verification-basic-restore-001",
+      "retention-terminal-publication-bundle-basic-restore-001"
+    ],
+    "summary": "Example retention terminal publication bundle closeout records was recorded.",
+    "source_tool": "pfem_retention_terminal_publication_bundle_closeout_records"
+  },
+  {
+    "audit_id": "audit-retention-publication-terminal-status-basic-001",
+    "event_kind": "retention_publication_terminal_status_recorded",
+    "created_time": "2026-01-01T00:05:49Z",
+    "actor_ref": "tools/pfem_retention_publication_terminal_status_records.py",
+    "subject_refs": [
+      "retention-publication-terminal-status-basic-restore-001",
+      "retention-terminal-publication-bundle-closeout-basic-restore-001",
+      "retention-terminal-publication-bundle-verification-basic-restore-001"
+    ],
+    "summary": "Example retention publication terminal status records was recorded.",
+    "source_tool": "pfem_retention_publication_terminal_status_records"
   }
 ]

@@ -1,0 +1,35 @@
+[
+  {
+    "retention_terminal_public_release_summary_verification_receipt_id": "retention-terminal-public-release-summary-verification-basic-restore-001",
+    "receipt_kind": "retention_terminal_public_release_summary_verification",
+    "created_time": "2026-01-01T00:05:23Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_public_release_summary_record_id": "retention-terminal-public-release-summary-basic-restore-001",
+    "retention_terminal_public_metrics_snapshot_closeout_record_id": "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_terminal_public_release_summary_refs": [
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-verification-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-terminal-public-release-summary-basic-restore-001",
+      "retention-terminal-public-metrics-snapshot-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-public-release-summary-ref-list",
+    "expected_terminal_public_release_summary_ref_digest": "50b22b8d30590867054dff927822944b2c8bcae291f3cc7ed5c4f0d2106fcdb8",
+    "actual_terminal_public_release_summary_ref_digest": "50b22b8d30590867054dff927822944b2c8bcae291f3cc7ed5c4f0d2106fcdb8",
+    "verified_by_ref": "tools/pfem_retention_terminal_public_release_summary_verification_receipts.py",
+    "summary": "Synthetic example retention terminal public release summary verification receipt showing refs and digest were checked."
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_public_digest_record_id": "retention-terminal-public-digest-basic-restore-001",
+    "terminal_public_digest_kind": "retention_terminal_public_digest",
+    "created_time": "2026-01-01T00:05:10Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_public_index_closeout_record_id": "retention-terminal-public-index-closeout-basic-restore-001",
+    "retention_terminal_public_index_verification_receipt_id": "retention-terminal-public-index-verification-basic-restore-001",
+    "terminal_public_digest_state": "published",
+    "terminal_public_digest_scope": "closed_retention_terminal_public_index",
+    "terminal_public_digest_refs": [
+      "retention-terminal-public-index-closeout-basic-restore-001",
+      "retention-terminal-public-index-verification-basic-restore-001",
+      "retention-terminal-public-index-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-public-index-closeout-basic-restore-001",
+      "retention-terminal-public-index-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-public-digest-ref-list",
+    "terminal_public_digest_ref_digest": "403f02dd2910ada952afafd76a5945ec1021b2d838a9c8dd24c7809a052c6c28",
+    "terminal_public_digest_by_ref": "tools/pfem_retention_terminal_public_digest_records.py",
+    "summary": "Synthetic example retention terminal public digest record built from the closed retention terminal public index path."
+  }
+]

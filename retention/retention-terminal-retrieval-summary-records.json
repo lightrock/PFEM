@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_retrieval_summary_record_id": "retention-terminal-retrieval-summary-basic-restore-001",
+    "terminal_retrieval_summary_kind": "retention_terminal_retrieval_summary",
+    "created_time": "2026-01-01T00:05:31Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_access_summary_closeout_record_id": "retention-terminal-access-summary-closeout-basic-restore-001",
+    "retention_terminal_access_summary_verification_receipt_id": "retention-terminal-access-summary-verification-basic-restore-001",
+    "terminal_retrieval_summary_state": "summarized",
+    "terminal_retrieval_summary_scope": "closed_retention_terminal_access_summary",
+    "terminal_retrieval_summary_refs": [
+      "retention-terminal-access-summary-closeout-basic-restore-001",
+      "retention-terminal-access-summary-verification-basic-restore-001",
+      "retention-terminal-access-summary-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-access-summary-closeout-basic-restore-001",
+      "retention-terminal-access-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-retrieval-summary-ref-list",
+    "terminal_retrieval_summary_ref_digest": "92f36d14c13d6c2341246199d38ac3667e287cc39a14a348252805c0504f2382",
+    "terminal_retrieval_summary_by_ref": "tools/pfem_retention_terminal_retrieval_summary_records.py",
+    "summary": "Synthetic example retention terminal retrieval summary record built from the closed retention terminal access summary path."
+  }
+]

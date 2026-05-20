@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_archive_report_record_id": "retention-terminal-archive-report-basic-restore-001",
+    "terminal_archive_report_kind": "retention_terminal_archive_report",
+    "created_time": "2026-01-01T00:05:40Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_terminal_exception_summary_closeout_record_id": "retention-terminal-exception-summary-closeout-basic-restore-001",
+    "retention_terminal_exception_summary_verification_receipt_id": "retention-terminal-exception-summary-verification-basic-restore-001",
+    "terminal_archive_report_state": "reported",
+    "terminal_archive_report_scope": "closed_retention_terminal_exception_summary",
+    "terminal_archive_report_refs": [
+      "retention-terminal-exception-summary-closeout-basic-restore-001",
+      "retention-terminal-exception-summary-verification-basic-restore-001",
+      "retention-terminal-exception-summary-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-terminal-exception-summary-closeout-basic-restore-001",
+      "retention-terminal-exception-summary-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-archive-report-ref-list",
+    "terminal_archive_report_ref_digest": "2bf5ff93efeb9a384dd162b20d4e70d28815d1d5739ec42deaab5a31c39ab382",
+    "terminal_archive_report_by_ref": "tools/pfem_retention_terminal_archive_report_records.py",
+    "summary": "Synthetic example retention terminal archive report record built from the closed retention terminal exception summary path."
+  }
+]

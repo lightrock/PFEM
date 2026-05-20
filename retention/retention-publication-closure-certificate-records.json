@@ -1,0 +1,34 @@
+[
+  {
+    "retention_publication_closure_certificate_record_id": "retention-publication-closure-certificate-basic-restore-001",
+    "publication_closure_certificate_kind": "retention_publication_closure_certificate",
+    "created_time": "2026-01-01T00:05:04Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_publication_completion_closeout_record_id": "retention-publication-completion-closeout-basic-restore-001",
+    "retention_publication_completion_verification_receipt_id": "retention-publication-completion-verification-basic-restore-001",
+    "publication_closure_certificate_state": "certified",
+    "publication_closure_certificate_scope": "closed_retention_publication_completion",
+    "publication_closure_certificate_refs": [
+      "retention-publication-completion-closeout-basic-restore-001",
+      "retention-publication-completion-verification-basic-restore-001",
+      "retention-publication-completion-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-publication-completion-closeout-basic-restore-001",
+      "retention-publication-completion-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-publication-closure-certificate-ref-list",
+    "publication_closure_certificate_ref_digest": "29be3712ba084c67153d026f66a6f15541ab18590b45604b942c0af7d14c128c",
+    "publication_closure_certificate_by_ref": "tools/pfem_retention_publication_closure_certificate_records.py",
+    "summary": "Synthetic example retention publication closure certificate record built from the closed retention publication completion path."
+  }
+]

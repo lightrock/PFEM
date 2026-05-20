@@ -1,0 +1,34 @@
+[
+  {
+    "retention_terminal_public_index_record_id": "retention-terminal-public-index-basic-restore-001",
+    "terminal_public_index_kind": "retention_terminal_public_index",
+    "created_time": "2026-01-01T00:05:07Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_publication_closure_certificate_closeout_record_id": "retention-publication-closure-certificate-closeout-basic-restore-001",
+    "retention_publication_closure_certificate_verification_receipt_id": "retention-publication-closure-certificate-verification-basic-restore-001",
+    "terminal_public_index_state": "indexed",
+    "terminal_public_index_scope": "closed_retention_publication_closure_certificate",
+    "terminal_public_index_refs": [
+      "retention-publication-closure-certificate-closeout-basic-restore-001",
+      "retention-publication-closure-certificate-verification-basic-restore-001",
+      "retention-publication-closure-certificate-basic-restore-001",
+      "retention-final-publication-notice-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "archive-lifecycle-closeout-basic-restore-001",
+      "archive-lifecycle-verification-basic-restore-001",
+      "archive-lifecycle-basic-restore-001",
+      "archive-index-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-publication-closure-certificate-closeout-basic-restore-001",
+      "retention-publication-closure-certificate-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-terminal-public-index-ref-list",
+    "terminal_public_index_ref_digest": "ac296c2aa6c3bff95e1b235ef9f17eadc1543fa5ce408660c62ab8176e338b02",
+    "terminal_public_index_by_ref": "tools/pfem_retention_terminal_public_index_records.py",
+    "summary": "Synthetic example retention terminal public index record built from the closed retention publication closure certificate path."
+  }
+]
