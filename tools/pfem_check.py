@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -19,12 +20,59 @@ from dataclasses import dataclass
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 MANIFEST = ROOT / "tools" / "pfem_check_manifest.json"
+LAUNCHER_VERSION = "1"
 
 
 @dataclass(frozen=True)
 class CheckStep:
     label: str
     args: list[str]
+
+def check_launchers(*, quiet: bool = False) -> int:
+    """Verify pfem_check.bat and pfem_check.sh stay paired."""
+
+    launcher_paths = [
+        ROOT / "pfem_check.bat",
+        ROOT / "pfem_check.sh",
+    ]
+    failures: list[str] = []
+    versions: dict[str, str] = {}
+
+    for path in launcher_paths:
+        if not path.exists():
+            failures.append(f"missing launcher: {path.name}")
+            continue
+
+        text = path.read_text(encoding="utf-8")
+        match = re.search(r"PFEM_CHECK_LAUNCHER_VERSION=([0-9]+)", text)
+        if not match:
+            failures.append(f"{path.name} missing PFEM_CHECK_LAUNCHER_VERSION marker")
+        else:
+            versions[path.name] = match.group(1)
+
+        if "tools/pfem_check.py" not in text.replace("\\", "/"):
+            failures.append(f"{path.name} does not call tools/pfem_check.py")
+
+    if versions and any(version != LAUNCHER_VERSION for version in versions.values()):
+        failures.append(
+            "launcher version does not match tools/pfem_check.py "
+            f"LAUNCHER_VERSION={LAUNCHER_VERSION}: {versions}"
+        )
+
+    if len(set(versions.values())) > 1:
+        failures.append(f"launcher versions differ: {versions}")
+
+    if failures:
+        print("PFEM launcher check failed:")
+        for failure in failures:
+            print(f"  - {failure}")
+        return 1
+
+    if not quiet:
+        print(f"PFEM launcher check passed. Version: {LAUNCHER_VERSION}")
+
+    return 0
+
 
 
 def _env() -> dict[str, str]:
@@ -171,8 +219,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--list", action="store_true", help="List selected checks instead of running them.")
     parser.add_argument("--start-at", help="Start at the first selected step whose label/command contains this text.")
     parser.add_argument("--timings", action="store_true", help="Print slowest checks at the end.")
+    parser.add_argument("--check-launchers", action="store_true", help="Verify pfem_check.bat and pfem_check.sh stay paired, then exit.")
+    parser.add_argument("--skip-launcher-check", action="store_true", help="Skip launcher pair validation before running checks.")
 
     args = parser.parse_args(argv)
+
+    if args.check_launchers:
+        return check_launchers()
+
+    if not args.skip_launcher_check:
+        launcher_result = check_launchers(quiet=True)
+        if launcher_result != 0:
+            return launcher_result
 
     selected_mode = "full"
     if args.quick:

@@ -1,4 +1,6 @@
 from pathlib import Path
+import subprocess
+import sys
 import re
 import unittest
 
@@ -39,6 +41,16 @@ class PfemCheckLauncherTests(unittest.TestCase):
 
         self.assertEqual([], leftovers)
 
+    def test_python_runner_checks_launchers(self):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "pfem_check.py"), "--check-launchers"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+        self.assertIn("PFEM launcher check passed", result.stdout)
 
 if __name__ == "__main__":
     unittest.main()

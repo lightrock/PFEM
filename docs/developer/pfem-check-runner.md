@@ -53,3 +53,19 @@ If one launcher changes, update the other launcher and keep the launcher-pair te
 ## Why this exists
 
 PFEM used to generate many root BAT files. That made the root directory noisy and caused constant launcher churn. The root launchers are now dumb wrappers; `tools/pfem_check.py` owns the test/check behavior.
+
+## Launcher self-check
+
+The Python runner can verify the paired launchers directly:
+
+```bat
+pfem_check.bat --check-launchers
+```
+
+or:
+
+```sh
+sh pfem_check.sh --check-launchers
+```
+
+Normal runner modes check the launcher pair before running checks. Use `--skip-launcher-check` only when deliberately testing a broken launcher state.
