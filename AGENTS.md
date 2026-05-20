@@ -26,3 +26,22 @@ Core rules:
 - Do not add infrastructure, databases, queues, identity systems, or background services unless the architecture docs justify it.
 
 When unsure, make the smallest doctrine-preserving change and explain the boundary affected.
+
+# PFEM Agent Instructions
+
+Before making PFEM changes, read:
+
+```text
+docs/developer/pfem-doodad-generation-standard.md
+docs/developer/pfem-new-chat-handoff.md
+docs/developer/pfem-terminal-tail-stabilization.md
+tools/pfem_check_manifest.json
+```
+
+Do not add more doodad species after the permanent-archive terminal final endcap unless a gate, document, or human request identifies a real missing boundary.
+
+PFEM generated checks belong in Python tools under `tools/` and must be registered in `tools/pfem_check_manifest.json`. Do not add root-level `pfem_*.bat` wrappers other than `pfem_check.bat`.
+
+For passed verification receipts, `missing_refs` is an optional diagnostic array. It may be present as `[]`, but it must not be required by the schema.
+
+Patch scripts should write noisy `git status --short` output to `build/pfem-patch-status/` instead of dumping it into the terminal.

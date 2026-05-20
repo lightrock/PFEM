@@ -111,7 +111,8 @@ def audit_retention_terminal_tail(root: str | Path) -> RetentionTerminalTailAudi
                 "empty diagnostic arrays are optional"
             )
 
-        if not isinstance(properties, dict) or properties.get("missing_refs") != {"type": "array"}:
+        missing_refs_schema = properties.get("missing_refs") if isinstance(properties, dict) else None
+        if not isinstance(missing_refs_schema, dict) or missing_refs_schema.get("type") != "array":
             failures.append(
                 f"{schema_path.relative_to(root_path)} should define optional missing_refs as an array"
             )

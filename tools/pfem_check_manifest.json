@@ -5055,6 +5055,12 @@
       ]
     },
     {
+      "label": "Running PFEM doodad standards audit",
+      "args": [
+        "tools/pfem_doodad_standards_audit.py"
+      ]
+    },
+    {
       "label": "Running PFEM retention terminal tail audit",
       "args": [
         "tools/pfem_retention_terminal_tail_audit.py"
