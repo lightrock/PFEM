@@ -37,6 +37,7 @@ docs/developer/pfem-new-chat-handoff.md
 docs/developer/pfem-terminal-tail-stabilization.md
 docs/developer/pfem-architecture-theory-notes.md
 docs/developer/pfem-ai-patch-safety-rules.md
+workorders/README.md
 tools/pfem_check_manifest.json
 ```
 
@@ -63,3 +64,21 @@ docs/developer/pfem-new-tab-prompt.md
 The handoff prompt must point the next working context to the current repo discipline files and require inspection of current `main` before relying on memory.
 
 Do not expose private chain-of-thought. Provide architecture rationale, operating discipline, concrete repo-reading instructions, and decision rules.
+
+# PFEM Workorder Protocol
+
+This protocol applies to complex, substantial, or process-sensitive tasks.
+
+When any developer says `create a workorder`, `write a workorder`, or `make a workorder`, the foreground assistant should generate the dated workorder file for the developer. The developer should not be expected to hand-write the file in Notepad or manually reconstruct the task contract.
+
+Use a workorder when the task is too large, slow, environment-dependent, or mechanically broad for a conversational foreground assistant to execute safely in the current UI. Typical examples include tasks that require Codex or another executor with the repository environment, local tests, branch/PR workflow, broad file edits, generated-boundary work, release-gate cleanup, or many coordinated updates.
+
+The foreground assistant's job is to capture the human decision, write the workorder under `workorders/`, and give the developer the exact one-line executor instruction:
+
+```text
+Read workorders/YYYY-MM-DD-HHMM-by-githubusername-short-task-name.md and execute it.
+```
+
+The executor's job is to read the committed workorder, inspect recent workorders for conflicts, perform only the named scope, run/report checks, and cite the exact workorder path in its PR or completion notes.
+
+Tiny safe edits do not need workorders. Standing-process changes usually do.
