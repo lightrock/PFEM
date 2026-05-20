@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_certificate_record_id": "retention-permanent-archive-terminal-final-certificate-basic-restore-001",
+    "permanent_archive_terminal_final_certificate_kind": "retention_permanent_archive_terminal_final_certificate",
+    "created_time": "2026-01-01T00:11:07Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_digest_closeout_record_id": "retention-permanent-archive-terminal-final-digest-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_digest_verification_receipt_id": "retention-permanent-archive-terminal-final-digest-verification-basic-restore-001",
+    "permanent_archive_terminal_final_certificate_state": "certified",
+    "permanent_archive_terminal_final_certificate_scope": "closed_retention_permanent_archive_terminal_final_digest",
+    "permanent_archive_terminal_final_certificate_refs": [
+      "retention-permanent-archive-terminal-final-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-digest-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-digest-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-digest-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-digest-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-certificate-ref-list",
+    "permanent_archive_terminal_final_certificate_ref_digest": "8e687e381441cd16cd2efd133dd3749c0acbde3e9d406b61ff6b90b3eb171064",
+    "permanent_archive_terminal_final_certificate_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_certificate_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final certificate record built from the closed retention permanent archive terminal final digest path."
+  }
+]

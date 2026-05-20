@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_custody_attestation_verification_receipt_id": "retention-permanent-archive-terminal-final-custody-attestation-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_final_custody_attestation_verification",
+    "created_time": "2026-01-01T00:11:20Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_custody_attestation_record_id": "retention-permanent-archive-terminal-final-custody-attestation-basic-restore-001",
+    "retention_permanent_archive_terminal_final_publication_notice_closeout_record_id": "retention-permanent-archive-terminal-final-publication-notice-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_final_custody_attestation_refs": [
+      "retention-permanent-archive-terminal-final-publication-notice-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-publication-notice-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-publication-notice-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-custody-attestation-basic-restore-001",
+      "retention-permanent-archive-terminal-final-publication-notice-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-custody-attestation-ref-list",
+    "expected_permanent_archive_terminal_final_custody_attestation_ref_digest": "70878dc8aaf83233e468b99eadadb032817314f77c2d7d4dbf7e0a9c3a9e1909",
+    "actual_permanent_archive_terminal_final_custody_attestation_ref_digest": "70878dc8aaf83233e468b99eadadb032817314f77c2d7d4dbf7e0a9c3a9e1909",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_custody_attestation_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal final custody attestation verification receipt showing refs and digest were checked."
+  }
+]

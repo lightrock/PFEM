@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_archive_copy_record_id": "retention-permanent-archive-terminal-final-archive-copy-basic-restore-001",
+    "permanent_archive_terminal_final_archive_copy_kind": "retention_permanent_archive_terminal_final_archive_copy",
+    "created_time": "2026-01-01T00:11:43Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_release_attestation_closeout_record_id": "retention-permanent-archive-terminal-final-release-attestation-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_release_attestation_verification_receipt_id": "retention-permanent-archive-terminal-final-release-attestation-verification-basic-restore-001",
+    "permanent_archive_terminal_final_archive_copy_state": "archived",
+    "permanent_archive_terminal_final_archive_copy_scope": "closed_retention_permanent_archive_terminal_final_release_attestation",
+    "permanent_archive_terminal_final_archive_copy_refs": [
+      "retention-permanent-archive-terminal-final-release-attestation-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-release-attestation-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-release-attestation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-release-attestation-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-release-attestation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-archive-copy-ref-list",
+    "permanent_archive_terminal_final_archive_copy_ref_digest": "caf345b43946114faa5a2b0bb4fa1e1003be693b8853895fb9b0bc51b72c612a",
+    "permanent_archive_terminal_final_archive_copy_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_archive_copy_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final archive copy record built from the closed retention permanent archive terminal final release attestation path."
+  }
+]

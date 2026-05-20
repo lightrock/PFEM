@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_storage_attestation_record_id": "retention-permanent-archive-terminal-final-storage-attestation-basic-restore-001",
+    "permanent_archive_terminal_final_storage_attestation_kind": "retention_permanent_archive_terminal_final_storage_attestation",
+    "created_time": "2026-01-01T00:11:31Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_retrieval_attestation_closeout_record_id": "retention-permanent-archive-terminal-final-retrieval-attestation-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_retrieval_attestation_verification_receipt_id": "retention-permanent-archive-terminal-final-retrieval-attestation-verification-basic-restore-001",
+    "permanent_archive_terminal_final_storage_attestation_state": "attested",
+    "permanent_archive_terminal_final_storage_attestation_scope": "closed_retention_permanent_archive_terminal_final_retrieval_attestation",
+    "permanent_archive_terminal_final_storage_attestation_refs": [
+      "retention-permanent-archive-terminal-final-retrieval-attestation-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-retrieval-attestation-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-retrieval-attestation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-retrieval-attestation-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-retrieval-attestation-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-storage-attestation-ref-list",
+    "permanent_archive_terminal_final_storage_attestation_ref_digest": "24eb789b1a2a1735ef1e86e3e3006308e63d0c42321d0853d64c5add91fcef12",
+    "permanent_archive_terminal_final_storage_attestation_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_storage_attestation_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final storage attestation record built from the closed retention permanent archive terminal final retrieval attestation path."
+  }
+]

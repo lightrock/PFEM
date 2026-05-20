@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_rollup_report_record_id": "retention-permanent-archive-terminal-final-rollup-report-basic-restore-001",
+    "permanent_archive_terminal_final_rollup_report_kind": "retention_permanent_archive_terminal_final_rollup_report",
+    "created_time": "2026-01-01T00:11:49Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_archive_copy_receipt_closeout_record_id": "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_final_archive_copy_receipt_verification_receipt_id": "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001",
+    "permanent_archive_terminal_final_rollup_report_state": "reported",
+    "permanent_archive_terminal_final_rollup_report_scope": "closed_retention_permanent_archive_terminal_final_archive_copy_receipt",
+    "permanent_archive_terminal_final_rollup_report_refs": [
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-rollup-report-ref-list",
+    "permanent_archive_terminal_final_rollup_report_ref_digest": "0dfad5918260697a9bf3bf49dbdc68eb0809ddb30d512fadff9dedaf3da332f9",
+    "permanent_archive_terminal_final_rollup_report_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_rollup_report_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final rollup report record built from the closed retention permanent archive terminal final archive copy receipt path."
+  }
+]

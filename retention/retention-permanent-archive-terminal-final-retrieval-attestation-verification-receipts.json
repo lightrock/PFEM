@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_retrieval_attestation_verification_receipt_id": "retention-permanent-archive-terminal-final-retrieval-attestation-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_final_retrieval_attestation_verification",
+    "created_time": "2026-01-01T00:11:29Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_retrieval_attestation_record_id": "retention-permanent-archive-terminal-final-retrieval-attestation-basic-restore-001",
+    "retention_permanent_archive_terminal_final_access_attestation_closeout_record_id": "retention-permanent-archive-terminal-final-access-attestation-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_final_retrieval_attestation_refs": [
+      "retention-permanent-archive-terminal-final-access-attestation-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-access-attestation-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-access-attestation-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-retrieval-attestation-basic-restore-001",
+      "retention-permanent-archive-terminal-final-access-attestation-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-retrieval-attestation-ref-list",
+    "expected_permanent_archive_terminal_final_retrieval_attestation_ref_digest": "9fdf90e988373da5fe45e6738fe6b26722ddf3da31663a5833bc4cd78456a8b5",
+    "actual_permanent_archive_terminal_final_retrieval_attestation_ref_digest": "9fdf90e988373da5fe45e6738fe6b26722ddf3da31663a5833bc4cd78456a8b5",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_retrieval_attestation_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal final retrieval attestation verification receipt showing refs and digest were checked."
+  }
+]

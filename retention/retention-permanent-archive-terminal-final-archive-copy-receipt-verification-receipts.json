@@ -1,0 +1,33 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_archive_copy_receipt_verification_receipt_id": "retention-permanent-archive-terminal-final-archive-copy-receipt-verification-basic-restore-001",
+    "receipt_kind": "retention_permanent_archive_terminal_final_archive_copy_receipt_verification",
+    "created_time": "2026-01-01T00:11:47Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_final_archive_copy_receipt_record_id": "retention-permanent-archive-terminal-final-archive-copy-receipt-basic-restore-001",
+    "retention_permanent_archive_terminal_final_archive_copy_closeout_record_id": "retention-permanent-archive-terminal-final-archive-copy-closeout-basic-restore-001",
+    "verification_state": "passed",
+    "checked_permanent_archive_terminal_final_archive_copy_receipt_refs": [
+      "retention-permanent-archive-terminal-final-archive-copy-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "checked_subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "missing_refs": [],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-final-archive-copy-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-final-archive-copy-closeout-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-archive-copy-receipt-ref-list",
+    "expected_permanent_archive_terminal_final_archive_copy_receipt_ref_digest": "faf64881c011a232eed292869caa36181d3211224d02bde58b0bbfffa46c3fbd",
+    "actual_permanent_archive_terminal_final_archive_copy_receipt_ref_digest": "faf64881c011a232eed292869caa36181d3211224d02bde58b0bbfffa46c3fbd",
+    "verified_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_archive_copy_receipt_verification_receipts.py",
+    "summary": "Synthetic example retention permanent archive terminal final archive copy receipt verification receipt showing refs and digest were checked."
+  }
+]

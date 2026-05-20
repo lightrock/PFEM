@@ -1,0 +1,32 @@
+[
+  {
+    "retention_permanent_archive_terminal_final_seal_record_id": "retention-permanent-archive-terminal-final-seal-basic-restore-001",
+    "permanent_archive_terminal_final_seal_kind": "retention_permanent_archive_terminal_final_seal",
+    "created_time": "2026-01-01T00:11:01Z",
+    "node_id": "formal-rollup-node-example",
+    "retention_permanent_archive_terminal_interop_export_receipt_closeout_record_id": "retention-permanent-archive-terminal-interop-export-receipt-closeout-basic-restore-001",
+    "retention_permanent_archive_terminal_interop_export_receipt_verification_receipt_id": "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+    "permanent_archive_terminal_final_seal_state": "sealed",
+    "permanent_archive_terminal_final_seal_scope": "closed_retention_permanent_archive_terminal_interop_export_receipt",
+    "permanent_archive_terminal_final_seal_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "subject_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-manifest-closeout-basic-restore-001"
+    ],
+    "basis_refs": [
+      "retention-permanent-archive-terminal-interop-export-receipt-closeout-basic-restore-001",
+      "retention-permanent-archive-terminal-interop-export-receipt-verification-basic-restore-001",
+      "retention/retention-policy.json"
+    ],
+    "digest_algorithm": "sha256-sorted-retention-permanent-archive-terminal-final-seal-ref-list",
+    "permanent_archive_terminal_final_seal_ref_digest": "0423d5f19885ad8494f89c1a7967546fa64cc5f6023ddcba8ba27f7226b92776",
+    "permanent_archive_terminal_final_seal_by_ref": "tools/pfem_retention_permanent_archive_terminal_final_seal_records.py",
+    "summary": "Synthetic example retention permanent archive terminal final seal record built from the closed retention permanent archive terminal interop export receipt path."
+  }
+]
