@@ -108,11 +108,25 @@ workorders/AGENTS.md
 
 ## Workorders
 
-PFEM has the ability to differente your AI interactions with an extra audit trail.  If you are in GPT for example, and you tell it to do something substantial, it may decide it should hand this process off to Codex (or another AI).  If so, it will generate a Work Order and stick that into the repository and tell you to "copy this line and paste it to Codex (or another AI). This line will tell Codex (or another AI) to go read and execute that file. A github PR alone does not carry the trail of what GPT said to Codex. Codex should respond when making a PR what GPT workorder filename that it used. There is an audit trail that is AI vendor agnostic here between foreground AI and automated AI. This is worth it because PFEM is AI-assisted, repo-disciplined, and likely to cross chat windows, coding agents, manual edits, and future release gates.
+PFEM can split substantial AI-assisted work into two lanes:
 
-Now, if Codex encounters a hard problem it also automatically carries instructions to generate a "lessons learned" in the Work Order History in case this action should be replayed in the future and if so it will be more efficient the next time.
+- a foreground assistant or human frames the work, constraints, and checks;
+- an executor, such as Codex, another AI, or a human developer, carries out the named task.
 
-A workorder is a committed pre-action decision record and executable task contract. It is useful when the work affects boundaries, command protocol, AGENTS/AI_START_HERE, check runners, release gates, architecture doctrine, or broad contributor behavior.
+A workorder is the bridge between those lanes. It is a committed pre-action decision record and executable task contract. It keeps the project from losing the reason for a change inside a chat window, local patch folder, or vendor-specific AI session.
+
+This matters because a GitHub PR alone may show the final code diff without preserving what the foreground assistant asked the executor to do. A workorder gives the PR a durable breadcrumb: the executor should name the exact `workorders/...md` file it used so future reviewers can trace the instruction, implementation, and review path.
+
+Use workorders for substantial or process-sensitive work, especially changes that affect:
+
+- PFEM boundaries;
+- command protocol;
+- `AGENTS.md` or `docs/AI_START_HERE.md`;
+- check runners, check manifests, release gates, or full-gate behavior;
+- architecture doctrine;
+- broad contributor behavior.
+
+A workorder may also ask the executor to record a lessons-learned note when it encounters a hard, repeated, or high-impact problem. The point is replay value: if the same class of task happens again, the next human or AI should not have to rediscover the same lesson from scratch.
 
 The standard filename shape is:
 
