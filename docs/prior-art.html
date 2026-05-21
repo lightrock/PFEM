@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PFEM Prior Art and Positioning</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --fg: #181916;
+      --muted: #585b52;
+      --line: #d8d8cf;
+      --accent: #315f72;
+      --panel: #ffffff;
+      --warn: #7a4a12;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141512;
+        --fg: #eeeeea;
+        --muted: #b8b8ae;
+        --line: #34362f;
+        --accent: #8fc7dc;
+        --panel: #1d1f1a;
+        --warn: #f0b35d;
+      }
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    h1 {
+      font-size: 2.25rem;
+      margin: 0 0 12px;
+    }
+    h2 {
+      border-top: 1px solid var(--line);
+      margin-top: 36px;
+      padding-top: 24px;
+    }
+    a { color: var(--accent); }
+    .lede {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 820px;
+    }
+    .notice, .claim, .source-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+    .notice strong { color: var(--warn); }
+    ul { padding-left: 1.35rem; }
+    code {
+      background: color-mix(in srgb, var(--panel) 70%, var(--line));
+      border-radius: 4px;
+      padding: 0.1rem 0.25rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 9px;
+      margin: 0 6px 6px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .source-card.wide {
+      grid-column: 1 / -1;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>PFEM Prior Art and Positioning</h1>
+  <p class="lede"><strong>PFEM</strong> means <strong>Polycentric Federated Evidence Mesh</strong>.</p>
+  <p class="lede">This page is a plain-language prior-art map for PFEM: a reference architecture for evidence governance, provenance, custody, confidence, evidence packages, rollups, and AI/human repository discipline across polycentric systems.</p>
+
+  <section class="notice">
+    <strong>No novelty overclaim:</strong> provenance modeling, chain-of-custody practice, digital forensics, threat-intelligence exchange, government information exchange models, and audit-oriented evidence handling are established areas. PFEM should not claim that structured evidence, provenance, or inter-organizational sharing are new.
+  </section>
+
+  <h2>What Is Already Real Prior Art</h2>
+  <div class="grid">
+    <article class="source-card">
+      <h3>Web provenance standards</h3>
+      <p>W3C PROV defines a family of documents for interoperable provenance interchange in heterogeneous environments. It is direct prior art for representing entities, activities, agents, and derivation relationships.</p>
+      <p><a href="https://www.w3.org/TR/prov-overview/">W3C PROV Overview</a></p>
+      <span class="tag">provenance</span><span class="tag">interchange</span><span class="tag">heterogeneous systems</span>
+    </article>
+
+    <article class="source-card">
+      <h3>Open provenance modeling</h3>
+      <p>The Open Provenance Model and related work explicitly aimed to exchange provenance information between systems through a shared compatibility layer.</p>
+      <p><a href="https://www.microsoft.com/en-us/research/publication/the-open-provenance-model-v1-01/">The Open Provenance Model</a></p>
+      <span class="tag">shared model</span><span class="tag">compatibility layer</span>
+    </article>
+
+    <article class="source-card">
+      <h3>Digital forensics and incident response</h3>
+      <p>NIST SP 800-86 covers integrating forensic techniques into incident response, including evidence collection concerns and chain-of-custody discipline.</p>
+      <p><a href="https://www.nist.gov/publications/guide-integrating-forensic-techniques-incident-response-0">NIST SP 800-86</a></p>
+      <span class="tag">digital forensics</span><span class="tag">incident response</span>
+    </article>
+
+    <article class="source-card">
+      <h3>Digital evidence handling standards</h3>
+      <p>ISO/IEC 27037 and related practice areas address identification, collection, acquisition, and preservation of digital evidence. PFEM should treat this as neighboring doctrine, not as a thing PFEM invented.</p>
+      <p><a href="https://www.iso.org/standard/44381.html">ISO/IEC 27037</a></p>
+      <span class="tag">digital evidence</span><span class="tag">preservation</span>
+    </article>
+
+    <article class="source-card">
+      <h3>Cyber threat intelligence exchange</h3>
+      <p>STIX and TAXII are OASIS standards for representing and exchanging cyber threat intelligence across organization and product boundaries.</p>
+      <p><a href="https://www.oasis-open.org/2021/06/23/stix-v2-1-and-taxii-v2-1-oasis-standards-are-published/">OASIS STIX/TAXII 2.1</a></p>
+      <span class="tag">threat intelligence</span><span class="tag">exchange</span>
+    </article>
+
+    <article class="source-card">
+      <h3>Government information exchange models</h3>
+      <p>NIEM is established prior art for standards-based information exchange among organizations and domains. PFEM is not inventing cross-organization data exchange.</p>
+      <p><a href="https://bja.ojp.gov/program/it/national-initiatives/niem">NIEM</a></p>
+      <span class="tag">information sharing</span><span class="tag">data model</span>
+    </article>
+
+    <article class="source-card wide">
+      <h3>PFCOMM as internal sibling reference architecture</h3>
+      <p>PFCOMM, Polycentric Federated Command Mesh, is this project family's command/action coordination sibling. It is internal prior art for keeping authority, intent, tasking, assignments, action receipts, operational status, decisions, and after-action records separate from evidence governance.</p>
+      <p>PFEM should treat PFCOMM as the adjacent command/action substrate. PFEM should preserve claims, evidence, custody, confidence, provenance, evidence packages, and rollups without trying to become the command authority or tasking system.</p>
+      <p><a href="https://github.com/lightrock/PFCOMM">lightrock/PFCOMM</a></p>
+      <span class="tag">command coordination</span><span class="tag">action receipts</span><span class="tag">sibling architecture</span>
+    </article>
+  </div>
+
+  <h2>What PFEM Should Not Claim</h2>
+  <ul>
+    <li>Do not claim invention of provenance modeling.</li>
+    <li>Do not claim invention of chain of custody or digital evidence handling.</li>
+    <li>Do not claim invention of inter-organizational information exchange.</li>
+    <li>Do not claim invention of cyber threat intelligence sharing.</li>
+    <li>Do not claim that dashboards, reports, or rollups are source evidence.</li>
+    <li>Do not claim PFEM is a command-and-control system.</li>
+  </ul>
+
+  <h2>Potentially Defensible Contribution</h2>
+  <section class="claim">
+    <p>PFEM's defensible contribution is a contract-heavy reference architecture for <strong>polycentric federated evidence governance</strong>: keeping raw evidence, observations, findings, alerts, evidence packages, rollups, reports, provenance, custody, confidence, and sharing boundaries explicit.</p>
+    <p>The stronger research angle is not "evidence has provenance." It is: <strong>how heterogeneous human, AI, sensor, infrastructure, field, and institutional nodes expose auditable evidence surfaces that can federate without collapsing into one central truth source or one vendor-shaped dashboard.</strong></p>
+  </section>
+
+  <h2>Evidence-Governance Framing</h2>
+  <p>PFEM should be presented as an evidence-governance substrate, not as a complete operational platform.</p>
+  <ul>
+    <li><strong>Raw evidence:</strong> original source material remains distinct from normalized observations.</li>
+    <li><strong>Observations and findings:</strong> interpreted records remain separate from source evidence.</li>
+    <li><strong>Provenance:</strong> origin, handling, derivation, timing, and attribution remain inspectable.</li>
+    <li><strong>Custody:</strong> evidence handling and transfer are explicit rather than implied.</li>
+    <li><strong>Confidence:</strong> claims carry uncertainty or confidence metadata rather than pretending to be final truth.</li>
+    <li><strong>Packages and rollups:</strong> shareable summaries do not erase the underlying boundary between evidence and interpretation.</li>
+    <li><strong>Receipts and checks:</strong> repository work and generated boundaries leave auditable traces.</li>
+  </ul>
+
+  <h2>Relationship to PFCOMM</h2>
+  <p>PFEM and PFCOMM should remain distinct. PFEM governs claims, evidence, provenance, custody, confidence, evidence packages, and rollups. PFCOMM governs authority context, intent, tasking, assignments, action receipts, operational status, decisions, after-action records, and command rollups.</p>
+  <p>The same future contract body may expose both surfaces for one participant, but PFEM should not merge evidence truth and command authority into one ambiguous object.</p>
+
+  <h2>DARPA-Proposal Posture</h2>
+  <p>A credible proposal should position PFEM as a synthesis over known evidence, provenance, forensics, and information-sharing prior art:</p>
+  <blockquote>
+    <p>This work does not propose another evidence database, dashboard, or provenance ontology. It proposes a contract-heavy reference architecture for accountable evidence participants, separating evidence governance from command/action coordination while allowing heterogeneous nodes to exchange attributable claims, evidence packages, confidence metadata, custody receipts, and rollups across policy-bounded coalitions.</p>
+  </blockquote>
+
+  <h2>Open Questions</h2>
+  <ul>
+    <li>What is the minimal evidence contract that covers human reports, sensors, AI agents, infrastructure nodes, field laptops, and institutional systems?</li>
+    <li>Which evidence obligations belong in PFEM, which action obligations belong in PFCOMM, and which belong in a third shared contract-body project?</li>
+    <li>How should PFEM represent AI-generated claims, model outputs, tool logs, and agent-created scripts without treating them as trusted truth?</li>
+    <li>How should evidence packages preserve provenance and custody across disconnected or degraded nodes?</li>
+    <li>How do many PFEM nodes federate without erasing local autonomy or creating one false central truth source?</li>
+  </ul>
+
+  <h2>Source Links</h2>
+  <ul>
+    <li><a href="https://www.w3.org/TR/prov-overview/">W3C PROV Overview</a></li>
+    <li><a href="https://www.w3.org/TR/prov-dm/">W3C PROV-DM</a></li>
+    <li><a href="https://www.microsoft.com/en-us/research/publication/the-open-provenance-model-v1-01/">The Open Provenance Model</a></li>
+    <li><a href="https://www.nist.gov/publications/guide-integrating-forensic-techniques-incident-response-0">NIST SP 800-86</a></li>
+    <li><a href="https://www.iso.org/standard/44381.html">ISO/IEC 27037</a></li>
+    <li><a href="https://www.oasis-open.org/2021/06/23/stix-v2-1-and-taxii-v2-1-oasis-standards-are-published/">OASIS STIX/TAXII 2.1</a></li>
+    <li><a href="https://bja.ojp.gov/program/it/national-initiatives/niem">National Information Exchange Model</a></li>
+    <li><a href="https://github.com/lightrock/PFCOMM">PFCOMM: Polycentric Federated Command Mesh</a></li>
+  </ul>
+</main>
+</body>
+</html>

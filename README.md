@@ -43,6 +43,10 @@ Dashboard/action flows help humans decide what to do next.
 
 Federation and rollup move attributable summaries, requests, and evidence packages across explicit sharing boundaries.
 
+Prior art and positioning:
+
+- [docs/prior-art.html](docs/prior-art.html)
+
 Start here:
 
 - `docs/AI_START_HERE.md`
