@@ -4,6 +4,12 @@
 
 PFEM is an architecture-first project for configurable evidence, sensor-input, human-report, dashboard, and rollup nodes.
 
+## State-of-the-art note
+
+PFEM should be read as a useful fossil and reference architecture: it captures an explicit evidence-governance model, boundary vocabulary, and AI/human repository discipline. The state of the art in AI-assisted and autonomous systems work is already moving beyond "AI writes code" or "one AI helps one operator" toward governed coalitions of human teams, AI agents, robotic systems, infrastructure nodes, and disconnected edge participants.
+
+PFEM remains valuable as the evidence/provenance side of that future architecture, but it is not the whole frontier. Newer adjacent work should treat PFEM as a baseline substrate for claims, custody, confidence, provenance, rollups, and shareable evidence packages while exploring more advanced agentic command, coordination, authority, and action-accountability patterns elsewhere.
+
 The goal is one core architecture that can support many deployment shapes by configuration rather than product forks:
 
 - field-radio nodes
