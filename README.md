@@ -39,6 +39,8 @@ Read-only tools should come first. Draft/propose tools come next. Mutation, publ
 
 PFCOMM may expose command/tasking/status capabilities the same way. MCP is the callable-tool layer; PFEM and PFCOMM keep the domain meaning.
 
+MCP exposure is optional and earned. A PFEM deployment may keep many doodads as local Python services, CLI tools, internal APIs, files, queues, or dashboard internals. Expose a PFEM capability through MCP only when crossing an AI/tool boundary is useful, safe, and governable. See `docs/architecture/mcp-exposure-policy.md`.
+
 ## Core rule
 
 PFEM keeps these separate:
