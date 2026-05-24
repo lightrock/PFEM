@@ -20,6 +20,25 @@ The goal is one core architecture that can support many deployment shapes by con
 - formal authority rollup nodes
 - disconnected edge nodes
 
+## MCP-style instance interoperability
+
+PFEM does not become MCP, but a PFEM instance may expose selected evidence, package, report, rollup, and MindGraph capabilities through MCP-style tools/resources.
+
+Those exposed capabilities are callable tools for AI clients, operator workbenches, coordinators, or adjacent systems, while PFEM keeps ownership of evidence semantics, provenance, audit, confidence, package/report meaning, and boundary discipline.
+
+Examples of future PFEM-exposed tools:
+
+- `pfem.evidence.lookup`
+- `pfem.package.read`
+- `pfem.package.draft`
+- `pfem.report.draft`
+- `pfem.rollup.read`
+- `pfem.mindgraph.lookup`
+
+Read-only tools should come first. Draft/propose tools come next. Mutation, publish, send, or operational tools require policy, audit, authority context, and human approval.
+
+PFCOMM may expose command/tasking/status capabilities the same way. MCP is the callable-tool layer; PFEM and PFCOMM keep the domain meaning.
+
 ## Core rule
 
 PFEM keeps these separate:
