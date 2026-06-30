@@ -7,7 +7,7 @@ from pfem.boundary_language_standards_audit import audit_boundary_language_stand
 ROOT = Path(__file__).resolve().parents[2]
 
 
-class Generated BoundaryStandardsAuditTests(unittest.TestCase):
+class GeneratedBoundaryStandardsAuditTests(unittest.TestCase):
     def test_boundary_language_standards_audit_passes(self):
         report = audit_boundary_language_standards(ROOT)
 
